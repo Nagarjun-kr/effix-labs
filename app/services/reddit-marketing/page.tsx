@@ -146,6 +146,75 @@ export default function Page() {
           </div>
         </section>
 
+        {/* ================= SPLIT 1 · PROBLEMS ================= */}
+        <section className="gx-section gx-tint rm-split-sec" id="problems">
+          <div className="gx-wrap rm-split">
+            <div className="rm-split-copy">
+              <span className="gx-label">{"Sound familiar?"}</span>
+              <h2 className="gx-h2">{"A Reddit marketing agency that fixes "}<em>{"these problems"}</em></h2>
+              <p className="rm-split-sub">{"Does this sound like you?"}</p>
+              <ul className="rm-bullets">
+                <li>{"We tried Reddit, but our posts get "}<b>{"removed"}</b>{" and our accounts get "}<b>{"banned"}</b>{" or reported as spam."}</li>
+                <li>{"Search "}<b>{"[our brand]"}</b>{" on Reddit and the top thread is "}<b>{"“Is [brand] a scam?”"}</b>{". That’s our biggest worry."}</li>
+                <li>{"Reddit shapes how we show up in "}<b>{"AI answers"}</b>{", but we don’t know how to get mentioned in "}<b>{"ChatGPT or Google’s AI results"}</b>{"."}</li>
+                <li>{"We don’t know how to "}<b>{"speak Reddit’s language"}</b>{" without sounding like an ad, or getting banned."}</li>
+              </ul>
+              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Get a free Reddit audit"}</a>
+            </div>
+            <div className="rm-card rm-card-pain" aria-hidden="true">
+              <div className="rm-pain-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>{"your brand"}</span><span className="rm-pain-tag">{"Reddit"}</span></div>
+              <div className="rm-pain-result">
+                <span className="rm-pain-vote"><b>{"▲"}</b><em>{"312"}</em></span>
+                <div><span className="rm-pain-sub">{"r/india · 2 yr ago"}</span><strong>{"Is [your brand] a scam?"}</strong><span className="rm-pain-meta">{"148 comments · Top result"}</span></div>
+              </div>
+              <div className="rm-pain-row">
+                <span className="rm-pain-chip rm-chip-red">{"⊘ Post removed by moderators"}</span>
+                <span className="rm-pain-chip rm-chip-amber">{"Account suspended"}</span>
+              </div>
+              <div className="rm-pain-ai"><span className="rm-pain-ai-tag">{"✦ AI answer"}</span><span className="rm-ln"></span><span className="rm-ln s"></span><span className="rm-pain-miss">{"Your brand: not mentioned"}</span></div>
+              <span className="rm-float rm-f1"></span><span className="rm-float rm-f2"></span><span className="rm-float rm-f3"></span>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= SPLIT 2 · HOW WE FIX ================= */}
+        <section className="gx-section rm-split-sec" id="fix">
+          <div className="gx-wrap rm-split rm-split-rev">
+            <div className="rm-split-copy">
+              <span className="gx-label">{"Our answer"}</span>
+              <h2 className="gx-h2">{"Here’s how we fix "}<em>{"these problems."}</em></h2>
+              <p className="rm-split-sub">{"The problems founders and marketers tell us about, and what we do."}</p>
+              <ul className="rm-bullets">
+                <li>{"We write "}<b>{"value-first, story-led content"}</b>{" that fits each subreddit’s culture. No ads, no shortcuts, written by people."}</li>
+                <li>{"We "}<b>{"respond openly"}</b>{" to negative threads with facts, report posts that break the rules, and build "}<b>{"accurate, positive discussions"}</b>{" that people actually find. Monitoring catches new issues early."}</li>
+                <li>{"We create Reddit content that’s "}<b>{"useful enough to be referenced"}</b>{" by Google and AI tools."}</li>
+                <li>{"We handle Reddit "}<b>{"end to end"}</b>{": research → content → posting → engagement → monitoring → reporting. You’re updated every month."}</li>
+              </ul>
+              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Get a free Reddit audit"}</a>
+            </div>
+            <div className="rm-card rm-card-sys" aria-hidden="true">
+              <p className="rm-sys-title">{"The system we use to fix them"}</p>
+              <div className="rm-sys-grid">
+                <div className="rm-node"><span className="rm-node-ico">{"⌕"}</span><b>{"Subreddit research"}</b><small>{"Where buyers ask"}</small></div>
+                <span className="rm-dash" ></span>
+                <div className="rm-node"><span className="rm-node-ico">{"✎"}</span><b>{"Story-led content"}</b><small>{"Fits the community"}</small></div>
+                <div className="rm-node"><span className="rm-node-ico rm-ico-warn">{"!"}</span><b>{"Monitor & respond"}</b><small>{"Negative threads handled"}</small></div>
+                <span className="rm-dash"></span>
+                <div className="rm-node"><span className="rm-node-ico">{"✦"}</span><b>{"Built for AI & Google"}</b><small>{"Threads that get found"}</small></div>
+              </div>
+              <div className="rm-sys-chart">
+                <div className="rm-sys-chart-head"><span>{"Brand mentions"}</span><em>{"Illustrative"}</em></div>
+                <div className="rm-sys-bars"><i style={{ ["--h" as string]: "22%" }}></i><i style={{ ["--h" as string]: "30%" }}></i><i style={{ ["--h" as string]: "28%" }}></i><i style={{ ["--h" as string]: "44%" }}></i><i style={{ ["--h" as string]: "52%" }}></i><i style={{ ["--h" as string]: "66%" }}></i><i style={{ ["--h" as string]: "78%" }}></i></div>
+              </div>
+              <div className="rm-pipe">
+                <span>{"Research"}</span><i>{"›"}</i><span>{"Content"}</span><i>{"›"}</i><span>{"Posting"}</span><i>{"›"}</i><span>{"Engagement"}</span><i>{"›"}</i><span>{"Reporting"}</span>
+              </div>
+              <p className="rm-sys-foot">{"End-to-end system"}</p>
+            </div>
+          </div>
+        </section>
+
+
         {/* ================= WHY NOW ================= */}
         <section className="gx-section gx-tint" id="why">
           <div className="gx-wrap">
@@ -180,39 +249,36 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= TILES ================= */}
-        <section className="gx-section" id="outcomes">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"What it does for you"}</span>
-              <h2 className="gx-h2">{"Why brands invest in "}<em>{"Reddit marketing"}</em></h2>
-              <p className="gx-lead">{"Reddit rewards brands that help, and ignores or punishes brands that sell. Here’s what consistent, useful participation can build."}</p>
+        {/* ================= SPLIT 3 · WHY BRANDS MOVE ================= */}
+        <section className="gx-section rm-split-sec" id="outcomes">
+          <div className="gx-wrap rm-split">
+            <div className="rm-split-copy">
+              <span className="gx-label">{"The shift"}</span>
+              <h2 className="gx-h2">{"Why brands are moving "}<em>{"to Reddit"}</em></h2>
+              <p className="rm-split-sub">{"Reddit isn’t just a social network. It’s where buying decisions get made."}</p>
+              <p className="rm-split-lead">{"People use Reddit to:"}</p>
+              <ul className="rm-bullets rm-bullets-plain">
+                <li>{"Research products and services"}</li>
+                <li>{"Compare alternatives and get recommendations"}</li>
+                <li>{"Read real experiences and reviews"}</li>
+                <li>{"Ask buying questions and get honest answers"}</li>
+              </ul>
+              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Get a free Reddit audit"}</a>
             </div>
-            <div className="gx-tiles">
-              <article className="gx-tile">
-                <div className="gx-tile-art rm-art" aria-hidden="true">
-                  <div className="rm-mock-thread"><span className="rm-sub">{"r/yourindustry"}</span><b>{"Which tool should a small team choose?"}</b><span className="rm-meta">{"▲ 214 · 86 comments"}</span></div>
-                </div>
-                <h3 className="gx-h3">{"Get recommended in real threads"}</h3>
-                <p className="gx-p-sm">{"Show up where people actively ask for options in your category, with answers that genuinely help."}</p>
-              </article>
-              <article className="gx-tile">
-                <div className="gx-tile-art rm-art" aria-hidden="true">
-                  <div className="rm-mock-comment"><span className="rm-vote">{"▲"}<b>{"128"}</b></span><div><span className="rm-user">{"u/yourbrand_team · brand"}</span><p>{"Happy to help. Here’s how we’d approach it, and when we’re not the right fit…"}</p></div></div>
-                </div>
-                <h3 className="gx-h3">{"Build trust through transparency"}</h3>
-                <p className="gx-p-sm">{"Clearly identified brand accounts that add value earn far more goodwill than disguised promotion."}</p>
-              </article>
-              <article className="gx-tile">
-                <div className="gx-tile-art rm-art" aria-hidden="true">
-                  <div className="rm-mock-ai"><span className="rm-ai-tag">{"✦ AI answer"}</span><span className="rm-line"></span><span className="rm-line short"></span><span className="rm-src">{"Sources: reddit.com · 3 threads"}</span></div>
-                </div>
-                <h3 className="gx-h3">{"Influence Google and AI answers"}</h3>
-                <p className="gx-p-sm">{"Strong presence in threads that rank and get cited supports visibility in search and AI tools."}</p>
-              </article>
+            <div className="rm-card rm-card-why" aria-hidden="true">
+              <p className="rm-why-title">{"Why Reddit?"}</p>
+              <p className="rm-why-sub">{"A go-to place for buying research."}</p>
+              <div className="rm-why-icons">
+                <div className="rm-bubble rm-b1"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4M8.5 11l1.8 1.8 3.4-3.6"></path></svg></span><b>{"Research"}</b></div>
+                <div className="rm-bubble rm-b2"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M10 7L5 12l5 5M14 7l5 5-5 5"></path></svg></span><b>{"Compare"}</b></div>
+                <div className="rm-bubble rm-b3"><span><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="12" r="1.8"></circle><circle cx="12" cy="12" r="1.8"></circle><circle cx="17" cy="12" r="1.8"></circle></svg></span><b>{"Ask"}</b></div>
+                <div className="rm-bubble rm-b4"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l2.3 4.8 5.2.7-3.8 3.6.9 5.2L12 15.8 7.4 18.3l.9-5.2-3.8-3.6 5.2-.7z"></path></svg></span><b>{"Reviews"}</b></div>
+              </div>
+              <div className="rm-why-thread"><span className="rm-sub">{"r/yourindustry"}</span><b>{"Honest opinions? Thinking of switching."}</b><span className="rm-meta">{"▲ 96 · 41 comments"}</span></div>
             </div>
           </div>
         </section>
+
 
         {/* ================= MISTAKES TABLE ================= */}
         <section className="gx-section gx-tint" id="mistakes">

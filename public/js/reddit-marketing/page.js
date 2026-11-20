@@ -35,3 +35,13 @@ function handleRedditSubmit(e) {
   });
   banner.addEventListener('pointerleave', function () { banner.style.setProperty('--mx', '0'); banner.style.setProperty('--my', '0'); });
 })();
+
+/* reveal the split sections on scroll */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var els = document.querySelectorAll('.rm-split > *');
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
+  }, { threshold: 0.15 });
+  els.forEach(function (el, i) { el.classList.add('rm-reveal'); el.style.transitionDelay = (i % 2) * 0.12 + 's'; io.observe(el); });
+})();
