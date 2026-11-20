@@ -64,7 +64,7 @@ function handleContentSubmit(e) {
 
   /* reveal split sections and cards */
   if (reduce || !('IntersectionObserver' in window)) return;
-  var els = document.querySelectorAll('.rm-split > *, .rm-step, .cw-factors > div, .rm-res');
+  var els = document.querySelectorAll('.rm-split > *, .rm-step, .cw-bento-card');
   var io = new IntersectionObserver(function (en) {
     en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
   }, { threshold: 0.12 });

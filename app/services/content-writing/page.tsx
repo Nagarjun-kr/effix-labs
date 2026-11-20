@@ -216,37 +216,51 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= WHY NOW ================= */}
+        {/* ================= WHY NOW (bento) ================= */}
         <section className="gx-section gx-tint" id="why">
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label">{"Why it matters now"}</span>
               <h2 className="gx-h2">{"Why quality content writing "}<em>{"matters more than ever"}</em></h2>
             </div>
-            <div className="gx-factors">
-              <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true">{"1"}</span>
-                <h3 className="gx-h3">{"Google rewards helpful content"}</h3>
-                <p className="gx-quote">{"Google says its ranking systems aim to show helpful, reliable content made for people, not to game rankings."}</p>
-                <p className="gx-p-sm">{"Thin, generic articles struggle. Original, expert, well-structured content is what earns visibility now."}</p>
-                <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Impact on rankings: "}<strong>{"high"}</strong></div>
+            <div className="cw-bento">
+              <article className="cw-bento-card cw-bento-main">
+                <div className="cw-bento-copy">
+                  <span className="cw-bento-tag">{"Search"}</span>
+                  <h3 className="cw-bento-t">{"Google rewards helpful content"}</h3>
+                  <p className="cw-bento-p">{"Google says its ranking systems aim to show helpful, reliable content created for people, not content made to game rankings. Thin, generic articles struggle; original, expert, well-structured pages earn the visibility."}</p>
+                  <a className="rm-ext" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">{"Read Google’s guidance"}</a>
+                </div>
+                <div className="cw-serp" aria-hidden="true">
+                  <div className="cw-serp-bar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>{"best crm for small business india"}</span></div>
+                  <div className="cw-serp-res cw-serp-top">
+                    <span className="cw-serp-url">{"yourbrand.com › guides"}</span>
+                    <b>{"Best CRM for Small Businesses in India (2026 Guide)"}</b>
+                    <span className="cw-serp-desc">{"We compared 8 CRMs on price, setup time and support for small teams…"}</span>
+                    <div className="cw-serp-badges"><i>{"Helpful"}</i><i>{"Expert"}</i><i>{"Original"}</i></div>
+                  </div>
+                  <div className="cw-serp-res cw-serp-dim"><span className="cw-serp-url">{"genericblog.com"}</span><b>{"10 Best CRMs You Need to Know"}</b></div>
+                </div>
               </article>
-              <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true">{"2"}</span>
-                <h3 className="gx-h3">{"AI answers need clear sources"}</h3>
-                <p className="gx-quote">{"AI Overviews and assistants summarise pages that answer questions clearly and accurately."}</p>
-                <p className="gx-p-sm">{"Content with direct answers, clean structure and real expertise is easier for AI tools to understand and reference."}</p>
-                <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Growing fast: "}<strong>{"yes"}</strong></div>
+              <article className="cw-bento-card cw-bento-ai">
+                <span className="cw-bento-tag">{"AI answers"}</span>
+                <h3 className="cw-bento-t">{"AI tools quote clear sources"}</h3>
+                <p className="cw-bento-p">{"AI Overviews and assistants summarise pages that answer questions directly, with clean structure and real expertise."}</p>
+                <div className="cw-ai" aria-hidden="true">
+                  <span className="cw-ai-tag">{"✦ AI overview"}</span>
+                  <span className="cw-ai-l"></span><span className="cw-ai-l s"></span>
+                  <span className="cw-ai-src"><i></i>{"yourbrand.com"}<em>{"cited"}</em></span>
+                </div>
               </article>
-              <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true">{"3"}</span>
-                <h3 className="gx-h3">{"Buyers research before they talk"}</h3>
-                <p className="gx-quote">{"Most buyers read, compare and shortlist long before they contact a business."}</p>
-                <p className="gx-p-sm">{"The content they find during that research decides whether you make their shortlist at all."}</p>
-                <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Effect on sales: "}<strong>{"direct"}</strong></div>
+              <article className="cw-bento-card cw-bento-journey">
+                <span className="cw-bento-tag">{"Buyers"}</span>
+                <h3 className="cw-bento-t">{"Decisions start long before the call"}</h3>
+                <p className="cw-bento-p">{"Buyers read, compare and shortlist on their own. The content they find decides whether you make the list."}</p>
+                <ol className="cw-journey" aria-label="Buyer journey">
+                  <li><span>{"Read"}</span></li><li><span>{"Compare"}</span></li><li><span>{"Shortlist"}</span></li><li className="is-goal"><span>{"Contact"}</span></li>
+                </ol>
               </article>
             </div>
-            <p className="gx-source">{"Read Google’s own guidance: "}<a className="rm-ext" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">{"Creating helpful, reliable, people-first content"}</a>{" · "}<a className="rm-ext" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">{"Google Search and AI-generated content"}</a>{" · "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">{"AI features and your website"}</a>{"."}</p>
           </div>
         </section>
 
@@ -299,40 +313,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= CHECKLIST ================= */}
-        <section className="gx-section" id="checklist">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"Content quality checklist"}</span>
-              <h2 className="gx-h2">{"Is your content "}<em>{"working hard enough?"}</em></h2>
-              <p className="gx-lead">{"Tick what’s true for your current content. It takes a minute, and nothing is sent anywhere."}</p>
-            </div>
-            <div className="gx-check-grid">
-              <ul className="gx-checklist" id="gxChecklist">
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"One clear keyword per page"}</b>{"Every page targets a specific search"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Matches search intent"}</b>{"Answers what the searcher actually wants"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Shows real expertise"}</b>{"Examples, data or experience only you have"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Named, credible author"}</b>{"Readers know who wrote it and why to trust them"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Direct answers up front"}</b>{"Key answers in the first lines, not buried"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Clear structure"}</b>{"Headings, short paragraphs, lists and tables"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Titles & meta descriptions"}</b>{"Written to earn the click"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Internal links"}</b>{"Related pages connected sensibly"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Consistent brand voice"}</b>{"Sounds like one company, not ten writers"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Clear next step"}</b>{"Every page tells readers what to do next"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Refreshed regularly"}</b>{"Old posts updated, not abandoned"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Performance tracked"}</b>{"Clicks, rankings and conversions reviewed"}</span></label></li>
-              </ul>
-              <aside className="gx-score" aria-live="polite">
-                <span className="gx-label">{"Your content"}</span>
-                <div className="gx-score-figure"><span id="gxScoreNum">{"0"}</span><small>{"/12"}</small></div>
-                <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={12} aria-valuenow={0} aria-label="Content quality" id="gxMeter"><span id="gxMeterFill"></span></div>
-                <div className="gx-meter-scale" aria-hidden="true"><span>{"Needs work"}</span><span>{"Getting there"}</span><span>{"Strong"}</span></div>
-                <p className="gx-score-msg" id="gxScoreMsg">{"Start ticking to see where your content stands."}</p>
-                <p className="gx-score-foot">{"A quick self-check, not an SEO score."}</p>
-              </aside>
-            </div>
-          </div>
-        </section>
 
         {/* ================= PROCESS ================= */}
         <section className="gx-section gx-tint" id="process">
@@ -382,57 +362,7 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= PRICING ================= */}
-        <section className="gx-section" id="pricing">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"Pricing"}</span>
-              <h2 className="gx-h2">{"How much do content writing services "}<em>{"cost in India?"}</em></h2>
-              <p className="gx-lead">{"Prices vary widely, so here’s an honest picture of the Indian market, and what actually drives the cost."}</p>
-            </div>
-            <div className="gx-table-wrap" role="region" aria-label="Typical content writing rates in India" tabIndex={0}>
-              <table className="gx-table">
-                <thead><tr><th scope="col">{"Who writes it"}</th><th scope="col">{"Typical rate"}</th><th scope="col">{"1,000–1,500-word blog"}</th></tr></thead>
-                <tbody>
-                  <tr><td>{"Entry-level freelancer"}</td><td data-label="Typical rate">{"₹0.50–2 per word"}</td><td data-label="1,000–1,500-word blog">{"₹1,000–2,500"}</td></tr>
-                  <tr><td>{"Experienced freelancer"}</td><td data-label="Typical rate">{"₹2–5 per word"}</td><td data-label="1,000–1,500-word blog">{"₹2,500–6,000"}</td></tr>
-                  <tr><td>{"Content agency"}</td><td data-label="Typical rate">{"₹3–8 per word"}</td><td data-label="1,000–1,500-word blog">{"₹4,000–12,000"}</td></tr>
-                  <tr><td>{"Specialist (tech, health, finance)"}</td><td data-label="Typical rate">{"₹8–15+ per word"}</td><td data-label="1,000–1,500-word blog">{"₹12,000–30,000+"}</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="gx-source">{"Market estimates for 2026 published by Virtual Snipers (“Content Writing Rates in India 2026”), not EFFIX Labs prices. We quote per project once we understand your scope."}</p>
-            <div className="cw-factors">
-              <div><b>{"Expertise needed"}</b><span>{"Technical, medical or financial topics need specialist writers and more fact-checking."}</span></div>
-              <div><b>{"Research depth"}</b><span>{"Interviews, original data and expert quotes take longer, and make content far stronger."}</span></div>
-              <div><b>{"Volume"}</b><span>{"Ongoing monthly content usually costs less per piece than one-off orders."}</span></div>
-              <div><b>{"Turnaround"}</b><span>{"Rush deadlines cost more; a steady calendar keeps quality and cost predictable."}</span></div>
-            </div>
-          </div>
-        </section>
 
-        {/* ================= COMPARISON ================= */}
-        <section className="gx-section gx-tint" id="comparison">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"Your options"}</span>
-              <h2 className="gx-h2">{"Freelancer, AI tools "}<em>{"or a content team?"}</em></h2>
-            </div>
-            <div className="gx-table-wrap" role="region" aria-label="Freelancer versus AI tools versus EFFIX Labs" tabIndex={0}>
-              <table className="gx-table gx-compare cw-compare3">
-                <thead><tr><th scope="col"><span className="gx-sr">{"Area"}</span></th><th scope="col">{"Freelancer"}</th><th scope="col">{"AI tools alone"}</th><th scope="col" className="gx-col-us">{"EFFIX Labs"}</th></tr></thead>
-                <tbody>
-                  <tr><th scope="row">{"SEO research"}</th><td data-label="Freelancer">{"Sometimes"}</td><td data-label="AI tools alone">{"Generic"}</td><td className="gx-col-us" data-label="EFFIX Labs">{"Keyword and intent research for every piece"}</td></tr>
-                  <tr><th scope="row">{"Expertise"}</th><td data-label="Freelancer">{"Depends on the writer"}</td><td data-label="AI tools alone">{"None of its own"}</td><td className="gx-col-us" data-label="EFFIX Labs">{"Your team’s knowledge, captured in briefs"}</td></tr>
-                  <tr><th scope="row">{"Accuracy"}</th><td data-label="Freelancer">{"Varies"}</td><td data-label="AI tools alone">{"Can invent facts"}</td><td className="gx-col-us" data-label="EFFIX Labs">{"Edited and fact-checked by people"}</td></tr>
-                  <tr><th scope="row">{"Brand voice"}</th><td data-label="Freelancer">{"Inconsistent at scale"}</td><td data-label="AI tools alone">{"Sounds like everyone else"}</td><td className="gx-col-us" data-label="EFFIX Labs">{"A documented voice applied to every piece"}</td></tr>
-                  <tr><th scope="row">{"Scale & reliability"}</th><td data-label="Freelancer">{"Limited by one person"}</td><td data-label="AI tools alone">{"Fast, but needs heavy editing"}</td><td className="gx-col-us" data-label="EFFIX Labs">{"A steady calendar, delivered on time"}</td></tr>
-                  <tr><th scope="row">{"Strategy"}</th><td data-label="Freelancer">{"Usually not included"}</td><td data-label="AI tools alone">{"Not included"}</td><td className="gx-col-us" data-label="EFFIX Labs">{"Content planned around your business goals"}</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
 
         {/* ================= WHO ================= */}
         <section className="gx-section" id="audience">
@@ -618,27 +548,6 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= OFFICIAL RESOURCES ================= */}
-        <section className="gx-section gx-tint" id="google-resources">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"From Google"}</span>
-              <h2 className="gx-h2">{"Official content "}<em>{"guidelines"}</em></h2>
-              <p className="gx-lead">{"Our writing follows Google’s own guidance on content quality. Here are the official pages."}</p>
-            </div>
-            <div className="rm-res-grid">
-              <a className="rm-res" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer"><b>{"Creating helpful content"}</b><span>{"Google’s guidance on helpful, reliable, people-first content."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer"><b>{"Google on AI-generated content"}</b><span>{"How Google Search treats content made with AI tools."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer"><b>{"SEO Starter Guide"}</b><span>{"Google’s fundamentals for search-friendly websites."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer"><b>{"Spam policies"}</b><span>{"What Google treats as spam, including scaled content abuse."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://developers.google.com/search/docs/appearance/title-link" target="_blank" rel="noopener noreferrer"><b>{"Title links"}</b><span>{"How Google chooses the titles shown in search results."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer"><b>{"Snippets & meta descriptions"}</b><span>{"How descriptions in search results are created."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer"><b>{"AI features & your website"}</b><span>{"How AI Overviews and AI Mode relate to your content."}</span><i aria-hidden="true">{"↗"}</i></a>
-              <a className="rm-res" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer"><b>{"Google Search Console"}</b><span>{"Google’s free tool to measure your search performance."}</span><i aria-hidden="true">{"↗"}</i></a>
-            </div>
-            <p className="gx-source">{"Links open Google’s official websites. EFFIX Labs is not affiliated with Google."}</p>
-          </div>
-        </section>
 
         {/* ================= RELATED ================= */}
         <section className="gx-section gx-related-sec" id="related">
