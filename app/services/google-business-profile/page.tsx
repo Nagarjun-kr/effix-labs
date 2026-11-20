@@ -7,14 +7,14 @@ import "./page.css";
 import "./gx.css";
 
 export const metadata: Metadata = {
-  "title": "Google Business Profile Optimisation Services | EFFIX Labs",
-  "description": "Google Business Profile optimisation that helps local customers find, trust and choose your business on Google Search and Maps. Get a free audit.",
+  "title": "Google Business Profile Optimisation Services in Bengaluru | EFFIX Labs",
+  "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Free audit.",
   "alternates": {
     "canonical": "https://effix.co.in/services/google-business-profile"
   },
   "openGraph": {
-    "title": "Google Business Profile Optimisation | EFFIX Labs",
-    "description": "Google Business Profile optimisation that helps local customers find, trust and choose your business on Google Search and Maps. Get a free audit.",
+    "title": "Google Business Profile Optimisation in Bengaluru | EFFIX Labs",
+    "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Free audit.",
     "url": "https://effix.co.in/services/google-business-profile",
     "type": "website",
     "images": [
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Google Business Profile Optimisation | EFFIX Labs",
-    "description": "Google Business Profile optimisation that helps local customers find, trust and choose your business on Google Search and Maps. Get a free audit.",
+    "title": "Google Business Profile Optimisation in Bengaluru | EFFIX Labs",
+    "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Free audit.",
     "images": [
       "https://effix.co.in/images/services/service-01-gbp.jpg"
     ]
@@ -39,7 +39,7 @@ const SCRIPTS = [
   "/js/google-business-profile/03.js"
 ];
 
-const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/google-business-profile#service\", \"name\": \"Google Business Profile Optimisation\", \"serviceType\": \"Google Business Profile optimisation and management\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"Google Business Profile optimisation services that help local businesses get found on Google Search and Maps: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.\", \"url\": \"https://effix.co.in/services/google-business-profile\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is Google Business Profile optimisation?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It’s the process of improving your free Google Business Profile (formerly Google My Business) so it’s complete, accurate and relevant to what customers search for. That covers categories, services, description, photos, reviews and regular updates, which help your business appear in more local searches on Google Search and Maps.\"}}, {\"@type\": \"Question\", \"name\": \"How long does Google Business Profile optimisation take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The initial audit and optimisation usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process.\"}}, {\"@type\": \"Question\", \"name\": \"Can you guarantee a top position on Google Maps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No, and be cautious of anyone who does. Google states there’s no way to pay for a better local ranking. We improve the factors you can influence, such as relevance, completeness, reviews and activity, and track the results honestly.\"}}, {\"@type\": \"Question\", \"name\": \"Why is my business not showing on Google Maps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Common reasons are an unverified or suspended profile, a category that doesn’t match the search, incomplete information, inconsistent details across the web, or strong nearby competitors. Our audit shows which of these apply to you.\"}}, {\"@type\": \"Question\", \"name\": \"How do I get more Google reviews?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask every satisfied customer at the right moment with a direct review link, and reply to every review you receive. We set up a simple, policy-compliant routine. We never buy, fake or offer incentives for reviews.\"}}, {\"@type\": \"Question\", \"name\": \"What are the best categories for my Google Business Profile?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Choose the most specific primary category for your core business and add only a few additional categories for key services. The right choice depends on your business and on which categories top competitors use, which we research during the audit.\"}}, {\"@type\": \"Question\", \"name\": \"Do I need a website to benefit from a Google Business Profile?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. A profile can bring calls and visits on its own. A website that matches your profile details does strengthen local SEO and gives customers more confidence.\"}}, {\"@type\": \"Question\", \"name\": \"Can you optimise a profile for a service-area business?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. If you visit customers at their location, such as plumbers or cleaners, Google asks you to hide your address and set a service area. We set this up correctly so you stay compliant.\"}}, {\"@type\": \"Question\", \"name\": \"Do you manage multiple locations?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Each eligible location needs its own profile. We manage them consistently, with shared standards and individual reporting.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer Google My Business optimization services in India?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access.\"}}, {\"@type\": \"Question\", \"name\": \"Is Google Business Profile optimisation a one-time job?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The first optimisation is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Google Business Profile Optimisation\", \"item\": \"https://effix.co.in/services/google-business-profile\"}]}]}";
+const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/google-business-profile#service\", \"name\": \"Google Business Profile Optimisation Services in Bengaluru\", \"serviceType\": \"Google Business Profile optimisation and management\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Bengaluru\", \"alternateName\": \"Bangalore\", \"containedInPlace\": {\"@type\": \"State\", \"name\": \"Karnataka\"}}, {\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"Google Business Profile optimisation services for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.\", \"url\": \"https://effix.co.in/services/google-business-profile\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Do you offer Google Business Profile optimisation services in Bengaluru?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed.\"}}, {\"@type\": \"Question\", \"name\": \"Can you help my business show up in a specific Bengaluru area, like Koramangala or Whitefield?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"We can make your profile clearly relevant to the areas you serve, with the correct address or service area, local services and area-specific updates. Google also weighs distance from the person searching, which no one can control, so we focus on everything that is in your control and report results honestly.\"}}, {\"@type\": \"Question\", \"name\": \"What is Google Business Profile optimisation?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It’s the process of improving your free Google Business Profile (formerly Google My Business) so it’s complete, accurate and relevant to what customers search for. That covers categories, services, description, photos, reviews and regular updates, which help your business appear in more local searches on Google Search and Maps.\"}}, {\"@type\": \"Question\", \"name\": \"How long does Google Business Profile optimisation take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The initial audit and optimisation usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process.\"}}, {\"@type\": \"Question\", \"name\": \"Can you guarantee a top position on Google Maps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No, and be cautious of anyone who does. Google states there’s no way to pay for a better local ranking. We improve the factors you can influence, such as relevance, completeness, reviews and activity, and track the results honestly.\"}}, {\"@type\": \"Question\", \"name\": \"Why is my business not showing on Google Maps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Common reasons are an unverified or suspended profile, a category that doesn’t match the search, incomplete information, inconsistent details across the web, or strong nearby competitors. Our audit shows which of these apply to you.\"}}, {\"@type\": \"Question\", \"name\": \"How do I get more Google reviews?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask every satisfied customer at the right moment with a direct review link, and reply to every review you receive. We set up a simple, policy-compliant routine. We never buy, fake or offer incentives for reviews.\"}}, {\"@type\": \"Question\", \"name\": \"What are the best categories for my Google Business Profile?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Choose the most specific primary category for your core business and add only a few additional categories for key services. The right choice depends on your business and on which categories top competitors use, which we research during the audit.\"}}, {\"@type\": \"Question\", \"name\": \"Do I need a website to benefit from a Google Business Profile?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. A profile can bring calls and visits on its own. A website that matches your profile details does strengthen local SEO and gives customers more confidence.\"}}, {\"@type\": \"Question\", \"name\": \"Can you optimise a profile for a service-area business?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. If you visit customers at their location, such as plumbers or cleaners, Google asks you to hide your address and set a service area. We set this up correctly so you stay compliant.\"}}, {\"@type\": \"Question\", \"name\": \"Do you manage multiple locations?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Each eligible location needs its own profile. We manage them consistently, with shared standards and individual reporting.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer Google My Business optimization services in India?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access.\"}}, {\"@type\": \"Question\", \"name\": \"Is Google Business Profile optimisation a one-time job?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The first optimisation is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Google Business Profile Optimisation\", \"item\": \"https://effix.co.in/services/google-business-profile\"}]}]}";
 
 export default function Page() {
   return (
@@ -87,13 +87,13 @@ export default function Page() {
         {/* ================= HERO ================= */}
         <section className="gx-hero" id="hero">
           <div className="gx-wrap gx-hero-inner">
-            <span className="gx-kicker"><span className="gx-kicker-dot" aria-hidden="true"></span>{"Service 01 · Local search"}</span>
+            <span className="gx-kicker"><span className="gx-kicker-dot" aria-hidden="true"></span>{"Service 01 · Bengaluru & across India"}</span>
             <h1 className="gx-hero-title">
-              {"Google Business Profile "}<em>{"Optimisation"}</em>{" Services"}
+              {"Google Business Profile "}<em>{"Optimisation"}</em>{" Services in Bengaluru"}
             </h1>
             <p className="gx-hero-sub">{"Get found where local customers are searching."}</p>
             <p className="gx-hero-lede">
-              {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. EFFIX Labs makes your Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
+              {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. EFFIX Labs helps businesses in Bengaluru and across India make their Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#contact" className="gx-btn gx-btn-dark">{"Get a free profile audit"}</a>
@@ -382,7 +382,7 @@ export default function Page() {
             <div>
               <span className="gx-label">{"Who we help"}</span>
               <h2 className="gx-h2">{"Built for businesses that serve customers "}<em>{"locally"}</em></h2>
-              <p className="gx-p">{"In India and abroad, from a single shop to multi-location brands."}</p>
+              <p className="gx-p">{"In Bengaluru, across India and abroad, from a single shop to multi-location brands."}</p>
             </div>
             <ul className="gx-industries">
               <li><b>{"Clinics & healthcare"}</b><span>{"Doctors, dentists, physiotherapists, diagnostics"}</span></li>
@@ -394,6 +394,31 @@ export default function Page() {
               <li><b>{"Education"}</b><span>{"Coaching centres, schools, institutes"}</span></li>
               <li><b>{"Multi-location brands"}</b><span>{"Every branch managed consistently"}</span></li>
             </ul>
+          </div>
+        </section>
+
+        {/* ================= BENGALURU ================= */}
+        <section className="gx-section gx-tint" id="bengaluru">
+          <div className="gx-wrap gx-split">
+            <div>
+              <span className="gx-label">{"Local focus · Bengaluru"}</span>
+              <h2 className="gx-h2">{"Google Business Profile optimisation in "}<em>{"Bengaluru"}</em></h2>
+              <p className="gx-p">{"Bengaluru (Bangalore) is one of the most competitive local search markets in India. Search “dentist near me” or “salon in Indiranagar” and you’ll see dozens of businesses competing within a few kilometres. Being listed isn’t enough. Your profile has to be the clearest, most complete and most active one nearby."}</p>
+              <p className="gx-p">{"We help Bengaluru businesses set up their address or service area correctly, choose categories that match how local customers actually search, and keep their profiles accurate as the city changes, from new branches to festival-season hours."}</p>
+            </div>
+            <div className="gx-blr">
+              <div className="gx-blr-card">
+                <span className="gx-label">{"Areas we work with"}</span>
+                <ul className="gx-blr-areas" aria-label="Bengaluru areas">
+                  <li>{"Koramangala"}</li><li>{"Indiranagar"}</li><li>{"HSR Layout"}</li><li>{"Whitefield"}</li><li>{"Jayanagar"}</li><li>{"JP Nagar"}</li><li>{"Electronic City"}</li><li>{"Marathahalli"}</li><li>{"Hebbal"}</li><li>{"Yelahanka"}</li><li>{"Malleshwaram"}</li><li>{"Bellandur"}</li><li>{"Sarjapur Road"}</li><li>{"Rajajinagar"}</li><li>{"…and the rest of Bengaluru"}</li>
+                </ul>
+              </div>
+              <ul className="gx-blr-points">
+                <li><b>{"Neighbourhood-level relevance"}</b><span>{"Services, description and posts that reflect the areas you actually serve."}</span></li>
+                <li><b>{"Correct storefront or service area"}</b><span>{"Set up the way Google expects, so you stay compliant and visible."}</span></li>
+                <li><b>{"Consistent local citations"}</b><span>{"The same name, address and phone across the directories Bengaluru customers use."}</span></li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -423,6 +448,24 @@ export default function Page() {
               <p className="gx-p">{"Can’t find your answer? "}<a href="#contact">{"Ask us directly"}</a>{"."}</p>
             </div>
             <div className="faq-accordion-wrap gx-faq">
+              <div className="faq-item">
+                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
+                  <span>{"Do you offer Google Business Profile optimisation services in Bengaluru?"}</span>
+                  <span className="faq-icon-cross">{"+"}</span>
+                </button>
+                <div className="faq-answer-panel">
+                  <p>{"Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed."}</p>
+                </div>
+              </div>
+              <div className="faq-item">
+                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
+                  <span>{"Can you help my business show up in a specific Bengaluru area, like Koramangala or Whitefield?"}</span>
+                  <span className="faq-icon-cross">{"+"}</span>
+                </button>
+                <div className="faq-answer-panel">
+                  <p>{"We can make your profile clearly relevant to the areas you serve, with the correct address or service area, local services and area-specific updates. Google also weighs distance from the person searching, which no one can control, so we focus on everything that is in your control and report results honestly."}</p>
+                </div>
+              </div>
               <div className="faq-item">
                 <button className="faq-question-btn" data-onclick="toggleFaq(this)">
                   <span>{"What is Google Business Profile optimisation?"}</span>
