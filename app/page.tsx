@@ -184,35 +184,6 @@ export default function Page() {
       </header>
       {" "}
       {" "}
-      <section id="effixIntro" className="fx-intro" aria-label="Introduction">
-        {" "}
-        <div className="fx-intro-area">
-          {" "}
-          <div className="fx-copy">
-            {" "}
-            <h1 className="effix-intro-headline fx-split fx-split-pending">
-              {"We don’t just chase visibility. We build brands that get discovered."}
-            </h1>
-            {" "}
-            <div className="fx-desc-area">
-              {" "}
-              <p className="effix-intro-subtext">
-                {" From local search to AI discovery, we help businesses grow through strategic SEO, brand visibility, content and digital experiences. "}
-              </p>
-              {" "}
-            </div>
-            {" "}
-          </div>
-          {" "}
-          <div className="fx-media" id="fxMedia" aria-hidden="true">
-            {" "}
-            <img src="/images/effix-teal-ribbon.jpg" alt="" id="fxMediaImg" decoding="async" fetchPriority="high" />
-            {" "}
-          </div>
-          {" "}
-        </div>
-        {" "}
-      </section>
       {" "}
       <main>
         {" "}
