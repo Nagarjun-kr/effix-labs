@@ -345,7 +345,7 @@
    CHANGE 1 — two-tone headings (near-black lead + grey continuation)
    Same family and weight as the heading; no italic, no purple.
    ========================================================================== */
-.gx-page { --gx-lead: #1f2024; --gx-grey: #8a8c94; }
+.gx-page { --gx-lead: #1f2024; --gx-grey: #96989f; }
 .gx-h2, .gx-hero-title { color: var(--gx-lead); }
 .gx-h2 em, .gx-hero-title em,
 .gx-page .cta-title em {

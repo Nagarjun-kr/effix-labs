@@ -768,12 +768,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3>
-                          <strong className="timeline_accent">
-                            {"01"}
-                          </strong>
-                          {" — Audit"}
-                        </h3>
+                        <h3><span className="tl-num">{"01"}</span><span className="timeline_accent">{"Audit"}</span>{" your visibility"}</h3>
                         {" "}
                       </div>
                       {" "}
@@ -1027,12 +1022,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3>
-                          <strong className="timeline_accent">
-                            {"02"}
-                          </strong>
-                          {" — Plan"}
-                        </h3>
+                        <h3><span className="tl-num">{"02"}</span><span className="timeline_accent">{"Plan"}</span>{" what matters"}</h3>
                         {" "}
                       </div>
                       {" "}
@@ -1213,12 +1203,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3>
-                          <strong className="timeline_accent">
-                            {"03"}
-                          </strong>
-                          {" — Publish"}
-                        </h3>
+                        <h3><span className="tl-num">{"03"}</span><span className="timeline_accent">{"Publish"}</span>{" improvements"}</h3>
                         {" "}
                       </div>
                       {" "}
@@ -1390,12 +1375,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3>
-                          <strong className="timeline_accent">
-                            {"04"}
-                          </strong>
-                          {" — Measure"}
-                        </h3>
+                        <h3><span className="tl-num">{"04"}</span><span className="timeline_accent">{"Measure"}</span>{" what changed"}</h3>
                         {" "}
                       </div>
                       {" "}

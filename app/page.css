@@ -4361,3 +4361,56 @@
       .timeline-item[data-step] { grid-template-columns: 1fr; gap: 28px; }
       .timeline-item[data-step] .timeline_item-right { min-height: 0; margin: 0 auto; justify-content: center; }
     }
+
+    /* ==========================================================================
+       PROCESS STEPS — Decagon-style: coloured lead word, tighter rhythm,
+       one accent per step (violet · cyan · pink · amber)
+       ========================================================================== */
+    .timeline-item[data-step="1"] { --acc: #8b7bff; --acc-glow: rgba(139, 123, 255, 0.55); }
+    .timeline-item[data-step="2"] { --acc: #38bdf8; --acc-glow: rgba(56, 189, 248, 0.45); }
+    .timeline-item[data-step="3"] { --acc: #f472b6; --acc-glow: rgba(244, 114, 182, 0.45); }
+    .timeline-item[data-step="4"] { --acc: #fbbf24; --acc-glow: rgba(251, 191, 36, 0.38); }
+
+    .timeline_content-slot { gap: 64px; padding: 24px 0 48px 0; }
+    .timeline-item[data-step] { opacity: 0.55; }
+    .timeline-item[data-step].is-active { opacity: 1; }
+    .timeline-item[data-step] .timeline_item-right { min-height: 300px; }
+
+    .timeline-item[data-step] .timeline_heading h3 {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #f4f4f5;
+      margin-bottom: 14px;
+    }
+    .timeline-item[data-step] .tl-num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      color: var(--acc);
+      margin-bottom: 14px;
+    }
+    .timeline-item[data-step] .timeline_accent { color: var(--acc); font-weight: 400; font-family: var(--font-body); letter-spacing: -0.03em; }
+    .timeline-item[data-step] .timeline_desc p { font-size: 17px; line-height: 1.6; color: #a1a1aa; max-width: 420px; }
+
+    /* coloured glow behind each visual */
+    .timeline-item[data-step] .art-ambient-glow {
+      width: 520px; height: 400px; opacity: 0.9; filter: blur(70px);
+      background: radial-gradient(circle, var(--acc-glow) 0%, transparent 68%);
+    }
+    /* dot + line pick up each step's colour */
+    .timeline-item[data-step] .timeline_point-element.is-active {
+      background-color: var(--acc);
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.04), 0 0 18px var(--acc), 0 0 36px var(--acc-glow);
+    }
+    .timeline_progress-bar {
+      background: linear-gradient(180deg, #8b7bff 0%, #38bdf8 36%, #f472b6 68%, #fbbf24 100%);
+      box-shadow: 0 0 14px rgba(139, 123, 255, 0.6), 0 0 26px rgba(56, 189, 248, 0.3);
+    }
+    @media (max-width: 990px) {
+      .timeline_content-slot { gap: 48px; }
+      .timeline-item[data-step] { opacity: 1; }
+    }
