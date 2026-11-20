@@ -422,7 +422,7 @@ export default function Page() {
               <div><span className="gx-why-n">{"02"}</span><h3 className="gx-h3">{"SEO built in"}</h3><p className="gx-p-sm">{"Keyword research, intent and on-page SEO are part of the writing, not an afterthought."}</p></div>
               <div><span className="gx-why-n">{"03"}</span><h3 className="gx-h3">{"Real expertise"}</h3><p className="gx-p-sm">{"We capture what your team knows, so content shows genuine experience."}</p></div>
               <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Original & yours"}</h3><p className="gx-p-sm">{"Plagiarism-checked, original content. Once paid for, it belongs to you."}</p></div>
-              <div><span className="gx-why-n">{"05"}</span><h3 className="gx-h3">{"Connected to growth"}</h3><p className="gx-p-sm">{"Content linked with "}<a href="/services/ai-search-visibility">{"SEO & AEO"}</a>{", "}<a href="/services/reddit-marketing">{"Reddit"}</a>{" and "}<a href="/services/website-design-development">{"your website"}</a>{"."}</p></div>
+              <div><span className="gx-why-n">{"05"}</span><h3 className="gx-h3">{"Connected to growth"}</h3><p className="gx-p-sm">{"Content linked with "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{", "}<a href="/services/reddit-marketing">{"Reddit"}</a>{" and "}<a href="/services/website-design-development">{"your website"}</a>{"."}</p></div>
             </div>
           </div>
         </section>
@@ -556,7 +556,7 @@ export default function Page() {
             <div className="gx-related">
               <a href="/services/google-business-profile"><span>{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true">{"→"}</i></a>
               <a href="/services/reddit-marketing"><span>{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/ai-search-visibility"><span>{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true">{"→"}</i></a>
+              <a href="/services/seo-aeo-services"><span>{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true">{"→"}</i></a>
               <a href="/services/website-design-development"><span>{"05"}</span>{"Website Design & Development"}<i aria-hidden="true">{"→"}</i></a>
             </div>
           </div>

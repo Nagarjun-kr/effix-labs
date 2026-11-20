@@ -7,12 +7,13 @@ const dupes: Record<string, string> = {
   "reddit-quora-marketing": "reddit-marketing",
   "ai-blog-seo": "content-writing",
   "ai-assisted-blog-seo": "content-writing",
+  "ai-search-visibility": "seo-aeo-services",
 };
 const services = [
   "google-business-profile",
   "reddit-marketing",
   "content-writing",
-  "ai-search-visibility",
+  "seo-aeo-services",
   "website-design-development",
 ];
 

@@ -121,7 +121,7 @@
           category: 'GEO & AEO Knowledge Graph',
           color: '#00F0FF',
           glow: 'rgba(0, 240, 255, 0.45)',
-          url: '/services/ai-search-visibility'
+          url: '/services/seo-aeo-services'
         },
         {
           id: 'blog-seo',

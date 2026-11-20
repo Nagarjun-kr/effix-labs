@@ -522,7 +522,7 @@ export default function Page() {
                   </a>
                   {" "}
                   {" "}
-                  <a href="/services/ai-search-visibility" className="service-artwork-card" data-index="2" data-service-id="ai-search" aria-label="SEO & AEO Services">
+                  <a href="/services/seo-aeo-services" className="service-artwork-card" data-index="2" data-service-id="ai-search" aria-label="SEO & AEO Services">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
@@ -2108,7 +2108,7 @@ export default function Page() {
                 </li>
                 {" "}
                 <li>
-                  <a href="/services/ai-search-visibility">
+                  <a href="/services/seo-aeo-services">
                     {"SEO & AEO Services"}
                   </a>
                 </li>
