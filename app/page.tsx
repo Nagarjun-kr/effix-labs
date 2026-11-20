@@ -491,7 +491,7 @@ export default function Page() {
                   </a>
                   {" "}
                   {" "}
-                  <a href="/services/reddit-quora-marketing" className="service-artwork-card" data-index="1" data-service-id="reddit-quora" aria-label="Reddit Marketing">
+                  <a href="/services/reddit-marketing" className="service-artwork-card" data-index="1" data-service-id="reddit-quora" aria-label="Reddit Marketing">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
@@ -2102,7 +2102,7 @@ export default function Page() {
                 </li>
                 {" "}
                 <li>
-                  <a href="/services/reddit-quora-marketing">
+                  <a href="/services/reddit-marketing">
                     {"Reddit Marketing"}
                   </a>
                 </li>

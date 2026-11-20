@@ -3,12 +3,13 @@ import type { NextConfig } from "next";
 // Old static-site URLs and duplicate service pages -> canonical routes
 const dupes: Record<string, string> = {
   "google-business-profile-growth": "google-business-profile",
-  "reddit-quora-visibility": "reddit-quora-marketing",
+  "reddit-quora-visibility": "reddit-marketing",
+  "reddit-quora-marketing": "reddit-marketing",
   "ai-blog-seo": "ai-assisted-blog-seo",
 };
 const services = [
   "google-business-profile",
-  "reddit-quora-marketing",
+  "reddit-marketing",
   "ai-assisted-blog-seo",
   "ai-search-visibility",
   "website-design-development",

@@ -112,7 +112,7 @@
           category: 'Community Search Authority',
           color: '#FF5CFE',
           glow: 'rgba(255, 92, 254, 0.45)',
-          url: '/services/reddit-quora-marketing'
+          url: '/services/reddit-marketing'
         },
         {
           id: 'ai-search',
