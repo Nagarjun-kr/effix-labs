@@ -464,3 +464,9 @@
 /* balanced line breaks for long keyword headings */
 .gx-hero-title, .gx-h2 { text-wrap: balance; }
 .gx-hero-title { max-width: 17ch; }
+
+/* step 6 behaves like the other steps (no black state) */
+.gx-steps li:last-child .gx-step-n { background: #fff; color: var(--gx-accent); border-color: rgba(139, 37, 226, 0.35); }
+.gx-steps li:last-child.is-lit .gx-step-n { background: #8b25e2; border-color: #8b25e2; color: #fff; }
+.gx-steps li:not(.is-lit):hover .gx-step-n { background: #fff; color: var(--gx-accent); }
+.gx-steps li.is-lit:hover .gx-step-n { background: #8b25e2; color: #fff; }

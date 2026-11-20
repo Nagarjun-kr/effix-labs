@@ -72,63 +72,69 @@
   });
 })();
 
-/* Process: a light line slides through every step (auto loop; follows the cursor on hover). */
+/* Process: a light line slides through every step.
+   - Plays an automatic sweep until the visitor first moves the pointer over the section.
+   - After that it follows the pointer and stays exactly where the pointer stops,
+     even after the pointer leaves (no reset, no jumping back). */
 (function () {
   var wrap = document.getElementById('gxStepsWrap');
   if (!wrap) return;
+  var section = wrap.closest('section') || wrap;
   var track = wrap.querySelector('.gx-steps-track');
   var fill = document.getElementById('gxStepsFill');
   var head = document.getElementById('gxStepsHead');
   var items = Array.prototype.slice.call(wrap.querySelectorAll('.gx-steps li'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var x0 = 0, len = 0, centers = [];
-  var pos = 0, target = 0, hovering = false, visible = false, t0 = 0, raf = 0;
+  var pos = 0, target = 0, manual = false, t0 = 0, raf = 0;
 
   function measure() {
     var wr = wrap.getBoundingClientRect();
     centers = items.map(function (li) { var n = li.querySelector('.gx-step-n').getBoundingClientRect(); return n.left + n.width / 2 - wr.left; });
     x0 = centers[0] || 0; len = (centers[centers.length - 1] || 0) - x0;
     track.style.left = x0 + 'px'; track.style.width = len + 'px';
+    if (manual) { target = Math.min(target, len); }
   }
   function paint() {
-    fill.style.width = Math.max(0, pos) + 'px';
-    head.style.left = Math.max(0, pos) + 'px';
-    items.forEach(function (li, i) { li.classList.toggle('is-lit', pos >= centers[i] - x0 - 2); });
+    var p = Math.max(0, Math.min(len, pos));
+    fill.style.width = p + 'px';
+    head.style.left = p + 'px';
+    items.forEach(function (li, i) { li.classList.toggle('is-lit', p >= centers[i] - x0 - 2); });
   }
   function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function frame(now) {
     raf = requestAnimationFrame(frame);
     if (track.offsetParent === null) return; // hidden on small screens
-    if (hovering) {
-      pos += (target - pos) * 0.16;
+    if (manual) {
+      pos += (target - pos) * 0.2;
+      if (Math.abs(target - pos) < 0.3) pos = target;
+      fill.style.opacity = '1';
     } else {
-      // auto sweep: 2.8s travel, 1.2s hold, fade, restart
-      var cycle = 5000, e = ((now - t0) % cycle);
-      if (e < 2800) { pos = ease(e / 2800) * len; fill.style.opacity = 1; }
+      var cycle = 5000, e = (now - t0) % cycle;
+      if (e < 2800) { pos = ease(e / 2800) * len; fill.style.opacity = '1'; }
       else if (e < 4000) { pos = len; }
-      else { fill.style.opacity = String(1 - (e - 4000) / 1000); if (e > 4900) pos = 0; }
+      else { fill.style.opacity = String(Math.max(0, 1 - (e - 4000) / 900)); if (e > 4900) pos = 0; }
     }
     paint();
   }
   measure();
   window.addEventListener('resize', measure);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-
   if (reduce) { pos = len; paint(); return; }
-  wrap.addEventListener('pointerenter', function () { hovering = true; fill.style.opacity = 1; wrap.classList.add('is-running'); });
-  wrap.addEventListener('pointermove', function (e) {
+
+  section.addEventListener('pointermove', function (e) {
+    if (track.offsetParent === null) return;
     var wr = wrap.getBoundingClientRect();
     target = Math.min(len, Math.max(0, e.clientX - wr.left - x0));
+    if (!manual) { manual = true; wrap.classList.add('is-running'); }
   });
-  wrap.addEventListener('pointerleave', function () { hovering = false; t0 = performance.now() - 0; });
 
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (en) {
       en.forEach(function (x) {
-        visible = x.isIntersecting;
-        if (visible && !raf) { measure(); t0 = performance.now(); wrap.classList.add('is-running'); raf = requestAnimationFrame(frame); }
-        else if (!visible && raf) { cancelAnimationFrame(raf); raf = 0; }
+        if (x.isIntersecting && !raf) { measure(); t0 = performance.now(); wrap.classList.add('is-running'); raf = requestAnimationFrame(frame); }
+        else if (!x.isIntersecting && raf) { cancelAnimationFrame(raf); raf = 0; }
       });
-    }, { threshold: 0.3 }).observe(wrap);
+    }, { threshold: 0.2 }).observe(wrap);
   } else { raf = requestAnimationFrame(frame); }
 })();
