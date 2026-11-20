@@ -1536,119 +1536,42 @@ export default function Page() {
                   {" "}
                 </div>
                 {" "}
-                <div className="timeline-item v2" id="processClosingCard">
-                  {" "}
-                  {" "}
-                  <div className="timeline_item-left">
-                    {" "}
-                    <div className="cl--illus-wrap">
-                      {" "}
-                      {" "}
-                      <img src="/images/process/effix-woman-phone.jpg" alt="Effix Discovery – woman using phone in a violet-lit studio" className="cl--illus-bg" />
-                      {" "}
-                      {" "}
-                      <div className="cl--illus-fade" aria-hidden="true"></div>
-                      {" "}
-                      {" "}
-                      <div className="cl--panels-overlay" aria-hidden="false">
-                        {" "}
-                        {" "}
-                        <div className="cl--panel cl--panel-top" id="clPanelTop">
-                          {" "}
-                          <div className="cl--panel-img-wrap">
-                            {" "}
-                            <img src="/images/process/effix-panel-search.jpg" alt="Effix High-Intent Local Search Result" className="cl--panel-img" />
-                            {" "}
-                            <img src="/images/process/layers/07_top_ui_highlights.svg" alt="" className="cl--panel-highlights" aria-hidden="true" />
-                            {" "}
-                          </div>
-                          {" "}
-                          <div className="cl--micro-badge cl--badge-search" aria-hidden="true">
-                            {" "}
-                            <span className="cl--pulse-dot"></span>
-                            {" "}
-                            <span className="cl--badge-text">
-                              {"Search intent"}
-                            </span>
-                            {" "}
-                            <span className="cl--badge-tag">
-                              {"Live"}
-                            </span>
-                            {" "}
-                          </div>
-                          {" "}
-                        </div>
-                        {" "}
-                        {" "}
-                        <div className="cl--panel cl--panel-bottom" id="clPanelBottom">
-                          {" "}
-                          <div className="cl--panel-img-wrap">
-                            {" "}
-                            <img src="/images/process/effix-panel-analytics.jpg" alt="Effix Visibility Score & Growth Curve" className="cl--panel-img" />
-                            {" "}
-                            <img src="/images/process/layers/09_bottom_ui_highlights.svg" alt="" className="cl--panel-highlights" aria-hidden="true" />
-                            {" "}
-                          </div>
-                          {" "}
-                          <div className="cl--micro-badge cl--badge-growth" aria-hidden="true">
-                            {" "}
-                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5">
-                              {" "}
-                              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                              {" "}
-                              <polyline points="17 6 23 6 23 12"></polyline>
-                              {" "}
-                            </svg>
-                            {" "}
-                            <span className="cl--badge-text">
-                              {"Visibility score"}
-                            </span>
-                            {" "}
-                            <span className="cl--badge-green">
-                              {"+42%"}
-                            </span>
-                            {" "}
-                          </div>
-                          {" "}
-                        </div>
-                        {" "}
+                <div className="pc-card" id="processClosingCard">
+                  <div className="pc-card-inner">
+                    <div className="pc-card-copy">
+                      <span className="pc-eyebrow">{"The Effix method"}</span>
+                      <h3 className="pc-card-title"><span className="pc-grad">{"Four steps from guesswork"}</span><br />{"to a plan."}</h3>
+                      <p className="pc-card-text">{"We turn uncertainty into a clear plan. See where you stand, focus on what matters, make the improvements, and track what changed."}</p>
+                      <p className="pc-card-note"><span className="pc-note-dot" aria-hidden="true"></span>{"We report what we can measure. We say so when we can’t."}</p>
+                      <div className="pc-card-ctas">
+                        <a href="/discover" className="pc-btn-primary">{"Run a Visibility Audit →"}</a>
+                        <a href="#services" className="pc-btn-ghost">{"Explore services"}</a>
                       </div>
-                      {" "}
                     </div>
-                    {" "}
-                  </div>
-                  {" "}
-                  {" "}
-                  <div className="timeline_item_right-box">
-                    {" "}
-                    <div className="timeline_item-right v2">
-                      {" "}
-                      <div className="timeline_heading_v2">
-                        {" "}
-                        <h3>
-                          <span className="v2-headline-accent">
-                            {"Four steps from guesswork"}
-                          </span>
-                          <br />
-                          <span className="v2-headline-main">
-                            {"to a plan."}
-                          </span>
-                        </h3>
-                        {" "}
+                    <div className="pc-loop" role="img" aria-label="Audit, plan, publish and measure, repeated as a loop">
+                      <div className="pc-loop-glow" aria-hidden="true"></div>
+                      <svg className="pc-ring" viewBox="0 0 400 400" aria-hidden="true">
+                        <circle className="pc-ring-track" cx="200" cy="200" r="150"></circle>
+                        <g className="pc-ring-arcs">
+                          <circle className="pc-arc pc-arc-1" cx="200" cy="200" r="150"></circle>
+                          <circle className="pc-arc pc-arc-2" cx="200" cy="200" r="150"></circle>
+                          <circle className="pc-arc pc-arc-3" cx="200" cy="200" r="150"></circle>
+                          <circle className="pc-arc pc-arc-4" cx="200" cy="200" r="150"></circle>
+                        </g>
+                        <g className="pc-orbit"><circle cx="200" cy="50" r="7" className="pc-orbit-dot"></circle></g>
+                        <circle className="pc-ring-inner" cx="200" cy="200" r="104"></circle>
+                      </svg>
+                      <div className="pc-loop-center" aria-hidden="true">
+                        <span className="pc-loop-kicker">{"Your"}</span>
+                        <span className="pc-loop-big">{"visibility loop"}</span>
+                        <span className="pc-loop-small">{"Measure → adjust → repeat"}</span>
                       </div>
-                      {" "}
-                      <p className="v2-intro">
-                        {"We turn uncertainty into a clear plan. See where you stand, focus on what matters, make the improvements, and track what changed."}
-                      </p>
-                      {" "}
-                      <p className="v2-measure">
-                        {"We report what we can measure. We say so when we can't."}
-                      </p>
-                      {" "}
+                      <div className="pc-node pc-node-1" aria-hidden="true"><span className="pc-node-ico">{"01"}</span><div><b>{"Audit"}</b><small>{"Visibility snapshot"}</small></div></div>
+                      <div className="pc-node pc-node-2" aria-hidden="true"><span className="pc-node-ico">{"02"}</span><div><b>{"Plan"}</b><small>{"Action plan"}</small></div></div>
+                      <div className="pc-node pc-node-3" aria-hidden="true"><span className="pc-node-ico">{"03"}</span><div><b>{"Publish"}</b><small>{"Improvements live"}</small></div></div>
+                      <div className="pc-node pc-node-4" aria-hidden="true"><span className="pc-node-ico">{"04"}</span><div><b>{"Measure"}</b><small>{"What changed"}</small></div></div>
                     </div>
-                    {" "}
                   </div>
-                  {" "}
                 </div>
                 {" "}
               </div>
