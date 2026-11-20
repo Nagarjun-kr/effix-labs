@@ -4363,13 +4363,10 @@
     }
 
     /* ==========================================================================
-       PROCESS STEPS — Decagon-style: coloured lead word, tighter rhythm,
-       one accent per step (violet · cyan · pink · amber)
+       PROCESS STEPS — Decagon-style: violet lead word, tighter rhythm
        ========================================================================== */
-    .timeline-item[data-step="1"] { --acc: #8b7bff; --acc-glow: rgba(139, 123, 255, 0.55); }
-    .timeline-item[data-step="2"] { --acc: #38bdf8; --acc-glow: rgba(56, 189, 248, 0.45); }
-    .timeline-item[data-step="3"] { --acc: #f472b6; --acc-glow: rgba(244, 114, 182, 0.45); }
-    .timeline-item[data-step="4"] { --acc: #fbbf24; --acc-glow: rgba(251, 191, 36, 0.38); }
+    /* one violet accent for every step (matches the section's original palette) */
+    .timeline-item[data-step] { --acc: #8886ff; --acc-glow: rgba(104, 101, 255, 0.45); }
 
     .timeline_content-slot { gap: 64px; padding: 24px 0 48px 0; }
     .timeline-item[data-step] { opacity: 0.55; }
@@ -4407,8 +4404,8 @@
       box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.04), 0 0 18px var(--acc), 0 0 36px var(--acc-glow);
     }
     .timeline_progress-bar {
-      background: linear-gradient(180deg, #8b7bff 0%, #38bdf8 36%, #f472b6 68%, #fbbf24 100%);
-      box-shadow: 0 0 14px rgba(139, 123, 255, 0.6), 0 0 26px rgba(56, 189, 248, 0.3);
+      background: linear-gradient(180deg, #5754FF 0%, #8886ff 100%);
+      box-shadow: 0 0 14px rgba(136, 134, 255, 0.8), 0 0 28px rgba(87, 84, 255, 0.4);
     }
     @media (max-width: 990px) {
       .timeline_content-slot { gap: 48px; }

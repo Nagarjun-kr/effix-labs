@@ -768,7 +768,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3><span className="tl-num">{"01"}</span><span className="timeline_accent">{"Audit"}</span>{" your visibility"}</h3>
+                        <h3><span className="timeline_accent">{"Audit"}</span>{" your visibility"}</h3>
                         {" "}
                       </div>
                       {" "}
@@ -1022,7 +1022,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3><span className="tl-num">{"02"}</span><span className="timeline_accent">{"Plan"}</span>{" what matters"}</h3>
+                        <h3><span className="timeline_accent">{"Plan"}</span>{" what matters"}</h3>
                         {" "}
                       </div>
                       {" "}
@@ -1203,7 +1203,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3><span className="tl-num">{"03"}</span><span className="timeline_accent">{"Publish"}</span>{" improvements"}</h3>
+                        <h3><span className="timeline_accent">{"Publish"}</span>{" improvements"}</h3>
                         {" "}
                       </div>
                       {" "}
@@ -1375,7 +1375,7 @@ export default function Page() {
                       {" "}
                       <div className="timeline_heading">
                         {" "}
-                        <h3><span className="tl-num">{"04"}</span><span className="timeline_accent">{"Measure"}</span>{" what changed"}</h3>
+                        <h3><span className="timeline_accent">{"Measure"}</span>{" what changed"}</h3>
                         {" "}
                       </div>
                       {" "}
