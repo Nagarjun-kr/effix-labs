@@ -99,7 +99,7 @@
         {
           id: 'gbp',
           index: '01',
-          title: 'Google Business Profile Growth',
+          title: 'Google Business Profile Optimisation',
           category: 'Local Search Intelligence',
           color: '#00FF9D',
           glow: 'rgba(0, 255, 157, 0.45)',
@@ -108,7 +108,7 @@
         {
           id: 'reddit-quora',
           index: '02',
-          title: 'Reddit & Quora Brand Visibility',
+          title: 'Reddit Marketing',
           category: 'Community Search Authority',
           color: '#FF5CFE',
           glow: 'rgba(255, 92, 254, 0.45)',
@@ -117,7 +117,7 @@
         {
           id: 'ai-search',
           index: '03',
-          title: 'AI Search & Brand Visibility',
+          title: 'SEO & AEO Services',
           category: 'GEO & AEO Knowledge Graph',
           color: '#00F0FF',
           glow: 'rgba(0, 240, 255, 0.45)',
@@ -126,7 +126,7 @@
         {
           id: 'blog-seo',
           index: '04',
-          title: 'AI-Assisted Blog SEO',
+          title: 'Content Writing',
           category: 'Editorial Information Gain',
           color: '#FF5500',
           glow: 'rgba(255, 85, 0, 0.45)',

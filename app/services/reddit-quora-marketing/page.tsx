@@ -5,13 +5,13 @@ import LegacyScripts from "@/components/LegacyScripts";
 import "./page.css";
 
 export const metadata: Metadata = {
-  "title": "Reddit & Quora Marketing Services | EFFIX Labs",
+  "title": "Reddit Marketing | EFFIX Labs",
   "description": "Build your brand presence on Reddit and Quora with audience research, content creation, community management and brand visibility monitoring from EFFIX Labs.",
   "alternates": {
     "canonical": "https://effix.co.in/services/reddit-quora-marketing"
   },
   "openGraph": {
-    "title": "Reddit & Quora Marketing Services | EFFIX Labs",
+    "title": "Reddit Marketing | EFFIX Labs",
     "description": "Build your brand presence on Reddit and Quora with audience research, content creation, community management and brand visibility monitoring from EFFIX Labs.",
     "url": "https://effix.co.in/services/reddit-quora-marketing",
     "type": "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Reddit & Quora Marketing Services | EFFIX Labs",
+    "title": "Reddit Marketing | EFFIX Labs",
     "description": "Build your brand presence on Reddit and Quora with audience research, content creation, community management and brand visibility monitoring from EFFIX Labs.",
     "images": [
       "https://effix.co.in/images/services/service-02-reddit-quora.jpg"
@@ -39,7 +39,7 @@ const SCRIPTS = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"Service\",\n    \"name\": \"Reddit & Quora Marketing Services\",\n    \"provider\": {\n      \"@type\": \"Organization\",\n      \"name\": \"EFFIX Labs\",\n      \"url\": \"https://effix.co.in\"\n    },\n    \"description\": \"Comprehensive Reddit and Quora brand visibility, audience research, authentic content creation, community listening and transparent community management.\",\n    \"areaServed\": \"Global\",\n    \"serviceType\": \"Community Management & Discussion Search Visibility\"\n  }" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"Service\",\n    \"name\": \"Reddit Marketing\",\n    \"provider\": {\n      \"@type\": \"Organization\",\n      \"name\": \"EFFIX Labs\",\n      \"url\": \"https://effix.co.in\"\n    },\n    \"description\": \"Comprehensive Reddit and Quora brand visibility, audience research, authentic content creation, community listening and transparent community management.\",\n    \"areaServed\": \"Global\",\n    \"serviceType\": \"Community Management & Discussion Search Visibility\"\n  }" }} />
       {" "}
       {" "}
       <header className="navbar">
@@ -92,7 +92,7 @@ export default function Page() {
             <div className="section-eyebrow">
               {" "}
               <span className="badge-dot"></span>
-              {" REDDIT & QUORA MARKETING "}
+              {" REDDIT MARKETING "}
             </div>
             {" "}
             <h1 className="hero-headline">
@@ -407,7 +407,7 @@ export default function Page() {
           </div>
           {" "}
           <h2 className="section-title">
-            {"A Complete Approach to Reddit & Quora Management"}
+            {"A Complete Approach to Reddit Marketing"}
           </h2>
           {" "}
           <p className="section-desc">

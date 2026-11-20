@@ -460,11 +460,11 @@ export default function Page() {
                 <div className="services-cards-grid" id="servicesCardsGrid">
                   {" "}
                   {" "}
-                  <a href="/services/google-business-profile" className="service-artwork-card" data-index="0" data-service-id="gbp" aria-label="Google Business Profile Growth">
+                  <a href="/services/google-business-profile" className="service-artwork-card" data-index="0" data-service-id="gbp" aria-label="Google Business Profile Optimisation">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-01-gbp.jpg" alt="Google Business Profile Growth service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-01-gbp.jpg" alt="Google Business Profile Optimisation service poster" className="service-poster-img" loading="eager" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -479,7 +479,7 @@ export default function Page() {
                     <div className="visually-hidden" style={{ position: "absolute", width: "1px", height: "1px", padding: "0", margin: "-1px", overflow: "hidden", clip: "rect(0,0,0,0)", border: "0" }}>
                       {" "}
                       <h3>
-                        {"Google Business Profile Growth"}
+                        {"Google Business Profile Optimisation"}
                       </h3>
                       {" "}
                       <p>
@@ -491,11 +491,11 @@ export default function Page() {
                   </a>
                   {" "}
                   {" "}
-                  <a href="/services/reddit-quora-marketing" className="service-artwork-card" data-index="1" data-service-id="reddit-quora" aria-label="Reddit & Quora Marketing">
+                  <a href="/services/reddit-quora-marketing" className="service-artwork-card" data-index="1" data-service-id="reddit-quora" aria-label="Reddit Marketing">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-02-reddit-quora.jpg" alt="Reddit and Quora Brand Visibility service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-02-reddit-quora.jpg" alt="Reddit Marketing service poster" className="service-poster-img" loading="eager" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -510,7 +510,7 @@ export default function Page() {
                     <div className="visually-hidden" style={{ position: "absolute", width: "1px", height: "1px", padding: "0", margin: "-1px", overflow: "hidden", clip: "rect(0,0,0,0)", border: "0" }}>
                       {" "}
                       <h3>
-                        {"Reddit & Quora Brand Visibility"}
+                        {"Reddit Marketing"}
                       </h3>
                       {" "}
                       <p>
@@ -522,11 +522,11 @@ export default function Page() {
                   </a>
                   {" "}
                   {" "}
-                  <a href="/services/ai-search-visibility" className="service-artwork-card" data-index="2" data-service-id="ai-search" aria-label="AI Search & Brand Visibility">
+                  <a href="/services/ai-search-visibility" className="service-artwork-card" data-index="2" data-service-id="ai-search" aria-label="SEO & AEO Services">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-03-ai-search.jpg" alt="AI Search and Brand Visibility service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-03-ai-search.jpg" alt="SEO & AEO Services service poster" className="service-poster-img" loading="eager" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -541,7 +541,7 @@ export default function Page() {
                     <div className="visually-hidden" style={{ position: "absolute", width: "1px", height: "1px", padding: "0", margin: "-1px", overflow: "hidden", clip: "rect(0,0,0,0)", border: "0" }}>
                       {" "}
                       <h3>
-                        {"AI Search & Brand Visibility"}
+                        {"SEO & AEO Services"}
                       </h3>
                       {" "}
                       <p>
@@ -553,11 +553,11 @@ export default function Page() {
                   </a>
                   {" "}
                   {" "}
-                  <a href="/services/ai-assisted-blog-seo" className="service-artwork-card" data-index="3" data-service-id="blog-seo" aria-label="AI-Assisted Blog SEO">
+                  <a href="/services/ai-assisted-blog-seo" className="service-artwork-card" data-index="3" data-service-id="blog-seo" aria-label="Content Writing">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-04-blog-seo.jpg" alt="AI-Assisted Blog SEO service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-04-blog-seo.jpg" alt="Content Writing service poster" className="service-poster-img" loading="eager" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -572,7 +572,7 @@ export default function Page() {
                     <div className="visually-hidden" style={{ position: "absolute", width: "1px", height: "1px", padding: "0", margin: "-1px", overflow: "hidden", clip: "rect(0,0,0,0)", border: "0" }}>
                       {" "}
                       <h3>
-                        {"AI-Assisted Blog SEO"}
+                        {"Content Writing"}
                       </h3>
                       {" "}
                       <p>
@@ -588,7 +588,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-05-web-dev.jpg" alt="Website Design and Development service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-05-web-dev.jpg" alt="Website Design & Development service poster" className="service-poster-img" loading="eager" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -2117,25 +2117,25 @@ export default function Page() {
                 {" "}
                 <li>
                   <a href="/services/google-business-profile">
-                    {"Google Business Profile Growth"}
+                    {"Google Business Profile Optimisation"}
                   </a>
                 </li>
                 {" "}
                 <li>
                   <a href="/services/reddit-quora-marketing">
-                    {"Reddit & Quora Marketing"}
+                    {"Reddit Marketing"}
                   </a>
                 </li>
                 {" "}
                 <li>
                   <a href="/services/ai-search-visibility">
-                    {"AI Search & Brand Visibility"}
+                    {"SEO & AEO Services"}
                   </a>
                 </li>
                 {" "}
                 <li>
                   <a href="/services/ai-assisted-blog-seo">
-                    {"AI-Assisted Blog SEO"}
+                    {"Content Writing"}
                   </a>
                 </li>
                 {" "}

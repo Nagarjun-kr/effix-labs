@@ -5,13 +5,13 @@ import LegacyScripts from "@/components/LegacyScripts";
 import "./page.css";
 
 export const metadata: Metadata = {
-  "title": "AI-Assisted Blog SEO Services | EFFIX Labs",
+  "title": "Content Writing | EFFIX Labs",
   "description": "Combine search intelligence, structured AI drafting, and rigorous human editorial fact-checking to publish organic blog content that deserves to rank.",
   "alternates": {
     "canonical": "https://effix.co.in/services/ai-assisted-blog-seo"
   },
   "openGraph": {
-    "title": "AI-Assisted Blog SEO Services | EFFIX Labs",
+    "title": "Content Writing | EFFIX Labs",
     "description": "Combine search intelligence, structured AI drafting, and rigorous human editorial fact-checking to publish organic blog content that deserves to rank.",
     "url": "https://effix.co.in/services/ai-assisted-blog-seo",
     "type": "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "AI-Assisted Blog SEO Services | EFFIX Labs",
+    "title": "Content Writing | EFFIX Labs",
     "description": "Combine search intelligence, structured AI drafting, and rigorous human editorial fact-checking to publish organic blog content that deserves to rank.",
     "images": [
       "https://effix.co.in/images/services/service-04-blog-seo.jpg"
@@ -39,7 +39,7 @@ const SCRIPTS = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Service\",\n        \"@id\": \"https://effix.co.in/services/ai-assisted-blog-seo#service\",\n        \"name\": \"AI-Assisted Blog SEO Services\",\n        \"provider\": {\n          \"@type\": \"Organization\",\n          \"name\": \"EFFIX Labs\",\n          \"url\": \"https://effix.co.in\"\n        },\n        \"description\": \"Full-cycle AI-assisted blog content production and SEO strategy. SERP research, Commercial Opportunity Index keyword modeling, structured drafting, senior human editorial fact-checking, on-page semantic optimization, and 90-day performance tracking.\",\n        \"areaServed\": \"Global\",\n        \"serviceType\": \"Search Engine Optimization & Editorial Content Strategy\"\n      },\n      {\n        \"@type\": \"FAQPage\",\n        \"@id\": \"https://effix.co.in/services/ai-assisted-blog-seo#faq\",\n        \"mainEntity\": [\n          {\n            \"@type\": \"Question\",\n            \"name\": \"What is AI-Assisted Blog SEO?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"AI-Assisted Blog SEO is an agency editorial service that combines data-driven search research, structured AI drafting efficiency, and deep human editorial fact-checking. It allows businesses to scale organic content production without sacrificing accuracy, originality, or search compliance.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Does Google penalise AI-generated content?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"No. Google's official Search Central guidance confirms that content is evaluated by its quality, relevance, and value to users, not how it was created. However, Google's Scaled Content Abuse policy actively demotes automated content generated at scale without human oversight, originality, or Information Gain.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Does a human editor review every article?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Yes, absolutely. Every article undergoes line-by-line editorial review by senior human specialists. We verify all statistics against primary sources, eliminate generic AI phrasing, inject client-specific brand voice, and ensure the article delivers demonstrable Information Gain.\"\n            }\n          }\n        ]\n      }\n    ]\n  }" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Service\",\n        \"@id\": \"https://effix.co.in/services/ai-assisted-blog-seo#service\",\n        \"name\": \"Content Writing\",\n        \"provider\": {\n          \"@type\": \"Organization\",\n          \"name\": \"EFFIX Labs\",\n          \"url\": \"https://effix.co.in\"\n        },\n        \"description\": \"Full-cycle AI-assisted blog content production and SEO strategy. SERP research, Commercial Opportunity Index keyword modeling, structured drafting, senior human editorial fact-checking, on-page semantic optimization, and 90-day performance tracking.\",\n        \"areaServed\": \"Global\",\n        \"serviceType\": \"Search Engine Optimization & Editorial Content Strategy\"\n      },\n      {\n        \"@type\": \"FAQPage\",\n        \"@id\": \"https://effix.co.in/services/ai-assisted-blog-seo#faq\",\n        \"mainEntity\": [\n          {\n            \"@type\": \"Question\",\n            \"name\": \"What is Content Writing?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Content Writing is an agency editorial service that combines data-driven search research, structured AI drafting efficiency, and deep human editorial fact-checking. It allows businesses to scale organic content production without sacrificing accuracy, originality, or search compliance.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Does Google penalise AI-generated content?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"No. Google's official Search Central guidance confirms that content is evaluated by its quality, relevance, and value to users, not how it was created. However, Google's Scaled Content Abuse policy actively demotes automated content generated at scale without human oversight, originality, or Information Gain.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Does a human editor review every article?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Yes, absolutely. Every article undergoes line-by-line editorial review by senior human specialists. We verify all statistics against primary sources, eliminate generic AI phrasing, inject client-specific brand voice, and ensure the article delivers demonstrable Information Gain.\"\n            }\n          }\n        ]\n      }\n    ]\n  }" }} />
       {" "}
       {" "}
       <header className="site-header">
@@ -91,7 +91,7 @@ export default function Page() {
             <div className="hero-badge-row">
               {" "}
               <span className="eyebrow-pill">
-                {"✦ AI-ASSISTED BLOG SEO"}
+                {"✦ CONTENT WRITING"}
               </span>
               {" "}
             </div>
@@ -3066,7 +3066,7 @@ export default function Page() {
                 <button className="faq-question-btn" data-onclick="toggleFaq(this)">
                   {" "}
                   <span>
-                    {"What is AI-Assisted Blog SEO?"}
+                    {"What is Content Writing?"}
                   </span>
                   {" "}
                   <span className="faq-icon-cross">
@@ -3078,7 +3078,7 @@ export default function Page() {
                 <div className="faq-answer-panel">
                   {" "}
                   <p>
-                    {" AI-Assisted Blog SEO is an agency editorial service that combines data-driven search research, structured AI drafting efficiency, and deep human editorial fact-checking. We use AI models to accelerate SERP analysis, structural outlines, and initial drafts, while senior human editors verify all facts, inject client brand voice, optimize on-page signals, and ensure genuine Information Gain. "}
+                    {" Content Writing is an agency editorial service that combines data-driven search research, structured AI drafting efficiency, and deep human editorial fact-checking. We use AI models to accelerate SERP analysis, structural outlines, and initial drafts, while senior human editors verify all facts, inject client brand voice, optimize on-page signals, and ensure genuine Information Gain. "}
                   </p>
                   {" "}
                 </div>

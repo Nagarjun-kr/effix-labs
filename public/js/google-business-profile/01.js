@@ -55,7 +55,7 @@ function toggleFaq(button) {
       const locations = document.getElementById('locationCount').value;
       const msg = document.getElementById('message').value;
 
-      const subject = encodeURIComponent("Google Business Profile Growth Audit Request - " + business);
+      const subject = encodeURIComponent("Google Business Profile Optimisation Audit Request - " + business);
       const body = encodeURIComponent(
         "Full Name: " + name + "\n" +
         "Work Email: " + email + "\n" +

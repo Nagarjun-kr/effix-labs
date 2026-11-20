@@ -5,13 +5,13 @@ import LegacyScripts from "@/components/LegacyScripts";
 import "./page.css";
 
 export const metadata: Metadata = {
-  "title": "AI Search & Brand Visibility Services | EFFIX Labs",
+  "title": "SEO & AEO Services | EFFIX Labs",
   "description": "Help your brand become discoverable, recommended, and cited across ChatGPT Search, Perplexity, Google AI Overviews, and Microsoft Copilot with EFFIX Labs.",
   "alternates": {
     "canonical": "https://effix.co.in/services/ai-search-visibility"
   },
   "openGraph": {
-    "title": "AI Search & Brand Visibility Services | EFFIX Labs",
+    "title": "SEO & AEO Services | EFFIX Labs",
     "description": "Help your brand become discoverable, recommended, and cited across ChatGPT Search, Perplexity, Google AI Overviews, and Microsoft Copilot with EFFIX Labs.",
     "url": "https://effix.co.in/services/ai-search-visibility",
     "type": "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "AI Search & Brand Visibility Services | EFFIX Labs",
+    "title": "SEO & AEO Services | EFFIX Labs",
     "description": "Help your brand become discoverable, recommended, and cited across ChatGPT Search, Perplexity, Google AI Overviews, and Microsoft Copilot with EFFIX Labs.",
     "images": [
       "https://effix.co.in/images/services/service-03-ai-search.jpg"
@@ -39,7 +39,7 @@ const SCRIPTS = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Service\",\n        \"@id\": \"https://effix.co.in/services/ai-search-visibility#service\",\n        \"name\": \"AI Search & Brand Visibility Services\",\n        \"provider\": {\n          \"@type\": \"Organization\",\n          \"name\": \"EFFIX Labs\",\n          \"url\": \"https://effix.co.in\"\n        },\n        \"description\": \"Comprehensive Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Auditing, entity graph engineering, fact-dense content strategy, and multi-engine citation tracking across ChatGPT Search, Perplexity, Google AI Overviews, and Copilot.\",\n        \"areaServed\": \"Global\",\n        \"serviceType\": \"Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO)\"\n      }\n    ]\n  }" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Service\",\n        \"@id\": \"https://effix.co.in/services/ai-search-visibility#service\",\n        \"name\": \"SEO & AEO Services\",\n        \"provider\": {\n          \"@type\": \"Organization\",\n          \"name\": \"EFFIX Labs\",\n          \"url\": \"https://effix.co.in\"\n        },\n        \"description\": \"Comprehensive Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Auditing, entity graph engineering, fact-dense content strategy, and multi-engine citation tracking across ChatGPT Search, Perplexity, Google AI Overviews, and Copilot.\",\n        \"areaServed\": \"Global\",\n        \"serviceType\": \"Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO)\"\n      }\n    ]\n  }" }} />
       {" "}
       {" "}
       <header className="site-header">
@@ -91,7 +91,7 @@ export default function Page() {
             <div className="section-eyebrow">
               {" "}
               <span className="badge-dot"></span>
-              {" AI Search & Brand Visibility "}
+              {" SEO & AEO Services "}
             </div>
             {" "}
             <h1 className="hero-headline">
@@ -455,7 +455,7 @@ export default function Page() {
           </div>
           {" "}
           <h2 className="section-title">
-            {"The Complete AI Search & Brand Visibility Framework."}
+            {"The Complete SEO & AEO Services Framework."}
           </h2>
           {" "}
           <p className="section-desc">

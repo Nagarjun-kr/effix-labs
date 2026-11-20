@@ -5,13 +5,13 @@ import LegacyScripts from "@/components/LegacyScripts";
 import "./page.css";
 
 export const metadata: Metadata = {
-  "title": "Google Business Profile Growth | EFFIX Labs",
+  "title": "Google Business Profile Optimisation | EFFIX Labs",
   "description": "Improve your Google Business Profile with EFFIX Labs. We help businesses optimise profile accuracy, local search readiness, customer reviews, and ongoing profile management.",
   "alternates": {
     "canonical": "https://effix.co.in/services/google-business-profile"
   },
   "openGraph": {
-    "title": "Google Business Profile Growth | EFFIX Labs",
+    "title": "Google Business Profile Optimisation | EFFIX Labs",
     "description": "Improve your Google Business Profile with EFFIX Labs. We help businesses optimise profile accuracy, local search readiness, customer reviews, and ongoing profile management.",
     "url": "https://effix.co.in/services/google-business-profile",
     "type": "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Google Business Profile Growth | EFFIX Labs",
+    "title": "Google Business Profile Optimisation | EFFIX Labs",
     "description": "Improve your Google Business Profile with EFFIX Labs. We help businesses optimise profile accuracy, local search readiness, customer reviews, and ongoing profile management.",
     "images": [
       "https://effix.co.in/images/services/service-01-gbp.jpg"
@@ -39,7 +39,7 @@ const SCRIPTS = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Service\",\n        \"@id\": \"https://effix.co.in/services/google-business-profile#service\",\n        \"name\": \"Google Business Profile Growth & Local Visibility\",\n        \"provider\": {\n          \"@type\": \"Organization\",\n          \"name\": \"EFFIX Labs\",\n          \"url\": \"https://effix.co.in\",\n          \"email\": \"effix.labs@gmail.com\"\n        },\n        \"description\": \"Comprehensive Google Business Profile audit, optimization, review management guidance, and local search visibility strategy. Helping eligible businesses improve accuracy, discovery, and customer actions across Google Search and Maps.\",\n        \"areaServed\": \"Global\",\n        \"serviceType\": \"Local Search Optimization & Profile Management\"\n      },\n      {\n        \"@type\": \"FAQPage\",\n        \"@id\": \"https://effix.co.in/services/google-business-profile#faq\",\n        \"mainEntity\": [\n          {\n            \"@type\": \"Question\",\n            \"name\": \"What is Google Business Profile optimisation?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Google Business Profile optimisation is the structured process of improving a business's profile accuracy, category alignment, service listings, visual assets, and customer interactions to ensure it is accurately understood and discoverable by local customers on Google Search and Maps.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Can you guarantee a top position on Google Maps?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"No ethical agency can guarantee specific Google Maps positions or map-pack placements. Google's local ranking algorithms evaluate Relevance, Distance, and Prominence based on individual searcher location, query intent, and device. We maximize profile quality and local search readiness in full compliance with Google policies.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Do you help manage customer reviews?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Yes. We provide review monitoring, response playbooks in your brand voice, and guidance on addressing negative feedback constructively. In strict accordance with Google policies, we never offer fake reviews, review gating, or incentivized feedback.\"\n            }\n          }\n        ]\n      }\n    ]\n  }" }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: "{\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      {\n        \"@type\": \"Service\",\n        \"@id\": \"https://effix.co.in/services/google-business-profile#service\",\n        \"name\": \"Google Business Profile Optimisation\",\n        \"provider\": {\n          \"@type\": \"Organization\",\n          \"name\": \"EFFIX Labs\",\n          \"url\": \"https://effix.co.in\",\n          \"email\": \"effix.labs@gmail.com\"\n        },\n        \"description\": \"Comprehensive Google Business Profile audit, optimization, review management guidance, and local search visibility strategy. Helping eligible businesses improve accuracy, discovery, and customer actions across Google Search and Maps.\",\n        \"areaServed\": \"Global\",\n        \"serviceType\": \"Local Search Optimization & Profile Management\"\n      },\n      {\n        \"@type\": \"FAQPage\",\n        \"@id\": \"https://effix.co.in/services/google-business-profile#faq\",\n        \"mainEntity\": [\n          {\n            \"@type\": \"Question\",\n            \"name\": \"What is Google Business Profile optimisation?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Google Business Profile optimisation is the structured process of improving a business's profile accuracy, category alignment, service listings, visual assets, and customer interactions to ensure it is accurately understood and discoverable by local customers on Google Search and Maps.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Can you guarantee a top position on Google Maps?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"No ethical agency can guarantee specific Google Maps positions or map-pack placements. Google's local ranking algorithms evaluate Relevance, Distance, and Prominence based on individual searcher location, query intent, and device. We maximize profile quality and local search readiness in full compliance with Google policies.\"\n            }\n          },\n          {\n            \"@type\": \"Question\",\n            \"name\": \"Do you help manage customer reviews?\",\n            \"acceptedAnswer\": {\n              \"@type\": \"Answer\",\n              \"text\": \"Yes. We provide review monitoring, response playbooks in your brand voice, and guidance on addressing negative feedback constructively. In strict accordance with Google policies, we never offer fake reviews, review gating, or incentivized feedback.\"\n            }\n          }\n        ]\n      }\n    ]\n  }" }} />
       {" "}
       {" "}
       <header className="site-header">
@@ -91,7 +91,7 @@ export default function Page() {
             <div className="hero-badge-row">
               {" "}
               <span className="eyebrow-pill">
-                {"✦ SERVICE 01 — GOOGLE BUSINESS PROFILE GROWTH"}
+                {"✦ SERVICE 01 — GOOGLE BUSINESS PROFILE OPTIMISATION"}
               </span>
               {" "}
             </div>
@@ -2350,7 +2350,7 @@ export default function Page() {
             <h2 className="section-title" style={{ textAlign: "center" }}>
               {" Questions About "}
               <em>
-                {"Google Business Profile Growth?"}
+                {"Google Business Profile Optimisation?"}
               </em>
               {" "}
             </h2>
