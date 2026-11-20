@@ -1,0 +1,73 @@
+/* Google Business Profile Optimisation page: video lightbox, checklist meter, scroll reveals. */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Video lightbox ---- */
+  var modal = document.getElementById('gxVideoModal');
+  var openBtn = document.getElementById('gxWatchBtn');
+  var video = document.getElementById('gxModalVideo');
+  var lastFocus = null;
+  function openModal() {
+    if (!modal) return;
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    if (window.lenis) window.lenis.stop();
+    var close = modal.querySelector('.gx-modal-close');
+    if (close) close.focus();
+    if (video) { video.currentTime = 0; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+  }
+  function closeModal() {
+    if (!modal || modal.hidden) return;
+    modal.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (window.lenis) window.lenis.start();
+    if (video) video.pause();
+    if (lastFocus) lastFocus.focus();
+  }
+  if (openBtn) openBtn.addEventListener('click', openModal);
+  var media = document.getElementById('gxMedia');
+  if (media) media.addEventListener('click', function (e) { if (e.target === media || e.target.classList.contains('gx-media-shade')) openModal(); });
+  if (modal) modal.addEventListener('click', function (e) { if (e.target.getAttribute('data-close')) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  /* ---- Checklist meter ---- */
+  var list = document.getElementById('gxChecklist');
+  if (list) {
+    var boxes = list.querySelectorAll('input[type="checkbox"]');
+    var num = document.getElementById('gxScoreNum');
+    var fill = document.getElementById('gxMeterFill');
+    var meter = document.getElementById('gxMeter');
+    var msg = document.getElementById('gxScoreMsg');
+    function update() {
+      var n = 0; boxes.forEach(function (b) { if (b.checked) n++; });
+      var total = boxes.length;
+      if (num) num.textContent = String(n);
+      if (fill) fill.style.width = (n / total * 100).toFixed(1) + '%';
+      if (meter) meter.setAttribute('aria-valuenow', String(n));
+      if (!msg) return;
+      if (n === 0) msg.textContent = 'Start ticking to see where your profile stands.';
+      else if (n < 6) msg.textContent = 'Needs work. Several basics are missing, and these are often the quickest wins.';
+      else if (n < 11) msg.textContent = 'Getting there. A few gaps are likely costing you searches and clicks.';
+      else if (n < total) msg.textContent = 'Strong foundation. The last details are where competitors pull ahead.';
+      else msg.textContent = 'Excellent. Now it’s about keeping it active and accurate every month.';
+    }
+    boxes.forEach(function (b) { b.addEventListener('change', update); });
+    update();
+  }
+
+  /* ---- Scroll reveals ---- */
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var targets = document.querySelectorAll('.gx-head, .gx-split > *, .gx-factor, .gx-tile, .gx-table-wrap, .gx-services li, .gx-check-grid > *, .gx-steps li, .gx-why > div, .gx-related a, .gx-faq-grid > *');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function (el, i) {
+    el.classList.add('gx-reveal');
+    var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+    el.style.transitionDelay = Math.min(sib, 5) * 0.07 + 's';
+    io.observe(el);
+  });
+})();
