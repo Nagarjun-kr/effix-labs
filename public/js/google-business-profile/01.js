@@ -55,7 +55,7 @@ function toggleFaq(button) {
       const locations = document.getElementById('locationCount').value;
       const msg = document.getElementById('message').value;
 
-      const subject = encodeURIComponent("Google Business Profile Optimisation Audit Request - " + business);
+      const subject = encodeURIComponent("Google Business Profile Optimisation Enquiry - " + business);
       const body = encodeURIComponent(
         "Full Name: " + name + "\n" +
         "Work Email: " + email + "\n" +
@@ -69,7 +69,7 @@ function toggleFaq(button) {
       feedback.style.background = 'rgba(168, 85, 247, 0.15)';
       feedback.style.color = '#d8b4fe';
       feedback.style.border = '1px solid rgba(168, 85, 247, 0.3)';
-      feedback.innerHTML = "Opening email client to deliver your audit request to <strong>effix.labs@gmail.com</strong>...";
+      feedback.innerHTML = "Opening email client to send your enquiry to <strong>effix.labs@gmail.com</strong>...";
 
       window.location.href = "mailto:effix.labs@gmail.com?subject=" + subject + "&body=" + body;
     }

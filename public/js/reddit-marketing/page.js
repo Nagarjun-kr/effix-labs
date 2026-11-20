@@ -3,7 +3,7 @@ function handleRedditSubmit(e) {
   e.preventDefault();
   var v = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
   var brand = v('businessName');
-  var subject = encodeURIComponent('Reddit Marketing Audit Request - ' + brand);
+  var subject = encodeURIComponent('Reddit Marketing Enquiry - ' + brand);
   var body = encodeURIComponent(
     'Full Name: ' + v('fullName') + '\n' +
     'Work Email: ' + v('workEmail') + '\n' +
@@ -18,7 +18,7 @@ function handleRedditSubmit(e) {
     fb.style.background = 'rgba(139, 37, 226, 0.08)';
     fb.style.color = '#4e5362';
     fb.style.border = '1px solid rgba(139, 37, 226, 0.25)';
-    fb.innerHTML = 'Opening your email app to send your Reddit audit request to <strong>effix.labs@gmail.com</strong>…';
+    fb.innerHTML = 'Opening your email app to send your enquiry to <strong>effix.labs@gmail.com</strong>…';
   }
   window.location.href = 'mailto:effix.labs@gmail.com?subject=' + subject + '&body=' + body;
 }
@@ -39,9 +39,21 @@ function handleRedditSubmit(e) {
 /* reveal the split sections on scroll */
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-  var els = document.querySelectorAll('.rm-split > *');
+  var els = document.querySelectorAll('.rm-split > *, .rm-step');
   var io = new IntersectionObserver(function (en) {
     en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
   }, { threshold: 0.15 });
   els.forEach(function (el, i) { el.classList.add('rm-reveal'); el.style.transitionDelay = (i % 2) * 0.12 + 's'; io.observe(el); });
+})();
+
+/* process cards: spotlight follows the cursor */
+(function () {
+  var cards = document.querySelectorAll('.rm-step');
+  cards.forEach(function (c) {
+    c.addEventListener('pointermove', function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--x', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--y', (e.clientY - r.top) + 'px');
+    });
+  });
 })();

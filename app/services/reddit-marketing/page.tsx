@@ -7,13 +7,13 @@ import "./rm.css";
 
 export const metadata: Metadata = {
   "title": "Reddit Marketing Services in India | EFFIX Labs",
-  "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Free Reddit audit.",
+  "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
   "alternates": {
     "canonical": "https://effix.co.in/services/reddit-marketing"
   },
   "openGraph": {
     "title": "Reddit Marketing Services in India | EFFIX Labs",
-    "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Free Reddit audit.",
+    "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "url": "https://effix.co.in/services/reddit-marketing",
     "type": "website",
     "images": [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   "twitter": {
     "card": "summary_large_image",
     "title": "Reddit Marketing Services in India | EFFIX Labs",
-    "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Free Reddit audit.",
+    "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "images": [
       "https://effix.co.in/images/services/reddit-marketing-hero.jpg"
     ]
@@ -39,7 +39,7 @@ const SCRIPTS = [
   "/js/reddit-marketing/page.js"
 ];
 
-const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/reddit-marketing#service\", \"name\": \"Reddit Marketing Services\", \"serviceType\": \"Reddit marketing, community engagement and Reddit Ads management\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"City\", \"name\": \"Bengaluru\", \"alternateName\": \"Bangalore\", \"containedInPlace\": {\"@type\": \"State\", \"name\": \"Karnataka\"}}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"Reddit marketing services for brands across India and Bengaluru: Reddit audit and social listening, subreddit research, helpful disclosed engagement, AMAs, branded subreddits, Reddit Ads, reputation monitoring and AI search visibility.\", \"image\": \"https://effix.co.in/images/services/reddit-marketing-hero.jpg\", \"url\": \"https://effix.co.in/services/reddit-marketing\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What are Reddit marketing services?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Reddit marketing services help a brand build visibility and trust on Reddit: researching the communities your customers use, joining relevant threads with genuinely helpful answers, publishing community-native posts, running AMAs and Reddit Ads, and monitoring what people say about your brand.\"}}, {\"@type\": \"Question\", \"name\": \"Do you use fake accounts or buy upvotes?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. We never use bots, bought or aged accounts, vote manipulation or undisclosed sock-puppet accounts. Reddit’s rules prohibit spam and vote manipulation, and communities are quick to expose it. We work through clearly identified accounts that you own.\"}}, {\"@type\": \"Question\", \"name\": \"Is marketing on Reddit allowed?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes, when it’s transparent and follows the rules. Brands can take part in discussions, run Reddit Ads and host their own communities. Each subreddit sets its own rules on self-promotion, so we check them before posting anything.\"}}, {\"@type\": \"Question\", \"name\": \"How long does Reddit marketing take to show results?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You can see early signals, such as useful conversations, mentions and referral visits, within the first month or two. Meaningful results usually build over three months or more, as your brand account earns trust and threads keep ranking in search.\"}}, {\"@type\": \"Question\", \"name\": \"Will Reddit marketing help my brand show up in ChatGPT and Google AI Overviews?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It can help. AI assistants and Google’s AI features often draw on public Reddit discussions, so positive, accurate mentions in the right threads support your visibility. No one can guarantee what an AI tool will say, so we track and report it honestly.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer Reddit marketing services in Bengaluru?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with startups and businesses in Bengaluru (Bangalore), including SaaS, fintech, D2C and local service brands, and we can meet in person where needed.\"}}, {\"@type\": \"Question\", \"name\": \"Do you work with brands across India?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We work with brands all over India and internationally. Reddit work is done remotely, with regular check-ins and monthly reporting.\"}}, {\"@type\": \"Question\", \"name\": \"Can you run Reddit Ads for us?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We plan, write and manage Reddit Ads campaigns targeted by community and interest, and combine them with organic participation where that works better together.\"}}, {\"@type\": \"Question\", \"name\": \"Can you create and moderate a branded subreddit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We can set up your own community, write its rules, and moderate it so customers have a trusted place to ask questions and share experiences.\"}}, {\"@type\": \"Question\", \"name\": \"What happens if someone posts something negative about my brand?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"We spot it quickly through monitoring and help you respond calmly, factually and openly from your brand account. Deleting or burying criticism never works on Reddit, but a good public response often earns respect.\"}}, {\"@type\": \"Question\", \"name\": \"Who owns the Reddit accounts?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You do. Brand and team accounts are created for and owned by your business, so everything you build stays with you.\"}}, {\"@type\": \"Question\", \"name\": \"How much do Reddit marketing services cost?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on how many communities we cover, how often we post, and whether you need Reddit Ads or a branded subreddit. We recommend a scope after the free audit, so you only pay for what will actually help.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Reddit Marketing Services\", \"item\": \"https://effix.co.in/services/reddit-marketing\"}]}]}";
+const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/reddit-marketing#service\", \"name\": \"Reddit Marketing Services\", \"serviceType\": \"Reddit marketing, community engagement and Reddit Ads management\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"City\", \"name\": \"Bengaluru\", \"alternateName\": \"Bangalore\", \"containedInPlace\": {\"@type\": \"State\", \"name\": \"Karnataka\"}}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"Reddit marketing services for brands across India and Bengaluru: Reddit audit and social listening, subreddit research, helpful disclosed engagement, AMAs, branded subreddits, Reddit Ads, reputation monitoring and AI search visibility.\", \"image\": \"https://effix.co.in/images/services/reddit-marketing-hero.jpg\", \"url\": \"https://effix.co.in/services/reddit-marketing\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What are Reddit marketing services?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Reddit marketing services help a brand build visibility and trust on Reddit: researching the communities your customers use, joining relevant threads with genuinely helpful answers, publishing community-native posts, running AMAs and Reddit Ads, and monitoring what people say about your brand.\"}}, {\"@type\": \"Question\", \"name\": \"Do you use fake accounts or buy upvotes?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. We never use bots, bought or aged accounts, vote manipulation or undisclosed sock-puppet accounts. Reddit’s rules prohibit spam and vote manipulation, and communities are quick to expose it. We work through clearly identified accounts that you own.\"}}, {\"@type\": \"Question\", \"name\": \"Is marketing on Reddit allowed?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes, when it’s transparent and follows the rules. Brands can take part in discussions, run Reddit Ads and host their own communities. Each subreddit sets its own rules on self-promotion, so we check them before posting anything.\"}}, {\"@type\": \"Question\", \"name\": \"How long does Reddit marketing take to show results?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You can see early signals, such as useful conversations, mentions and referral visits, within the first month or two. Meaningful results usually build over three months or more, as your brand account earns trust and threads keep ranking in search.\"}}, {\"@type\": \"Question\", \"name\": \"Will Reddit marketing help my brand show up in ChatGPT and Google AI Overviews?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It can help. AI assistants and Google’s AI features often draw on public Reddit discussions, so positive, accurate mentions in the right threads support your visibility. No one can guarantee what an AI tool will say, so we track and report it honestly.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer Reddit marketing services in Bengaluru?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with startups and businesses in Bengaluru (Bangalore), including SaaS, fintech, D2C and local service brands, and we can meet in person where needed.\"}}, {\"@type\": \"Question\", \"name\": \"Do you work with brands across India?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We work with brands all over India and internationally. Reddit work is done remotely, with regular check-ins and monthly reporting.\"}}, {\"@type\": \"Question\", \"name\": \"Can you run Reddit Ads for us?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We plan, write and manage Reddit Ads campaigns targeted by community and interest, and combine them with organic participation where that works better together.\"}}, {\"@type\": \"Question\", \"name\": \"Can you create and moderate a branded subreddit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We can set up your own community, write its rules, and moderate it so customers have a trusted place to ask questions and share experiences.\"}}, {\"@type\": \"Question\", \"name\": \"What happens if someone posts something negative about my brand?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"We spot it quickly through monitoring and help you respond calmly, factually and openly from your brand account. Deleting or burying criticism never works on Reddit, but a good public response often earns respect.\"}}, {\"@type\": \"Question\", \"name\": \"Who owns the Reddit accounts?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You do. Brand and team accounts are created for and owned by your business, so everything you build stays with you.\"}}, {\"@type\": \"Question\", \"name\": \"How much do Reddit marketing services cost?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on how many communities we cover, how often we post, and whether you need Reddit Ads or a branded subreddit. We recommend a scope after an initial review of your brand on Reddit, so you only pay for what will actually help.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Reddit Marketing Services\", \"item\": \"https://effix.co.in/services/reddit-marketing\"}]}]}";
 
 export default function Page() {
   return (
@@ -96,7 +96,7 @@ export default function Page() {
               {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best dentist in Indiranagar?” “Is this brand legit?” EFFIX Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
             </p>
             <div className="gx-hero-ctas">
-              <a href="#contact" className="gx-btn gx-btn-dark">{"Get a free Reddit audit"}</a>
+              <a href="#contact" className="gx-btn gx-btn-dark">{"Book a call"}</a>
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
             </div>
             <p className="gx-hero-trust">{"No bots · No bought upvotes · No undisclosed brand accounts"}</p>
@@ -104,16 +104,25 @@ export default function Page() {
 
           {/* Cinematic hero banner */}
           <div className="gx-wrap-wide">
-            <div className="rm-banner" id="rmBanner">
-              <picture>
-                <source media="(max-width: 640px)" srcSet="/images/services/reddit-marketing-hero-mobile.jpg" />
-                <img className="rm-banner-img" id="rmBannerImg" src="/images/services/reddit-marketing-hero.jpg" width={1774} height={887} alt="Reddit marketing services: glowing Reddit app icon surrounded by comment, analytics, growth and community icons" fetchPriority="high" decoding="async" />
-              </picture>
-              <div className="rm-banner-shade" aria-hidden="true"></div>
-              <div className="rm-banner-copy">
-                <span className="gx-media-label">{"Why Reddit"}</span>
-                <p className="rm-banner-title">{"Where buyers ask,"}<br /><em>{"compare and decide."}</em></p>
-                <a href="#why" className="gx-media-btn">{"See how it works"}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a>
+            <div className="rm-banner2" id="rmBanner">
+              <div className="rm-b2-copy">
+                <span className="rm-b2-kicker">{"Reddit marketing"}</span>
+                <p className="rm-b2-title"><span className="rm-b2-light">{"Join the conversation."}</span><br /><strong>{"EARN THE TRUST."}</strong></p>
+                <p className="rm-b2-sub"><b>{"Where buyers ask, compare and decide."}</b>{" We help your brand show up with useful, transparent answers in the communities that matter."}</p>
+                <a href="#why" className="rm-b2-btn">{"See how it works"}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a>
+              </div>
+              <div className="rm-b2-scene" aria-hidden="true">
+                <span className="rm-cloud rm-cloud-1"><i></i><i></i><i></i></span>
+                <span className="rm-cloud rm-cloud-2"><i></i><i></i><i></i></span>
+                <span className="rm-cloud rm-cloud-3"><i></i><i></i><i></i></span>
+                <div className="rm-badge">
+                  <svg viewBox="0 0 64 64" className="rm-badge-ico"><path d="M14 16h36a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6H30l-10 8v-8h-6a6 6 0 0 1-6-6V22a6 6 0 0 1 6-6z" fill="#fff"></path><path d="M32 23l8 9h-5v8h-6v-8h-5z" fill="#ff4500"></path></svg>
+                </div>
+                <span className="rm-badge-shadow"></span>
+                <span className="rm-chip rm-chip-a"><b>{"▲"}</b>{" Top comment"}</span>
+                <span className="rm-chip rm-chip-b">{"💬 Helpful answer"}</span>
+                <span className="rm-sphere"></span>
+                <span className="rm-cone"></span>
               </div>
             </div>
           </div>
@@ -159,7 +168,7 @@ export default function Page() {
                 <li>{"Reddit shapes how we show up in "}<b>{"AI answers"}</b>{", but we don’t know how to get mentioned in "}<b>{"ChatGPT or Google’s AI results"}</b>{"."}</li>
                 <li>{"We don’t know how to "}<b>{"speak Reddit’s language"}</b>{" without sounding like an ad, or getting banned."}</li>
               </ul>
-              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Get a free Reddit audit"}</a>
+              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Book a call"}</a>
             </div>
             <div className="rm-card rm-card-pain" aria-hidden="true">
               <div className="rm-pain-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>{"your brand"}</span><span className="rm-pain-tag">{"Reddit"}</span></div>
@@ -190,7 +199,7 @@ export default function Page() {
                 <li>{"We create Reddit content that’s "}<b>{"useful enough to be referenced"}</b>{" by Google and AI tools."}</li>
                 <li>{"We handle Reddit "}<b>{"end to end"}</b>{": research → content → posting → engagement → monitoring → reporting. You’re updated every month."}</li>
               </ul>
-              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Get a free Reddit audit"}</a>
+              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Book a call"}</a>
             </div>
             <div className="rm-card rm-card-sys" aria-hidden="true">
               <p className="rm-sys-title">{"The system we use to fix them"}</p>
@@ -263,7 +272,7 @@ export default function Page() {
                 <li>{"Read real experiences and reviews"}</li>
                 <li>{"Ask buying questions and get honest answers"}</li>
               </ul>
-              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Get a free Reddit audit"}</a>
+              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Book a call"}</a>
             </div>
             <div className="rm-card rm-card-why" aria-hidden="true">
               <p className="rm-why-title">{"Why Reddit?"}</p>
@@ -358,7 +367,7 @@ export default function Page() {
                 <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={12} aria-valuenow={0} aria-label="Reddit readiness" id="gxMeter"><span id="gxMeterFill"></span></div>
                 <div className="gx-meter-scale" aria-hidden="true"><span>{"Starting out"}</span><span>{"Getting there"}</span><span>{"Ready"}</span></div>
                 <p className="gx-score-msg" id="gxScoreMsg">{"Start ticking to see how ready your brand is."}</p>
-                <a href="#contact" className="gx-btn gx-btn-dark gx-btn-block">{"Get a free Reddit audit"}</a>
+                <a href="#contact" className="gx-btn gx-btn-dark gx-btn-block">{"Book a call"}</a>
                 <p className="gx-score-foot">{"A quick self-check, not a performance score."}</p>
               </aside>
             </div>
@@ -372,17 +381,44 @@ export default function Page() {
               <span className="gx-label">{"Our process"}</span>
               <h2 className="gx-h2">{"How our Reddit marketing "}<em>{"works"}</em></h2>
             </div>
-            <div className="gx-steps-wrap" id="gxStepsWrap">
-            <div className="gx-steps-track" aria-hidden="true"><span className="gx-steps-fill" id="gxStepsFill"></span><span className="gx-steps-head" id="gxStepsHead"></span></div>
-            <ol className="gx-steps">
-              <li><span className="gx-step-n">{"1"}</span><h3 className="gx-h3">{"Discovery"}</h3><p className="gx-p-sm">{"Your goals, audience, products and what you can and can’t say publicly."}</p></li>
-              <li><span className="gx-step-n">{"2"}</span><h3 className="gx-h3">{"Reddit audit"}</h3><p className="gx-p-sm">{"Mentions, competitors, sentiment, and the threads that rank or get cited."}</p></li>
-              <li><span className="gx-step-n">{"3"}</span><h3 className="gx-h3">{"Strategy"}</h3><p className="gx-p-sm">{"Target communities, topics, account setup and a posting rhythm you approve."}</p></li>
-              <li><span className="gx-step-n">{"4"}</span><h3 className="gx-h3">{"Engage"}</h3><p className="gx-p-sm">{"Helpful comments and native posts from disclosed accounts, within each community’s rules."}</p></li>
-              <li><span className="gx-step-n">{"5"}</span><h3 className="gx-h3">{"Amplify"}</h3><p className="gx-p-sm">{"AMAs, branded community and Reddit Ads where they add value."}</p></li>
-              <li><span className="gx-step-n">{"6"}</span><h3 className="gx-h3">{"Measure"}</h3><p className="gx-p-sm">{"Monthly report on mentions, sentiment, traffic and AI citations. Then we refine."}</p></li>
+            <ol className="rm-steps" id="rmSteps">
+              <li className="rm-step">
+                <div className="rm-step-top"><span className="rm-step-n">{"01"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path></svg></span></div>
+                <h3 className="rm-step-t">{"Discovery"}</h3>
+                <p className="rm-step-d">{"Your goals, audience, products, and what you can and can’t say publicly."}</p>
+                <span className="rm-step-bar" aria-hidden="true"></span>
+              </li>
+              <li className="rm-step">
+                <div className="rm-step-top"><span className="rm-step-n">{"02"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5h6M9 3h6v4H9z"></path><path d="M7 5H5v16h14V5h-2"></path><path d="M9 13l2 2 4-4"></path></svg></span></div>
+                <h3 className="rm-step-t">{"Reddit audit"}</h3>
+                <p className="rm-step-d">{"Mentions, competitors, sentiment, and the threads that rank or get cited."}</p>
+                <span className="rm-step-bar" aria-hidden="true"></span>
+              </li>
+              <li className="rm-step">
+                <div className="rm-step-top"><span className="rm-step-n">{"03"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19V5"></path><path d="M4 6h11l-2 3 2 3H4"></path></svg></span></div>
+                <h3 className="rm-step-t">{"Strategy"}</h3>
+                <p className="rm-step-d">{"Target communities, topics, account setup and a posting rhythm you approve."}</p>
+                <span className="rm-step-bar" aria-hidden="true"></span>
+              </li>
+              <li className="rm-step">
+                <div className="rm-step-top"><span className="rm-step-n">{"04"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M5 6h14v9H10l-4 3v-3H5z"></path></svg></span></div>
+                <h3 className="rm-step-t">{"Engage"}</h3>
+                <p className="rm-step-d">{"Helpful comments and native posts from disclosed accounts, within each community’s rules."}</p>
+                <span className="rm-step-bar" aria-hidden="true"></span>
+              </li>
+              <li className="rm-step">
+                <div className="rm-step-top"><span className="rm-step-n">{"05"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M12 4l7 8h-4v8H9v-8H5z"></path></svg></span></div>
+                <h3 className="rm-step-t">{"Amplify"}</h3>
+                <p className="rm-step-d">{"AMAs, a branded community and Reddit Ads where they add value."}</p>
+                <span className="rm-step-bar" aria-hidden="true"></span>
+              </li>
+              <li className="rm-step">
+                <div className="rm-step-top"><span className="rm-step-n">{"06"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg></span></div>
+                <h3 className="rm-step-t">{"Measure"}</h3>
+                <p className="rm-step-d">{"A monthly report on mentions, sentiment, traffic and AI citations. Then we refine."}</p>
+                <span className="rm-step-bar" aria-hidden="true"></span>
+              </li>
             </ol>
-            </div>
           </div>
         </section>
 
@@ -588,7 +624,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"It depends on how many communities we cover, how often we post, and whether you need Reddit Ads or a branded subreddit. We recommend a scope after the free audit, so you only pay for what will actually help."}</p>
+                  <p>{"It depends on how many communities we cover, how often we post, and whether you need Reddit Ads or a branded subreddit. We recommend a scope after an initial review of your brand on Reddit, so you only pay for what will actually help."}</p>
                 </div>
               </div>
             </div>
@@ -619,7 +655,7 @@ export default function Page() {
               <div className="cta-left-content">
                 {" "}
                 <div className="gx-glass-pill">
-                  {" FREE REDDIT AUDIT "}
+                  {" LET’S TALK REDDIT "}
                 </div>
                 {" "}
                 <h2 className="cta-title">
@@ -631,7 +667,7 @@ export default function Page() {
                 </h2>
                 {" "}
                 <p className="cta-desc">
-                  {" Tell us about your brand and goals. We’ll send a free Reddit audit: where you’re mentioned, which communities matter, what competitors are doing, and where to start. No obligation. "}
+                  {" Tell us about your brand and goals. We’ll get back to you within one business day to talk through where you’re mentioned, which communities matter, and where to start. "}
                 </p>
                 {" "}
                 <div className="gx-cta-facts">
@@ -745,7 +781,7 @@ export default function Page() {
                 </div>
                 {" "}
                 <button type="submit" className="btn-submit" id="submitBtn">
-                  {" Get My Free Reddit Audit → "}
+                  {" Book a Call → "}
                 </button>
                 {" "}
                 <div id="formFeedback" style={{ display: "none", fontSize: "13.5px", padding: "12px", borderRadius: "6px", textAlign: "center", marginTop: "8px" }}></div>
