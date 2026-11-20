@@ -49,19 +49,12 @@ export default function Page() {
         {" "}
         <div className="header-inner">
           {" "}
-          <a href="/#services" className="brand-logo-wrap" aria-label="EFFIX Labs Services">
-            {" "}
-            <span className="brand-mark">
-              {"E"}
-            </span>
-            {" "}
-            <span>
-              {"EFFIX "}
-              <span style={{ fontWeight: "400", color: "var(--text-subtle)" }}>
-                {"Labs"}
-              </span>
-            </span>
-            {" "}
+          <a href="/" className="brand-logo-wrap" aria-label="Effix Labs Home">
+            <svg className="effix-logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round"></path>
+              <path d="M12 7.5L7.5 12L12 16.5L16.5 12L12 7.5Z" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round"></path>
+            </svg>
+            <span className="brand-name">{"Effix Labs"}</span>
           </a>
           {" "}
           <a href="/#services" className="back-services-btn" aria-label="Back to Services Cards">

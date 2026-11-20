@@ -206,7 +206,7 @@
     .brand-name {
       font-family: var(--font-body);
       font-size: 19px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.12em;
       color: var(--token-ink);
     }
