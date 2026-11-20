@@ -39,6 +39,7 @@
     var fill = document.getElementById('gxMeterFill');
     var meter = document.getElementById('gxMeter');
     var msg = document.getElementById('gxScoreMsg');
+    var msg0 = msg ? msg.textContent : '';
     function update() {
       var n = 0; boxes.forEach(function (b) { if (b.checked) n++; });
       var total = boxes.length;
@@ -46,7 +47,7 @@
       if (fill) fill.style.width = (n / total * 100).toFixed(1) + '%';
       if (meter) meter.setAttribute('aria-valuenow', String(n));
       if (!msg) return;
-      if (n === 0) msg.textContent = 'Start ticking to see where your profile stands.';
+      if (n === 0) msg.textContent = msg0;
       else if (n < 6) msg.textContent = 'Needs work. Several basics are missing, and these are often the quickest wins.';
       else if (n < 11) msg.textContent = 'Getting there. A few gaps are likely costing you searches and clicks.';
       else if (n < total) msg.textContent = 'Strong foundation. The last details are where competitors pull ahead.';

@@ -430,7 +430,7 @@ export default function Page() {
               <div><span className="gx-why-n">{"01"}</span><h3 className="gx-h3">{"Evidence first"}</h3><p className="gx-p-sm">{"We start with an audit and show you what we found before recommending anything."}</p></div>
               <div><span className="gx-why-n">{"02"}</span><h3 className="gx-h3">{"Guideline-safe"}</h3><p className="gx-p-sm">{"No fake reviews, no keyword-stuffed names, no duplicate listings, nothing that risks suspension."}</p></div>
               <div><span className="gx-why-n">{"03"}</span><h3 className="gx-h3">{"Honest about results"}</h3><p className="gx-p-sm">{"Google controls rankings. We improve what you can control and report what we can measure."}</p></div>
-              <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a strong site, "}<a href="/services/ai-assisted-blog-seo">{"helpful content"}</a>{", "}<a href="/services/ai-search-visibility">{"AI search"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
+              <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a strong site, "}<a href="/services/content-writing">{"helpful content"}</a>{", "}<a href="/services/ai-search-visibility">{"AI search"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
               <div><span className="gx-why-n">{"05"}</span><h3 className="gx-h3">{"Plain-language reporting"}</h3><p className="gx-p-sm">{"You always know what was done, and why."}</p></div>
             </div>
             <p className="gx-disclaimer">{"EFFIX Labs is an independent agency, not affiliated with or endorsed by Google."}</p>
@@ -574,7 +574,7 @@ export default function Page() {
             <div className="gx-related">
               <a href="/services/reddit-marketing"><span>{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true">{"→"}</i></a>
               <a href="/services/ai-search-visibility"><span>{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/ai-assisted-blog-seo"><span>{"04"}</span>{"Content Writing"}<i aria-hidden="true">{"→"}</i></a>
+              <a href="/services/content-writing"><span>{"04"}</span>{"Content Writing"}<i aria-hidden="true">{"→"}</i></a>
               <a href="/services/website-design-development"><span>{"05"}</span>{"Website Design & Development"}<i aria-hidden="true">{"→"}</i></a>
             </div>
           </div>

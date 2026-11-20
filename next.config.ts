@@ -5,12 +5,13 @@ const dupes: Record<string, string> = {
   "google-business-profile-growth": "google-business-profile",
   "reddit-quora-visibility": "reddit-marketing",
   "reddit-quora-marketing": "reddit-marketing",
-  "ai-blog-seo": "ai-assisted-blog-seo",
+  "ai-blog-seo": "content-writing",
+  "ai-assisted-blog-seo": "content-writing",
 };
 const services = [
   "google-business-profile",
   "reddit-marketing",
-  "ai-assisted-blog-seo",
+  "content-writing",
   "ai-search-visibility",
   "website-design-development",
 ];

@@ -499,7 +499,7 @@ export default function Page() {
               <div><span className="gx-why-n">{"01"}</span><h3 className="gx-h3">{"Transparent by default"}</h3><p className="gx-p-sm">{"Disclosed brand accounts that you own. No bots, no bought votes, no sock puppets."}</p></div>
               <div><span className="gx-why-n">{"02"}</span><h3 className="gx-h3">{"Community-first"}</h3><p className="gx-p-sm">{"We read the rules and the room before we post anything."}</p></div>
               <div><span className="gx-why-n">{"03"}</span><h3 className="gx-h3">{"You stay in control"}</h3><p className="gx-p-sm">{"You approve the strategy and key messages before anything goes live."}</p></div>
-              <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Connected to search"}</h3><p className="gx-p-sm">{"Reddit work linked with "}<a href="/services/ai-search-visibility">{"SEO & AEO"}</a>{", "}<a href="/services/ai-assisted-blog-seo">{"content"}</a>{" and "}<a href="/services/google-business-profile">{"local visibility"}</a>{"."}</p></div>
+              <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Connected to search"}</h3><p className="gx-p-sm">{"Reddit work linked with "}<a href="/services/ai-search-visibility">{"SEO & AEO"}</a>{", "}<a href="/services/content-writing">{"content"}</a>{" and "}<a href="/services/google-business-profile">{"local visibility"}</a>{"."}</p></div>
               <div><span className="gx-why-n">{"05"}</span><h3 className="gx-h3">{"Honest reporting"}</h3><p className="gx-p-sm">{"We report what we can measure, and say so when we can’t."}</p></div>
             </div>
             <p className="gx-disclaimer">{"EFFIX Labs is an independent agency, not affiliated with or endorsed by Reddit, Inc."}</p>
@@ -656,7 +656,7 @@ export default function Page() {
             <div className="gx-related">
               <a href="/services/google-business-profile"><span>{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true">{"→"}</i></a>
               <a href="/services/ai-search-visibility"><span>{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/ai-assisted-blog-seo"><span>{"04"}</span>{"Content Writing"}<i aria-hidden="true">{"→"}</i></a>
+              <a href="/services/content-writing"><span>{"04"}</span>{"Content Writing"}<i aria-hidden="true">{"→"}</i></a>
               <a href="/services/website-design-development"><span>{"05"}</span>{"Website Design & Development"}<i aria-hidden="true">{"→"}</i></a>
             </div>
           </div>

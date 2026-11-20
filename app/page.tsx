@@ -553,7 +553,7 @@ export default function Page() {
                   </a>
                   {" "}
                   {" "}
-                  <a href="/services/ai-assisted-blog-seo" className="service-artwork-card" data-index="3" data-service-id="blog-seo" aria-label="Content Writing">
+                  <a href="/services/content-writing" className="service-artwork-card" data-index="3" data-service-id="blog-seo" aria-label="Content Writing">
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
@@ -2114,7 +2114,7 @@ export default function Page() {
                 </li>
                 {" "}
                 <li>
-                  <a href="/services/ai-assisted-blog-seo">
+                  <a href="/services/content-writing">
                     {"Content Writing"}
                   </a>
                 </li>

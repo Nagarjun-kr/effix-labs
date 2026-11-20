@@ -130,7 +130,7 @@
           category: 'Editorial Information Gain',
           color: '#FF5500',
           glow: 'rgba(255, 85, 0, 0.45)',
-          url: '/services/ai-assisted-blog-seo'
+          url: '/services/content-writing'
         },
         {
           id: 'web-dev',
