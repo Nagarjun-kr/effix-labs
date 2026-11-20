@@ -96,7 +96,6 @@ export default function Page() {
               {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best dentist in Indiranagar?” “Is this brand legit?” EFFIX Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
             </p>
             <div className="gx-hero-ctas">
-              <a href="#contact" className="gx-btn gx-btn-dark">{"Book a call"}</a>
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
             </div>
             <p className="gx-hero-trust">{"No bots · No bought upvotes · No undisclosed brand accounts"}</p>
@@ -115,8 +114,9 @@ export default function Page() {
                 <span className="rm-cloud rm-cloud-1"><i></i><i></i><i></i></span>
                 <span className="rm-cloud rm-cloud-2"><i></i><i></i><i></i></span>
                 <span className="rm-cloud rm-cloud-3"><i></i><i></i><i></i></span>
-                <div className="rm-badge">
-                  <svg viewBox="0 0 64 64" className="rm-badge-ico"><path d="M14 16h36a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6H30l-10 8v-8h-6a6 6 0 0 1-6-6V22a6 6 0 0 1 6-6z" fill="#fff"></path><path d="M32 23l8 9h-5v8h-6v-8h-5z" fill="#ff4500"></path></svg>
+                <div className="rm-badge" role="img" aria-label="r/ subreddit mark with an upvote">
+                  <span className="rm-r">{"r/"}</span>
+                  <span className="rm-upvote"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l7.5 8.5H15V20H9v-7.5H4.5z" fill="#ff4500"></path></svg></span>
                 </div>
                 <span className="rm-badge-shadow"></span>
                 <span className="rm-chip rm-chip-a"><b>{"▲"}</b>{" Top comment"}</span>
@@ -168,7 +168,6 @@ export default function Page() {
                 <li>{"Reddit shapes how we show up in "}<b>{"AI answers"}</b>{", but we don’t know how to get mentioned in "}<b>{"ChatGPT or Google’s AI results"}</b>{"."}</li>
                 <li>{"We don’t know how to "}<b>{"speak Reddit’s language"}</b>{" without sounding like an ad, or getting banned."}</li>
               </ul>
-              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Book a call"}</a>
             </div>
             <div className="rm-card rm-card-pain" aria-hidden="true">
               <div className="rm-pain-search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>{"your brand"}</span><span className="rm-pain-tag">{"Reddit"}</span></div>
@@ -199,7 +198,6 @@ export default function Page() {
                 <li>{"We create Reddit content that’s "}<b>{"useful enough to be referenced"}</b>{" by Google and AI tools."}</li>
                 <li>{"We handle Reddit "}<b>{"end to end"}</b>{": research → content → posting → engagement → monitoring → reporting. You’re updated every month."}</li>
               </ul>
-              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Book a call"}</a>
             </div>
             <div className="rm-card rm-card-sys" aria-hidden="true">
               <p className="rm-sys-title">{"The system we use to fix them"}</p>
@@ -272,7 +270,6 @@ export default function Page() {
                 <li>{"Read real experiences and reviews"}</li>
                 <li>{"Ask buying questions and get honest answers"}</li>
               </ul>
-              <a href="#contact" className="gx-btn gx-btn-dark rm-cta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>{"Book a call"}</a>
             </div>
             <div className="rm-card rm-card-why" aria-hidden="true">
               <p className="rm-why-title">{"Why Reddit?"}</p>
@@ -367,7 +364,6 @@ export default function Page() {
                 <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={12} aria-valuenow={0} aria-label="Reddit readiness" id="gxMeter"><span id="gxMeterFill"></span></div>
                 <div className="gx-meter-scale" aria-hidden="true"><span>{"Starting out"}</span><span>{"Getting there"}</span><span>{"Ready"}</span></div>
                 <p className="gx-score-msg" id="gxScoreMsg">{"Start ticking to see how ready your brand is."}</p>
-                <a href="#contact" className="gx-btn gx-btn-dark gx-btn-block">{"Book a call"}</a>
                 <p className="gx-score-foot">{"A quick self-check, not a performance score."}</p>
               </aside>
             </div>
@@ -781,7 +777,7 @@ export default function Page() {
                 </div>
                 {" "}
                 <button type="submit" className="btn-submit" id="submitBtn">
-                  {" Book a Call → "}
+                  {" Send enquiry → "}
                 </button>
                 {" "}
                 <div id="formFeedback" style={{ display: "none", fontSize: "13.5px", padding: "12px", borderRadius: "6px", textAlign: "center", marginTop: "8px" }}></div>

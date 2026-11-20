@@ -96,7 +96,6 @@ export default function Page() {
               {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. EFFIX Labs helps businesses in Bengaluru and across India make their Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
             </p>
             <div className="gx-hero-ctas">
-              <a href="#contact" className="gx-btn gx-btn-dark">{"Book a call"}</a>
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
             </div>
             <p className="gx-hero-trust">{"No lock-in · No fake reviews · No ranking promises we can’t keep"}</p>
@@ -323,7 +322,6 @@ export default function Page() {
                 <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={15} aria-valuenow={0} aria-label="Profile completeness" id="gxMeter"><span id="gxMeterFill"></span></div>
                 <div className="gx-meter-scale" aria-hidden="true"><span>{"Needs work"}</span><span>{"Getting there"}</span><span>{"Strong"}</span></div>
                 <p className="gx-score-msg" id="gxScoreMsg">{"Start ticking to see where your profile stands."}</p>
-                <a href="#contact" className="gx-btn gx-btn-dark gx-btn-block">{"Book a call"}</a>
                 <p className="gx-score-foot">{"This is a quick self-check, not a ranking score."}</p>
               </aside>
             </div>
@@ -726,7 +724,7 @@ export default function Page() {
                 </div>
                 {" "}
                 <button type="submit" className="btn-submit" id="submitBtn">
-                  {" Discuss Your Business Profile → "}
+                  {" Send enquiry → "}
                 </button>
                 {" "}
                 <div id="formFeedback" style={{ display: "none", fontSize: "13.5px", padding: "12px", borderRadius: "6px", textAlign: "center", marginTop: "8px" }}></div>
