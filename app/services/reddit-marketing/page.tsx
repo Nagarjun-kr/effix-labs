@@ -114,8 +114,8 @@ export default function Page() {
                 <span className="rm-cloud rm-cloud-1"><i></i><i></i><i></i></span>
                 <span className="rm-cloud rm-cloud-2"><i></i><i></i><i></i></span>
                 <span className="rm-cloud rm-cloud-3"><i></i><i></i><i></i></span>
-                <div className="rm-badge" role="img" aria-label="r/ subreddit mark with an upvote">
-                  <span className="rm-r">{"r/"}</span>
+                <div className="rm-badge" role="img" aria-label="Reddit logo with an upvote">
+                  <img className="rm-logo" src="/images/services/reddit-logo.png" width={450} height={450} alt="" decoding="async" />
                   <span className="rm-upvote"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l7.5 8.5H15V20H9v-7.5H4.5z" fill="#ff4500"></path></svg></span>
                 </div>
                 <span className="rm-badge-shadow"></span>
@@ -252,7 +252,7 @@ export default function Page() {
                 <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Trust signal: "}<strong>{"strong"}</strong></div>
               </article>
             </div>
-            <p className="gx-source">{"Reddit’s rules require authentic participation and prohibit spam and vote manipulation, and every community sets its own rules. Our work is built around both. See "}<a href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit’s rules"}</a>{"."}</p>
+            <p className="gx-source">{"Reddit’s rules require authentic participation and prohibit spam and vote manipulation, and every community sets its own rules. Our work is built around both. See "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{", Reddit’s guidance on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"spam"}</a>{" and on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"vote manipulation"}</a>{"."}</p>
           </div>
         </section>
 
@@ -309,7 +309,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
-            <p className="gx-source">{"Risk levels are EFFIX Labs’ general guidance, not Reddit data."}</p>
+            <p className="gx-source">{"Risk levels are EFFIX Labs’ general guidance, not Reddit data. Official rules: "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{" · "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"Spam"}</a>{" · "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"Vote manipulation"}</a>{"."}</p>
           </div>
         </section>
 
@@ -324,11 +324,11 @@ export default function Page() {
               <li><span className="gx-svc-n">{"01"}</span><h3 className="gx-svc-t">{"Reddit audit & social listening"}</h3><p>{"Where your brand, competitors and category are already discussed, what people say, and which threads matter most."}</p></li>
               <li><span className="gx-svc-n">{"02"}</span><h3 className="gx-svc-t">{"Subreddit & keyword research"}</h3><p>{"The communities your buyers actually use, their rules and culture, and the questions they ask again and again."}</p></li>
               <li><span className="gx-svc-n">{"03"}</span><h3 className="gx-svc-t">{"Community content strategy"}</h3><p>{"A plan for each community: what to share, how often, and in which voice, so every post fits."}</p></li>
-              <li><span className="gx-svc-n">{"04"}</span><h3 className="gx-svc-t">{"Helpful comments & native posts"}</h3><p>{"Genuinely useful answers and original posts from clearly identified brand or team accounts that you own."}</p></li>
-              <li><span className="gx-svc-n">{"05"}</span><h3 className="gx-svc-t">{"AMAs & launches"}</h3><p>{"Ask-Me-Anything sessions and launch posts planned with moderators, where communities allow them."}</p></li>
-              <li><span className="gx-svc-n">{"06"}</span><h3 className="gx-svc-t">{"Branded subreddit setup & moderation"}</h3><p>{"Your own community, set up and moderated so customers have a place to ask, share and help each other."}</p></li>
-              <li><span className="gx-svc-n">{"07"}</span><h3 className="gx-svc-t">{"Reddit Ads management"}</h3><p>{"Targeted campaigns by community and interest, with creative written for Reddit, not recycled from other platforms."}</p></li>
-              <li><span className="gx-svc-n">{"08"}</span><h3 className="gx-svc-t">{"Reputation & sentiment monitoring"}</h3><p>{"Alerts on brand mentions and fast, calm responses when a thread turns critical."}</p></li>
+              <li><span className="gx-svc-n">{"04"}</span><h3 className="gx-svc-t">{"Helpful comments & native posts"}</h3><p>{"Genuinely useful answers and original posts from clearly identified brand or team accounts that you own, always within "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit’s rules"}</a>{"."}</p></li>
+              <li><span className="gx-svc-n">{"05"}</span><h3 className="gx-svc-t">{"AMAs & launches"}</h3><p>{"Ask-Me-Anything sessions and launch posts planned with moderators, where communities allow them. See the "}<a className="rm-ext" href="https://www.reddit.com/r/IAmA/wiki/index/" target="_blank" rel="noopener noreferrer">{"r/IAmA guidelines"}</a>{"."}</p></li>
+              <li><span className="gx-svc-n">{"06"}</span><h3 className="gx-svc-t">{"Branded subreddit setup & moderation"}</h3><p>{"Your own community, set up and moderated so customers have a place to ask, share and help each other, following Reddit’s "}<a className="rm-ext" href="https://redditinc.com/policies/moderator-code-of-conduct" target="_blank" rel="noopener noreferrer">{"Moderator Code of Conduct"}</a>{"."}</p></li>
+              <li><span className="gx-svc-n">{"07"}</span><h3 className="gx-svc-t">{"Reddit Ads management"}</h3><p>{"Targeted campaigns by community and interest, with creative written for Reddit, not recycled from other platforms. Built in "}<a className="rm-ext" href="https://ads.reddit.com/" target="_blank" rel="noopener noreferrer">{"Reddit Ads Manager"}</a>{" following the "}<a className="rm-ext" href="https://business.reddithelp.com/" target="_blank" rel="noopener noreferrer">{"Reddit Ads Help Center"}</a>{"."}</p></li>
+              <li><span className="gx-svc-n">{"08"}</span><h3 className="gx-svc-t">{"Reputation & sentiment monitoring"}</h3><p>{"Alerts on brand mentions and fast, calm responses when a thread turns critical, using tools such as "}<a className="rm-ext" href="https://www.business.reddit.com/pro" target="_blank" rel="noopener noreferrer">{"Reddit Pro"}</a>{"."}</p></li>
               <li><span className="gx-svc-n">{"09"}</span><h3 className="gx-svc-t">{"Reddit SEO & AI search visibility"}</h3><p>{"Focus on threads that rank in Google and appear in AI answers, linked to your wider "}<a href="/services/ai-search-visibility">{"SEO & AEO"}</a>{" work."}</p></li>
               <li><span className="gx-svc-n">{"10"}</span><h3 className="gx-svc-t">{"Monthly reporting"}</h3><p>{"Mentions, sentiment, referral traffic and AI citations, explained in plain language. Not just upvotes."}</p></li>
             </ol>
@@ -433,7 +433,7 @@ export default function Page() {
                   <tr><th scope="row">{"Votes"}</th><td data-label="Shortcut tactics">{"Bought upvotes, vote rings"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Earned through useful contributions only"}</td></tr>
                   <tr><th scope="row">{"Content"}</th><td data-label="Shortcut tactics">{"Ads disguised as advice"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Genuinely helpful answers and posts"}</td></tr>
                   <tr><th scope="row">{"Rules"}</th><td data-label="Shortcut tactics">{"Ignored until there’s a ban"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Checked for every community, every time"}</td></tr>
-                  <tr><th scope="row">{"Risk"}</th><td data-label="Shortcut tactics">{"Bans and public backlash"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Compliant with Reddit’s rules by design"}</td></tr>
+                  <tr><th scope="row">{"Risk"}</th><td data-label="Shortcut tactics">{"Bans and public backlash"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Compliant with "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit’s rules"}</a>{" by design"}</td></tr>
                   <tr><th scope="row">{"Approval"}</th><td data-label="Shortcut tactics">{"You rarely see what’s posted"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"You approve the strategy and key messages"}</td></tr>
                   <tr><th scope="row">{"Reporting"}</th><td data-label="Shortcut tactics">{"Upvotes and impressions"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Mentions, sentiment, traffic and AI citations"}</td></tr>
                 </tbody>
@@ -530,7 +530,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"No. We never use bots, bought or aged accounts, vote manipulation or undisclosed sock-puppet accounts. Reddit’s rules prohibit spam and vote manipulation, and communities are quick to expose it. We work through clearly identified accounts that you own."}</p>
+                  <p>{"No. We never use bots, bought or aged accounts, vote manipulation or undisclosed sock-puppet accounts. Reddit’s rules prohibit spam and vote manipulation, and communities are quick to expose it. We work through clearly identified accounts that you own."}{" See Reddit’s guidance on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"spam"}</a>{" and "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"vote manipulation"}</a>{"."}</p>
                 </div>
               </div>
               <div className="faq-item">
@@ -539,7 +539,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"Yes, when it’s transparent and follows the rules. Brands can take part in discussions, run Reddit Ads and host their own communities. Each subreddit sets its own rules on self-promotion, so we check them before posting anything."}</p>
+                  <p>{"Yes, when it’s transparent and follows the rules. Brands can take part in discussions, run Reddit Ads and host their own communities. Each subreddit sets its own rules on self-promotion, so we check them before posting anything."}{" Read the "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{" and Reddit’s own "}<a className="rm-ext" href="https://www.business.reddit.com/" target="_blank" rel="noopener noreferrer">{"Reddit for Business"}</a>{" guidance."}</p>
                 </div>
               </div>
               <div className="faq-item">
@@ -584,7 +584,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"Yes. We plan, write and manage Reddit Ads campaigns targeted by community and interest, and combine them with organic participation where that works better together."}</p>
+                  <p>{"Yes. We plan, write and manage Reddit Ads campaigns targeted by community and interest, and combine them with organic participation where that works better together."}{" Learn more at "}<a className="rm-ext" href="https://www.business.reddit.com/advertise" target="_blank" rel="noopener noreferrer">{"Advertise on Reddit"}</a>{" and the "}<a className="rm-ext" href="https://business.reddithelp.com/" target="_blank" rel="noopener noreferrer">{"Reddit Ads Help Center"}</a>{"."}</p>
                 </div>
               </div>
               <div className="faq-item">
@@ -593,7 +593,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"Yes. We can set up your own community, write its rules, and moderate it so customers have a trusted place to ask questions and share experiences."}</p>
+                  <p>{"Yes. We can set up your own community, write its rules, and moderate it so customers have a trusted place to ask questions and share experiences."}{" Moderation follows Reddit’s "}<a className="rm-ext" href="https://redditinc.com/policies/moderator-code-of-conduct" target="_blank" rel="noopener noreferrer">{"Moderator Code of Conduct"}</a>{"."}</p>
                 </div>
               </div>
               <div className="faq-item">
@@ -624,6 +624,28 @@ export default function Page() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ================= OFFICIAL REDDIT RESOURCES ================= */}
+        <section className="gx-section gx-tint" id="reddit-resources">
+          <div className="gx-wrap">
+            <div className="gx-head">
+              <span className="gx-label">{"From Reddit"}</span>
+              <h2 className="gx-h2">{"Official Reddit "}<em>{"resources"}</em></h2>
+              <p className="gx-lead">{"Everything we do follows Reddit’s own rules and guidance. Here are the official pages, straight from Reddit."}</p>
+            </div>
+            <div className="rm-res-grid">
+              <a className="rm-res" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer"><b>{"Reddit Rules"}</b><span>{"The sitewide rules every account and community follows."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer"><b>{"Spam (Reddit Help)"}</b><span>{"What Reddit counts as spam, and how to avoid it."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer"><b>{"Vote manipulation (Reddit Help)"}</b><span>{"Why multiple accounts, vote services and automation aren’t allowed."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://redditinc.com/policies/moderator-code-of-conduct" target="_blank" rel="noopener noreferrer"><b>{"Moderator Code of Conduct"}</b><span>{"Standards for anyone running a community, including branded ones."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://www.business.reddit.com/" target="_blank" rel="noopener noreferrer"><b>{"Reddit for Business"}</b><span>{"Reddit’s official hub for brands and marketers."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://www.business.reddit.com/pro" target="_blank" rel="noopener noreferrer"><b>{"Reddit Pro"}</b><span>{"Reddit’s free tools for business profiles and insights."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://business.reddithelp.com/" target="_blank" rel="noopener noreferrer"><b>{"Reddit Ads Help Center"}</b><span>{"Official help for creating and managing Reddit Ads."}</span><i aria-hidden="true">{"↗"}</i></a>
+              <a className="rm-res" href="https://www.reddit.com/r/IAmA/wiki/index/" target="_blank" rel="noopener noreferrer"><b>{"r/IAmA guidelines"}</b><span>{"How AMAs work in Reddit’s largest AMA community."}</span><i aria-hidden="true">{"↗"}</i></a>
+            </div>
+            <p className="gx-source">{"Links open Reddit’s official websites. EFFIX Labs is not affiliated with Reddit, Inc."}</p>
           </div>
         </section>
 
