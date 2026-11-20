@@ -212,42 +212,114 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= PROCESS — horizontal stepper ================= */}
+        {/* ================= PROCESS — interactive build studio ================= */}
         <section className="gx-section" id="process">
           <div className="gx-wrap">
-            <div className="gx-head gx-head-left">
-              <span className="gx-label wd-label">{"Our process"}</span>
-              <h2 className="gx-h2">{"How we design and "}<em>{"develop your website"}</em></h2>
+            <div className="wd-flow-head">
+              <div>
+                <span className="gx-label wd-label">{"Our process"}</span>
+                <h2 className="gx-h2">{"How we design and "}<em>{"develop your website"}</em></h2>
+              </div>
+              <p className="gx-p">{"Six clear stages, one team. You see progress at every step and approve before we move on."}</p>
             </div>
-            <ol className="wd-steps" id="wdSteps">
-              <li><span className="wd-st-dot">{"01"}</span><h3>{"Discover"}</h3><p>{"Goals, audience, competitors and the pages you need."}</p></li>
-              <li><span className="wd-st-dot">{"02"}</span><h3>{"Plan & wireframe"}</h3><p>{"Sitemap, page structure and SEO keywords for each page."}</p></li>
-              <li><span className="wd-st-dot">{"03"}</span><h3>{"Design"}</h3><p>{"Visual designs for desktop and mobile, refined with you."}</p></li>
-              <li><span className="wd-st-dot">{"04"}</span><h3>{"Develop"}</h3><p>{"Clean code, CMS setup, forms and integrations."}</p></li>
-              <li><span className="wd-st-dot">{"05"}</span><h3>{"Test & launch"}</h3><p>{"Speed, devices, browsers, SEO and security checked before go-live."}</p></li>
-              <li><span className="wd-st-dot">{"06"}</span><h3>{"Support & grow"}</h3><p>{"Training, maintenance and improvements based on real data."}</p></li>
-            </ol>
+            <div className="wd-flow" id="wdFlow">
+              <ol className="wd-flow-list">
+                <li className="is-on" tabIndex={0}><span className="wd-fl-n">{"01"}</span><div><h3>{"Discover"}</h3><p>{"Goals, audience, competitors and the pages you need."}</p></div><span className="wd-fl-bar" aria-hidden="true"></span></li>
+                <li tabIndex={0}><span className="wd-fl-n">{"02"}</span><div><h3>{"Plan & wireframe"}</h3><p>{"Sitemap, page structure and SEO keywords for each page."}</p></div><span className="wd-fl-bar" aria-hidden="true"></span></li>
+                <li tabIndex={0}><span className="wd-fl-n">{"03"}</span><div><h3>{"Design"}</h3><p>{"Visual designs for desktop and mobile, refined with you."}</p></div><span className="wd-fl-bar" aria-hidden="true"></span></li>
+                <li tabIndex={0}><span className="wd-fl-n">{"04"}</span><div><h3>{"Develop"}</h3><p>{"Clean code, CMS setup, forms and integrations."}</p></div><span className="wd-fl-bar" aria-hidden="true"></span></li>
+                <li tabIndex={0}><span className="wd-fl-n">{"05"}</span><div><h3>{"Test & launch"}</h3><p>{"Speed, devices, browsers, SEO and security checked before go-live."}</p></div><span className="wd-fl-bar" aria-hidden="true"></span></li>
+                <li tabIndex={0}><span className="wd-fl-n">{"06"}</span><div><h3>{"Support & grow"}</h3><p>{"Training, maintenance and improvements based on real data."}</p></div><span className="wd-fl-bar" aria-hidden="true"></span></li>
+              </ol>
+              <div className="wd-stage" aria-hidden="true">
+                <div className="wd-stage-bar"><i></i><i></i><i></i><span className="wd-stage-url">{"effixlabs / your-website"}</span><span className="wd-stage-step" id="wdStageStep">{"01 / 06"}</span></div>
+                <div className="wd-stage-body">
+                  <div className="wd-sc sc1 is-on">
+                    <div className="wd-note n-a"><b>{"Goals"}</b><i></i><i></i></div>
+                    <div className="wd-note n-b"><b>{"Audience"}</b><i></i><i></i></div>
+                    <div className="wd-note n-c"><b>{"Competitors"}</b><i></i><i></i></div>
+                    <div className="wd-target"><span></span><span></span><span></span></div>
+                  </div>
+                  <div className="wd-sc sc2">
+                    <div className="wd-map">
+                      <span className="wd-node root">{"Home"}</span>
+                      <div className="wd-map-row"><span className="wd-node">{"About"}</span><span className="wd-node">{"Services"}</span><span className="wd-node">{"Blog"}</span><span className="wd-node">{"Contact"}</span></div>
+                    </div>
+                  </div>
+                  <div className="wd-sc sc3">
+                    <div className="wd-swatches"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div className="wd-type"><b>{"Aa"}</b><span><i></i><i></i><i></i></span></div>
+                    <div className="wd-dcard"><i></i><b></b><em></em></div>
+                  </div>
+                  <div className="wd-sc sc4">
+                    <div className="wd-editor">
+                      <code><b className="k">{"export default"}</b>{" function Home() {"}</code>
+                      <code className="in1"><b className="k">{"return"}</b>{" ("}</code>
+                      <code className="in2"><b className="t">{"<Hero />"}</b></code>
+                      <code className="in2"><b className="t">{"<Services />"}</b></code>
+                      <code className="in2"><b className="t">{"<EnquiryForm />"}</b></code>
+                      <code className="in1">{");"}</code>
+                      <code>{"}"}</code>
+                    </div>
+                    <span className="wd-build">{"✓ Build passed"}</span>
+                  </div>
+                  <div className="wd-sc sc5">
+                    <ul className="wd-checks"><li>{"Page speed"}</li><li>{"Mobile & tablet"}</li><li>{"All browsers"}</li><li>{"SEO & metadata"}</li><li>{"Security & HTTPS"}</li></ul>
+                    <span className="wd-live"><i></i>{"Live"}</span>
+                  </div>
+                  <div className="wd-sc sc6">
+                    <div className="wd-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <span className="wd-toast t1">{"✓ Content updated"}</span>
+                    <span className="wd-toast t2">{"✓ Backup complete"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ================= PLATFORMS ================= */}
+        {/* ================= PLATFORMS — illustrated bento ================= */}
         <section className="gx-section gx-tint" id="platforms">
           <div className="gx-wrap">
-            <div className="gx-head gx-head-left">
-              <span className="gx-label wd-label">{"Platforms"}</span>
-              <h2 className="gx-h2">{"The right platform "}<em>{"for your goals"}</em></h2>
+            <div className="wd-flow-head">
+              <div>
+                <span className="gx-label wd-label">{"Platforms"}</span>
+                <h2 className="gx-h2">{"The right platform "}<em>{"for your goals"}</em></h2>
+              </div>
               <p className="gx-p">{"We recommend technology based on what you need to do, not what we prefer to sell."}</p>
             </div>
-            <div className="wd-platforms">
-              <div><b>{"WordPress"}</b><span>{"Content-rich business sites your team can edit easily."}</span></div>
-              <div><b>{"Shopify & WooCommerce"}</b><span>{"Online stores with payments, shipping and inventory."}</span></div>
-              <div><b>{"Webflow"}</b><span>{"Design-led marketing sites with visual editing."}</span></div>
-              <div><b>{"Next.js & React"}</b><span>{"Very fast custom sites and web apps, built "}<a className="rm-ext" href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer">{"search-friendly"}</a>{"."}</span></div>
+            <div className="wd-bento">
+              <article className="wd-pf pf-wp">
+                <div className="wd-pf-art" aria-hidden="true">
+                  <div className="wp-ed"><div className="wp-side"><i></i><i></i><i></i><i></i></div><div className="wp-page"><i className="h"></i><i></i><i></i><i className="img"></i><span className="wp-add">{"+"}</span></div></div>
+                </div>
+                <div className="wd-pf-txt"><span className="wd-pf-tag">{"Best for business sites"}</span><h3>{"WordPress"}</h3><p>{"Content-rich business sites your team can edit easily."}</p></div>
+              </article>
+              <article className="wd-pf pf-shop">
+                <div className="wd-pf-art" aria-hidden="true">
+                  <div className="sh-card"><i className="img"></i><i className="t"></i><i className="p"></i><span className="sh-btn">{"Add to cart"}</span></div>
+                  <span className="sh-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="20" r="1.4"></circle><circle cx="18" cy="20" r="1.4"></circle><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L22 7H6"></path></svg><b>{"1"}</b></span>
+                </div>
+                <div className="wd-pf-txt"><span className="wd-pf-tag">{"Best for online stores"}</span><h3>{"Shopify & WooCommerce"}</h3><p>{"Online stores with payments, shipping and inventory."}</p></div>
+              </article>
+              <article className="wd-pf pf-wf">
+                <div className="wd-pf-art" aria-hidden="true">
+                  <div className="wf-canvas"><i className="a"></i><div className="wf-sel"><i></i><i></i><i></i><i></i><span>{"Hero · Section"}</span></div><i className="b"></i></div>
+                  <svg className="wf-cursor" viewBox="0 0 24 24"><path d="M4 3l7 18 2.5-7.5L21 11z" fill="#0a1022" stroke="#fff" strokeWidth="1.5" strokeLinejoin="round"></path></svg>
+                </div>
+                <div className="wd-pf-txt"><span className="wd-pf-tag">{"Best for marketing sites"}</span><h3>{"Webflow"}</h3><p>{"Design-led marketing sites with visual editing."}</p></div>
+              </article>
+              <article className="wd-pf pf-next">
+                <div className="wd-pf-art" aria-hidden="true">
+                  <div className="nx-term"><code><b>{"$"}</b>{" npm run build"}</code><code className="ok">{"✓ Compiled successfully"}</code><code className="ok">{"✓ Pages pre-rendered"}</code><code><b>{"▲"}</b>{" Ready"}<span className="nx-caret"></span></code></div>
+                </div>
+                <div className="wd-pf-txt"><span className="wd-pf-tag">{"Best for speed & web apps"}</span><h3>{"Next.js & React"}</h3><p>{"Very fast custom sites and web apps, built "}<a className="rm-ext" href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer">{"search-friendly"}</a>{"."}</p></div>
+              </article>
             </div>
           </div>
         </section>
 
-        {/* ================= BENGALURU ================= */}
+{/* ================= BENGALURU ================= */}
         <section className="gx-section" id="bengaluru">
           <div className="gx-wrap gx-split">
             <div>
