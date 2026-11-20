@@ -152,7 +152,7 @@ export default function Page() {
                 {"Content writing services cover the planning, research, writing and editing of the words on your website and marketing channels: blog articles, web pages, product copy, guides and more, written so the right people find them and act on them."}
               </p>
               <p className="gx-p">{"Good content does three jobs at once. It answers a real question better than the other results. It shows search engines and AI tools that your business is a reliable source. And it moves the reader one step closer to choosing you. Most content does only the first job, if that. Ours is planned for all three."}</p>
-              <p className="gx-p">{"That’s why our content writing services combine "}<b>{"SEO content writing"}</b>{", "}<b>{"copywriting"}</b>{" and "}<b>{"editorial standards"}</b>{" in one team, so you don’t have to brief three different people to get one good page."}</p>
+              <p className="gx-p">{"That’s why our content writing services combine "}<b>{"SEO content writing"}</b>{", "}<b>{"copywriting"}</b>{" and "}<b>{"editorial standards"}</b>{" in one team, so you don’t have to brief three different people to get one good page. Everything follows Google’s "}<a className="rm-ext" href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">{"SEO Starter Guide"}</a>{"."}</p>
               <ul className="gx-chips" aria-label="What content writing covers">
                 <li>{"Keyword & intent research"}</li><li>{"Content briefs"}</li><li>{"SEO blog writing"}</li><li>{"Website copywriting"}</li><li>{"Editing & proofreading"}</li><li>{"Fact-checking"}</li><li>{"On-page SEO"}</li><li>{"Content refreshes"}</li>
               </ul>
@@ -169,7 +169,7 @@ export default function Page() {
               <p className="rm-split-sub">{"Does this sound like your website?"}</p>
               <ul className="rm-bullets">
                 <li>{"We publish blogs regularly, but they get "}<b>{"almost no traffic"}</b>{" from Google."}</li>
-                <li>{"Our content sounds "}<b>{"generic"}</b>{", like it could be from any company, or obviously written by AI."}</li>
+                <li>{"Our content sounds "}<b>{"generic"}</b>{", like it could be from any company, or obviously written by AI. (Google’s "}<a className="rm-ext" href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">{"spam policies"}</a>{" warn against mass-produced, low-value content.)"}</li>
                 <li>{"Writers don’t understand our "}<b>{"product or industry"}</b>{", so we end up rewriting everything ourselves."}</li>
                 <li>{"Our service pages get visits but "}<b>{"don’t convert"}</b>{", and we’re not showing up in "}<b>{"AI answers"}</b>{" either."}</li>
               </ul>
@@ -196,7 +196,7 @@ export default function Page() {
               <ul className="rm-bullets">
                 <li>{"We research "}<b>{"what people actually search for"}</b>{", and why, before a single word is written."}</li>
                 <li>{"Writers work from a "}<b>{"detailed content brief"}</b>{": keyword, search intent, outline, sources, and your brand voice."}</li>
-                <li>{"Your team’s "}<b>{"real expertise"}</b>{" goes into every piece through a short interview or notes, so content shows first-hand knowledge, not filler."}</li>
+                <li>{"Your team’s "}<b>{"real expertise"}</b>{" goes into every piece through a short interview or notes, so content shows first-hand knowledge, not filler: the experience and expertise Google’s "}<a className="rm-ext" href="https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf" target="_blank" rel="noopener noreferrer">{"quality rater guidelines"}</a>{" describe."}</li>
                 <li>{"Every draft is "}<b>{"edited, fact-checked and optimised"}</b>{" for search and AI answers, then refreshed as results come in."}</li>
               </ul>
             </div>
@@ -245,7 +245,7 @@ export default function Page() {
               <article className="cw-bento-card cw-bento-ai">
                 <span className="cw-bento-tag">{"AI answers"}</span>
                 <h3 className="cw-bento-t">{"AI tools quote clear sources"}</h3>
-                <p className="cw-bento-p">{"AI Overviews and assistants summarise pages that answer questions directly, with clean structure and real expertise."}</p>
+                <p className="cw-bento-p">{"AI Overviews and assistants summarise pages that answer questions directly, with clean structure and real expertise. See "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">{"AI features and your website"}</a>{"."}</p>
                 <div className="cw-ai" aria-hidden="true">
                   <span className="cw-ai-tag">{"✦ AI overview"}</span>
                   <span className="cw-ai-l"></span><span className="cw-ai-l s"></span>
@@ -308,7 +308,7 @@ export default function Page() {
               <li><span className="gx-svc-n">{"07"}</span><h3 className="gx-svc-t">{"Email newsletters"}</h3><p>{"Regular emails people actually open, with one clear message and one clear next step."}</p></li>
               <li><span className="gx-svc-n">{"08"}</span><h3 className="gx-svc-t">{"LinkedIn & social content"}</h3><p>{"Posts for founders and brands that share genuine insight, not engagement bait."}</p></li>
               <li><span className="gx-svc-n">{"09"}</span><h3 className="gx-svc-t">{"Content refresh & rewrites"}</h3><p>{"Updating and improving existing pages that have slipped in rankings, often the fastest win available."}</p></li>
-              <li><span className="gx-svc-n">{"10"}</span><h3 className="gx-svc-t">{"Editing, proofreading & on-page SEO"}</h3><p>{"Polishing drafts you already have: structure, clarity, titles, meta descriptions, headings and internal links."}</p></li>
+              <li><span className="gx-svc-n">{"10"}</span><h3 className="gx-svc-t">{"Editing, proofreading & on-page SEO"}</h3><p>{"Polishing drafts you already have: structure, clarity, headings and internal links, plus "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/title-link" target="_blank" rel="noopener noreferrer">{"titles"}</a>{" and "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer">{"meta descriptions"}</a>{" written the way Google displays them."}</p></li>
             </ol>
           </div>
         </section>
@@ -355,7 +355,7 @@ export default function Page() {
               <li className="rm-step">
                 <div className="rm-step-top"><span className="rm-step-n">{"06"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12a8 8 0 1 0 2.3-5.6"></path><path d="M4 4v4h4"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Publish, measure & refresh"}</h3>
-                <p className="rm-step-d">{"We track clicks and rankings, and refresh content as results and searches change."}</p>
+                <p className="rm-step-d">{"We track clicks and rankings in "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{", and refresh content as results and searches change."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
               </li>
             </ol>
@@ -418,7 +418,7 @@ export default function Page() {
               <h2 className="gx-h2">{"Why choose us as your content writing "}<em>{"agency"}</em></h2>
             </div>
             <div className="gx-why">
-              <div><span className="gx-why-n">{"01"}</span><h3 className="gx-h3">{"Written by people"}</h3><p className="gx-p-sm">{"Tools may help with research, but every piece is written, edited and fact-checked by humans."}</p></div>
+              <div><span className="gx-why-n">{"01"}</span><h3 className="gx-h3">{"Written by people"}</h3><p className="gx-p-sm">{"Tools may help with research, but every piece is written, edited and fact-checked by humans. Read "}<a className="rm-ext" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">{"Google on AI content"}</a>{"."}</p></div>
               <div><span className="gx-why-n">{"02"}</span><h3 className="gx-h3">{"SEO built in"}</h3><p className="gx-p-sm">{"Keyword research, intent and on-page SEO are part of the writing, not an afterthought."}</p></div>
               <div><span className="gx-why-n">{"03"}</span><h3 className="gx-h3">{"Real expertise"}</h3><p className="gx-p-sm">{"We capture what your team knows, so content shows genuine experience."}</p></div>
               <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Original & yours"}</h3><p className="gx-p-sm">{"Plagiarism-checked, original content. Once paid for, it belongs to you."}</p></div>
@@ -469,7 +469,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"Our writers may use tools to help with research, but every piece is written, edited and fact-checked by people. Google’s guidance focuses on whether content is helpful and reliable, not on how it is produced, and human expertise is what makes content genuinely useful."}</p>
+                  <p>{"Our writers may use tools to help with research, but every piece is written, edited and fact-checked by people. Google’s guidance focuses on whether content is helpful and reliable, not on how it is produced, and human expertise is what makes content genuinely useful."}{" See "}<a className="rm-ext" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">{"Google Search and AI-generated content"}</a>{"."}</p>
                 </div>
               </div>
               <div className="faq-item">
@@ -478,7 +478,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"Yes. Every piece is written from scratch for you and checked for plagiarism before delivery. We cite sources where we use facts, data or quotes."}</p>
+                  <p>{"Yes. Every piece is written from scratch for you and checked for plagiarism before delivery. We cite sources where we use facts, data or quotes."}{" Original content also keeps you clear of Google’s "}<a className="rm-ext" href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">{"spam policies"}</a>{"."}</p>
                 </div>
               </div>
               <div className="faq-item">
@@ -523,7 +523,7 @@ export default function Page() {
                   <span className="faq-icon-cross">{"+"}</span>
                 </button>
                 <div className="faq-answer-panel">
-                  <p>{"Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimised content is the foundation of organic growth."}</p>
+                  <p>{"Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimised content is the foundation of organic growth."}{" We measure progress in "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{"."}</p>
                 </div>
               </div>
               <div className="faq-item">
