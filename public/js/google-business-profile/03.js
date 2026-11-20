@@ -71,3 +71,64 @@
     io.observe(el);
   });
 })();
+
+/* Process: a light line slides through every step (auto loop; follows the cursor on hover). */
+(function () {
+  var wrap = document.getElementById('gxStepsWrap');
+  if (!wrap) return;
+  var track = wrap.querySelector('.gx-steps-track');
+  var fill = document.getElementById('gxStepsFill');
+  var head = document.getElementById('gxStepsHead');
+  var items = Array.prototype.slice.call(wrap.querySelectorAll('.gx-steps li'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var x0 = 0, len = 0, centers = [];
+  var pos = 0, target = 0, hovering = false, visible = false, t0 = 0, raf = 0;
+
+  function measure() {
+    var wr = wrap.getBoundingClientRect();
+    centers = items.map(function (li) { var n = li.querySelector('.gx-step-n').getBoundingClientRect(); return n.left + n.width / 2 - wr.left; });
+    x0 = centers[0] || 0; len = (centers[centers.length - 1] || 0) - x0;
+    track.style.left = x0 + 'px'; track.style.width = len + 'px';
+  }
+  function paint() {
+    fill.style.width = Math.max(0, pos) + 'px';
+    head.style.left = Math.max(0, pos) + 'px';
+    items.forEach(function (li, i) { li.classList.toggle('is-lit', pos >= centers[i] - x0 - 2); });
+  }
+  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function frame(now) {
+    raf = requestAnimationFrame(frame);
+    if (track.offsetParent === null) return; // hidden on small screens
+    if (hovering) {
+      pos += (target - pos) * 0.16;
+    } else {
+      // auto sweep: 2.8s travel, 1.2s hold, fade, restart
+      var cycle = 5000, e = ((now - t0) % cycle);
+      if (e < 2800) { pos = ease(e / 2800) * len; fill.style.opacity = 1; }
+      else if (e < 4000) { pos = len; }
+      else { fill.style.opacity = String(1 - (e - 4000) / 1000); if (e > 4900) pos = 0; }
+    }
+    paint();
+  }
+  measure();
+  window.addEventListener('resize', measure);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+
+  if (reduce) { pos = len; paint(); return; }
+  wrap.addEventListener('pointerenter', function () { hovering = true; fill.style.opacity = 1; wrap.classList.add('is-running'); });
+  wrap.addEventListener('pointermove', function (e) {
+    var wr = wrap.getBoundingClientRect();
+    target = Math.min(len, Math.max(0, e.clientX - wr.left - x0));
+  });
+  wrap.addEventListener('pointerleave', function () { hovering = false; t0 = performance.now() - 0; });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      en.forEach(function (x) {
+        visible = x.isIntersecting;
+        if (visible && !raf) { measure(); t0 = performance.now(); wrap.classList.add('is-running'); raf = requestAnimationFrame(frame); }
+        else if (!visible && raf) { cancelAnimationFrame(raf); raf = 0; }
+      });
+    }, { threshold: 0.3 }).observe(wrap);
+  } else { raf = requestAnimationFrame(frame); }
+})();

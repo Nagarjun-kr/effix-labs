@@ -337,6 +337,8 @@ export default function Page() {
               <span className="gx-label">{"Our process"}</span>
               <h2 className="gx-h2">{"Our Google Business Profile "}<em>{"optimisation process"}</em></h2>
             </div>
+            <div className="gx-steps-wrap" id="gxStepsWrap">
+            <div className="gx-steps-track" aria-hidden="true"><span className="gx-steps-fill" id="gxStepsFill"></span><span className="gx-steps-head" id="gxStepsHead"></span></div>
             <ol className="gx-steps">
               <li><span className="gx-step-n">{"1"}</span><h3 className="gx-h3">{"Discovery"}</h3><p className="gx-p-sm">{"We learn your business, locations, services and goals, and confirm profile access."}</p></li>
               <li><span className="gx-step-n">{"2"}</span><h3 className="gx-h3">{"Profile audit"}</h3><p className="gx-p-sm">{"A full review of your profile, competitors and visibility, with issues ranked by impact."}</p></li>
@@ -345,6 +347,7 @@ export default function Page() {
               <li><span className="gx-step-n">{"5"}</span><h3 className="gx-h3">{"Publish & reviews"}</h3><p className="gx-p-sm">{"Updates go live and your review request and reply routine begins."}</p></li>
               <li><span className="gx-step-n">{"6"}</span><h3 className="gx-h3">{"Measure"}</h3><p className="gx-p-sm">{"Monthly tracking and a plain report. Then we adjust and repeat from step 3."}</p></li>
             </ol>
+            </div>
           </div>
         </section>
 
@@ -540,12 +543,13 @@ export default function Page() {
           {" "}
           <div className="container">
             {" "}
-            <div className="cta-form-container">
+            <div className="cta-form-container gx-glass-stage">
+              <span className="gx-orb gx-orb-1" aria-hidden="true"></span><span className="gx-orb gx-orb-2" aria-hidden="true"></span><span className="gx-orb gx-orb-3" aria-hidden="true"></span>
               {" "}
               {" "}
               <div className="cta-left-content">
                 {" "}
-                <div className="eyebrow-pill" style={{ background: "rgba(168, 85, 247, 0.2)", borderColor: "rgba(168, 85, 247, 0.4)", color: "#d8b4fe" }}>
+                <div className="gx-glass-pill">
                   {" FREE GOOGLE BUSINESS PROFILE AUDIT "}
                 </div>
                 {" "}
@@ -561,21 +565,21 @@ export default function Page() {
                   {" Find out exactly what’s holding your profile back. Tell us about your business and locations, and we’ll send a free audit with clear, prioritised fixes. No obligation. "}
                 </p>
                 {" "}
-                <div style={{ fontSize: "13.5px", color: "#cbd5e1", display: "flex", flexDirection: "column", gap: "8px", marginTop: "24px" }}>
+                <div className="gx-cta-facts">
                   {" "}
                   <div>
-                    {"📧 "}
+                    
                     <strong>
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:effix.labs@gmail.com" style={{ color: "#d8b4fe" }}>
+                    <a href="mailto:effix.labs@gmail.com">
                       {"effix.labs@gmail.com"}
                     </a>
                   </div>
                   {" "}
                   <div>
-                    {"⚡ "}
+                    
                     <strong>
                       {"Response Time:"}
                     </strong>
@@ -583,7 +587,7 @@ export default function Page() {
                   </div>
                   {" "}
                   <div>
-                    {"🔒 "}
+                    
                     <strong>
                       {"Privacy:"}
                     </strong>
