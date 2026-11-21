@@ -4,7 +4,7 @@
 export type Kind = "profile" | "community" | "video" | "post" | "thread" | "article" | "page";
 export type Status = "official" | "likely" | "possible" | "mentions" | "none" | "unknown";
 
-export type ResultTag = { kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean; mentionsSite: boolean };
+export type ResultTag = { kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean; mentionsSite: boolean; sameHandle: boolean };
 
 const segs = (u: URL) => u.pathname.split("/").filter(Boolean);
 
@@ -95,8 +95,20 @@ export function normUrl(raw: string) {
   }
 }
 
-/** text = result title + snippet; domain = the audited website, e.g. "effix.co.in". */
-export function tagResult(platform: string, url: string, brand: string, linkedUrl: string | null, text = "", domain = ""): ResultTag {
+/** text = result title + snippet; domain = the audited website; officialHandles = handles of profiles the site links to. */
+/** Handles of the profiles a website links to (squashed), for spotting the same handle on other platforms. */
+export function handlesOf(links: { platform: string; url: string }[]) {
+  const out = new Set<string>();
+  for (const l of links) {
+    try {
+      const { kind, handle } = kindFor(l.platform, new URL(l.url));
+      if (handle && kind === "profile") out.add(squash(decodeURIComponent(handle)));
+    } catch {}
+  }
+  return out;
+}
+
+export function tagResult(platform: string, url: string, brand: string, linkedUrl: string | null, text = "", domain = "", officialHandles: Set<string> = new Set()): ResultTag {
   let kind: Kind = "page";
   let handle: string | null = null;
   try {
@@ -108,17 +120,20 @@ export function tagResult(platform: string, url: string, brand: string, linkedUr
   const n = normUrl(url);
   const official = Boolean(linkedUrl) && (n === normUrl(linkedUrl as string) || n.startsWith(normUrl(linkedUrl as string) + "/"));
   const mentionsSite = Boolean(domain) && text.toLowerCase().includes(domain.toLowerCase().replace(/^www\./, ""));
-  return { kind, label: LABEL[kind], handle, official, matchesBrand, mentionsSite };
+  const sameHandle = Boolean(h) && h.length >= 3 && officialHandles.has(h) && (kind === "profile");
+  return { kind, label: LABEL[kind], handle, official, matchesBrand, mentionsSite, sameHandle };
 }
 
 /** Platform status from what the site links to and what search found. */
-// likely   = a profile whose name matches AND whose result mentions the website address
+// likely   = a profile whose name matches AND (its result mentions the website address OR it uses the
+//            exact handle of a profile the website links to, e.g. @openai everywhere)
 // possible = name matches only (could be another business with the same name)
 export const isProfile = (t: ResultTag) => t.kind === "profile" || t.kind === "community";
 export function platformStatus(linked: boolean, tags: ResultTag[] | null): Status {
   if (linked) return "official";
   if (tags === null) return "unknown";
-  if (tags.some((t) => isProfile(t) && t.matchesBrand && t.mentionsSite)) return "likely";
+  // Communities (subreddits, groups) are often fan-run, so they can only be a possible match.
+  if (tags.some((t) => t.kind === "profile" && t.matchesBrand && (t.mentionsSite || t.sameHandle))) return "likely";
   if (tags.some((t) => isProfile(t) && t.matchesBrand)) return "possible";
   return tags.length ? "mentions" : "none";
 }

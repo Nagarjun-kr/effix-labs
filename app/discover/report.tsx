@@ -3,7 +3,7 @@
 // Brand visibility report: presence summary, platform status, to-do list and labelled results per platform.
 import { useMemo, useState } from "react";
 
-import { isProfile, platformStatus, tagResult, type ResultTag, type Status } from "@/lib/discover/classify";
+import { handlesOf, isProfile, platformStatus, tagResult, type ResultTag, type Status } from "@/lib/discover/classify";
 
 export type Profile = { platform: string; url: string };
 export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
@@ -55,21 +55,22 @@ function googleUrl(brand: string, p: (typeof PLATFORMS)[number]) {
 }
 
 /** Order: linked profile, then confirmed profile, then name-matching profile, then other profiles, then content. */
-const score = (t: ResultTag) => (t.official ? 8 : 0) + (isProfile(t) && t.matchesBrand ? (t.mentionsSite ? 4 : 2) : 0) + (isProfile(t) ? 1 : 0);
+const score = (t: ResultTag) => (t.official ? 8 : 0) + (isProfile(t) && t.matchesBrand ? (t.mentionsSite || t.sameHandle ? 4 : 2) : 0) + (isProfile(t) ? 1 : 0);
 
 function buildRows(identity: Identity, mentions: Mentions, brand: string): Row[] {
   const linked = new Map<string, Profile>();
   identity.profiles.forEach((p) => !linked.has(p.platform) && linked.set(p.platform, p));
+  const officialHandles = handlesOf([...linked.values()]);
   return PLATFORMS.map((p) => {
     const link = linked.get(p.name) ?? null;
     const result = mentions.status === "done" ? mentions.byPlatform[p.name] ?? null : null;
     const ok = result && !result.error ? result : null;
     const tagged = ok
       ? ok.results
-          .map((m) => ({ m, t: tagResult(p.name, m.url, brand, link?.url ?? null, `${m.title} ${m.snippet}`, identity.domain) }))
+          .map((m) => ({ m, t: tagResult(p.name, m.url, brand, link?.url ?? null, `${m.title} ${m.snippet}`, identity.domain, officialHandles) }))
           .sort((a, b) => score(b.t) - score(a.t))
       : null;
-    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand && x.t.mentionsSite) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand) ?? null;
+    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand) ?? null;
     return { ...p, linked: link, result: ok, tagged, status: platformStatus(Boolean(link), tagged ? tagged.map((x) => x.t) : null), bestProfile };
   });
 }
@@ -81,12 +82,13 @@ function buildActions(rows: Row[], brand: string): Action[] {
   const none: string[] = [];
   for (const r of rows) {
     if (r.status === "likely" && r.bestProfile) {
-      out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} mentions your website, but your website doesn't link back to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
+      const why = r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as the profiles your website links to";
+      out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} ${why}, but your website doesn't link to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
     }
     if (r.status === "possible" && r.bestProfile) {
       out.push({ level: "medium", title: `Is ${shortUrl(r.bestProfile.m.url)} yours?`, detail: `This ${r.name} profile uses the name “${brand}”, but nothing on it points to your website. If it's yours, link it from your site and add your website to its bio. If it isn't, another business uses your name on ${r.name}, which can confuse customers.` });
     }
-    if (r.linked && r.tagged && !r.tagged.some((x) => x.t.official || (isProfile(x.t) && x.t.matchesBrand && x.t.mentionsSite))) {
+    if (r.linked && r.tagged && !r.tagged.some((x) => x.t.official || (x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)))) {
       out.push({ level: "medium", title: `Google doesn't show your linked ${r.name} profile`, detail: `Your site links to ${shortUrl(r.linked.url)}, but it wasn't in the top results for “${brand}” on ${r.name}. Make sure the profile name and bio include “${brand}” and a link back to your website.` });
     }
     if (r.status === "mentions") {
@@ -222,7 +224,7 @@ export default function Report({ identity, mentions, brand }: { identity: Identi
                           <div className="rp-tags">
                             <em className={`rp-kind k-${t.kind}`}>{t.label}</em>
                             {t.official && <em className="rp-kind k-official">Your linked profile</em>}
-                            {!t.official && t.matchesBrand && isProfile(t) && (t.mentionsSite ? <em className="rp-kind k-match">Mentions your website</em> : <em className="rp-kind k-name">Same name</em>)}
+                            {!t.official && t.matchesBrand && isProfile(t) && (t.mentionsSite && t.kind === "profile" ? <em className="rp-kind k-match">Mentions your website</em> : t.sameHandle ? <em className="rp-kind k-match">Same handle as your profiles</em> : <em className="rp-kind k-name">Same name</em>)}
                           </div>
                           <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
                           <span>{shortUrl(m.url)}</span>
