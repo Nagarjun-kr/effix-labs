@@ -119,13 +119,14 @@ export default function Road({ steps }: { steps: Milestone[] }) {
             {signs.map((s, i) => {
               const on = fNow + 0.015 >= AT[i];
               const up = i % 2 === 0;
+              const bw = Math.max(172, (steps[i]?.tag.length ?? 0) * 9 + 40);
               return (
                 <g key={i} className={`rd-sign ${on ? "is-on" : ""} ${i === active ? "is-here" : ""}`} transform={`translate(${s.x} ${s.y})`}>
                   <circle r="16" className="rd-sign-dot" />
                   <circle r="6" fill="#fff" />
                   <line x1="0" y1={up ? -18 : 18} x2="0" y2={up ? -88 : 88} className="rd-sign-post" />
                   <g transform={`translate(0 ${up ? -118 : 118})`}>
-                    <rect x="-86" y="-24" width="172" height="48" rx="12" className="rd-sign-board" />
+                    <rect x={-bw / 2} y="-24" width={bw} height="48" rx="12" className="rd-sign-board" />
                     <text x="0" y="-3" textAnchor="middle" className="rd-sign-num">{String(i + 1).padStart(2, "0")}</text>
                     <text x="0" y="15" textAnchor="middle" className="rd-sign-tag">{steps[i]?.tag}</text>
                   </g>
