@@ -9,7 +9,7 @@ import "./about.css";
 
 const TITLE = "About Effix Labs | Founded by Nagarjun";
 const DESC =
-  "Meet Nagarjun, who founded Effix Labs in 2026, at the young age of 23, to make honest businesses easy to find on Google, in online communities and in AI answers, with evidence, not empty promises.";
+  "Meet Nagarjun, who founded Effix Labs in 2026 to make honest businesses easy to find on Google, in online communities and in AI answers, with evidence, not empty promises.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -42,7 +42,7 @@ const LD = ldString({
 const JOURNEY: Milestone[] = [
   { tag: "Curiosity", title: "Learning how search works", text: "It began with questions. Why does Google show this business and not that one? I spent my time learning SEO and performance marketing, testing ideas and studying what actually changes visibility, and what only looks good in a report." },
   { tag: "The gap", title: "Seeing what businesses miss", text: "A pattern kept repeating. Good businesses were losing customers simply because they were hard to find or hard to trust online, while many agencies offered them expensive, one-size-fits-all packages." },
-  { tag: "2026 · Founded at 23", title: "Starting Effix Labs", text: "In 2026, at 23, I founded Effix Labs with one rule: evidence before recommendations. No fake reviews, no bought engagement and no promises that nobody can keep." },
+  { tag: "2026 · Founded", title: "Starting Effix Labs", text: "In 2026, I founded Effix Labs with one rule: evidence before recommendations. No fake reviews, no bought engagement and no promises that nobody can keep." },
   { tag: "Building", title: "Five services, one plan", text: "Google Business Profile optimisation, Reddit marketing, SEO & AEO, content writing, and website design and development. Each covers a place where customers search, and together they work as one plan." },
   { tag: "Effix Discover", title: "A free tool for every business", text: "I built Effix Discover so any business can see where it shows up, free and without a login. It reads your website, searches your brand on eight platforms through Google and turns the results into a clear report." },
   { tag: "What’s next", title: "Visible everywhere people search", next: true, text: "The next chapter: helping businesses across India appear in AI answers as clearly as on Google, making Effix Discover more capable, and sharing what we learn openly along the way." },
@@ -125,10 +125,10 @@ export default function AboutPage() {
           <div className="ab-wrap hx-in">
             <span className="ab-eyebrow">About Effix Labs</span>
             <h1>I’m Nagarjun. I started Effix Labs to make good businesses <em>easy to find.</em></h1>
-            <p className="hx-lead">I founded Effix Labs in 2026, at the young age of 23, with one simple belief: if you do honest, useful work, people should be able to find you. Today, finding you happens on Google, inside online communities and in AI answers. My job is to make sure you show up in all three, with evidence instead of empty promises.</p>
+            <p className="hx-lead">I founded Effix Labs in 2026 with one simple belief: if you do honest, useful work, people should be able to find you. Today, finding you happens on Google, inside online communities and in AI answers. My job is to make sure you show up in all three, with evidence instead of empty promises.</p>
             <div className="hx-founder">
               <span className="hx-avatar" aria-hidden="true">N</span>
-              <span className="hx-who"><b>Nagarjun</b><small>Founder, Effix Labs · founded 2026, at 23</small></span>
+              <span className="hx-who"><b>Nagarjun</b><small>Founder, Effix Labs · since 2026</small></span>
               <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hx-in-link">LinkedIn ↗</a>
             </div>
             <div className="ab-actions hx-actions">
@@ -147,13 +147,13 @@ export default function AboutPage() {
         {/* WHO I AM */}
         <section className="wx">
           <div className="ab-wrap wx-grid">
-            <div className="wx-big" aria-hidden="true"><b>23</b><span>the age I founded<br />Effix Labs, in 2026</span></div>
+            <div className="wx-big" aria-hidden="true"><b>2026</b><span>the year Effix Labs<br />began</span></div>
             <div>
               <span className="ab-label">01 · Who I am</span>
               <h2>Who <em>I am</em></h2>
               <div className="wx-prose">
                 <p className="wx-first">I’m Nagarjun, the founder of Effix Labs. I came into this work through search: how people look for things, what Google decides to show them, and why some businesses get picked while equally good ones stay invisible. The more I learned about SEO and performance marketing, the clearer one pattern became. Visibility rarely depends on how good a business is. It depends on whether that business is clear, consistent and present in the places people actually look.</p>
-                <p>I started Effix Labs in 2026, at 23. That’s young for an agency founder, and I know it. But it gave me something useful: I grew up with search, online communities and now AI tools as a normal part of everyday decisions. I don’t treat them as trends to sell. I treat them as the new front door of every business.</p>
+                <p>I started Effix Labs in 2026. Search has never been new to me: I grew up with search, online communities and now AI tools as a normal part of everyday decisions. I don’t treat them as trends to sell. I treat them as the new front door of every business.</p>
                 <blockquote>“I built every page, every service and Effix Discover myself, because I wanted Effix Labs to show what it believes, not just say it.”</blockquote>
                 <p>Building Effix Labs has meant long nights of writing, designing, testing and rebuilding. Every page on this website, every service and the free Effix Discover tool came out of that work.</p>
               </div>
