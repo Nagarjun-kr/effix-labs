@@ -103,6 +103,23 @@ test("youtube.com: the site's links to its own pages are not counted as profiles
   for (const p of ["Instagram", "Facebook", "X"]) assert.equal(rows.find((r) => r.name === p)!.status, "likely", p);
 });
 
+test("zomato.com (site doesn't answer automated visits): still found through the exact handle", () => {
+  const { rows } = load("zomato.com");
+  assert.ok(presenceOf(rows).confirmed >= 5);
+});
+
+test("tata.com and cred.club: the brand name is not the tagline", () => {
+  const tata = JSON.parse(readFileSync(new URL("tata.com.json", DIR), "utf8"));
+  assert.equal(tata.brand, "Tata");
+  assert.ok(presenceOf(load("tata.com").rows).confirmed >= 5);
+  assert.equal(JSON.parse(readFileSync(new URL("cred.club.json", DIR), "utf8")).brand, "CRED");
+});
+
+test("hubspot.com: linked profiles are official", () => {
+  const { status } = load("hubspot.com");
+  for (const p of ["YouTube", "Instagram", "Facebook", "LinkedIn", "X"]) assert.equal(status[p], "official", p);
+});
+
 /* ---------- rules that must hold for every company ---------- */
 
 const ALL = readdirSync(DIR).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, ""));

@@ -72,7 +72,7 @@ export function extractBrandIdentity(html: string, sourceUrl: string): BrandIden
   const best = names
     .filter((candidate) => candidate.name.length > 1 && candidate.name.length <= 100)
     .sort((a, b) => a.rank - b.rank)[0];
-  const name = tidyBrandName(best?.name ?? "") || nameFromHost(source.hostname);
+  const name = tidyBrandName(shortBrand(best?.name ?? "", source.hostname)) || nameFromHost(source.hostname);
   $("a[href]").each((_, anchor) => {
     const href = $(anchor).attr("href");
     if (!href) return;
@@ -109,4 +109,17 @@ export function tidyBrandName(raw: string) {
   // Country/region endings narrow the search too much ("Netflix India" -> "Netflix"); the visitor can type them back.
   const core = legal.replace(/\s+(india|uk|usa|us|global|worldwide|international|australia|canada|singapore|uae|europe|asia)$/i, "").trim();
   return core.length >= 2 ? core : legal;
+}
+
+/** Taglines are not names: "CRED. not everyone gets it." -> "CRED"; "The Tata group. Leadership with Trust." -> "Tata".
+ *  Uses the first part of the title, and the word matching the web address when the name says more than the brand. */
+export function shortBrand(raw: string, hostname: string) {
+  const squash = (x: string) => x.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
+  const first = raw.split(/\s*[|–—:•·]\s*|\.\s+|\s+-\s+/)[0].replace(/[.\s]+$/, "").trim() || raw.trim();
+  const label = squash(hostname.replace(/^www\./, "").split(".")[0] ?? "");
+  if (!label || squash(first) === label) return first; // "The Body Shop" on thebodyshop.in stays whole
+  const words = first.split(/\s+/);
+  const hit = words.find((w) => squash(w) === label);
+  if (hit && words.length > 1) return hit.replace(/[^\p{L}\p{N}'&.-]/gu, ""); // "The Tata group" -> "Tata"
+  return first;
 }

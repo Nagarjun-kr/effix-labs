@@ -4,10 +4,11 @@ import { NextResponse } from "next/server";
 
 import { extractBrandIdentity, nameFromHost } from "@/lib/discover/brand-identity";
 import { retrieveSafely } from "@/lib/discover/safe-retrieval";
+import { parseWebsite } from "@/lib/discover/input";
 import { RetrievalPolicyError, validateWebsiteUrl } from "@/lib/discover/url-policy";
 
 export const runtime = "nodejs";
-export const maxDuration = 15;
+export const maxDuration = 30;
 
 // Best-effort abuse guard: 10 requests per minute per client address, per server instance.
 const buckets = new Map<string, { count: number; resetAt: number }>();
@@ -29,21 +30,41 @@ function consume(request: Request) {
   return true;
 }
 
-function normalizeInput(value: unknown): URL {
-  if (typeof value !== "string" || value.trim().length < 3 || value.length > 2048) {
-    throw new RetrievalPolicyError("invalid_url", "Enter a valid public website URL.");
-  }
-  const input = value.trim();
-  return validateWebsiteUrl(/^[a-z][a-z\d+.-]*:\/\//i.test(input) ? input : `https://${input}`);
-}
-
 const friendly: Record<string, string> = {
   timeout: "That website took too long to respond. Please try again.",
   http_status: "That website didn't return a normal page. Check the address and try again.",
+  too_many_redirects: "That website keeps redirecting, so we couldn't read it.",
   unsupported_content_type: "That address doesn't point to a web page.",
   response_too_large: "That page is too large to check.",
-  unsafe_dns: "We couldn't reach a public website at that address.",
+  unsafe_dns: "We couldn't find a public website at that address. Check the spelling and try again.",
 };
+
+type Fetched = Awaited<ReturnType<typeof retrieveSafely>>;
+
+/** Tries the homepage, then www./non-www, then http://, then the exact page typed; returns the first that loads. */
+async function readSite(host: string, entered: string): Promise<{ page?: Fetched; blockedBy?: number; error?: unknown }> {
+  const alt = host.startsWith("www.") ? host.slice(4) : `www.${host}`;
+  const tries = [...new Set([`https://${host}/`, `https://${alt}/`, `http://${host}/`, entered])];
+  let blockedBy: number | undefined;
+  let lastError: unknown;
+  for (const t of tries) {
+    try {
+      return { page: await retrieveSafely(validateWebsiteUrl(t), "html", { maxBytes: 5_000_000 }) };
+    } catch (error) {
+      const code = error instanceof RetrievalPolicyError ? Number(error.message.match(/HTTP (\d{3})/)?.[1]) : 0;
+      if ([401, 403, 406, 429, 503].includes(code)) blockedBy ??= code;
+      // A clear answer from the site ("blocked", "not a web page") won't change on the other addresses, except
+      // a 404 on the homepage, where the exact page typed may still work.
+      if (error instanceof RetrievalPolicyError && ["unsafe_ip", "unsafe_host", "unsafe_url", "unsafe_port"].includes(error.code)) return { error };
+      lastError = error;
+      if (error instanceof RetrievalPolicyError && error.code === "timeout") {
+        blockedBy ??= 408; // some sites never answer automated visits; treat like a refusal and still search
+        break;
+      }
+    }
+  }
+  return { blockedBy, error: lastError };
+}
 
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
@@ -52,23 +73,26 @@ export async function POST(request: Request) {
   }
   try {
     const body = (await request.json().catch(() => ({}))) as { url?: unknown };
-    const url = normalizeInput(body.url);
-    let page;
-    try {
-      page = await retrieveSafely(url, "html", { maxBytes: 5_000_000 }); // big homepages (e.g. 3 MB) still work
-    } catch (error) {
-      // Site refuses automated visitors (403/401/429/503): still search, using the name from the address.
-      const code = error instanceof RetrievalPolicyError ? Number(error.message.match(/HTTP (\d{3})/)?.[1]) : 0;
-      if ([401, 403, 406, 429, 503].includes(code)) {
-        return NextResponse.json({ identity: { name: nameFromHost(url.hostname), domain: url.hostname.replace(/^www\./, ""), sourceUrl: url.toString(), profiles: [] }, blocked: true }, { headers });
+    const parsed = parseWebsite(body.url);
+    if (!parsed.ok) return NextResponse.json({ error: parsed.error }, { status: 400, headers });
+    const { page, blockedBy, error } = await readSite(parsed.host, parsed.entered);
+    if (!page) {
+      // Site refuses or ignores automated visits: still search, using the name from the address.
+      if (blockedBy) {
+        const domain = parsed.host.replace(/^www\./, "");
+        return NextResponse.json({ identity: { name: nameFromHost(domain), domain, sourceUrl: parsed.homepage, profiles: [] }, blocked: true }, { headers });
       }
-      throw error;
+      throw error ?? new Error("unreachable");
     }
     const identity = extractBrandIdentity(page.body, page.url);
     return NextResponse.json({ identity }, { headers });
   } catch (error) {
     if (error instanceof RetrievalPolicyError) {
       return NextResponse.json({ error: friendly[error.code] ?? error.message }, { status: 400, headers });
+    }
+    const code = (error as { code?: string })?.code;
+    if (code === "ENOTFOUND" || code === "EAI_AGAIN") {
+      return NextResponse.json({ error: "We couldn't find a website at that address. Check the spelling and try again." }, { status: 400, headers });
     }
     return NextResponse.json({ error: "We couldn't open that website. Check the address and try again." }, { status: 502, headers });
   }

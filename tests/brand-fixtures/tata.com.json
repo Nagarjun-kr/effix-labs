@@ -1,0 +1,465 @@
+{
+ "capturedAt": "2026-11-21T14:02:03.607Z",
+ "identity": {
+  "name": "Tata",
+  "domain": "tata.com",
+  "sourceUrl": "https://www.tata.com/",
+  "profiles": [
+   {
+    "platform": "Facebook",
+    "url": "https://facebook.com/TataGroup"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/company/tata-companies/"
+   },
+   {
+    "platform": "X",
+    "url": "https://twitter.com/TataCompanies"
+   },
+   {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/user/TataCompanies"
+   },
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/tatacompanies/"
+   }
+  ]
+ },
+ "brand": "Tata",
+ "byPlatform": {
+  "YouTube": {
+   "platform": "YouTube",
+   "query": "\"Tata\" site:youtube.com",
+   "results": [
+    {
+     "title": "Tata Group - YouTube",
+     "url": "https://www.youtube.com/TataCompanies",
+     "snippet": "This Is Tata. Officially! Go ahead, subscribe and hit the bell icon to stay updated on everything Tata.",
+     "source": "youtube.com"
+    },
+    {
+     "title": "TATA.CARS - YouTube",
+     "url": "https://www.youtube.com/@tata.cars.official",
+     "snippet": "Tata Motors Passenger Vehicles Ltd Q2 FY27 Financial Results at ₹96.9K Cr (Consolidated). Click here to Know More: https://rebrand.ly/1s2dabh #TataMotors #TataMotorsPassengerVehicles",
+     "source": "youtube.com"
+    },
+    {
+     "title": "TaTa - YouTube Music",
+     "url": "https://music.youtube.com/channel/UCXXxTCbe95OWKq4EHI1ajzg",
+     "snippet": "TaTa, 41 & Kyle Richh • 218K views Spleen TaTa, 41, Kyle Richh & Jenn Carter • 226K views TaTa - Slippery x Just Dance (WhoRunItNYC Performance / ⁨@kjshotit ) TaTa • 237K views Too Far Gone",
+     "source": "music.youtube.com"
+    },
+    {
+     "title": "Tata Simonyan - YouTube Music",
+     "url": "https://music.youtube.com/channel/UCXUGyA7RuNVQ7hR6FzbhZag",
+     "snippet": "Tata received the title of the Honored Artist of Armenia in 2006, and was nominated for \"King of Pop\" in Moscow in 2008. To date, Tata has put on performances to audiences in the U.S., Canada, Australia, the Netherlands, Belgium, the United Kingdom, France, Spain, Greece, the Middle East and 45 cities in Russia. Tata h",
+     "source": "music.youtube.com"
+    },
+    {
+     "title": "TATAev - YouTube",
+     "url": "https://www.youtube.com/@tata.evofficial",
+     "snippet": "Choosing your TATA.ev is one decision. Choosing how you finance it is another. Battery-as-a-Service gives you the flexibility to make both on your terms. #TATAev #MoveWithMeaning #BaaS # ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "TaTa Official - YouTube",
+     "url": "https://www.youtube.com/channel/UCnHgRiM8wK6nvCmaIMk3PZw",
+     "snippet": "Official YouTube channel of TaTa featuring music videos and exclusive content. Follow for latest updates and enjoy the creative journey.",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Tata Motors - YouTube",
+     "url": "https://www.youtube.com/channel/UCGk_EOyEtbl-XdbVHRPwnfQ",
+     "snippet": "Smart tech. Safer mobility. Greener journeys - shaping a better future",
+     "source": "youtube.com"
+    }
+   ]
+  },
+  "Instagram": {
+   "platform": "Instagram",
+   "query": "\"Tata\" site:instagram.com",
+   "results": [
+    {
+     "title": "TaTa 4️⃣ (@iamlilta)",
+     "url": "https://www.instagram.com/iamlilta/",
+     "snippet": "TaTa 4️⃣. 11 posts. 284K followers. 450 following. Artist. #444 · iamlilta. Follow. Message. Accounts you might like. pr3ttyproblem's profile picture.",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Ratan Tata (@ratantata) • Instagram photos and videos",
+     "url": "https://www.instagram.com/ratantata/",
+     "snippet": "10M followers · 2 following · 67 posts · @ratantata: “I made it to the 'Gram! Chairman, Tata Trusts Chairman Emeritus, Tata Sons”",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Tata Group (@tatacompanies) · Mumbai",
+     "url": "https://www.instagram.com/tatacompanies/",
+     "snippet": "Together on the road to sustainable mobility, and a new future of commercial transportation as two strong forces join hands – Tata Motors and IVECO Group. This ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Tata Taktumi (@tata_taktumi)",
+     "url": "https://www.instagram.com/tata_taktumi/",
+     "snippet": "Log in · Open app · tata_taktumi's profile picture. tata_taktumi. Tata Taktumi. 51 posts. 4,703 followers. 1 following. “Not So Bad” out now!. Follow.",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Tata Motors Passenger Vehicles South Africa (@tatamotorspv_sa)",
+     "url": "https://www.instagram.com/tatamotorspv_sa/",
+     "snippet": "Shift your expectations to high gear The all-new TATA Osprey doesn't just look the part, it packs a 1.2L turbocharged engine delivering 88kW of raw power.",
+     "source": "instagram.com"
+    },
+    {
+     "title": "TATA PR Los Angeles (@tata__la) · Beverly Hills, CA",
+     "url": "https://www.instagram.com/tata__la/",
+     "snippet": "The right statement piece doesn't just complete the look — it becomes the look. Available for styling pulls & purchase. Shop at TATA-LA.COM ✨ #TATALA # ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "tata.cars.official",
+     "url": "https://www.instagram.com/tata.cars.official/",
+     "snippet": "1M followers · 16 following · 92 posts · @tata.cars.official: “Where we believe 'Nothing's Too Far'”",
+     "source": "instagram.com"
+    },
+    {
+     "title": "TATA.ev (@tata.evofficial) • Instagram photos and videos",
+     "url": "https://www.instagram.com/tata.evofficial/",
+     "snippet": "421K followers · 11 following · 963 posts · @tata.evofficial: “Where We Move With Meaning.”",
+     "source": "instagram.com"
+    }
+   ]
+  },
+  "Facebook": {
+   "platform": "Facebook",
+   "query": "\"Tata\" site:facebook.com",
+   "results": [
+    {
+     "title": "Tata Motors (@TataMotorsGroup)",
+     "url": "https://www.facebook.com/TataMotorsGroup/",
+     "snippet": "Tata Motors. 3982469 followers · 4359 talking about this. Smart tech. Safer mobility. Greener journeys — creating a cleaner, more connected world,...",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Tata Motors Passenger Vehicles South Africa (@TataMotorsPVSA)",
+     "url": "https://www.facebook.com/TataMotorsPVSA/",
+     "snippet": "Welcome to the official TATA Motors Passenger Vehicles South Africa page. Design, Innovation, safety and performance – built for your journey.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Discover the All-New Tata Range",
+     "url": "https://www.facebook.com/TataMotorsPVSA/videos/discover-the-all-new-tata-range-official-tv-ad-lettatatakeyouthere/2960750490981509/",
+     "snippet": "",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Tata Aeris Tested With 20 Tonnes of Rubble in Destruction Test | PowerDrift",
+     "url": "https://www.facebook.com/POWERDRIFTOFFICIAL/videos/tata-motors-has-showcased-the-aeris-in-a-video-of-it-being-tested-20-tonnes-of-r/2218289978740107/",
+     "snippet": "",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Tata Group | Mumbai",
+     "url": "https://www.facebook.com/TataGroup/",
+     "snippet": "Official account of the Tata group. A visionary, pioneer and leader, trusted since 1868. Company. Follow. 84% recommend (387 reviews).",
+     "source": "facebook.com"
+    },
+    {
+     "title": "TATA Music Video with Jabbawockeez Dance Crew",
+     "url": "https://www.facebook.com/Timbaland/videos/tata-is-here-full-video-link-in-my-bio/1176371361013502/",
+     "snippet": "",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Tata Passenger Vehicles Sri Lanka | Colombo",
+     "url": "https://www.facebook.com/tatapvlk/",
+     "snippet": "Tata Passenger Vehicles Sri Lanka ... The future of driving starts here. Discover the all-new Tata Passenger Vehicle range. Automotive Dealership.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Tata.ev | Mumbai",
+     "url": "https://www.facebook.com/Tata.ev/",
+     "snippet": "Tata.ev, Mumbai. 84722 followers · 19067 talking about this · 123 were here. Where We Move With Meaning.",
+     "source": "facebook.com"
+    }
+   ]
+  },
+  "LinkedIn": {
+   "platform": "LinkedIn",
+   "query": "\"Tata\" site:linkedin.com",
+   "results": [
+    {
+     "title": "Tata Group",
+     "url": "https://in.linkedin.com/company/tata-group",
+     "snippet": "Founded by Jamsetji Tata in 1868, the Tata group is a global enterprise headquartered in India. The group operates in more than 100 countries across six ...",
+     "source": "in.linkedin.com"
+    },
+    {
+     "title": "Tata Technologies",
+     "url": "https://www.linkedin.com/company/tata-technologies",
+     "snippet": "Tata Technologies. Engineering Services. Hinjawadi, Pune, Maharashtra 2,853,554 followers. #EngineeringABetterWorld | #SoftwareDefinedFuture | #ElectricVehicle ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Tata Group - North America",
+     "url": "https://www.linkedin.com/company/tata-group-north-america",
+     "snippet": "One of the world's most dynamic and trusted business groups, Tata companies employ over 47,000 Americans and Canadians throughout more than 25 states and ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Tata Power: Largest Power & Energy Company in India",
+     "url": "https://rtb-us-west.linkedin.com/lax/clk?trk=CwEAAAF9J35WLUjrdOEQpZvIUYgLqmAuegW2WpmbqhHtimURGus5218-CJ9GwQJWhz_VEUMAABI7tnnGJ4wB4u8YqTt42IzgmuOSvtfRzvjxoufDjpZTMNgAzLO1W2G3y52PbUDwKKJFd6Qw-GoVoID7X3_nGhQdc-El8C6wHxWt162CmeZtmWw5H3NXUn-RMVFd3cXXPNEMIOlRj64uxh4bdRDMFBWEVy848gm3cbG-aGA8NEcWuGnnKH4GKxecln9be4mYwr-Uy4gjxX0VAvvnYm0NeQRlKtmxWylxks5--BFL4EYe6Z0lSOqL8egNOeab4Qr6wq66jHkBmgeOYMMxTogIWZBDKeBxH6PSiGWj4F_34vHxiOm0u1bYcx08ppGCTPteZv8g6aHVlzxU8SoVsGFHqcvXNQ5euRs0nTJUSLbUG5_WXc4TxAYs-TmKyyG7QCo3xGfDpU1TsZ21_YpSi8cPu2HcHGJqxqVhtEz6muZIrLa2o4XeRKM4vZQLLYD-6KPuWjchWNywxlDuxPBMlYGJiUK6ad4FQ5mCNqKmiV-CstYAwTaShxUIK9ElyWadETirVVux-pHCrBcd9-gc3CKhIu5X6fX0qa8NqqbT84dZtMKIB9uqAy_1kbIImW_VTOcn-F7R9c_Hq3CTQuTBh_BRYSTI2L7ghGXJfAeYAnlx5XuMk1tRmmYlTlY6jj4pgsGeQECxlQ3jSsvXQGBFyqV7TP549-4Cw-lxw_gUVia6fCoL-SjIuI2rsyZiLEab8LnnTBnISC40vDX0jjfjq-wWAh63sXD5YQ-PwrWIvhCLSVG0XCDtD9gjCrsDNoO22Nv7ijj4gNlgNRHfg2hswRMhFje71DTMGNvNN5YfxV6BdRG4pwv8N0SAIdNke4bw5j0XWgG2EV_3ZLMkhUL5DyV6q1udb0uYA-FFgjN_6QTDEoqS6nG4ua2XG1RbMT7_9OeYuw0WPxn-P5DOLXYgq0RiRQqikow1f1y9zPGoOrmH6g66P2PihQY04aChiQlqOZc_MZWl08QtCrVW_s8d1IkcmNILhLQtABBw4Mb8iOSMvj_NyFXODmHdZ0ZdX3P-P52W7EdJrWA42UP2dZQ6H6kJeN_Tz3xx1eJe4gkpvPpH5lkHXtUqIYzk01OAS8FPNmmBn2Y5zi8vmGhgJuCiyJVXg-ki9MdKtQK7uEQF0M3eQMLOgvzvxB0zLTMpSFaX6lbY0Lrwk-LgyvHHO5sbZpBvXMLZzaarkCXW3c5xZ6lltnSwxbDUFWjoW_x2psftycHT2PymjWQxUK-o5A4glXkusk995j8CteXV69_2hpNl5yAqyhnWhFIWPPs1LR1zgByERdqRDZajVZbUEc9fyNBpLNWS4G90A2cRVu3GMcrjCk2KFTKuhXEfk-R-jjlkqL1UQEc1LmaxxpLYD6FC4osVkmFipBSa1kREGpCRrmFc92ppFdBRUwM-tfm3llHvMOlGAQAS-aQgfzWYruuzpDJf1Z6cGPOA2fClt0wCrYkeKOwI4AkvISGlsT_NWmcdC3JikwRCPkzqCMFQvMMB_3HHIkQQ9BE8L5XPEWX_A5fITEvu44FwPj9GryNYK8wiNHt2CxB5rj_v3p17kA&action=click&laxrid=b8adbc91-fa8f-4c1e-9fb6-ea146e309df6&laxbid=2&eid=4&crtype=su&laxerid=46ef7ace3fbedde830fef08a3b1ac7824758ed95&adfmt=3&urle=CwEAAAF9J35WLl4dG7_6V9GHMuIn06IqVEnm_tauw6OU0bGE6zPbVcakEKIvvS99YXTo7E12lWECHKG7oEBYvDi3hckQD5LF9IXLQS3RmdQxnYCwHaWHpc7ZgmY5uc-w9WfkR5Y4pc0xPGN5dEQP&urlhash=VW6t",
+     "snippet": "Tata Power is the largest power company in India focusses on providing best sustainable energy solutions that are shaping the way for India's power & energy ...",
+     "source": "rtb-us-west.linkedin.com"
+    },
+    {
+     "title": "Tata Motors",
+     "url": "https://in.linkedin.com/company/tata-motors",
+     "snippet": "Website: http://www.tatamotors.com. External link for Tata Motors ; Industry: Motor Vehicle Manufacturing ; Company size: 10,001+ employees ; Headquarters: Pune, ...",
+     "source": "in.linkedin.com"
+    },
+    {
+     "title": "Tata Communications",
+     "url": "https://www.linkedin.com/company/tata-communication",
+     "snippet": "Tata Communications is a leading global communications technology player, enabling enterprises to operate, grow, and transform in an increasingly ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Tata Industries Limited",
+     "url": "https://in.linkedin.com/company/tata-industries-limited",
+     "snippet": "In the past three decades, Tata Industries has promoted and incubated Tata ventures in several sectors, including control systems, information technology, ...",
+     "source": "in.linkedin.com"
+    },
+    {
+     "title": "Jobs At Tata Jobs in Canada (4000+ Open Roles)",
+     "url": "https://ca.linkedin.com/jobs/jobs-at-tata-jobs",
+     "snippet": "Today's top 4000+ Jobs At Tata jobs in Canada. Leverage your professional network, and get hired. New Jobs At Tata jobs added daily.",
+     "source": "ca.linkedin.com"
+    }
+   ]
+  },
+  "X": {
+   "platform": "X",
+   "query": "\"Tata\" (site:x.com OR site:twitter.com)",
+   "results": [
+    {
+     "title": "Tata Group (@TataCompanies) / X",
+     "url": "https://x.com/TataCompanies",
+     "snippet": "Together on the road to sustainable mobility, and a new future of commercial transportation as two strong forces join hands – Tata Motors and IVECO Group. This is our step towards creating a truly global commercial mobility enterprise. #ThisIsTata @TataMotorsCV",
+     "source": "x.com"
+    },
+    {
+     "title": "TATA.CARS (@TATA_CARS) / X",
+     "url": "https://x.com/tata_cars",
+     "snippet": "The Tata Sierra Pure+ L, with its distinctive design, 17\" Alloy Wheels and Panoramax Voice Assisted Panoramic Sunroof, makes the journey as memorable as the place you arrive at.",
+     "source": "x.com"
+    },
+    {
+     "title": "About X | Our company and priorities",
+     "url": "https://about.x.com/en",
+     "snippet": "We serve the public conversation. Learn more about X the company, and how we ensure people have a free and safe place to talk.",
+     "source": "about.x.com"
+    },
+    {
+     "title": "Download the X app",
+     "url": "https://help.x.com/en/using-x/download-the-x-app",
+     "snippet": "Download the >x< app on your device. The >x< app is the trusted global digital town square for everyone. With >x<, you can: Post content for the world to see and join public conversations Stay up to date on breaking news and follow your interests Stay better informed with extra context from Community Notes Go live with",
+     "source": "help.x.com"
+    },
+    {
+     "title": "Tata Tele Business Services (@TataTeleBiz) / X",
+     "url": "https://x.com/tatatelebiz",
+     "snippet": "At Tata Tele Business Services, we help businesses navigate this journey with integrated ICT solutions that bring together connectivity, cloud, collaboration, cybersecurity and managed services, so they can focus on what matters most: growing their business.",
+     "source": "x.com"
+    },
+    {
+     "title": "Tata Technologies (@TataTech_News) / X",
+     "url": "https://x.com/TataTech_News",
+     "snippet": "At Tata Technologies, we believe the true value of science lies in its ability to make a meaningful difference to people’s lives. Through engineering, we strive to transform technological possibilities into safer mobility solutions",
+     "source": "x.com"
+    },
+    {
+     "title": "Tata Communications (@tata_comm) / X",
+     "url": "https://x.com/tata_comm",
+     "snippet": "Tata Communications is a global digital ecosystem enabler powering today’s fast-growing digital economy in more than 190 countries and territories",
+     "source": "x.com"
+    }
+   ]
+  },
+  "Reddit": {
+   "platform": "Reddit",
+   "query": "\"Tata\" site:reddit.com",
+   "results": [
+    {
+     "title": "If Tata cars are really that bad, why are there so many of them on the streets",
+     "url": "https://www.reddit.com/r/carIndia/comments/1sqjnbc/if_tata_cars_are_really_that_bad_why_are_there_so/",
+     "snippet": "Now normal consumer things if he isn't sitting in Tata car he is going to die on Road, but the reality is Tata cars suffer from electrical nd ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Tata owners, is your car really as bad as they describe online? Would ...",
+     "url": "https://www.reddit.com/r/TataMotorsIndia/comments/1wjhxz4/tata_owners_is_your_car_really_as_bad_as_they/",
+     "snippet": "It's not as smooth as maruti and all. Tata cars are good, they know what avg indian market need. But quality is not world class and there will b ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "r/TataMotorsIndia",
+     "url": "https://www.reddit.com/r/TataMotorsIndia/",
+     "snippet": "r/TataMotorsIndia: Welcome to the unofficial subreddit for proud owners and enthusiasts of TATA Motors vehicles! This community is your hub ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Why do people buy Tata? : r/CarsIndia",
+     "url": "https://www.reddit.com/r/CarsIndia/comments/163h1n8/why_do_people_buy_tata/",
+     "snippet": "The sheer number of horror stories of tata buyers should be enough to bury the entire business, and yet, people buy their cars in increasing numbers. How? ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Were old TATA more reliable? : r/carIndia",
+     "url": "https://www.reddit.com/r/carIndia/comments/1wrryr0/were_old_tata_more_reliable/",
+     "snippet": "(Image from web)\n\nI own a 2017 Tata Safari Storme Varicor 400, and honestly, it's been an absolute delight.\n\nI've heard plenty of horror stories about ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "If Tata's cars are so unreliable, how are they outselling M&M, Hyundai & ...",
+     "url": "https://www.reddit.com/r/CarsIndia/comments/1wetrec/if_tatas_cars_are_so_unreliable_how_are_they/",
+     "snippet": "If you see mom sales or yoy sales, they are outselling these manufacturers. What could be the reason?",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Tata Motors India",
+     "url": "https://www.reddit.com/r/TataMotorsIndia/hot/",
+     "snippet": "r/TataMotorsIndia: Welcome to the unofficial subreddit for proud owners and enthusiasts of TATA Motors vehicles! This community is your hub ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Thoughts on Tata Motors design direction post Bose exit",
+     "url": "https://www.reddit.com/r/TataMotorsIndia/comments/1tdrpuk/thoughts_on_tata_motors_design_direction_post/",
+     "snippet": "Am I among the minority few who think that TATA MOTORS is losing the definite edge in design superiority after the exit of Bose.",
+     "source": "reddit.com"
+    }
+   ]
+  },
+  "Quora": {
+   "platform": "Quora",
+   "query": "\"Tata\" site:quora.com",
+   "results": [
+    {
+     "title": "Quora - A place to share knowledge and better understand the ...",
+     "url": "https://www.quora.com/",
+     "snippet": "Quora is a place to gain and share knowledge. It's a platform to ask questions and connect with people who contribute unique insights and quality answers. This empowers people to learn from each other and to better understand the world.",
+     "source": "quora.com"
+    },
+    {
+     "title": "Quora",
+     "url": "https://qcclive.quora.com/",
+     "snippet": "We would like to show you a description here but the site won’t allow us.",
+     "source": "qcclive.quora.com"
+    },
+    {
+     "title": "q.quora.com",
+     "url": "https://q.quora.com/_/ad/e602d09d9d5f4d13a5a231e0715b78d4/pixel?tag=ViewContent&noscript=1",
+     "snippet": "Quora is a platform to ask questions, share knowledge, and connect with people for unique insights and quality answers.",
+     "source": "q.quora.com"
+    },
+    {
+     "title": "भाषाएँ - Quora",
+     "url": "https://hi.quora.com/about/languages",
+     "snippet": "पेज को रीफ़्रेश करके देखें या बाद में फिर से कोशिश करें.",
+     "source": "hi.quora.com"
+    },
+    {
+     "title": "What is considered ‘Adult’ content on Quora?",
+     "url": "https://help.quora.com/hc/en-us/articles/4405052142868-What-is-considered-Adult-content-on-Quora",
+     "snippet": "Quora defines adult content as any content (e.g., writing, imagery, or video) that is pornographic, depicts a sexual act, or is otherwise overtly sexual. Below are some examples of adult content: E...",
+     "source": "help.quora.com"
+    }
+   ]
+  },
+  "Threads": {
+   "platform": "Threads",
+   "query": "\"Tata\" site:threads.net",
+   "results": [
+    {
+     "title": "Tata Group (@tatacompanies)",
+     "url": "https://www.threads.net/@tatacompanies",
+     "snippet": "101.1K Followers • 9 Threads • The official account of the Tata Group. See the latest conversations with @tatacompanies.",
+     "source": "threads.net"
+    },
+    {
+     "title": "tata estaniecki",
+     "url": "https://www.threads.net/@tata",
+     "snippet": "1.8M Followers • 348 Threads • Oi eu tô tentando mexer nisso aqui! Foi? Apareceu a bio ai? • tata@yziassessoria.com.br. See the latest conversations...",
+     "source": "threads.net"
+    },
+    {
+     "title": "TaTa Sherise (Sha•Reese) (@tatasherise)",
+     "url": "https://www.threads.net/@tatasherise",
+     "snippet": "TaTa Sherise (Sha•Reese). tatasherise. tatasherise's profile picture. A funny and nice girl who's sometimes a b*tch but is also accountable. linktr.ee ...",
+     "source": "threads.net"
+    },
+    {
+     "title": "Tata (@tamtatch)",
+     "url": "https://www.threads.net/@tamtatch",
+     "snippet": "Tata. tamtatch. tamtatch's profile picture. Fashion | Beauty | Lifestyle | UGC. @momo_r7. @tikitiko21 IG: tamtatch ✉️ ttchavtch@gmail.com. instagram.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Tata Power (@tatapowercompanyltd)",
+     "url": "https://www.threads.net/@tatapowercompanyltd",
+     "snippet": "Charge. Go. with the TATA Power EZ CHARGE Card now at Rs 100 off. What are you waiting for? Order now at our EZ CHARGE Self Care Portal ...",
+     "source": "threads.net"
+    },
+    {
+     "title": "tata (@____t_a_t_a___)",
+     "url": "https://www.threads.net/@____t_a_t_a___",
+     "snippet": "Log in. Get app. tata. ____t_a_t_a___. ____t_a_t_a___'s profile picture. @dead__store. deadstore4514.com · 26.5K followers. Follow.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Tata Janmere",
+     "url": "https://www.threads.net/@janmere",
+     "snippet": "Tata Janmere (@janmere) · November 15, 2026 at 10:59 AM. StaroRīga#staroTata✨✨✨. 3. janmere's profile picture. Tata Janmere (@janmere).",
+     "source": "threads.net"
+    },
+    {
+     "title": "RCB squad for tata ipl 2025",
+     "url": "https://www.threads.net/@cricokhabar/post/DC0TLc6ylHU?hl=en-gb",
+     "snippet": "RCB squad for tata ipl 2025 ; November 25, 2024 at 10:55 PM. RCB playing Xl 2025 · 1 ; November 25, 2024 at 6:34 PM. RCB 2025 probable Xl · 4.",
+     "source": "threads.net"
+    }
+   ]
+  }
+ },
+ "checks": [
+  {
+   "url": "https://www.youtube.com/user/TataCompanies",
+   "ok": true,
+   "channelId": "UC4NB_GfgYM-1O1e4SBZqe7A",
+   "name": "Tata Group",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/@tata.cars.official",
+   "ok": true,
+   "channelId": "UCNmgKwY9b4MoE04ZFrIWGVw",
+   "name": "TATA.CARS",
+   "mentionsSite": false
+  },
+  {
+   "url": "https://music.youtube.com/channel/UCXXxTCbe95OWKq4EHI1ajzg",
+   "ok": false,
+   "channelId": null,
+   "name": "TaTa",
+   "mentionsSite": false
+  },
+  {
+   "url": "https://music.youtube.com/channel/UCXUGyA7RuNVQ7hR6FzbhZag",
+   "ok": false,
+   "channelId": null,
+   "name": "Tata Simonyan",
+   "mentionsSite": false
+  }
+ ]
+}

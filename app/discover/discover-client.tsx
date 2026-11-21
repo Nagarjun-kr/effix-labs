@@ -8,6 +8,7 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { checkTargets, type ProfileCheck } from "@/lib/discover/classify";
+import { displayHost, parseWebsite } from "@/lib/discover/input";
 import Report, { PLATFORMS, type Identity, type Mentions, type PlatformResult } from "./report";
 
 type Phase = "idle" | "loading" | "done";
@@ -77,8 +78,13 @@ export default function DiscoverClient() {
   }, []);
 
   const run = useCallback(async (raw: string) => {
-    const value = raw.trim();
-    if (!value) return;
+    const parsed = parseWebsite(raw);
+    if (!parsed.ok) {
+      setError(parsed.error);
+      return;
+    }
+    const value = parsed.entered;
+    setWebsite(displayHost(parsed.host));
     setError(null);
     setPhase("loading");
     setStep(0);
@@ -117,9 +123,8 @@ export default function DiscoverClient() {
     }
     try { sessionStorage.removeItem("effix_audit_target"); } catch { /* ignore */ }
     if (incoming) {
-      const clean = incoming.replace(/^https?:\/\//i, "").replace(/\/$/, "");
-      setWebsite(clean);
-      run(clean);
+      setWebsite(incoming.trim());
+      run(incoming);
     }
     // run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -211,7 +216,7 @@ export default function DiscoverClient() {
             {error && <p className="dx-error" role="alert">{error}</p>}
             {blocked && (
               <p className="dx-error dx-warn" role="status">
-                {identity.domain} blocks automated visits, so we couldn&apos;t see which profiles it links to. We took the name “{identity.name}” from the address. Check it below, and treat “Official” as unknown for this site.
+                {identity.domain} doesn&apos;t allow automated visits, so we couldn&apos;t see which profiles it links to. We took the name “{identity.name}” from the address. Check it below, and treat “Official” as unknown for this site.
               </p>
             )}
 
