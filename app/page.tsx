@@ -153,7 +153,7 @@ export default function Page() {
               </li>
               {" "}
               <li>
-                <a href="#services" className="mobile-nav-link" id="mobileNavServicesBtn">
+                <a href="#services" className="mobile-nav-link" id="mobileNavServicesBtn" data-onclick="toggleMobileDrawer()">
                   {"Services"}
                 </a>
               </li>
@@ -2244,49 +2244,6 @@ export default function Page() {
         </div>
         {" "}
       </footer>
-      {" "}
-      {" "}
-      <div className="effix-orbit-stage" id="effixServicesOrbitStage" role="dialog" aria-modal="true" aria-label="Services Interactive Orbital Exploration">
-        {" "}
-        <div className="orbit-stage-scrim"></div>
-        {" "}
-        {" "}
-        <header className="orbit-stage-header">
-          {" "}
-          <button type="button" className="orbit-top-back-btn" id="orbitTopBackBtn" aria-label="Back to homepage">
-            {" "}
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              {" "}
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              {" "}
-              <polyline points="12 19 5 12 12 5"></polyline>
-              {" "}
-            </svg>
-            {" "}
-          </button>
-          {" "}
-        </header>
-        {" "}
-        {" "}
-        <div className="orbit-wheel-stage-viewport" id="orbitStageViewport">
-          {" "}
-          {" "}
-          <div className="orbit-wheel-container" id="orbitWheelContainer">
-            {" "}
-            {" "}
-          </div>
-          {" "}
-        </div>
-        {" "}
-      </div>
-      {" "}
-      {" "}
-      {" "}
-      {" "}
-      {" "}
-      {" "}
-      {" "}
-      {" "}
       {" "}
       {" "}
       <LegacyScripts id="home" srcs={SCRIPTS} />
