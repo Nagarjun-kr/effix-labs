@@ -14,7 +14,7 @@
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
   --mono: 'Geist Mono', ui-monospace, monospace;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --s-official: #4f8a24; --s-official-bg: rgba(140, 198, 81, 0.14); --s-likely: #4f46e5; --s-likely-bg: rgba(79, 70, 229, 0.1); --s-mentions: #b26b00; --s-mentions-bg: #fff4dc; --s-none: #8a8a8a; --s-none-bg: #f0f0f0;
+  --s-official: #4f8a24; --s-official-bg: rgba(140, 198, 81, 0.14); --s-likely: #4f46e5; --s-likely-bg: rgba(79, 70, 229, 0.1); --s-possible: #6d5bd0; --s-possible-bg: #f3f0ff; --s-mentions: #b26b00; --s-mentions-bg: #fff4dc; --s-none: #8a8a8a; --s-none-bg: #f0f0f0;
   min-height: 100vh; background: var(--bg); color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased;
 }
 .dx * { box-sizing: border-box; }
@@ -137,12 +137,12 @@
 .rp-score p { margin: 0; font-size: 15px; color: var(--muted); }
 .rp-cells { display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px; margin-top: 18px; }
 .rp-cells i { height: 12px; border-radius: 4px; background: var(--s-none-bg); }
-.rp-cells i.s-official { background: var(--lime); } .rp-cells i.s-likely { background: var(--s-likely); } .rp-cells i.s-mentions { background: #f2b440; } .rp-cells i.s-none, .rp-cells i.s-unknown { background: #e4e4e4; }
+.rp-cells i.s-official { background: var(--lime); } .rp-cells i.s-likely { background: var(--s-likely); } .rp-cells i.s-mentions { background: #f2b440; } .rp-cells i.s-possible { background: #c4b8ff; } .rp-cells i.s-none, .rp-cells i.s-unknown { background: #e4e4e4; }
 .rp-cells i.s-loading { background: linear-gradient(90deg, #f0f0f0, #e2e2e2, #f0f0f0); background-size: 200% 100%; animation: dxShimmer 1.2s linear infinite; }
 .rp-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; list-style: none; margin: 14px 0 0; padding: 0; font-size: 12.5px; color: var(--muted); }
 .rp-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .rp-legend i { width: 10px; height: 10px; border-radius: 3px; }
-.rp-legend .s-official { background: var(--lime); } .rp-legend .s-likely { background: var(--s-likely); } .rp-legend .s-mentions { background: #f2b440; } .rp-legend .s-none { background: #e4e4e4; }
+.rp-legend .s-official { background: var(--lime); } .rp-legend .s-likely { background: var(--s-likely); } .rp-legend .s-mentions { background: #f2b440; } .rp-legend .s-possible { background: #c4b8ff; } .rp-legend .s-none { background: #e4e4e4; }
 .rp-stats { display: grid; gap: 10px; }
 .rp-stats > div { padding: 16px 20px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 14px; }
 .rp-stats strong { grid-row: span 2; font-family: var(--display); font-weight: 300; font-size: 40px; line-height: 1; -webkit-text-stroke: 0.4px var(--ink); }
@@ -162,6 +162,7 @@
 .rp-badge { flex: none; margin-left: auto; padding: 4px 10px; border-radius: 99px; font-style: normal; font-size: 12px; font-weight: 700; white-space: nowrap; }
 .rp-badge.s-official { background: var(--s-official-bg); color: var(--s-official); }
 .rp-badge.s-likely { background: var(--s-likely-bg); color: var(--s-likely); }
+.rp-badge.s-possible { background: var(--s-possible-bg); color: var(--s-possible); }
 .rp-badge.s-mentions { background: var(--s-mentions-bg); color: var(--s-mentions); }
 .rp-badge.s-none, .rp-badge.s-unknown, .rp-badge.s-loading { background: var(--s-none-bg); color: var(--s-none); }
 
@@ -192,6 +193,7 @@
 .rp-kind.k-profile, .rp-kind.k-community { background: #eef0ff; color: var(--s-likely); }
 .rp-kind.k-official { background: var(--s-official-bg); color: var(--s-official); }
 .rp-kind.k-match { background: #eef0ff; color: var(--s-likely); }
+.rp-kind.k-name { background: var(--s-possible-bg); color: var(--s-possible); }
 .dx-stalled { margin: 10px 16px; padding: 12px 14px; border-radius: 12px; background: #fffaf0; border: 1px solid #f5e1b8; color: #8a5a00; font-size: 13.5px; line-height: 1.55; }
 .dx-open { display: flex; justify-content: flex-end; gap: 6px; padding: 10px 16px 14px; font-size: 13px; font-weight: 600; color: var(--muted) !important; text-decoration: none; border-top: 1px solid #f3f3f3; }
 .dx-open:hover { color: var(--blue) !important; }

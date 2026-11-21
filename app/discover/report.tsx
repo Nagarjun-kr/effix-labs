@@ -3,7 +3,7 @@
 // Brand visibility report: presence summary, platform status, to-do list and labelled results per platform.
 import { useMemo, useState } from "react";
 
-import { platformStatus, tagResult, type ResultTag, type Status } from "@/lib/discover/classify";
+import { isProfile, platformStatus, tagResult, type ResultTag, type Status } from "@/lib/discover/classify";
 
 export type Profile = { platform: string; url: string };
 export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
@@ -30,6 +30,7 @@ export const PLATFORMS = [
 const STATUS: Record<Status, { label: string; tone: string }> = {
   official: { label: "Official", tone: "official" },
   likely: { label: "Likely yours", tone: "likely" },
+  possible: { label: "Possible match", tone: "possible" },
   mentions: { label: "Mentions only", tone: "mentions" },
   none: { label: "Not found", tone: "none" },
   unknown: { label: "Not searched", tone: "unknown" },
@@ -53,6 +54,9 @@ function googleUrl(brand: string, p: (typeof PLATFORMS)[number]) {
   return `https://www.google.com/search?q=${encodeURIComponent(`"${brand.replaceAll('"', "").slice(0, 100)}" ${site}`)}`;
 }
 
+/** Order: linked profile, then confirmed profile, then name-matching profile, then other profiles, then content. */
+const score = (t: ResultTag) => (t.official ? 8 : 0) + (isProfile(t) && t.matchesBrand ? (t.mentionsSite ? 4 : 2) : 0) + (isProfile(t) ? 1 : 0);
+
 function buildRows(identity: Identity, mentions: Mentions, brand: string): Row[] {
   const linked = new Map<string, Profile>();
   identity.profiles.forEach((p) => !linked.has(p.platform) && linked.set(p.platform, p));
@@ -62,10 +66,10 @@ function buildRows(identity: Identity, mentions: Mentions, brand: string): Row[]
     const ok = result && !result.error ? result : null;
     const tagged = ok
       ? ok.results
-          .map((m) => ({ m, t: tagResult(p.name, m.url, brand, link?.url ?? null) }))
-          .sort((a, b) => Number(b.t.official) - Number(a.t.official) || Number(b.t.kind === "profile" && b.t.matchesBrand) - Number(a.t.kind === "profile" && a.t.matchesBrand))
+          .map((m) => ({ m, t: tagResult(p.name, m.url, brand, link?.url ?? null, `${m.title} ${m.snippet}`, identity.domain) }))
+          .sort((a, b) => score(b.t) - score(a.t))
       : null;
-    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => (x.t.kind === "profile" || x.t.kind === "community") && x.t.matchesBrand) ?? null;
+    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand && x.t.mentionsSite) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand) ?? null;
     return { ...p, linked: link, result: ok, tagged, status: platformStatus(Boolean(link), tagged ? tagged.map((x) => x.t) : null), bestProfile };
   });
 }
@@ -77,9 +81,12 @@ function buildActions(rows: Row[], brand: string): Action[] {
   const none: string[] = [];
   for (const r of rows) {
     if (r.status === "likely" && r.bestProfile) {
-      out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `We found ${shortUrl(r.bestProfile.m.url)}, which matches “${brand}”, but your website doesn't link to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
+      out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} mentions your website, but your website doesn't link back to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
     }
-    if (r.linked && r.tagged && !r.tagged.some((x) => x.t.official || ((x.t.kind === "profile" || x.t.kind === "community") && x.t.matchesBrand))) {
+    if (r.status === "possible" && r.bestProfile) {
+      out.push({ level: "medium", title: `Is ${shortUrl(r.bestProfile.m.url)} yours?`, detail: `This ${r.name} profile uses the name “${brand}”, but nothing on it points to your website. If it's yours, link it from your site and add your website to its bio. If it isn't, another business uses your name on ${r.name}, which can confuse customers.` });
+    }
+    if (r.linked && r.tagged && !r.tagged.some((x) => x.t.official || (isProfile(x.t) && x.t.matchesBrand && x.t.mentionsSite))) {
       out.push({ level: "medium", title: `Google doesn't show your linked ${r.name} profile`, detail: `Your site links to ${shortUrl(r.linked.url)}, but it wasn't in the top results for “${brand}” on ${r.name}. Make sure the profile name and bio include “${brand}” and a link back to your website.` });
     }
     if (r.status === "mentions") {
@@ -100,7 +107,7 @@ export default function Report({ identity, mentions, brand }: { identity: Identi
   const actions = useMemo(() => (mentions.status === "done" ? buildActions(rows, brand) : []), [rows, mentions.status, brand]);
   const found = rows.filter((r) => r.status === "official" || r.status === "likely").length;
   const linkedCount = rows.filter((r) => r.linked).length;
-  const likelyCount = rows.filter((r) => r.status === "likely").length;
+  const possibleCount = rows.filter((r) => r.status === "likely" || r.status === "possible").length;
   const totalResults = rows.reduce((n, r) => n + (r.result?.results.length ?? 0), 0);
   const loading = mentions.status === "loading";
   const searched = mentions.status === "done";
@@ -127,13 +134,14 @@ export default function Report({ identity, mentions, brand }: { identity: Identi
           <ul className="rp-legend">
             <li><i className="s-official" />Official</li>
             <li><i className="s-likely" />Likely yours</li>
+            <li><i className="s-possible" />Possible match</li>
             <li><i className="s-mentions" />Mentions only</li>
             <li><i className="s-none" />Not found</li>
           </ul>
         </div>
         <div className="rp-stats">
           <div><span className="dx-label">Linked from your website</span><strong>{linkedCount}</strong><small>Profiles your site links to</small></div>
-          <div><span className="dx-label">Likely profiles found</span><strong>{searched ? likelyCount : "–"}</strong><small>Not linked, but the name matches</small></div>
+          <div><span className="dx-label">Unlinked profiles to check</span><strong>{searched ? possibleCount : "–"}</strong><small>Your name, not linked from your site</small></div>
           <div><span className="dx-label">Search results</span><strong>{searched ? totalResults : "–"}</strong><small>Across all nine platforms</small></div>
         </div>
       </section>
@@ -214,7 +222,7 @@ export default function Report({ identity, mentions, brand }: { identity: Identi
                           <div className="rp-tags">
                             <em className={`rp-kind k-${t.kind}`}>{t.label}</em>
                             {t.official && <em className="rp-kind k-official">Your linked profile</em>}
-                            {!t.official && t.matchesBrand && (t.kind === "profile" || t.kind === "community") && <em className="rp-kind k-match">Name matches</em>}
+                            {!t.official && t.matchesBrand && isProfile(t) && (t.mentionsSite ? <em className="rp-kind k-match">Mentions your website</em> : <em className="rp-kind k-name">Same name</em>)}
                           </div>
                           <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
                           <span>{shortUrl(m.url)}</span>

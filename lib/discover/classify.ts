@@ -2,9 +2,9 @@
 // website links to, and does its handle match the brand? Pure functions, used in the browser.
 
 export type Kind = "profile" | "community" | "video" | "post" | "thread" | "article" | "page";
-export type Status = "official" | "likely" | "mentions" | "none" | "unknown";
+export type Status = "official" | "likely" | "possible" | "mentions" | "none" | "unknown";
 
-export type ResultTag = { kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean };
+export type ResultTag = { kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean; mentionsSite: boolean };
 
 const segs = (u: URL) => u.pathname.split("/").filter(Boolean);
 
@@ -69,6 +69,19 @@ const LABEL: Record<Kind, string> = { profile: "Profile", community: "Community"
 /** Lower-case letters and digits only, for comparing handles with a brand name. */
 export const squash = (v: string) => v.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
 
+// Handle = brand, or brand with a common add-on (stripehq, getstripe, effixlabs, effix_india).
+const SUFFIXES = ["hq", "official", "app", "inc", "co", "company", "labs", "lab", "global", "team", "group", "tv", "media", "studio", "studios", "agency", "digital", "india", "in", "uk", "us", "usa", "online", "web", "dev", "tech", "io", "ai", "brand", "store", "shop"];
+const PREFIXES = ["the", "get", "try", "use", "join", "go", "hey", "we", "its", "real", "official", "team"];
+export function handleMatches(handle: string, brand: string) {
+  if (!handle || brand.length < 3) return false;
+  if (handle === brand) return true;
+  if (handle.startsWith(brand) && SUFFIXES.includes(handle.slice(brand.length))) return true;
+  if (handle.endsWith(brand) && PREFIXES.includes(handle.slice(0, handle.length - brand.length))) return true;
+  // multi-word brands written with a shorter handle, e.g. "Effix Labs" -> "effix"
+  if (brand.startsWith(handle) && handle.length >= 4 && SUFFIXES.includes(brand.slice(handle.length))) return true;
+  return false;
+}
+
 /** host + path without protocol, www, query, trailing slash; for comparing a result with a linked profile. */
 export function normUrl(raw: string) {
   try {
@@ -82,7 +95,8 @@ export function normUrl(raw: string) {
   }
 }
 
-export function tagResult(platform: string, url: string, brand: string, linkedUrl: string | null): ResultTag {
+/** text = result title + snippet; domain = the audited website, e.g. "effix.co.in". */
+export function tagResult(platform: string, url: string, brand: string, linkedUrl: string | null, text = "", domain = ""): ResultTag {
   let kind: Kind = "page";
   let handle: string | null = null;
   try {
@@ -90,16 +104,21 @@ export function tagResult(platform: string, url: string, brand: string, linkedUr
   } catch {}
   const b = squash(brand);
   const h = handle ? squash(decodeURIComponent(handle)) : "";
-  const matchesBrand = Boolean(h && b.length >= 3 && (h.includes(b) || (h.length >= 4 && b.includes(h))));
+  const matchesBrand = handleMatches(h, b);
   const n = normUrl(url);
   const official = Boolean(linkedUrl) && (n === normUrl(linkedUrl as string) || n.startsWith(normUrl(linkedUrl as string) + "/"));
-  return { kind, label: LABEL[kind], handle, official, matchesBrand };
+  const mentionsSite = Boolean(domain) && text.toLowerCase().includes(domain.toLowerCase().replace(/^www\./, ""));
+  return { kind, label: LABEL[kind], handle, official, matchesBrand, mentionsSite };
 }
 
 /** Platform status from what the site links to and what search found. */
+// likely   = a profile whose name matches AND whose result mentions the website address
+// possible = name matches only (could be another business with the same name)
+export const isProfile = (t: ResultTag) => t.kind === "profile" || t.kind === "community";
 export function platformStatus(linked: boolean, tags: ResultTag[] | null): Status {
   if (linked) return "official";
   if (tags === null) return "unknown";
-  if (tags.some((t) => (t.kind === "profile" || t.kind === "community") && t.matchesBrand)) return "likely";
+  if (tags.some((t) => isProfile(t) && t.matchesBrand && t.mentionsSite)) return "likely";
+  if (tags.some((t) => isProfile(t) && t.matchesBrand)) return "possible";
   return tags.length ? "mentions" : "none";
 }
