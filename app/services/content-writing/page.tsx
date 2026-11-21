@@ -52,7 +52,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "How much do content writing services cost in India?",
     "a": [
-      "Rates in India vary widely: market estimates for 2026 range from about ₹0.50–2 per word for entry-level freelancers to ₹3–8 per word for agencies and more for specialist topics. Cost depends on expertise, research depth, volume and turnaround. EFFIX Labs quotes per project after understanding your scope."
+      "Cost depends on the type of content, research depth, length, volume and turnaround. A short product description costs far less than a researched long-form guide or a full website. EFFIX Labs quotes per project after understanding your scope, so you know the price before any work starts."
     ]
   },
   {
