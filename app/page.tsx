@@ -5,7 +5,8 @@ import LegacyScripts from "@/components/LegacyScripts";
 import { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ldString } from "@/lib/site";
 import "./page.css";
-import "./home-dq.css";
+import "./home-q3.css";
+import { BRAND_ICONS } from "@/lib/discover/brand-icons";
 
 export const metadata: Metadata = {
   "title": "Effix Labs | Get Found Where Your Customers Search",
@@ -29,6 +30,17 @@ export const metadata: Metadata = {
   }
 };
 
+
+/** Small official platform logo for the illustrative mock-ups (Font Awesome brands, CC BY 4.0). */
+function Brand({ name, size = 14 }: { name: string; size?: number }) {
+  const i = BRAND_ICONS[name];
+  if (!i) return null;
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${i.w} ${i.h}`} aria-hidden="true">
+      <path d={i.d} fill={i.color} />
+    </svg>
+  );
+}
 
 const HOME_FAQS: FaqItem[] = [
   {
@@ -443,62 +455,65 @@ export default function Page() {
         </section>
         {" "}
         {" "}
-        <section className="section-padding" id="our-approach">
+        <section className="section-padding q3-section" id="our-approach">
           <div className="container">
-            <span className="dq-eyebrow">{"Digital Discovery"}</span>
-            <h2 className="section-heading-editorial">
-              {"Digital Discovery starts with three questions."}
-            </h2>
-            <p className="section-intro-text">
-              {"Digital Discovery is the work of making a business easy to find and easy to trust at the moment someone searches. We begin by asking:"}
-            </p>
-            <div className="dq" id="dqWrap">
-              <ol className="dq-list">
-              <li className="dq-item is-on" tabIndex={0}>
-                <span className="dq-num" aria-hidden="true">{"01"}</span>
-                <div>
-                  <h3 className="dq-q">{"Where do you show up today?"}</h3>
-                  <div className="dq-a-wrap"><p className="dq-a"><span>{"We look at what people actually see when they search for businesses like yours."}</span></p></div>
+            <div className="q3-head">
+              <span className="dq-eyebrow">{"Digital Discovery"}</span>
+              <h2 className="section-heading-editorial">
+                {"Digital Discovery starts with "}<em className="q3-em">{"three questions."}</em>
+              </h2>
+              <p className="section-intro-text">
+                {"Digital Discovery is the work of making a business easy to find and easy to trust at the moment someone searches. We begin by asking:"}
+              </p>
+            </div>
+            <div className="q3-grid" id="q3Grid">
+              <article className="q3-card">
+                <div className="q3-card-top"><span className="q3-num">{"01"}</span><span className="q3-tag">{"Visibility"}</span></div>
+                <h3 className="q3-q">{"Where do you show up today?"}</h3>
+                <p className="q3-a">{"We look at what people actually see when they search for businesses like yours."}</p>
+                <div className="q3-vis q3-vis-1" aria-hidden="true">
+                  <div className="q3-radar">
+                    <span className="q3-ring a" /><span className="q3-ring b" /><span className="q3-ring c" />
+                    <span className="q3-arm" /><span className="q3-dot" />
+                    <span className="q3-blip b1"><Brand name="Google" /></span>
+                    <span className="q3-blip b2"><Brand name="Reddit" /></span>
+                    <span className="q3-blip b3 is-ai">{"✦"}</span>
+                  </div>
+                  <ul className="q3-legend">
+                    <li><i className="ok" /><bdi data-t={"Google"} /><em className="ok"><bdi data-t={"Visible"} /></em></li>
+                    <li><i className="mid" /><bdi data-t={"Reddit"} /><em className="mid"><bdi data-t={"Rarely"} /></em></li>
+                    <li><i className="no" /><bdi data-t={"AI search"} /><em className="no"><bdi data-t={"Missing"} /></em></li>
+                  </ul>
                 </div>
-                <span className="dq-bar" aria-hidden="true"></span>
-              </li>
-              <li className="dq-item" tabIndex={0}>
-                <span className="dq-num" aria-hidden="true">{"02"}</span>
-                <div>
-                  <h3 className="dq-q">{"What are people asking?"}</h3>
-                  <div className="dq-a-wrap"><p className="dq-a"><span>{"We look at the questions your customers use to find, compare and choose."}</span></p></div>
+              </article>
+              <article className="q3-card">
+                <div className="q3-card-top"><span className="q3-num">{"02"}</span><span className="q3-tag">{"Demand"}</span></div>
+                <h3 className="q3-q">{"What are people asking?"}</h3>
+                <p className="q3-a">{"We look at the questions your customers use to find, compare and choose."}</p>
+                <div className="q3-vis q3-vis-2" aria-hidden="true">
+                  <div className="q3-search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg><span className="q3-typed" id="q3Typed" /><span className="q3-caret" /></div>
+                  <div className="q3-bubbles">
+                    <div className="q3-bubble"><span className="q3-src"><Brand name="Google" size={12} /></span><bdi data-t={"Who’s the best option near me?"} /></div>
+                    <div className="q3-bubble"><span className="q3-src"><Brand name="Reddit" size={12} /></span><bdi data-t={"Is it worth the price?"} /></div>
+                    <div className="q3-bubble"><span className="q3-src is-ai">{"✦"}</span><bdi data-t={"This one or that one, which is better?"} /></div>
+                  </div>
                 </div>
-                <span className="dq-bar" aria-hidden="true"></span>
-              </li>
-              <li className="dq-item" tabIndex={0}>
-                <span className="dq-num" aria-hidden="true">{"03"}</span>
-                <div>
-                  <h3 className="dq-q">{"What should change first?"}</h3>
-                  <div className="dq-a-wrap"><p className="dq-a"><span>{"We pick the few actions that matter most, instead of doing everything at once."}</span></p></div>
+              </article>
+              <article className="q3-card">
+                <div className="q3-card-top"><span className="q3-num">{"03"}</span><span className="q3-tag">{"Priorities"}</span></div>
+                <h3 className="q3-q">{"What should change first?"}</h3>
+                <p className="q3-a">{"We pick the few actions that matter most, instead of doing everything at once."}</p>
+                <div className="q3-vis q3-vis-3" aria-hidden="true">
+                  <div className="q3-task t1"><span className="q3-tick" /><bdi data-t={"Fix the basics on your profile"} /><em className="hi"><bdi data-t={"High"} /></em></div>
+                  <div className="q3-task t2"><span className="q3-tick" /><bdi data-t={"Answer top customer questions"} /><em className="hi"><bdi data-t={"High"} /></em></div>
+                  <div className="q3-task t3"><span className="q3-tick" /><bdi data-t={"Earn mentions on trusted sites"} /><em className="next"><bdi data-t={"Next"} /></em></div>
+                  <div className="q3-meter"><span><bdi data-t={"Few actions, in the right order"} /></span><i /></div>
                 </div>
-                <span className="dq-bar" aria-hidden="true"></span>
-              </li>
-              </ol>
-              <div className="dq-lens" aria-hidden="true">
-                <div className="dq-lens-top"><span><b id="dqStep"><bdi data-t={"01"}></bdi></b><bdi data-t={" / 03"}></bdi></span><span><bdi data-t={"Illustrative"}></bdi></span></div>
-                <div className="dq-scene s1 is-on">
-                  <div className="dq-card dq-row"><span className="dq-ch g"><bdi data-t={"G"}></bdi></span><span className="dq-row-t"><bdi data-t={"Google search"}></bdi><small><bdi data-t={"Your website and profile"}></bdi></small></span><span className="dq-status ok"><bdi data-t={"Visible"}></bdi></span></div>
-                  <div className="dq-card dq-row"><span className="dq-ch r"><bdi data-t={"r/"}></bdi></span><span className="dq-row-t"><bdi data-t={"Online communities"}></bdi><small><bdi data-t={"Reddit threads about your category"}></bdi></small></span><span className="dq-status mid"><bdi data-t={"Rarely"}></bdi></span></div>
-                  <div className="dq-card dq-row"><span className="dq-ch a"><bdi data-t={"✦"}></bdi></span><span className="dq-row-t"><bdi data-t={"AI answers"}></bdi><small><bdi data-t={"ChatGPT, Gemini, AI Overviews"}></bdi></small></span><span className="dq-status no"><bdi data-t={"Missing"}></bdi></span></div>
-                </div>
-                <div className="dq-scene s2">
-                  <div className="dq-bubble"><b><bdi data-t={"Who’s the best option near me?"}></bdi></b><em><bdi data-t={"Google"}></bdi></em></div>
-                  <div className="dq-bubble"><b><bdi data-t={"Is it worth the price?"}></bdi></b><em><bdi data-t={"Reddit"}></bdi></em></div>
-                  <div className="dq-bubble"><b><bdi data-t={"This one or that one, which is better?"}></bdi></b><em><bdi data-t={"ChatGPT"}></bdi></em></div>
-                  <div className="dq-bubble"><b><bdi data-t={"Can I trust them?"}></bdi></b><em><bdi data-t={"Reviews"}></bdi></em></div>
-                </div>
-                <div className="dq-scene s3">
-                  <div className="dq-card dq-task done"><span className="dq-tick"></span><span className="dq-task-t"><bdi data-t={"Fix the basics on your profile"}></bdi></span><span className="dq-pill hi"><bdi data-t={"High impact"}></bdi></span></div>
-                  <div className="dq-card dq-task done"><span className="dq-tick"></span><span className="dq-task-t"><bdi data-t={"Answer your top customer questions"}></bdi></span><span className="dq-pill hi"><bdi data-t={"High impact"}></bdi></span></div>
-                  <div className="dq-card dq-task"><span className="dq-tick"></span><span className="dq-task-t"><bdi data-t={"Earn mentions on trusted sites"}></bdi></span><span className="dq-pill next"><bdi data-t={"Next"}></bdi></span></div>
-                  <p className="dq-note"><bdi data-t={"Few actions, in the right order"}></bdi></p>
-                </div>
-              </div>
+              </article>
+            </div>
+            <div className="q3-foot">
+              <p>{"See your own answers in about a minute: free, no login."}</p>
+              <a href="#audit" className="q3-cta">{"Run a Visibility Audit"} <span aria-hidden="true">{"→"}</span></a>
             </div>
           </div>
         </section>
