@@ -14,7 +14,6 @@ export const SERVICE_SLUGS = [
 // Fields left empty are omitted from the JSON-LD rather than published as placeholders.
 export const ORG = {
   name: "Effix Labs",
-  alternateName: "EFFIX Labs",
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/images/logo.png`, // 512x512 raster rendered from app/icon.svg (Google needs a raster logo)
   email: "hello@effix.co.in",
@@ -41,7 +40,6 @@ export function organizationLd(): Json {
     "@type": ["Organization", "ProfessionalService"],
     "@id": ORG_ID,
     name: ORG.name,
-    alternateName: ORG.alternateName,
     url: ORG.url,
     logo: ORG.logo,
     image: ORG.logo,
@@ -61,7 +59,6 @@ export function websiteLd(): Json {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: ORG.name,
-    alternateName: ORG.alternateName,
     url: `${SITE_URL}/`,
     inLanguage: "en-IN",
     publisher: { "@id": ORG_ID },
