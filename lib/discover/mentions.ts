@@ -37,7 +37,7 @@ async function searchOne(query: string, key: string): Promise<Mention[]> {
     const data = (await res.json()) as { organic?: { title?: string; link?: string; snippet?: string }[] };
     return (data.organic ?? [])
       .filter((r) => r.link && /^https?:\/\//.test(r.link))
-      .slice(0, 6)
+      .slice(0, 8)
       .map((r) => {
         let source = "";
         try { source = new URL(r.link as string).hostname.replace(/^www\./, ""); } catch {}

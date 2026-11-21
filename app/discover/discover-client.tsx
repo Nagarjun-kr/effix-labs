@@ -7,29 +7,9 @@
 // Nothing is stored and no login is needed.
 import { FormEvent, useCallback, useEffect, useState } from "react";
 
-type Profile = { platform: string; url: string };
-type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
+import Report, { PLATFORMS, type Identity, type Mentions, type PlatformResult } from "./report";
+
 type Phase = "idle" | "loading" | "done";
-
-type Mention = { title: string; url: string; snippet: string; source: string };
-type PlatformResult = { platform: string; query: string; results: Mention[]; error?: boolean };
-type Mentions =
-  | { status: "loading" }
-  | { status: "off" }
-  | { status: "error"; message: string }
-  | { status: "done"; byPlatform: Record<string, PlatformResult> };
-
-const PLATFORMS = [
-  { name: "YouTube", domain: "youtube.com", sym: "▶" },
-  { name: "Instagram", domain: "instagram.com", sym: "◎" },
-  { name: "Facebook", domain: "facebook.com", sym: "f" },
-  { name: "LinkedIn", domain: "linkedin.com", sym: "in" },
-  { name: "X", domain: "x.com", sym: "𝕏" },
-  { name: "TikTok", domain: "tiktok.com", sym: "♪" },
-  { name: "Reddit", domain: "reddit.com", sym: "r/" },
-  { name: "Pinterest", domain: "pinterest.com", sym: "P" },
-  { name: "Threads", domain: "threads.net", sym: "@" },
-] as const;
 
 const STEPS = ["Reading your website", "Finding your brand and linked profiles", "Searching 9 platforms on Google"];
 
@@ -49,7 +29,6 @@ export default function DiscoverClient() {
   const [brandQuery, setBrandQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [step, setStep] = useState(0);
-  const [view, setView] = useState<string>("all");
   const [mentions, setMentions] = useState<Mentions>({ status: "loading" });
   const [searched, setSearched] = useState(""); // brand name the shown results are for
 
@@ -65,7 +44,7 @@ export default function DiscoverClient() {
       if (!res.ok || !Array.isArray(body.platforms)) throw new Error(body.error || "The search didn't finish. Please try again.");
       const byPlatform: Record<string, PlatformResult> = {};
       (body.platforms as PlatformResult[]).forEach((p) => (byPlatform[p.platform] = p));
-      setMentions({ status: "done", byPlatform });
+      setMentions({ status: "done", brand: term, byPlatform });
     } catch (e) {
       setMentions({ status: "error", message: e instanceof Error ? e.message : "The search didn't finish. Please try again." });
     }
@@ -87,7 +66,6 @@ export default function DiscoverClient() {
       await new Promise((r) => window.setTimeout(r, 450));
       setIdentity(id);
       setBrandQuery(id.name);
-      setView("all");
       setPhase("done");
       searchMentions(id.name);
       try { window.history.replaceState(null, "", `/discover?url=${encodeURIComponent(id.domain)}`); } catch { /* ignore */ }
@@ -121,15 +99,6 @@ export default function DiscoverClient() {
     e.preventDefault();
     run(website);
   }
-
-  const googleUrl = (p: (typeof PLATFORMS)[number]) => {
-    const term = (searched || brandQuery).trim().replaceAll('"', "").slice(0, 100);
-    const site = p.name === "X" ? "(site:x.com OR site:twitter.com)" : `site:${p.domain}`;
-    return `https://www.google.com/search?q=${encodeURIComponent(`"${term}" ${site}`)}`;
-  };
-  const linked = new Map<string, Profile>();
-  identity?.profiles.forEach((p) => { if (!linked.has(p.platform)) linked.set(p.platform, p); });
-  const linkedCount = PLATFORMS.filter((p) => linked.has(p.name)).length;
 
   return (
     <div className="dx">
@@ -216,50 +185,7 @@ export default function DiscoverClient() {
               </form>
             </section>
 
-            <section className="dx-stats" aria-label="Summary">
-              <div className="dx-stat"><span className="dx-label">Platforms searched</span><strong>{PLATFORMS.length}</strong><small>Searched for “{searched || identity.name}”</small></div>
-              <div className="dx-stat"><span className="dx-label">Linked from your website</span><strong>{linkedCount}<span style={{ fontSize: 22, color: "#a3a3a3" }}> / {PLATFORMS.length}</span></strong><small>Platforms your site links to</small></div>
-              <div className="dx-stat"><span className="dx-label">Social links found</span><strong>{identity.profiles.length}</strong><small>On the page you entered</small></div>
-            </section>
-
-            <section className="dx-linked" aria-label="Profiles linked from your website">
-              <span className="dx-label">Profiles linked from your website</span>
-              <div className="dx-linked-grid">
-                {PLATFORMS.map((p) => {
-                  const hit = linked.get(p.name);
-                  return hit ? (
-                    <a key={p.name} className="dx-chip yes" href={hit.url} target="_blank" rel="noopener noreferrer"><i aria-hidden="true">✓</i>{p.name}<small>Linked</small></a>
-                  ) : (
-                    <span key={p.name} className="dx-chip no"><i aria-hidden="true" />{p.name}<small>Not linked</small></span>
-                  );
-                })}
-              </div>
-            </section>
-
-            <div className="dx-section-head">
-              <div><span className="dx-label">Platform discovery</span><h2>Potential mentions across the web</h2></div>
-              <p>Google results can include posts that mention your brand without being your official profile. Open each result to check it.</p>
-            </div>
-            {mentions.status === "error" && <p className="dx-error" role="alert">{mentions.message}</p>}
-            {mentions.status === "off" && <p className="dx-error dx-warn" role="status">Live search isn&apos;t switched on for this site yet. Use the links on each card to see the results on Google.</p>}
-            <div className="dx-tabs" role="tablist" aria-label="Choose a platform">
-              <button type="button" role="tab" aria-selected={view === "all"} className={`dx-tab ${view === "all" ? "is-on" : ""}`} onClick={() => setView("all")}>All platforms</button>
-              {PLATFORMS.map((p) => (
-                <button key={p.name} type="button" role="tab" aria-selected={view === p.name} className={`dx-tab ${view === p.name ? "is-on" : ""}`} onClick={() => setView(p.name)}>{p.name}</button>
-              ))}
-            </div>
-            <div className={`dx-grid ${view === "all" ? "" : "is-single"}`}>
-              {PLATFORMS.map((p) => (
-                <section key={p.name} className="dx-card" hidden={view !== "all" && view !== p.name}>
-                  <button type="button" className="dx-card-head" onClick={() => setView(p.name)} aria-label={`Show only ${p.name} results`}>
-                    <span className="sym" aria-hidden="true">{p.sym}</span>{p.name}
-                    <span className={`tag ${linked.has(p.name) ? "yes" : ""}`}>{linked.has(p.name) ? "Linked on your site" : "Google results"}</span>
-                  </button>
-                  <MentionList state={mentions} platform={p.name} />
-                  <a className="dx-open" href={googleUrl(p)} target="_blank" rel="noopener noreferrer">Open this search on Google <span aria-hidden="true">↗</span></a>
-                </section>
-              ))}
-            </div>
+            <Report identity={identity} mentions={mentions} brand={searched || identity.name} />
 
             <p className="dx-coverage"><strong>Coverage note.</strong> Searches cover public pages Google has indexed on these platforms, up to six results each. Private, blocked or differently named pages may not appear. The brand name comes from your website and may need correcting. This is a discovery tool, not a complete count of every post or profile.</p>
 
@@ -286,27 +212,3 @@ export default function DiscoverClient() {
   );
 }
 
-function MentionList({ state, platform }: { state: Mentions; platform: string }) {
-  if (state.status === "loading") {
-    return (
-      <div className="dx-results" aria-busy="true">
-        {[0, 1, 2].map((k) => <div key={k} className="dx-skel"><i /><i /><i /></div>)}
-      </div>
-    );
-  }
-  if (state.status !== "done") return null;
-  const r = state.byPlatform[platform];
-  if (!r || r.error) return <p className="dx-stalled">This platform didn&apos;t respond. Try <b>Search again</b> in a minute, or open this search on Google.</p>;
-  if (!r.results.length) return <p className="dx-empty">No results found for this brand name here. If people know you by another name, change it above and search again.</p>;
-  return (
-    <ol className="dx-results">
-      {r.results.map((m) => (
-        <li key={m.url} className="dx-hit">
-          <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
-          <span>{m.source}</span>
-          {m.snippet && <p>{m.snippet}</p>}
-        </li>
-      ))}
-    </ol>
-  );
-}
