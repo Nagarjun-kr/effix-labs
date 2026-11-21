@@ -178,7 +178,7 @@
 .rm-why-thread b { display: block; font-size: 14px; margin: 5px 0 6px; color: var(--gx-ink); }
 
 /* reveal */
-.rm-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s var(--gx-ease), transform 0.9s var(--gx-ease); }
+.rm-reveal { opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity var(--fx-dur, 1s) var(--fx-spring, var(--gx-ease)), transform var(--fx-dur, 1s) var(--fx-spring, var(--gx-ease)); }
 .rm-reveal.is-in { opacity: 1; transform: none; }
 
 @media (max-width: 900px) {

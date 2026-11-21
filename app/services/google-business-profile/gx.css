@@ -283,7 +283,7 @@
 .gx-related a:hover i { transform: translateX(4px); color: var(--gx-accent); }
 
 /* ---------- reveal on scroll ---------- */
-.gx-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s var(--gx-ease), transform 0.9s var(--gx-ease); }
+.gx-reveal { opacity: 0; transform: translateY(20px) scale(0.9); transition: opacity var(--fx-dur, 1s) var(--fx-spring, var(--gx-ease)), transform var(--fx-dur, 1s) var(--fx-spring, var(--gx-ease)); }
 .gx-reveal.is-in { opacity: 1; transform: none; }
 
 @keyframes gxUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }

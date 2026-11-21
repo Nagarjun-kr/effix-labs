@@ -43,7 +43,7 @@ function handleRedditSubmit(e) {
   var io = new IntersectionObserver(function (en) {
     en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } });
   }, { threshold: 0.15 });
-  els.forEach(function (el, i) { el.classList.add('rm-reveal'); el.style.transitionDelay = (i % 2) * 0.12 + 's'; io.observe(el); });
+  els.forEach(function (el, i) { el.classList.add('rm-reveal'); el.style.transitionDelay = (i % 3) * 0.1 + 's'; io.observe(el); });
 })();
 
 /* process cards: spotlight follows the cursor */

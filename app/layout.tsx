@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./fx.css";
 import { organizationLd, websiteLd, ldString } from "@/lib/site";
 
 const ORG_LD = ldString([organizationLd(), websiteLd()]);

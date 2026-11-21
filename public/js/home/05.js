@@ -28,3 +28,27 @@
     });
   });
 })();
+
+/* Scroll reveal (reference-site preset): headings, intro text, question cards, principles,
+   FAQ and the closing call-to-action fade up with a gentle spring as they enter the viewport. */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  var sel = [
+    '#our-approach .section-heading-editorial', '#our-approach .section-intro-text', '#our-approach .approach-col',
+    '.principles-panel-header', '.principles-col',
+    '#faqs .section-heading-editorial', '#faqs .faq-item',
+    '#final-cta .cta-heading', '#final-cta .cta-desc', '#final-cta .cta-actions-row'
+  ].join(',');
+  var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (el) {
+    var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+    el.classList.add('fx-reveal');
+    el.style.setProperty('--fx-d', (Math.min(sib, 5) * 0.1).toFixed(2) + 's');
+    io.observe(el);
+  });
+})();

@@ -7,7 +7,7 @@
   const els = parts.map((sel) => hero.querySelector(sel)).filter(Boolean);
   els.forEach((el, i) => {
     el.classList.add('fx-rise');
-    el.style.setProperty('--rd', (0.1 + i * 0.1).toFixed(2) + 's');
+    el.style.setProperty('--rd', (i * 0.1).toFixed(2) + 's');
   });
   requestAnimationFrame(() => requestAnimationFrame(() => els.forEach((el) => el.classList.add('is-in'))));
 })();

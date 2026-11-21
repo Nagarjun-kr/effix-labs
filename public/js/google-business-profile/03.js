@@ -91,7 +91,7 @@
   targets.forEach(function (el, i) {
     el.classList.add('gx-reveal');
     var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
-    el.style.transitionDelay = Math.min(sib, 5) * 0.07 + 's';
+    el.style.transitionDelay = Math.min(sib, 5) * 0.1 + 's';
     io.observe(el);
   });
 })();
