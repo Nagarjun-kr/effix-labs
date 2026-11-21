@@ -1,5 +1,5 @@
 // Google Business Profile Optimisation — service page.
-// Markup renders on the server; small interactions (video lightbox, checklist meter,
+// Markup renders on the server; small interactions (banner parallax, checklist meter,
 // FAQ accordion, contact form) are plain scripts loaded in order by <LegacyScripts>.
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
@@ -7,6 +7,7 @@ import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ORG_ID, ldString } from "@/lib/site";
 import "./page.css";
 import "./gx.css";
+import "./gb-banner.css";
 
 export const metadata: Metadata = {
   "title": "Google Business Profile Optimisation Services | EFFIX Labs",
@@ -232,34 +233,47 @@ export default function Page() {
             <p className="gx-hero-trust">{"No lock-in · No fake reviews · No ranking promises we can’t keep"}</p>
           </div>
 
-          {/* Cinematic media banner */}
+          {/* Hero banner — CSS-built 3D "Map Pack" scene (no video) */}
           <div className="gx-wrap-wide">
-            <div className="gx-media" id="gxMedia">
-              <img className="gx-media-bg" src="/images/services/gbp-video-poster.jpg" width={1920} height={1080} alt="" fetchPriority="high" decoding="async" aria-hidden="true" />
-              <video className="gx-media-fg" muted loop playsInline preload="none" poster="/images/services/gbp-video-poster.jpg" data-src="/videos/gbp-hero-bg.mp4" width={1920} height={1080} aria-hidden="true" tabIndex={-1}></video>
-              <div className="gx-media-shade" aria-hidden="true"></div>
-              <div className="gx-media-copy">
-                <span className="gx-media-label">{"Watch"}</span>
-                <h2 className="gx-media-title">{"Your profile,"}<br /><em>{"working for you."}</em></h2>
-                <button type="button" className="gx-media-btn" id="gxWatchBtn" aria-haspopup="dialog" aria-controls="gxVideoModal">
-                  {"Watch the video"}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"></path></svg>
-                </button>
+            <div className="gb-banner" id="gbBanner">
+              <div className="gb-copy">
+                <span className="gb-label">{"Google Business Profile"}</span>
+                <h2 className="gb-title">{"Your profile,"}<br /><em>{"working for you."}</em></h2>
+                <p className="gb-sub">{"Show up in Google Search and Maps, and turn profile views into calls, visits and directions."}</p>
+                <a href="#included" className="gb-btn">{"See what’s included"}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a>
+              </div>
+              <div className="gb-scene" aria-hidden="true">
+                <div className="gb-map">
+                  <i className="gb-park"></i><i className="gb-water"></i>
+                  <i className="gb-dot d1"></i><i className="gb-dot d2"></i><i className="gb-dot d3"></i><i className="gb-dot d4"></i>
+                  <span className="gb-pulse"></span>
+                  <span className="gb-pin"><svg viewBox="0 0 24 32"><path d="M12 0C5.4 0 0 5.3 0 11.9 0 20.6 12 32 12 32s12-11.4 12-20.1C24 5.3 18.6 0 12 0z" fill="url(#gbPinGrad)"></path><circle cx="12" cy="11.5" r="4.6" fill="#fff"></circle><defs><linearGradient id="gbPinGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#a855f7"></stop><stop offset="1" stopColor="#6d28d9"></stop></linearGradient></defs></svg></span>
+                </div>
+                <div className="gb-pack">
+                  <span className="gb-pack-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.4"></circle></svg><bdi data-t={"Map Pack"}></bdi></span>
+                  <span className="gb-pack-row on"><b><bdi data-t={"1"}></bdi></b><bdi data-t={"Your business"}></bdi></span>
+                  <span className="gb-pack-row"><b><bdi data-t={"2"}></bdi></b><i></i></span>
+                  <span className="gb-pack-row"><b><bdi data-t={"3"}></bdi></b><i></i></span>
+                </div>
+                <div className="gb-card">
+                  <div className="gb-card-cover"><span className="gb-card-logo"></span></div>
+                  <div className="gb-card-body">
+                    <b className="gb-card-name"><bdi data-t={"Your business"}></bdi></b>
+                    <span className="gb-card-stars"><bdi data-t={"★★★★★"}></bdi></span>
+                    <span className="gb-card-meta"><i></i><bdi data-t={"Open · Closes 8 pm"}></bdi></span>
+                    <div className="gb-card-actions">
+                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><bdi data-t={"Call"}></bdi></span>
+                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11l18-8-8 18-2-8z"></path></svg><bdi data-t={"Directions"}></bdi></span>
+                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><bdi data-t={"Website"}></bdi></span>
+                    </div>
+                  </div>
+                </div>
+                <span className="gb-chip c1"><i></i><bdi data-t={"Profile verified"}></bdi></span>
+                <span className="gb-chip c2"><i></i><bdi data-t={"Review replied"}></bdi></span>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Video lightbox */}
-        <div className="gx-modal" id="gxVideoModal" role="dialog" aria-modal="true" aria-label="Google Business Profile optimisation video" hidden>
-          <div className="gx-modal-backdrop" data-close="true"></div>
-          <div className="gx-modal-body">
-            <button type="button" className="gx-modal-close" data-close="true" aria-label="Close video">{"✕"}</button>
-            <video className="gx-modal-video" id="gxModalVideo" controls playsInline loop preload="none" poster="/images/services/gbp-video-poster.jpg">
-              <source src="/videos/gbp-hero-bg.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
 
         {/* ================= MARQUEE ================= */}
         <div className="gx-marquee" id="gxMarquee">

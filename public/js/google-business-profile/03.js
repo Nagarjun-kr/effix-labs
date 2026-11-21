@@ -1,4 +1,4 @@
-/* Google Business Profile Optimisation page: video lightbox, checklist meter, scroll reveals. */
+/* Google Business Profile Optimisation page: banner parallax, marquee, checklist meter, scroll reveals. */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -31,26 +31,17 @@
   if (modal) modal.addEventListener('click', function (e) { if (e.target.getAttribute('data-close')) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
-  /* ---- Hero video: poster paints first; the looping video loads after page load, when visible ---- */
-  var heroVid = document.querySelector('.gx-media-fg[data-src]');
-  if (heroVid) {
-    var conn = navigator.connection || {};
-    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches || conn.saveData;
-    var startVid = function () {
-      if (heroVid.dataset.loaded) return;
-      heroVid.dataset.loaded = '1';
-      heroVid.src = heroVid.dataset.src;
-      var pr = heroVid.play(); if (pr && pr.catch) pr.catch(function () {});
-    };
-    var armVid = function () {
-      if (calm) return;
-      if ('IntersectionObserver' in window) {
-        var vio = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { startVid(); vio.disconnect(); } }, { rootMargin: '200px' });
-        vio.observe(heroVid);
-      } else startVid();
-    };
-    if (document.readyState === 'complete') setTimeout(armVid, 300);
-    else window.addEventListener('load', function () { setTimeout(armVid, 300); });
+  /* ---- Hero banner: gentle pointer parallax ---- */
+  var gb = document.getElementById('gbBanner');
+  if (gb && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
+    var gbRaf = 0;
+    gb.addEventListener('pointermove', function (e) {
+      var r = gb.getBoundingClientRect();
+      var mx = ((e.clientX - r.left) / r.width - 0.5) * 2, my = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      cancelAnimationFrame(gbRaf);
+      gbRaf = requestAnimationFrame(function () { gb.style.setProperty('--mx', mx.toFixed(3)); gb.style.setProperty('--my', my.toFixed(3)); });
+    });
+    gb.addEventListener('pointerleave', function () { gb.style.setProperty('--mx', '0'); gb.style.setProperty('--my', '0'); });
   }
 
   /* ---- Marquee: clone the single crawlable set for a seamless loop (clone is aria-hidden) ---- */
