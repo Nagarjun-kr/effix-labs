@@ -1,4 +1,6 @@
 "use client";
+
+import { BRAND_ICONS } from "@/lib/discover/brand-icons";
 /* eslint-disable @next/next/no-html-link-for-pages -- links to the homepage must be full page loads: its scripts
    (animations, the #audit search box) only start on a real page load, which <Link> would skip. */
 
@@ -14,6 +16,55 @@ const NAMES = ["YouTube", "Instagram", "Facebook", "LinkedIn", "X", "Reddit", "Q
 // [angle in degrees, distance from centre as % of the radius] for each platform's blip
 const BLIPS: [number, number][] = [[-60, 72], [-18, 46], [25, 82], [62, 58], [118, 76], [158, 40], [205, 66], [250, 84]];
 
+
+/* Original pixel-art horse (two gallop frames) and hurdle, drawn from character grids: "#" = pixel. */
+const HORSE_TOP = [
+  "..............##....",
+  ".............####...",
+  "............######..",
+  "...........###..###.",
+  "..........###.......",
+  "##.......####.......",
+  ".##############.....",
+  "..#############.....",
+  "..############......",
+];
+const LEGS_A = ["..##.........##.....", ".##...........##....", "##.............##..."];
+const LEGS_B = ["...##.......##......", "....##.....##.......", ".....#.....#........"];
+const HURDLE = ["#..#", "####", "#..#", "####", "#..#"];
+
+function Pixels({ rows, x = 0, y = 0 }: { rows: string[]; x?: number; y?: number }) {
+  return (
+    <>
+      {rows.flatMap((row, r) => [...row].map((c, col) => (c === "#" ? <rect key={`${r}-${col}`} x={x + col} y={y + r} width="1.02" height="1.02" /> : null)))}
+    </>
+  );
+}
+
+/** Pixel horse galloping along a ground line, jumping hurdles; the ground fills green with real progress. */
+function Runner({ pct }: { pct: number }) {
+  return (
+    <div className="sc-run" aria-hidden="true">
+      <div className="sc-horse">
+        <svg viewBox="0 0 20 12" className="f1"><Pixels rows={[...HORSE_TOP, ...LEGS_A]} /></svg>
+        <svg viewBox="0 0 20 12" className="f2"><Pixels rows={[...HORSE_TOP, ...LEGS_B]} /></svg>
+      </div>
+      <svg viewBox="0 0 4 5" className="sc-hurdle"><Pixels rows={HURDLE} /></svg>
+      <div className="sc-ground"><i style={{ width: `${pct}%` }} /></div>
+      <div className="sc-pebbles" />
+    </div>
+  );
+}
+
+function SmallLogo({ name }: { name: string }) {
+  const i = BRAND_ICONS[name];
+  if (!i) return null;
+  return (
+    <svg width="14" height="14" viewBox={`0 0 ${i.w} ${i.h}`} aria-hidden="true">
+      <path d={i.d} fill={i.color} />
+    </svg>
+  );
+}
 
 export function percentFor(stage: ScanStage, p: SearchProgress) {
   if (stage === "ready") return 100;
@@ -92,10 +143,14 @@ export default function Scan({
         {NAMES.map((name, i) => {
           const st = stage === "site" ? "wait" : progress.platforms[name]?.state ?? "wait";
           const [angle, radius] = BLIPS[i];
-          return <span key={name} className={`sc-blip st-${st}`} style={{ ["--a" as string]: `${angle}deg`, ["--d" as string]: String(radius / 200) }} />;
+          return (
+            <span key={name} className={`sc-blip st-${st}`} style={{ ["--a" as string]: `${angle}deg`, ["--d" as string]: String(radius / 200) }}>
+              <span className="sc-blip-ic"><SmallLogo name={name} /></span>
+            </span>
+          );
         })}
       </div>
-      <div className="sc-line" aria-hidden="true"><i style={{ width: `${pct}%` }} /></div>
+      <Runner pct={pct} />
     </div>
   );
 }
