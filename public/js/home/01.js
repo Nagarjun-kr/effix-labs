@@ -533,6 +533,8 @@
     (function initDecagonTimeline() {
       // 1. Lottie Player Initializer
       function initCollageLotties() {
+        // No Lottie containers on the page: nothing to load (and no retry loop).
+        if (!document.querySelector('[id^="lottie-mm-"]')) return;
         if (typeof lottie === 'undefined') {
           // If lottie script is still loading, retry shortly
           setTimeout(initCollageLotties, 80);

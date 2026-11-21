@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { organizationLd, ldString } from "@/lib/site";
+import { organizationLd, websiteLd, ldString } from "@/lib/site";
 
-const ORG_LD = ldString(organizationLd());
+const ORG_LD = ldString([organizationLd(), websiteLd()]);
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://effix.co.in"),

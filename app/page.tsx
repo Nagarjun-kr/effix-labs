@@ -2,6 +2,8 @@
 // the page's original scripts are loaded in order by <LegacyScripts>.
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
+import { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import { ldString } from "@/lib/site";
 import "./page.css";
 
 export const metadata: Metadata = {
@@ -15,14 +17,97 @@ export const metadata: Metadata = {
     "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search. Start with a free Google organic visibility audit.",
     "url": "https://effix.co.in/",
     "type": "website",
-    "siteName": "Effix Labs"
+    "siteName": "Effix Labs",
+    "images": [{ "url": "https://effix.co.in/images/og-home.jpg", "width": 1200, "height": 630, "alt": "Effix Labs: Get found where your customers search" }]
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Effix Labs | Get Found Where Your Customers Search",
+    "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search.",
+    "images": ["https://effix.co.in/images/og-home.jpg"]
   }
 };
+
+
+const HOME_FAQS: FaqItem[] = [
+  {
+    "q": "What does the free audit check?",
+    "a": [
+      "It checks Google organic search results for queries related to your business. It records where your brand appears and points out possible gaps."
+    ]
+  },
+  {
+    "q": "Do I need to log in or pay?",
+    "a": [
+      "No. The audit is free and needs no login."
+    ]
+  },
+  {
+    "q": "Does the audit cover AI answers, Google Maps, Reddit or Quora?",
+    "a": [
+      "Not yet. Today it covers Google organic search only."
+    ]
+  },
+  {
+    "q": "What happens to the website I enter?",
+    "a": [
+      "We read your public website to understand your business and create search queries. Our Privacy Policy explains what we store."
+    ]
+  },
+  {
+    "q": "Do you guarantee rankings or leads?",
+    "a": [
+      "No. Google and other platforms make their own decisions. We focus on useful work and honest reporting."
+    ]
+  },
+  {
+    "q": "Do I need special SEO to appear in AI search?",
+    "a": [
+      "For Google’s AI features, Google says no special optimization is needed. Good content and standard SEO basics still apply. We don’t promise a trick that guarantees inclusion."
+    ]
+  },
+  {
+    "q": "Do you use fake reviews or fake accounts?",
+    "a": [
+      "Never. Reviews should come from real customers. Google can restrict profiles that break its rules on fake engagement."
+    ]
+  },
+  {
+    "q": "How do you work on Reddit and Quora?",
+    "a": [
+      "We disclose our client relationships and follow each community’s rules. We try to give useful, relevant answers. We avoid undisclosed promotion."
+    ]
+  },
+  {
+    "q": "Who writes your blog content?",
+    "a": [
+      "AI helps with drafting. A person reviews every article. We cite reliable sources for factual claims."
+    ]
+  },
+  {
+    "q": "Do you work with businesses in India and abroad?",
+    "a": [
+      "Yes. We work with businesses in India and internationally."
+    ]
+  },
+  {
+    "q": "How do I contact Effix Labs?",
+    "a": [
+      "Email ",
+      {
+        "text": "hello@effix.co.in",
+        "href": "mailto:hello@effix.co.in"
+      },
+      " or use the contact page."
+    ]
+  }
+];
+
+const HOME_LD = ldString([faqPageLd(HOME_FAQS)]);
 
 const SCRIPTS = [
   "/js/legacy-shim.js",
   "/js/home/01.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js",
   "/js/home/02.js",
   "/js/home/03.js",
   "/scripts/lenis.min.js",
@@ -33,6 +118,7 @@ const SCRIPTS = [
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: HOME_LD }} />
 
       {" "}
       {" "}
@@ -316,7 +402,7 @@ export default function Page() {
               {" "}
               <a href="/discover" className="window-content-anchor" aria-label="Explore Search Discovery on Effix Labs">
                 {" "}
-                <img src="/images/Refrnce_cropped.png?v=5" alt="Search is not one place anymore. Multiple places, real opportunities across Google, Online Communities and AI Search" className="window-display-image" loading="eager" />
+                <img src="/images/search-everywhere.webp" alt="Search is not one place anymore. Multiple places, real opportunities across Google, Online Communities and AI Search" className="window-display-image" width={2000} height={1026} loading="eager" decoding="async" />
                 {" "}
               </a>
               {" "}
@@ -465,7 +551,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-01-gbp.jpg" alt="Google Business Profile Optimisation service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-01-gbp.jpg" alt="Google Business Profile Optimisation service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -496,7 +582,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-02-reddit-marketing.jpg" alt="Reddit Marketing service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-02-reddit-marketing.jpg" alt="Reddit Marketing service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -527,7 +613,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/float/service-03-seo-aeo-base.jpg" alt="SEO & AEO Services service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/float/service-03-seo-aeo-base.jpg" alt="SEO & AEO Services service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       <div className="poster-float" aria-hidden="true">
                         <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-search.png" alt="" data-depth="16" loading="lazy" decoding="async" style={{ left: "51.071%", top: "48.224%", width: "22.912%" }} />
                         <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-bars.png" alt="" data-depth="26" loading="lazy" decoding="async" style={{ left: "78.48%", top: "40.212%", width: "12.741%" }} />
@@ -563,7 +649,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/float/service-04-content-writing-base.jpg" alt="Content Writing service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/float/service-04-content-writing-base.jpg" alt="Content Writing service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       <div className="poster-float" aria-hidden="true">
                         <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-doc.png" alt="" data-depth="12" loading="lazy" decoding="async" style={{ left: "53.383%", top: "44.124%", width: "31.794%" }} />
                         <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-ranked.png" alt="" data-depth="20" loading="lazy" decoding="async" style={{ left: "70.677%", top: "35.633%", width: "26.423%" }} />
@@ -605,7 +691,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-05-web-dev.jpg" alt="Website Design & Development service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-05-web-dev.jpg" alt="Website Design & Development service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -652,7 +738,7 @@ export default function Page() {
               <div className="discover-left">
                 {" "}
                 <h2 className="discover-headline">
-                  {"Get discovered."}
+                  {"Get discovered. "}
                   <br />
                   {"Grow everywhere."}
                 </h2>
@@ -739,10 +825,10 @@ export default function Page() {
                   <div className="discover-slides-container">
                     {" "}
                     {" "}
-                    <img src="/images/discover-slide-girl.jpg" alt="EFFIX Discover Platform Intelligence" className="discover-slide is-active" data-slide="girl" loading="eager" />
+                    <img src="/images/discover-slide-girl.jpg" alt="EFFIX Discover Platform Intelligence" className="discover-slide is-active" width={1024} height={1024} loading="lazy" decoding="async" data-slide="girl" />
                     {" "}
                     {" "}
-                    <img src="/images/discover-slide-boy.jpg" alt="EFFIX Discover Search, Content and AI Intelligence" className="discover-slide" data-slide="boy" loading="eager" />
+                    <img src="/images/discover-slide-boy.jpg" alt="EFFIX Discover Search, Content and AI Intelligence" className="discover-slide" width={1024} height={1024} loading="lazy" decoding="async" data-slide="boy" />
                     {" "}
                   </div>
                   {" "}
@@ -803,7 +889,7 @@ export default function Page() {
                       {" "}
                       <div className="art-ambient-glow glow-audit" aria-hidden="true"></div>
                       {" "}
-                      <div className="art-stage-wrap" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
+                      <div className="art-stage-wrap" aria-hidden="true" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
                         {" "}
                         <div className="ref-audit-wrap">
                           {" "}
@@ -825,7 +911,7 @@ export default function Page() {
                               </svg>
                               {" "}
                               <span className="ref-search-text">
-                                {"Your business"}
+                                <bdi data-t={"Your business"}></bdi>
                               </span>
                               {" "}
                             </div>
@@ -850,34 +936,34 @@ export default function Page() {
                                 {" "}
                                 <div className="ref-profile-top">
                                   {" "}
-                                  <img src="/images/services/google-business-profile.png" alt="Business storefront" className="ref-profile-thumb" />
+                                  <img src="/images/services/thumb-storefront.webp" alt="" className="ref-profile-thumb" width={256} height={384} loading="lazy" decoding="async" />
                                   {" "}
                                   <div className="ref-profile-meta">
                                     {" "}
                                     <span className="ref-profile-name">
-                                      {"Your Business Name"}
+                                      <bdi data-t={"Your Business Name"}></bdi>
                                     </span>
                                     {" "}
                                     <div className="ref-profile-rating">
                                       {" "}
                                       <span className="ref-rating-num">
-                                        {"4.3"}
+                                        <bdi data-t={"4.3"}></bdi>
                                       </span>
                                       {" "}
                                       <span className="ref-stars">
-                                        {"★★★★★"}
+                                        <bdi data-t={"★★★★★"}></bdi>
                                       </span>
                                       {" "}
                                       <span className="ref-reviews">
-                                        {"(120)"}
+                                        <bdi data-t={"(120)"}></bdi>
                                       </span>
                                       {" "}
                                     </div>
                                     {" "}
                                     <span className="ref-profile-sub">
-                                      {"Business category · "}
+                                      <bdi data-t={"Business category · "}></bdi>
                                       <span className="ref-open-badge">
-                                        {"Open"}
+                                        <bdi data-t={"Open"}></bdi>
                                       </span>
                                     </span>
                                     {" "}
@@ -890,19 +976,19 @@ export default function Page() {
                               <div className="ref-profile-tabs">
                                 {" "}
                                 <span className="ref-tab-pill tab-active">
-                                  {"Overview"}
+                                  <bdi data-t={"Overview"}></bdi>
                                 </span>
                                 {" "}
                                 <span className="ref-tab-pill">
-                                  {"Reviews"}
+                                  <bdi data-t={"Reviews"}></bdi>
                                 </span>
                                 {" "}
                                 <span className="ref-tab-pill">
-                                  {"Photos"}
+                                  <bdi data-t={"Photos"}></bdi>
                                 </span>
                                 {" "}
                                 <span className="ref-tab-pill">
-                                  {"About"}
+                                  <bdi data-t={"About"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -929,13 +1015,13 @@ export default function Page() {
                                   </svg>
                                   {" "}
                                   <span>
-                                    {"Online presence"}
+                                    <bdi data-t={"Online presence"}></bdi>
                                   </span>
                                   {" "}
                                 </div>
                                 {" "}
                                 <span className="ref-status-pill pill-amber">
-                                  {"Needs work"}
+                                  <bdi data-t={"Needs work"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -953,13 +1039,13 @@ export default function Page() {
                                   </svg>
                                   {" "}
                                   <span>
-                                    {"Business profile"}
+                                    <bdi data-t={"Business profile"}></bdi>
                                   </span>
                                   {" "}
                                 </div>
                                 {" "}
                                 <span className="ref-status-pill pill-green">
-                                  {"Good"}
+                                  <bdi data-t={"Good"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -981,13 +1067,13 @@ export default function Page() {
                                   </svg>
                                   {" "}
                                   <span>
-                                    {"Local mentions"}
+                                    <bdi data-t={"Local mentions"}></bdi>
                                   </span>
                                   {" "}
                                 </div>
                                 {" "}
                                 <span className="ref-status-pill pill-purple">
-                                  {"Limited"}
+                                  <bdi data-t={"Limited"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1007,13 +1093,13 @@ export default function Page() {
                                   </svg>
                                   {" "}
                                   <span>
-                                    {"Website visibility"}
+                                    <bdi data-t={"Website visibility"}></bdi>
                                   </span>
                                   {" "}
                                 </div>
                                 {" "}
                                 <span className="ref-status-pill pill-amber">
-                                  {"Needs work"}
+                                  <bdi data-t={"Needs work"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1057,7 +1143,7 @@ export default function Page() {
                       {" "}
                       <div className="art-ambient-glow glow-plan" aria-hidden="true"></div>
                       {" "}
-                      <div className="art-stage-wrap" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
+                      <div className="art-stage-wrap" aria-hidden="true" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
                         {" "}
                         <div className="ref-plan-wrap">
                           {" "}
@@ -1065,7 +1151,7 @@ export default function Page() {
                           <div className="ref-plan-card">
                             {" "}
                             <div className="ref-plan-header">
-                              {"Your action plan"}
+                              <bdi data-t={"Your action plan"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-plan-list">
@@ -1083,7 +1169,7 @@ export default function Page() {
                                 </div>
                                 {" "}
                                 <span className="ref-plan-label">
-                                  {"Improve Google Business Profile"}
+                                  <bdi data-t={"Improve Google Business Profile"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1101,7 +1187,7 @@ export default function Page() {
                                 </div>
                                 {" "}
                                 <span className="ref-plan-label">
-                                  {"Add helpful content"}
+                                  <bdi data-t={"Add helpful content"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1111,7 +1197,7 @@ export default function Page() {
                                 <div className="ref-checkbox"></div>
                                 {" "}
                                 <span className="ref-plan-label">
-                                  {"Get mentioned in relevant sites"}
+                                  <bdi data-t={"Get mentioned in relevant sites"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1121,7 +1207,7 @@ export default function Page() {
                                 <div className="ref-checkbox"></div>
                                 {" "}
                                 <span className="ref-plan-label">
-                                  {"Answer customer questions"}
+                                  <bdi data-t={"Answer customer questions"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1134,7 +1220,7 @@ export default function Page() {
                           <div className="ref-priority-card">
                             {" "}
                             <div className="ref-priority-header">
-                              {"Priority"}
+                              <bdi data-t={"Priority"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-priority-list">
@@ -1152,7 +1238,7 @@ export default function Page() {
                                 </div>
                                 {" "}
                                 <span className="ref-prio-label">
-                                  {"High impact"}
+                                  <bdi data-t={"High impact"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1170,7 +1256,7 @@ export default function Page() {
                                 </div>
                                 {" "}
                                 <span className="ref-prio-label">
-                                  {"Quick wins"}
+                                  <bdi data-t={"Quick wins"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1194,7 +1280,7 @@ export default function Page() {
                                 </div>
                                 {" "}
                                 <span className="ref-prio-label">
-                                  {"Long term"}
+                                  <bdi data-t={"Long term"}></bdi>
                                 </span>
                                 {" "}
                               </div>
@@ -1238,7 +1324,7 @@ export default function Page() {
                       {" "}
                       <div className="art-ambient-glow glow-publish" aria-hidden="true"></div>
                       {" "}
-                      <div className="art-stage-wrap" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
+                      <div className="art-stage-wrap" aria-hidden="true" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
                         {" "}
                         <div className="ref-publish-wrap">
                           {" "}
@@ -1260,7 +1346,7 @@ export default function Page() {
                               </svg>
                               {" "}
                               <span className="ref-pub-title">
-                                {"Business Profile"}
+                                <bdi data-t={"Business Profile"}></bdi>
                               </span>
                               {" "}
                               <span className="ref-pub-chat">
@@ -1276,17 +1362,17 @@ export default function Page() {
                             </div>
                             {" "}
                             <div className="ref-pub-mini-stars">
-                              {"★★★★★"}
+                              <bdi data-t={"★★★★★"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-pub-thumb-wrap">
                               {" "}
-                              <img src="/images/services/google-business-profile.png" alt="Profile storefront" className="ref-pub-thumb" />
+                              <img src="/images/services/thumb-storefront.webp" alt="" className="ref-pub-thumb" width={256} height={384} loading="lazy" decoding="async" />
                               {" "}
                             </div>
                             {" "}
                             <div className="ref-pub-bottom-stars">
-                              {"★★★★★"}
+                              <bdi data-t={"★★★★★"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-pub-skeleton">
@@ -1315,7 +1401,7 @@ export default function Page() {
                               </span>
                               {" "}
                               <span className="ref-pub-title">
-                                {"Helpful content"}
+                                <bdi data-t={"Helpful content"}></bdi>
                               </span>
                               {" "}
                             </div>
@@ -1332,7 +1418,7 @@ export default function Page() {
                                 {" "}
                               </div>
                               {" "}
-                              <img src="/images/services/ai-blog-seo.png" alt="Architecture content" className="ref-pub-mini-photo" />
+                              <img src="/images/services/thumb-architecture.webp" alt="" className="ref-pub-mini-photo" width={256} height={384} loading="lazy" decoding="async" />
                               {" "}
                             </div>
                             {" "}
@@ -1356,7 +1442,7 @@ export default function Page() {
                               </span>
                               {" "}
                               <span className="ref-pub-title-light">
-                                {"AI answer"}
+                                <bdi data-t={"AI answer"}></bdi>
                               </span>
                               {" "}
                             </div>
@@ -1410,7 +1496,7 @@ export default function Page() {
                       {" "}
                       <div className="art-ambient-glow glow-measure" aria-hidden="true"></div>
                       {" "}
-                      <div className="art-stage-wrap" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
+                      <div className="art-stage-wrap" aria-hidden="true" data-parallax="y" data-parallax-speed="0.14" data-parallax-range="90" data-parallax-direction="-1">
                         {" "}
                         <div className="ref-measure-wrap">
                           {" "}
@@ -1420,11 +1506,11 @@ export default function Page() {
                             <div className="ref-measure-header">
                               {" "}
                               <span className="ref-measure-title">
-                                {"Search visibility"}
+                                <bdi data-t={"Search visibility"}></bdi>
                               </span>
                               {" "}
                               <span className="ref-measure-badge">
-                                {"↑ 38%"}
+                                <bdi data-t={"↑ 38%"}></bdi>
                               </span>
                               {" "}
                             </div>
@@ -1463,11 +1549,11 @@ export default function Page() {
                           <div className="ref-measure-card">
                             {" "}
                             <div className="ref-stat-header">
-                              {"Search impressions"}
+                              <bdi data-t={"Search impressions"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-stat-val">
-                              {"12.4K"}
+                              <bdi data-t={"12.4K"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-mini-sparkline">
@@ -1486,11 +1572,11 @@ export default function Page() {
                           <div className="ref-measure-card">
                             {" "}
                             <div className="ref-stat-header">
-                              {"Profile views"}
+                              <bdi data-t={"Profile views"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-stat-val">
-                              {"3.8K"}
+                              <bdi data-t={"3.8K"}></bdi>
                             </div>
                             {" "}
                             <div className="ref-mini-sparkline">
@@ -1537,7 +1623,7 @@ export default function Page() {
                   <div className="pc-card-inner">
                     <div className="pc-card-copy">
                       <span className="pc-eyebrow">{"The Effix method"}</span>
-                      <h3 className="pc-card-title"><span className="pc-grad">{"Four steps from guesswork"}</span><br />{"to a plan."}</h3>
+                      <h3 className="pc-card-title"><span className="pc-grad">{"Four steps from guesswork "}</span><br />{"to a plan."}</h3>
                       <p className="pc-card-text">{"We turn uncertainty into a clear plan. See where you stand, focus on what matters, make the improvements, and track what changed."}</p>
                       <p className="pc-card-note"><span className="pc-note-dot" aria-hidden="true"></span>{"We report what we can measure. We say so when we can’t."}</p>
                       <div className="pc-card-ctas">
@@ -1719,309 +1805,19 @@ export default function Page() {
             </h2>
             {" "}
             <div className="faq-container">
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a1" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"What does the free audit check?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a1" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" It checks Google organic search results for queries related to your business. It records where your brand appears and points out possible gaps. "}
+              {HOME_FAQS.map((it, i) => (
+                <div className="faq-item" key={i}>
+                  <button className="faq-button" type="button" aria-expanded="false" aria-controls={`faq-a${i + 1}`} id={`faq-q${i + 1}`} data-onclick="toggleFaq(this)">
+                    <span>{it.q}</span>
+                    <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                  <div className="faq-answer-panel" id={`faq-a${i + 1}`} role="region" aria-labelledby={`faq-q${i + 1}`}>
+                    <div className="faq-answer-content">
+                      {it.a.map((p, k) => (typeof p === "string" ? <span key={k}>{p}</span> : <a key={k} href={p.href}>{p.text}</a>))}
+                    </div>
                   </div>
-                  {" "}
                 </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a2" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Do I need to log in or pay?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a2" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" No. The audit is free and needs no login. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a3" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Does the audit cover AI answers, Google Maps, Reddit or Quora?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a3" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" Not yet. Today it covers Google organic search only. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a4" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"What happens to the website I enter?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a4" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" We read your public website to understand your business and create search queries. Our Privacy Policy explains what we store. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a6" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Do you guarantee rankings or leads?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a6" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" No. Google and other platforms make their own decisions. We focus on useful work and honest reporting. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a7" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Do I need special SEO to appear in AI search?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a7" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" For Google’s AI features, Google says no special optimization is needed. Good content and standard SEO basics still apply. We don’t promise a trick that guarantees inclusion. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a8" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Do you use fake reviews or fake accounts?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a8" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" Never. Reviews should come from real customers. Google can restrict profiles that break its rules on fake engagement. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a9" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"How do you work on Reddit and Quora?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a9" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" We disclose our client relationships and follow each community’s rules. We try to give useful, relevant answers. We avoid undisclosed promotion. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a10" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Who writes your blog content?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a10" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" AI helps with drafting. A person reviews every article. We cite reliable sources for factual claims. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a11" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"Do you work with businesses in India and abroad?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a11" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" Yes. We work with businesses in India and internationally. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="faq-item">
-                {" "}
-                <button className="faq-button" type="button" aria-expanded="false" aria-controls="faq-a12" data-onclick="toggleFaq(this)">
-                  {" "}
-                  <span>
-                    {"How do I contact Effix Labs?"}
-                  </span>
-                  {" "}
-                  <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {" "}
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                    {" "}
-                  </svg>
-                  {" "}
-                </button>
-                {" "}
-                <div className="faq-answer-panel" id="faq-a12" role="region">
-                  {" "}
-                  <div className="faq-answer-content">
-                    {" Email "}
-                    <a href="mailto:hello@effix.co.in">
-                      {"hello@effix.co.in"}
-                    </a>
-                    {" or use the contact page. "}
-                  </div>
-                  {" "}
-                </div>
-                {" "}
-              </div>
-              {" "}
+              ))}
             </div>
             {" "}
           </div>

@@ -56,6 +56,18 @@ export function organizationLd(): Json {
   });
 }
 
+export function websiteLd(): Json {
+  return {
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: ORG.name,
+    alternateName: ORG.alternateName,
+    url: `${SITE_URL}/`,
+    inLanguage: "en-IN",
+    publisher: { "@id": ORG_ID },
+  };
+}
+
 /** Serialise JSON-LD safely for an inline <script> tag. */
 export function ldString(data: Json | Json[]): string {
   const body = Array.isArray(data) ? { "@context": "https://schema.org", "@graph": data } : { "@context": "https://schema.org", ...data };
