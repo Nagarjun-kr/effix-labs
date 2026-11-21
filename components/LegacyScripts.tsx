@@ -13,7 +13,8 @@ export default function LegacyScripts({ id, srcs }: { id: string; srcs: string[]
     loaded.add(id);
     for (const src of srcs) {
       const s = document.createElement("script");
-      s.src = src;
+      // version marker so browsers load the newest file after every deploy / dev restart
+      s.src = process.env.NEXT_PUBLIC_ASSET_V ? `${src}${src.includes("?") ? "&" : "?"}v=${process.env.NEXT_PUBLIC_ASSET_V}` : src;
       s.async = false; // preserve execution order
       s.dataset.legacy = id;
       document.body.appendChild(s);

@@ -36,8 +36,7 @@
   var sel = [
     '#our-approach .dq-eyebrow', '#our-approach .section-heading-editorial', '#our-approach .section-intro-text', '#our-approach .q3-card', '#our-approach .q3-foot',
     '.principles-panel-header', '.principles-col',
-    '#faqs .section-heading-editorial', '#faqs .faq-item',
-    '#final-cta .cta-heading', '#final-cta .cta-desc', '#final-cta .cta-actions-row'
+    '#faqs .section-heading-editorial', '#faqs .faq-item'
   ].join(',');
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   var io = new IntersectionObserver(function (entries) {
@@ -84,18 +83,15 @@
   }, { threshold: 0.15 }).observe(section);
 })();
 
-/* Principles card: a soft purple glow follows the cursor (mouse devices only). */
+/* Principles card: a soft purple glow follows the cursor (shown by CSS :hover; this only moves it). */
 (function () {
   var panel = document.querySelector('.principles-editorial-panel');
-  if (!panel || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (!panel) return;
   var raf = 0, x = 0, y = 0;
   function paint() { raf = 0; panel.style.setProperty('--mx', x + 'px'); panel.style.setProperty('--my', y + 'px'); }
-  function move(e) {
+  panel.addEventListener('pointermove', function (e) {
     var r = panel.getBoundingClientRect();
     x = e.clientX - r.left; y = e.clientY - r.top;
     if (!raf) raf = requestAnimationFrame(paint);
-  }
-  panel.addEventListener('pointerenter', function (e) { move(e); paint(); panel.classList.add('is-glow'); });
-  panel.addEventListener('pointermove', move);
-  panel.addEventListener('pointerleave', function () { panel.classList.remove('is-glow'); });
+  });
 })();

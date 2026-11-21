@@ -4226,21 +4226,21 @@
     }
 
 /* ==========================================================================
-   Principles: a pale purple glow follows the cursor around the card
-   (public/js/home/05.js sets --mx / --my; mouse devices only)
+   Principles: a pale purple glow follows the cursor around the card.
+   CSS :hover shows it; public/js/home/05.js only moves it (--mx / --my).
    ========================================================================== */
 .principles-editorial-panel { overflow: hidden; isolation: isolate; }
 .principles-editorial-panel > * { position: relative; z-index: 1; }
 .principles-editorial-panel::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 50%), rgba(167, 139, 250, 0.34), rgba(196, 181, 253, 0.16) 38%, transparent 68%);
-  opacity: 0; transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(560px circle at var(--mx, 85%) var(--my, 15%), rgba(139, 92, 246, 0.32), rgba(167, 139, 250, 0.16) 40%, transparent 70%);
+  opacity: 0; transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.principles-editorial-panel.is-glow::before { opacity: 1; }
+.principles-editorial-panel:hover::before { opacity: 1; }
 .principles-col-num, .principles-col-title { transition: color 0.3s ease; }
-.principles-editorial-panel.is-glow .principles-col:hover .principles-col-num { color: #7c5cf0; }
-.principles-editorial-panel.is-glow .principles-col:hover .principles-col-title { color: #3b2a8a; -webkit-text-stroke-color: #3b2a8a; }
-@media (prefers-reduced-motion: reduce) { .principles-editorial-panel::before { transition: none; } }
+.principles-col:hover .principles-col-num { color: #7c5cf0; }
+.principles-col:hover .principles-col-title { color: #3b2a8a; -webkit-text-stroke-color: #3b2a8a; }
+@media (hover: none) { .principles-editorial-panel::before { display: none; } }
 
 /* ==========================================================================
    FAQ: wider list (less empty space at the sides)
@@ -4261,3 +4261,12 @@
 .site-footer .footer-bottom-row { border-top-color: rgba(255, 255, 255, 0.12); color: rgba(244, 244, 245, 0.5); }
 .site-footer .footer-bottom-row a { color: rgba(244, 244, 245, 0.62); }
 .site-footer .footer-bottom-row a:hover { color: #ffffff; }
+
+/* ==========================================================================
+   Process (dark card): thin line + section label at the top
+   ========================================================================== */
+.tl-head { display: grid; justify-items: start; gap: 24px; margin: 0 clamp(0px, 4vw, 76px) clamp(28px, 4vw, 48px); }
+.tl-line { display: block; width: 100%; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12)); }
+.tl-chip { display: inline-flex; align-items: center; gap: 12px; margin: 0; padding: 9px 16px; border-radius: 8px; background: #26262b; border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.2; color: #f4f4f5; }
+.tl-chip i { width: 10px; height: 10px; border-radius: 2px; background: #6366f1; box-shadow: 0 0 10px rgba(99, 102, 241, 0.7); }

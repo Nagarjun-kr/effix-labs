@@ -871,8 +871,10 @@ export default function Page() {
         <section className="section-timeline-outer" id="process">
           {" "}
           <div className="timeline_card_container">
-            {" "}
-            {" "}
+            <div className="tl-head">
+              <span className="tl-line" aria-hidden="true" />
+              <h2 className="tl-chip"><i aria-hidden="true" />{"How Effix works"}</h2>
+            </div>
             <div className="timeline_main-box">
               {" "}
               <div className="timeline-content">
@@ -1815,41 +1817,7 @@ export default function Page() {
         {" "}
         {" "}
         {" "}
-        <section className="section-padding" id="final-cta">
-          {" "}
-          <div className="container">
-            {" "}
-            <div className="cta-box-card">
-              {" "}
-              <h2 className="cta-heading">
-                {"Find out where you show up."}
-              </h2>
-              {" "}
-              <p className="cta-desc">
-                {"Start with the free audit. Or tell us about your business and we will reply by email."}
-              </p>
-              {" "}
-              <div className="cta-actions-row">
-                {" "}
-                <a href="#audit" className="submit-pill-btn" style={{ textDecoration: "none" }}>
-                  {"Run a Visibility Audit →"}
-                </a>
-                {" "}
-                <a href="/contact" className="secondary-cta-btn">
-                  {"Contact Effix Labs →"}
-                </a>
-                {" "}
-              </div>
-              {" "}
-              <a href="mailto:hello@effix.co.in" className="cta-email-link">
-                {"hello@effix.co.in"}
-              </a>
-              {" "}
-            </div>
-            {" "}
-          </div>
-          {" "}
-        </section>
+
         <section className="section-padding section-surface" id="faqs">
           {" "}
           <div className="container">

@@ -18,6 +18,8 @@ const services = [
 ];
 
 const nextConfig: NextConfig = {
+  // Changes on every build / dev start; appended to the legacy page scripts so browsers never run stale copies.
+  env: { NEXT_PUBLIC_ASSET_V: String(Date.now()) },
   async redirects() {
     const r = [
       { source: "/index.html", destination: "/", permanent: true },
