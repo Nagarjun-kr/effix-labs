@@ -1,31 +1,23 @@
 "use client";
 
 // Brand visibility report: presence summary, platform status, to-do list and labelled results per platform.
+// The decisions (status, to-do list) live in lib/discover/classify.ts so they can be tested.
 import { useMemo, useState } from "react";
 
-import { handlesOf, isProfile, lastSegment, platformStatus, squash, tagResult, type ResultTag, type Status } from "@/lib/discover/classify";
+import {
+  buildActions,
+  buildRows,
+  isProfile,
+  PLATFORMS,
+  shortUrl,
+  type Identity,
+  type Mentions,
+  type ProfileCheck,
+  type Status,
+} from "@/lib/discover/classify";
 
-export type Profile = { platform: string; url: string };
-export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
-export type Mention = { title: string; url: string; snippet: string; source: string };
-export type PlatformResult = { platform: string; query: string; results: Mention[]; error?: boolean };
-export type Mentions =
-  | { status: "loading" }
-  | { status: "off" }
-  | { status: "error"; message: string }
-  | { status: "done"; brand: string; byPlatform: Record<string, PlatformResult> };
-
-export const PLATFORMS = [
-  { name: "YouTube", domain: "youtube.com", sym: "▶" },
-  { name: "Instagram", domain: "instagram.com", sym: "◎" },
-  { name: "Facebook", domain: "facebook.com", sym: "f" },
-  { name: "LinkedIn", domain: "linkedin.com", sym: "in" },
-  { name: "X", domain: "x.com", sym: "𝕏" },
-  { name: "TikTok", domain: "tiktok.com", sym: "♪" },
-  { name: "Reddit", domain: "reddit.com", sym: "r/" },
-  { name: "Pinterest", domain: "pinterest.com", sym: "P" },
-  { name: "Threads", domain: "threads.net", sym: "@" },
-] as const;
+export { PLATFORMS };
+export type { Identity, Mentions, PlatformResult, Profile } from "@/lib/discover/classify";
 
 const STATUS: Record<Status, { label: string; tone: string }> = {
   official: { label: "Official", tone: "official" },
@@ -36,102 +28,14 @@ const STATUS: Record<Status, { label: string; tone: string }> = {
   unknown: { label: "Not searched", tone: "unknown" },
 };
 
-type Row = {
-  name: string;
-  domain: string;
-  sym: string;
-  linked: Profile | null;
-  result: PlatformResult | null; // null = not searched / failed
-  tagged: { m: Mention; t: ResultTag }[] | null;
-  status: Status;
-  bestProfile: { m: Mention; t: ResultTag } | null;
-  /** On a platform the site links to: other profiles using the brand name (old accounts, copies, look-alikes). */
-  extras: { m: Mention; t: ResultTag }[];
-};
-
-/** Readable address: no protocol/www/m., no tracking query (except YouTube video ids), no trailing slash. */
-const shortUrl = (u: string) => {
-  let x = u.replace(/^https?:\/\/(www\.|m\.)?/, "");
-  if (/profile\.php\?/.test(x)) x = x.replace(/(\?id=\d+).*$/, "$1"); // Facebook page number is the address
-  else if (!/youtube\.com\/watch/.test(x)) x = x.replace(/\?.*$/, "");
-  return x.replace(/\/$/, "");
-};
-
 function googleUrl(brand: string, p: (typeof PLATFORMS)[number]) {
   const site = p.name === "X" ? "(site:x.com OR site:twitter.com)" : `site:${p.domain}`;
   return `https://www.google.com/search?q=${encodeURIComponent(`"${brand.replaceAll('"', "").slice(0, 100)}" ${site}`)}`;
 }
 
-/** Order: linked profile, then confirmed profile, then name-matching profile, then other profiles, then content. */
-const score = (t: ResultTag) => (t.official ? 8 : 0) + (isProfile(t) && t.matchesBrand ? (t.mentionsSite || t.sameHandle ? 4 : 2) : 0) + (isProfile(t) ? 1 : 0);
-
-function buildRows(identity: Identity, mentions: Mentions, brand: string): Row[] {
-  const linked = new Map<string, Profile>();
-  identity.profiles.forEach((p) => !linked.has(p.platform) && linked.set(p.platform, p));
-  const officialHandles = handlesOf([...linked.values()]);
-  return PLATFORMS.map((p) => {
-    const link = linked.get(p.name) ?? null;
-    const result = mentions.status === "done" ? mentions.byPlatform[p.name] ?? null : null;
-    const ok = result && !result.error ? result : null;
-    const tagged = ok
-      ? ok.results
-          .map((m) => ({ m, t: tagResult(p.name, m.url, brand, link?.url ?? null, `${m.title} ${m.snippet}`, identity.domain, officialHandles) }))
-          .sort((a, b) => score(b.t) - score(a.t))
-      : null;
-    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand) ?? null;
-    const linkedKeys = new Set(identity.profiles.filter((x) => x.platform === p.name).map((x) => lastSegment(x.url)));
-    const extras = link && tagged
-      ? tagged.filter((x, i, all) => {
-          if (x.t.kind !== "profile" || !x.t.matchesBrand || x.t.official) return false;
-          const h = x.t.handle ? squash(decodeURIComponent(x.t.handle)) : "";
-          if (h && linkedKeys.has(h)) return false; // same account as the linked one
-          // one entry per account (youtube.com/@x and youtube.com/@x/shorts)
-          return all.findIndex((y) => y.t.kind === "profile" && y.t.handle && squash(decodeURIComponent(y.t.handle)) === h) === i;
-        })
-      : [];
-    return { ...p, linked: link, result: ok, tagged, status: platformStatus(Boolean(link), tagged ? tagged.map((x) => x.t) : null), bestProfile, extras };
-  });
-}
-
-type Action = { level: "high" | "medium" | "low"; title: string; detail: string };
-
-function buildActions(rows: Row[], brand: string): Action[] {
-  const out: Action[] = [];
-  const none: string[] = [];
-  for (const r of rows) {
-    if (r.status === "likely" && r.bestProfile) {
-      const why = r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as the profiles your website links to";
-      out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} ${why}, but your website doesn't link to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
-    }
-    if (r.status === "possible" && r.bestProfile) {
-      out.push({ level: "medium", title: `Is ${shortUrl(r.bestProfile.m.url)} yours?`, detail: `This ${r.name} profile uses the name “${brand}”, but nothing on it points to your website. If it's yours, link it from your site and add your website to its bio. If it isn't, another business uses your name on ${r.name}, which can confuse customers.` });
-    }
-    for (const x of r.extras) {
-      const channelLink = r.name === "YouTube" && /\/channel\//.test(r.linked?.url ?? "");
-      out.push(
-        channelLink
-          ? { level: "medium", title: `Is ${shortUrl(x.m.url)} the same channel you link to?`, detail: `Your site links to a YouTube channel by its ID (${shortUrl(r.linked!.url)}). We also found ${shortUrl(x.m.url)} (“${x.m.title.slice(0, 70)}”). If it's the same channel under its @handle, link the @handle address instead, because it's easier to recognise. If it's a second channel, decide which one is your main channel.` }
-          : { level: "medium", title: `Another ${r.name} account uses your name: ${shortUrl(x.m.url)}`, detail: `Your site links to ${shortUrl(r.linked!.url)}, but we also found ${shortUrl(x.m.url)} (“${x.m.title.slice(0, 70)}”). If it's an old or second account of yours, keep one main profile and point the other to it. If it isn't yours, someone else is using your name on ${r.name}.` },
-      );
-    }
-    if (r.linked && r.tagged && !r.extras.length && !r.tagged.some((x) => x.t.official || (x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)))) {
-      out.push({ level: "medium", title: `Google doesn't show your linked ${r.name} profile`, detail: `Your site links to ${shortUrl(r.linked.url)}, but it wasn't in the top results for “${brand}” on ${r.name}. Make sure the profile name and bio include “${brand}” and a link back to your website.` });
-    }
-    if (r.status === "mentions") {
-      out.push({ level: "low", title: `People mention you on ${r.name}, but no profile was found`, detail: `There are results for “${brand}” on ${r.name}, but none is a profile with your name. If you have an account, put “${brand}” in its name or handle so these searches lead to you.` });
-    }
-    if (r.status === "none") none.push(r.name);
-  }
-  if (none.length) {
-    out.push({ level: "low", title: `Nothing found on ${none.join(", ")}`, detail: `No results for “${brand}” on ${none.length === 1 ? "this platform" : "these platforms"}. If you use ${none.length === 1 ? "it" : "them"}, make sure the profile name includes your brand. If not, focus on the platforms your customers use.` });
-  }
-  const order = { high: 0, medium: 1, low: 2 };
-  return out.sort((a, b) => order[a.level] - order[b.level]);
-}
-
-export default function Report({ identity, mentions, brand }: { identity: Identity; mentions: Mentions; brand: string }) {
+export default function Report({ identity, mentions, brand, checks = {} }: { identity: Identity; mentions: Mentions; brand: string; checks?: Record<string, ProfileCheck> }) {
   const [view, setView] = useState("all");
-  const rows = useMemo(() => buildRows(identity, mentions, brand), [identity, mentions, brand]);
+  const rows = useMemo(() => buildRows(identity, mentions, brand, checks), [identity, mentions, brand, checks]);
   const actions = useMemo(() => (mentions.status === "done" ? buildActions(rows, brand) : []), [rows, mentions.status, brand]);
   const found = rows.filter((r) => r.status === "official" || r.status === "likely").length;
   const linkedCount = rows.filter((r) => r.linked).length;
@@ -249,8 +153,10 @@ export default function Report({ identity, mentions, brand }: { identity: Identi
                         <li key={m.url} className={`dx-hit ${t.official ? "is-official" : ""}`}>
                           <div className="rp-tags">
                             <em className={`rp-kind k-${t.kind}`}>{t.label}</em>
-                            {t.official && <em className="rp-kind k-official">Your linked profile</em>}
-                            {r.extras.some((x) => x.m.url === m.url) ? <em className="rp-kind k-name">Another account with your name</em> : !t.official && t.matchesBrand && isProfile(t) && (t.mentionsSite && t.kind === "profile" ? <em className="rp-kind k-match">Mentions your website</em> : t.sameHandle ? <em className="rp-kind k-match">Same handle as your profiles</em> : <em className="rp-kind k-name">Same name</em>)}
+                            {t.official && <em className="rp-kind k-official">{t.sameChannel ? "Same channel your site links to" : "Your linked profile"}</em>}
+                            {t.checked === "yours" && !t.official && <em className="rp-kind k-match">Checked: links to your website</em>}
+                            {t.checked === "other" && <em className="rp-kind k-other">Checked: links to {shortUrl(t.otherSite ?? "")}</em>}
+                            {!t.checked && (r.extras.some((x) => x.m.url === m.url) ? <em className="rp-kind k-name">Another account with your name</em> : !t.official && t.matchesBrand && isProfile(t) && (t.mentionsSite && t.kind === "profile" ? <em className="rp-kind k-match">Mentions your website</em> : t.sameHandle ? <em className="rp-kind k-match">Same handle as your profiles</em> : <em className="rp-kind k-name">Same name</em>))}
                           </div>
                           <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
                           <span>{shortUrl(m.url)}</span>

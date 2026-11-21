@@ -193,6 +193,7 @@
 .rp-kind.k-profile, .rp-kind.k-community { background: #eef0ff; color: var(--s-likely); }
 .rp-kind.k-official { background: var(--s-official-bg); color: var(--s-official); }
 .rp-kind.k-match { background: #eef0ff; color: var(--s-likely); }
+.rp-kind.k-other { background: #f2f2f2; color: #6b6b6b; text-transform: none; }
 .rp-kind.k-name { background: var(--s-possible-bg); color: var(--s-possible); }
 .dx-stalled { margin: 10px 16px; padding: 12px 14px; border-radius: 12px; background: #fffaf0; border: 1px solid #f5e1b8; color: #8a5a00; font-size: 13.5px; line-height: 1.55; }
 .dx-open { display: flex; justify-content: flex-end; gap: 6px; padding: 10px 16px 14px; font-size: 13px; font-weight: 600; color: var(--muted) !important; text-decoration: none; border-top: 1px solid #f3f3f3; }

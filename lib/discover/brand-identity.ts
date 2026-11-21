@@ -73,7 +73,7 @@ export function extractBrandIdentity(html: string, sourceUrl: string): BrandIden
   const best = names
     .filter((candidate) => candidate.name.length > 1 && candidate.name.length <= 100)
     .sort((a, b) => a.rank - b.rank)[0];
-  const name = best?.name ?? source.hostname.replace(/^www\./, "");
+  const name = tidyBrandName(best?.name ?? "") || nameFromHost(source.hostname);
   $("a[href]").each((_, anchor) => {
     const href = $(anchor).attr("href");
     if (!href) return;
@@ -94,4 +94,17 @@ export function extractBrandIdentity(html: string, sourceUrl: string): BrandIden
     sourceUrl,
     profiles: [...profiles.values()].slice(0, 40),
   };
+}
+
+/** "swiggy.com" / "my-brand.co.in" -> "Swiggy" / "My Brand". Search APIs reject queries containing web addresses. */
+export function nameFromHost(hostname: string) {
+  const label = hostname.toLowerCase().replace(/^www\./, "").split(".")[0] ?? "";
+  return label.split(/[-_]+/).filter(Boolean).map((w) => w[0].toUpperCase() + w.slice(1)).join(" ") || hostname;
+}
+
+/** Drops legal endings people don't search with ("Freshworks Inc" -> "Freshworks"); turns an address into a name. */
+export function tidyBrandName(raw: string) {
+  const v = raw.replace(/\s+/g, " ").trim();
+  if (/^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(\/.*)?$/i.test(v)) return nameFromHost(v.replace(/^https?:\/\//i, "").split("/")[0]);
+  return v.replace(/[,\s]+(inc\.?|incorporated|llc|l\.l\.c\.|ltd\.?|limited|pvt\.? ltd\.?|private limited|corp\.?|corporation|gmbh|plc|co\.)$/i, "").trim();
 }

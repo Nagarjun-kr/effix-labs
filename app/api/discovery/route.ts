@@ -2,7 +2,7 @@
 // and the social profile links it lists. Nothing is stored.
 import { NextResponse } from "next/server";
 
-import { extractBrandIdentity } from "@/lib/discover/brand-identity";
+import { extractBrandIdentity, nameFromHost } from "@/lib/discover/brand-identity";
 import { retrieveSafely } from "@/lib/discover/safe-retrieval";
 import { RetrievalPolicyError, validateWebsiteUrl } from "@/lib/discover/url-policy";
 
@@ -53,7 +53,17 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json().catch(() => ({}))) as { url?: unknown };
     const url = normalizeInput(body.url);
-    const page = await retrieveSafely(url, "html");
+    let page;
+    try {
+      page = await retrieveSafely(url, "html", { maxBytes: 5_000_000 }); // big homepages (e.g. 3 MB) still work
+    } catch (error) {
+      // Site refuses automated visitors (403/401/429/503): still search, using the name from the address.
+      const code = error instanceof RetrievalPolicyError ? Number(error.message.match(/HTTP (\d{3})/)?.[1]) : 0;
+      if ([401, 403, 406, 429, 503].includes(code)) {
+        return NextResponse.json({ identity: { name: nameFromHost(url.hostname), domain: url.hostname.replace(/^www\./, ""), sourceUrl: url.toString(), profiles: [] }, blocked: true }, { headers });
+      }
+      throw error;
+    }
     const identity = extractBrandIdentity(page.body, page.url);
     return NextResponse.json({ identity }, { headers });
   } catch (error) {

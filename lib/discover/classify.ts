@@ -4,7 +4,13 @@
 export type Kind = "profile" | "community" | "video" | "post" | "thread" | "article" | "page";
 export type Status = "official" | "likely" | "possible" | "mentions" | "none" | "unknown";
 
-export type ResultTag = { kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean; mentionsSite: boolean; sameHandle: boolean };
+export type ResultTag = {
+  kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean; mentionsSite: boolean; sameHandle: boolean;
+  /** From opening the profile page itself (YouTube, Pinterest): links to your site, or to another site. */
+  checked?: "yours" | "other";
+  otherSite?: string;
+  sameChannel?: boolean; // YouTube @handle resolved to the channel the site links to
+};
 
 const segs = (u: URL) => u.pathname.split("/").filter(Boolean);
 
@@ -119,6 +125,16 @@ export function lastSegment(raw: string): string {
   }
 }
 
+/** A linked address that is a profile/page (not a single video or post). */
+export function isProfileUrl(platform: string, url: string) {
+  try {
+    const k = kindFor(platform, new URL(url)).kind;
+    return k === "profile" || k === "community" || (platform === "YouTube" && k === "page" && new URL(url).pathname.split("/").filter(Boolean).length === 1);
+  } catch {
+    return false;
+  }
+}
+
 /** Handles of the profiles a website links to (squashed), for spotting the same handle on other platforms. */
 export function handlesOf(links: { platform: string; url: string }[]) {
   const out = new Set<string>();
@@ -131,7 +147,8 @@ export function handlesOf(links: { platform: string; url: string }[]) {
   return out;
 }
 
-export function tagResult(platform: string, url: string, brand: string, linkedUrl: string | null, text = "", domain = "", officialHandles: Set<string> = new Set()): ResultTag {
+export function tagResult(platform: string, url: string, brand: string, linked: string | string[] | null, text = "", domain = "", officialHandles: Set<string> = new Set()): ResultTag {
+  const linkedUrls = linked === null ? [] : Array.isArray(linked) ? linked : [linked];
   let kind: Kind = "page";
   let handle: string | null = null;
   try {
@@ -141,10 +158,12 @@ export function tagResult(platform: string, url: string, brand: string, linkedUr
   const h = handle ? squash(decodeURIComponent(handle)) : "";
   const matchesBrand = handleMatches(h, b);
   const n = normUrl(url);
-  const fb = platform === "Facebook" && linkedUrl ? facebookId(linkedUrl) : null;
-  const official =
-    Boolean(linkedUrl) &&
-    (n === normUrl(linkedUrl as string) || n.startsWith(normUrl(linkedUrl as string) + "/") || (fb !== null && facebookId(url) === fb));
+  const official = linkedUrls.some((l) => {
+    const ln = normUrl(l);
+    if (n === ln || n.startsWith(ln + "/")) return true;
+    const fb = platform === "Facebook" ? facebookId(l) : null;
+    return fb !== null && facebookId(url) === fb;
+  });
   const mentionsSite = Boolean(domain) && text.toLowerCase().includes(domain.toLowerCase().replace(/^www\./, ""));
   const sameHandle = Boolean(h) && h.length >= 3 && officialHandles.has(h) && (kind === "profile");
   return { kind, label: LABEL[kind], handle, official, matchesBrand, mentionsSite, sameHandle };
@@ -155,11 +174,183 @@ export function tagResult(platform: string, url: string, brand: string, linkedUr
 //            exact handle of a profile the website links to, e.g. @openai everywhere)
 // possible = name matches only (could be another business with the same name)
 export const isProfile = (t: ResultTag) => t.kind === "profile" || t.kind === "community";
-export function platformStatus(linked: boolean, tags: ResultTag[] | null): Status {
+export function platformStatus(linked: boolean, all: ResultTag[] | null): Status {
   if (linked) return "official";
-  if (tags === null) return "unknown";
+  if (all === null) return "unknown";
+  const tags = all.filter((t) => t.checked !== "other"); // profile page links to a different website: not yours
   // Communities (subreddits, groups) are often fan-run, so they can only be a possible match.
   if (tags.some((t) => t.kind === "profile" && t.matchesBrand && (t.mentionsSite || t.sameHandle))) return "likely";
   if (tags.some((t) => isProfile(t) && t.matchesBrand)) return "possible";
-  return tags.length ? "mentions" : "none";
+  return all.length ? "mentions" : "none";
+}
+
+/* ---------- report analysis (shared by the page and the accuracy tests) ---------- */
+
+export type Profile = { platform: string; url: string };
+export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
+export type Mention = { title: string; url: string; snippet: string; source: string };
+export type PlatformResult = { platform: string; query: string; results: Mention[]; error?: boolean };
+export type Mentions =
+  | { status: "loading" }
+  | { status: "off" }
+  | { status: "error"; message: string }
+  | { status: "done"; brand: string; byPlatform: Record<string, PlatformResult> };
+
+export const PLATFORMS = [
+  { name: "YouTube", domain: "youtube.com", sym: "▶" },
+  { name: "Instagram", domain: "instagram.com", sym: "◎" },
+  { name: "Facebook", domain: "facebook.com", sym: "f" },
+  { name: "LinkedIn", domain: "linkedin.com", sym: "in" },
+  { name: "X", domain: "x.com", sym: "𝕏" },
+  { name: "TikTok", domain: "tiktok.com", sym: "♪" },
+  { name: "Reddit", domain: "reddit.com", sym: "r/" },
+  { name: "Pinterest", domain: "pinterest.com", sym: "P" },
+  { name: "Threads", domain: "threads.net", sym: "@" },
+] as const;
+
+/** Result of opening a profile page (see lib/discover/verify.ts). */
+export type ProfileCheck = { url: string; ok: boolean; channelId?: string | null; website?: string | null; mentionsSite?: boolean; name?: string };
+
+export type Row = {
+  name: string;
+  domain: string;
+  sym: string;
+  linked: Profile | null;
+  result: PlatformResult | null; // null = not searched / failed
+  tagged: { m: Mention; t: ResultTag }[] | null;
+  status: Status;
+  bestProfile: { m: Mention; t: ResultTag } | null;
+  /** On a platform the site links to: other profiles using the brand name (old accounts, copies, look-alikes). */
+  extras: { m: Mention; t: ResultTag }[];
+};
+
+/** Readable address: no protocol/www/m., no tracking query (except YouTube video ids), no trailing slash. */
+export const shortUrl = (u: string) => {
+  let x = u.replace(/^https?:\/\/(www\.|m\.)?/, "");
+  if (/profile\.php\?/.test(x)) x = x.replace(/(\?id=\d+).*$/, "$1"); // Facebook page number is the address
+  else if (!/youtube\.com\/watch/.test(x)) x = x.replace(/\?.*$/, "");
+  return x.replace(/\/$/, "");
+};
+
+/** Order: linked profile, then confirmed profile, then name-matching profile, then other profiles, then content. */
+export const score = (t: ResultTag) => (t.official ? 8 : 0) + (isProfile(t) && t.matchesBrand ? (t.mentionsSite || t.sameHandle ? 4 : 2) : 0) + (isProfile(t) ? 1 : 0);
+
+export function buildRows(identity: Identity, mentions: Mentions, brand: string, checks: Record<string, ProfileCheck> = {}): Row[] {
+  const profiles = identity.profiles.filter((p) => isProfileUrl(p.platform, p.url)); // ignore links to single videos/posts
+  const linkedAll = (name: string) => profiles.filter((x) => x.platform === name).map((x) => x.url);
+  const officialHandles = handlesOf(profiles);
+  // Handles confirmed on other platforms (profile mentions your website / opened and links to it) count like linked ones.
+  if (mentions.status === "done") {
+    for (const p of PLATFORMS) {
+      for (const m of mentions.byPlatform[p.name]?.results ?? []) {
+        const t = applyCheck({ m, t: tagResult(p.name, m.url, brand, linkedAll(p.name), `${m.title} ${m.snippet}`, identity.domain) }, checks, linkedAll(p.name)).t;
+        if (t.kind === "profile" && t.matchesBrand && (t.mentionsSite || t.checked === "yours") && t.handle) officialHandles.add(squash(decodeURIComponent(t.handle)));
+      }
+    }
+  }
+  return PLATFORMS.map((p) => {
+    const urls = linkedAll(p.name);
+    const link = profiles.find((x) => x.platform === p.name) ?? null;
+    const result = mentions.status === "done" ? mentions.byPlatform[p.name] ?? null : null;
+    const ok = result && !result.error ? result : null;
+    const tagged = ok
+      ? ok.results
+          .map((m) => ({ m, t: tagResult(p.name, m.url, brand, urls, `${m.title} ${m.snippet}`, identity.domain, officialHandles) }))
+          .map((x) => applyCheck(x, checks, urls))
+          .sort((a, b) => score(b.t) - score(a.t))
+      : null;
+    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand && x.t.checked !== "other") ?? null;
+    const linkedKeys = new Set(urls.map((u) => lastSegment(u)));
+    const extras = link && tagged
+      ? tagged.filter((x, i, all) => {
+          if (x.t.kind !== "profile" || !x.t.matchesBrand || x.t.official) return false;
+          const h = x.t.handle ? squash(decodeURIComponent(x.t.handle)) : "";
+          if (h && linkedKeys.has(h)) return false; // same account as the linked one
+          // one entry per account (youtube.com/@x and youtube.com/@x/shorts)
+          return all.findIndex((y) => y.t.kind === "profile" && y.t.handle && squash(decodeURIComponent(y.t.handle)) === h) === i;
+        })
+      : [];
+    return { ...p, linked: link, result: ok, tagged, status: platformStatus(Boolean(link), tagged ? tagged.map((x) => x.t) : null), bestProfile, extras };
+  });
+}
+
+export type Action = { level: "high" | "medium" | "low"; title: string; detail: string };
+
+export function buildActions(rows: Row[], brand: string): Action[] {
+  const out: Action[] = [];
+  const none: string[] = [];
+  for (const r of rows) {
+    if (r.status === "likely" && r.bestProfile) {
+      const why = r.bestProfile.t.checked === "yours" ? "links to your website (we checked the profile)" : r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as the profiles your website links to";
+      out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} ${why}, but your website doesn't link to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
+    }
+    if (r.status === "possible" && r.bestProfile) {
+      out.push({ level: "medium", title: `Is ${shortUrl(r.bestProfile.m.url)} yours?`, detail: `This ${r.name} profile uses the name “${brand}”, but nothing on it points to your website. If it's yours, link it from your site and add your website to its bio. If it isn't, another business uses your name on ${r.name}, which can confuse customers.` });
+    }
+    for (const x of r.extras) {
+      const channelLink = r.name === "YouTube" && /\/channel\//.test(r.linked?.url ?? "");
+      out.push(
+        channelLink
+          ? { level: "medium", title: `Is ${shortUrl(x.m.url)} the same channel you link to?`, detail: `Your site links to a YouTube channel by its ID (${shortUrl(r.linked!.url)}). We also found ${shortUrl(x.m.url)} (“${x.m.title.slice(0, 70)}”). If it's the same channel under its @handle, link the @handle address instead, because it's easier to recognise. If it's a second channel, decide which one is your main channel.` }
+          : x.t.checked === "other"
+            ? { level: "low", title: `Another business uses your name on ${r.name}: ${shortUrl(x.m.url)}`, detail: `We opened ${shortUrl(x.m.url)} and it links to ${shortUrl(x.t.otherSite ?? "")}, not your website, so it isn't yours. Customers searching “${brand}” on ${r.name} may find it, so make sure your own profile clearly shows your website.` }
+            : { level: "medium", title: `Another ${r.name} account uses your name: ${shortUrl(x.m.url)}`, detail: `Your site links to ${shortUrl(r.linked!.url)}, but we also found ${shortUrl(x.m.url)} (“${x.m.title.slice(0, 70)}”). If it's an old or second account of yours, keep one main profile and point the other to it. If it isn't yours, someone else is using your name on ${r.name}.` },
+      );
+    }
+    if (r.linked && r.tagged && !r.extras.length && !r.tagged.some((x) => x.t.official || (x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)))) {
+      out.push({ level: "medium", title: `Google doesn't show your linked ${r.name} profile`, detail: `Your site links to ${shortUrl(r.linked.url)}, but it wasn't in the top results for “${brand}” on ${r.name}. Make sure the profile name and bio include “${brand}” and a link back to your website.` });
+    }
+    if (r.status === "mentions") {
+      out.push({ level: "low", title: `People mention you on ${r.name}, but no profile was found`, detail: `There are results for “${brand}” on ${r.name}, but none is a profile with your name. If you have an account, put “${brand}” in its name or handle so these searches lead to you.` });
+    }
+    if (r.status === "none") none.push(r.name);
+  }
+  if (none.length) {
+    out.push({ level: "low", title: `Nothing found on ${none.join(", ")}`, detail: `No results for “${brand}” on ${none.length === 1 ? "this platform" : "these platforms"}. If you use ${none.length === 1 ? "it" : "them"}, make sure the profile name includes your brand. If not, focus on the platforms your customers use.` });
+  }
+  const order = { high: 0, medium: 1, low: 2 };
+  return out.sort((a, b) => order[a.level] - order[b.level]);
+}
+
+function applyCheck(x: { m: Mention; t: ResultTag }, checks: Record<string, ProfileCheck>, linkedUrls: string[]) {
+  const v = checks[x.m.url];
+  if (!v?.ok) return x;
+  const t = { ...x.t };
+  const linkedIds = new Set(linkedUrls.map((u) => checks[u]?.channelId).filter(Boolean));
+  if (v.channelId && linkedIds.has(v.channelId)) {
+    t.official = true;
+    t.sameChannel = true;
+  }
+  if (v.mentionsSite) {
+    t.mentionsSite = true;
+    t.checked = "yours";
+  } else if (v.website) {
+    t.checked = "other";
+    t.otherSite = v.website;
+  }
+  return { m: x.m, t };
+}
+
+/** Profiles worth opening to confirm: the linked YouTube channel and name-matching YouTube/Pinterest profiles. */
+export function checkTargets(identity: Identity, mentions: Mentions, brand: string): { platform: string; url: string }[] {
+  if (mentions.status !== "done") return [];
+  const out: { platform: string; url: string }[] = [];
+  const seen = new Set<string>();
+  const add = (platform: string, url: string) => {
+    const k = normUrl(url);
+    if (!seen.has(k) && out.length < 8) (seen.add(k), out.push({ platform, url }));
+  };
+  for (const name of ["YouTube", "Pinterest"]) {
+    const links = identity.profiles.filter((p) => p.platform === name && isProfileUrl(name, p.url)).map((p) => p.url);
+    const results = mentions.byPlatform[name]?.results ?? [];
+    const candidates = results.filter((m) => {
+      const t = tagResult(name, m.url, brand, links);
+      // YouTube with a linked channel: open every channel found, because one channel has several addresses
+      // (/@handle, /channel/UC…, /c/name, /user/name); otherwise only profiles using the brand name.
+      return t.kind === "profile" && !t.official && (t.matchesBrand || (name === "YouTube" && links.length > 0));
+    });
+    if (name === "YouTube" && candidates.length) links.slice(0, 2).forEach((u) => add(name, u));
+    candidates.slice(0, 3).forEach((m) => add(name, m.url));
+  }
+  return out;
 }

@@ -1,5 +1,7 @@
 // Server-side brand search: "<brand>" site:<platform> on nine platforms via Serper.dev (Google results).
 // Runs on our server, so visitors never talk to Google directly and never see a CAPTCHA.
+import { tidyBrandName } from "./brand-identity";
+
 export const PLATFORMS = [
   { name: "YouTube", site: "site:youtube.com", hosts: ["youtube.com"] },
   { name: "Instagram", site: "site:instagram.com", hosts: ["instagram.com"] },
@@ -41,7 +43,7 @@ const cache = new Map<string, { at: number; data: PlatformResult[] }>();
 
 export const mentionsConfigured = () => Boolean(process.env.SERPER_API_KEY);
 
-export const cleanBrand = (value: string) => value.replace(/["\\]/g, "").replace(/\s+/g, " ").trim().slice(0, 100);
+export const cleanBrand = (value: string) => tidyBrandName(value.replace(/["\\]/g, "")).slice(0, 100);
 
 async function searchOne(query: string, key: string, hosts: readonly string[]): Promise<Mention[]> {
   const controller = new AbortController();
@@ -85,11 +87,11 @@ export async function findMentions(brand: string): Promise<PlatformResult[]> {
 
   const run = async (p: (typeof PLATFORMS)[number]): Promise<PlatformResult> => {
     const query = `"${brand}" ${p.site}`;
-    for (let attempt = 0; attempt < 2; attempt++) {
+    for (let attempt = 0; attempt < 3; attempt++) {
       try {
         return { platform: p.name, query, results: await searchOne(query, key, p.hosts) };
       } catch {
-        if (attempt === 0) await new Promise((r) => setTimeout(r, 700));
+        if (attempt < 2) await new Promise((r) => setTimeout(r, attempt === 0 ? 800 : 2000));
       }
     }
     return { platform: p.name, query, results: [], error: true };

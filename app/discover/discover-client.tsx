@@ -7,6 +7,7 @@
 // Nothing is stored and no login is needed.
 import { FormEvent, useCallback, useEffect, useState } from "react";
 
+import { checkTargets, type ProfileCheck } from "@/lib/discover/classify";
 import Report, { PLATFORMS, type Identity, type Mentions, type PlatformResult } from "./report";
 
 type Phase = "idle" | "loading" | "done";
@@ -31,11 +32,34 @@ export default function DiscoverClient() {
   const [step, setStep] = useState(0);
   const [mentions, setMentions] = useState<Mentions>({ status: "loading" });
   const [searched, setSearched] = useState(""); // brand name the shown results are for
+  const [checks, setChecks] = useState<Record<string, ProfileCheck>>({}); // profile pages we opened to confirm
+  const [blocked, setBlocked] = useState(false); // the website refused our visit; name taken from its address
+
+  // After the search: open candidate YouTube/Pinterest profiles to confirm whose they are.
+  useEffect(() => {
+    if (mentions.status !== "done" || !identity) return;
+    const items = checkTargets(identity, mentions, mentions.brand);
+    if (!items.length) return;
+    let live = true;
+    fetch("/api/discovery/verify", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ domain: identity.domain, items }) })
+      .then((r) => r.json())
+      .then((b: { checks?: ProfileCheck[] }) => {
+        if (!live || !Array.isArray(b.checks)) return;
+        const map: Record<string, ProfileCheck> = {};
+        b.checks.forEach((c) => (map[c.url] = c));
+        setChecks(map);
+      })
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, [mentions, identity]);
 
   const searchMentions = useCallback(async (brand: string) => {
     const term = brand.trim();
     if (!term) return;
     setMentions({ status: "loading" });
+    setChecks({});
     setSearched(term);
     try {
       const res = await fetch("/api/discovery/mentions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term }) });
@@ -62,6 +86,7 @@ export default function DiscoverClient() {
       const body = await res.json().catch(() => ({}));
       if (!res.ok || !body.identity) throw new Error(body.error || "We couldn't open that website. Check the address and try again.");
       const id = body.identity as Identity;
+      setBlocked(Boolean(body.blocked));
       setStep(2);
       await new Promise((r) => window.setTimeout(r, 450));
       setIdentity(id);
@@ -173,6 +198,11 @@ export default function DiscoverClient() {
             </header>
             {error && <p className="dx-error" role="alert">{error}</p>}
 
+            {blocked && (
+              <p className="dx-error dx-warn" role="status">
+                {identity.domain} blocks automated visits, so we couldn&apos;t see which profiles it links to. We took the name “{identity.name}” from the address. Check it below, and treat “Official” as unknown for this site.
+              </p>
+            )}
             <section className="dx-name" aria-label="Brand name used for searching">
               <div>
                 <span className="dx-label">Brand name we searched</span>
@@ -185,7 +215,7 @@ export default function DiscoverClient() {
               </form>
             </section>
 
-            <Report identity={identity} mentions={mentions} brand={searched || identity.name} />
+            <Report identity={identity} mentions={mentions} brand={searched || identity.name} checks={checks} />
 
             <p className="dx-coverage"><strong>Coverage note.</strong> Searches cover public pages Google has indexed on these platforms, up to six results each. Private, blocked or differently named pages may not appear. The brand name comes from your website and may need correcting. This is a discovery tool, not a complete count of every post or profile.</p>
 
