@@ -193,7 +193,6 @@ export default function Page() {
         {/* ================= HERO ================= */}
         <section className="gx-hero sa-hero" id="hero">
           <div className="gx-wrap gx-hero-inner">
-            <span className="gx-kicker sa-kicker"><span className="gx-kicker-dot sa-dot" aria-hidden="true"></span>{"Service 03 · India & Bangalore"}</span>
             <h1 className="gx-hero-title">
               {"SEO & "}<em>{"AEO"}</em>{" Services"}
             </h1>

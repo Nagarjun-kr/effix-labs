@@ -8,6 +8,7 @@ import { ORG_ID, ldString } from "@/lib/site";
 import "./page.css";
 import "./gx.css";
 import "./gb-banner.css";
+import "./gb-process.css";
 
 export const metadata: Metadata = {
   "title": "Google Business Profile Optimisation Services | EFFIX Labs",
@@ -219,7 +220,6 @@ export default function Page() {
         {/* ================= HERO ================= */}
         <section className="gx-hero" id="hero">
           <div className="gx-wrap gx-hero-inner">
-            <span className="gx-kicker"><span className="gx-kicker-dot" aria-hidden="true"></span>{"Service 01 · Bengaluru & across India"}</span>
             <h1 className="gx-hero-title">
               {"Google Business Profile "}<em>{"Optimisation"}</em>{" Services"}
             </h1>
@@ -430,86 +430,34 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ================= INTERACTIVE CHECKLIST ================= */}
-        <section className="gx-section gx-tint" id="checklist">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"Google Business Profile optimisation checklist"}</span>
-              <h2 className="gx-h2">{"How complete is "}<em>{"your"}</em>{" profile?"}</h2>
-              <p className="gx-lead">{"Tick what your profile already has. It takes a minute, and nothing is sent anywhere."}</p>
-            </div>
-            <div className="gx-check-grid">
-              <ul className="gx-checklist" id="gxChecklist">
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Verified"}</b>{"Profile verified and owned by the business"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Real business name"}</b>{"The name on your signage, with no added keywords or locations"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Specific primary category"}</b>{"The single most specific category for your core business"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"A few additional categories"}</b>{"For key services, not one per product"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Correct address or service area"}</b>{"Hidden address and set area if you visit customers"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Working phone & website"}</b>{"Local number and the right landing page"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Up-to-date hours"}</b>{"Including holiday and special hours"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Complete services list"}</b>{"Every service, clearly described"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Customer-focused description"}</b>{"No links, prices or promotions"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Accurate attributes"}</b>{"Accessibility, payments and more, where available"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Recent, genuine photos"}</b>{"Premises, team and work, updated regularly"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Steady flow of reviews"}</b>{"Genuine reviews, each one replied to"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Regular updates"}</b>{"Posts, offers or events in the last month"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Consistent details everywhere"}</b>{"Same name, address and phone on your site and directories"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Performance tracked"}</b>{"Views, calls and directions reviewed monthly"}</span></label></li>
-              </ul>
-              <aside className="gx-score">
-                <span className="gx-label">{"Your profile"}</span>
-                <div className="gx-score-figure"><span id="gxScoreNum">{"0"}</span><small>{"/15"}</small></div>
-                <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={15} aria-valuenow={0} aria-label="Profile completeness" id="gxMeter"><span id="gxMeterFill"></span></div>
-                <div className="gx-meter-scale" aria-hidden="true"><span><bdi data-t={"Needs work"}></bdi></span><span><bdi data-t={"Getting there"}></bdi></span><span><bdi data-t={"Strong"}></bdi></span></div>
-                <p className="gx-score-msg" id="gxScoreMsg" aria-live="polite" aria-atomic="true">{"Start ticking to see where your profile stands."}</p>
-                <p className="gx-score-foot">{"This is a quick self-check, not a ranking score."}</p>
-              </aside>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= PROCESS ================= */}
-        <section className="gx-section" id="process">
+        {/* ================= PROCESS — interactive route ================= */}
+        <section className="gx-section gx-tint" id="process">
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label">{"Our process"}</span>
               <h2 className="gx-h2">{"Our Google Business Profile "}<em>{"optimisation process"}</em></h2>
+              <p className="gx-lead">{"Six steps from first call to a profile that keeps working. Follow the pin, or pick a step."}</p>
             </div>
-            <div className="gx-steps-wrap" id="gxStepsWrap">
-            <div className="gx-steps-track" aria-hidden="true"><span className="gx-steps-fill" id="gxStepsFill"></span><span className="gx-steps-head" id="gxStepsHead"></span></div>
-            <ol className="gx-steps">
-              <li><span className="gx-step-n" aria-hidden="true">{"1"}</span><h3 className="gx-h3">{"Discovery"}</h3><p className="gx-p-sm">{"We learn your business, locations, services and goals, and confirm profile access."}</p></li>
-              <li><span className="gx-step-n" aria-hidden="true">{"2"}</span><h3 className="gx-h3">{"Profile audit"}</h3><p className="gx-p-sm">{"A full review of your profile, competitors and visibility, with issues ranked by impact."}</p></li>
-              <li><span className="gx-step-n" aria-hidden="true">{"3"}</span><h3 className="gx-h3">{"Research"}</h3><p className="gx-p-sm">{"We map the searches that matter and study who’s already in the Map Pack."}</p></li>
-              <li><span className="gx-step-n" aria-hidden="true">{"4"}</span><h3 className="gx-h3">{"Optimise"}</h3><p className="gx-p-sm">{"Categories, details, services, description and media fixed, all within Google’s guidelines."}</p></li>
-              <li><span className="gx-step-n" aria-hidden="true">{"5"}</span><h3 className="gx-h3">{"Publish & reviews"}</h3><p className="gx-p-sm">{"Updates go live and your review request and reply routine begins."}</p></li>
-              <li><span className="gx-step-n" aria-hidden="true">{"6"}</span><h3 className="gx-h3">{"Measure"}</h3><p className="gx-p-sm">{"Monthly tracking and a plain report. Then we adjust and repeat from step 3."}</p></li>
-            </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= COMPARISON ================= */}
-        <section className="gx-section gx-tint" id="comparison">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"DIY vs managed"}</span>
-              <h2 className="gx-h2">{"DIY vs professional Google Business Profile "}<em>{"management"}</em></h2>
-            </div>
-            <div className="gx-table-wrap" role="region" aria-label="DIY versus EFFIX Labs profile management" tabIndex={0}>
-              <table className="gx-table gx-compare">
-                <thead><tr><th scope="col"><span className="gx-sr">{"Area"}</span></th><th scope="col">{"Doing it yourself"}</th><th scope="col" className="gx-col-us">{"With EFFIX Labs"}</th></tr></thead>
-                <tbody>
-                  <tr><th scope="row">{"Profile setup"}</th><td data-label="Doing it yourself">{"Basic fields filled in"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Every field completed and checked against guidelines"}</td></tr>
-                  <tr><th scope="row">{"Categories"}</th><td data-label="Doing it yourself">{"Often too general"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Researched against competitors and real searches"}</td></tr>
-                  <tr><th scope="row">{"Updates"}</th><td data-label="Doing it yourself">{"When there’s time"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Planned and regular"}</td></tr>
-                  <tr><th scope="row">{"Reviews"}</th><td data-label="Doing it yourself">{"Replies when remembered"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Every review answered professionally"}</td></tr>
-                  <tr><th scope="row">{"Policy risk"}</th><td data-label="Doing it yourself">{"Easy to break rules by accident"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Guideline-compliant by default"}</td></tr>
-                  <tr><th scope="row">{"Edits by others"}</th><td data-label="Doing it yourself">{"Often go unnoticed"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Monitored"}</td></tr>
-                  <tr><th scope="row">{"Reporting"}</th><td data-label="Doing it yourself">{"Rarely reviewed"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Monthly plain-language report"}</td></tr>
-                  <tr><th scope="row">{"Your time"}</th><td data-label="Doing it yourself">{"Hours every month"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Minimal: we handle it"}</td></tr>
-                </tbody>
-              </table>
+            <div className="gr-route" id="gxRoute">
+              <div className="gr-map" aria-hidden="true">
+                <svg className="gr-svg" viewBox="0 0 1200 170" fill="none">
+                  <defs><linearGradient id="grFill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#c4a8ff"></stop><stop offset="1" stopColor="#8b25e2"></stop></linearGradient></defs>
+                  <path className="gr-road" d="M10 112 C 120 40, 210 36, 320 88 S 520 150, 620 92 S 810 24, 920 82 S 1110 146, 1190 70"></path>
+                  <path className="gr-lane" d="M10 112 C 120 40, 210 36, 320 88 S 520 150, 620 92 S 810 24, 920 82 S 1110 146, 1190 70"></path>
+                  <path className="gr-fill" id="grFillPath" d="M10 112 C 120 40, 210 36, 320 88 S 520 150, 620 92 S 810 24, 920 82 S 1110 146, 1190 70"></path>
+                </svg>
+                <span className="gr-stop"></span><span className="gr-stop"></span><span className="gr-stop"></span><span className="gr-stop"></span><span className="gr-stop"></span><span className="gr-stop"></span>
+                <span className="gr-pin" id="grPin"><svg viewBox="0 0 24 32"><path d="M12 0C5.4 0 0 5.3 0 11.9 0 20.6 12 32 12 32s12-11.4 12-20.1C24 5.3 18.6 0 12 0z" fill="#8b25e2"></path></svg><b id="grPinN"><bdi data-t={"1"}></bdi></b></span>
+                <span className="gr-pin-shadow" id="grPinShadow"></span>
+              </div>
+              <ol className="gr-steps">
+              <li className="gr-step is-on" tabIndex={0}><span className="gr-step-n" aria-hidden="true">{"01"}</span><h3 className="gr-step-t">{"Discovery"}</h3><p className="gr-step-d">{"We learn your business, locations, services and goals, and confirm profile access."}</p><span className="gr-step-bar" aria-hidden="true"></span></li>
+              <li className="gr-step" tabIndex={0}><span className="gr-step-n" aria-hidden="true">{"02"}</span><h3 className="gr-step-t">{"Profile audit"}</h3><p className="gr-step-d">{"A full review of your profile, competitors and visibility, with issues ranked by impact."}</p><span className="gr-step-bar" aria-hidden="true"></span></li>
+              <li className="gr-step" tabIndex={0}><span className="gr-step-n" aria-hidden="true">{"03"}</span><h3 className="gr-step-t">{"Research"}</h3><p className="gr-step-d">{"We map the searches that matter and study who’s already in the Map Pack."}</p><span className="gr-step-bar" aria-hidden="true"></span></li>
+              <li className="gr-step" tabIndex={0}><span className="gr-step-n" aria-hidden="true">{"04"}</span><h3 className="gr-step-t">{"Optimise"}</h3><p className="gr-step-d">{"Categories, details, services, description and media fixed, all within Google’s guidelines."}</p><span className="gr-step-bar" aria-hidden="true"></span></li>
+              <li className="gr-step" tabIndex={0}><span className="gr-step-n" aria-hidden="true">{"05"}</span><h3 className="gr-step-t">{"Publish & reviews"}</h3><p className="gr-step-d">{"Updates go live and your review request and reply routine begins."}</p><span className="gr-step-bar" aria-hidden="true"></span></li>
+              <li className="gr-step" tabIndex={0}><span className="gr-step-n" aria-hidden="true">{"06"}</span><h3 className="gr-step-t">{"Measure"}</h3><p className="gr-step-d">{"Monthly tracking and a plain report. Then we adjust and repeat from step 3."}</p><span className="gr-step-bar" aria-hidden="true"></span></li>
+              </ol>
             </div>
           </div>
         </section>

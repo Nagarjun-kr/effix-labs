@@ -1,0 +1,71 @@
+/* GBP process — interactive "route": a winding road, six stops and a pin that travels to the active step */
+.gr-route { margin-top: 48px; }
+.gr-map { position: relative; width: 100%; aspect-ratio: 1200 / 170; margin-bottom: 18px; }
+.gr-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.gr-road { stroke: #e7e0f4; stroke-width: 22; stroke-linecap: round; }
+.gr-lane { stroke: #fff; stroke-width: 2; stroke-dasharray: 10 12; stroke-linecap: round; opacity: 0.9; }
+.gr-fill { stroke: url(#grFill); stroke-width: 8; stroke-linecap: round; }
+
+.gr-stop {
+  position: absolute; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%;
+  background: #fff; border: 3px solid #d9cdf0; box-shadow: 0 4px 10px -4px rgba(76, 29, 149, 0.35);
+  transition: background 0.4s, border-color 0.4s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gr-stop.is-past { border-color: #8b25e2; background: #ede3ff; }
+.gr-stop.is-on { border-color: #8b25e2; background: #8b25e2; transform: scale(1.15); }
+
+.gr-pin {
+  position: absolute; width: 40px; height: 54px; margin: -54px 0 0 -20px; z-index: 3; pointer-events: none;
+  filter: drop-shadow(0 10px 10px rgba(76, 29, 149, 0.35));
+  animation: grBob 2.6s ease-in-out infinite;
+}
+.gr-pin svg { width: 100%; height: 100%; display: block; }
+.gr-pin b {
+  position: absolute; left: 50%; top: 16px; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%;
+  display: grid; place-items: center; background: #fff; color: #8b25e2; font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+}
+.gr-pin-shadow { position: absolute; width: 26px; height: 8px; margin: -4px 0 0 -13px; border-radius: 50%; background: rgba(76, 29, 149, 0.22); filter: blur(2px); z-index: 2; animation: grShadow 2.6s ease-in-out infinite; }
+@keyframes grBob { 50% { translate: 0 -6px; } }
+@keyframes grShadow { 50% { transform: scale(0.75); opacity: 0.6; } }
+
+/* step cards under the road */
+.gr-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.gr-step {
+  position: relative; overflow: hidden; cursor: pointer; outline: none;
+  padding: 18px 18px 20px; border-radius: 18px; background: transparent; border: 1px solid transparent;
+  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gr-step:hover, .gr-step:focus-visible { background: rgba(255, 255, 255, 0.6); }
+.gr-step:focus-visible { border-color: #c4a8ff; }
+.gr-step.is-on { background: #fff; border-color: rgba(139, 37, 226, 0.2); box-shadow: 0 22px 44px -28px rgba(76, 29, 149, 0.5); transform: translateY(-4px); }
+.gr-step-n { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; color: #a29fb0; transition: color 0.35s; }
+.gr-step.is-on .gr-step-n, .gr-step.is-past .gr-step-n { color: #8b25e2; }
+.gr-step-t { font-family: var(--font-body); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; margin: 8px 0 6px; color: #6b6e78; transition: color 0.35s; }
+.gr-step.is-on .gr-step-t, .gr-step.is-past .gr-step-t { color: var(--gx-lead); }
+.gr-step-d { font-size: 14.5px; line-height: 1.55; color: var(--gx-muted); margin: 0; }
+.gr-step-bar { position: absolute; left: 18px; right: 18px; bottom: 0; height: 3px; border-radius: 3px; background: #eee8f8; opacity: 0; transition: opacity 0.3s; }
+.gr-step-bar::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, #c4a8ff, #8b25e2); transform-origin: left; transform: scaleX(0); }
+.gr-route.is-auto .gr-step.is-on .gr-step-bar { opacity: 1; }
+.gr-route.is-auto .gr-step.is-on .gr-step-bar::after { animation: grBar var(--gr-dur, 3.6s) linear forwards; }
+@keyframes grBar { to { transform: scaleX(1); } }
+
+/* tablets: 3 x 2 cards, road kept */
+@media (max-width: 1100px) {
+  .gr-steps { grid-template-columns: repeat(3, 1fr); }
+}
+/* phones: vertical route */
+@media (max-width: 760px) {
+  .gr-map { display: none; }
+  .gr-steps { grid-template-columns: 1fr; gap: 6px; position: relative; padding-left: 30px; }
+  .gr-steps::before { content: ""; position: absolute; left: 9px; top: 20px; bottom: 20px; width: 4px; border-radius: 4px; background: #e7e0f4; }
+  .gr-step { padding: 14px 16px; }
+  .gr-step::before { content: ""; position: absolute; left: -27px; top: 20px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid #d9cdf0; transition: all 0.35s; }
+  .gr-step { overflow: visible; }
+  .gr-step.is-on::before, .gr-step.is-past::before { border-color: #8b25e2; }
+  .gr-step.is-on::before { background: #8b25e2; }
+  .gr-step.is-on { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gr-pin, .gr-pin-shadow { animation: none; }
+  .gr-fill { transition: none; }
+}

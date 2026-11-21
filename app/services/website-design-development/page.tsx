@@ -194,7 +194,6 @@ export default function Page() {
         {/* ================= HERO ================= */}
         <section className="gx-hero wd-hero" id="hero">
           <div className="gx-wrap gx-hero-inner">
-            <span className="gx-kicker"><span className="gx-kicker-dot wd-dot" aria-hidden="true"></span>{"Service 05 · India & Bengaluru"}</span>
             <h1 className="gx-hero-title">
               {"Website Design "}<em>{"& Development"}</em>
             </h1>

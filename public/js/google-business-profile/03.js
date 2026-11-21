@@ -96,69 +96,95 @@
   });
 })();
 
-/* Process: a light line slides through every step.
-   - Plays an automatic sweep until the visitor first moves the pointer over the section.
-   - After that it follows the pointer and stays exactly where the pointer stops,
-     even after the pointer leaves (no reset, no jumping back). */
+/* Process route: a pin travels along a winding road to the active step.
+   Auto-advances while in view; hover, click, tap or arrow keys pick a step (auto resumes after a pause). */
 (function () {
-  var wrap = document.getElementById('gxStepsWrap');
-  if (!wrap) return;
-  var section = wrap.closest('section') || wrap;
-  var track = wrap.querySelector('.gx-steps-track');
-  var fill = document.getElementById('gxStepsFill');
-  var head = document.getElementById('gxStepsHead');
-  var items = Array.prototype.slice.call(wrap.querySelectorAll('.gx-steps li'));
+  var route = document.getElementById('gxRoute');
+  if (!route) return;
+  var map = route.querySelector('.gr-map');
+  var path = document.getElementById('grFillPath');
+  var stops = Array.prototype.slice.call(route.querySelectorAll('.gr-stop'));
+  var items = Array.prototype.slice.call(route.querySelectorAll('.gr-step'));
+  var pin = document.getElementById('grPin');
+  var shadow = document.getElementById('grPinShadow');
+  var pinN = route.querySelector('#grPinN bdi');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var x0 = 0, len = 0, centers = [];
-  var pos = 0, target = 0, manual = false, t0 = 0, raf = 0;
+  var fine = window.matchMedia('(pointer: fine)').matches;
+  var VW = 1200, VH = 170, DUR = 3600;
+  var total = path.getTotalLength(), lens = [], cur = 0, active = 0, anim = 0, timer = 0, visible = false, lastUser = 0;
 
+  route.style.setProperty('--gr-dur', DUR + 'ms');
+  path.style.strokeDasharray = total;
+  path.style.strokeDashoffset = total;
+
+  function lengthAtX(x) {               // the road always moves left to right, so x grows with length
+    var lo = 0, hi = total;
+    for (var k = 0; k < 28; k++) { var mid = (lo + hi) / 2; if (path.getPointAtLength(mid).x < x) lo = mid; else hi = mid; }
+    return (lo + hi) / 2;
+  }
+  function place(el, len) {
+    var w = map.clientWidth, h = map.clientHeight, p = path.getPointAtLength(len);
+    el.style.left = (p.x / VW * w) + 'px'; el.style.top = (p.y / VH * h) + 'px';
+  }
   function measure() {
-    var wr = wrap.getBoundingClientRect();
-    centers = items.map(function (li) { var n = li.querySelector('.gx-step-n').getBoundingClientRect(); return n.left + n.width / 2 - wr.left; });
-    x0 = centers[0] || 0; len = (centers[centers.length - 1] || 0) - x0;
-    track.style.left = x0 + 'px'; track.style.width = len + 'px';
-    if (manual) { target = Math.min(target, len); }
+    if (!map.offsetParent) return;      // road hidden on phones
+    var mr = map.getBoundingClientRect();
+    var oneRow = items[items.length - 1].offsetTop === items[0].offsetTop;
+    lens = items.map(function (li, i) {
+      if (!oneRow) return total * (0.04 + 0.92 * i / (items.length - 1));
+      var r = li.getBoundingClientRect();
+      return lengthAtX(((r.left + r.width / 2) - mr.left) / mr.width * VW);
+    });
+    stops.forEach(function (s, i) { place(s, lens[i]); });
+    cur = lens[active]; draw();
   }
-  function paint() {
-    var p = Math.max(0, Math.min(len, pos));
-    fill.style.width = p + 'px';
-    head.style.left = p + 'px';
-    items.forEach(function (li, i) { li.classList.toggle('is-lit', p >= centers[i] - x0 - 2); });
+  function draw() {
+    place(pin, cur); place(shadow, cur);
+    path.style.strokeDashoffset = total - cur;
   }
-  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-  function frame(now) {
-    raf = requestAnimationFrame(frame);
-    if (track.offsetParent === null) return; // hidden on small screens
-    if (manual) {
-      pos += (target - pos) * 0.2;
-      if (Math.abs(target - pos) < 0.3) pos = target;
-      fill.style.opacity = '1';
-    } else {
-      var cycle = 5000, e = (now - t0) % cycle;
-      if (e < 2800) { pos = ease(e / 2800) * len; fill.style.opacity = '1'; }
-      else if (e < 4000) { pos = len; }
-      else { fill.style.opacity = String(Math.max(0, 1 - (e - 4000) / 900)); if (e > 4900) pos = 0; }
-    }
-    paint();
+  function travel(to) {
+    cancelAnimationFrame(anim);
+    if (reduce || !map.offsetParent) { cur = to; draw(); return; }
+    var from = cur, t0 = performance.now(), d = Math.min(1100, 420 + Math.abs(to - from) * 1.1);
+    (function step(now) {
+      var t = Math.min(1, (now - t0) / d), e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      cur = from + (to - from) * e; draw();
+      if (t < 1) anim = requestAnimationFrame(step);
+    })(t0);
   }
-  measure();
-  window.addEventListener('resize', measure);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-  if (reduce) { pos = len; paint(); return; }
+  function setActive(i) {
+    active = (i + items.length) % items.length;
+    items.forEach(function (li, k) { li.classList.toggle('is-on', k === active); li.classList.toggle('is-past', k < active); li.setAttribute('aria-current', k === active ? 'step' : 'false'); });
+    stops.forEach(function (s, k) { s.classList.toggle('is-on', k === active); s.classList.toggle('is-past', k < active); });
+    if (pinN) pinN.setAttribute('data-t', String(active + 1));
+    var bar = items[active].querySelector('.gr-step-bar');
+    if (bar) { bar.style.display = 'none'; void bar.offsetWidth; bar.style.display = ''; }
+    if (lens.length) travel(lens[active]);
+  }
+  function schedule() {
+    clearTimeout(timer);
+    if (reduce || !visible) { route.classList.remove('is-auto'); return; }
+    var idle = performance.now() - lastUser;
+    if (idle < 9000) { route.classList.remove('is-auto'); timer = setTimeout(schedule, 9000 - idle); return; }
+    route.classList.add('is-auto');
+    timer = setTimeout(function () { setActive(active + 1); schedule(); }, DUR);
+  }
+  function user(i) { lastUser = performance.now(); setActive(i); schedule(); }
 
-  section.addEventListener('pointermove', function (e) {
-    if (track.offsetParent === null) return;
-    var wr = wrap.getBoundingClientRect();
-    target = Math.min(len, Math.max(0, e.clientX - wr.left - x0));
-    if (!manual) { manual = true; wrap.classList.add('is-running'); }
+  items.forEach(function (li, i) {
+    li.addEventListener('click', function () { user(i); });
+    if (fine) li.addEventListener('pointerenter', function () { if (i !== active) user(i); });
+    li.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); user(i); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); user(i + 1); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); user(i - 1); }
+    });
   });
 
+  measure(); setActive(0);
+  window.addEventListener('resize', function () { measure(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) {
-      en.forEach(function (x) {
-        if (x.isIntersecting && !raf) { measure(); t0 = performance.now(); wrap.classList.add('is-running'); raf = requestAnimationFrame(frame); }
-        else if (!x.isIntersecting && raf) { cancelAnimationFrame(raf); raf = 0; }
-      });
-    }, { threshold: 0.2 }).observe(wrap);
-  } else { raf = requestAnimationFrame(frame); }
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible) measure(); schedule(); }, { threshold: 0.3 }).observe(route);
+  }
 })();
