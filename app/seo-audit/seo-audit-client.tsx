@@ -2,7 +2,7 @@
 
 // Effix SEO audit (/seo-audit) — not linked from the site yet; the homepage box uses /discover (brand search).
 // Website URL -> /api/seo-audit (homepage, robots.txt, sitemap, sample pages, brand + social links)
-// -> dashboard; Google PageSpeed (speed) and Google Programmable Search (brand on 9 platforms) load inside it.
+// -> dashboard; Google PageSpeed (speed) and Google Programmable Search (brand on 8 platforms) load inside it.
 // Nothing is stored and no login is needed.
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 
@@ -127,7 +127,7 @@ export default function SeoAuditClient() {
                 <li className="dx-step"><b>01</b><h2>Technical SEO</h2><p>HTTPS, indexing, robots.txt, sitemap, canonical tags, redirects and broken pages.</p></li>
                 <li className="dx-step"><b>02</b><h2>Content</h2><p>Titles, meta descriptions, headings, text depth, image alt text, duplicates and internal links.</p></li>
                 <li className="dx-step"><b>03</b><h2>AI visibility and speed</h2><p>Schema, FAQs, AI crawler access, plus a real Google Lighthouse speed test.</p></li>
-                <li className="dx-step"><b>04</b><h2>Brand on 9 platforms</h2><p>Live Google results for your brand on the platforms below, and which ones your site links to.</p></li>
+                <li className="dx-step"><b>04</b><h2>Brand on 8 platforms</h2><p>Live Google results for your brand on the platforms below, and which ones your site links to.</p></li>
               </ol>
               <div className="dx-platforms" aria-label="Platforms searched">{PLATFORMS.map((p) => <span key={p.name}>{p.name}</span>)}</div>
               <p className="dx-limits">We check your homepage and a sample of up to eight other pages. It&apos;s an automated audit of public pages, not a full crawl. Brand results only include pages Google has indexed.</p>
