@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-11-21T14:02:00.320Z",
+ "capturedAt": "2026-11-21T14:33:02.928Z",
  "identity": {
   "name": "Zomato",
   "domain": "zomato.com",
@@ -13,46 +13,76 @@
    "query": "\"Zomato\" site:youtube.com",
    "results": [
     {
+     "title": "Zomato",
+     "url": "https://www.youtube.com/zomato",
+     "snippet": "Zomato · Fuel Your Hustle feat. Shah Rukh Khan, Mary Kom, AR Rahman, Jasprit Bumrah | Zomato · Fuel Your Hustle · Zomato for the Planet · Humans of Zomato · Breaking ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
      "title": "Zomato - YouTube",
      "url": "https://www.youtube.com/@zomato/videos",
-     "snippet": "here to remind you to eat",
-     "source": "youtube.com"
+     "snippet": "Fuel Your Hustle feat. Shah Rukh Khan, Mary Kom, AR Rahman, Jasprit Bumrah | Zomato 19M 1y ago 1:58",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Grow with Zomato - YouTube",
      "url": "https://www.youtube.com/@growwithzomato",
-     "snippet": "We’ll help you every step of the way — from onboarding your restaurant to creating ads on the Zomato Partner App.",
-     "source": "youtube.com"
+     "snippet": "This is a step-by-step tutorial for beginners to help you set up your restaurant profile on Zomato easily - from sign-up to going live in just 3 minutes.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Zomato - YouTube Music",
      "url": "https://music.youtube.com/watch?v=_U8DcQK8eVI",
-     "snippet": "Zomato Playing from Summa Semma Zomato (Official) | Anirudh Ravichander | Zomato Mix",
-     "source": "music.youtube.com"
+     "snippet": "Playing from Summa Semma Zomato (Official) | Anirudh Ravichander | Zomato Mix Save",
+     "source": "music.youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "How To Use Zomato Dining Offers - YouTube",
      "url": "https://www.youtube.com/watch?v=26fzl_9I9BQ",
-     "snippet": "Using Zomato dining offers is a great way to enjoy discounts and special deals when dining at partner restaurants. These offers can include percentage discou...",
-     "source": "youtube.com"
+     "snippet": "This video guide walks you through how to find, understand, and redeem Zomato dining offers properly.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Zomato AI Data Analytics | End-To-End AI Data Engineering ...",
      "url": "https://www.youtube.com/watch?v=kYwaNMQ3XT8",
-     "snippet": "Zomato AI Data Analytics | End-To-End AI Data Engineering Project Darshil Parmar 219K subscribers 3.4K",
-     "source": "youtube.com"
-    },
-    {
-     "title": "How to onboard your restaurant on Zomato | Grow with Zomato",
-     "url": "https://www.youtube.com/watch?v=Dz7TYlH_igg",
-     "snippet": "This is a step-by-step tutorial for beginners to help you set up your restaurant profile on Zomato easily - from sign-up to going live in just 3 minutes. Ste...",
-     "source": "youtube.com"
+     "snippet": "Become a Job-Ready Data Engineer - https://datavidhya.com/ Build a complete AI Data Engineering project from scratch — Zomato/food delivery dataset → AWS S3 → Snowflake → dbt → Apache ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "How To Use Zomato Wallet - YouTube",
      "url": "https://www.youtube.com/watch?v=3Wbqbf18puA",
-     "snippet": "Zomato Wallet, also known as Zomato Credits or Zomato Pay, allows users to make seamless payments for their food orders directly within the Zomato app. This ...",
-     "source": "youtube.com"
+     "snippet": "This video walks through the step-by-step process of using the Zomato Wallet, including how to load funds through gift cards or vouchers, and how to apply your wallet balance during checkout.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Zomato Roast - YouTube",
+     "url": "https://www.youtube.com/watch?v=YggJwXAeRfo",
+     "snippet": "@zomato has always been the coolest brand I've worked with. Thank you for inviting me to roast you in person (chat support mai kar kar k thak gaya tha)",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -63,50 +93,39 @@
     {
      "title": "Zomato (@zomato) • Instagram photos and videos",
      "url": "https://www.instagram.com/zomato/",
-     "snippet": "2M followers · 2 following · 3020 posts · @zomato: “here to remind you to eat♥️ ... zomato. Zomato. 3,020 posts. 2.1M followers. 0 following. here to remind ...",
-     "source": "instagram.com"
+     "snippet": "2M followers · 2 following · 3020 posts · @zomato: “here to remind you to eat♥️”",
+     "source": "instagram.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
-     "title": "Zomato Lebanon (@zomatolb)",
-     "url": "https://www.instagram.com/zomatolb/",
-     "snippet": "74K followers · 707 following · 997 posts · @zomatolb: “Discover 8000+ Restaurants Order Online Check out Zomato Pro ”",
-     "source": "instagram.com"
-    },
-    {
-     "title": "@zomato 's new feature is unlocking the power of customer loyalty for your ...",
-     "url": "https://www.instagram.com/reel/C-mPvJFSxsh/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Still seeing red ♥️🏆 - Zomato (@zomato)",
-     "url": "https://www.instagram.com/p/DZCGXO1E2Lt/",
-     "snippet": "Day by day zomato is becoming pathetic @zomato @hyperpure_by_zomato@zomatodeliverypartner their customer service is so worst they did'nt do ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "@zomato was not a food delivery app from the beginning, I have written ...",
+     "title": "@zomato was not a food delivery app from the beginning, I ...",
      "url": "https://www.instagram.com/reel/Df33240PW3L/",
-     "snippet": "",
-     "source": "instagram.com"
+     "snippet": "Apparently, Zomato has a new delivery policy: Mark it delivered, keep the money, and let the customer figure it out! Jokes apart, this is ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Craving something? We don't know her.  Zomato knows exactly what to ...",
-     "url": "https://www.instagram.com/reel/DdGb1H_sVV6/",
-     "snippet": "",
-     "source": "instagram.com"
+     "title": "@zomato 's new feature is unlocking the power of customer ...",
+     "url": "https://www.instagram.com/reel/C-mPvJFSxsh/",
+     "snippet": "@zomato 's new feature is unlocking the power of customer loyalty for your restaurant! If you've ever considered launching a loyalty program ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Deepinder Goyal (@deepigoyal) • Instagram photos and videos",
-     "url": "https://www.instagram.com/deepigoyal/",
-     "snippet": "Founder & CEO - @temple. Founder - @zomato and @lataerospace. Championing @feedingindia and @blinkitambulance. Curious child. · India has extraordinary artists ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Zomato is simple, memorable, and almost impossible to misspell. It ...",
-     "url": "https://www.instagram.com/reel/DawMQY3xxcE/",
-     "snippet": "",
-     "source": "instagram.com"
+     "title": "Zomato • 13M reels on Instagram",
+     "url": "https://www.instagram.com/popular/zomato",
+     "snippet": "Zomato (zomato), here to remind you to eat♥️, recently highlighted community initiatives and new app features ahead of the festive season.",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -115,52 +134,94 @@
    "query": "\"Zomato\" site:facebook.com",
    "results": [
     {
+     "title": "zomato",
+     "url": "https://www.facebook.com/p/zomato-61551630248840/",
+     "snippet": "zomato. Fast food restaurant. Follow. Not yet rated (0 reviews). Details. Photos. See all. Posts. No posts available.",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "how to cancel Zomato order - Developer Community Forum",
+     "url": "https://developers.facebook.com/community/threads",
+     "snippet": "To cancel a Zomato order,On the profile page, click on 'Order History' helpline: 921_9437-900 'Online ordering'. To cancel your Zomato online order, ...",
+     "source": "developers.facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
      "title": "Zomato",
      "url": "https://www.facebook.com/zomato/",
      "snippet": "Zomato. 1929095 followers · 135776 talking about this. here to remind you to eat.",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Zomato Delivery Partners (@ZomatoDeliveryPartners)",
      "url": "https://www.facebook.com/ZomatoDeliveryPartners/",
      "snippet": "This is a community page for over 2 lakh delivery partners of Zomato — an online food ordering and restaurant discovery platform present across 300 cities ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "zomato",
-     "url": "https://www.facebook.com/p/zomato-61551630248840/",
-     "snippet": "zomato. Fast food restaurant. Follow. Not yet rated (0 reviews). Details. Photos. See all. Posts. No posts available.",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "how to cancel Zomato order - Developer Community Forum",
      "url": "https://developers.facebook.com/community/threads/1370637240623231/",
      "snippet": "To cancel a Zomato order,On the profile page, click on 'Order History' helpline: 921_9437-900 'Online ordering'. To cancel your Zomato online order, ...",
-     "source": "developers.facebook.com"
+     "source": "developers.facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "What Is Dining on Zomato",
      "url": "https://www.facebook.com/fb-answers/what-is-dining-on-zomato/",
      "snippet": "Zomato is an online food platform that connects customers with restaurants for both food delivery and dining-out services, plus features like table bookings ...",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Zomato is simple, memorable, and almost impossible to misspell. ...",
      "url": "https://www.facebook.com/brandbucket/videos/zomato-is-simple-memorable-and-almost-impossible-to-misspellit-sounds-like-tomat/4468259176780573/",
      "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Zomato became the complete vague and fraud platform, least expected ...",
+     "url": "https://www.facebook.com/groups/1378458342374888/posts/3419270874960281/",
+     "snippet": "Zomato has fraud and cheater company they charged me more than the printed MRP. I contacted customer support, but they denied my refund request ...",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "What Does Zomato Do",
      "url": "https://www.facebook.com/fb-answers/what-does-zomato-do/",
      "snippet": "Zomato is an online food delivery and restaurant discovery platform that connects customers, restaurants, and delivery partners across India and other ...",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Skip the line and order online! Delivery available through Zomato, or call us ...",
-     "url": "https://www.facebook.com/pizzamontanarestaurant/videos/skip-the-line-and-order-online-delivery-available-through-zomato-or-call-us-now/666275447184871/",
-     "snippet": "Skip the line and order online! Delivery available through Zomato, or call us now!",
-     "source": "facebook.com"
+     "title": "How Zomato Handles Millions of Food Orders with Apache Kafka | BlackCask",
+     "url": "https://www.facebook.com/blackcask/videos/-how-zomatouber-eats-handles-millions-of-food-orders-using-apache-kafkaever-wond/3295928953932258/",
+     "snippet": "Order Placement – Customer places an order through the Zomato app. 2. ⚡ Order Service – Validates the order and publishes an event to Kafka.",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -172,49 +233,28 @@
      "title": "Zomato",
      "url": "https://in.linkedin.com/company/zomato",
      "snippet": "Zomato. Food Delivery Software. India's largest Food Delivery, Dining and Restaurant Discovery Service. Better food for more people.",
-     "source": "in.linkedin.com"
+     "source": "in.linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Bani Narang - City Key Accounts Manager at Zomato",
-     "url": "https://in.linkedin.com/in/bani-narang-273735245",
-     "snippet": "City Key Accounts Manager at Zomato, managing restaurant P&Ls and driving collaborative growth through data-led business analysis, strategic problem-solving ...",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "Extremely Frustrated with Zomato | Piyush Gupta",
-     "url": "https://www.linkedin.com/posts/piyush-gupta-b5368b122_extremely-frustrated-with-zomato-deepinder-activity-7371207517437276160-s9JP",
-     "snippet": "Frustrated with Zomato's repeated wrong orders and dismissive resolutions · Report this post · Close menu.",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "Ankur Lakhani - Business Head – Emerging Markets (Bharat) | Zomato",
-     "url": "https://in.linkedin.com/in/ankur-lakhani",
-     "snippet": "I currently work as the Business Head – Emerging Markets (Bharat) at Zomato. In this role, I lead a large and complex cross-regional business covering ...",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "Asheesh Sharma - Consumer Product & Growth at Zomato",
-     "url": "https://in.linkedin.com/in/asheesh-sharma-codeyourstack",
-     "snippet": "With 10+ years of experience, I've evolved from building and scaling technology platforms to leading business and product initiatives at Zomato.",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "How to Develop an App like Zomato: A Complete Guide",
-     "url": "https://www.linkedin.com/pulse/how-develop-app-like-zomato-complete-guide-toxsltech-jjskc",
-     "snippet": "A Zomato-like app should include all the essential features required to support customers, restaurants, delivery partners, and admins. The goal ...",
-     "source": "linkedin.com"
+     "title": "Zomato",
+     "url": "https://www.linkedin.com/products/zomato/",
+     "snippet": "Zomato | India's largest Food Delivery, Dining and Restaurant Discovery Service. Better food for more people.",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Frustrated with Zomato's delivery service and high prices",
      "url": "https://www.linkedin.com/posts/iamsyedrm_ceo-activity-7374097479295942656-u1t9",
      "snippet": "Every time I order from Zomato I can confidently bet that 9 out of 10 deliveries will be late. And about 7 out of 10?",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "Zomato & Swiggy lie about delivery times and blame restaurants. A ...",
-     "url": "https://www.linkedin.com/posts/yash-gangwal-8a630b75_how-zomato-swiggy-are-knowingly-lying-to-activity-7301089519787761665-NJhU",
-     "snippet": "Zomato & Swiggy lie about delivery times and blame restaurants. A lawsuit waiting to happen. View profile for Yash Gangwal. Yash Gangwal. 1y.",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -225,50 +265,29 @@
     {
      "title": "Zomato",
      "url": "https://x.com/zomato",
-     "snippet": "zomato's posts ... to the person resolving the outage, first decide your lunch order, then decide your dinner order also, take your time, scroll through some ...",
-     "source": "x.com"
+     "snippet": "zomato. @zomato. here to remind you to eat.",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Replies by Zomato Care (@zomatocare) ...",
-     "url": "https://x.com/zomatocare/with_replies",
-     "snippet": "Complete negligence by @zomato on train delivery.Ordered 2 hours early.Result? 2 riders got changed, no food, and just a plain refund—not even a sorry coupon ...",
-     "source": "x.com"
+     "title": "Zomato Is Not a Food App Anymore",
+     "url": "https://x.com/@jainprayush9",
+     "snippet": "Zomato quietly renamed itself Eternal Limited in 2025. It is now a holding company running four completely different businesses across food ...",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Zomato Care (@zomatocare) / X",
-     "url": "https://x.com/zomatocare",
-     "snippet": "Remember, @zomatocare is the ONLY official helpline buddy at Zomato. We won't slide into your DMs from any other social handle asking for your personal ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Zomato USA (@ZomatoUS) / X",
-     "url": "https://x.com/ZomatoUS",
-     "snippet": "Zomato (formerly Urbanspoon) is the world's local restaurant guide. The fastest way to search for great places to eat in 22 countries! #LoveFood #ZomatoUS.",
-     "source": "x.com"
-    },
-    {
-     "title": "\"One thing I've noticed about @zomato: they keep shipping niche, cool ...",
-     "url": "https://x.com/harshilmathur/status/2086329370512351575",
-     "snippet": "TIL Zomato is available on CarPlay. Who wouldn't want their food to be delivered as soon as they reach home. Well thought out @zomato! 5:50 ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Deepinder Goyal",
-     "url": "https://x.com/deepigoyal/status/1972525021122691110",
-     "snippet": "We're launching Healthy Mode on Zomato. Every dish in this mode now comes with a Healthy Score—from Low to Super—based on what really counts for ...",
-     "source": "x.com"
-    },
-    {
-     "title": "zomato on X: \"Most cities burn out in the heat. Chennai blazes on. Veppam is ...",
-     "url": "https://x.com/zomato/status/2090673698936389775",
-     "snippet": "Pathetic service by Zomato food delivery. I have ordered food at 9:07pm which was supposed to deliver in 30 minutes and it's been already 41 ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Replies by zomato (@zomato) / X",
-     "url": "https://x.com/zomato/with_replies",
-     "snippet": "@zomato I ordered food before 1 Hr i am a Gold member . But still food not arrived Order number 5541326817 Then what is the use of gold membership?",
-     "source": "x.com"
+     "title": "\"Order online on Zomato, and get up to 50% Off on local legends. ...",
+     "url": "https://x.com/@zomato",
+     "snippet": "Order online on Zomato, and get up to 50% Off on local legends. Check out the Zomato app. Zomato: Food Delivery & Dining. 123.7K reviews.",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -280,49 +299,83 @@
      "title": "r/Zomato",
      "url": "https://www.reddit.com/r/Zomato/",
      "snippet": "r/Zomato: Community run subreddit for delivery partners, restaurant partners, and customers of Zomato.",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site",
+      "name"
+     ]
     },
     {
      "title": "Why do people still use zomato?",
      "url": "https://www.reddit.com/r/Zomato/comments/1saempd/why_do_people_still_use_zomato/",
      "snippet": "Zomato has ruined their reputation as one of the pioneers of food delivery services. What started off as a food review app has now transformed into a corporate ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "I think a Domino's manager tried to access my Zomato account using ...",
-     "url": "https://www.reddit.com/r/Zomato/comments/1wjt1p9/i_think_a_dominos_manager_tried_to_access_my/",
-     "snippet": "I think a Domino's manager tried to access my Zomato account using a fake “delivery OTP”. Discussion.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Your Go-To Zomato/Swiggy order : r/mumbaiFood",
-     "url": "https://www.reddit.com/r/mumbaiFood/comments/1rn69cr/your_goto_zomatoswiggy_order/",
-     "snippet": "Your Go-To Zomato/Swiggy order ... Need your usual and reliable orders in terms of both taste and Hygine so it will be an easy curated list to ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Zomato marked my order as delivered but I NEVER received it",
-     "url": "https://www.reddit.com/r/Zomato/comments/1sm1pxr/zomato_marked_my_order_as_delivered_but_i_never/",
-     "snippet": "Update: Zomato responded and I have now received the refund. Glad the issue was resolved, though the experience was quite frustrating.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "The Zomato \"Double Order\" Nonsense",
-     "url": "https://www.reddit.com/r/Zomato/comments/1tjlf8r/the_zomato_double_order_nonsense/",
-     "snippet": "Zomato \"stacked\" my delivery with another order from Chai Point. The two restaurants are only 80 meters apart. The Tech Fail: Because of the 80m ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Not using Zomato App anymore",
-     "url": "https://www.reddit.com/r/Zomato/comments/1qdhe8g/not_using_zomato_app_anymore/",
-     "snippet": "My Zomato Gold finally expired and I've taken Swiggy One now, and using that. Posting as the company might be checking these sub reddits:.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "I hate zomato they won't let me talk a executive and my order is late be ...",
+     "title": "I hate zomato they won't let me talk a executive and my ...",
      "url": "https://www.reddit.com/r/Zomato/comments/1vzy68z/i_hate_zomato_they_wont_let_me_talk_a_executive/",
      "snippet": "I hate zomato they won't let me talk a executive and my order is late be 1.5 hours the delivery driver stuck in the same position.",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Indian restaurants are giving away their customers to Zomato",
+     "url": "https://www.reddit.com/r/IndiaBusiness/comments/1w4eaxf/indian_restaurants_are_giving_away_their/",
+     "snippet": "Indian restaurants are giving away their customers to Zomato … 25-30% commission gone every month ₹1 lakh monthly sales, ₹25,000 straight to ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Guys we are being fooled from both the restaurants and Zomato. : r/Chennai",
+     "url": "https://www.reddit.com/r/Chennai/comments/1gkpcpb/guys_we_are_being_fooled_from_both_the/",
+     "snippet": "Biggest issue with Zomato/Swiggy is they don't declare upfront that prices are higher than the restaurant. They leave it for us to assume.",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "The secret to saving money and staying fit is deleting Zomato and ...",
+     "url": "https://www.reddit.com/r/Frugal_Ind/comments/1vyu5g9/the_secret_to_saving_money_and_staying_fit_is/",
+     "snippet": "the most effective habit is remarkably simple: sticking to home cooked food. Cutting out fast food deliveries, processed snacks, and routine ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "What I learned talking to 50+ restaurant owners across India about Zomato ...",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1w80twg/what_i_learned_talking_to_50_restaurant_owners/",
+     "snippet": "Reddit Best food delivery services in … 50+ restaurant owners across India about Zomato dependency Case Study. Zomato's 50% off deals before ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Got stale and sour food when ordered throught Zomato. And Zomato AI bot ...",
+     "url": "https://www.reddit.com/r/Bengaluru/comments/1pn87od/got_stale_and_sour_food_when_ordered_throught/",
+     "snippet": "How is this a zomato problem? They don't do QA on the food before delivering it to you. Take it up with the restaurant that tried to kill you!",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Everyone Wants Everything for Free — Until the System Collapses : r/india",
+     "url": "https://www.reddit.com/r/india/comments/1q80vas/everyone_wants_everything_for_free_until_the/",
+     "snippet": "Zomato is a food delivery platform, a business meant to grow. Zomato's delivery partners protested. They want fixed salaries, provident fund ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -331,52 +384,94 @@
    "query": "\"Zomato\" site:quora.com",
    "results": [
     {
-     "title": "Is Zomato available in the USA?",
-     "url": "https://www.quora.com/Is-Zomato-available-in-the-USA",
-     "snippet": "Is Zomato available in the USA?",
-     "source": "quora.com"
+     "title": "How do I add a food business on Zomato?",
+     "url": "https://www.quora.com/How-do-I-add-a-food-business-on-Zomato",
+     "snippet": "How do I add a food business on Zomato?",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "What is your review of Zomato?",
-     "url": "https://www.quora.com/What-is-your-review-of-Zomato",
-     "snippet": "What is your review of Zomato?",
-     "source": "quora.com"
+     "title": "Zomato Promo Code - Quora",
+     "url": "https://zomatopromocode.quora.com/",
+     "snippet": "Zomato online food delivery app, accessible by all Indian Restaurants/Bakery offering major cuisines from the available variety of food items and styles.",
+     "source": "zomatopromocode.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "What is Zomato, and how does it work?",
-     "url": "https://www.quora.com/What-is-Zomato-and-how-does-it-work?no_redirect=1",
-     "snippet": "What is Zomato, and how does it work?",
-     "source": "quora.com"
+     "title": "q.quora.com",
+     "url": "https://q.quora.com/_/ad/e602d09d9d5f4d13a5a231e0715b78d4/pixel?tag=ViewContent&noscript=1",
+     "snippet": "Quora is a platform to ask questions, share knowledge, and connect with people for unique insights and quality answers.",
+     "source": "q.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Is it worth to order food from Zomato?",
-     "url": "https://www.quora.com/Is-it-worth-to-order-food-from-Zomato",
-     "snippet": "Is it worth to order food from Zomato?",
-     "source": "quora.com"
+     "title": "Monetization and Earnings – Quora Help Center",
+     "url": "https://help.quora.com/hc/en-us/sections/4404708310292-Monetization-and-Earnings",
+     "snippet": "Helpful information about making money on Quora. Monetization and Earnings Helpful information about making money on Quora.",
+     "source": "help.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Delete, remove, or Recover Your Zomato Account in Just a Few ...",
-     "url": "https://sushilb.quora.com/Delete-remove-or-Recover-Your-Zomato-Account-in-Just-a-Few-Steps-Zomato-is-the-most-popular-food-delivery-app-across",
-     "snippet": "Step 1: Open Zomato App: Open Zomato app on your Android or iPhone. device. Step 2: Go to the profile section: Click on the profile/account section at. the ...",
-     "source": "sushilb.quora.com"
+     "title": "What is considered ‘Adult’ content on Quora?",
+     "url": "https://help.quora.com/hc/en-us/articles/4405052142868-What-is-considered-Adult-content-on-Quora",
+     "snippet": "Quora defines adult content as any content (e.g., writing, imagery, or video) that is pornographic, depicts a sexual act, or is otherwise overtly sexual. Below are some examples of adult content: E...",
+     "source": "help.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "How does Zomato work?",
-     "url": "https://www.quora.com/How-does-Zomato-work",
-     "snippet": "How does Zomato work?",
-     "source": "quora.com"
+     "title": "celebrityhub.quora.com",
+     "url": "https://celebrityhub.quora.com/What-are-your-favorite-steamy-GIFs-of-Mia-Khalifa",
+     "snippet": "We would like to show you a description here but the site won’t allow us.",
+     "source": "celebrityhub.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "save more on online food orders with Zomato",
-     "url": "https://zomatopromocode.quora.com/Today-s-Zomato-Order-Promo-Code-April-2025-Zomato-makes-choosing-restaurants-bars-and-pubs-easy-Their-restaurant-lis",
-     "snippet": "Zomato makes choosing restaurants, bars, and pubs easy. Their restaurant listing gives the address and the food and drinks menu, and user reviews and ratings.",
-     "source": "zomatopromocode.quora.com"
+     "title": "Press - Quora",
+     "url": "https://www.quora.com/press",
+     "snippet": "Try refreshing the page, or try again later. Refresh Page",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "What are your thoughts on Zomato reviews? Do you think ... - Uber Driver",
-     "url": "https://uberdriver.quora.com/https-www-quora-com-What-are-your-thoughts-on-Zomato-reviews-Do-you-think-theyre-accurate-answer-Ensen-1",
-     "snippet": "Some Zomato reviews may be genuine and provide helpful information about a restaurant's food quality, service, ambiance… Read more.",
-     "source": "uberdriver.quora.com"
+     "title": "ভাষা - Quora",
+     "url": "https://bn.quora.com/about/languages",
+     "snippet": "পৃষ্ঠাটি রিফ্রেশ করার চেষ্টা করুন বা পরে আবার চেষ্টা করুন৷",
+     "source": "bn.quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Should we invest in Zomato shares?",
+     "url": "https://restaurantsadvice.quora.com/https-www-quora-com-Should-we-invest-in-Zomato-shares-answer-Kaleemarth",
+     "snippet": "Should we invest in Zomato shares? - RESTAURANTS - Selection/Food/Advice - Quora Something",
+     "source": "restaurantsadvice.quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "How does Zomato use customer feedback to improve restaurant ...",
+     "url": "https://restaurantsadvice.quora.com/https-www-quora-com-How-does-Zomato-use-customer-feedback-to-improve-restaurant-services-answer-Ian-De-Ocampo-3",
+     "snippet": "Zomato allows customers to rate and review their dining experiences at restaurants. Quora, Inc.",
+     "source": "restaurantsadvice.quora.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -388,53 +483,106 @@
      "title": "Zomato",
      "url": "https://www.threads.net/@zomato",
      "snippet": "203.2K Followers • 5 Threads • figuring out if it's zoMaito, zoMaato or joMaato. See the latest conversations with @zomato.",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "I had raised this issue with Zomato customer care earlier and got to know ...",
+     "title": "I had raised this issue with Zomato customer care earlier ...",
      "url": "https://www.threads.net/@cookeatwander_official/post/C_zbw5wvH1H",
      "snippet": "Want to ask you for your take on this. I ordered some sweet from Zomato and they charged Rs 767/- + delivery charges which was paid.",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "I had the worst experience with Zomato service. I ordered food to be delivered ...",
+     "title": "I had the worst experience with Zomato service. I ordered ...",
      "url": "https://www.threads.net/@justride.amar/post/DCUiA9cToJM/i-had-the-worst-experience-with-zomato-service-i-ordered-food-to-be-delivered-to?hl=de",
      "snippet": "I ordered food to be delivered to my seat, but the train was delayed by 45 minutes and my food parcel was cold. #zomato #indianrailways.",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Hi, I added tip once on @zomato and since then every order has an auto ...",
-     "url": "https://www.threads.net/@pris_stories/post/DFm0M1_IHOQ",
-     "snippet": "This auto tip has helped me a Lot. I started tipping zomato/swiggy since 2020 and only increased the tip amounts thereon happy to share more ...",
-     "source": "threads.net"
+     "title": "What are your views on the auto tipping feature?",
+     "url": "https://www.threads.net/@pris_stories",
+     "snippet": "While I don't have a problem with tipping but it should be my choice and it's not fair on the customer for an auto feature by Zomato. @zomato.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Also @zomato your app was showing wrong distance calculated the ...",
-     "url": "https://www.threads.net/@insan_esanity/post/DAX2nd1PUnH",
-     "snippet": "@zomato. your app was showing wrong distance calculated the app calculated 7.5 km for the restaurant whereas it is 4km hardly by any shortest ...",
-     "source": "threads.net"
+     "title": "Also @zomato your app was showing wrong distance ...",
+     "url": "https://www.threads.net/@insan_esanity",
+     "snippet": "@zomato. We ordered food and Rahat's bike broke down and that man walked to two different locations and finished his delivery in this heavy rain ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "I recently subscribed to Zomato Gold, primarily for the free delivery benefit. ...",
-     "url": "https://www.threads.net/@toxic_teen27/post/DGRCE0oTthW",
+     "title": "I recently subscribed to Zomato Gold, primarily for the free ...",
+     "url": "https://www.threads.net/@toxic_teen27",
      "snippet": "I recently subscribed to Zomato Gold, primarily for the free delivery benefit. However, when I placed an order from a café 10 km away from ...",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "New Zomato hack - buy cancelled orders for half price!",
-     "url": "https://www.threads.net/@techfireco/post/DCLK4CtSpQi/-new-zomato-hack-buy-cancelled-orders-for-half-price-cancelled-orders-50-off-nea",
-     "snippet": "New Zomato hack - buy cancelled orders for half price! • Cancelled orders? 50% off! Nearby customers can snag them at a huge discount.",
-     "source": "threads.net"
+     "title": "Zomato is not at fault here...your train got delayed at ...",
+     "url": "https://www.threads.net/@mildly_chaotic18",
+     "snippet": "I had the worst experience with Zomato service. I ordered food to be delivered to my seat, but the train was delayed by 45 minutes and my food ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Zomato pays 10rs per Km to its delivery partner but charges huge",
-     "url": "https://www.threads.net/@amiya_bhal/post/DDq4gJSBYeC",
+     "title": "Zomato pays 10rs per Km to its delivery partner but ...",
+     "url": "https://www.threads.net/@amiya_bhal",
      "snippet": "Zomato pays 10rs per Km to its delivery partner but charges huge — Amiya Bhal (@amiya_bhal).",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "zomato",
+     "url": "https://www.threads.net/@whopranavkherde",
+     "snippet": "Today night I just place an order for three food from zomato and these all delivered me in vary bad situation like damaged and all from that ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "A Zomato customer pointed out the price difference listed ...",
+     "url": "https://www.threads.net/@hindustantimes",
+     "snippet": "A Zomato customer pointed out the price difference listed for a restaurant on the food delivery app compared to the actual menu. Read the viral ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     }
    ]
   }
  },
+ "overview": {
+  "siteFound": true,
+  "siteRank": 1,
+  "profiles": [
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/zomato/?hl=en"
+   }
+  ]
+ },
+ "searches": 14,
  "checks": [
   {
    "url": "https://www.youtube.com/@zomato/videos",

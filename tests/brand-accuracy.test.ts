@@ -7,13 +7,13 @@ import { test } from "node:test";
 
 import { buildActions, buildRows, presenceOf, type Row } from "../lib/discover/classify.ts";
 
-type Fixture = { identity: never; brand: string; byPlatform: never; checks: { url: string }[] };
+type Fixture = { identity: never; brand: string; byPlatform: never; overview?: never; checks: { url: string }[] };
 const DIR = new URL("./brand-fixtures/", import.meta.url);
 
 function load(domain: string) {
   const fx = JSON.parse(readFileSync(new URL(`${domain}.json`, DIR), "utf8")) as Fixture;
   const checks = Object.fromEntries(fx.checks.map((c) => [c.url, c]));
-  const rows: Row[] = buildRows(fx.identity, { status: "done", brand: fx.brand, byPlatform: fx.byPlatform }, fx.brand, checks as never);
+  const rows: Row[] = buildRows(fx.identity, { status: "done", brand: fx.brand, byPlatform: fx.byPlatform, overview: fx.overview }, fx.brand, checks as never);
   const actions = buildActions(rows, fx.brand).map((a) => a.title);
   const status = Object.fromEntries(rows.map((r) => [r.name, r.status]));
   const row = (name: string) => rows.find((r) => r.name === name)!;
@@ -46,6 +46,7 @@ test("digifortex.com: Facebook page number + YouTube channel ID resolved; second
 test("effix.co.in: same-name businesses are never credited as yours", () => {
   const { status, rows } = load("effix.co.in");
   assert.equal(presenceOf(rows).confirmed, 2, "only the two linked profiles are confirmed");
+  assert.ok(rows.every((r) => !r.bestProfile?.t.besideSite), "effix.co.in isn't in Google's top results for 'Effix', so nothing is 'beside' it");
   assert.equal(status.LinkedIn, "official");
   assert.equal(status.Reddit, "official");
   assert.ok(rows.every((r) => r.status !== "likely"), "nothing confirms any other Effix profile");
@@ -86,9 +87,13 @@ test("canva.com (site blocks us): handle confirmed on one platform confirms it o
   assert.equal(status.Reddit, "possible");
 });
 
-test("swiggy.com (no linked profiles, nothing confirmed): only possible matches, never likely", () => {
-  const { rows } = load("swiggy.com");
-  assert.ok(rows.every((r) => r.status === "possible" || r.status === "mentions" || r.status === "none"));
+test("swiggy.com (no linked profiles): accounts Google shows beside the website are confirmed", () => {
+  const { status, row } = load("swiggy.com");
+  for (const p of ["Instagram", "Facebook", "LinkedIn"]) {
+    assert.equal(status[p], "likely", p);
+    assert.ok(row(p).bestProfile!.t.besideSite, `${p} is shown next to swiggy.com in Google`);
+  }
+  assert.equal(status.Reddit, "possible", "r/swiggy is a community");
 });
 
 test("netflix.com: no linked profiles, but the exact handle on many platforms confirms them", () => {

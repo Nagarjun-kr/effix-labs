@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-11-21T13:33:53.106Z",
+ "capturedAt": "2026-11-21T14:28:15.264Z",
  "identity": {
   "name": "OpenAI",
   "domain": "openai.com",
@@ -33,49 +33,28 @@
      "title": "OpenAI",
      "url": "https://www.youtube.com/@OpenAI",
      "snippet": "How OpenAI uses its own technology to run the business. · Codex for Sales Teams: Moving Faster to Solve Customer Problems · Codex for Creatives: Riff, Design, ...",
-     "source": "youtube.com"
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI",
      "url": "https://www.youtube.com/OpenAI",
      "snippet": "Share your videos with friends, family, and the world.",
-     "source": "youtube.com"
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "OpenAI is getting desperate",
-     "url": "https://www.youtube.com/watch?v=Hq2c7pww1Ds",
-     "snippet": "Just a month after their reduction, OpenAI is doubling the limits of their plans. Is it enough? Thanks to WorkOS for sponsoring!",
-     "source": "youtube.com"
-    },
-    {
-     "title": "OpenAI Town Hall with Sam Altman",
-     "url": "https://www.youtube.com/watch?v=Wpxv-8nG8ec",
-     "snippet": "Semafor. New. 28K views · 40:24. Go to channel OpenAI · Sam Altman on AGI, GPT-5, and what's next — the OpenAI Podcast Ep. 1. OpenAI•597K views.",
-     "source": "youtube.com"
-    },
-    {
-     "title": "OpenAI scraps rollout of new ChatGPT model over safety concerns",
-     "url": "https://www.youtube.com/watch?v=4McMxLrom2M",
-     "snippet": "OpenAI has announced it will not release its latest AI model due to safety concerns. Its GPT-6.1 Astra system, which performs tasks like ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "OpenAI Claims It Just Did The Impossible",
-     "url": "https://www.youtube.com/watch?v=CWdTBLsbaQs",
-     "snippet": "Check out Lambda here and sign up for their GPU Cloud: https://lambda.ai/papers OpenAI's paper is available here: https://github.com/openai ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "The OpenAI Podcast",
-     "url": "https://www.youtube.com/playlist?list=PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u",
-     "snippet": "How a reasoning model cracked an 80-year-old math problem — the OpenAI Podcast Ep. 20. OpenAI. 26K views • 5 months ago.",
-     "source": "youtube.com"
-    },
-    {
-     "title": "OpenAI Tutorial #1 - Intro & Setup",
-     "url": "https://www.youtube.com/watch?v=C4ve8Kjw9ZY",
-     "snippet": "In this OpenAI tutorial series you'll learn the basics of how to leverage AI to make a small application that generates text and images.",
-     "source": "youtube.com"
+     "title": "OpenAI videos",
+     "url": "https://www.youtube.com/@OpenAI/videos",
+     "snippet": "OpenAI's mission is to ensure that artificial general intelligence benefits all of humanity.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -87,49 +66,37 @@
      "title": "OpenAI (@openai) • Instagram photos and videos",
      "url": "https://www.instagram.com/openai/",
      "snippet": "OpenAI's mission is to ensure artificial intelligence benefits all of humanity. Proud parent of @chatgpt and @openaidevs.",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "The real story behind OpenAI you need to know",
-     "url": "https://www.instagram.com/reel/DUtBw-7AMN0/",
-     "snippet": "OpenAI was a non-profit in 2015. Elon Musk and Sam Altman wanted to stop Google from owning AI. They pledged $1 billion. By 2019, money was ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Imagine trying to spy on OpenAI, only to get identified by the exact AI models ...",
-     "url": "https://www.instagram.com/reel/DecyswQgito/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "OpenAI (@openai) • Instagram photos and videos",
-     "url": "https://www.instagram.com/openai/reels/",
-     "snippet": "OpenAI's mission is to ensure artificial intelligence benefits all of humanity. Proud parent of @chatgpt and @openaidevs.",
-     "source": "instagram.com"
-    },
-    {
-     "title": "OpenAI Developers (@openaidevs)",
-     "url": "https://www.instagram.com/openaidevs/",
-     "snippet": "Official updates for developers building with Codex & the OpenAI Platform. Follow. Message. Build it with Codex. Play it on Chromatic.",
-     "source": "instagram.com"
-    },
-    {
-     "title": "\"OpenAI has announced it will not release its latest AI model due to ...",
-     "url": "https://www.instagram.com/p/Dd3mKAUF7Oh/",
-     "snippet": "OpenAI has announced it will not release its latest AI model due to safety concerns. Its GPT-6.1 Astra system, which performs tasks like ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Introducing dots, powered by GPT-6 Astra. Remarkably capable, always- ...",
+     "title": "Introducing dots, powered by GPT-6 Astra. Remarkably ...",
      "url": "https://www.instagram.com/reel/Dd4RMfMJ7kO/",
-     "snippet": "",
-     "source": "instagram.com"
+     "snippet": "OpenAI just launched Dots, always-on AI agents powered by GPT-6 Astra that can keep working toward your goals 24/7. Each Dot gets its own cloud ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "The more you know.. https://help.openai.com/en/articles/8809935- ...",
-     "url": "https://www-fallback.instagram.com/reel/DVZxdvQjsCA/",
-     "snippet": "",
-     "source": "www-fallback.instagram.com"
+     "title": "OpenAI finalized a record $110 billion funding round at a ...",
+     "url": "https://www-fallback.instagram.com/Post",
+     "snippet": "OpenAI completed a $7 billion tender offer to buy back shares from current and former employees at an $852 billion valuation, matching the ...",
+     "source": "www-fallback.instagram.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "The more you know.. https://help.openai.com/en/articles/ ...",
+     "url": "https://www-fallback.instagram.com/Reels",
+     "snippet": "ChatGPT is a product of OpenAI, Claude of Anthropic; Novabuiltt is not affiliated with either. #chatgpt #aiprivacy #aitips #claudeai ...",
+     "source": "www-fallback.instagram.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -141,49 +108,73 @@
      "title": "OpenAI",
      "url": "https://www.facebook.com/openai/",
      "snippet": "We've added a new tool to help identify AI-generated images and understand where they came from. Now you can upload a photo to openai. com/research/verify and ...",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Can OpenAI Manage AI's Existential Risk?",
      "url": "https://www.facebook.com/nytimes/videos/can-openai-manage-ais-existential-risk/2652387208561866/",
-     "snippet": "",
-     "source": "facebook.com"
+     "snippet": "In an interview with Andrew Ross Sorkin at The New York Times' DealBook Summit, OpenAI founder Sam Altman discusses the future of AI.",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI says it's investigating what it's called an \"unprecedented cyber ...",
      "url": "https://www.facebook.com/newshour/videos/openai-says-its-investigating-what-its-called-an-unprecedented-cyber-incident-af/4619065868416549/",
      "snippet": "",
-     "source": "facebook.com"
-    },
-    {
-     "title": "OpenAI has disclosed six reports of “unexpected or concerning” ...",
-     "url": "https://www.facebook.com/ABCNews/videos/openai-flags-concerning-new-ai-behavior-and-vows-to-track-it-more-closely/1597978295042209/",
-     "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI is warning about potentially catastrophic AI-led cyber attacks ...",
      "url": "https://www.facebook.com/CBSMornings/videos/companies-sign-openai-letter-warning-of-potential-ai-led-cyber-attacks/1104605458904325/",
      "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Associate Prof Jakob Foerster explains what Open AI is, who ...",
      "url": "https://www.facebook.com/the.university.of.oxford/videos/open-ai-oxfordai/1883928102026861/",
      "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "OpenAI is developing its first consumer device ever, according to reports ...",
-     "url": "https://www.facebook.com/forbes/videos/openai-is-developing-its-first-consumer-device-ever-according-to-reports-competi/1720615332607711/",
+     "title": "OpenAI has disclosed six reports of “unexpected or concerning” ...",
+     "url": "https://www.facebook.com/ABCNews/videos/openai-flags-concerning-new-ai-behavior-and-vows-to-track-it-more-closely/1597978295042209/",
      "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "OpenAI said it has paused training of its latest artificial intelligence models as ...",
-     "url": "https://www.facebook.com/APNews/posts/openai-said-it-has-paused-training-of-its-latest-artificial-intelligence-models-/1467670758554162/",
-     "snippet": "The speaker discusses recent disclosures regarding OpenAI halting the training of its latest AI models due to autonomous AI agents acting ...",
-     "source": "facebook.com"
+     "title": "OpenAI says it's investigating what is called an unprecedented cyber ...",
+     "url": "https://www.facebook.com/newshour/videos/openai-says-its-investigating-what-is-called-an-unprecedented-cyber-incident-aft/4558353121112899/",
+     "snippet": "",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "So here's my read on the Fable situation: Don't trust OpenAI for a ...",
+     "url": "https://www.facebook.com/groups/claudecommunity/posts/1034537379086927/",
+     "snippet": "So here's my read on the Fable situation: Don't trust OpenAI for a second.",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -195,49 +186,38 @@
      "title": "OpenAI",
      "url": "https://www.linkedin.com/company/openai",
      "snippet": "OpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity.",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "OpenAI for Business",
      "url": "https://www.linkedin.com/showcase/openai-for-business/",
      "snippet": "It reads codebases, writes files, and runs tools to accelerate software engineers, reliably completing tasks end-to-end - powered by OpenAI frontier coding ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "OpenAI Developers",
-     "url": "https://www.linkedin.com/showcase/openai-devs/",
-     "snippet": "OpenAI Developers. Technology, Information and Internet. Official updates for developers building with Codex & the OpenAI Platform. Follow.",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI: Jobs",
      "url": "https://www.linkedin.com/company/openai/jobs",
-     "snippet": "Jobs at OpenAI ; Engineering Manager, Robotics Embedded Systems · $385,000.00 - $445,000.00 ; Data Scientist, Integrity · $265,000.00 - $380,000.00 ; Protection ...",
-     "source": "linkedin.com"
+     "snippet": "OpenAI | 12255802 followers on LinkedIn. OpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence ...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Develop Your Skills with the OpenAI API Learning Path",
-     "url": "https://www.linkedin.com/learning/paths/develop-your-skills-with-the-openai-api",
-     "snippet": "Dive into the world of OpenAI APIs with this comprehensive learning path. Master tools like DALL·E for image generation, Whisper for speech-to-text and ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "OpenAI for Startups",
-     "url": "https://www.linkedin.com/showcase/openai-for-startups/",
-     "snippet": "OpenAI for Startups | 159075 followers on LinkedIn. AI for ambitious builders.",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "OpenAI considers something unusual: Slowing down",
-     "url": "https://www.linkedin.com/news/story/openai-considers-something-unusual-slowing-down-7596620/",
-     "snippet": "Sam Altman is poised to do something few buzzy tech entrepreneurs ever consider. The OpenAI chief told employees that the company may pump ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "Explore the OpenAI platform - ChatGPT Video Tutorial",
-     "url": "https://www.linkedin.com/learning/building-a-project-with-the-chatgpt-api/explore-the-openai-platform",
-     "snippet": "",
-     "source": "linkedin.com"
+     "title": "OpenAI: Culture",
+     "url": "https://www.linkedin.com/company/openai/life",
+     "snippet": "OpenAI | 12203386 followers on LinkedIn. OpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence ...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -248,50 +228,39 @@
     {
      "title": "OpenAI",
      "url": "https://x.com/OpenAI",
-     "snippet": "OpenAI models are coming to Google Cloud. We're bringing our frontier models and Codex agentic workflows to Google Cloud's Model Garden, so enterprises can use ...",
-     "source": "x.com"
+     "snippet": "OpenAI Private Intelligence gives businesses stronger controls over their data while using our most capable models. We're building these protections in close ...",
+     "source": "x.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
-     "title": "OpenAI Developers (@OpenAIDevs) ...",
-     "url": "https://x.com/OpenAIDevs",
-     "snippet": "Official updates for developers building with Codex & the OpenAI Platform • Service status: status.openai.com. Science & Technology. developers.openai.com.",
-     "source": "x.com"
+     "title": "Greg Brockman (@gdb) / X",
+     "url": "https://x.com/gdb",
+     "snippet": "Calif, a tech start-up, said it had used OpenAI's recently released GPT. A.I. Helps Find Major Security Bug in Java, a Software Platform Vital to the Internet.",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI Newsroom (@OpenAINewsroom) ...",
      "url": "https://x.com/OpenAINewsroom",
      "snippet": "Today we're announcing that OpenAI will acquire @pierrecomputer to accelerate our vision for making Codex a place where teams can build software together with ...",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI",
-     "url": "https://x.com/OpenAI/with_replies",
+     "url": "https://x.com/OpenAI/highlights",
      "snippet": "OpenAI's mission is to ensure that artificial general intelligence benefits all of humanity. We're hiring: https://t.co/dJGr6LgzPA.",
-     "source": "x.com"
-    },
-    {
-     "title": "Greg Brockman (@gdb) / X",
-     "url": "https://x.com/gdb",
-     "snippet": "OpenTable's native integration with OpenAI drove 190,000 people to restaurants in just the month of September. It has to be one of the biggest agentic commerce ...",
-     "source": "x.com"
-    },
-    {
-     "title": "\"ChatGPT and Codex are helping engineers build for the physical ...",
-     "url": "https://x.com/OpenAI/status/2117692475775258785",
-     "snippet": "Two OpenAI team members worked with GPT-6 Astra to design a prototype device for talking to Codex in under a week, as a side project. Astra ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Sam Altman (@sama) / X",
-     "url": "https://x.com/sama",
-     "snippet": "OpenAI's superpower is the ability to swiftly assemble an empowered group of highly capable people to work on the most important and urgent thing at any point ...",
-     "source": "x.com"
-    },
-    {
-     "title": "OpenAI",
-     "url": "https://x.com/OpenAI/status/2120216592395174382",
-     "snippet": "Eligible businesses can also build a Business Agent to answer customers' questions and help them explore what you offer. openai.com/index/ ...",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -300,52 +269,94 @@
    "query": "\"OpenAI\" site:reddit.com",
    "results": [
     {
-     "title": "r/OpenAI",
-     "url": "https://www.reddit.com/r/OpenAI/",
-     "snippet": "r/OpenAI: OpenAI is an AI research and deployment company. OpenAI's mission is to create safe and powerful AI that benefits all of humanity.",
-     "source": "reddit.com"
-    },
-    {
      "title": "OpenAI (u/OpenAI)",
      "url": "https://www.reddit.com/user/OpenAI/",
      "snippet": "u/OpenAI: OpenAI's mission is to ensure that artificial general intelligence benefits all of humanity.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Do you think OpenAI is still leading in actual usefulness, or are other ...",
-     "url": "https://www.reddit.com/r/OpenAI/comments/1u22mbl/do_you_think_openai_is_still_leading_in_actual/",
-     "snippet": "I've been using ChatGPT for a while now, but lately i've also been testing other models more regularly. In some areas (like reasoning or following ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "r/OpenAI",
-     "url": "https://www.reddit.com/r/OpenAI/hot/",
+     "url": "https://www.reddit.com/OpenAI/hot",
      "snippet": "r/OpenAI: OpenAI is an AI research and deployment company. OpenAI's mission is to create safe and powerful AI that benefits all of humanity. We are…",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "what does openAI mean? : r/GPT3",
-     "url": "https://www.reddit.com/r/GPT3/comments/16ly9mi/what_does_openai_mean/",
-     "snippet": "Hello guys, i am reading the paper that introduced GPT2, but i am really having hard time understanding the following sentence:\n\nOn language tasks like ...",
-     "source": "reddit.com"
+     "title": "r/OpenAI",
+     "url": "https://www.reddit.com/r/OpenAI/",
+     "snippet": "r/OpenAI: OpenAI is an AI research and deployment company. OpenAI's mission is to create safe and powerful AI that benefits all of humanity.",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "[D] How did OpenAI go from doing exciting research to a big-tech-like ...",
      "url": "https://www.reddit.com/r/MachineLearning/comments/1cvslyc/d_how_did_openai_go_from_doing_exciting_research/",
      "snippet": "I was recently revisiting OpenAI’s paper on DOTA2 Open Five , and it’s so impressive what they did there from both engineering and research standpoint. ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "r/OpenAI",
+     "url": "https://www.reddit.com/r/OpenAI/hot/",
+     "snippet": "r/OpenAI: OpenAI is an AI research and deployment company. OpenAI's mission is to create safe and powerful AI that benefits all of humanity. We are…",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Do you think OpenAI is still leading in actual usefulness, or are other ...",
+     "url": "https://www.reddit.com/r/OpenAI/comments/1u22mbl/do_you_think_openai_is_still_leading_in_actual/",
+     "snippet": "I've been using ChatGPT for a while now, but lately i've also been testing other models more regularly. In some areas (like reasoning or following ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "what does openAI mean? : r/GPT3",
+     "url": "https://www.reddit.com/r/GPT3/comments/16ly9mi/what_does_openai_mean/",
+     "snippet": "Hello guys, i am reading the paper that introduced GPT2, but i am really having hard time understanding the following sentence:\n\nOn language tasks like ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "How 10 years can change things. This is OpenAI.com in 2015. : r/ChatGPT",
      "url": "https://www.reddit.com/r/ChatGPT/comments/1sk7xnd/how_10_years_can_change_things_this_is_openaicom/",
      "snippet": "How 10 years can change things. This is OpenAI.com in 2015. ... r/ChatGPT - This is a ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "OpenAI is in big trouble",
      "url": "https://www.reddit.com/r/OpenAI/comments/1s4sbdn/openai_is_in_big_trouble/",
-     "snippet": "Obviously OpenAI is in trouble, all AI companies are in trouble. The compute shortage is insane right now. All of them have an insane amount of ...",
-     "source": "reddit.com"
+     "snippet": "If OpenAI fails, then Microsoft must either suffer massive losses, or buy them out and pay out the 17.5% guaranteed minimum return to the ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "What is OpenAi really doing?",
+     "url": "https://www.reddit.com/r/OpenAI/comments/1r105ru/what_is_openai_really_doing/",
+     "snippet": "One one hand you have Sam Altman talking about how scary open AI'S techn was a year ago. And then you have stuff like trying to implement find your friends ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -354,52 +365,94 @@
    "query": "\"OpenAI\" site:quora.com",
    "results": [
     {
-     "title": "What is your opinion about OpenAI?",
-     "url": "https://www.quora.com/What-is-your-opinion-about-OpenAI",
-     "snippet": "What is your opinion about OpenAI?",
-     "source": "quora.com"
-    },
-    {
      "title": "What do you know about ChatGPT and OpenAI?",
      "url": "https://www.quora.com/What-do-you-know-about-ChatGPT-and-OpenAI",
      "snippet": "What do you know about ChatGPT and OpenAI?",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Why does OpenAI call itself open if Chatgpt isn't an open model?",
-     "url": "https://www.quora.com/Why-does-OpenAI-call-itself-open-if-Chatgpt-isnt-an-open-model",
-     "snippet": "Why does OpenAI call itself open if Chatgpt isn't an open model?",
-     "source": "quora.com"
+     "title": "OpenAI (company)",
+     "url": "https://www.quora.com/topic/OpenAI-company",
+     "snippet": "OpenAI (company) ... Sam Altman allegedly claimed consumers don't need memory, and it would be put to better use in data centers. If true, why on earth would an ...",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "What is open Ai ? OpenAI is an American artificial ... - SASHANK",
-     "url": "https://sashank.quora.com/What-is-open-Ai-OpenAI-is-an-American-artificial-intelligence-AI-research-laboratory-consisting-of-the-non-profit-O",
-     "snippet": "OpenAI conducts AI research to promote and develop friendly AI in a way that benefits all humanity.",
-     "source": "sashank.quora.com"
+     "title": "Quora - A place to share knowledge and better understand the ...",
+     "url": "https://www.quora.com/",
+     "snippet": "Quora is a place to gain and share knowledge. It's a platform to ask questions and connect with people who contribute unique insights and quality answers. This empowers people to learn from each other and to better understand the world.",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Know how did OpenAI obtain their data sets. - Data Analytics Basics",
-     "url": "https://dataanalytics.quora.com/Know-how-did-OpenAI-obtain-their-data-sets-https-www-quora-com-How-did-OpenAI-obtain-their-data-sets-answer-Pratik-B",
-     "snippet": "OpenAI obtained their dataset from a variety of sources, including: * Publicly available data: OpenAI scraped publicly available text from the internet ...",
-     "source": "dataanalytics.quora.com"
+     "title": "What are Sage and Dragonfly bots on Quora? - Quora Help Center",
+     "url": "https://help.quora.com/hc/en-us/articles/12677380466068-What-are-Sage-and-Dragonfly-bots-on-Quora",
+     "snippet": "Sage and Dragonfly are powered by OpenAI, L.L.C., and their use is subject to OpenAI policies, which are available here. Keep in mind that Sage and Dragonfly may make incorrect statements and should not be solely relied upon for medical, legal, or investing advice - please consult a professional.",
+     "source": "help.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "How has OpenAI's chatbot, ChatGPT, lost ground to competitors?",
-     "url": "https://www.quora.com/How-has-OpenAIs-chatbot-ChatGPT-lost-ground-to-competitors",
-     "snippet": "How has OpenAI's chatbot, ChatGPT, lost ground to competitors?",
-     "source": "quora.com"
+     "title": "q.quora.com",
+     "url": "https://q.quora.com/_/ad/e602d09d9d5f4d13a5a231e0715b78d4/pixel?tag=ViewContent&noscript=1",
+     "snippet": "Quora is a platform to ask questions, share knowledge, and connect with people for unique insights and quality answers.",
+     "source": "q.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Why did OpenAI close-source its code after starting as an open- ...",
-     "url": "https://www.quora.com/Why-did-OpenAI-close-source-its-code-after-starting-as-an-open-source-research-organization",
-     "snippet": "Why did OpenAI close-source its code after starting as an open-source research organization?",
-     "source": "quora.com"
+     "title": "भाषाएँ - Quora",
+     "url": "https://hi.quora.com/about/languages",
+     "snippet": "पेज को रीफ़्रेश करके देखें या बाद में फिर से कोशिश करें.",
+     "source": "hi.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "OpenAI Launches GPT-4: A State-of-the-Art Multimodal AI - All About AI ...",
-     "url": "https://allaboutaiworld.quora.com/OpenAI-Launches-GPT-4-A-State-of-the-Art-Multimodal-AI",
-     "snippet": "OpenAI claims that GPT-4 is a milestone in scaling up deep learning and has resulted in “best-ever results” on factuality, steerability, and refusing to go ...",
-     "source": "allaboutaiworld.quora.com"
+     "title": "Promoted Answer Generator | Quora for Business",
+     "url": "https://business.quora.com/promoted-answer-preview",
+     "snippet": "PROMOTED ANSWER GENERATOR See your brand as an answer on Quora. Paste your website. We'll email you what your Promoted Answer would look like and the topics where it could run.",
+     "source": "business.quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Frequently Asked Questions – Quora Help Center",
+     "url": "https://help.quora.com/hc/en-us/categories/115000950543-Frequently-Asked-Questions",
+     "snippet": "Answers to common questions & issues. Introduction to Quora What is Quora? How do I get started using Quora? How do I write an answer on Quora? How do I ask a question on Quora? How do I add or change my Quora profile picture? What are Sage and Dragonfly bots on Quora? Using Quora What does \"Request Answers\" mean and h",
+     "source": "help.quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "https://www.quora.com/What-are-your-thoughts-on-Op...",
+     "url": "https://www.quora.com/What-are-your-thoughts-on-OpenAIs-new-open-AI-models?top_ans=83183556",
+     "snippet": "",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "What is OpenAI? ANS ..OpenAI is a research organization that aims to ...",
+     "url": "https://vishalzindgispy.quora.com/What-is-OpenAI-ANS-OpenAI-is-a-research-organization-that-aims-to-advance-artificial-intelligence-in-a-responsible-a",
+     "snippet": "What is OpenAI? ANS ..OpenAI is a research organization that aims to advance artificial intelligence in a responsible and safe manner.",
+     "source": "vishalzindgispy.quora.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -410,54 +463,66 @@
     {
      "title": "OpenAI (@openai) • Threads, Say more",
      "url": "https://www.threads.net/@openai",
-     "snippet": "776.1K Followers • 112 Threads • OpenAI's mission is to ensure artificial general intelligence benefits all of humanity. See the latest conversations...",
-     "source": "threads.net"
+     "snippet": "OpenAI's mission is to ensure artificial general intelligence benefits all of humanity. openai.com · 776K followers.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "CHOI (@choi.openai)",
-     "url": "https://www.threads.net/@choi.openai",
-     "snippet": "304.3K Followers • 12K Threads • □ 대한민국 최고의 AI 채널 , e/acc □ OpenAI Codex Ambassador ( 오픈AI 직원 아님, 부계정 없음 ) ✉ genexis.ai@gmail.com.",
-     "source": "threads.net"
+     "title": "💠OpenAI added a new voice for ChatGPT, “Monday” (April ...",
+     "url": "https://www.threads.net/@oncescuradu",
+     "snippet": "OpenAI's AI agent just moved into your text messages. ChatGPT's Dot can now be reached over iMessage and RCS — text it a task, send a photo or a ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "GPT-4.5预览版现已在OpenAI Playground 上面向所有级别提供",
-     "url": "https://www.threads.net/@testingcatalog/post/DGlt5cptnim?hl=zh-tw",
+     "title": "突发新闻🚨：GPT-4.5预览版现已在OpenAI Playground 上 ...",
+     "url": "https://www.threads.net/post",
      "snippet": "突发新闻 ：GPT-4.5预览版现已在OpenAI Playground 上面向所有级别提供 ... OpenAI is planning to raise another $30 billion at around a $1.4 ...",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "OpenAI has updated ChatGPT on iOS with a new Safari extension you can ...",
-     "url": "https://www.threads.net/@parkerortolani/post/DGemcPMNT_Z/openai-has-updated-chatgpt-on-ios-with-a-new-safari-extension-you-can-enable-to-?hl=en-gb",
+     "title": "OpenAI has updated ChatGPT on iOS with a new Safari ...",
+     "url": "https://www.threads.net/@parkerortolani",
      "snippet": "OpenAI has updated ChatGPT on iOS with a new Safari extension you can enable to make it your default search engine.",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "💠OpenAI added a new voice for ChatGPT, “Monday” (April Fools).",
-     "url": "https://www.threads.net/@oncescuradu/post/DH6a_GZMjvb/openai-added-a-new-voice-for-chatgpt-monday-april-fools",
-     "snippet": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "1. 오픈AI 공식 블로그 https://openai.com/index/understanding-the- ...",
-     "url": "https://www.threads.net/@choi.openai/post/C-STbrFhNva?hl=es-la",
-     "snippet": "1. 오픈AI 공식 블로그 openai.com/index… ... 2. 구글 워터마크 관련 theverge.com/2024… Google's invisible AI watermark will ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "rourkery",
-     "url": "https://www.threads.net/@rourkery",
-     "snippet": "Snag it here openai.com/index… ... GPT-5 dropping for everyone today. Been using it for awhile now my take is… it's an absolute banger of a model. openai.",
-     "source": "threads.net"
-    },
-    {
-     "title": "Ian Silber (@iansilber)",
-     "url": "https://www.threads.net/@iansilber",
-     "snippet": "2.1K Followers • 19 Threads • head of product design @ openai. See the latest conversations with @iansilber.",
-     "source": "threads.net"
+     "title": "OpenAI CEO Sam Altman says, “Movies are going to be ...",
+     "url": "https://www.threads.net/@timeforainews",
+     "snippet": "OpenAI CEO Sam Altman says, “Movies are going to be video games, and video games are going to become something unimaginably better.”.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     }
    ]
   }
  },
+ "overview": {
+  "siteFound": true,
+  "siteRank": 1,
+  "profiles": [
+   {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/company/openai"
+   },
+   {
+    "platform": "X",
+    "url": "https://x.com/OpenAI"
+   }
+  ]
+ },
+ "searches": 13,
  "checks": [
   {
    "url": "https://www.youtube.com/OpenAI",
@@ -468,6 +533,13 @@
   },
   {
    "url": "https://www.youtube.com/@OpenAI",
+   "ok": true,
+   "channelId": "UCXZCJLdBC09xxGZ6gcdrc6A",
+   "name": "OpenAI",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/@OpenAI/videos",
    "ok": true,
    "channelId": "UCXZCJLdBC09xxGZ6gcdrc6A",
    "name": "OpenAI",

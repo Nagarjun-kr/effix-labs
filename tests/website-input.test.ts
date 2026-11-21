@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 
 import { parseWebsite } from "../lib/discover/input.ts";
-import { shortBrand, tidyBrandName } from "../lib/discover/brand-identity.ts";
+import { nameFromHost, shortBrand, tidyBrandName } from "../lib/discover/brand-identity.ts";
 
 const host = (v: string) => {
   const r = parseWebsite(v);
@@ -54,7 +54,7 @@ test("explains what's wrong instead of failing silently", () => {
 });
 
 test("turns page titles into brand names", () => {
-  const name = (title: string, host: string) => tidyBrandName(shortBrand(title, host));
+  const name = (title: string, host: string) => tidyBrandName(shortBrand(title, host)) || nameFromHost(host); // same as the API
   assert.equal(name("CRED. not everyone gets it.", "cred.club"), "CRED");
   assert.equal(name("The Tata group. Leadership with Trust.", "www.tata.com"), "Tata");
   assert.equal(name("The Body Shop", "www.thebodyshop.in"), "The Body Shop");
@@ -62,4 +62,10 @@ test("turns page titles into brand names", () => {
   assert.equal(name("Freshworks Inc", "www.freshworks.com"), "Freshworks");
   assert.equal(name("EFFIX | Turn Searches Into Clients", "effix.co.in"), "EFFIX");
   assert.equal(name("DigiFortex", "www.digifortex.com"), "DigiFortex");
+  assert.equal(name("Apollo 24|7: Online Doctor Consultation & Medicines", "www.apollo247.com"), "Apollo 24|7");
+  assert.equal(name("Blue Tokai Coffee Roasters", "bluetokaicoffee.com"), "Blue Tokai Coffee Roasters");
+  assert.equal(name("Online Shopping for Women, Men, Kids and Home & Living", "www.fabindia.com"), "Fabindia");
+  assert.equal(name("boAt Lifestyle", "www.boat-lifestyle.com"), "boAt Lifestyle");
+  assert.equal(name("Haldiram's", "www.haldirams.com"), "Haldiram's");
+  assert.equal(name("Amul - The Taste of India", "amul.com"), "Amul");
 });

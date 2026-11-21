@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-11-21T13:48:35.985Z",
+ "capturedAt": "2026-11-21T14:32:25.060Z",
  "identity": {
   "name": "YouTube",
   "domain": "youtube.com",
@@ -62,34 +62,77 @@
    "query": "\"YouTube\" site:youtube.com",
    "results": [
     {
-     "title": "الصفحة الرئيسية",
-     "url": "https://www.youtube.com/index?hl=ar&desktop_uri=%2F%3Fhl%3Dar&app=desktop",
-     "snippet": "يمكنك الاستمتاع بالفيديوهات والموسيقى التي تحبها وتحميل المحتوى الأصلي ومشاركته بكامله مع أصدقائك وأفراد عائلتك والعالم أجمع على YouTube.",
-     "source": "youtube.com"
+     "title": "YouTube",
+     "url": "https://www.youtube.com/",
+     "snippet": "Learn more. Home. Shorts. Library. Search YouTube. Try searching to get started. Start watching videos to help us build a feed of videos you'll ...",
+     "source": "youtube.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
-     "title": "The channel about NOTHING",
-     "url": "https://www.youtube.com/channel/UCWLXSEvhr9RhWjVCU-UNxpw/videos",
-     "snippet": "Share your videos with friends, family, and the world.",
-     "source": "youtube.com"
+     "title": "YouTube Music",
+     "url": "https://music.youtube.com/",
+     "snippet": "With the YouTube Music app, enjoy over 100 million songs at your fingertips, plus albums, playlists, remixes, music videos, ...",
+     "source": "music.youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "official YouTube channel",
+     "url": "https://www.youtube.com/user/YouTube",
+     "snippet": "What's new from @YouTube · Sourav Joshi drew sketches for $5. Now he has 42 million subscribers · How to Build a Planted Aquarium from Scratch with SerpaDesign.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Library",
+     "url": "https://www.youtube.com/feed/library",
+     "snippet": "Share your videos with friends, family, and the world. to upload, save, and comment on videos",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "YouTube - Apps on Google Play",
+     "url": "https://www.youtube.com/watch",
+     "snippet": "Get the official YouTube app on Android phones and tablets. See what the world is watching -- from the hottest music videos to what's popular in gaming, ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "YouTube",
-     "url": "https://www.youtube.com/user/HoweverProductions",
-     "snippet": "Share your videos with friends, family, and the world.",
-     "source": "youtube.com"
+     "url": "https://studio.youtube.com/",
+     "snippet": "Loading. Sign in. to continue to YouTube. Email or phone. Forgot email? CAPTCHA image of text used to distinguish humans from robots.",
+     "source": "studio.youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Gör en sökning för att komma igång",
-     "url": "https://www.youtube.com/?app=desktop&hl=SV",
-     "snippet": "Se alla dina favoriter bland videor och musik, ladda upp originalinnehåll och dela allt med vänner, familj och hela världen på YouTube.",
-     "source": "youtube.com"
+     "title": "Terms of Service",
+     "url": "https://www.youtube.com/static",
+     "snippet": "Creating a YouTube channel will give you access to additional features and functions, such as uploading videos, making comments or creating playlists (where ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "usa",
-     "url": "https://music.youtube.com/search?q=%23usa",
-     "snippet": "With the YouTube Music app, enjoy over 100 million songs at your fingertips, plus albums, playlists, remixes, music videos, live performances, covers, ...",
-     "source": "music.youtube.com"
+     "title": "Get YouTube Premium",
+     "url": "https://www.youtube.com/premium",
+     "snippet": "Premium is all of YouTube and YouTube Music ad-free, offline, and in the background. Enjoy every Premium feature across all content types. Premium Lite is a ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -98,52 +141,32 @@
    "query": "\"YouTube\" site:instagram.com",
    "results": [
     {
-     "title": "YouTube - Instagram photos and videos",
-     "url": "https://www.instagram.com/youtube/",
-     "snippet": "Confira os indicados no YouTube e acompanhe o 2026 MAMA AWARDS AO VIVO no YouTube! ✨ A transmissão ao vivo pode ter restrições em algumas regiões e ...",
-     "source": "instagram.com"
+     "title": "Instagram photos and videos - youtube",
+     "url": "https://www.instagram.com/youtube",
+     "snippet": "30M followers · 1.9K+ following · 7164 posts · @youtube: “like & subscribe”",
+     "source": "instagram.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "YouTube Music (@youtubemusic)",
      "url": "https://www.instagram.com/youtubemusic/",
      "snippet": "1M+ followers · 862 following · 3510 posts · @youtubemusic: “The premium music streaming app, made by @youtube.”",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "YouTube Creators (@youtubecreators)",
-     "url": "https://www.instagram.com/youtubecreators/",
-     "snippet": "454K followers · 1K+ following · 1692 posts · @youtubecreators: “tips, tutorials, news, and inspo to supercharge your @youtube channel⚡️”",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Instagram photos and videos - youtube",
-     "url": "https://www.instagram.com/youtube/reels/",
-     "snippet": "30M followers · 1.9K+ following · 7164 posts · @youtube: “like & subscribe”",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Updates From YouTube (@updatesfromyoutube)",
-     "url": "https://www.instagram.com/updatesfromyoutube/",
-     "snippet": "74K followers · 57 following · 117 posts · @updatesfromyoutube: “Official source for the latest news and updates from across YouTube.”",
-     "source": "instagram.com"
-    },
-    {
-     "title": "YouTube Theater (@youtubetheater) · Inglewood, CA",
-     "url": "https://www.instagram.com/youtubetheater/",
-     "snippet": "Westlife 25 - The Anniversary North American Tour! ✨ Join Westlife in 2027 for a celebration of 25 years of music, memories, and greatest hits at YouTube ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "YouTube is my second home and Channel Memberships is a way to ...",
-     "url": "https://www.instagram.com/reel/DZarSezBZo4/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "BREAKING NEWS YouTube just changed how they're counting views ...",
-     "url": "https://www.instagram.com/reel/Df3AwXyp5nY/",
-     "snippet": "",
-     "source": "instagram.com"
+     "title": "YouTube was founded on Feb. 14, 2005, by former PayPal ...",
+     "url": "https://www.instagram.com/p/DUuWFfHjUhl/",
+     "snippet": "YouTube was founded on Feb. 14, 2005, by former PayPal employees Chad Hurley, Steve Chen, and Jawed Karim.",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -154,50 +177,93 @@
     {
      "title": "YouTube",
      "url": "https://www.facebook.com/youtube/",
-     "snippet": "YouTube. 108835433 followers · 111504 talking about this. The latest and greatest music videos, trends and channels from YouTube.",
-     "source": "facebook.com"
+     "snippet": "YouTube. 108835617 followers · 124315 talking about this. The latest and greatest music videos, trends and channels from YouTube.",
+     "source": "facebook.com",
+     "via": [
+      "site",
+      "overview"
+     ]
+    },
+    {
+     "title": "YouTube (@youtube) - Videos",
+     "url": "https://www.facebook.com/Pages/YouTube",
+     "snippet": "YouTube. 108835640 followers · 115685 talking about this. The latest and greatest music videos, trends and channels from YouTube.",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "YouTube TV (@youtubetv)",
      "url": "https://www.facebook.com/youtubetv/",
      "snippet": "YouTube TV (Verified account). 1y · Public. the ultimate tailgate party is here! tune in to see your fav YouTube creators, a post malone performance and more!",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "If you're wanting to start a YouTube channel from scratch, ask yourself",
      "url": "https://www.facebook.com/aliabdaal/videos/if-youre-wanting-to-start-a-youtube-channel-from-scratch-ask-yourself-do-i-alrea/1325528788901014/",
      "snippet": "",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Like, comment, share, and follow! | PoliGoat",
-     "url": "https://www.facebook.com/PoliGoatLS/videos/why-is-youtube-called-youtube-/881980360862968/",
-     "snippet": "",
-     "source": "facebook.com"
-    },
-    {
-     "title": "How to confirm if a YouTube video is live or a rerun?",
-     "url": "https://www.facebook.com/groups/SpaceLaunchSchedule/posts/1361652108208576/",
-     "snippet": "It's getting harder and harder to know what I'm watching on Youtube .All seems to say \"live\". Then I start watching and it's a rerun. How can we confirm ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Ask YouTube: Teach Kids to Ride a Pedal Bike From a Balance Bike",
-     "url": "https://www.facebook.com/Google/videos/ask-youtube/1507877418017626/",
-     "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Coffee with Creators: YouTube Channel Tips & SEO Advice | Adorama",
      "url": "https://www.facebook.com/Adorama/videos/save-these-quick-tips-for-starting-a-youtube-channel-%EF%B8%8F-before-publishing-your-fi/513110255124615/",
      "snippet": "",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "How to save YouTube login on the app?",
-     "url": "https://www.facebook.com/groups/MustangMachEOwners/posts/1830858487611007/",
-     "snippet": "YouTube not remembering your login is often related to issues with cookies, browser settings, or account recovery problems.",
-     "source": "facebook.com"
+     "title": "How to confirm if a YouTube video is live or a rerun?",
+     "url": "https://www.facebook.com/groups/SpaceLaunchSchedule/posts/1361652108208576/",
+     "snippet": "It's getting harder and harder to know what I'm watching on Youtube .All seems to say \"live\". Then I start watching and it's a rerun. How can we confirm ...",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Like, comment, share, and follow! | PoliGoat",
+     "url": "https://www.facebook.com/PoliGoatLS/videos/why-is-youtube-called-youtube-/881980360862968/",
+     "snippet": "",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Ask YouTube: New Conversational Search Experience Coming This ...",
+     "url": "https://www.facebook.com/Google/videos/ask-youtube/5293341580891728/",
+     "snippet": "",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "As YouTube is becoming a staple in the classroom, schools and parents ...",
+     "url": "https://www.facebook.com/NBCNews/videos/as-youtube-is-becoming-a-staple-in-the-classroom-schools-and-parents-are-having-/1454581049976966/",
+     "snippet": "",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Did you know these YouTube tricks? #youtube #technology #computer",
+     "url": "https://www.facebook.com/SetupSpawn/videos/did-you-know-these-youtube-tricks-youtube-technology-computer/1949605873111569/",
+     "snippet": "",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -209,43 +275,37 @@
      "title": "YouTube",
      "url": "https://www.linkedin.com/company/youtube",
      "snippet": "YouTube is a team-oriented, creative workplace where every single employee has a voice in the choices we make and the features we implement.",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "World Food Programme",
-     "url": "https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww%2Eyoutube%2Ecom%2Fc%2Fworldfoodprogramme&urlhash=enPs&mt=Y-pFFSGpmyaalAJOVdZC2gbJWodg5bKk9YgJheDul7uQ_Blj6RLjx0Ru4f8enpAhoPh06QKQrau0s2VtZtDcg5nz9hUy&isSdui=true",
+     "url": "https://www.linkedin.com/safety/worldfoodprogramme",
      "snippet": "Assisting over 115 million people each year and operating in over 120 countries and territories, the World Food Programme (WFP) is the leading humanitarian ...",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "YouTube says YouTube is important. OK it might be right this time.",
-     "url": "https://www.linkedin.com/pulse/youtube-says-important-ok-might-right-time-paul-garrett-lqume",
-     "snippet": "There is always a small danger in reading a report from YouTube about YouTube. It is a bit like asking FIFA whether another tournament might ...",
-     "source": "linkedin.com"
+     "title": "Youth and Families Advisory Committee",
+     "url": "https://www.linkedin.com/safety/advisory-committee",
+     "snippet": "Our youth and family advisor committee ensures that YouTube policies keep your safety in mind. Meet our advisors, who help foster a safe platform.",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "People think YouTube videos are made in order. | Eric Decker",
-     "url": "https://www.linkedin.com/posts/eric-decker-linked_people-think-youtube-videos-are-made-in-order-activity-7374066206875578368-57lN",
-     "snippet": "People think YouTube videos are made in order. Like we finish one, then start the next. That's not how it works at all.",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "How Much Time Does It Really Take to Grow on YouTube?",
-     "url": "https://www.linkedin.com/pulse/how-much-time-does-really-take-grow-youtube-jose-carlos-pacheco-nrcce",
-     "snippet": "In 2011 I left the world of digital advertising to take charge of a YouTube channel brand and YouTube became my life 24/7 for almost a decade ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "YouTube has pervaded American schools, raising alarm",
-     "url": "https://www.linkedin.com/news/story/youtube-has-pervaded-american-schools-raising-alarm-7232516/",
-     "snippet": "Across the country, classrooms are increasingly built around screens: • YouTube for instruction • YouTube for downtime • YouTube for rewards And once students ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "Paul Snow - Head of Top Media Company Partnerships, YouTube",
-     "url": "https://www.linkedin.com/in/psnow",
-     "snippet": "I have spent the last decade growing businesses with media companies, digital networks and content creators across YouTube's ad supported and paid products - ...",
-     "source": "linkedin.com"
+     "title": "Bosch USA",
+     "url": "https://www.linkedin.com/safety/www.youtube.com",
+     "snippet": "Welcome to Bosch USA, the official YouTube channel for Bosch Home Appliances, Bosch Power Tools, Bosch eBike Systems, Bosch Home Comfort, Bosch Automotive, ...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -257,49 +317,28 @@
      "title": "YouTube",
      "url": "https://x.com/YouTube",
      "snippet": "GTAVI is out now, and so are exclusive themed gifts on YouTube Live react, celebrate, and light up the chat. tune in to select GTA creator streams and ...",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "YouTube TV (@YouTubeTV) / X",
-     "url": "https://x.com/YouTubeTV",
-     "snippet": "Triple the games. Triple the hype. Watch the NFL Tripleheader on FOX with YouTube TV.",
-     "source": "x.com"
-    },
-    {
-     "title": "Replies by YouTube (@YouTube ...",
-     "url": "https://x.com/YouTube/with_replies",
-     "snippet": "GTA VI launch day is well underway! @YouTubeCreators around the world have been live for hours and the streams are still going strong Tune in: youtube.com ...",
-     "source": "x.com"
-    },
-    {
-     "title": "TeamYouTube",
-     "url": "https://x.com/TeamYouTube",
-     "snippet": "updates & answers from the team that brings you YouTube, helping in: english, español, português, français, 日本語, 한국어.",
-     "source": "x.com"
-    },
-    {
-     "title": "YouTube Music (@youtubemusic ...",
-     "url": "https://x.com/youtubemusic",
-     "snippet": "The premium music streaming app, made by @youtube.",
-     "source": "x.com"
-    },
-    {
-     "title": "YouTube Creator Insider (@YouTubeInsider ...",
-     "url": "https://x.com/YouTubeInsider",
-     "snippet": "Bringing creators inside YouTube. Need specific support? @TeamYouTube.",
-     "source": "x.com"
-    },
-    {
-     "title": "YouTube Rebuilt Its Algorithm in 2026. Five Changes Decide If Your ...",
-     "url": "https://x.com/natecurtiss_yt/article/2068001402564042866",
+     "title": "YouTube Rebuilt Its Algorithm in 2026. Five Changes ...",
+     "url": "https://x.com/@natecurtiss_yt",
      "snippet": "YouTube changed the entire algorithm in 2026. 99% of people are still optimizing for a version of YouTube that no longer exists.",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Twitter preview cards not showing up for YouTube links anymore?",
-     "url": "https://devcommunity.x.com/t/twitter-preview-cards-not-showing-up-for-youtube-links-anymore/148292",
-     "snippet": "No solution/improvement yet! Twitter doesn't show none of YouTube Cards Previews. I'm not sure if it's Twitter or YouTube code issue.",
-     "source": "devcommunity.x.com"
+     "title": "The (Satisfying) Death of YouTube Views - Leroy ter Braak",
+     "url": "https://x.com/@LeroyterBraak",
+     "snippet": "YouTube has changed the way it counts views, and it affects every creator's numbers. Seeing all the confused posts about this change, ...",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -311,49 +350,92 @@
      "title": "r/youtube",
      "url": "https://www.reddit.com/r/youtube/",
      "snippet": "r/youtube: r/YouTube is for discussion about YouTube. This is a fan sub, not run or owned by YouTube! Please read the rules…",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site",
+      "name"
+     ]
     },
     {
      "title": "YouTube is an awful platform and I've had enough. : r/digitalminimalism",
      "url": "https://www.reddit.com/r/digitalminimalism/comments/1g18kq8/youtube_is_an_awful_platform_and_ive_had_enough/",
      "snippet": "Explore the cons of using YouTube. Share experiences of quitting YouTube. Evaluate the new YouTube app UI. Discuss recent changes to YouTube.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Can you help me understand some things about YouTube? : r/NewTubers",
-     "url": "https://www.reddit.com/r/NewTubers/comments/1bfnulh/can_you_help_me_understand_some_things_about/",
-     "snippet": "Hey folks, I started my tech (coding) YouTube channel 3 weeks ago. For context, I already have background producing content people want ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Do you use YouTube? What for? : r/CasualConversation",
-     "url": "https://www.reddit.com/r/CasualConversation/comments/1bn7zq8/do_you_use_youtube_what_for/",
-     "snippet": "Just curious on what people mainly use youtube for, for example I only use it for tutorials or motivation- but I know a lot of people purely use ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "r/YoutubeMusic",
      "url": "https://www.reddit.com/r/YoutubeMusic/",
      "snippet": "r/YoutubeMusic: A place to discuss YouTube Music as a website, app, or service.",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "r/PartneredYoutube",
-     "url": "https://www.reddit.com/r/PartneredYoutube/",
-     "snippet": "r/PartneredYoutube: A subreddit for creators in the YouTube Partner Program, with advice and discussion on content creation, monetization and…",
-     "source": "reddit.com"
+     "title": "Can you help me understand some things about YouTube? : r/NewTubers",
+     "url": "https://www.reddit.com/r/NewTubers/comments/1bfnulh/can_you_help_me_understand_some_things_about/",
+     "snippet": "Hey folks, I started my tech (coding) YouTube channel 3 weeks ago. For context, I already have background producing content people want ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "To everyone wondering why YouTube is so hard or \"the algorithm doesn't ...",
-     "url": "https://www.reddit.com/r/youtubers/comments/rae3i8/to_everyone_wondering_why_youtube_is_so_hard_or/",
-     "snippet": "It was my theory that YouTube raised the requirements for monetization from 10k views to 1000 subs and 4000 watch hours in order to give the ...",
-     "source": "reddit.com"
+     "title": "Do you use YouTube? What for? : r/CasualConversation",
+     "url": "https://www.reddit.com/r/CasualConversation/comments/1bn7zq8/do_you_use_youtube_what_for/",
+     "snippet": "Just curious on what people mainly use youtube for, for example I only use it for tutorials or motivation- but I know a lot of people purely use ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Is YouTube bad on purpose?",
      "url": "https://www.reddit.com/r/youtube/comments/17oyt43/is_youtube_bad_on_purpose/",
      "snippet": "YouTube is the biggest video platform in the world. Yet, YouTube has one of the worst user experiences of all Apps I have encountered.",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "r/PartneredYoutube",
+     "url": "https://www.reddit.com/r/PartneredYoutube/",
+     "snippet": "r/PartneredYoutube: A subreddit for creators in the YouTube Partner Program, with advice and discussion on content creation, monetization and…",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "To everyone wondering why YouTube is so hard or \"the algorithm doesn't ...",
+     "url": "https://www.reddit.com/r/youtubers/comments/rae3i8/to_everyone_wondering_why_youtube_is_so_hard_or/",
+     "snippet": "It was my theory that YouTube raised the requirements for monetization from 10k views to 1000 subs and 4000 watch hours in order to give the ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "What in your opinion is the best YouTube video you've watched?",
+     "url": "https://www.reddit.com/r/youtube/comments/1crnayd/what_in_your_opinion_is_the_best_youtube_video/",
+     "snippet": "I’ve watched alot of videos in my many years of being chronically online, a lot of them were very high quality and high production videos but ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "YouTube Showcase | Reddit for Developers",
+     "url": "https://developers.reddit.com/apps/yt-app",
+     "snippet": "Showcase YouTube videos in a Reddit post, such as: A creator's latest YouTube uploads. A creator's popular YouTube uploads. A YouTube playlist.",
+     "source": "developers.reddit.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -365,49 +447,91 @@
      "title": "Why do people really enjoy YouTube?",
      "url": "https://www.quora.com/Why-do-people-really-enjoy-YouTube",
      "snippet": "Why do people really enjoy YouTube?",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Why should you use YouTube?",
-     "url": "https://www.quora.com/Why-should-you-use-YouTube",
-     "snippet": "Why should you use YouTube?",
-     "source": "quora.com"
+     "title": "How popular is YouTube in the USA?",
+     "url": "https://www.quora.com/How-popular-is-YouTube-in-the-USA",
+     "snippet": "How popular is YouTube in the USA?",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Is YouTube still a thing in decades to come?",
      "url": "https://www.quora.com/Is-YouTube-still-a-thing-in-decades-to-come",
      "snippet": "Is YouTube still a thing in decades to come?",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "What are some thoughts on YouTube?",
      "url": "https://www.quora.com/What-are-some-thoughts-on-YouTube",
      "snippet": "What are some thoughts on YouTube?",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
     },
     {
-     "title": "Why have so many people never heard of YouTube?",
-     "url": "https://www.quora.com/Why-have-so-many-people-never-heard-of-YouTube",
-     "snippet": "YouTube is an American online video-sharing platform headquartered in San Bruno, California. The service, created in February 2005 by three ...",
-     "source": "quora.com"
+     "title": "YouTube Channels - Quora",
+     "url": "https://youtubechannels.quora.com/",
+     "snippet": "YouTube Channels - Quora Something. Institute of Science and Technology (2017-2019) Quora, Inc. 2026",
+     "source": "youtubechannels.quora.com",
+     "via": [
+      "name"
+     ]
     },
     {
-     "title": "What is the COPPA update on YouTube, and how will it affect my ...",
-     "url": "https://coolkidclub.quora.com/What-is-the-COPPA-update-on-YouTube-and-how-will-it-affect-my-YouTube-channel",
-     "snippet": "If you watch Youtube, you will want to read this answer. It covers everything about COPPA and the FTC.",
-     "source": "coolkidclub.quora.com"
+     "title": "Is Quora a good platform for promoting a YouTube channel or blog?",
+     "url": "https://www.quora.com/Is-Quora-a-good-platform-for-promoting-a-YouTube-channel-or-blog",
+     "snippet": "Is Quora a good platform for promoting a YouTube channel or blog?",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
     },
     {
-     "title": "Can you use PowerPoint to create YouTube Videos. Yes you can.",
-     "url": "https://allthingsyoutube.quora.com/Can-you-use-PowerPoint-to-create-YouTube-Videos-Yes-you-can-https-videomakers-quora-com-Can-PowerPoint-be-used-to-c",
-     "snippet": "Can a PowerPoint application be used to create YouTube videos of good quality? Hi,so lets look at it this way. How easy is it for you to create, animated ...",
-     "source": "allthingsyoutube.quora.com"
+     "title": "Why should you use YouTube?",
+     "url": "https://www.quora.com/Why-should-you-use-YouTube",
+     "snippet": "Why should you use YouTube?",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
     },
     {
-     "title": "I don't know about this Space policy about sponsoring a YouTube ...",
-     "url": "https://masteringguitar.quora.com/I-dont-know-about-this-Space-policy-about-sponsoring-a-YouTube-Channel-but-I-found-this-one-very-usefull-when-I-first-t",
-     "snippet": "I don't know about this Space policy about sponsoring a YouTube Channel but I found this one very usefull when I first tried to make some music with my guitar!",
-     "source": "masteringguitar.quora.com"
+     "title": "What is YouTube? How do you create a YouTube channel between great ...",
+     "url": "https://www.quora.com/What-is-YouTube-How-do-you-create-a-YouTube-channel-between-great-channels",
+     "snippet": "What is YouTube? How do you create a YouTube channel between great channels?",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "How to Succeed At YouTube - Quora",
+     "url": "https://youtubesuccess.quora.com/",
+     "snippet": "Learn the secrets of success with YouTube. I have used YouTube for over 10 years, across many channels, both for myself and advising clients.",
+     "source": "youtubesuccess.quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "How do you use YouTube?",
+     "url": "https://www.quora.com/How-do-you-use-YouTube",
+     "snippet": "How do you use YouTube?",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -419,47 +543,69 @@
      "title": "YouTube (@youtube) • Threads, Say more",
      "url": "https://www.threads.net/@youtube",
      "snippet": "5.8M Followers • 1.2K Threads • like & subscribe. See the latest conversations with @youtube.",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "YouTube Creators (@youtubecreators)",
      "url": "https://www.threads.net/@youtubecreators",
-     "snippet": "829.7K Followers • 2.1K Threads • inspo to supercharge your @youtube channel!⚡️. See the latest conversations with @youtubecreators.",
-     "source": "threads.net"
+     "snippet": "829.4K Followers • 2.1K Threads • inspo to supercharge your @youtube channel!⚡️. See the latest conversations with @youtubecreators.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "This might be the best way to study smarter with YouTube 🎓✨ By simply ...",
-     "url": "https://www.threads.net/@mrstandev/post/DDnl83GxEo6",
-     "snippet": "Found a YouTube video that you need to add to your notes? Copy the link, paste it into Trustur, and it transcribes the full video. Then turn the ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "Noticed that YouTube now prompts you to select an account every time ...",
-     "url": "https://www.threads.net/@mahmoudzitani/post/DE7HQJ2N8lF",
-     "snippet": "Noticed that YouTube now prompts you to select an account every time you launch the app on Apple TV, similar to Netflix and other streaming ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "Is there a way to remove ads from my videos on YouTube just for members ...",
-     "url": "https://www.threads.net/@priyamdatta/post/DFo1q1kyeET",
+     "title": "Is there a way to remove ads from my videos on YouTube ...",
+     "url": "https://www.threads.net/@priyamdatta",
      "snippet": "Is there a way to remove ads from my videos on YouTube just for members? I don't feel my channel members should have to watch ads when they are ...",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "YouTube is displaying a 'View All Posts' button in the Home feed.",
-     "url": "https://www.threads.net/@lindseygamble_/post/DEGh_YFyvgN",
-     "snippet": "Tapping it will take you to a dedicated Community posts feed, showing previously engaged posts and those that YouTube believes users will like.",
-     "source": "threads.net"
+     "title": "有沒有人知道為什麼有些Artlist上的音樂上傳YouTube 還會 ...",
+     "url": "https://www.threads.net/post",
+     "snippet": "研究半天終於知道如何讓youtube的自己製作歌曲清單可以無限播放，不然一直跳到系統的推薦歌曲。 筆記一下，在自己的清單不會出現\"自動播放\"(←就是這個) ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "3. Keep your listening private with YouTube Music's incognito mode. ...",
-     "url": "https://www.threads.net/@michaelbrwnjr/post/DHjR1J9S0pS/3-keep-your-listening-private-with-youtube-musics-incognito-mode-explore-new-tun",
-     "snippet": "3. Keep your listening private with YouTube Music's incognito mode. Explore new tunes without affecting your recommendations.",
-     "source": "threads.net"
+     "title": "This might be the best way to study smarter with YouTube ...",
+     "url": "https://www.threads.net/@mrstandev",
+     "snippet": "Found a YouTube video that you need to add to your notes? Copy the link, paste it into Trustur, and it transcribes the full video. Then turn the ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     }
    ]
   }
  },
+ "overview": {
+  "siteFound": true,
+  "siteRank": 1,
+  "profiles": [
+   {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/"
+   },
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/youtube/?hl=en"
+   },
+   {
+    "platform": "Facebook",
+    "url": "https://www.facebook.com/youtube/"
+   }
+  ]
+ },
+ "searches": 13,
  "checks": [
   {
    "url": "https://www.youtube.com/about/",
@@ -476,17 +622,10 @@
    "mentionsSite": true
   },
   {
-   "url": "https://www.youtube.com/channel/UCWLXSEvhr9RhWjVCU-UNxpw/videos",
+   "url": "https://www.youtube.com/user/YouTube",
    "ok": true,
-   "channelId": "UCWLXSEvhr9RhWjVCU-UNxpw",
-   "name": "The channel about NOTHING",
-   "mentionsSite": true
-  },
-  {
-   "url": "https://www.youtube.com/user/HoweverProductions",
-   "ok": true,
-   "channelId": "UClvwHyEO_Xl6qNW544CnPgw",
-   "name": "However Productions (However Prods)",
+   "channelId": "UCBR8-60-B28hp2BmDPdntcQ",
+   "name": "YouTube",
    "mentionsSite": true
   }
  ]

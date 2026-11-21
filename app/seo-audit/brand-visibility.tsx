@@ -42,7 +42,7 @@ export default function BrandVisibility({ identity }: { identity: Identity; engi
     if (!term.trim()) return;
     setState({ status: "loading" });
     try {
-      const res = await fetch("/api/discovery/mentions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term.trim() }) });
+      const res = await fetch("/api/discovery/mentions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term.trim(), domain: identity.domain }) });
       const body = await res.json().catch(() => ({}));
       if (body.configured === false) return setState({ status: "off" });
       if (!res.ok || !Array.isArray(body.platforms)) throw new Error(body.error || "The search didn't finish. Please try again.");

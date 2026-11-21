@@ -131,7 +131,7 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
           <span className="vz-chev"><Ico n="chev" size={16} /></span>
           <strong>{searched ? totalResults : "–"}</strong>
           <span className="vz-kpi-sub">Google results for “{brand}” across {rows.length} platforms</span>
-          <span className="vz-spark" aria-hidden="true">{rows.map((r) => <i key={r.name} style={{ height: `${Math.max(8, ((r.result?.results.length ?? 0) / 8) * 100)}%` }} />)}</span>
+          <span className="vz-spark" aria-hidden="true">{rows.map((r) => <i key={r.name} style={{ height: `${Math.max(8, ((r.result?.results.length ?? 0) / 10) * 100)}%` }} />)}</span>
         </button>
         <button type="button" className="vz-card vz-kpi" onClick={() => go("rp-status")}>
           <span className="vz-kpi-ic c-green"><Ico n="link" /></span>
@@ -154,14 +154,14 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
       {/* CHARTS */}
       <section className="vz-charts" aria-label="Charts">
         <div className="vz-card vz-chart">
-          <div className="vz-card-head"><h3>Results by platform</h3><span className="vz-chip">Top 8 per platform</span></div>
+          <div className="vz-card-head"><h3>Results by platform</h3><span className="vz-chip">Up to 10 per platform</span></div>
           <div className="vz-bars" role="img" aria-label={rows.map((r) => `${r.name}: ${r.result?.results.length ?? 0} results, ${STATUS[r.status].label}`).join("; ")}>
             {rows.map((r) => {
               const n = r.result?.results.length ?? 0;
               return (
                 <button key={r.name} type="button" className="vz-bar" onClick={() => openPlatform(r.name)} title={`${r.name}: ${n} results · ${STATUS[r.status].label}`}>
                   <b>{loading ? "" : n}</b>
-                  <span className="vz-bar-track"><i className={`s-${loading ? "loading" : STATUS[r.status].tone}`} style={{ height: loading ? "30%" : `${Math.max(3, (n / 8) * 100)}%` }} /></span>
+                  <span className="vz-bar-track"><i className={`s-${loading ? "loading" : STATUS[r.status].tone}`} style={{ height: loading ? "30%" : `${Math.max(3, (n / 10) * 100)}%` }} /></span>
                   <span className="vz-bar-logo"><Logo name={r.name} size={16} /></span>
                   <small>{r.name}</small>
                 </button>
@@ -316,7 +316,7 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
                             {t.official && <em className="rp-kind k-official">{t.sameChannel ? "Same channel your site links to" : "Your linked profile"}</em>}
                             {t.checked === "yours" && !t.official && <em className="rp-kind k-match">Checked: links to your website</em>}
                             {t.checked === "other" && <em className="rp-kind k-other">Checked: links to {shortUrl(t.otherSite ?? "")}</em>}
-                            {!t.checked && (r.extras.some((x) => x.m.url === m.url) ? <em className="rp-kind k-name">Another account with your name</em> : !t.official && t.matchesBrand && isProfile(t) && (t.mentionsSite && t.kind === "profile" ? <em className="rp-kind k-match">Mentions your website</em> : t.sameHandle ? <em className="rp-kind k-match">Same handle as your profiles</em> : <em className="rp-kind k-name">Same name</em>))}
+                            {!t.checked && (r.extras.some((x) => x.m.url === m.url) ? <em className="rp-kind k-name">Another account with your name</em> : !t.official && t.matchesBrand && isProfile(t) && (t.besideSite ? <em className="rp-kind k-match">Shown beside your website on Google</em> : t.mentionsSite && t.kind === "profile" ? <em className="rp-kind k-match">Mentions your website</em> : t.sameHandle ? <em className="rp-kind k-match">Same handle as your profiles</em> : <em className="rp-kind k-name">Same name</em>))}
                           </div>
                           <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
                           <span>{shortUrl(m.url)}</span>

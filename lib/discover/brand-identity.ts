@@ -115,11 +115,25 @@ export function tidyBrandName(raw: string) {
  *  Uses the first part of the title, and the word matching the web address when the name says more than the brand. */
 export function shortBrand(raw: string, hostname: string) {
   const squash = (x: string) => x.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
-  const first = raw.split(/\s*[|–—:•·]\s*|\.\s+|\s+-\s+/)[0].replace(/[.\s]+$/, "").trim() || raw.trim();
   const label = squash(hostname.replace(/^www\./, "").split(".")[0] ?? "");
+  const text = raw.replace(/\s+/g, " ").trim();
+  // 1. The part of the title that spells the web address: "Apollo 24|7: Online…" on apollo247.com -> "Apollo 24|7",
+  //    "Blue Tokai Coffee Roasters" on bluetokaicoffee.com -> "Blue Tokai Coffee".
+  if (label.length >= 3) {
+    for (let i = 1; i <= text.length; i++) {
+      const head = text.slice(0, i);
+      // only when a clear break follows (end, "|", ":", "-", "–", ","), not more words of the name
+      if (squash(head) === label && (i === text.length || /^\s*[|:,–—-]/.test(text.slice(i)))) return head.replace(/[\s|:,.–—-]+$/, "");
+      if (squash(head).length > label.length) break;
+    }
+  }
+  const first = text.split(/\s*[|–—:•·]\s*|\.\s+|\s+-\s+/)[0].replace(/[.\s]+$/, "").trim() || text;
   if (!label || squash(first) === label) return first; // "The Body Shop" on thebodyshop.in stays whole
   const words = first.split(/\s+/);
   const hit = words.find((w) => squash(w) === label);
   if (hit && words.length > 1) return hit.replace(/[^\p{L}\p{N}'&.-]/gu, ""); // "The Tata group" -> "Tata"
+  // 2. A long title that never mentions the brand is a page description, not a name -> use the web address
+  //    ("Online Shopping for Women, Men, Kids and Home & Living" on fabindia.com -> "Fabindia").
+  if (words.length > 4 && !squash(first).includes(label) && !label.includes(squash(first))) return "";
   return first;
 }

@@ -222,6 +222,20 @@
 @media (prefers-reduced-motion: reduce) { .dx-progress li.is-active i, .dx-skel i, .rp-cells i.s-loading { animation: none; } }
 
 /* ===== Results dashboard (vz) ===== */
+.vz-progress { padding: 22px; margin-bottom: 18px; }
+.vz-progress ol { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.vz-progress li { display: grid; grid-template-columns: 18px 1fr auto; gap: 10px; align-items: center; padding: 11px 14px; border-radius: 14px; background: #f7f8fb; font-size: 14px; color: #6b7280; }
+.vz-progress li:first-child { grid-column: 1 / -1; }
+.vz-progress li span { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #111827; min-width: 0; }
+.vz-progress li small { font-size: 12.5px; white-space: nowrap; }
+.vz-progress li i { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #d5d9e3; }
+.vz-progress li.st-run i, .vz-progress li.st-second i { border-color: #4f6ef7; border-top-color: transparent; animation: dxSpin 0.8s linear infinite; }
+.vz-progress li.st-run, .vz-progress li.st-second { background: #eef1ff; }
+.vz-progress li.st-done i { border-color: #6abf4b; background: #6abf4b; }
+.vz-progress li.st-done small { color: #3f8a22; font-weight: 600; }
+@media (max-width: 760px) { .vz-progress ol { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .vz-progress li i { animation: none !important; } }
+
 .dx:has(.vz) { background: #f3f4f9; }
 .vz { --vz-card: #fff; --vz-line: #eceef4; --vz-track: #eef0f5; --vz-ink: #111827; --vz-muted: #6b7280;
   --vz-official: #6abf4b; --vz-likely: #4f6ef7; --vz-possible: #b9a8ff; --vz-mentions: #f5b244; --vz-none: #e3e6ee;

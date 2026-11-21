@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-11-21T13:34:08.864Z",
+ "capturedAt": "2026-11-21T14:29:33.082Z",
  "identity": {
   "name": "DigiFortex",
   "domain": "digifortex.com",
@@ -42,46 +42,40 @@
    "query": "\"DigiFortex\" site:youtube.com",
    "results": [
     {
-     "title": "DigiFortex VAPT Assessments",
-     "url": "https://www.youtube.com/watch?v=nHrdwsEHJV4",
-     "snippet": "A Sneak Peek into DigiFortex Cybersecurity Assessments #cyber #cybersecurity #vapt To know more about DigiFortex, get in touch: E: ...",
-     "source": "youtube.com"
-    },
-    {
      "title": "DigiFortex Technologies",
      "url": "https://www.youtube.com/@digifortex",
      "snippet": "DigiFortex Technologies. Home. Shorts. Library. DigiFortex Technologies. @digifortex. 11 subscribers•33 videos. More about this channel ...more",
-     "source": "youtube.com"
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "DigiFortex SOC Inauguration | NextGen SOC",
+     "url": "https://m.youtube.com/watch",
+     "snippet": "DigiFortex's Next-Gen Security Operation Center (SOC) got inaugurated by India's leading Industry Captains: 1. Vikas Gupta, Chairman & MD Miles-Futurense ...",
+     "source": "m.youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "DigiFortex Technologies",
      "url": "https://m.youtube.com/@digifortex/shorts",
      "snippet": "DigiFortex Technologies. @digifortex. 12 subscribers•33 videos. More about this channel ...more. More about this channel ...more ...more. Subscribe.",
-     "source": "m.youtube.com"
-    },
-    {
-     "title": "DigiFortex SOC Inauguration | NextGen SOC",
-     "url": "https://m.youtube.com/watch?v=Hoks0HQ5leE",
-     "snippet": "DigiFortex's Next-Gen Security Operation Center (SOC) got inaugurated by India's leading Industry Captains: 1. Vikas Gupta, Chairman & MD Miles-Futurense ...",
-     "source": "m.youtube.com"
+     "source": "m.youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Digifortex LLM Penetration Testing",
-     "url": "https://www.youtube.com/shorts/rIsZt4HfP6c",
+     "url": "https://www.youtube.com/shorts",
      "snippet": "Our team has been at the forefront of LLM Penetration Testing. Want To Understand DigiFortex LLM Penetration Testing? Come, Take A Look!",
-     "source": "youtube.com"
-    },
-    {
-     "title": "Global delegations @digifortex",
-     "url": "https://www.youtube.com/shorts/wF0Vs6vhd2I",
-     "snippet": "Proud Moment! DigiFortex is honoured to host top global universities—all in a single year. #cybersecurity #vapt #grc #soc #cnapp #startups #makeinindia ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "DigiFortex SOC |Security Operation Center",
-     "url": "https://m.youtube.com/watch?v=9IOgy3xkk7o",
-     "snippet": "DigiFortex SOC detects, respond & recover from security breaches, dark web threats & potential attacks on enterprise assets/cloud in real time.",
-     "source": "m.youtube.com"
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -93,49 +87,47 @@
      "title": "DigiFortex Technologies Pvt Ltd. (@digifortex_)",
      "url": "https://www.instagram.com/digifortex_/",
      "snippet": "DigiFortex is one of the emerging cyber security companies in Bangalore awarded by Govt. of Karnataka & Top 10 Security Startup: Silicon India. Follow.",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
-     "title": "At DigiFortex, we protect digital identities. Great teams aren't built on ...",
+     "title": "At DigiFortex, we protect digital identities. Great teams ...",
      "url": "https://www.instagram.com/p/DcTNVmrjy5_/",
      "snippet": "At DigiFortex, we protect digital identities. Great teams aren't built on skills alone, they're built on culture, identity, and connection.",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "We were truly honoured to host two brilliant minds at DigiFortex",
+     "title": "Dr. Asoke K. Talukder and Prof. Roland Haas. ... - Instagram",
      "url": "https://www.instagram.com/p/DOnOIcpETlC/",
-     "snippet": "✨ We were truly honoured to host two brilliant minds at DigiFortex - Dr. Asoke K. Talukder and Prof. Roland Haas. Dr. Asoke K. Talukder is a ...",
-     "source": "instagram.com"
+     "snippet": "DigiFortex GRC brings your frameworks, controls, evidence and audits onto one platform, so you're audit-ready all year round. Book a demo: ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Happy Dussehra from Team DigiFortex ...",
-     "url": "https://www.instagram.com/p/Des3vfXiBsW/",
-     "snippet": "At DigiFortex, we protect digital identities. Great teams aren't built on skills alone, they're built on culture, identity, and connection. The ...",
-     "source": "instagram.com"
+     "title": "A warm welcome to Ayesha Tannu, joining DigiFortex as our ...",
+     "url": "https://www.instagram.com/DbDAOLEjei6",
+     "snippet": "A warm welcome to Ayesha Tannu, joining DigiFortex as our new Sales & Marketing Executive! Her energy and fresh ideas are a great addition to the team as ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "We're proud to share that DigiFortex has achieved CREST Accreditation ...",
-     "url": "https://www.instagram.com/p/DXWoTUgDcD8/",
-     "snippet": "We're proud to share that DigiFortex has achieved CREST Accreditation for Penetration Testing Services and is now also featured on MSN.",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Step into a day at DigiFortex #LifeAtDigiFortex #cyber ...",
-     "url": "https://www.instagram.com/reel/DDhJZfxJ_z9/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Proud to be recognized by the Central Government for our cybersecurity ...",
-     "url": "https://www.instagram.com/p/DMcghv0xrSg/",
-     "snippet": "At DigiFortex, we continue to deliver advanced cybersecurity services that empower critical government infrastructure. Grateful for the trust ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "digifortex",
-     "url": "https://www.instagram.com/reel/DfPA5WYjATw/",
-     "snippet": "",
-     "source": "instagram.com"
+     "title": "Launching DigiFortex GRC – Your Unified Compliance ...",
+     "url": "https://www.instagram.com/reel",
+     "snippet": "DigiFortex unified GRC (Governance, Risk and Compliance) framework gives leadership a single, clear view of policies, risks and regulatory obligations. That ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -147,37 +139,91 @@
      "title": "DigiFortex Technologies",
      "url": "https://www.facebook.com/p/DigiFortex-Technologies-61564422972950/",
      "snippet": "DigiFortex is recognized as an emerging Cyber Security startup by the Govt. of Karnataka (India) and by Silicon India in 2023.",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "At DigiFortex, we don't just secure systems — we enable trust, ...",
-     "url": "https://www.facebook.com/61564422972950/videos/at-digifortex-we-dont-just-secure-systems-we-enable-trust-compliance-and-confide/752844110791487/",
-     "snippet": "At DigiFortex, we don't just secure systems — we enable trust, compliance, and confidence for India's leading financial institutions.",
-     "source": "facebook.com"
+     "title": "DigiFortex Technologies added a...",
+     "url": "https://www.facebook.com/photos",
+     "snippet": "A warm welcome to Ayesha Tannu, joining DigiFortex as our new Sales & Marketing Executive! Her energy and fresh ideas are a great addition to the team as ...",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "DigiFortex Technologies",
-     "url": "https://www.facebook.com/61564422972950/posts/celebrating-a-milestone-that-reflects-our-commitment-to-excellence-digifortex-is/122206385828480765/",
-     "snippet": "DigiFortex unified GRC (Governance, Risk and Compliance) framework gives leadership a single, clear view of policies, risks and regulatory obligations. That ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "DigiFortex Technologies (@61564422972950) - About",
-     "url": "https://www.facebook.com/61564422972950/about/",
+     "title": "DigiFortex Technologies (@61564422972950) - Mentions",
+     "url": "https://www.facebook.com/mentions",
      "snippet": "DigiFortex is recognized as an emerging Cyber Security startup by the Govt. of Karnataka (India) and by Silicon India in 2023.",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Akshaya N joins DigiFortex as software development intern",
-     "url": "https://www.facebook.com/61564422972950/posts/welcome-to-the-team-akshaya-n-were-delighted-to-welcome-akshaya-to-the-digiforte/122231953214480765/",
-     "snippet": "Welcome to the team, Akshaya N We're delighted to welcome Akshaya to the DigiFortex family as our Software Development Intern.",
-     "source": "facebook.com"
+     "title": "Digiforce - Halaman Utama",
+     "url": "https://m.facebook.com/pages/Digiforce/533094776809105?locale=ms_MY",
+     "snippet": "Digiforce. 6 sukaan. Perniagaan Tempatan. Suka ... Perihal. Sebutan. Butiran. Halaman · Perniagaan Setempat.",
+     "source": "m.facebook.com",
+     "via": [
+      "name"
+     ]
     },
     {
-     "title": "May your Diwali be bright, your celebrations be joyful, and ...",
-     "url": "https://www.facebook.com/appsquadz/videos/may-your-diwali-be-bright-your-celebrations-be-joyful-and-everything-you-hold-cl/1120030273980954/",
-     "snippet": "... DigiFortex Diwali stands for light over darkness,. 00:36. A glimpse of our Diwali celebration at DigiFortex ... Nov 9, 2026 · 225 views.",
-     "source": "facebook.com"
+     "title": "株式会社デジフォース (@digiforce.japan) - Videos",
+     "url": "https://www.facebook.com/digiforce.japan/",
+     "snippet": "株式会社デジフォース. 61 followers. デジフォースは、世の中へ新しいスタイルを発信し、人の行動に影響を与.",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Fg Digitals (@fgdigitalsss)",
+     "url": "https://www.facebook.com/fgdigitalsss/",
+     "snippet": "Fg Digitals er på Facebook. Bli medlem av Facebook for å komme i kontakt med Fg Digitals og andre du kanskje kjenner. Facebook gir deg muligheten til å...",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "DigiForge updated their profile picture.",
+     "url": "https://www.facebook.com/61596481774221/photos/122100208695549392/",
+     "snippet": "DigiForge updated their profile picture.",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "DigiFuture (@vastaratech)",
+     "url": "https://www.facebook.com/vastaratech/",
+     "snippet": "DigiFuture aġġornaw ir-ritratt tal-faċċata tal -profil tagħhom. 21 Set 2024. Deskrizzjoni tar-ritratt mhux disponibli.",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Digitex (@DigitexCompany) - Photos",
+     "url": "https://www.facebook.com/DigitexCompany/",
+     "snippet": "Digitex, Yerevan. 5653 followers · 7 were here. Կարի գործարան ու տպարան: Տպագրությունը մաղային.",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Digifact (@SomosDigifact)",
+     "url": "https://www.facebook.com/SomosDigifact/",
+     "snippet": "Digifact. 1440 followers · 4 talking about this. Aliado TaxTech que conecta empresas con ecosistemas fiscales digitales. Especialistas en facturación...",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -186,40 +232,60 @@
    "query": "\"DigiFortex\" site:linkedin.com",
    "results": [
     {
-     "title": "DigiFortex | LinkedIn",
+     "title": "DigiFortex",
      "url": "https://in.linkedin.com/company/digifortex",
-     "snippet": "DigiFortex is a CREST-accredited, CERT-In empaneled, and ISO 27001,42001 certified cybersecurity company delivering advanced, end-to-end security solutions for modern enterprises worldwide.",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "DigiFortex SOC - LinkedIn",
-     "url": "https://www.linkedin.com/showcase/digifortex_nextgen_soc/",
-     "snippet": "DigiFortex SOC IT Services and IT Consulting Advanced Security for Advanced Threat",
-     "source": "linkedin.com"
+     "snippet": "DigiFortex is a CREST-accredited, CERT-In empaneled, and ISO 27001,42001 certified cybersecurity company delivering advanced, end-to-end security solutions ...",
+     "source": "in.linkedin.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "Vijay Kumar - DigiFortex | LinkedIn",
      "url": "https://in.linkedin.com/in/vijaykumar-isb",
-     "snippet": "Cybersecurity is no longer an IT function. It is a boardroom priority. I founded… · Experience: DigiFortex · Education: Indian School of Business · Location: Bengaluru · 500+ connections on LinkedIn. View Vijay Kumar’s profile on LinkedIn, a professional community of 1 billion members.",
-     "source": "in.linkedin.com"
+     "snippet": "· Experience: DigiFortex · Education: Indian School of Business · Location: Bengaluru · 500+ connections on LinkedIn. View Vijay Kumar’s profile on LinkedIn, a professional community of 1...",
+     "source": "in.linkedin.com",
+     "via": [
+      "site",
+      "overview"
+     ]
+    },
+    {
+     "title": "DigiFortex SOC - LinkedIn",
+     "url": "https://www.linkedin.com/showcase/digifortex_nextgen_soc/",
+     "snippet": "DigiFortex SOC | 80 followers on LinkedIn. Advanced Security for Advanced Threat | Stay tuned for more updates! Meanwhile, have a look at our website:...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "DigiFortex GRC: Unified Compliance Framework for 50 ...",
      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7518189923061911552/",
-     "snippet": "Launching DigiFortex GRC – Your Unified Compliance Framework Map once. Comply with 50+ frameworks. Auditors built it. Built for audits with 110+ integrations. AI governance: ISO/IEC 42001, EU AI ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "#digifortex #cybersecurity #teambonding #teamdigifortex #grc ...",
-     "url": "https://www.linkedin.com/posts/digifortex_digifortex-cybersecurity-teambonding-activity-7429049721517932544-WBMt",
-     "snippet": "Building, delivering, improving every single day. 💻 And in between, a short break like this 🍽️ No agenda, no meetings just a quick pause before getting back to work. A glimpse of the ...",
-     "source": "linkedin.com"
+     "snippet": "Launching DigiFortex GRC – Your Unified Compliance Framework Map once. Comply with 50+ frameworks. Auditors built it. Built for audits with 110+ integrations.",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "DigiFortex proudly announces inauguration of Next Gen SOC by ...",
      "url": "https://www.linkedin.com/posts/digifortex_contact-us-digifortex-activity-7119964026696073216-6xsa",
-     "snippet": "DigiFortex proudly announces inauguration of Next Gen SOC by two illustrious visionaries of our industry W: www.digifortex.com E: info@digifortex.com M:+91-9448353194",
-     "source": "linkedin.com"
+     "snippet": "DigiFortex Next Gen Security Operation Center Inauguration 18 2 Comments 12,201 followers View Profile Follow",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "#digifortex #cybersecurity #teambonding #teamdigifortex #grc ...",
+     "url": "https://www.linkedin.com/posts/digifortex_digifortex-cybersecurity-teambonding-activity-7429049721517932544-WBMt",
+     "snippet": "Vijay Kumar, Kamal Bisht, Vyshnav R., Manish Singh, Aurosmruti Das, Divyam Singh, Sumadhura S, Sahiti Atla, Katyayani Basak, Sakthar Jamatia, Akhila G, Sharon Deepthi, Vikram S, Gokul N, Vatsal...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -229,9 +295,66 @@
    "results": [
     {
      "title": "DigiFortex",
-     "url": "https://x.com/digifortex?lang=eu",
+     "url": "https://x.com/digifortex",
      "snippet": "Security, Privacy (GDPR, CCPA), Pen testing, Application Security then you are at the correct destination for all your needs. Bangalore. digifortex.com.",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "X - Official Site",
+     "url": "https://x.com/",
+     "snippet": "From breaking news and entertainment to sports and politics, get the full story with all the live commentary.",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "X Help Center",
+     "url": "https://help.x.com/en",
+     "snippet": "Get help with your X account, settings, privacy, and ads. Find step-by-step guides, policies, and answers to common questions.",
+     "source": "help.x.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Twitter Analytics",
+     "url": "https://analytics.twitter.com/i/adsct?p_id=Twitter",
+     "snippet": "Twitter Analytics",
+     "source": "analytics.twitter.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Twitter",
+     "url": "https://api.twitter.com/graphql/",
+     "snippet": "Twitter",
+     "source": "api.twitter.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "jf.x.com",
+     "url": "https://jf.x.com/images/media-preview/2118287692664590715",
+     "snippet": "jf.x.com",
+     "source": "jf.x.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "SMARTecIndia Initiative 2021 (@AssochamSMARTe1) / X",
+     "url": "https://x.com/AssochamSMARTe1",
+     "snippet": "\"New age technologies like AI and ML, proactive monitoring leveraging XDR coupled with behavioural based heuristics will drive newer frontiers of Cyber Security as Cyber security needs a layered approach\", said @ VijayKumarISB , Founder & CEO, @ DigiFortex at #SMARTecIndia2021 1 SMARTecIndia Initiative 2021 @AssochamSM",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -243,57 +366,225 @@
      "title": "Reddit - Dive into anything",
      "url": "https://www.reddit.com/",
      "snippet": "Reddit is a network of communities where people can dive into their interests, hobbies and passions. There's a community for whatever you're interested in on Reddit.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Quick warning for job seekers: be careful when applying to ...",
-     "url": "https://www.reddit.com/r/editors/comments/15ut84j/quick_warning_for_job_seekers_be_careful_when/",
-     "snippet": "Earlier this week, I was contacted by what looks like a legitimate company offering a work-from-home video editor position. I have applied on many job sites, such as Indeed, Monster, Flexjobs, LinkedIn etc, so it will be hard to pinpoint the exact site it came from, as I have probably put out over 60 applications this ",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Girl gets stripped completely naked during a fight [nsfw]",
      "url": "https://www.reddit.com/r/PublicFreakout/comments/65zk1x/girl_gets_stripped_completely_naked_during_a/",
      "snippet": "144 votes, 68 comments. 4.7M subscribers in the PublicFreakout community. A subreddit dedicated to people freaking out, melting down, losing their…",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Young nudists + nudists under 18 : r/nudism - Reddit",
      "url": "https://www.reddit.com/r/nudism/comments/extljg/young_nudists_nudists_under_18/",
      "snippet": "This subreddit is dedicated to genuine Nudism and Naturism. We align with major worldwide organizations (INF, AANR, FCN, etc.) to keep this a clean, safe space to discuss with others about Nudism/Naturism. Any sexual posts will result in a ban. Please check our \"About\" section for our rules, list of upcoming events and",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "lucy mochi (u/lucyxmochi) - Reddit",
-     "url": "https://www.reddit.com/user/lucyxmochi/",
-     "snippet": "u/lucyxmochi: new acct bc i wanted a new username 💕 your chinese girlfriend 🩵",
-     "source": "reddit.com"
-    },
-    {
-     "title": "What is this program and why is it eating up my CPU?",
-     "url": "https://www.reddit.com/r/razer/comments/12fmymr/what_is_this_program_and_why_is_it_eating_up_my/",
-     "snippet": "I've already tried to uninstall it and did that once. Now I can't even find it as application anymore. It's auto starting with the PC every time and it isn't visible as an auto start application. Once I close it via the task manager it's gone and reopens as soon as the PC is turned on again. Can someone help me with th",
-     "source": "reddit.com"
+     "title": "Quick warning for job seekers: be careful when applying to ...",
+     "url": "https://www.reddit.com/r/editors/comments/15ut84j/quick_warning_for_job_seekers_be_careful_when/",
+     "snippet": "Earlier this week, I was contacted by what looks like a legitimate company offering a work-from-home video editor position. I have applied on many job sites, such as Indeed, Monster, Flexjobs, LinkedIn etc, so it will be hard to pinpoint the exact site it came from, as I have probably put out over 60 applications this ",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "I'm a married woman, and I keep asking my husband to ... - Reddit",
      "url": "https://www.reddit.com/r/crossdressing/comments/133nfp/im_a_married_woman_and_i_keep_asking_my_husband/",
      "snippet": "I sort of feel less inclined to dress up sometimes with my girlfriend. I'll just be totally honest with her and say something like \"I would like to be pretty now, but I just don't feel in the mood to go through the process right now\" because I know it involves shaving, then sitting there for a long time while she does ",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "lucy mochi (u/lucyxmochi) - Reddit",
+     "url": "https://www.reddit.com/user/lucyxmochi/",
+     "snippet": "u/lucyxmochi: new acct bc i wanted a new username 💕 your chinese girlfriend 🩵",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "What is this program and why is it eating up my CPU?",
+     "url": "https://www.reddit.com/r/razer/comments/12fmymr/what_is_this_program_and_why_is_it_eating_up_my/",
+     "snippet": "I've already tried to uninstall it and did that once. Now I can't even find it as application anymore. It's auto starting with the PC every time and it isn't visible as an auto start application. Once I close it via the task manager it's gone and reopens as soon as the PC is turned on again. Can someone help me with th",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Rocky (u/ashokreddyz)",
+     "url": "https://www.reddit.com/user/ashokreddyz/",
+     "snippet": "Hi everyone,. Trying to install new kali linux in VM ware release, my keyboards froze(not able to enter the password). Is there any git repo to ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Digilocker BGC : r/TataConsultServices",
+     "url": "https://www.reddit.com/r/TataConsultServices/comments/1wmduxd/digilocker_bgc/",
+     "snippet": "You should give your college faculty details who responds to mail and calls...then BGC team will call them and verify your details through call.",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Seeking advice. : r/cybersecurityUK",
+     "url": "https://www.reddit.com/r/cybersecurityUK/comments/1v96fvm/seeking_advice/",
+     "snippet": "Hi All, I'm strongly considering a career change from being a police constable to going into cyber security? I don't know where to start ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
   "Quora": {
    "platform": "Quora",
    "query": "\"DigiFortex\" site:quora.com",
-   "results": []
+   "results": [
+    {
+     "title": "When did the corporates feel the need for a dedicated information security ...",
+     "url": "https://www.quora.com/When-did-the-corporates-feel-the-need-for-a-dedicated-information-security-team",
+     "snippet": "When did the corporates feel the need for a dedicated information security team?",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Which company is best for cybersecurity services? - Beware of",
+     "url": "https://bewareofcybercrimes.quora.com/https-www-quora-com-Which-company-is-best-for-cybersecurity-services-answer-Sagar-Dey-219-2",
+     "snippet": "Which company is best for cybersecurity services? Travarsa Private Limited stands as a pioneering force in the realm of cybersecurity services, ...",
+     "source": "bewareofcybercrimes.quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Digital Security Companies",
+     "url": "https://www.quora.com/topic/Digital-Security-Companies",
+     "snippet": "What are the best cyber security companies? And why? Palo Alto Networks – Industry leader offering AI‑native, end‑to‑end network, cloud, and identity security.",
+     "source": "quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "What is the best way to get into cyber security? Which certificate training ...",
+     "url": "https://hackology.quora.com/https-www-quora-com-What-is-the-best-way-to-get-into-cyber-security-Which-certificate-training-would-be-covered-by-Vet",
+     "snippet": "What is the best way to get into cyber security? Which certificate training would be covered by Vet-Tec or post 9/11 GI bill?",
+     "source": "hackology.quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Digital Security - Quora",
+     "url": "https://digitalsecurity.quora.com/",
+     "snippet": "Here we are going to show you some digital security steps.",
+     "source": "digitalsecurity.quora.com",
+     "via": [
+      "name"
+     ]
+    }
+   ]
   },
   "Threads": {
    "platform": "Threads",
    "query": "\"DigiFortex\" site:threads.net",
-   "results": []
+   "results": [
+    {
+     "title": "Threads",
+     "url": "https://www.threads.net/t/DfI8_1CjXwS/embed/",
+     "snippet": "Not all who wander are lost, but this page is The link's not working or the page is gone. Go back to keep exploring.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Threads",
+     "url": "https://www.threads.net/@ariefkeano/post/DflbJCgCZQA/embed",
+     "snippet": "Threads ... Threads",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "www.threads.net",
+     "url": "https://www.threads.net/@josephkojunkman/post/DDnzKooJrTi?xmt=AQGzxNmzmACDxb0_EOOOvKkzuzpIfuL3I7q8ZHJBvvauVQ%E5%89%9B%E5%89%9B%E5%9C%A8%E8%84%86%E6%BB%91%E5%88%B0%E9%80%99%E6%AE%B5%E5%BD%B1%E7%89%87%EF%BC%8C%E6%83%B3%E5%BC%95%E7%94%A8%E5%AE%83%E4%BE%86%E5%AF%AB%E6%96%87%E7%AB%A0%E3%80%82%E5%B0%8F%E6%99%82%E5%80%99%E5%BF%98%E8%A8%98%E6%98%AF%E4%B8%8A%E5%81%A5%E5%BA%B7%E6%95%99%E8%82%B2%E8%AA%B2%E5%97%8E%EF%BC%9F%E6%9C%89%E4%B8%8A%E9%81%8E%E8%A6%81%E5%B0%8F%E5%BF%83%E8%85%A6%E5%B9%B9%E9%80%99%E5%80%8B%E9%83%A8%E5%88%86%EF%BC%8C%E5%9B%A0%E7%82%BA%E4%B8%80%E6%97%A6%E5%8F%97%E5%82%B7%E5%AE%B9%E6%98%93%E5%B0%8E%E8%87%B4%E8%BA%AB%E9%AB%94%E7%9A%84%E7%99%B1%E7%98%93%E3%80%82%E4%BA%BA%E4%B8%80%E6%97%A6%E5%B0%8D%E8%87%AA%E5%B7%B1%E6%84%9F%E5%88%B0%E6%B2%92%E6%9C%89%E5%B8%8C%E6%9C%9B%EF%BC%8C%E5%8F%AA%E6%9C%83%E6%80%9D%E8%80%83%E5%A6%82%E4%BD%95%E5%BE%9E%E4%B8%96%E7%95%8C%E4%B8%8A%E6%B6%88%E5%A4%B1%E3%80%82%E8%87%AA%E5%B7%B1%E5%B7%B2%E7%B6%93%E9%81%8E%E5%B9%B4%E5%B0%91%E8%BC%95%E7%8B%82%E7%9A%84%E6%99%82%E6%9C%9F%EF%BC%8C%E4%BD%86%E6%AF%8F%E7%95%B6%E7%9C%8B%E5%88%B0%E5%BE%88%E5%A4%9A%E5%BC%9F%E5%BC%9F%E5%A6%B9%E5%A6%B9%E6%B1%82%E5%B8%A5%E6%B1%82%E6%96%B0%EF%BC%8C%E6%83%B3%E5%81%9A%E5%87%BA%E4%B8%80%E4%BA%9B%E8%AE%93%E4%BA%BA%E9%A9%9A%E8%89%B7%E3%80%81%E5%88%AE%E7%9B%AE%E7%9B%B8%E7%9C%8B%EF%BC%8C%E5%90%B8%E5%BC%95%E5%88%A5%E4%BA%BA%E7%9B%AE%E5%85%89%E7%9A%84%E4%BA%8B%E7%9A%84%E6%99%82%E5%80%99%E3%80%82%E6%88%91%E5%8F%AA%E6%83%B3%E8%91%97%E8%A6%81%E4%BB%96%E5%86%B7%E9%9D%9C%E5%88%A5%E8%A1%9D%E5%8B%95%EF%BC%8C%E5%9B%A0%E7%82%BA%E5%BE%88%E6%9C%89%E5%8F%AF%E8%83%BD%E4%BA%BA%E7%94%9F%E7%9A%84%E5%85%89%E6%98%8E%E5%B0%B1%E6%AD%A4%E9%BB%91%E6%9A%97%E3%80%82%E5%B0%A4%E5%85%B6%E6%9C%89%E4%BA%BA%E5%8F%97%E4%B8%8D%E4%BA%86%E4%BA%BA%E7%94%9F%E7%9A%84%E6%8C%AB%E6%95%97%E5%A4%B1%E8%90%BD%EF%BC%8C%E5%8B%95%E4%B8%8D%E5%8B%95%E5%B0%B1%E7%9B%B4%E6%8E%A5%E9%81%B8%E3%80%8C%E5%B0%8B%E6%AD%BB%E3%80%8D%E6%9B%B4%E6%98%AF%E3%80%82%E7%B5%95%E5%B0%8D%E6%B2%92%E6%83%B3%E9%81%8E%EF%BC%8C%E8%90%AC%E4%B8%80%E4%B8%80%E6%AC%A1%E6%B2%92%E6%AD%BB%E6%88%90%EF%BC%8C%E8%AE%8A%E6%88%90%E6%A4%8D%E7%89%A9%E4%BA%BA%E6%9B%B4%E7%97%9B%E8%8B%A6%E8%90%AC%E5%88%86%E3%80%82%E5%8F%AA%E6%83%B3%E8%91%97%E4%B8%80%E5%BF%83%E8%A7%A3%E8%84%AB%E5%B0%B1%E5%A5%BD%E3%80%82%E7%9C%8B%E7%9C%8B%E9%80%99%E5%80%8B%E5%BD%B1%E7%89%87%EF%BC%8C%E6%83%B3%E6%83%B3%E8%87%AA%E5%B7%B1%E9%82%84%E5%BE%88%E5%B9%B8%E7%A6%8F%E3%80%82%E5%AD%B8%E7%BF%92%E4%BA%BA%E5%AE%B6%E7%9A%84%E5%8B%87%E6%95%A2%E3%80%81%E4%B8%8D%E7%95%8F%E6%87%BC%EF%BC%8C%E5%A5%BD%E5%A5%BD%E6%B4%BB%E5%9C%A8%E9%80%99%E5%80%8B%E4%B8%96%E7%95%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E5%80%8B%E5%BE%88%E6%A3%92%E7%9A%84%E6%88%90%E5%B0%B1%EF%BC%81",
+     "snippet": "www.threads.net",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "I kissed a… drag queen? In a brand new three-part series ...",
+     "url": "https://www.threads.net/@gaystarnews/post/DAlwAXYOE3S",
+     "snippet": "Gay Star News (@gaystarnews). 1 Like. I kissed a… drag queen? In a brand new three-part series, Drag Race legend victoriascone is putting I Kissed a Girl icon amy_spalding in full drag for the first time EVER! Come back tomorrow for part two and Thursday for part three. *RuPaul voice* we can’t wait to see how this turn",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "www.threads.net",
+     "url": "https://www.threads.net/data/manifest.json",
+     "snippet": "{\"id\":\"barcelona_web\",\"name\":\"Threads\",\"short_name\":\"Threads\",\"description\":\"Say more with Threads \\u2014 Instagram\\u2019s text-based conversation app.\",\"related ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "www.threads.net",
+     "url": "https://www.threads.net/@lonewolf.my/post/DE71UHzy9Zs?xmt=AQGziYOgzQJtsjHdGE2QmdFCvX8cYZYiT1ypmsz2VXG7ig%E9%80%99%E7%9F%AD%E7%89%87%E8%AE%93%E5%B0%8F%E5%BC%9F%E6%83%B3%E8%B5%B7%E8%87%AA%E5%B7%B1%E5%B0%8F%E6%99%82%E5%80%99%EF%BC%8C%E5%AF%AB%E4%BD%9C%E6%A5%AD%E6%99%82%E6%88%96%E5%9C%A8%E7%8E%A9%E8%80%8D%E6%99%82%EF%BC%8C%E5%BF%BD%E7%84%B6%E5%B0%8D%E6%96%B9%E4%B8%80%E5%80%8B%E8%8E%AB%E5%90%8D%E5%A5%87%E5%A6%99%E7%9A%84%E7%88%86%E7%82%B8%E6%83%85%E7%B7%92%EF%BC%8C%E8%80%8C%E5%9A%87%E5%88%B0%E8%87%AA%E5%B7%B1%EF%BC%8C%E4%B9%9F%E4%B8%8D%E6%98%8E%E7%99%BD%E8%87%AA%E5%B7%B1%E5%88%B0%E5%BA%95%E7%8A%AF%E4%BA%86%E4%BB%80%E9%BA%BC%E9%8C%AF%EF%BC%8C%E5%8D%BB%E8%A6%81%E8%A2%AB%E5%A6%82%E6%AD%A4%E5%B0%8D%E5%BE%85%EF%BC%8C%E5%88%B0%E4%BA%86%E4%B8%80%E5%AE%9A%E5%B9%B4%E7%B4%80%E4%B9%8B%E5%BE%8C%EF%BC%8C%E6%89%8D%E7%99%BC%E8%A6%BA%E5%8E%9F%E4%BE%86%E4%BB%96%E5%80%91%E5%8F%AA%E6%98%AF%E5%A3%93%E5%8A%9B%E5%A4%AA%E5%A4%A7%EF%BC%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5%EF%BC%8C%E5%8F%8D%E8%80%8C%E9%80%A0%E6%88%90%E5%B0%8D%E6%96%B9%E7%AB%A5%E5%B9%B4%E4%B8%8D%E5%8F%AF%E6%8A%B9%E5%8E%BB%E7%9A%84%E5%89%B5%E5%82%B7%E3%80%82%E7%95%B6%E6%82%A8%E6%83%85%E7%B7%92%E7%84%A1%E6%B3%95%E8%87%AA%E7%90%86%E6%99%82%EF%BC%8C%E8%AB%8B%E6%9A%AB%E6%99%82%E9%80%80%E9%96%8B%EF%BC%8C%E5%88%B0%E8%87%AA%E5%B7%B1%E5%B0%8F%E6%88%BF%E9%96%93%E6%88%96%E7%9B%B8%E5%B0%8D%E5%AE%89%E9%9D%9C%E7%9A%84%E7%A9%BA%E9%96%93%E6%A2%B3%E7%90%86%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%85%E7%B7%92%EF%BC%8C%E5%9C%A8%E4%BE%86%E5%A5%BD%E5%A5%BD%E4%BA%A4%E6%B5%81%EF%BC%8C%E6%88%96%E8%A8%B1%E6%BA%9D%E9%80%9A%E6%9C%83%E6%9B%B4%E5%8A%A0%E9%A0%86%E6%9A%A2%E3%80%82%E7%8F%BE%E5%9C%A8%E7%A4%BE%E6%9C%83%E6%AD%A5%E8%AA%BF%E8%B6%8A%E4%BE%86%E8%B6%8A%E5%BF%AB%EF%BC%8C%E5%B0%A4%E5%85%B6%E4%B8%89%E6%98%8E%E6%B2%BB%E5%AE%B6%E5%BA%AD%EF%BC%8C%E4%B8%8A%E6%9C%89%E8%80%81%E4%B8%8B%E6%9C%89%E5%B0%8F%E7%9A%84%E4%BA%BA%EF%BC%8C%E5%8F%AA%E8%A6%81%E5%AE%B6%E4%B8%AD%E4%B8%8D%E6%98%AF%E5%A4%AA%E6%9C%89%E9%8C%A2%E7%9A%84%EF%BC%8C%E5%A3%93%E5%8A%9B%E9%90%B5%E5%AE%9A%E6%98%AF%E7%84%A1%E6%AF%94%E5%B7%A8%E5%A4%A7%E7%9A%84%E3%80%82%E5%B0%8F%E5%BC%9F%E7%A5%9D%E7%A6%8F%E4%B8%96%E7%95%8C%E6%AF%8F%E5%80%8B%E5%AE%B6%E5%BA%AD%E9%83%BD%E8%83%BD%E6%8C%BA%E9%81%8E%E8%87%AA%E8%BA%AB%E9%9B%A3%E9%97%9C%EF%BC%8C%E4%B8%8A%E4%B8%80%E4%BB%A3%E7%9A%84%E5%89%B5%E5%82%B7%E7%95%99%E7%B5%A6%E6%AD%B7%E5%8F%B2%E5%B0%B1%E5%A5%BD%EF%BC%8C%E5%88%A5%E5%86%8D%E8%BC%95%E6%98%93%E5%B8%B6%E7%B5%A6%E5%BE%8C%E4%BB%A3%E4%B8%8D%E5%BF%85%E8%A6%81%E5%89%B5%E5%82%B7%E3%80%82%E8%AA%AA%E8%B5%B7%E4%BE%86%E5%AE%B9%E6%98%93%E5%81%9A%E8%B5%B7%E4%BE%86%E6%8C%BA%E9%9B%A3%E7%9A%84%EF%BC%8C%E4%BA%BA%E7%94%9F%E5%B0%B1%E6%98%AF%E9%80%99%E6%A8%A3%E5%AD%90%E7%B8%BD%E6%98%AF%E5%9C%A8%E5%AF%A6%E8%B8%90%E7%9A%84%E9%81%8E%E7%A8%8B%E4%B8%8D%E6%98%AF%E5%97%8E%EF%BC%9F",
+     "snippet": "www.threads.net",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    }
+   ]
   }
  },
+ "overview": {
+  "siteFound": true,
+  "siteRank": 1,
+  "profiles": [
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/digifortex_/"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://in.linkedin.com/company/digifortex"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://in.linkedin.com/in/vijaykumar-isb"
+   }
+  ]
+ },
+ "searches": 19,
  "checks": [
   {
    "url": "https://www.youtube.com/channel/UCgYAfC6cd2QovCEJS1GaIGQ",

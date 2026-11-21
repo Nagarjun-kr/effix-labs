@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-11-21T13:34:48.157Z",
+ "capturedAt": "2026-11-21T14:30:38.060Z",
  "identity": {
   "name": "Freshworks",
   "domain": "freshworks.com",
@@ -38,52 +38,85 @@
    "query": "\"Freshworks\" site:youtube.com",
    "results": [
     {
+     "title": "Freshworks optimizes customer service interactions ...",
+     "url": "https://www.youtube.com/watch?v=_qRjPP2ci9k",
+     "snippet": "By integrating new generative AI features, Freshworks' Customer Service Suite gives companies an omnichannel solution that includes customer ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Freshworks",
+     "url": "https://m.youtube.com/FreshworksInc/featured",
+     "snippet": "Freshworks (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee to be ...",
+     "source": "m.youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Freshworks - YouTube",
+     "url": "https://www.youtube.com/@FreshworksInc",
+     "snippet": "Freshworks (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee to be more productive.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Freshworks - YouTube",
+     "url": "https://www.youtube.com/playlist?list=PLVJrL2_czd9quLYDAG3Vioorh2HFFTEjI",
+     "snippet": "Freshworks Freshservice Tips and Tricks: Increase CSAT and Employee Productivity Flycast Partners 1K 3y ago 26:32",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "How Freshworks' CPO Actually Builds Products With AI (Live ...",
+     "url": "https://www.youtube.com/watch?v=0qNZVlW8IR4",
+     "snippet": "Freshworks built the foundation underneath it first, a design system, a coding system, and a shared repository. The AI only goes fast because the references it needs already exist.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Academy Freshworks - YouTube",
+     "url": "https://www.youtube.com/c/FreshdeskAcademy",
+     "snippet": "Sign up to know more. Take free courses on customer service, ITSM, and marketing on Freshworks Academy: https://www.freshworks.com/academy/",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Dennis Woodside, Freshworks | Freshworks Refresh 2026",
+     "url": "https://www.youtube.com/watch?v=fz_pvlu7h-A",
+     "snippet": "In this interview from Freshworks Refresh 2026 in New York City, Dennis Woodside, chief executive officer of Freshworks, joins theCUBE Research's Bob Laliberte to discuss how enterprises are ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Freshservice ITSM: Modernize IT Operations with AI ... - YouTube",
+     "url": "https://www.youtube.com/watch?v=nXNWoZZ9SXE",
+     "snippet": "Freshservice ITSM: Modernize IT Operations with AI, Automation & Proactive Service Management Freshworks 18.6K subscribers Subscribe 26",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
      "title": "Freshworks",
      "url": "https://www.youtube.com/channel/UCYtaa2E7NSvf3uD9DbsDYZA",
      "snippet": "Freshworks (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee to be ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "Freshworks optimizes customer service interactions through genAI, ...",
-     "url": "https://www.youtube.com/watch?v=_qRjPP2ci9k",
-     "snippet": "By integrating new generative AI features, Freshworks' Customer Service Suite gives companies an omnichannel solution that includes customer ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "How Freshworks' CPO Actually Builds Products With AI (Live Demo)",
-     "url": "https://www.youtube.com/watch?v=0qNZVlW8IR4",
-     "snippet": "Freshworks went public in 2021, serves 75000 customers, and used to ship on a 6-month release cycle. Their CPO rebuilt the entire product ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "How to Use FreshWorks CRM | Step-by-Step FreshSales CRM Tutorial for ...",
-     "url": "https://www.youtube.com/watch?v=44cCryH2Sos",
-     "snippet": "Learn how to use FreshWorks CRM effectively with this comprehensive FreshSales tutorial for beginners. This step-by-step guide will walk you ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "Freshworks",
-     "url": "https://www.youtube.com/playlist?list=PLVJrL2_czd9quLYDAG3Vioorh2HFFTEjI",
-     "snippet": "Freshworks Tips and Tricks: CMDB, Financial, and Risk Management. Flycast ... How to Integrate Other Support Channels Using Freshworks Marketplace.",
-     "source": "youtube.com"
-    },
-    {
-     "title": "How Freshworks Is Delivering Real Outcomes in IT Service Operations",
-     "url": "https://www.youtube.com/watch?v=fQooEgGm7vo",
-     "snippet": "AI Beyond the Pilot: How Freshworks Is Delivering Real Outcomes in IT Service Operations.",
-     "source": "youtube.com"
-    },
-    {
-     "title": "Awesome Support to Freshworks CRM Integration Tutorial | AFI",
-     "url": "https://www.youtube.com/watch?v=1pChrpCSREA",
-     "snippet": "Learn how to connect Awesome Support with Freshworks CRM using the Advanced Form Integration (AFI) plugin for WordPress.",
-     "source": "youtube.com"
-    },
-    {
-     "title": "How to Use Freshworks CRM for Beginners",
-     "url": "https://www.youtube.com/watch?v=mQYKbL-jlr4",
-     "snippet": "How to Use Freshworks CRM for Beginners | Freshworks Tutorial 2025 In this video, I'll show you how to use Freshworks CRM for absolute ...",
-     "source": "youtube.com"
+     "source": "youtube.com",
+     "via": [
+      "overview"
+     ]
     }
    ]
   },
@@ -95,49 +128,29 @@
      "title": "Freshworks (@freshworksinc) • Instagram photos and videos",
      "url": "https://www.instagram.com/freshworksinc/",
      "snippet": "As a partner and customer of Freshworks, we help @McLarenF1 Racing streamline its global IT operations and keep technology working quietly in the background, so ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Freshworks just made a BIG move in the SaaS game!",
-     "url": "https://www.instagram.com/reel/DfCh4-5THaC/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "\"It has been a couple of years with Freshworks for me now and I feel ...",
-     "url": "https://www.instagram.com/p/CC04vJuJE_V/",
-     "snippet": "Freshworks CMO Kady Srinivasan shared with @diginomica how her pivot from software engineer to marketer paid off. Read the full interview to ...",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "Freshworks (@freshworksinc) • Instagram photos and videos",
      "url": "https://www.instagram.com/freshworksinc/reels/",
      "snippet": "The competition never sits still. Freshworks CEO Dennis Woodside and McLaren Mastercard ...",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks Highlights CX Performance Gap ...",
-     "url": "https://www.instagram.com/p/DfJaNeND1Wg/",
-     "snippet": "Freshworks bought an AI startup to fill a product gap instead of building the feature itself. Freshworks has acquired Israel-based AI startup ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Complexity slows teams down. Freshworks doesn't. Our focus is ...",
-     "url": "https://www.instagram.com/p/DSU1WooDfAH/",
-     "snippet": "Freshworks doesn't. Our focus is simple: help teams deliver better service with software that's easy to use, quick to adopt, and built to create ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "FreshWorks Media (@freshworksmedia)",
-     "url": "https://www.instagram.com/freshworksmedia/",
-     "snippet": "Congrats to FreshWorks Media client, Jelon @jelon_monyee and Release ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Every IT request is an opportunity to work smarter. With Freshworks",
-     "url": "https://www.instagram.com/p/DeRVqTAEfV6/",
-     "snippet": "With Freshworks - Freshservice, AI intelligently categorizes, prioritizes, and routes service requests—reducing manual effort, accelerating ...",
-     "source": "instagram.com"
+     "title": "Freshworks just made a BIG move in the SaaS game!",
+     "url": "https://www.instagram.com/reel/DfCh4-5THaC/",
+     "snippet": "✓ Verified by Freshworks ✓ Works with Freshdesk & Freshdesk Omni ✓ Easy install from the Marketplace, with nothing new for your agents to ...",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -149,49 +162,37 @@
      "title": "Freshworks (@FreshworksInc)",
      "url": "https://www.facebook.com/FreshworksInc/",
      "snippet": "Freshworks. The AI-powered, unified service operations platform built for agile enterprises moving fast and operating at scale. NASDAQ ...",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Say hello to the all-new freshworks.com  The way people buy software ...",
+     "title": "Freshworks",
      "url": "https://www.facebook.com/FreshworksInc/posts/say-hello-to-the-all-new-freshworkscom-the-way-people-buy-software-has-changed-f/1682112893917792/",
-     "snippet": "",
-     "source": "facebook.com"
+     "snippet": "🛠️ Freshservice by Freshworks Inc. (NASDAQ: FRSH) is a modern, AI-powered IT and enterprise service management platform that makes service ...",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks and Carahsoft announce FedRAMP in-process for ...",
-     "url": "https://www.facebook.com/carahsoft/posts/freshworks-has-achieved-fedramp-in-process-status-for-freshservice-its-ai-powere/1728714892592384/",
-     "snippet": "Freshworks has achieved FedRAMP® 'In-Process' status for Freshservice, its AI-powered unified service operations platform.",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Freshworks Makes Big Move in SaaS Game for Business Visibility",
+     "title": "Freshworks just made a BIG move in the SaaS game!",
      "url": "https://www.facebook.com/technologycounter/videos/freshworks-just-made-a-big-move-in-the-saas-game/1109684825231496/",
-     "snippet": "",
-     "source": "facebook.com"
+     "snippet": "The AI-powered service platform, Freshworks, announces its recognition as a 2026 Gartner Magic quadrant leader for IT Service Management ...",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks acquires Torii for AI spend governance and SaaS management",
-     "url": "https://www.facebook.com/businessmattersmagazine/posts/-freshworks-to-acquire-torii-to-expand-ai-spend-governance-nasdaq-listed-freshwo/1128599219566809/",
-     "snippet": "Nasdaq-listed Freshworks is set to acquire Torii to strengthen its Freshservice platform with advanced SaaS management and AI spending ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Freshworks ai-powered software for customer service and crm",
-     "url": "https://www.facebook.com/startupstash/posts/delight-your-customers-and-empower-your-teams-freshworks-offers-intuitive-ai-pow/1814495664015220/",
-     "snippet": "Delight your customers and empower your teams! Freshworks offers intuitive, AI-powered software for customer service, CRM, and IT service ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Unisys and Freshworks AI Automate Service Desk to Catch Patterns Early",
-     "url": "https://www.facebook.com/UnisysCorp/videos/ten-people-file-the-same-odd-error-in-an-afternoon-handled-one-by-one-thats-ten-/995593019735709/",
-     "snippet": "This post by Unisys and Freshworks explains how to use AI to automate a service desk. It describes a scenario where ten separate service ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Freshworks named Strong Performer in Enterprise Service Management",
-     "url": "https://www.facebook.com/FreshworksInc/posts/freshworks-was-named-a-strong-performer-and-recognized-for-its-focus-on-simplifi/1455671259895291/",
-     "snippet": "Freshworks was named a Strong Performer and recognized for its focus on simplified, unified service management and AI-assisted productivity.",
-     "source": "facebook.com"
+     "title": "Messenger Routing Conversation Issue - Meta for Developers",
+     "url": "https://developers.facebook.com/community/threads",
+     "snippet": "We use Freshworks as our main customer service platform, and it's currently connected to all our Facebook and Instagram business accounts. The system works ...",
+     "source": "developers.facebook.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -203,43 +204,65 @@
      "title": "Freshworks",
      "url": "https://www.linkedin.com/company/freshworks-inc",
      "snippet": "Freshworks Inc. (NASDAQ: FRSH) is the AI-powered, unified service operations platform that is fast to deploy, intuitive to use, and enables every employee ...",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "Freshworks: Jobs",
      "url": "https://www.linkedin.com/company/freshworks-inc/jobs",
      "snippet": "Jobs at Freshworks · Lead - Workplace Management (Travel & Transport Operations) · Senior Business Development Manager · Senior Account Executive - Inside Sales.",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Freshworks for Partners",
      "url": "https://www.linkedin.com/showcase/freshworks-partners/",
      "snippet": "The Freshworks for Partner page is a place where you can connect and network with us and our rapidly growing partner community from across the globe.",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Freshworks | LinkedIn Marketing Solutions",
-     "url": "https://business.linkedin.com/advertise/partners/find-a-partner/freshworks",
+     "url": "https://business.linkedin.com/partners/find-a-partner",
      "snippet": "Freshworks creates AI-boosted business software anyone can use. Purpose-built for IT, customer support, and sales and marketing teams, our products are ...",
-     "source": "business.linkedin.com"
+     "source": "business.linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Freshworks: Culture",
-     "url": "https://www.linkedin.com/company/freshworks-inc/life",
-     "snippet": "How It Started. We make uncomplicated service software to deliver exceptional customer and employee experiences. That belief sparked Freshworks.",
-     "source": "linkedin.com"
+     "url": "https://www.linkedin.com/freshworks-inc/life",
+     "snippet": "We make uncomplicated service software to deliver exceptional customer and employee experiences. That belief sparked Freshworks. And it powers everything we do ...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks Case Study | Connecting to growth",
-     "url": "https://business.linkedin.com/advertise/customer-stories/freshworks-ctv",
-     "snippet": "Founded Freshworks (NASDAQ: FRSH) provides people-first AI service software to deliver exceptional customer and employee experiences. Trusted by 68,000+ ...",
-     "source": "business.linkedin.com"
+     "title": "Device42, A Freshworks Company",
+     "url": "https://www.linkedin.com/products/device42",
+     "snippet": "Device42, A Freshworks Company | Run IT with Confidence® Device42 provides the most comprehensive agentless discovery and dependency mapping solution for ...",
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks cuts workforce by 11% amid AI disruptions",
-     "url": "https://www.linkedin.com/news/story/freshworks-cuts-workforce-by-11-amid-ai-disruptions-8810538/",
-     "snippet": "Software company Freshworks announced it will lay off 11% of its workforce, or around 500 employees, as it adapts to the rapid integration ...",
-     "source": "linkedin.com"
+     "title": "Freshworks: Cultura",
+     "url": "https://gt.linkedin.com/company/freshworks-inc/life",
+     "snippet": "We make uncomplicated service software to deliver exceptional customer and employee experiences. That belief sparked Freshworks. And it powers everything we do ...",
+     "source": "gt.linkedin.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -249,51 +272,39 @@
    "results": [
     {
      "title": "Freshworks Inc (@FreshworksInc) ...",
-     "url": "https://x.com/FreshworksInc",
-     "snippet": "That's why Freshworks has acquired @RobustaDev. It starts investigating the moment something breaks, so your team gets to the root cause faster. And as it comes ...",
-     "source": "x.com"
+     "url": "https://x.com/freshworksinc?lang=ms",
+     "snippet": "The AI-powered, unified service operations platform for agile enterprises. NASDAQ: FRSH. San Mateo, CA. freshworks.com.",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks Inc",
-     "url": "https://x.com/FreshworksInc/status/2115832578221699223",
-     "snippet": "Freshworks Inc on X: \"Coordinated action across the enterprise takes shape when IT leads. See what's next for AI-powered ServiceOps with What's ...",
-     "source": "x.com"
+     "title": "Reposts by Freshworks Inc (@FreshworksInc) ...",
+     "url": "https://x.com/FreshworksInc/reposts",
+     "snippet": "#Podcast One Thing in Tech Today | Here's one takeaway from Freshworks' investor day that reflects enterprise customer push | By @ArakaliHari forbesindia.com/ ...",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks - Daniel Finlayson",
-     "url": "https://x.com/FreshWorks",
-     "snippet": "89 followers · 159 following. San Francisco. Joined Apr 2009. See the latest conversations with @FreshWorks.",
-     "source": "x.com"
+     "title": "Highlights by Freshworks Inc (@FreshworksInc) ...",
+     "url": "https://x.com/FreshworksInc/highlights",
+     "snippet": "Freshworks Inc. 7,782 posts. Freshworks Inc profile banner · @FreshworksInc. Freshworks Inc. @FreshworksInc. The AI-powered, unified service operations platform ...",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks Inc",
-     "url": "https://mobile.x.com/FreshworksInc/status/1458871304296157200",
-     "snippet": "Freshworks Inc on X: \" Announcing the Refresh Fall '21 Product Launch! Swipe to discover our new product features and offerings, designed to make delight ...",
-     "source": "mobile.x.com"
-    },
-    {
-     "title": "Freshworks Inc",
-     "url": "https://x.com/FreshworksInc/status/2118410269605195826",
-     "snippet": "And today, we're proud to share that Freshworks was named a Leader in the @IDC MarketScape: Worldwide AI-Enabled IT Service Management Software ...",
-     "source": "x.com"
-    },
-    {
-     "title": "CX Today",
-     "url": "https://x.com/cxtodaynews/status/2115452109583749138",
-     "snippet": "In brief: Freshworks acquires Robusta Dev to speed incident investigations Freshworks is acquiring AI-powered incident investigation company ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Freshworks Inc on X: \"Leave requests for today are looking suspiciously ...",
-     "url": "https://x.com/FreshworksInc/status/2123507608107483622",
-     "snippet": "Freshworks Inc on X: \"Leave requests for today are looking suspiciously similar…\" Conversation. @FreshworksInc. Freshworks Inc.",
-     "source": "x.com"
-    },
-    {
-     "title": "OAuth 2.0 error invalid_request – Redirect is requested when using ...",
-     "url": "https://devcommunity.x.com/t/oauth-2-0-error-invalid-request-redirect-is-requested-when-using-freshworks-app-integration/247737",
-     "snippet": "Hi, I'm trying to integrate Twitter (X) OAuth 2.0 with my Freshworks app using oauth_config.json . But I'm consistently getting this error:",
-     "source": "devcommunity.x.com"
+     "title": "A new magazine from Freshworks",
+     "url": "https://x.com/@FreshworksInc",
+     "snippet": "A new magazine from Freshworks · Every other week, we share insights you can apply to your business. · Here's a sneak peek at what you'll find inside the issue:.",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -302,52 +313,95 @@
    "query": "\"Freshworks\" site:reddit.com",
    "results": [
     {
-     "title": "Is Freshworks / Freshservice good for making an IT service catalog?",
+     "title": "Is Freshworks / Freshservice good for making an IT service ...",
      "url": "https://www.reddit.com/r/sysadmin/comments/1l77kjv/is_freshworks_freshservice_good_for_making_an_it/",
      "snippet": "Basically the title. I'm looking into various different IT service catalog products, and Freshworks / Freshservice seem good. To be clear, we don't need ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site",
+      "name"
+     ]
     },
     {
-     "title": "Has anyone here used Freshservice from Freshworks? : r/sysadmin",
-     "url": "https://www.reddit.com/r/sysadmin/comments/1hbip6n/has_anyone_here_used_freshservice_from_freshworks/",
-     "snippet": "We are getting rid of our MSP and my manager's boss want us to check and possibly use Freshworks' IT ticketing system. Has anyone used it? If so, any feedback?",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Freshworks Reviews : r/sysadmin",
+     "title": "Freshworks Reviews : r/sysadmin - Reddit",
      "url": "https://www.reddit.com/r/sysadmin/comments/wdhz31/freshworks_reviews/",
-     "snippet": "Freshworks Reviews Could I bother a couple of you fine people to write a quick review of your experience with any of the freshworks products ...",
-     "source": "reddit.com"
+     "snippet": "Could I bother a couple of you fine people to write a quick review of your experience with any of the freshworks products? I'm investigating the Freshdesk/FreshChat/ Freshservice products right now and they seems great. I manage IT systems for an organisation size of ~1300 employees.",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "What did Freshworks do right to inspire a wave of startups by its alumni?",
-     "url": "https://www.reddit.com/r/StartUpIndia/comments/1gzdutz/what_did_freshworks_do_right_to_inspire_a_wave_of/",
-     "snippet": "Why did Freshworks ALUMNI end up FOUNDING so many companies? Was it the work culture, the leadership, or just the kind of people they hired? Or ...",
-     "source": "reddit.com"
+     "title": "Anyone using Freshworks (freshdesk) Customer Service Suite ...",
+     "url": "https://www.reddit.com/r/smallbusiness/comments/192i1aw/anyone_using_freshworks_freshdesk_customer/",
+     "snippet": "Anyone using Freshworks (freshdesk) Customer Service Suite? Or alternative? Question",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Is Freshworks planning any layoffs in November 2026?",
-     "url": "https://www.reddit.com/r/QualityAssurance/comments/1xh1h8r/is_freshworks_planning_any_layoffs_in_november/",
-     "snippet": "Has anyone heard about any possible layoffs at Freshworks in November 2026? I'm seeing discussions about layoffs across the tech industry, so I ...",
-     "source": "reddit.com"
+     "title": "Freshworks : r/sysadmin - Reddit",
+     "url": "https://www.reddit.com/r/sysadmin/comments/1ddwnib/freshworks/",
+     "snippet": "It's a decent tool, although pretty limited compared to similar tools in the market that allow more automation, like Autotask or Halo, which are great for things like automatcially converting alerts from a monitoring system into tickets.",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Freshworks to cut 500 jobs, cites AI as the reason : r/BetterOffline",
-     "url": "https://www.reddit.com/r/BetterOffline/comments/1t5liyu/freshworks_to_cut_500_jobs_cites_ai_as_the_reason/",
-     "snippet": "Freshworks said on Tuesday it would cut 11% of its workforce, or about 500 jobs, as the business-software ​company navigates the ...",
-     "source": "reddit.com"
+     "title": "Freshworks Reviews : r/sysadmin - Reddit",
+     "url": "https://www.reddit.com/r/sysadmin/comments/8lt5ug/freshworks_reviews/",
+     "snippet": "Could I bother a couple of you fine people to write a quick review of your experience with any of the freshworks products? I'm investigating the call/chat/sales/desk products right now and they seems great, but my first phone interaction with them didn't go wel.",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Opinions on Freshworks? (compared to ZEN/NOW/TEAM)",
+     "url": "https://www.reddit.com/r/stocks/comments/tzfbg7/opinions_on_freshworks_compared_to_zennowteam/",
+     "snippet": "Freshworks is cheap in terms of price/sales (~7), revenue growth (~45%), and gross margin (~78%). Their numbers are a bit off because they had an IPO last year, causing one-time expenses, but looking beyond that the numbers look pretty promising to me, relative to their peers.",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "FreshService Ticketing system by FreshWorks : r/sysadmin - Reddit",
+     "url": "https://www.reddit.com/r/sysadmin/comments/cw4vdb/freshservice_ticketing_system_by_freshworks/",
+     "snippet": "FreshService Ticketing system by FreshWorks Anyone use FreshService? I really like it and I am trying to pull the trigger on the purchase for our internal HD but I want to gather opinions first. How is service, support, customer service, etc..?",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Freshworks suite of products: How to approach for ... - Reddit",
+     "url": "https://www.reddit.com/r/software/comments/16ugoas/freshworks_suite_of_products_how_to_approach_for/",
+     "snippet": "I know that Freshworks itself is not a product and one needs to subscribe to any of their suite of products. My query is how subscribers approach Freshworks in order to optimize subscription cost. To me, their products overlap. So for instance if I am running a call center, I may need Freshcaller.",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "What's the culture like at Freshworks? Bangalore office : r/developersIndia",
+     "url": "https://www.reddit.com/r/developersIndia/comments/1v3k15a/whats_the_culture_like_at_freshworks_bangalore/",
+     "snippet": "Hey everyone,\n\nI'm currently in the interview process for a role at Freshworks, and I'd love to hear from current employees or anyone who's worked ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
     },
     {
      "title": "Layoffs in freshworks looks mostly QAs : r/QualityAssurance",
      "url": "https://www.reddit.com/r/QualityAssurance/comments/1t58oyd/layoffs_in_freshworks_looks_mostly_qas/",
      "snippet": "Checked news about 11% layoffs in freshworks and LinkedIn shows lot of QAs/ sdet layoffs. Confused on what is happening.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Anyone using Freshworks (freshdesk) Customer Service Suite? Or ...",
-     "url": "https://www.reddit.com/r/smallbusiness/comments/192i1aw/anyone_using_freshworks_freshdesk_customer/",
-     "snippet": "I'm desperate to consolidate all of our client communication into one platform, and try some automations (like a self-service chatbot) to try to help ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -359,49 +413,28 @@
      "title": "Is Freshworks CRM better than Salesforce and HubSpot ...",
      "url": "https://www.quora.com/Is-Freshworks-CRM-better-than-Salesforce-and-HubSpot-CRM-in-2021",
      "snippet": "Is Freshworks CRM better than Salesforce and HubSpot CRM in 2021?",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Who is the founder & CEO of Freshworks? What does ...",
      "url": "https://www.quora.com/Who-is-the-founder-CEO-of-Freshworks-What-does-Freshworks-do",
      "snippet": "Who is the founder & CEO of Freshworks? What does Freshworks do?",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "What are the advantages of joining FreshWorks?",
      "url": "https://www.quora.com/What-are-the-advantages-of-joining-FreshWorks",
      "snippet": "What are the advantages of joining FreshWorks?",
-     "source": "quora.com"
-    },
-    {
-     "title": "Is Freshworks owned by Google?",
-     "url": "https://www.quora.com/Is-Freshworks-owned-by-Google",
-     "snippet": "On September 22, Freshworks raised over $1 billion via its IPO on Nasdaq. CapitalG owns around 8.2%, or $1 billion, of the firm's post-IPO ...",
-     "source": "quora.com"
-    },
-    {
-     "title": "Which is better for a startup, Zoho, Freshworks or Sobot?",
-     "url": "https://www.quora.com/Which-is-better-for-a-startup-Zoho-Freshworks-or-Sobot",
-     "snippet": "Which is better for a startup, Zoho, Freshworks or Sobot?",
-     "source": "quora.com"
-    },
-    {
-     "title": "Why is Freshworks registered in the US stock exchange and not in India ...",
-     "url": "https://www.quora.com/Why-is-Freshworks-registered-in-the-US-stock-exchange-and-not-in-India-What-are-the-pros-and-cons-of-it",
-     "snippet": "Why is Freshworks registered in the US stock exchange and not in India? What are the pros and cons of it?",
-     "source": "quora.com"
-    },
-    {
-     "title": "What is the success strategy of Freshworks?",
-     "url": "https://www.quora.com/What-is-the-success-strategy-of-Freshworks",
-     "snippet": "What is the success strategy of Freshworks?",
-     "source": "quora.com"
-    },
-    {
-     "title": "Freshworks launches its first solution with a unified data model ...",
-     "url": "https://zeebizsmallbusiness.quora.com/https-www-zeebiz-com-small-business-news-freshworks-launches-its-first-solution-with-a-unified-data-model-freshworks-c",
-     "snippet": "Has launched the Freshworks CRM for e-commerce, a customer relationship management solution with a unified customer record targeting digital retails and ...",
-     "source": "zeebizsmallbusiness.quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -413,59 +446,98 @@
      "title": "Freshworks (@freshworksinc) • Threads, Say more",
      "url": "https://www.threads.net/@freshworksinc",
      "snippet": "Freshworks (@freshworksinc) · July 30, 2026 at 4:18 AM. We're proud to announce that Freshworks has been recognized as a Leader in the 2026 Gartner® Magic ...",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Surag Pv (@surag_theclue)",
-     "url": "https://www.threads.net/@surag_theclue",
-     "snippet": "Engineer ‍ . Cook ‍ . Dancer . Freshworks Chennai|Hyderabad|Vadodara|Kerala. freshworks.com · 335 followers. Follow. Mention.",
-     "source": "threads.net"
+     "title": "Threads",
+     "url": "https://www.threads.net/t/DfI8_1CjXwS/embed/",
+     "snippet": "Not all who wander are lost, but this page is The link's not working or the page is gone. Go back to keep exploring.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Alvin Carpio (@alvincarpio)",
-     "url": "https://www.threads.net/@alvincarpio",
-     "snippet": "Our backers include a McKinsey Partner and former senior executives from Spotify, Freshworks, and Intel. We're now opening conversations with investors for ...",
-     "source": "threads.net"
+     "title": "Threads",
+     "url": "https://www.threads.net/@ariefkeano/post/DflbJCgCZQA/embed",
+     "snippet": "Threads ... Threads",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Sarvajit Krishna Mohan (@sarvajit_krishna)",
-     "url": "https://www.threads.net/@sarvajit_krishna?hl=vi",
-     "snippet": "2.1K Followers • 33 Threads • Biotechie • Music • Mridangist • Percussionist • Freshworks • Actor • Composer • Ilaiyaraja • SPB • A.R.Rahman • Ajith •...",
-     "source": "threads.net"
+     "title": "www.threads.net",
+     "url": "https://www.threads.net/@lonewolf.my/post/DE71UHzy9Zs?xmt=AQGziYOgzQJtsjHdGE2QmdFCvX8cYZYiT1ypmsz2VXG7ig%E9%80%99%E7%9F%AD%E7%89%87%E8%AE%93%E5%B0%8F%E5%BC%9F%E6%83%B3%E8%B5%B7%E8%87%AA%E5%B7%B1%E5%B0%8F%E6%99%82%E5%80%99%EF%BC%8C%E5%AF%AB%E4%BD%9C%E6%A5%AD%E6%99%82%E6%88%96%E5%9C%A8%E7%8E%A9%E8%80%8D%E6%99%82%EF%BC%8C%E5%BF%BD%E7%84%B6%E5%B0%8D%E6%96%B9%E4%B8%80%E5%80%8B%E8%8E%AB%E5%90%8D%E5%A5%87%E5%A6%99%E7%9A%84%E7%88%86%E7%82%B8%E6%83%85%E7%B7%92%EF%BC%8C%E8%80%8C%E5%9A%87%E5%88%B0%E8%87%AA%E5%B7%B1%EF%BC%8C%E4%B9%9F%E4%B8%8D%E6%98%8E%E7%99%BD%E8%87%AA%E5%B7%B1%E5%88%B0%E5%BA%95%E7%8A%AF%E4%BA%86%E4%BB%80%E9%BA%BC%E9%8C%AF%EF%BC%8C%E5%8D%BB%E8%A6%81%E8%A2%AB%E5%A6%82%E6%AD%A4%E5%B0%8D%E5%BE%85%EF%BC%8C%E5%88%B0%E4%BA%86%E4%B8%80%E5%AE%9A%E5%B9%B4%E7%B4%80%E4%B9%8B%E5%BE%8C%EF%BC%8C%E6%89%8D%E7%99%BC%E8%A6%BA%E5%8E%9F%E4%BE%86%E4%BB%96%E5%80%91%E5%8F%AA%E6%98%AF%E5%A3%93%E5%8A%9B%E5%A4%AA%E5%A4%A7%EF%BC%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5%EF%BC%8C%E5%8F%8D%E8%80%8C%E9%80%A0%E6%88%90%E5%B0%8D%E6%96%B9%E7%AB%A5%E5%B9%B4%E4%B8%8D%E5%8F%AF%E6%8A%B9%E5%8E%BB%E7%9A%84%E5%89%B5%E5%82%B7%E3%80%82%E7%95%B6%E6%82%A8%E6%83%85%E7%B7%92%E7%84%A1%E6%B3%95%E8%87%AA%E7%90%86%E6%99%82%EF%BC%8C%E8%AB%8B%E6%9A%AB%E6%99%82%E9%80%80%E9%96%8B%EF%BC%8C%E5%88%B0%E8%87%AA%E5%B7%B1%E5%B0%8F%E6%88%BF%E9%96%93%E6%88%96%E7%9B%B8%E5%B0%8D%E5%AE%89%E9%9D%9C%E7%9A%84%E7%A9%BA%E9%96%93%E6%A2%B3%E7%90%86%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%85%E7%B7%92%EF%BC%8C%E5%9C%A8%E4%BE%86%E5%A5%BD%E5%A5%BD%E4%BA%A4%E6%B5%81%EF%BC%8C%E6%88%96%E8%A8%B1%E6%BA%9D%E9%80%9A%E6%9C%83%E6%9B%B4%E5%8A%A0%E9%A0%86%E6%9A%A2%E3%80%82%E7%8F%BE%E5%9C%A8%E7%A4%BE%E6%9C%83%E6%AD%A5%E8%AA%BF%E8%B6%8A%E4%BE%86%E8%B6%8A%E5%BF%AB%EF%BC%8C%E5%B0%A4%E5%85%B6%E4%B8%89%E6%98%8E%E6%B2%BB%E5%AE%B6%E5%BA%AD%EF%BC%8C%E4%B8%8A%E6%9C%89%E8%80%81%E4%B8%8B%E6%9C%89%E5%B0%8F%E7%9A%84%E4%BA%BA%EF%BC%8C%E5%8F%AA%E8%A6%81%E5%AE%B6%E4%B8%AD%E4%B8%8D%E6%98%AF%E5%A4%AA%E6%9C%89%E9%8C%A2%E7%9A%84%EF%BC%8C%E5%A3%93%E5%8A%9B%E9%90%B5%E5%AE%9A%E6%98%AF%E7%84%A1%E6%AF%94%E5%B7%A8%E5%A4%A7%E7%9A%84%E3%80%82%E5%B0%8F%E5%BC%9F%E7%A5%9D%E7%A6%8F%E4%B8%96%E7%95%8C%E6%AF%8F%E5%80%8B%E5%AE%B6%E5%BA%AD%E9%83%BD%E8%83%BD%E6%8C%BA%E9%81%8E%E8%87%AA%E8%BA%AB%E9%9B%A3%E9%97%9C%EF%BC%8C%E4%B8%8A%E4%B8%80%E4%BB%A3%E7%9A%84%E5%89%B5%E5%82%B7%E7%95%99%E7%B5%A6%E6%AD%B7%E5%8F%B2%E5%B0%B1%E5%A5%BD%EF%BC%8C%E5%88%A5%E5%86%8D%E8%BC%95%E6%98%93%E5%B8%B6%E7%B5%A6%E5%BE%8C%E4%BB%A3%E4%B8%8D%E5%BF%85%E8%A6%81%E5%89%B5%E5%82%B7%E3%80%82%E8%AA%AA%E8%B5%B7%E4%BE%86%E5%AE%B9%E6%98%93%E5%81%9A%E8%B5%B7%E4%BE%86%E6%8C%BA%E9%9B%A3%E7%9A%84%EF%BC%8C%E4%BA%BA%E7%94%9F%E5%B0%B1%E6%98%AF%E9%80%99%E6%A8%A3%E5%AD%90%E7%B8%BD%E6%98%AF%E5%9C%A8%E5%AF%A6%E8%B8%90%E7%9A%84%E9%81%8E%E7%A8%8B%E4%B8%8D%E6%98%AF%E5%97%8E%EF%BC%9F",
+     "snippet": "www.threads.net",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Decalspotters",
-     "url": "https://www.threads.net/@decalspotters",
-     "snippet": "Freshworks will deliver IT-solutions to \"boost productivity through more efficient and improved IT-services\". The Freshworks logo will also appear on the ...",
-     "source": "threads.net"
+     "title": "www.threads.net",
+     "url": "https://www.threads.net/@kyontw/post/DFAGE1IPEr3?xmt=AQGzoB6wMIH6Mr_je3SlTfeiuDilY8y8E74GDTR55DTo2A%E8%AB%8B%E4%BA%BA%E5%B9%AB%E5%BF%99%E9%A9%97%E8%AD%89%E8%B3%87%E8%A8%8A%E5%85%B6%E5%AF%A6%E6%8C%BA%E7%B3%9F%E7%B3%95%E7%9A%84%EF%BC%8C%E5%9C%A8%E6%AD%A4%E5%85%88%E9%81%93%E6%AD%89%EF%BC%8C%E7%95%A2%E7%AB%9F%E6%88%91%E4%B9%9F%E5%8F%AA%E6%98%AF%E4%B8%80%E5%80%8B%E8%B7%9F%E8%91%97%E9%A2%A8%E5%90%91%E5%88%B0%E8%99%95%E9%A3%84%E4%BE%86%E9%A3%84%E5%8E%BB%E7%9A%84%E4%BA%BA%EF%BC%8C%E8%A6%AA%E6%88%9A%E8%BD%89%E5%82%B3%E4%BA%86%E4%B8%80%E5%80%8B%E9%80%99%E5%80%8B%EF%BC%8C%E7%B8%BD%E8%A6%BA%E5%BE%97%E5%83%8F%E6%98%AF%E7%B6%A0%E8%89%B2%E9%82%A3%E6%96%B9%E5%B0%91%E6%95%B8%E8%AC%9B%E7%9A%84%E6%AF%94%E8%BC%83%E6%9C%89%E7%90%86%E6%9C%89%E6%93%9A%E7%9A%84%E4%B8%80%E5%80%8B%E4%BA%BA%EF%BC%8C%E4%B8%8D%E7%84%B6%E5%85%B6%E4%BB%96%E5%9C%B0%E6%96%B9%E9%83%BD%E6%98%AF%E5%9C%A8%E9%9D%92%E9%B3%A5%E4%BA%82%E9%A3%9B%E8%9F%BE%E8%9C%8D%E4%BA%82%E5%8F%AB%E6%9C%80%E8%BF%91%E8%84%86%E4%B8%8A%E4%B9%9F%E6%9C%89%E6%B5%81%E5%82%B3%E4%B8%80%E5%BC%B5%E4%BB%8A%E5%B9%B4%E9%A0%90%E7%AE%97%E6%AF%94%E5%89%8D%E5%B9%BE%E5%B9%B4%E9%A0%90%E7%AE%97%E5%A4%9A%E7%9A%84%E5%9C%96%EF%BC%8C%E4%BD%86%E6%9C%83%E4%B8%8D%E6%9C%83%E9%82%A3%E4%B9%9F%E5%8F%AA%E6%98%AF%E6%B7%B7%E6%B7%86%E8%A6%96%E8%81%BD%EF%BC%8C%E7%95%A2%E7%AB%9F%E7%9C%8B%E7%B8%BD%E9%A0%90%E7%AE%97%E6%9C%AC%E4%BE%86%E5%B0%B1%E4%B8%8D%E6%BA%96%EF%BC%8C%E5%88%AA%E6%8E%89%E4%BA%86%E4%BB%80%E9%BA%BC%E7%B4%B0%E9%A0%85%E7%A2%BA%E5%AF%A6%E6%98%AF%E7%84%A1%E6%B3%95%E9%AB%94%E7%8F%BE%E5%9C%A8%E7%B8%BD%E9%A0%90%E7%AE%97%E4%B8%8A%E8%80%8C%E4%B8%94%E6%8F%90%E6%A1%88%E7%B8%BD%E9%A0%90%E7%AE%97%E9%80%99%E4%BB%B6%E4%BA%8B%E4%B8%8D%E6%98%AF%E6%87%89%E8%A9%B2%E8%A6%81%E6%98%AF%E5%80%8B%E5%9A%B4%E8%AC%B9%E7%9A%84%E6%B1%BA%E5%AE%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E5%8F%AA%E6%98%AF%E5%9B%A0%E7%82%BA%E8%A2%AB%E7%BD%B5%E5%B0%B1%E6%8A%98%E8%A1%B7%EF%BC%8C%E9%82%A3%E6%98%AF%E4%B8%8D%E6%98%AF%E7%AD%89%E6%96%BC%E7%95%B6%E5%88%9D%E6%8F%90%E6%A1%88%E5%B0%B1%E6%B2%92%E6%83%B3%E5%A5%BD%EF%BC%9F%E6%89%80%E4%BB%A5%E5%A5%BD%E5%A5%87%E4%BB%96%E8%AC%9B%E7%9A%84%E6%98%AF%E6%AD%A3%E7%A2%BA%E7%9A%84%E5%97%8E%EF%BC%9F",
+     "snippet": "www.threads.net",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Mathivathan Vhallatharasu (@_madhi)",
-     "url": "https://www.threads.net/@_madhi",
-     "snippet": "IIM Ahmedabad helped me land my first role in Product Marketing and Sales Enablement at Freshworks, which eventually led me into Product Management. At its ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "Lauren Duffey (@duffeygram)",
-     "url": "https://www.threads.net/@duffeygram",
-     "snippet": "... that supports a team built on the same values as Freshworks. #f1 #mclaren #oscarpiastri #zakbrown. @oscarpiastri. @mclaren. @f1. #freshworks. @freshworksinc.",
-     "source": "threads.net"
-    },
-    {
-     "title": "Prabhu P K (@iampkprabhu)",
-     "url": "https://www.threads.net/@iampkprabhu",
-     "snippet": "Elated to have completed my 34th marathon at the Freshworks Chennai Marathon ‍➡️ ! Kudos to Freshworks and Chennai Runners for a fantastically ...",
-     "source": "threads.net"
+     "title": "www.threads.net",
+     "url": "https://www.threads.net/@josephkojunkman/post/DDnzKooJrTi?xmt=AQGzxNmzmACDxb0_EOOOvKkzuzpIfuL3I7q8ZHJBvvauVQ%E5%89%9B%E5%89%9B%E5%9C%A8%E8%84%86%E6%BB%91%E5%88%B0%E9%80%99%E6%AE%B5%E5%BD%B1%E7%89%87%EF%BC%8C%E6%83%B3%E5%BC%95%E7%94%A8%E5%AE%83%E4%BE%86%E5%AF%AB%E6%96%87%E7%AB%A0%E3%80%82%E5%B0%8F%E6%99%82%E5%80%99%E5%BF%98%E8%A8%98%E6%98%AF%E4%B8%8A%E5%81%A5%E5%BA%B7%E6%95%99%E8%82%B2%E8%AA%B2%E5%97%8E%EF%BC%9F%E6%9C%89%E4%B8%8A%E9%81%8E%E8%A6%81%E5%B0%8F%E5%BF%83%E8%85%A6%E5%B9%B9%E9%80%99%E5%80%8B%E9%83%A8%E5%88%86%EF%BC%8C%E5%9B%A0%E7%82%BA%E4%B8%80%E6%97%A6%E5%8F%97%E5%82%B7%E5%AE%B9%E6%98%93%E5%B0%8E%E8%87%B4%E8%BA%AB%E9%AB%94%E7%9A%84%E7%99%B1%E7%98%93%E3%80%82%E4%BA%BA%E4%B8%80%E6%97%A6%E5%B0%8D%E8%87%AA%E5%B7%B1%E6%84%9F%E5%88%B0%E6%B2%92%E6%9C%89%E5%B8%8C%E6%9C%9B%EF%BC%8C%E5%8F%AA%E6%9C%83%E6%80%9D%E8%80%83%E5%A6%82%E4%BD%95%E5%BE%9E%E4%B8%96%E7%95%8C%E4%B8%8A%E6%B6%88%E5%A4%B1%E3%80%82%E8%87%AA%E5%B7%B1%E5%B7%B2%E7%B6%93%E9%81%8E%E5%B9%B4%E5%B0%91%E8%BC%95%E7%8B%82%E7%9A%84%E6%99%82%E6%9C%9F%EF%BC%8C%E4%BD%86%E6%AF%8F%E7%95%B6%E7%9C%8B%E5%88%B0%E5%BE%88%E5%A4%9A%E5%BC%9F%E5%BC%9F%E5%A6%B9%E5%A6%B9%E6%B1%82%E5%B8%A5%E6%B1%82%E6%96%B0%EF%BC%8C%E6%83%B3%E5%81%9A%E5%87%BA%E4%B8%80%E4%BA%9B%E8%AE%93%E4%BA%BA%E9%A9%9A%E8%89%B7%E3%80%81%E5%88%AE%E7%9B%AE%E7%9B%B8%E7%9C%8B%EF%BC%8C%E5%90%B8%E5%BC%95%E5%88%A5%E4%BA%BA%E7%9B%AE%E5%85%89%E7%9A%84%E4%BA%8B%E7%9A%84%E6%99%82%E5%80%99%E3%80%82%E6%88%91%E5%8F%AA%E6%83%B3%E8%91%97%E8%A6%81%E4%BB%96%E5%86%B7%E9%9D%9C%E5%88%A5%E8%A1%9D%E5%8B%95%EF%BC%8C%E5%9B%A0%E7%82%BA%E5%BE%88%E6%9C%89%E5%8F%AF%E8%83%BD%E4%BA%BA%E7%94%9F%E7%9A%84%E5%85%89%E6%98%8E%E5%B0%B1%E6%AD%A4%E9%BB%91%E6%9A%97%E3%80%82%E5%B0%A4%E5%85%B6%E6%9C%89%E4%BA%BA%E5%8F%97%E4%B8%8D%E4%BA%86%E4%BA%BA%E7%94%9F%E7%9A%84%E6%8C%AB%E6%95%97%E5%A4%B1%E8%90%BD%EF%BC%8C%E5%8B%95%E4%B8%8D%E5%8B%95%E5%B0%B1%E7%9B%B4%E6%8E%A5%E9%81%B8%E3%80%8C%E5%B0%8B%E6%AD%BB%E3%80%8D%E6%9B%B4%E6%98%AF%E3%80%82%E7%B5%95%E5%B0%8D%E6%B2%92%E6%83%B3%E9%81%8E%EF%BC%8C%E8%90%AC%E4%B8%80%E4%B8%80%E6%AC%A1%E6%B2%92%E6%AD%BB%E6%88%90%EF%BC%8C%E8%AE%8A%E6%88%90%E6%A4%8D%E7%89%A9%E4%BA%BA%E6%9B%B4%E7%97%9B%E8%8B%A6%E8%90%AC%E5%88%86%E3%80%82%E5%8F%AA%E6%83%B3%E8%91%97%E4%B8%80%E5%BF%83%E8%A7%A3%E8%84%AB%E5%B0%B1%E5%A5%BD%E3%80%82%E7%9C%8B%E7%9C%8B%E9%80%99%E5%80%8B%E5%BD%B1%E7%89%87%EF%BC%8C%E6%83%B3%E6%83%B3%E8%87%AA%E5%B7%B1%E9%82%84%E5%BE%88%E5%B9%B8%E7%A6%8F%E3%80%82%E5%AD%B8%E7%BF%92%E4%BA%BA%E5%AE%B6%E7%9A%84%E5%8B%87%E6%95%A2%E3%80%81%E4%B8%8D%E7%95%8F%E6%87%BC%EF%BC%8C%E5%A5%BD%E5%A5%BD%E6%B4%BB%E5%9C%A8%E9%80%99%E5%80%8B%E4%B8%96%E7%95%8C%E4%B9%9F%E6%98%AF%E4%B8%80%E5%80%8B%E5%BE%88%E6%A3%92%E7%9A%84%E6%88%90%E5%B0%B1%EF%BC%81",
+     "snippet": "www.threads.net",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     }
    ]
   }
  },
+ "overview": {
+  "siteFound": true,
+  "siteRank": 1,
+  "profiles": [
+   {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/channel/UCYtaa2E7NSvf3uD9DbsDYZA"
+   },
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/freshworksinc/?hl=en"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://in.linkedin.com/company/freshworks-inc"
+   }
+  ]
+ },
+ "searches": 14,
  "checks": [
   {
    "url": "https://www.youtube.com/c/FreshworksInc",
    "ok": true,
    "channelId": "UCYtaa2E7NSvf3uD9DbsDYZA",
    "name": "Freshworks",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/@FreshworksInc",
+   "ok": true,
+   "channelId": "UCYtaa2E7NSvf3uD9DbsDYZA",
+   "name": "Freshworks",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/c/FreshdeskAcademy",
+   "ok": true,
+   "channelId": "UC8mYPsVzn6ki4m9bziz3W8w",
+   "name": "Academy Freshworks",
    "mentionsSite": true
   },
   {

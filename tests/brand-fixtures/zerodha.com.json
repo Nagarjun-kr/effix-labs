@@ -1,5 +1,5 @@
 {
- "capturedAt": "2026-11-21T13:34:26.213Z",
+ "capturedAt": "2026-11-21T14:29:51.120Z",
  "identity": {
   "name": "Zerodha",
   "domain": "zerodha.com",
@@ -42,52 +42,94 @@
    "query": "\"Zerodha\" site:youtube.com",
    "results": [
     {
+     "title": "How Does Zerodha Handle ₹9 Lakh Crore With Just 35 ...",
+     "url": "https://www.youtube.com/watch?v=YWVesafIZXc",
+     "snippet": "On 3 February 2026, Kite froze at · on one of the biggest trading mornings of the year, and everyone blamed the same thing: Zerodha is too small.",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
      "title": "In The Money by Zerodha",
      "url": "https://www.youtube.com/@InTheMoneybyZerodha",
      "snippet": "In The Money is an education initiative by Zerodha, built to explore trading and active investing with nuance, data, and depth. ...more",
-     "source": "youtube.com"
-    },
-    {
-     "title": "Zerodha Varsity",
-     "url": "https://www.youtube.com/@varsitybyzerodha",
-     "snippet": "Varsity is an extensive and in-depth collection of stock market and financial lessons created by Karthik Rangappa at Zerodha. It is openly accessible to ...",
-     "source": "youtube.com"
-    },
-    {
-     "title": "Zerodha",
-     "url": "https://www.youtube.com/@zerodhaonline",
-     "snippet": "Welcome to Zerodha's official YouTube channel. Here you'll find product updates, tutorials, company announcements, and conversations with the people who ...",
-     "source": "youtube.com"
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "How to open Zerodha demat account - Indian Sign Language",
      "url": "https://www.youtube.com/watch?v=E9UTqgaHrU4",
-     "snippet": "Want to open a demat and trading account with Zerodha? In this video, we'll walk you through the complete step-by-step process, ...",
-     "source": "youtube.com"
+     "snippet": "Want to open a demat and trading account with Zerodha? In this video, we'll walk you through the complete step-by-step process, ...",
+     "source": "youtube.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Zerodha",
+     "url": "https://www.youtube.com/@zerodhaonline",
+     "snippet": "Welcome to Zerodha's official YouTube channel. Here you'll find Ask Me Anything (AMA) with Nithin, Nikhil, Kailash, Venu and Karthik",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
     },
     {
      "title": "Zero1 by Zerodha",
      "url": "https://www.youtube.com/@Zero1byZerodha",
-     "snippet": "Zero1 by Zerodha · 3 stocks to buy on Monday · 3 Numbers You MUST Check Before Investing in Mutual Funds · 3 Mutual Fund Mistakes That Could Cost You Money.",
-     "source": "youtube.com"
-    },
-    {
-     "title": "How to use Zerodha's Kite web trading platform: Complete tutorial",
-     "url": "https://www.youtube.com/watch?v=G6saugMSM1Q",
-     "snippet": "In this video, you will learn how to use Zerodha's Kite web platform to easily manage your trades and investments.",
-     "source": "youtube.com"
+     "snippet": "Zero to 1 Course on investing & retiring early · We'll start from the basics, set up your first SIP, build your first portfolio, and finally make a retire early ...",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
     },
     {
      "title": "Markets by Zerodha",
      "url": "https://www.youtube.com/@marketsbyzerodha",
-     "snippet": "Markets by Zerodha is an education initiative by Zerodha. The idea is simple: explain what's happening in markets, business and the economy in plain English ...",
-     "source": "youtube.com"
+     "snippet": "Markets by Zerodha is an education initiative by Zerodha. A daily podcast that simplifies the biggest stories that are moving the Indian markets.",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Zerodha Varsity",
+     "url": "https://www.youtube.com/@varsitybyzerodha",
+     "snippet": "Varsity is an extensive and in-depth collection of stock market and financial lessons created by Karthik Rangappa at Zerodha. 5.19K subscribers",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
     },
     {
      "title": "Zerodha Trading Tutorial for BEGINNERS 2026",
      "url": "https://www.youtube.com/watch?v=QaKbnXndWUY",
-     "snippet": "Complete Zerodha Kite Tutorial - stock investing| Ankur Warikoo Hindi. warikoo · 2.5M views ; Build a Trading Algo with AI | No Coding Required.",
-     "source": "youtube.com"
+     "snippet": "Zerodha Trading Tutorial for BEGINNERS 2026 | Account Opening, Buy, Sell, GTT Order … 2.3M views 6y ago. No Coding Required",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Zerodha",
+     "url": "https://www.youtube.com/@zerodhaonline/videos",
+     "snippet": "Welcome to Zerodha's official YouTube channel. Here you'll find product updates, tutorials, company announcements, and conversations with the people who work ...",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Complete Zerodha Kite tutorial for Beginners",
+     "url": "https://www.youtube.com/watch?v=mKmD70bPLUY",
+     "snippet": "This video will explain you about how you could use the Zerodha KITE app. This is an in-depth tutorial on Zerodha , Cover Order, Limit, AMO and ...",
+     "source": "youtube.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -99,49 +141,29 @@
      "title": "Zerodha (@zerodhaonline) • Instagram photos and videos",
      "url": "https://www.instagram.com/zerodhaonline/",
      "snippet": "331K followers · 1.2K+ posts · Welcome to your friendly neighbourhood brokerage. Zerodha Broking Limited | SEBI Reg. No.: INZ000031633 | DP Reg. No.",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site",
+      "overview"
+     ]
+    },
+    {
+     "title": "Reason behind two different Zerodha apps and what next. ...",
+     "url": "https://www.instagram.com/reel/DbS-Aj1o5Bd/",
+     "snippet": "Zerodha has introduced a facility that allows resident Indians to invest in US-listed stocks · 1.6 crore users. About 0.5% of revenue on ads.",
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Zerodha Varsity (@zerodhavarsity)",
      "url": "https://www.instagram.com/zerodhavarsity/",
      "snippet": "November's schedule for Zerodha Varsity Live is here! If you're looking to strengthen your financial foundation, and get your doubts cleared, these sessions are ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Zerodha Just Opened the Door to US Stocks 🇺🇸 Indian investors can now ...",
-     "url": "https://www.instagram.com/reel/DevpMg-yi7j/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Zero1 by Zerodha (@zero1byzerodha)",
-     "url": "https://www.instagram.com/zero1byzerodha/",
-     "snippet": "A place where money meets pop culture⚡️. zero1byzerodha. Follow. Message. Accounts you might like. zerodhavarsity's profile picture · Zerodha Varsity.",
-     "source": "instagram.com"
-    },
-    {
-     "title": "In Her Interest By Zerodha Varsity (@inherinterest)",
-     "url": "https://www.instagram.com/inherinterest/",
-     "snippet": "Womoneysta was proud to partner with In Her Interest by Zerodha to create more spaces where women can learn, question, understand and take charge of their ...",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Watch the full video on Zerodha YouTube channel. Link in bio.",
-     "url": "https://www.instagram.com/reel/Dc0z0nyogAM/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Reason behind two different Zerodha apps and what next. Watch the full ...",
-     "url": "https://www.instagram.com/reel/DbS-Aj1o5Bd/",
-     "snippet": "",
-     "source": "instagram.com"
-    },
-    {
-     "title": "Zerodha has launched US stock and ETF investing directly on its Kite ...",
-     "url": "https://www.instagram.com/reel/DewTeYzhXrl/",
-     "snippet": "",
-     "source": "instagram.com"
+     "source": "instagram.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -152,50 +174,93 @@
     {
      "title": "Zerodha | Bengaluru",
      "url": "https://www.facebook.com/zerodha.social/",
-     "snippet": "Zerodha, Bengaluru. 140955 followers · 58 talking about this · 683 were here. Welcome to your friendly neighbourhood brokerage. https://zerodha.com/...",
-     "source": "facebook.com"
+     "snippet": "Zerodha, Bengaluru. 140969 followers · 72 talking about this · 683 were here. Welcome to your friendly neighbourhood brokerage. https://zerodha.com/...",
+     "source": "facebook.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
-     "title": "#WATCH | How Is Zerodha Putting Guardrails On Risky F&O Trading? ...",
-     "url": "https://www.facebook.com/etnow/videos/watch-how-is-zerodha-putting-guardrails-on-risky-fo-tradingsomnath-mukherjee-vp-/1759145088694275/",
-     "snippet": "",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Indian brokerage Zerodha has launched US stock investing through ...",
-     "url": "https://www.facebook.com/indianstartupnews/posts/indian-brokerage-zerodha-has-launched-us-stock-investing-through-its-kite-platfo/1758485295911028/",
-     "snippet": "Zerodha has launched US stock and ETF investing directly on its Kite platform. Eligible resident Indian investors can access around 2,000 US- ...",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Zerodha Co-Founder Nikhil Kamath explains why he's doubling down on ...",
-     "url": "https://www.facebook.com/BloombergTelevision/videos/zerodha-co-founder-nikhil-kamath-explains-why-hes-doubling-down-on-india-despite/36492433987067786/",
-     "snippet": "",
-     "source": "facebook.com"
-    },
-    {
-     "title": "Discount brokerage Zerodha has unveiled US stock investing in beta ...",
+     "title": "Discount brokerage Zerodha has unveiled US stock ...",
      "url": "https://www.facebook.com/etnow/posts/discount-brokerage-zerodha-has-unveiled-us-stock-investing-in-beta-mode-for-sele/1542334991258733/",
      "snippet": "Zerodha has launched US stock and ETF investing directly on its Kite platform. Eligible resident Indian investors can access around 2,000 US- ...",
-     "source": "facebook.com"
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "What Does Zerodha Company Do",
-     "url": "https://www.facebook.com/fb-answers/what-does-zerodha-company-do/",
-     "snippet": "Zerodha's core business is discount broking — it provides an online platform for retail investors and traders to buy and sell stocks, futures, options and ...",
-     "source": "facebook.com"
+     "title": "How Is Zerodha Putting Guardrails On Risky F&O Trading? ...",
+     "url": "https://www.facebook.com/etnow/videos/watch-how-is-zerodha-putting-guardrails-on-risky-fo-tradingsomnath-mukherjee-vp-/1759145088694275/",
+     "snippet": "The speaker explains that Zerodha is a risky investment due to its dependence on the price of equity cash. He details how the strike price of ...",
+     "source": "facebook.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Zerodha Users Discussion Group 💹💖",
-     "url": "https://www.facebook.com/groups/zerodhakiteapp/",
-     "snippet": "Zerodha - A revolutionary online trading platform designed for active traders to buy and sell securities under a never seen before brokerage-free model.",
-     "source": "facebook.com"
+     "title": "Zerodha - کور | فېسبوک",
+     "url": "https://m.facebook.com/pages/Zerodha/1550062655086839?locale=ps_AF",
+     "snippet": "Zerodha, ‎‏‎Bangalore‎‏، ‏‎Karnataka‎‏، ‏‎India‎‏‎. ‎لېوالتيا‎‎ Zerodha - Bangalore، Karnataka، India",
+     "source": "m.facebook.com",
+     "via": [
+      "name"
+     ]
     },
     {
-     "title": "How to Invest in US Stocks Using Zerodha: US Shares, Tesla, Apple",
-     "url": "https://www.facebook.com/pokkiri.vfc.3/videos/how-to-invest-in-us-stocks-using-zerodhazerodha-us-investing-us-shares-tesla-app/3021537308179299/",
-     "snippet": "",
-     "source": "facebook.com"
+     "title": "Surat Zerodha",
+     "url": "https://www.facebook.com/surat.zerodha/",
+     "snippet": "Surat Zerodha je na Facebooku. Přidejte se na Facebook a spojte se s Suratem Zerodhou a dalšími lidmi, které znáte. Facebook dává lidem příležitost...",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "zerodha_india",
+     "url": "https://www.facebook.com/p/zerodha_india-100066728230057/",
+     "snippet": "Largest stock broker in India 4+ million Zerodha clients contribute to over 15% of all retail order volumes in India daily Invest in everything Online ...",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Zerodha Trading Secrets.",
+     "url": "https://www.facebook.com/groups/1469632126403471/",
+     "snippet": "7.1K members · I am not SEBI Registered, just sharing my opinion, Before investing explore more and discuss with your financial advisor!!",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "ZERODHA Traders",
+     "url": "https://www.facebook.com/groups/195307477725363/",
+     "snippet": "Aaj ka market strong raha – Bank stocks ne rally lead ki, expiry day par volatility high rahi. #Nifty #Sensex #StockMarketIndia.",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Zerodha Vizag",
+     "url": "https://www.facebook.com/zerodha.vizag.1/",
+     "snippet": "Zerodha Vizag yupo kwenye Facebook. Jiunge na Facebook kuwasiliana na Zerodha Vizag na wengine unaowafahamu. Facebook inawapa watu uwezo wa kushirikiana...",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "ZERODHA STOCK TRADERS GROUP",
+     "url": "https://www.facebook.com/groups/zerodhastocktradersgroup/",
+     "snippet": "हम निफ्टी बैंकनिफ्टी में ट्रेडिंग कराते है जिसे 2से 10 लाख लॉस है एक वीक रिकॉबर कर के देगे ...",
+     "source": "facebook.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -205,51 +270,31 @@
    "results": [
     {
      "title": "Zerodha",
-     "url": "https://in.linkedin.com/company/zerodha",
+     "url": "https://lc.linkedin.com/company/zerodha",
      "snippet": "Zerodha is an Indian financial services company (member of NSE, BSE, MCX) that offers brokerage-free equity investments, retail, institutional broking, ...",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "Nithin Kamath - Founder & CEO at Zerodha & Rainmatter. Learning at ...",
-     "url": "https://in.linkedin.com/in/nithin-kamath-81136242",
-     "snippet": "Over a decade of trading the markets for a living. Felt the fatigue, and with Zerodha decided to be the catalyst for change and started a brokerage firm ...",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "Zerodha Varsity",
-     "url": "https://www.linkedin.com/company/varsity-by-zerodha%C2%AE",
-     "snippet": "Varsity is an extensive and in-depth collection of stock market and financial lessons created by Karthik Rangappa at Zerodha. It is openly accessible to ...",
-     "source": "linkedin.com"
+     "source": "lc.linkedin.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "Zerodha Clone – Stock Trading & Investment Platform",
      "url": "https://www.linkedin.com/products/miracuves-zerodha-clone-%E2%80%93-stock-trading-investment-platform/",
      "snippet": "Zerodha Clone by Miracuves is a white-label stock trading and investment platform built for fintech startups, brokerage businesses, and entrepreneurs. It ...",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "In Her Interest by Zerodha Varsity",
-     "url": "https://www.linkedin.com/showcase/in-her-interest/",
-     "snippet": "In Her Interest is Zerodha's exclusive community platform designed to make women's financial education accessible, engaging, and empowering.",
-     "source": "linkedin.com"
-    },
-    {
-     "title": "I emailed Nikhil Kamath that I have to delete my Zerodha account. | Sachin ...",
-     "url": "https://www.linkedin.com/posts/jha-sachin_customerobsessed-founderwisdom-startupsuccess-activity-7308743218945277953-cNxQ",
-     "snippet": "Loved how Zerodha didn't just reply—they responded with intent, clarity, and a roadmap. That's how trust is built, even when the outcome doesn't ...",
-     "source": "linkedin.com"
+     "source": "linkedin.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Zerodha Jobs in India (3000+ Open Roles)",
      "url": "https://in.linkedin.com/jobs/zerodha-jobs",
      "snippet": "3,000+ Zerodha Jobs in India · Associate Director · Product Content Creator · Field Recruiter - Bangalore · Video Editor & YouTube Live Broadcast Coordinator · Back ...",
-     "source": "in.linkedin.com"
-    },
-    {
-     "title": "Making US Stock Investing Easy for Indians | Rohit S Kumar",
-     "url": "https://www.linkedin.com/posts/rohit-s-kumar_finance-investing-linkedin-activity-7389858669753982976-h927",
-     "snippet": "Zerodha's initiative will simplify US stock investing for Indians, enhance global access, and boost financial inclusion. Excited to see how this ...",
-     "source": "linkedin.com"
+     "source": "in.linkedin.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -261,49 +306,38 @@
      "title": "Zerodha",
      "url": "https://x.com/zerodha",
      "snippet": "Welcome to your friendly neighbourhood brokerage. Zerodha Broking Limited | SEBI Registration No.: INZ000031633 | DP Registration No.: IN-DP-431-2019.",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site",
+      "overview"
+     ]
     },
     {
      "title": "ZerodhaVarsity - Varsity",
      "url": "https://x.com/ZerodhaVarsity",
      "snippet": "Simplifying markets, trading, and investing. Everything you need to know to make your first investment. Bengaluru, India. zerodha.",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Nithin Kamath (@Nithin0dha) / X",
      "url": "https://x.com/Nithin0dha",
      "snippet": "Founder & CEO @Zerodha @Rainmatterin Learning at @RainmatterOrg Musings on business & life: nithinkamath.me. Views are personal, Nothing is advice. Bengaluru.",
-     "source": "x.com"
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Coin by Zerodha (@CoinByZerodha) ...",
-     "url": "https://x.com/CoinByZerodha",
-     "snippet": "India's largest direct mutual funds platform by @zerodha. Zerodha Broking Limited | SEBI Registration No.: INZ000031633 | DP Registration No.",
-     "source": "x.com"
-    },
-    {
-     "title": "Markets by Zerodha (@zerodhamarkets ...",
-     "url": "https://x.com/zerodhamarkets",
-     "snippet": "Markets by Zerodha · Zerodha · @zerodhamarkets · Nov 12. Indonesia sells ... Markets by Zerodha · Zerodha · @zerodhamarkets · Nov 5. India's solar factories are ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Zero1 by Zerodha (@Zero1ByZerodha ...",
-     "url": "https://x.com/Zero1ByZerodha",
-     "snippet": "Zero1 by Zerodha. 631 posts. Zero1 by Zerodha profile banner. @Zero1ByZerodha. Zero1 by Zerodha. @Zero1ByZerodha. A place where money meets pop culture⚡️.",
-     "source": "x.com"
-    },
-    {
-     "title": "Replies by Coin by Zerodha (@CoinByZerodha) ...",
-     "url": "https://x.com/CoinByZerodha/with_replies",
-     "snippet": "Hi, UPI payments are already available on the Coin app. You can set up in-app UPI using your primary bank account linked to Zerodha and make mutual fund ...",
-     "source": "x.com"
-    },
-    {
-     "title": "Hanan Delvi (@hanandelvi) / X",
-     "url": "https://x.com/hanandelvi",
-     "snippet": "My lessons from 25 years of trading and interactions with thousands of traders on what it takes to be a profitable trader. zerodha.com/z-connect/trad… 9.",
-     "source": "x.com"
+     "title": "Why “a nice place to work” doesn't just happen...",
+     "url": "https://x.com/@Nithin0dha",
+     "snippet": "Zerodha only exists in its current form because of the culture, mission, and philosophy at the top. Lakhs of people follow our every move, read ...",
+     "source": "x.com",
+     "via": [
+      "site"
+     ]
     }
    ]
   },
@@ -312,52 +346,96 @@
    "query": "\"Zerodha\" site:reddit.com",
    "results": [
     {
-     "title": "Zerodha once dominated the brokerage industry but is now losing ...",
+     "title": "Zerodha once dominated the brokerage industry but is now ...",
      "url": "https://www.reddit.com/r/IndianStockMarket/comments/1xq06le/zerodha_once_dominated_the_brokerage_industry_but/",
      "snippet": "Zerodha has lost around 32,400 active clients in Oct. Meanwhile, India's stockbroking industry added 6.15 lakh active clients.",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Why I still use zerodha after years of trading : r/IndianStreetBets",
-     "url": "https://www.reddit.com/r/IndianStreetBets/comments/1rv7cbe/why_i_still_use_zerodha_after_years_of_trading/",
-     "snippet": "I’ve been trading for a few years now, mostly equities, some F&O, and the occasional IPO.\n\nEvery time someone suggests switching brokers because another ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Zerodha Just Made Low-Cost US Investing a Lot More Competitive!",
-     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1xapyqp/zerodha_just_made_lowcost_us_investing_a_lot_more/",
-     "snippet": "Zerodha has entered the US stock investing space with brokerage of just 0.1% (minimum $0.01 per order), compared to Groww's $1 and Angel ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Zerodha!!! : r/IndianStockMarket",
-     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1hggk6i/zerodha/",
-     "snippet": "Zerodha appears to be losing its status as the preferred brokerage firm, as it seems to be falling behind competitors such as IND Money, ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "Are there any legitimate reason(s) why I should not trade with Zerodha?",
-     "url": "https://www.reddit.com/r/IndiaInvestments/comments/ly2ues/are_there_any_legitimate_reasons_why_i_should_not/",
-     "snippet": "The reason why I ask this question is because, most long term investors in my family/friends (primarily 55+ yr olds) believe that new age companies should ...",
-     "source": "reddit.com"
-    },
-    {
-     "title": "How Zerodha is causing losses to its customers : r/IndiaInvestments",
-     "url": "https://www.reddit.com/r/IndiaInvestments/comments/g6lsnf/how_zerodha_is_causing_losses_to_its_customers/",
-     "snippet": "I moved from MO to Zerodha and Zerodha is just better in every aspect. ... Over 25% of funds trading on Zerodha's platform are Zerodha's itself.",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site",
+      "name"
+     ]
     },
     {
      "title": "What do you'll think about Zerodha? : r/IndianStockMarket",
      "url": "https://www.reddit.com/r/IndianStockMarket/comments/1en37ya/what_do_youll_think_about_zerodha/",
      "snippet": "I've been Zerodha user for quite a long time(more than 7-8years). I used to like Zerodha for it's simplicity and ease of use and the innovation that they ...",
-     "source": "reddit.com"
+     "source": "reddit.com",
+     "via": [
+      "site",
+      "name"
+     ]
     },
     {
-     "title": "Zerodha is launching US Stock Investing very soon. Pricing Out!",
-     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1x85ujz/zerodha_is_launching_us_stock_investing_very_soon/",
-     "snippet": "Zerodha is launching the beta of US Stock Investing very soon. The pricing is already live on the website and it is one of the cheapest ...",
-     "source": "reddit.com"
+     "title": "Zerodha Just Made Low-Cost US Investing a Lot More ...",
+     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1xapyqp/zerodha_just_made_lowcost_us_investing_a_lot_more/",
+     "snippet": "Zerodha has entered the US stock investing space with brokerage of just 0.1% (minimum $0.01 per order), compared to Groww's $1 and Angel ...",
+     "source": "reddit.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Why I still use zerodha after years of trading : r/IndianStreetBets",
+     "url": "https://www.reddit.com/r/IndianStreetBets/comments/1rv7cbe/why_i_still_use_zerodha_after_years_of_trading/",
+     "snippet": "I’ve been trading for a few years now, mostly equities, some F&O, and the occasional IPO.\n\nEvery time someone suggests switching brokers because another ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Switching from Groww to Zerodha",
+     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1lckgtc/switching_from_groww_to_zerodha_want_honest/",
+     "snippet": "Overall experience is great. For delivery its a great platform. · Customer support used to be great, but recently its started on downtrend. This ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "r/IndiaInvestments",
+     "url": "https://www.reddit.com/r/IndiaInvestments/comments/bhv18e/we_are_zerodha_indias_largest_retail_stock_broker/",
+     "snippet": "Hello Reddit. We are Zerodha. We started out in 2010 as a discount stock brokerage, and have pioneered and scaled discount broking over the last ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Mutual funds & ETFs",
+     "url": "https://www.reddit.com/r/IndiaInvestments/comments/hsut4c/how_good_is_zerodha_for_investing_in_mfs/",
+     "snippet": "I’m new to the whole concept of investing, so I’ve been using Zerodha’s “Varsity” page to guide me through.\n\nI wanted to know how good Zerodha’s ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Zerodha what do they do different?",
+     "url": "https://www.reddit.com/r/StockMarketIndia/comments/1ngl9mk/zerodha_what_do_they_do_different/",
+     "snippet": "I admire these guys but I don't get few points. They have never taken external funding even now they don't want IPO. Starting a brokerage requires 25-50 ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "HOW SAFE IS ZERODHA",
+     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1nofneh/how_safe_is_zerodha/",
+     "snippet": "As i started investing through zerodha in mutual funds and stocks i got doubt now i have registered online with E sign photo etc now iam curious about the ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Why do traders stick to Zerodha?",
+     "url": "https://www.reddit.com/r/IndianStockMarket/comments/1o9xkup/why_do_traders_stick_to_zerodha/",
+     "snippet": "Of late, I have observed that technical issues at Zerodha being reported on the social media. It makes me question, why does someone stick to the platform ...",
+     "source": "reddit.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -366,34 +444,94 @@
    "query": "\"Zerodha\" site:quora.com",
    "results": [
     {
+     "title": "Is Zerodha a safe platform for buying stocks?",
+     "url": "https://www.quora.com/Is-Zerodha-a-safe-platform-for-buying-stocks",
+     "snippet": "Is Zerodha a safe platform for buying stocks?",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Zerodha",
+     "url": "https://www.quora.com/profile/Zerodha-5",
+     "snippet": "Zerodha, India's largest brokerage.. Welcome to your friendly neighbourhood brokerage. For support queries, visit support.zerodha.com.",
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
      "title": "Quora - A place to share knowledge and better understand the ...",
      "url": "https://www.quora.com/",
      "snippet": "Quora is a place to gain and share knowledge. It's a platform to ask questions and connect with people who contribute unique insights and quality answers. This empowers people to learn from each other and to better understand the world.",
-     "source": "quora.com"
+     "source": "quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "q.quora.com",
      "url": "https://q.quora.com/_/ad/e602d09d9d5f4d13a5a231e0715b78d4/pixel?tag=ViewContent&noscript=1",
      "snippet": "Quora is a platform to ask questions, share knowledge, and connect with people for unique insights and quality answers.",
-     "source": "q.quora.com"
-    },
-    {
-     "title": "ভাষা - Quora",
-     "url": "https://bn.quora.com/about/languages",
-     "snippet": "পৃষ্ঠাটি রিফ্রেশ করার চেষ্টা করুন বা পরে আবার চেষ্টা করুন৷",
-     "source": "bn.quora.com"
+     "source": "q.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "アカウントを削除する – Quora ヘルプセンター",
      "url": "https://help.quora.com/hc/ja/articles/360027958171-%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E5%89%8A%E9%99%A4%E3%81%99%E3%82%8B",
      "snippet": "ユーザーは、ご自分のQuoraアカウントを削除できます。 1．削除前の注意事項 アカウントが削除されると、以下の情報も削除されますのでご注意下さい。 写真や経歴等を含むプロフィール 回答 コメント ブログ投稿 他のユーザーが投稿したコンテンツへの評価 高評価 メッセージ Quoraにある質問 ...",
-     "source": "help.quora.com"
+     "source": "help.quora.com",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Press - Quora",
-     "url": "https://www.quora.com/press",
-     "snippet": "Try refreshing the page, or try again later. Refresh Page",
-     "source": "quora.com"
+     "title": "ভাষা - Quora",
+     "url": "https://bn.quora.com/about/languages",
+     "snippet": "পৃষ্ঠাটি রিফ্রেশ করার চেষ্টা করুন বা পরে আবার চেষ্টা করুন৷",
+     "source": "bn.quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "How do I delete my Quora account? - Quora Help Center",
+     "url": "https://help.quora.com/hc/en-us/articles/115004250866-How-do-I-delete-my-Quora-account",
+     "snippet": "How do I delete my Quora account? Quora allows users to delete their account if they choose to do so. Deleting your Quora account means that the following content will be removed from public view: ...",
+     "source": "help.quora.com",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Tech lelated post - Sanraj official - Quora",
+     "url": "https://sanrajofficial.quora.com/what-is-zerodha-Zerodha-is-a-prominent-discount-brokerage-firm-based-in-India-It-offers-online-trading-services-in-st",
+     "snippet": "what is zerodha? Zerodha is a prominent discount brokerage firm based in India. It offers online trading services in stocks, commodities ...",
+     "source": "sanrajofficial.quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "What is Zerodha, and what services does it provide to Indian investors?",
+     "url": "https://stockmarketencyclopedia.quora.com/https-stockmarketinvestments-quora-com-https-austinlobosspacegoldandsilveryoursavings-quora-com-https-virajpatelsspace",
+     "snippet": "What is Zerodha, and what services does it provide to Indian investors? One stop solution for all your financial & stock market queries!",
+     "source": "stockmarketencyclopedia.quora.com",
+     "via": [
+      "name"
+     ]
+    },
+    {
+     "title": "Is Zerodha a safe platform for buying stocks? - Bank Updates - Quora",
+     "url": "https://bankupdates.quora.com/https-www-quora-com-Is-Zerodha-a-safe-platform-for-buying-stocks-answer-Anish-Jha-188",
+     "snippet": "Online Platforms Zerodha Investing Financial Security Stock Markets Finance & Financial ・ reading with Quora+ ・ 15.5M content views6.7K this ...",
+     "source": "bankupdates.quora.com",
+     "via": [
+      "name"
+     ]
     }
    ]
   },
@@ -404,54 +542,74 @@
     {
      "title": "Zerodha (@zerodhaonline)",
      "url": "https://www.threads.net/@zerodhaonline?hl=de",
-     "snippet": "Commodity markets closing time has been revised from 11:30 PM to 11:55 PM due to the change in US daylight saving time, from today, November 2, 2026. zerodha.",
-     "source": "threads.net"
-    },
-    {
-     "title": "Verified P&L link: https://console.zerodha.com/verified/44b27df1",
-     "url": "https://www.threads.net/@zerodhaonline/post/C-umjClve1a",
-     "snippet": "Across Zerodha, here's roughly the percentage of individual traders who are profitable: - Futures: ≈50% - Option sellers: ≈40% - Option ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "The NSE will exclude 16 stocks from the F&O segment starting February 28, ...",
-     "url": "https://www.threads.net/@zerodhaonline/post/DDzbL4AiodM",
-     "snippet": "Zerodha (@zerodhaonline). 1 Reply. 29K Views. The NSE will exclude 16 stocks from the F&O segment starting February 28, 2025, ...",
-     "source": "threads.net"
+     "snippet": "Join us on Saturday, 31st October, for a Zerodha Varsity Live session with Pensionbox, where we'll explain what's changed under NPS 3.0, how the new rules ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Top 10 Unlisted Companies 1. National Stock Exchange ...",
-     "url": "https://www.threads.net/@ipo.ji/post/DGZ1HiORvDA/top-10-unlisted-companies1-national-stock-exchange-of-india-limited-nse2-serum-i?hl=en",
-     "snippet": "Top 10 Unlisted Companies 1. National Stock Exchange Of India Limited (NSE) 2. Serum Institute Of India 3. ZOHO Corporation 4. Zerodha 5. Megha.",
-     "source": "threads.net"
-    },
-    {
-     "title": "Boosan Babu Manoharan (@finance.boosan)",
-     "url": "https://www.threads.net/@finance.boosan",
-     "snippet": "Zerodha has just made it free to open an account for all resident Indians, dropping their previous fee of ₹200-300. This move comes as they face more ...",
-     "source": "threads.net"
-    },
-    {
-     "title": "Swing Intraday Trader (@intraday.learner)",
-     "url": "https://www.threads.net/@intraday.learner",
-     "snippet": "... Learn from me everyday India's BEST #Demat #Account opening. zerodha.com/open-account · investing · Dating Threads · investing · Dating Threads. + 1. 6,167 ...",
-     "source": "threads.net"
+     "url": "https://www.threads.net/@ipo.ji",
+     "snippet": "Angel One has overtaken Zerodha to become India's second-largest stockbroker by active investors on the National Stock Exchange (NSE), as ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
      "title": "Within 1 year I have made a profit of ₹1 crore 3, Lakh",
-     "url": "https://www.threads.net/@bashawazuddin/post/DIYHdXSqB0j/within-1-year-i-have-made-a-profit-of-1-crore-3-lakhthere-is-loss-as-well-as-pro?hl=en-gb",
+     "url": "https://www.threads.net/@shainana109",
      "snippet": "... I have to earn this much income daily, only then you will be able to recover your loss in the long term. console.zerodha.com/verif… 3.",
-     "source": "threads.net"
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     },
     {
-     "title": "Here's everything you need to know about the ITC demerger.",
-     "url": "https://www.threads.net/@zerodhaonline/post/DEeET38PQ8V?hl=en",
-     "snippet": "Normal trading will resume from 10 AM. Learn more about the pre-open session here: support.zerodha.com/categ…",
-     "source": "threads.net"
+     "title": "Zero1 by Zerodha (@zero1byzerodha)",
+     "url": "https://www.threads.net/@zero1byzerodha",
+     "snippet": "Zero1 by Zerodha. zero1byzerodha. zero1byzerodha's profile picture. Building a fun repository of meaningful lessons for everything related to money, finance ...",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
+    },
+    {
+     "title": "Zerodha · 18K threads",
+     "url": "https://www.threads.net/tag/Zerodha",
+     "snippet": "33 recent threads · Discover conversations, thoughts, photos and videos related to Zerodha on Threads.",
+     "source": "threads.net",
+     "via": [
+      "site"
+     ]
     }
    ]
   }
  },
+ "overview": {
+  "siteFound": true,
+  "siteRank": 1,
+  "profiles": [
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/zerodhaonline/?hl=en"
+   },
+   {
+    "platform": "Facebook",
+    "url": "https://www.facebook.com/zerodha.social/"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://in.linkedin.com/company/zerodha"
+   },
+   {
+    "platform": "X",
+    "url": "https://x.com/zerodha"
+   }
+  ]
+ },
+ "searches": 14,
  "checks": [
   {
    "url": "https://youtube.com/user/zerodhaonline",
@@ -475,17 +633,17 @@
    "mentionsSite": true
   },
   {
-   "url": "https://www.youtube.com/@varsitybyzerodha",
-   "ok": true,
-   "channelId": "UCQXwgooTlP6tk2a-u6vgyUA",
-   "name": "Zerodha Varsity",
-   "mentionsSite": true
-  },
-  {
    "url": "https://www.youtube.com/@Zero1byZerodha",
    "ok": true,
    "channelId": "UCUUlw3anBIkbW9W44Y-eURw",
    "name": "Zero1 by Zerodha",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/@marketsbyzerodha",
+   "ok": true,
+   "channelId": "UCXbKJML9pVclFHLFzpvBgWw",
+   "name": "Markets by Zerodha",
    "mentionsSite": true
   }
  ]

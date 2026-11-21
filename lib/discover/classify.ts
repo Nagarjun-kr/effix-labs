@@ -10,6 +10,7 @@ export type ResultTag = {
   checked?: "yours" | "other";
   otherSite?: string;
   sameChannel?: boolean; // YouTube @handle resolved to the channel the site links to
+  besideSite?: boolean; // Google showed it beside your website when searching your brand name
 };
 
 const segs = (u: URL) => u.pathname.split("/").filter(Boolean);
@@ -44,8 +45,8 @@ function kindFor(platform: string, u: URL): { kind: Kind; handle: string | null 
       if (first === "groups") return { kind: "community", handle: s[1] ?? null };
       return { kind: "page", handle: null };
     case "X":
-      if (s.length >= 2 && s[1] === "status") return { kind: "post", handle: first };
-      if (s.length === 1 && !["search", "hashtag", "explore", "i", "home"].includes(first)) return { kind: "profile", handle: first };
+      if (s.length >= 2 && s[1] === "status") return { kind: "post", handle: first.replace(/^@/, "") };
+      if (s.length === 1 && !["search", "hashtag", "explore", "i", "home"].includes(first)) return { kind: "profile", handle: first.replace(/^@/, "") };
       return { kind: "page", handle: null };
     case "Reddit":
       if ((first === "r" || first === "user" || first === "u") && s.length >= 3 && s[2] === "comments") return { kind: "thread", handle: null };
@@ -106,7 +107,8 @@ export function normUrl(raw: string) {
     let host = u.hostname.toLowerCase().replace(/^www\./, "");
     if (host.split(".").length > 2) host = host.replace(/^(m|mobile|[a-z]{2})\./, ""); // m.youtube.com, in.linkedin.com
     host = host.replace(/^twitter\.com$/, "x.com");
-    return (host + u.pathname.replace(/\/+$/, "")).toLowerCase();
+    const path = host === "x.com" ? u.pathname.replace(/^\/@/, "/") : u.pathname; // x.com/@name = x.com/name
+    return (host + path.replace(/\/+$/, "")).toLowerCase();
   } catch {
     return raw.toLowerCase();
   }
@@ -198,13 +200,14 @@ export function platformStatus(linked: boolean, all: ResultTag[] | null): Status
 
 export type Profile = { platform: string; url: string };
 export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
-export type Mention = { title: string; url: string; snippet: string; source: string };
+export type Mention = { title: string; url: string; snippet: string; source: string; via?: string[] };
+export type Overview = { siteFound: boolean; siteRank: number | null; profiles: { platform: string; url: string }[] };
 export type PlatformResult = { platform: string; query: string; results: Mention[]; error?: boolean };
 export type Mentions =
   | { status: "loading" }
   | { status: "off" }
   | { status: "error"; message: string }
-  | { status: "done"; brand: string; byPlatform: Record<string, PlatformResult> };
+  | { status: "done"; brand: string; byPlatform: Record<string, PlatformResult>; overview?: Overview };
 
 export const PLATFORMS = [
   { name: "YouTube", domain: "youtube.com", sym: "▶" },
@@ -235,7 +238,7 @@ export type Row = {
 
 /** Readable address: no protocol/www/m., no tracking query (except YouTube video ids), no trailing slash. */
 export const shortUrl = (u: string) => {
-  let x = u.replace(/^https?:\/\/(www\.|m\.)?/, "");
+  let x = u.replace(/^https?:\/\/(www\.|m\.|mobile\.)?/, "");
   if (/profile\.php\?/.test(x)) x = x.replace(/(\?id=\d+).*$/, "$1"); // Facebook page number is the address
   else if (!/youtube\.com\/watch/.test(x)) x = x.replace(/\?.*$/, "");
   return x.replace(/\/$/, "");
@@ -257,11 +260,12 @@ export function buildRows(identity: Identity, mentions: Mentions, brand: string,
   });
   const linkedAll = (name: string) => profiles.filter((x) => x.platform === name).map((x) => x.url);
   const officialHandles = handlesOf(profiles);
+  const beside = besideSiteKeys(mentions);
   // Handles confirmed on other platforms (profile mentions your website / opened and links to it) count like linked ones.
   if (mentions.status === "done") {
     for (const p of PLATFORMS) {
       for (const m of mentions.byPlatform[p.name]?.results ?? []) {
-        const t = applyCheck({ m, t: tagResult(p.name, m.url, brand, linkedAll(p.name), `${m.title} ${m.snippet}`, identity.domain) }, checks, linkedAll(p.name)).t;
+        const t = markBeside(applyCheck({ m, t: tagResult(p.name, m.url, brand, linkedAll(p.name), `${m.title} ${m.snippet}`, identity.domain) }, checks, linkedAll(p.name)), beside).t;
         if (t.kind === "profile" && t.matchesBrand && (t.mentionsSite || t.checked === "yours") && t.handle) officialHandles.add(squash(decodeURIComponent(t.handle)));
       }
     }
@@ -286,10 +290,10 @@ export function buildRows(identity: Identity, mentions: Mentions, brand: string,
     const tagged = ok
       ? ok.results
           .map((m) => ({ m, t: tagResult(p.name, m.url, brand, urls, `${m.title} ${m.snippet}`, identity.domain, officialHandles) }))
-          .map((x) => applyCheck(x, checks, urls))
+          .map((x) => markBeside(applyCheck(x, checks, urls), beside))
           .sort((a, b) => score(b.t) - score(a.t))
       : null;
-    const bestProfile = tagged?.find((x) => x.t.official) ?? tagged?.find((x) => x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand && x.t.checked !== "other") ?? null;
+    const bestProfile = tagged?.find((x) => x.t.official && x.t.kind === "profile") ?? tagged?.find((x) => x.t.official) ?? tagged?.find((x) => x.t.kind === "profile" && x.t.matchesBrand && (x.t.mentionsSite || x.t.sameHandle)) ?? tagged?.find((x) => isProfile(x.t) && x.t.matchesBrand && x.t.checked !== "other") ?? null;
     const linkedKeys = new Set(urls.map((u) => lastSegment(u)));
     const extras = link && tagged
       ? tagged.filter((x, i, all) => {
@@ -311,7 +315,7 @@ export function buildActions(rows: Row[], brand: string): Action[] {
   const none: string[] = [];
   for (const r of rows) {
     if (r.status === "likely" && r.bestProfile) {
-      const why = r.bestProfile.t.checked === "yours" ? "links to your website (we checked the profile)" : r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as your other profiles";
+      const why = r.bestProfile.t.checked === "yours" ? "links to your website (we checked the profile)" : r.bestProfile.t.besideSite ? "appears next to your website when people search your name on Google" : r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as your other profiles";
       out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} ${why}, but your website doesn't link to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
     }
     if (r.status === "possible" && r.bestProfile) {
@@ -340,6 +344,16 @@ export function buildActions(rows: Row[], brand: string): Action[] {
   }
   const order = { high: 0, medium: 1, low: 2 };
   return out.sort((a, b) => order[a.level] - order[b.level]);
+}
+
+/** Accounts Google listed in the top results for the brand name, next to the brand's own website. */
+function besideSiteKeys(mentions: Mentions) {
+  if (mentions.status !== "done" || !mentions.overview?.siteFound) return new Set<string>();
+  return new Set(mentions.overview.profiles.map((p) => normUrl(p.url)));
+}
+function markBeside(x: { m: Mention; t: ResultTag }, keys: Set<string>) {
+  if (!keys.has(normUrl(x.m.url)) || x.t.kind !== "profile") return x;
+  return { m: x.m, t: { ...x.t, besideSite: true, mentionsSite: true } };
 }
 
 function applyCheck(x: { m: Mention; t: ResultTag }, checks: Record<string, ProfileCheck>, linkedUrls: string[]) {
@@ -393,4 +407,27 @@ export function presenceOf(rows: Row[]) {
   const confirmed = rows.filter((r) => r.status === "official" || r.status === "likely").length;
   const toVerify = rows.filter((r) => r.status === "possible" && r.bestProfile?.t.kind === "profile").length;
   return { confirmed, toVerify, total: confirmed + toVerify };
+}
+
+/** A search result as the search API returns it. */
+export type Organic = { title?: string; link?: string; snippet?: string; displayedLink?: string };
+
+/** Serper sometimes returns Google's redirect (google.com/goto?url=…) instead of the real address. The display line
+ *  ("https://www.youtube.com › @digifortex") still shows it, so rebuild the address from there when it's complete. */
+export function realLink(r: Organic): string | null {
+  const link = r.link ?? "";
+  if (!/^https?:\/\//.test(link)) return null;
+  let h = "";
+  try {
+    h = new URL(link).hostname.toLowerCase();
+  } catch {
+    return null;
+  }
+  if (!/(^|\.)google\.[a-z.]+$/.test(h) || !/^\/(goto|url)/.test(new URL(link).pathname)) return link;
+  const shown = (r.displayedLink ?? "").trim();
+  const m = shown.match(/^(?:https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,})((?:\s*›\s*[^›]+)*)$/i);
+  if (!m) return null;
+  const segs = m[2].split("›").map((x) => x.trim()).filter(Boolean);
+  if (segs.some((x) => /\.\.\.|…|\s/.test(x))) return null; // shortened: the exact page is unknown
+  return `https://${m[1].toLowerCase()}/${segs.join("/")}`;
 }
