@@ -83,3 +83,19 @@
     });
   }, { threshold: 0.15 }).observe(section);
 })();
+
+/* Principles card: a soft purple glow follows the cursor (mouse devices only). */
+(function () {
+  var panel = document.querySelector('.principles-editorial-panel');
+  if (!panel || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  var raf = 0, x = 0, y = 0;
+  function paint() { raf = 0; panel.style.setProperty('--mx', x + 'px'); panel.style.setProperty('--my', y + 'px'); }
+  function move(e) {
+    var r = panel.getBoundingClientRect();
+    x = e.clientX - r.left; y = e.clientY - r.top;
+    if (!raf) raf = requestAnimationFrame(paint);
+  }
+  panel.addEventListener('pointerenter', function (e) { move(e); paint(); panel.classList.add('is-glow'); });
+  panel.addEventListener('pointermove', move);
+  panel.addEventListener('pointerleave', function () { panel.classList.remove('is-glow'); });
+})();

@@ -4226,25 +4226,21 @@
     }
 
 /* ==========================================================================
-   Principles: a pale purple panel fills the column you hover (or focus)
+   Principles: a pale purple glow follows the cursor around the card
+   (public/js/home/05.js sets --mx / --my; mouse devices only)
    ========================================================================== */
-.principles-col { position: relative; isolation: isolate; }
-.principles-col::before {
-  content: ""; position: absolute; z-index: -1; inset: -26px 18px -26px 18px; border-radius: 24px;
-  background: linear-gradient(180deg, rgba(167, 139, 250, 0.16), rgba(167, 139, 250, 0.07));
-  box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.22);
-  opacity: 0; transform: scale(0.98); transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+.principles-editorial-panel { overflow: hidden; isolation: isolate; }
+.principles-editorial-panel > * { position: relative; z-index: 1; }
+.principles-editorial-panel::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 50%), rgba(167, 139, 250, 0.34), rgba(196, 181, 253, 0.16) 38%, transparent 68%);
+  opacity: 0; transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.principles-col:first-child::before { left: -26px; }
-.principles-col:last-child::before { right: -26px; }
-.principles-col:hover::before, .principles-col:focus-within::before { opacity: 1; transform: none; }
+.principles-editorial-panel.is-glow::before { opacity: 1; }
 .principles-col-num, .principles-col-title { transition: color 0.3s ease; }
-.principles-col:hover .principles-col-num { color: #7c5cf0; }
-.principles-col:hover .principles-col-title { color: #3b2a8a; -webkit-text-stroke-color: #3b2a8a; }
-@media (max-width: 900px) {
-  .principles-col::before { inset: -12px -14px; }
-  .principles-col:first-child::before, .principles-col:last-child::before { left: -14px; right: -14px; }
-}
+.principles-editorial-panel.is-glow .principles-col:hover .principles-col-num { color: #7c5cf0; }
+.principles-editorial-panel.is-glow .principles-col:hover .principles-col-title { color: #3b2a8a; -webkit-text-stroke-color: #3b2a8a; }
+@media (prefers-reduced-motion: reduce) { .principles-editorial-panel::before { transition: none; } }
 
 /* ==========================================================================
    FAQ: wider list (less empty space at the sides)
