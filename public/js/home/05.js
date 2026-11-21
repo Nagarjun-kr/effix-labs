@@ -83,13 +83,14 @@
   }, { threshold: 0.15 }).observe(section);
 })();
 
-/* Principles card: a soft purple glow follows the cursor (shown by CSS :hover; this only moves it). */
+/* Principles card: a soft purple glow follows the cursor over the 01 / 02 / 03 columns (CSS shows it; this moves it). */
 (function () {
   var panel = document.querySelector('.principles-editorial-panel');
-  if (!panel) return;
+  var cols = panel && panel.querySelector('.principles-columns-grid');
+  if (!panel || !cols) return;
   var raf = 0, x = 0, y = 0;
   function paint() { raf = 0; panel.style.setProperty('--mx', x + 'px'); panel.style.setProperty('--my', y + 'px'); }
-  panel.addEventListener('pointermove', function (e) {
+  cols.addEventListener('pointermove', function (e) {
     var r = panel.getBoundingClientRect();
     x = e.clientX - r.left; y = e.clientY - r.top;
     if (!raf) raf = requestAnimationFrame(paint);

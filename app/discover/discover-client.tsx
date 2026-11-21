@@ -9,7 +9,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { checkTargets, type Overview, type ProfileCheck } from "@/lib/discover/classify";
 import { displayHost, parseWebsite } from "@/lib/discover/input";
-import Report, { Logo as PlatformLogo, type Identity, type Mentions, type PlatformResult } from "./report";
+import Report, { Orb as PlatformOrb, type Identity, type Mentions, type PlatformResult } from "./report";
 import Scan, { type ScanStage, type SearchProgress } from "./scan";
 
 type Phase = "start" | "scan" | "done";
@@ -177,6 +177,18 @@ export default function DiscoverClient() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /** Banner scene shifts gently with the mouse (like the Reddit service page banner). */
+  const parallax = (e: React.PointerEvent<HTMLElement>) => {
+    if (e.pointerType !== "mouse") return;
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mx", (((e.clientX - r.left) / r.width - 0.5) * 2).toFixed(3));
+    e.currentTarget.style.setProperty("--my", (((e.clientY - r.top) / r.height - 0.5) * 2).toFixed(3));
+  };
+  const parallaxReset = (e: React.PointerEvent<HTMLElement>) => {
+    e.currentTarget.style.setProperty("--mx", "0");
+    e.currentTarget.style.setProperty("--my", "0");
+  };
+
   if (phase === "start") return <div className="sc" aria-busy="true"><div className="sc-bg" aria-hidden="true" /></div>;
   if (phase === "scan") return <Scan stage={stage} domain={website} brand={searched || identity?.name || ""} progress={progress} error={error} />;
 
@@ -232,41 +244,42 @@ export default function DiscoverClient() {
 
             <p className="dx-coverage"><strong>Coverage note.</strong> Each audit runs a fresh, step-by-step Google search: your brand name, then each of the eight platforms (re-checked when results are thin), with a second look where no account turns up. Up to ten results are kept per platform. Private, blocked or differently named pages may not appear. YouTube channels are confirmed by opening their public page; other platforms block automated visits, so their status comes from search evidence. Platform logos are trademarks of their owners.</p>
 
-            <section className="cta2" aria-labelledby="cta2-t">
-              <div className="cta2-glow" aria-hidden="true" />
-              <div className="cta2-copy">
-                <span className="cta2-kicker"><i aria-hidden="true" /> Next step</span>
-                <h2 id="cta2-t">Want to show up <em>in more places?</em></h2>
-                <p>Effix Labs helps businesses get found on Google, in online communities and in AI search, with honest reporting and no fake reviews or accounts.</p>
-                <div className="cta2-actions">
-                  <a className="cta2-primary" href="mailto:hello@effix.co.in?subject=Visibility%20audit%20for%20my%20brand">
-                    Email hello@effix.co.in <span aria-hidden="true">→</span>
+            <section className="cta3" aria-labelledby="cta3-t" onPointerMove={parallax} onPointerLeave={parallaxReset}>
+              <div className="cta3-copy">
+                <span className="cta3-kicker">Next step</span>
+                <h2 id="cta3-t" className="cta3-title"><span>Want to show up</span><br /><strong>IN MORE PLACES?</strong></h2>
+                <p className="cta3-sub"><b>Google, communities and AI search.</b> Effix Labs helps you get found there, with honest reporting and no fake reviews or accounts.</p>
+                <div className="cta3-actions">
+                  <a className="cta3-btn" href="mailto:hello@effix.co.in?subject=Visibility%20audit%20for%20my%20brand">
+                    Email hello@effix.co.in
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </a>
-                  <span className="cta2-reply"><i aria-hidden="true" /> We reply within one business day</span>
+                  <span className="cta3-reply"><i aria-hidden="true" /> Reply within one business day</span>
                 </div>
+                <nav className="cta3-services" aria-label="Effix Labs services">
+                  <a href="/services/google-business-profile">Google Business Profile</a>
+                  <a href="/services/reddit-marketing">Reddit Marketing</a>
+                  <a href="/services/seo-aeo-services">SEO &amp; AEO</a>
+                  <a href="/services/content-writing">Content Writing</a>
+                </nav>
               </div>
-              <div className="cta2-grid">
-                {[
-                  { href: "/services/google-business-profile", title: "Google Business Profile", text: "Show up on Maps and local search", icon: "Google" },
-                  { href: "/services/reddit-marketing", title: "Reddit Marketing", text: "Be part of the conversations people trust", icon: "Reddit" },
-                  { href: "/services/seo-aeo-services", title: "SEO & AEO", text: "Rank on Google and in AI answers", icon: "seo" },
-                  { href: "/services/content-writing", title: "Content Writing", text: "Pages and posts that answer real questions", icon: "pen" },
-                ].map((c) => (
-                  <a key={c.href} className="cta2-card" href={c.href}>
-                    <span className="cta2-ic">
-                      {c.icon === "seo" ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>
-                      ) : c.icon === "pen" ? (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
-                      ) : (
-                        <PlatformLogo name={c.icon} size={20} />
-                      )}
-                    </span>
-                    <strong>{c.title}</strong>
-                    <small>{c.text}</small>
-                    <span className="cta2-arrow" aria-hidden="true">→</span>
-                  </a>
-                ))}
+              <div className="cta3-scene" aria-hidden="true">
+                <span className="cta3-float f1"><PlatformOrb name="Reddit" size={54} /></span>
+                <span className="cta3-float f2"><PlatformOrb name="LinkedIn" size={46} /></span>
+                <span className="cta3-float f3"><PlatformOrb name="Instagram" size={42} /></span>
+                <span className="cta3-float f4"><PlatformOrb name="YouTube" size={50} /></span>
+                <div className="cta3-badge">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="#fff" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d="M12 7.5L7.5 12L12 16.5L16.5 12L12 7.5Z" stroke="#fff" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <span className="cta3-badge-shadow" />
+                <span className="cta3-chip c1"><b>✓</b> Found on Google</span>
+                <span className="cta3-chip c2"><b>▲</b> Mentioned in communities</span>
+                <span className="cta3-chip c3"><b>✦</b> In AI answers</span>
+                <span className="cta3-sphere" />
+                <span className="cta3-cone" />
               </div>
             </section>
           </div>

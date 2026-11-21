@@ -4227,16 +4227,16 @@
 
 /* ==========================================================================
    Principles: a pale purple glow follows the cursor around the card.
-   CSS :hover shows it; public/js/home/05.js only moves it (--mx / --my).
+   It shows only while the cursor is over the 01 / 02 / 03 columns; public/js/home/05.js moves it (--mx / --my).
    ========================================================================== */
 .principles-editorial-panel { overflow: hidden; isolation: isolate; }
 .principles-editorial-panel > * { position: relative; z-index: 1; }
 .principles-editorial-panel::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(560px circle at var(--mx, 85%) var(--my, 15%), rgba(139, 92, 246, 0.32), rgba(167, 139, 250, 0.16) 40%, transparent 70%);
+  background: radial-gradient(560px circle at var(--mx, 85%) var(--my, 15%), rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.1) 40%, transparent 70%);
   opacity: 0; transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.principles-editorial-panel:hover::before { opacity: 1; }
+.principles-editorial-panel:has(.principles-columns-grid:hover)::before { opacity: 1; } /* only over the 01 / 02 / 03 columns */
 .principles-col-num, .principles-col-title { transition: color 0.3s ease; }
 .principles-col:hover .principles-col-num { color: #7c5cf0; }
 .principles-col:hover .principles-col-title { color: #3b2a8a; -webkit-text-stroke-color: #3b2a8a; }
