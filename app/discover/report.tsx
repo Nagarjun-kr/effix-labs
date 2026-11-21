@@ -42,6 +42,31 @@ export function Logo({ name, size = 18 }: { name: string; size?: number }) {
   );
 }
 
+/** Glossy 3D bubble in the platform's colours with a white logo, like the Reddit service page badge. */
+const ORB: Record<string, [string, string, string]> = {
+  YouTube: ["#ff8a80", "#ff2d2d", "#b80000"],
+  Instagram: ["#ffd27a", "#f04e7c", "#7b3fd3"],
+  Facebook: ["#8fb8ff", "#1a6dff", "#0a43b8"],
+  LinkedIn: ["#7fbcf0", "#1677d2", "#0a4f94"],
+  X: ["#6b6b6b", "#262626", "#000000"],
+  Reddit: ["#ff9a6e", "#ff5a1f", "#c23a08"],
+  Quora: ["#f07f73", "#c9302c", "#8a1712"],
+  Threads: ["#6b6b6b", "#2b2b2b", "#000000"],
+};
+export function Orb({ name, size = 56, float = true }: { name: string; size?: number; float?: boolean }) {
+  const i = BRAND_ICONS[name];
+  const c = ORB[name] ?? ["#ddd", "#999", "#555"];
+  return (
+    <span className={`orb ${float ? "is-float" : ""}`} style={{ width: size, height: size, ["--o1" as string]: c[0], ["--o2" as string]: c[1], ["--o3" as string]: c[2] }} aria-hidden="true">
+      {i && (
+        <svg width={Math.round(size * 0.48)} height={Math.round(size * 0.48)} viewBox={`0 0 ${i.w} ${i.h}`}>
+          <path d={i.d} fill="#fff" />
+        </svg>
+      )}
+    </span>
+  );
+}
+
 const ICON: Record<string, ReactNode> = {
   search: <><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></>,
   doc: <><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></>,
@@ -56,25 +81,25 @@ const Ico = ({ n, size = 20 }: { n: string; size?: number }) => (
 const KIND_ORDER: [string, string][] = [["profile", "Profiles"], ["community", "Communities"], ["post", "Posts"], ["video", "Videos"], ["thread", "Discussions"], ["article", "Articles"], ["page", "Other pages"]];
 const DONUT: Status[] = ["official", "likely", "possible", "mentions", "none"];
 
-/** One plain sentence: why this platform got its status. */
+/** A few words: why this platform got its status. */
 function reasonFor(r: { status: Status; linked: { url: string } | null; bestProfile: { t: { besideSite?: boolean; mentionsSite?: boolean; sameHandle?: boolean; checked?: string; sameChannel?: boolean } } | null; extras: unknown[]; result: unknown }) {
   const t = r.bestProfile?.t;
   switch (r.status) {
     case "official":
-      return r.extras.length ? "Linked from your website. Another account also uses your name here." : t?.sameChannel ? "Linked from your website and confirmed on YouTube." : "Linked from your website.";
+      return r.extras.length ? "Linked on your site · another account uses your name" : t?.sameChannel ? "Linked on your site · channel confirmed" : "Linked on your website";
     case "likely":
-      if (t?.checked === "yours") return "The profile links back to your website.";
-      if (t?.besideSite) return "Google shows it next to your website when people search your name.";
-      if (t?.mentionsSite) return "The profile mentions your website.";
-      return "Uses the same handle as your other confirmed accounts.";
+      if (t?.checked === "yours") return "Profile links to your website";
+      if (t?.besideSite) return "Shown beside your site on Google";
+      if (t?.mentionsSite) return "Profile mentions your website";
+      return "Same handle as your other accounts";
     case "possible":
-      return "Uses your name, but nothing proves it's yours. Check it.";
+      return "Uses your name · not confirmed";
     case "mentions":
-      return "People mention you here, but no account with your name was found.";
+      return "Mentioned, but no account found";
     case "none":
-      return "Google shows nothing for your name on this platform.";
+      return "Nothing on Google";
     default:
-      return "Not searched.";
+      return "Not searched";
   }
 }
 
@@ -87,6 +112,8 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
   const [view, setView] = useState("all");
   const [allOpps, setAllOpps] = useState(false);
   const [openOpp, setOpenOpp] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({}); // platforms showing all results
+  const SHOWN = 5;
   const rows = useMemo(() => buildRows(identity, mentions, brand, checks), [identity, mentions, brand, checks]);
   const actions = useMemo(() => (mentions.status === "done" ? buildActions(rows, brand) : []), [rows, mentions.status, brand]);
   const found = rows.filter((r) => r.status === "official" || r.status === "likely").length;
@@ -193,24 +220,21 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
             const n = r.result?.results.length ?? 0;
             return (
               <article key={r.name} className={`pp-card ps-${r.status}`}>
-                <div className="pp-top">
-                  <span className="pp-logo"><Logo name={r.name} size={22} /></span>
-                  <strong>{r.name}</strong>
-                  <em className={`pp-pill ps-${r.status}`}><i aria-hidden="true" />{st.label}</em>
+                <div className="pp-orb">
+                  <Orb name={r.name} size={58} />
+                  <span className="pp-orb-shadow" aria-hidden="true" />
                 </div>
-                <div className="pp-account">
-                  <span className="pp-label">Account</span>
-                  {account ? (
-                    <a href={account.url} target="_blank" rel="noopener noreferrer nofollow">{shortUrl(account.url)} <span aria-hidden="true">↗</span></a>
-                  ) : (
-                    <span className="pp-none">No account found</span>
-                  )}
-                </div>
+                <strong className="pp-name">{r.name}</strong>
+                <em className={`pp-pill ps-${r.status}`}><i aria-hidden="true" />{st.label}</em>
+                {account ? (
+                  <a className="pp-acc" href={account.url} target="_blank" rel="noopener noreferrer nofollow" title={shortUrl(account.url)}>{shortUrl(account.url).replace(/^[a-z]{2}\./, "")}</a>
+                ) : (
+                  <span className="pp-acc is-none">No account found</span>
+                )}
                 <p className="pp-why">{reasonFor(r)}</p>
-                <div className="pp-foot">
-                  <span>{r.result ? `${n} Google result${n === 1 ? "" : "s"}` : "Not searched"}</span>
-                  <button type="button" onClick={() => openPlatform(r.name)}>View results <span aria-hidden="true">→</span></button>
-                </div>
+                <button type="button" className="pp-view" onClick={() => openPlatform(r.name)}>
+                  {r.result ? `${n} result${n === 1 ? "" : "s"}` : "Not searched"} <span aria-hidden="true">→</span>
+                </button>
               </article>
             );
           })}
@@ -348,8 +372,9 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
                   <div className="dx-results" aria-busy="true">{[0, 1, 2].map((k) => <div key={k} className="dx-skel"><i /><i /><i /></div>)}</div>
                 ) : r.tagged ? (
                   r.tagged.length ? (
+                    <>
                     <ol className="dx-results">
-                      {r.tagged.map(({ m, t }) => (
+                      {(expanded[r.name] || view === r.name ? r.tagged : r.tagged.slice(0, SHOWN)).map(({ m, t }) => (
                         <li key={m.url} className={`dx-hit ${t.official ? "is-official" : ""}`}>
                           <div className="rp-tags">
                             <em className={`rp-kind k-${t.kind}`}>{t.label}</em>
@@ -364,6 +389,12 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
                         </li>
                       ))}
                     </ol>
+                      {r.tagged.length > SHOWN && view !== r.name && (
+                        <button type="button" className="dx-more" onClick={() => setExpanded((x) => ({ ...x, [r.name]: !x[r.name] }))}>
+                          {expanded[r.name] ? "Show fewer" : `Show ${r.tagged.length - SHOWN} more`}
+                        </button>
+                      )}
+                    </>
                   ) : (
                     <p className="dx-empty">No results for “{brand}” on {r.name}. If people know you by another name, change it above and search again.</p>
                   )

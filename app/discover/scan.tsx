@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 
+import { Orb } from "./report";
+
 /* eslint-disable @next/next/no-html-link-for-pages -- links to the homepage must be full page loads: its scripts
    (animations, the #audit search box) only start on a real page load, which <Link> would skip. */
 
 // Full-screen scan shown while the audit runs: a white screen with a mint-green radar (sweep line, trailing wedge,
-// glowing outer arc, pulse ring). Each platform appears as a dot when its search finishes. Underneath, a pixel-font
+// glowing outer arc, pulse ring). Each platform shows a dot while searched, then its logo bubble when found. Underneath, a pixel-font
 // status word (LOADING, SEARCHING, FINDING, CHECKING, DISCOVERED) and a thin line follow the real progress.
 
 export type StepState = "wait" | "run" | "second" | "done";
@@ -143,7 +145,11 @@ export default function Scan({
         {NAMES.map((name, i) => {
           const st = stage === "site" ? "wait" : progress.platforms[name]?.state ?? "wait";
           const [angle, radius] = BLIPS[i];
-          return <span key={name} className={`sc-blip st-${st}`} style={{ ["--a" as string]: `${angle}deg`, ["--d" as string]: String(radius / 200) }} />;
+          return (
+            <span key={name} className={`sc-blip st-${st}`} style={{ ["--a" as string]: `${angle}deg`, ["--d" as string]: String(radius / 200) }}>
+              {st === "done" && <span className="sc-orb"><Orb name={name} size={42} float={false} /></span>}
+            </span>
+          );
         })}
       </div>
       <div className="sc-status" aria-hidden="true">
