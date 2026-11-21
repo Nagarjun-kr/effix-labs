@@ -109,7 +109,7 @@ export default function SeoAuditClient() {
             <div className="dx-wrap">
               <span className="dx-kicker">Effix Labs · Free SEO audit</span>
               <h1 className="dx-h1">See how your site <em>shows up.</em></h1>
-              <p className="dx-sub">Enter your website. We check its SEO, AI-search readiness and speed, then find your brand on nine platforms through Google. You get a full dashboard and an action plan.</p>
+              <p className="dx-sub">Enter your website. We check its SEO, AI-search readiness and speed, then find your brand on eight platforms through Google. You get a full dashboard and an action plan.</p>
               <form className="dx-form" onSubmit={submit}>
                 <label htmlFor="dx-url" className="sr-only">Your website URL</label>
                 <input id="dx-url" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="yourbusiness.com" autoComplete="url" inputMode="url" required />

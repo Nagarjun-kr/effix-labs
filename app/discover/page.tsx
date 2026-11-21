@@ -5,7 +5,7 @@ import DiscoverClient from "./discover-client";
 import "./discover.css";
 
 const TITLE = "Effix Discover: Free Visibility Audit | Effix Labs";
-const DESC = "Free visibility audit: enter your website and see live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, TikTok, Reddit, Pinterest and Threads.";
+const DESC = "Free visibility audit: enter your website and see live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads.";
 
 export const metadata: Metadata = {
   title: TITLE,

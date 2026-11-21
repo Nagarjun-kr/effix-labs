@@ -1,7 +1,7 @@
 "use client";
 
 // Brand visibility: profiles the site links to + live Google results for "<brand>" site:<platform>
-// on nine platforms, searched from our server (/api/discovery/mentions), so there is no Google widget or CAPTCHA.
+// on eight platforms, searched from our server (/api/discovery/mentions), so there is no Google widget or CAPTCHA.
 import { useCallback, useEffect, useState } from "react";
 
 export type Profile = { platform: string; url: string };
@@ -17,9 +17,8 @@ export const PLATFORMS = [
   { name: "Facebook", domain: "facebook.com", sym: "f" },
   { name: "LinkedIn", domain: "linkedin.com", sym: "in" },
   { name: "X", domain: "x.com", sym: "𝕏" },
-  { name: "TikTok", domain: "tiktok.com", sym: "♪" },
   { name: "Reddit", domain: "reddit.com", sym: "r/" },
-  { name: "Pinterest", domain: "pinterest.com", sym: "P" },
+  { name: "Quora", domain: "quora.com", sym: "Q" },
   { name: "Threads", domain: "threads.net", sym: "@" },
 ] as const;
 

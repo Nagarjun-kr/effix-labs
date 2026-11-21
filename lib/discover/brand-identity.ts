@@ -16,9 +16,8 @@ const socialHosts: [string, string][] = [
   ["linkedin.com", "LinkedIn"],
   ["x.com", "X"],
   ["twitter.com", "X"],
-  ["tiktok.com", "TikTok"],
   ["reddit.com", "Reddit"],
-  ["pinterest.com", "Pinterest"],
+  ["quora.com", "Quora"],
   ["threads.net", "Threads"],
 ];
 

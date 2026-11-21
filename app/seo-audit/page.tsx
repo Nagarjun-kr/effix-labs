@@ -6,7 +6,7 @@ import "./audit.css";
 import "./dashboard.css";
 
 const TITLE = "Free SEO Audit | Effix Labs";
-const DESC = "Free website audit: technical SEO, content, AI-search visibility and Google speed scores with an action plan, plus live Google results for your brand on nine platforms.";
+const DESC = "Free website audit: technical SEO, content, AI-search visibility and Google speed scores with an action plan, plus live Google results for your brand on eight platforms.";
 
 export const metadata: Metadata = {
   title: TITLE,

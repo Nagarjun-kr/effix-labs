@@ -34,7 +34,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "What does the free audit check?",
     "a": [
-      "It reads your website, finds your brand name and the social profiles you link to, then shows live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, TikTok, Reddit, Pinterest and Threads. ",
+      "It reads your website, finds your brand name and the social profiles you link to, then shows live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads. ",
       {
         "text": "Run the free audit",
         "href": "/discover"
@@ -49,9 +49,9 @@ const HOME_FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Does the audit cover AI answers, Google Maps or Reddit?",
+    "q": "Does the audit cover AI answers, Google Maps, Reddit or Quora?",
     "a": [
-      "Reddit, yes: it’s one of the nine platforms we search through Google. AI answers and Google Maps aren’t covered yet."
+      "Reddit and Quora, yes: they’re two of the eight platforms we search through Google. AI answers and Google Maps aren’t covered yet."
     ]
   },
   {
@@ -397,7 +397,7 @@ export default function Page() {
               <div className="search-guarantee-row">
                 {" "}
                 <span>
-                  {"Free. No login. Checks your brand on nine platforms through Google."}
+                  {"Free. No login. Checks your brand on eight platforms through Google."}
                 </span>
                 {" "}
               </div>
@@ -818,7 +818,7 @@ export default function Page() {
                       <line x1="12" y1="8" x2="12.01" y2="8"></line>
                       {" "}
                     </svg>
-                    {" Free · Live Google results on nine platforms "}
+                    {" Free · Live Google results on eight platforms "}
                   </span>
                   {" "}
                 </div>

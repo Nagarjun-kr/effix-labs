@@ -1,4 +1,4 @@
-// Server-side brand search: "<brand>" site:<platform> on nine platforms via Serper.dev (Google results).
+// Server-side brand search: "<brand>" site:<platform> on eight platforms via Serper.dev (Google results).
 // Runs on our server, so visitors never talk to Google directly and never see a CAPTCHA.
 import { tidyBrandName } from "./brand-identity";
 
@@ -8,9 +8,8 @@ export const PLATFORMS = [
   { name: "Facebook", site: "site:facebook.com", hosts: ["facebook.com"] },
   { name: "LinkedIn", site: "site:linkedin.com", hosts: ["linkedin.com"] },
   { name: "X", site: "(site:x.com OR site:twitter.com)", hosts: ["x.com", "twitter.com"] },
-  { name: "TikTok", site: "site:tiktok.com", hosts: ["tiktok.com"] },
   { name: "Reddit", site: "site:reddit.com", hosts: ["reddit.com"] },
-  { name: "Pinterest", site: "site:pinterest.com", hosts: ["pinterest.com", "pinterest.co.uk", "pinterest.ca", "pinterest.com.au", "in.pinterest.com"] },
+  { name: "Quora", site: "site:quora.com", hosts: ["quora.com"] },
   { name: "Threads", site: "site:threads.net", hosts: ["threads.net", "threads.com"] },
 ] as const;
 
@@ -81,7 +80,7 @@ async function searchOne(query: string, key: string, hosts: readonly string[]): 
 export async function findMentions(brand: string): Promise<PlatformResult[]> {
   const key = process.env.SERPER_API_KEY;
   if (!key) throw new Error("not_configured");
-  const cacheKey = brand.toLowerCase();
+  const cacheKey = `v2|${brand.toLowerCase()}`; // v2: eight platforms (Quora in, TikTok/Pinterest out)
   const hit = cache.get(cacheKey);
   if (hit && Date.now() - hit.at < CACHE_MS) return hit.data;
 

@@ -2,7 +2,7 @@
 
 // Effix Discover — free visibility audit.
 // Website URL -> our server reads that one public page -> brand name + social links found on it
-// -> our server searches "<brand>" site:<platform> on 9 platforms (Google results via Serper.dev)
+// -> our server searches "<brand>" site:<platform> on 8 platforms (Google results via Serper.dev)
 // -> results shown as potential mentions. No Google widget in the browser, so no CAPTCHA.
 // Nothing is stored and no login is needed.
 import { FormEvent, useCallback, useEffect, useState } from "react";
@@ -12,7 +12,7 @@ import Report, { PLATFORMS, type Identity, type Mentions, type PlatformResult } 
 
 type Phase = "idle" | "loading" | "done";
 
-const STEPS = ["Reading your website", "Finding your brand and linked profiles", "Searching 9 platforms on Google"];
+const STEPS = ["Reading your website", "Finding your brand and linked profiles", "Searching 8 platforms on Google"];
 
 function Logo() {
   return (
@@ -33,9 +33,10 @@ export default function DiscoverClient() {
   const [mentions, setMentions] = useState<Mentions>({ status: "loading" });
   const [searched, setSearched] = useState(""); // brand name the shown results are for
   const [checks, setChecks] = useState<Record<string, ProfileCheck>>({}); // profile pages we opened to confirm
-  const [blocked, setBlocked] = useState(false); // the website refused our visit; name taken from its address
+  const [blocked, setBlocked] = useState(false);
+  const [updatedAt, setUpdatedAt] = useState<Date | null>(null); // the website refused our visit; name taken from its address
 
-  // After the search: open candidate YouTube/Pinterest profiles to confirm whose they are.
+  // After the search: open YouTube channels found, to confirm whether they are the linked channel.
   useEffect(() => {
     if (mentions.status !== "done" || !identity) return;
     const items = checkTargets(identity, mentions, mentions.brand);
@@ -69,6 +70,7 @@ export default function DiscoverClient() {
       const byPlatform: Record<string, PlatformResult> = {};
       (body.platforms as PlatformResult[]).forEach((p) => (byPlatform[p.platform] = p));
       setMentions({ status: "done", brand: term, byPlatform });
+      setUpdatedAt(new Date());
     } catch (e) {
       setMentions({ status: "error", message: e instanceof Error ? e.message : "The search didn't finish. Please try again." });
     }
@@ -140,7 +142,7 @@ export default function DiscoverClient() {
             <div className="dx-wrap">
               <span className="dx-kicker">Effix Discover · Free visibility audit</span>
               <h1 className="dx-h1">Find your brand <em>across the web.</em></h1>
-              <p className="dx-sub">Enter your website. We find your brand name and the profiles you link to, then show live Google results for your brand on nine platforms.</p>
+              <p className="dx-sub">Enter your website. We find your brand name and the profiles you link to, then show live Google results for your brand on eight platforms.</p>
               <form className="dx-form" onSubmit={submit}>
                 <label htmlFor="dx-url" className="sr-only">Your website URL</label>
                 <input id="dx-url" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="yourbusiness.com" autoComplete="url" inputMode="url" required />
@@ -157,7 +159,7 @@ export default function DiscoverClient() {
               <ol className="dx-steps">
                 <li className="dx-step"><b>01</b><h2>We read your website</h2><p>Our server opens the one public page you enter. It never logs in or saves the page.</p></li>
                 <li className="dx-step"><b>02</b><h2>We find your brand</h2><p>We pick up your brand name and the social profiles your site already links to. You can correct the name.</p></li>
-                <li className="dx-step"><b>03</b><h2>We search 9 platforms</h2><p>Google searches your brand name on each platform and we show the live results under each one.</p></li>
+                <li className="dx-step"><b>03</b><h2>We search 8 platforms</h2><p>Google searches your brand name on each platform and we show the live results under each one.</p></li>
               </ol>
               <div className="dx-platforms" aria-label="Platforms searched">{PLATFORMS.map((p) => <span key={p.name}>{p.name}</span>)}</div>
               <p className="dx-limits">Results only include pages Google has indexed. A result can mention your brand without being an official account. This is a discovery tool, not a complete count of every post or profile.</p>
@@ -179,45 +181,58 @@ export default function DiscoverClient() {
       )}
 
       {phase === "done" && identity && (
-        <main className="dx-report">
+        <main className="dx-report vz">
           <div className="dx-wrap">
-            <header className="dx-report-head">
+            <div className="vz-top">
+              <form className="vz-search" onSubmit={submit}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+                <label htmlFor="dx-url2" className="sr-only">Website to audit</label>
+                <input id="dx-url2" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="yourbusiness.com" inputMode="url" required />
+                <button className="vz-dark" type="submit">Change</button>
+              </form>
+              <span className="vz-live"><i aria-hidden="true" /> Live search results</span>
+            </div>
+
+            <header className="vz-head">
               <div>
-                <span className="dx-kicker">Visibility report</span>
-                <h1>{identity.name}</h1>
-                <a className="dx-domain" href={identity.sourceUrl} target="_blank" rel="noopener noreferrer">{identity.domain} <span aria-hidden="true">↗</span></a>
+                <h1>Brand Visibility Overview</h1>
+                <p>
+                  <a href={identity.sourceUrl} target="_blank" rel="noopener noreferrer">{identity.domain}</a> · {identity.name}
+                  {updatedAt && <> · Last updated {updatedAt.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}</>}
+                </p>
               </div>
-              <div className="dx-head-actions">
-                <span className="dx-live"><i aria-hidden="true" /> Live search results</span>
-                <form className="dx-again" onSubmit={submit}>
-                  <label htmlFor="dx-url2" className="sr-only">Check another website</label>
-                  <input id="dx-url2" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Check another website" inputMode="url" required />
-                  <button className="dx-btn" type="submit">Run audit</button>
-                </form>
-              </div>
+              <button type="button" className="vz-dark vz-new" onClick={() => { setPhase("idle"); setWebsite(""); setIdentity(null); try { window.history.replaceState(null, "", "/discover"); } catch { /* ignore */ } window.scrollTo({ top: 0 }); }}>
+                <span aria-hidden="true">+</span> New Audit
+              </button>
             </header>
             {error && <p className="dx-error" role="alert">{error}</p>}
-
             {blocked && (
               <p className="dx-error dx-warn" role="status">
                 {identity.domain} blocks automated visits, so we couldn&apos;t see which profiles it links to. We took the name “{identity.name}” from the address. Check it below, and treat “Official” as unknown for this site.
               </p>
             )}
-            <section className="dx-name" aria-label="Brand name used for searching">
-              <div>
-                <span className="dx-label">Brand name we searched</span>
-                <p>We found this name on your website. If people know you by a different name, change it and search again.</p>
-              </div>
-              <form onSubmit={(e) => { e.preventDefault(); searchMentions(brandQuery); }}>
-                <label htmlFor="dx-brand" className="sr-only">Brand name</label>
-                <input id="dx-brand" value={brandQuery} onChange={(e) => setBrandQuery(e.target.value)} maxLength={100} />
-                <button className="dx-btn" type="submit" disabled={!brandQuery.trim() || mentions.status === "loading"}>{mentions.status === "loading" ? "Searching…" : "Search again"}</button>
-              </form>
-            </section>
 
-            <Report identity={identity} mentions={mentions} brand={searched || identity.name} checks={checks} />
+            <Report
+              identity={identity}
+              mentions={mentions}
+              brand={searched || identity.name}
+              checks={checks}
+              nameEditor={
+                <section className="dx-name vz-card" aria-label="Brand name used for searching">
+                  <div>
+                    <span className="dx-label">Brand name we searched</span>
+                    <p>We found “{identity.name}” on your website. If people know you by a different name, change it and search again.</p>
+                  </div>
+                  <form onSubmit={(e) => { e.preventDefault(); searchMentions(brandQuery); }}>
+                    <label htmlFor="dx-brand" className="sr-only">Brand name</label>
+                    <input id="dx-brand" value={brandQuery} onChange={(e) => setBrandQuery(e.target.value)} maxLength={100} />
+                    <button className="dx-btn" type="submit" disabled={!brandQuery.trim() || mentions.status === "loading"}>{mentions.status === "loading" ? "Searching…" : "Search again"}</button>
+                  </form>
+                </section>
+              }
+            />
 
-            <p className="dx-coverage"><strong>Coverage note.</strong> Searches cover public pages Google has indexed on these platforms, up to six results each. Private, blocked or differently named pages may not appear. The brand name comes from your website and may need correcting. This is a discovery tool, not a complete count of every post or profile.</p>
+            <p className="dx-coverage"><strong>Coverage note.</strong> Searches cover public pages Google has indexed on these eight platforms, up to eight results each. Private, blocked or differently named pages may not appear. YouTube channels are confirmed by opening their public page; other platforms block automated visits, so their status comes from search evidence. Platform logos are trademarks of their owners.</p>
 
             <section className="dx-cta" aria-label="Get help from Effix Labs">
               <div>

@@ -1,4 +1,4 @@
-// Brand mentions API: searches the brand on nine platforms from our server (no browser widget, no CAPTCHA).
+// Brand mentions API: searches the brand on eight platforms from our server (no browser widget, no CAPTCHA).
 import { NextResponse } from "next/server";
 
 import { cleanBrand, findMentions, mentionsConfigured } from "@/lib/discover/mentions";

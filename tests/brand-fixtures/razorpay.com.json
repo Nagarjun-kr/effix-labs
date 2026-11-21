@@ -1,0 +1,490 @@
+{
+ "capturedAt": "2026-11-21T13:34:37.356Z",
+ "identity": {
+  "name": "Razorpay",
+  "domain": "razorpay.com",
+  "sourceUrl": "https://razorpay.com/",
+  "profiles": [
+   {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/company/razorpay/"
+   },
+   {
+    "platform": "X",
+    "url": "https://twitter.com/razorpay"
+   },
+   {
+    "platform": "Facebook",
+    "url": "https://www.facebook.com/razorpay"
+   },
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/razorpay"
+   },
+   {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/@Razorpayindia"
+   },
+   {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/channel/UCddN5MDa_yirLO8fKVMVnhw"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://www.linkedin.com/company/razorpay"
+   },
+   {
+    "platform": "Facebook",
+    "url": "https://www.facebook.com/Razorpay/"
+   },
+   {
+    "platform": "X",
+    "url": "https://x.com/razorpay"
+   },
+   {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/razorpay/"
+   },
+   {
+    "platform": "LinkedIn",
+    "url": "https://linkedin.com/company/razorpay"
+   }
+  ]
+ },
+ "brand": "Razorpay",
+ "byPlatform": {
+  "YouTube": {
+   "platform": "YouTube",
+   "query": "\"Razorpay\" site:youtube.com",
+   "results": [
+    {
+     "title": "What If You Could Replace Razorpay With UPI?",
+     "url": "https://www.youtube.com/watch?v=bGzmzkX4Kqk",
+     "snippet": "00:00 - Someone Just Open-Sourced Razorpay! ; 00:45 - Introducing UPIP: Accept Payments With UPI ; 01:45 - How Payment Gateways Actually Work ; 02: ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "How to Create a Payment Link with Razorpay: Step-by-Step Guide",
+     "url": "https://www.youtube.com/watch?v=p1wwIphZbQ0",
+     "snippet": "Learn how to create a payment link with Razorpay in this easy step-by-step tutorial. Whether you're a business owner, freelancer, ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "How to Integrate Razorpay with Shopify Website",
+     "url": "https://www.youtube.com/watch?v=eFVzIr1lsdA",
+     "snippet": "Watch this video to know how you can integrate the Razorpay Payment Gateway with your Shopify website. Visit our documentation website for ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "How to Integrate Razorpay Payment Gateway with Node.js & React",
+     "url": "https://www.youtube.com/watch?v=wzrrtRnqCI4",
+     "snippet": "How to Integrate Razorpay Payment Gateway with Node.js & React | Complete Step-by-Step Tutorial In this complete beginner-friendly tutorial, ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Razorpay",
+     "url": "https://www.youtube.com/channel/UCddN5MDa_yirLO8fKVMVnhw",
+     "snippet": "Razorpay Integrations ; Razorpay Payment Gateway Integration in Go Website · 3.1K views. 8 months ago ; How to Integrate Razorpay with Shopify Website · 25K views.",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Implement Razorpay Subscriptions for Recurring Payments: Step-by- ...",
+     "url": "https://www.youtube.com/watch?v=Yr-5HmRb1UE",
+     "snippet": "In this tutorial, we'll guide you through the implementation of the Razorpay Subscriptions API in PHP. You'll learn how to set up ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "How To Set Up Razorpay Payment Gateway 2026: Done in 5 Minutes!",
+     "url": "https://www.youtube.com/watch?v=Px9kqUvphvo",
+     "snippet": "Set up your Razorpay Payment Gateway in just 5 minutes! This step-by-step guide covers everything from Razorpay account creation to full ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Razorpay Payment Gateway Setup in MERN Stack: A Step-by-Step Tutorial",
+     "url": "https://www.youtube.com/watch?v=ICxmav6ezJM",
+     "snippet": "Razorpay Payment Gateway Setup in MERN Stack: A Step-by-Step Tutorial. @KhanamCoding 28K views 1y ago. Complete React Series for Beginners.",
+     "source": "youtube.com"
+    }
+   ]
+  },
+  "Instagram": {
+   "platform": "Instagram",
+   "query": "\"Razorpay\" site:instagram.com",
+   "results": [
+    {
+     "title": "Razorpay (@razorpay) • Instagram photos and videos",
+     "url": "https://www.instagram.com/razorpay/",
+     "snippet": "433K followers · 34 following · 2286 posts · @razorpay: “”",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Razorpay Rize (@razorpayrize)",
+     "url": "https://www.instagram.com/razorpayrize/",
+     "snippet": "Razorpay Rize is running the Global Readiness Program Edition 2.0 - a free, 6-day intensive cohort for Indian D2C founders going global. If you've been thinking ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Complicated payments for international clients Not anymore ...",
+     "url": "https://www.instagram.com/p/DcNVXn8Eury/",
+     "snippet": "Create a Razorpay Payment Link or Payment Page, share it with your client, and accept payments in 130+ currencies across 180+ countries. Sign up ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Razorpay Singapore (@razorpay.sg) • Instagram photos and videos",
+     "url": "https://www.instagram.com/razorpay.sg/",
+     "snippet": "440 followers · 5 following · 84 posts · @razorpay.sg: “Your business has challenges. Payments shouldn't be one of them.”",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Razorpay Curlec (@razorpaycurlec)",
+     "url": "https://www.instagram.com/razorpaycurlec/",
+     "snippet": "In the lastest episode of Razorpay Curlec Exchange, Chee Mun Foong, CEO of ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Razorpay (@razorpay) • Instagram photos and videos",
+     "url": "https://www.instagram.com/razorpay/reels/",
+     "snippet": "razorpay · What if your brand's biggest rule was to never restock? · Built by one generation. · What if your customers could explore a home, experience a car in 3D ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "they also erode customer trust. With Razorpay's smart routing, buyers get ...",
+     "url": "https://www.instagram.com/reel/DbH6xcIBNvo/",
+     "snippet": "",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Indian fintech unicorn Razorpay has entered the Singapore market ...",
+     "url": "https://www.instagram.com/p/DG5eX_4tp1w/",
+     "snippet": "Razorpay's offerings in Singapore will include multi-currency transactions, real-time payment processing via PayNow, and a payment gateway ...",
+     "source": "instagram.com"
+    }
+   ]
+  },
+  "Facebook": {
+   "platform": "Facebook",
+   "query": "\"Razorpay\" site:facebook.com",
+   "results": [
+    {
+     "title": "Razorpay",
+     "url": "https://www.facebook.com/Razorpay/",
+     "snippet": "With Razorpay payments now live on Meta Business Agent, founders get a 24/7 AI assistant that answers customer queries and drops a payment link right in the ...",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Your checkout should do more than complete a payment.  It ...",
+     "url": "https://www.facebook.com/Razorpay/videos/your-checkout-should-do-more-than-complete-a-payment-it-should-protect-your-cust/1191016463140319/",
+     "snippet": "",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Payments API — India | Meta for Developers - Facebook",
+     "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/payments/payments-in/overview",
+     "snippet": "Payment Gateway Deep Integration Mode: Currently supported for Razorpay, PayU, Billdesk, and Zaakpay only. Enhanced Payment Links (EPL) Mode: Send payment links ...",
+     "source": "developers.facebook.com"
+    },
+    {
+     "title": "Never lose customers to failed payments with Razorpay ...",
+     "url": "https://www.facebook.com/Razorpay/posts/never-lose-customers-to-failed-payments-with-razorpay-payment-gateway-now-at-0-f/1596079409231027/",
+     "snippet": "This post announces and demonstrates the new, smooth, and fast \"chat-style\" onboarding for the digital payment platform Razorpay.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "No more screenshots or spreadsheets. Track payments easily with ...",
+     "url": "https://www.facebook.com/Razorpay/videos/tracking-payments-simplified/1411185687355993/",
+     "snippet": "",
+     "source": "facebook.com"
+    },
+    {
+     "title": "How to connect Razorpay support? - Developer Community Forum",
+     "url": "https://developers.facebook.com/community/threads/1801194210744155/",
+     "snippet": "Use the Razorpay toll-free helpline number-0928-6263-885 for registering a complaint. Razorpay app has also set up a 24-hour helpline number+.",
+     "source": "developers.facebook.com"
+    },
+    {
+     "title": "Selling globally shouldn't mean taking on all the risk. With Razorpay's ...",
+     "url": "https://www.facebook.com/Razorpay/videos/selling-globally-shouldnt-mean-taking-on-all-the-riskwith-razorpays-chargeback-g/1077852905161406/",
+     "snippet": "",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Nothing in this world is free. Except your Razorpay Payment Gateway for the ...",
+     "url": "https://www.facebook.com/Razorpay/videos/on-your-biggest-day-every-sale-matters/4592914404359659/",
+     "snippet": "The video provides a tutorial on how to integrate a payment gateway into a website using Razorpay. The presenter walks through the onboarding ...",
+     "source": "facebook.com"
+    }
+   ]
+  },
+  "LinkedIn": {
+   "platform": "LinkedIn",
+   "query": "\"Razorpay\" site:linkedin.com",
+   "results": [
+    {
+     "title": "Razorpay",
+     "url": "https://in.linkedin.com/company/razorpay",
+     "snippet": "Razorpay is India's first full-stack financial solutions company. We are on a mission to enhance the payment experience of over 300 million end consumers. And ...",
+     "source": "in.linkedin.com"
+    },
+    {
+     "title": "Razorpay",
+     "url": "https://www.linkedin.com/products/razorpay/",
+     "snippet": "Accept payments from all domestic and international cards, UPI, Netbanking and Wallets. Razorpay Offers Lowest Fees, Dedicated Support, Developer Friendly APIs.",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "What is Razorpay Payment Method and How Does It Work?",
+     "url": "https://www.linkedin.com/pulse/what-razorpay-payment-method-how-does-work-mega-pavalarajan-jktee",
+     "snippet": "Razorpay is a leading Indian payment gateway that enables businesses to accept online payments from customers in a secure and seamless ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Vivek Agarwal - SVP Engineering, Payments at Razorpay",
+     "url": "https://in.linkedin.com/in/vivek-agarwal-03575711",
+     "snippet": "I lead Payments Engineering at Razorpay, where my teams build the infrastructure behind how businesses in India collect and move money.",
+     "source": "in.linkedin.com"
+    },
+    {
+     "title": "Kaushik Bhat - Engineering at Razorpay",
+     "url": "https://in.linkedin.com/in/kaushikbhat",
+     "snippet": "Engineering at Razorpay · Engineer-Operator who loves conceptualizing, building, rebuilding and scaling amazing products in startups and scaleups.",
+     "source": "in.linkedin.com"
+    },
+    {
+     "title": "Associate Director - Bank Partnerships at Razorpay",
+     "url": "https://sg.linkedin.com/jobs/view/associate-director-bank-partnerships-at-razorpay-3996315081",
+     "snippet": "About Razorpay: Razorpay today processes $150 Billion+ payments for 10 million+ businesses across India powering use cases ranging from Payments (online and ...",
+     "source": "sg.linkedin.com"
+    },
+    {
+     "title": "Razorpay joins the unicorn club",
+     "url": "https://www.linkedin.com/news/story/razorpay-joins-the-unicorn-club-4246425/",
+     "snippet": "Payments startup Razorpay has entered the unicorn club following a $100 million fund-raise co-led by Singapore's sovereign wealth fund GIC ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Arpit Chug - Chief Financial Officer at Razorpay",
+     "url": "https://in.linkedin.com/in/arpit-chug-5928354",
+     "snippet": "Chief Financial Officer at Razorpay · Experience: Razorpay · Location: Bangalore Urban · 500+ connections on LinkedIn. View Arpit Chug's profile on LinkedIn ...",
+     "source": "in.linkedin.com"
+    }
+   ]
+  },
+  "X": {
+   "platform": "X",
+   "query": "\"Razorpay\" (site:x.com OR site:twitter.com)",
+   "results": [
+    {
+     "title": "Razorpay",
+     "url": "https://x.com/Razorpay",
+     "snippet": "Razorpay is now live in GIFT City! We've received our final PSP licence from @IFSCA_Official, a key step in building our international payments ...",
+     "source": "x.com"
+    },
+    {
+     "title": "Razorpay",
+     "url": "https://x.com/Razorpay/all?lang=bg",
+     "snippet": "Now access your payment analytics on @grok through the Razorpay Connector and run a team of specialised agents autonomously, powered by our MCP. Also available ...",
+     "source": "x.com"
+    },
+    {
+     "title": "Razorpay",
+     "url": "https://x.com/Razorpay/with_replies",
+     "snippet": "Razorpay is now live in GIFT City! We've received our final PSP licence from @IFSCA_Official, a key step in building our international payments ...",
+     "source": "x.com"
+    },
+    {
+     "title": "Harshil Mathur (@harshilmathur) / ...",
+     "url": "https://x.com/harshilmathur",
+     "snippet": "Razorpay is now live in GIFT City! We've received our final PSP licence from @IFSCA_Official, a key step in building our international payments ...",
+     "source": "x.com"
+    },
+    {
+     "title": "Replies by Razorpay Care (@RazorpayCare) ...",
+     "url": "https://x.com/RazorpayCare/with_replies",
+     "snippet": "This is the Twitter handle for @Razorpay Support. For a quick resolution please raise a request here: https://t.co/kNmRzkT3xk.",
+     "source": "x.com"
+    },
+    {
+     "title": "Y Combinator",
+     "url": "https://x.com/ycombinator/status/2052023318371336570",
+     "snippet": "Razorpay is India's largest payments platform, processing over $180 billion annually. They were also the first Indian company YC ever ...",
+     "source": "x.com"
+    },
+    {
+     "title": "Razorpay Software is preparing to publicly file documents for an initial ...",
+     "url": "https://x.com/business/status/2123356895427653731",
+     "snippet": "Razorpay Software is preparing to publicly file documents for an initial public offering in India as early as next week.",
+     "source": "x.com"
+    },
+    {
+     "title": "Razorpay Care (@RazorpayCare) ...",
+     "url": "https://x.com/RazorpayCare",
+     "snippet": "Razorpay Care. @RazorpayCare. This is the Twitter handle for @Razorpay Support. For a quick resolution please raise a request here: razorpay.com/support/.",
+     "source": "x.com"
+    }
+   ]
+  },
+  "Reddit": {
+   "platform": "Reddit",
+   "query": "\"Razorpay\" site:reddit.com",
+   "results": [
+    {
+     "title": "Razorpay is becoming a serious problem for my international ...",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1vjv9qs/razorpay_is_becoming_a_serious_problem_for_my/",
+     "snippet": "I'm an India-registered SaaS founder selling globally, and I've been using Razorpay for payments. Checked my dashboard today: 25 failed payments ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Any business owners here who have used Razorpay?",
+     "url": "https://www.reddit.com/r/PaymentProcessing/comments/1wttm5s/any_business_owners_here_who_have_used_razorpay/",
+     "snippet": "Hey everyone! I'm looking to connect with merchants or business owners who currently use or have used Razorpay for their business.",
+     "source": "reddit.com"
+    },
+    {
+     "title": "I spent 2 months convincing Razorpay I'm not a fraud so I could build ...",
+     "url": "https://www.reddit.com/r/StartUpIndia/comments/1somdft/i_spent_2_months_convincing_razorpay_im_not_a/",
+     "snippet": "I spent 2 months convincing Razorpay I'm not a fraud so I could build a platform that proves other founders aren't frauds. Nobody uses it. Roast ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Do payment gateways like Razorpay really need phone numbers for every ...",
+     "url": "https://www.reddit.com/r/webdev/comments/1kslb5x/do_payment_gateways_like_razorpay_really_need/",
+     "snippet": "phone number is mandatory for razorpay checkout - it's their kyc/fraud prevention requirement, not just ux preference. prefilling dummy numbers ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "r/Razorpay",
+     "url": "https://www.reddit.com/r/Razorpay/best/",
+     "snippet": "What it does: Structured Razorpay docs access (not dumb scraping). Helps AI generate correct API calls. Works with MCP-compatible agents.",
+     "source": "reddit.com"
+    },
+    {
+     "title": "[SWE] Failed payment Razorpay : r/Scams",
+     "url": "https://www.reddit.com/r/Scams/comments/1tx1tl3/swe_failed_payment_razorpay/",
+     "snippet": "I keep getting these emails almost everyday from Razorpay of failed payments. They seem to be legit from razorpay?",
+     "source": "reddit.com"
+    },
+    {
+     "title": "razorpay is silently killing my international revenue. need other ...",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1td54mx/razorpay_is_silently_killing_my_international/",
+     "snippet": "Your best bet should be to get razorpay optimisor or change your PA from Razorpay to someone else also. You can still check with them but ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Razorpay settlements on hold for 25 days despite submitting every ...",
+     "url": "https://www.reddit.com/r/indianstartups/comments/1xifsxl/razorpay_settlements_on_hold_for_25_days_despite/",
+     "snippet": "I run a small sole proprietorship that sells baby clothing (D2C in India plus B2B export). On 4 October, Razorpay put my settlements on hold for a “compliance ...",
+     "source": "reddit.com"
+    }
+   ]
+  },
+  "Quora": {
+   "platform": "Quora",
+   "query": "\"Razorpay\" site:quora.com",
+   "results": [
+    {
+     "title": "Is Razorpay a good option for first-time business owners accepting online ...",
+     "url": "https://www.quora.com/Is-Razorpay-a-good-option-for-first-time-business-owners-accepting-online-payments",
+     "snippet": "Razorpay is the most trusted payment gateway in India. It offers businesses to accept, receive and disburse payments, and customers to pay via ...",
+     "source": "quora.com"
+    },
+    {
+     "title": "What is Razorpay? Is it safe to make a payment using it?",
+     "url": "https://www.quora.com/What-is-Razorpay-Is-it-safe-to-make-a-payment-using-it",
+     "snippet": "What is Razorpay? Is it safe to make a payment using it?",
+     "source": "quora.com"
+    },
+    {
+     "title": "Is the negative feedback about Razorpay support on Reddit and ...",
+     "url": "https://www.quora.com/Is-the-negative-feedback-about-Razorpay-support-on-Reddit-and-Quora-representative-of-most-merchants-experience",
+     "snippet": "Is the negative feedback about Razorpay support on Reddit and Quora representative of most merchants' experience?",
+     "source": "quora.com"
+    },
+    {
+     "title": "What are the benefits of using RazorPay as a payment gateway? ...",
+     "url": "https://www.quora.com/What-are-the-benefits-of-using-RazorPay-as-a-payment-gateway-How-does-it-compare-to-other-options-like-PayU-Stripe-or-NEFT-RTGS",
+     "snippet": "Razorpay is a one-stop solution to all payment related needs. Along with it being a payment gateway, it offers seamless tracking of payments ...",
+     "source": "quora.com"
+    },
+    {
+     "title": "For a small SaaS startup, is Razorpay Rize worth considering for business ...",
+     "url": "https://www.quora.com/For-a-small-SaaS-startup-is-Razorpay-Rize-worth-considering-for-business-registration",
+     "snippet": "Razorpay is the most trusted payment gateway in India. It offers businesses to accept, receive and disburse payments, and customers to pay via ...",
+     "source": "quora.com"
+    },
+    {
+     "title": "What is the real developer experience with Razorpay's customer support in ...",
+     "url": "https://www.quora.com/What-is-the-real-developer-experience-with-Razorpays-customer-support-in-India-in-2026",
+     "snippet": "What is the real developer experience with Razorpay's customer support in India in 2026?",
+     "source": "quora.com"
+    },
+    {
+     "title": "Why is Razorpay better than other payment gateways in India?",
+     "url": "https://www.quora.com/Why-is-Razorpay-better-than-other-payment-gateways-in-India",
+     "snippet": "Why is Razorpay better than other payment gateways in India?",
+     "source": "quora.com"
+    },
+    {
+     "title": "Is Razorpay free?",
+     "url": "https://www.quora.com/Is-Razorpay-free",
+     "snippet": "Razorpay is the only end to end payments solution in India that allows businesses to accept, process and disburse payments with its product ...",
+     "source": "quora.com"
+    }
+   ]
+  },
+  "Threads": {
+   "platform": "Threads",
+   "query": "\"Razorpay\" site:threads.net",
+   "results": [
+    {
+     "title": "N.M. Patel | Romance Author and Reader (@nmpatelauthor)",
+     "url": "https://www.threads.net/@nmpatelauthor",
+     "snippet": "Special Edition of Luv Under Starlight. Available through PREORDER ONLY: Stripe (US/CAN): buy.stripe.com/3cIfZ… Razorpay: ...",
+     "source": "threads.net"
+    },
+    {
+     "title": "Iia Bombay Chapter (@iiabombaychapter)",
+     "url": "https://www.threads.net/@iiabombaychapter",
+     "snippet": "Gain actionable insights from industry leaders and stay ahead of fraud trends. Register: For IIA India Members: pages.razorpay.com/pl_P4…",
+     "source": "threads.net"
+    },
+    {
+     "title": "CA Foundation May-25 - Subjectwise Google Drive Classess!",
+     "url": "https://www.threads.net/@ksacademyca/post/DFMGmKfymJ2/ca-foundation-may-25-subjectwise-google-drive-classessaccounting-by-ca-chaitanya",
+     "snippet": "... - ₹4,500 incl. GST From Feb 1 - ₹10,000 incl. GST. Mode: Google Drive Validity: Till May 25 exams. Link to register: pages.razorpay.com/CAFND…",
+     "source": "threads.net"
+    },
+    {
+     "title": "Anurag Shrivastava (@shrivastavasaheb)",
+     "url": "https://www.threads.net/@shrivastavasaheb",
+     "snippet": "44 Followers • 19 Threads • Not making the Logo Bigger Designing stuff at Upstox | Ex - Razorpay. See the latest conversations with @shrivastavasaheb.",
+     "source": "threads.net"
+    },
+    {
+     "title": "STREET WORLDZ TRUST (@street_worldz709)",
+     "url": "https://www.threads.net/@street_worldz709",
+     "snippet": "STREET WORLDZ TRUST. street_worldz709. street_worldz709's profile picture. Zaalim pyar ❤️ New Delhi Animal rescuer. pages.razorpay.com/pl_Q1XpNPVTEcdJVB/ ...",
+     "source": "threads.net"
+    },
+    {
+     "title": "Roshni Charitable Trust (@roshni_foundation1)",
+     "url": "https://www.threads.net/@roshni_foundation1",
+     "snippet": "... Paytm- 7014248917 , Email us- contact@roshnicharitabletrust.org. pages.razorpay.com/pl_EiK5E41918JRyt/view · 1,476 followers. Follow. Mention. Threads.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Asif Shabir Shaikh (@aurangabadfoodiesoul)",
+     "url": "https://www.threads.net/@aurangabadfoodiesoul?hl=ml",
+     "snippet": "10.7K Followers • 248 Threads • Food | Fashion | Advertising MSME | GST | Shop Act | Razorpay DM for Collabs & Promotions. See the latest conversations...",
+     "source": "threads.net"
+    },
+    {
+     "title": "Top 10 Unlisted Companies",
+     "url": "https://www.threads.net/@ipo.ji/post/DGZ1HiORvDA/top-10-unlisted-companies1-national-stock-exchange-of-india-limited-nse2-serum-i?hl=en",
+     "snippet": "Megha Engineering And Infrastructures (MEIL) 6. Parle Products 7. Intas Pharmaceuticals 8. Dream 11 9. Razorpay 10. Amalgamations Group. 26. 2.",
+     "source": "threads.net"
+    }
+   ]
+  }
+ },
+ "checks": []
+}

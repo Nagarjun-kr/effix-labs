@@ -6,7 +6,7 @@ export type Status = "official" | "likely" | "possible" | "mentions" | "none" | 
 
 export type ResultTag = {
   kind: Kind; label: string; handle: string | null; official: boolean; matchesBrand: boolean; mentionsSite: boolean; sameHandle: boolean;
-  /** From opening the profile page itself (YouTube, Pinterest): links to your site, or to another site. */
+  /** From opening the profile page itself (YouTube): links to your site, or to another site. */
   checked?: "yours" | "other";
   otherSite?: string;
   sameChannel?: boolean; // YouTube @handle resolved to the channel the site links to
@@ -47,22 +47,23 @@ function kindFor(platform: string, u: URL): { kind: Kind; handle: string | null 
       if (s.length >= 2 && s[1] === "status") return { kind: "post", handle: first };
       if (s.length === 1 && !["search", "hashtag", "explore", "i", "home"].includes(first)) return { kind: "profile", handle: first };
       return { kind: "page", handle: null };
-    case "TikTok":
-      if (first.startsWith("@")) return { kind: s[1] === "video" || s[1] === "photo" ? "video" : "profile", handle: first.slice(1) };
-      if (first === "discover" || first === "tag") return { kind: "page", handle: null };
-      return { kind: "video", handle: null };
     case "Reddit":
       if ((first === "r" || first === "user" || first === "u") && s.length >= 3 && s[2] === "comments") return { kind: "thread", handle: null };
       if (first === "r" && s.length >= 2) return { kind: s.length === 2 || ["about", "wiki"].includes(s[2]) ? "community" : "thread", handle: s[1] };
       if (first === "user" || first === "u") return { kind: "profile", handle: s[1] ?? null };
       if (first === "comments") return { kind: "thread", handle: null };
       return { kind: "page", handle: null };
-    case "Pinterest":
-      if (first === "pin") return { kind: "post", handle: null };
-      if (first === "ideas" || first === "search") return { kind: "page", handle: null };
-      if (s.length === 1) return { kind: "profile", handle: first };
-      if (s.length >= 2) return { kind: "post", handle: first };
+    case "Quora": {
+      const sub = u.hostname.toLowerCase().replace(/^www\./, "").replace(/\.?quora\.com$/, "");
+      if (["help", "business", "blog", "careers"].includes(sub)) return { kind: "page", handle: null }; // Quora's own pages
+      if (sub && sub.length > 2) return { kind: "community", handle: sub }; // Quora Spaces live on their own subdomain
+      if (first === "profile") return { kind: s.length >= 3 && s[2] === "answers" ? "profile" : s.length > 2 ? "post" : "profile", handle: s[1] ?? null };
+      if (first === "topic") return { kind: "community", handle: s[1] ?? null };
+      if (first === "q") return { kind: "community", handle: s[1] ?? null };
+      if (s.length >= 3 && s[1] === "answer") return { kind: "post", handle: null };
+      if (s.length === 1 && !["search", "about", "contact"].includes(first)) return { kind: "thread", handle: null };
       return { kind: "page", handle: null };
+    }
     case "Threads":
       if (first.startsWith("@")) return { kind: s[1] === "post" ? "post" : "profile", handle: first.slice(1) };
       return { kind: "page", handle: null };
@@ -202,9 +203,8 @@ export const PLATFORMS = [
   { name: "Facebook", domain: "facebook.com", sym: "f" },
   { name: "LinkedIn", domain: "linkedin.com", sym: "in" },
   { name: "X", domain: "x.com", sym: "𝕏" },
-  { name: "TikTok", domain: "tiktok.com", sym: "♪" },
   { name: "Reddit", domain: "reddit.com", sym: "r/" },
-  { name: "Pinterest", domain: "pinterest.com", sym: "P" },
+  { name: "Quora", domain: "quora.com", sym: "Q" },
   { name: "Threads", domain: "threads.net", sym: "@" },
 ] as const;
 
@@ -331,16 +331,18 @@ function applyCheck(x: { m: Mention; t: ResultTag }, checks: Record<string, Prof
   return { m: x.m, t };
 }
 
-/** Profiles worth opening to confirm: the linked YouTube channel and name-matching YouTube/Pinterest profiles. */
+/** YouTube channels worth opening to confirm: the linked channel(s) and channels found in the search. */
 export function checkTargets(identity: Identity, mentions: Mentions, brand: string): { platform: string; url: string }[] {
   if (mentions.status !== "done") return [];
   const out: { platform: string; url: string }[] = [];
   const seen = new Set<string>();
   const add = (platform: string, url: string) => {
     const k = normUrl(url);
-    if (!seen.has(k) && out.length < 8) (seen.add(k), out.push({ platform, url }));
+    if (seen.has(k) || out.length >= 8) return;
+    seen.add(k);
+    out.push({ platform, url });
   };
-  for (const name of ["YouTube", "Pinterest"]) {
+  for (const name of ["YouTube"]) {
     const links = identity.profiles.filter((p) => p.platform === name && isProfileUrl(name, p.url)).map((p) => p.url);
     const results = mentions.byPlatform[name]?.results ?? [];
     const candidates = results.filter((m) => {

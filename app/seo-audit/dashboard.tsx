@@ -481,7 +481,7 @@ export default function Dashboard({ report, onNewAudit, busy }: { report: AuditR
           </div>
         </Section>
 
-        <Section id="brand" icon="brand" title="Brand visibility" sub="Where your brand shows up on nine platforms, from live search results.">
+        <Section id="brand" icon="brand" title="Brand visibility" sub="Where your brand shows up on eight platforms, from live search results.">
           <BrandVisibility identity={report.identity} />
         </Section>
 

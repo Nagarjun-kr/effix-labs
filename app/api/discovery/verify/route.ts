@@ -1,4 +1,4 @@
-// Confirms candidate profiles by opening their public pages (YouTube, Pinterest only). Nothing is stored.
+// Confirms YouTube channels by opening their public pages. Nothing is stored.
 import { NextResponse } from "next/server";
 
 import { allow } from "@/lib/rate-limit";
