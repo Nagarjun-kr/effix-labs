@@ -1995,8 +1995,8 @@ export default function Page() {
                   {" "}
                   <div className="faq-answer-content">
                     {" Email "}
-                    <a href="mailto:effix.labs@gmail.com">
-                      {"effix.labs@gmail.com"}
+                    <a href="mailto:hello@effix.co.in">
+                      {"hello@effix.co.in"}
                     </a>
                     {" or use the contact page. "}
                   </div>
@@ -2038,8 +2038,8 @@ export default function Page() {
                 {" "}
               </div>
               {" "}
-              <a href="mailto:effix.labs@gmail.com" className="cta-email-link">
-                {"effix.labs@gmail.com"}
+              <a href="mailto:hello@effix.co.in" className="cta-email-link">
+                {"hello@effix.co.in"}
               </a>
               {" "}
             </div>
@@ -2218,8 +2218,8 @@ export default function Page() {
               {"© 2026 Effix Labs"}
             </span>
             {" "}
-            <a href="mailto:effix.labs@gmail.com">
-              {"effix.labs@gmail.com"}
+            <a href="mailto:hello@effix.co.in">
+              {"hello@effix.co.in"}
             </a>
             {" "}
           </div>

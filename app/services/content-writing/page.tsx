@@ -636,8 +636,8 @@ export default function Page() {
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:effix.labs@gmail.com">
-                      {"effix.labs@gmail.com"}
+                    <a href="mailto:hello@effix.co.in">
+                      {"hello@effix.co.in"}
                     </a>
                   </div>
                   {" "}
