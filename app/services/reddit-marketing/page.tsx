@@ -6,7 +6,7 @@ import { ORG_ID, ldString } from "@/lib/site";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "./rm.css";
-import "./rw.css";
+import "./rq.css";
 
 export const metadata: Metadata = {
   "title": "Reddit Marketing Services in India | EFFIX Labs",
@@ -386,67 +386,60 @@ export default function Page() {
         </section>
 
 
-        {/* ================= WHY NOW — three live scenes ================= */}
-        <section className="gx-section rw-sec" id="why">
+        {/* ================= WHY NOW — "search like a buyer" interactive demo ================= */}
+        <section className="gx-section gx-tint rq-sec" id="why">
           <div className="gx-wrap">
-            <div className="rw-head">
-              <div>
-                <span className="gx-label rw-label">{"Why Reddit matters now"}</span>
-                <h2 className="gx-h2">{"Reddit now shapes "}<em>{"three places buyers look."}</em></h2>
+            <div className="gx-head">
+              <span className="gx-label rq-label">{"Why Reddit matters now"}</span>
+              <h2 className="gx-h2">{"Reddit now shapes "}<em>{"three places buyers look."}</em></h2>
+              <p className="gx-lead">{"Pick a question a buyer might ask, then see where the answers come from."}</p>
+            </div>
+            <div className="rq" id="rqPlay">
+              <div className="rq-console">
+                <div className="rq-bar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path></svg>
+                  <span className="rq-query" aria-hidden="true"><bdi data-t={"best crm for a small team"} id="rqQ"></bdi><span className="rq-caret"></span></span>
+                  <button type="button" className="rq-go" id="rqGo"><span className="rq-go-l">{"Ask the internet"}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+                </div>
+                <div className="rq-chips"><span className="rq-chips-label" aria-hidden="true"><bdi data-t={"Try"}></bdi></span>
+                  <button type="button" className="rq-chip is-on" data-q="0" aria-label="Example question about choosing software"><bdi data-t={"best crm for a small team"}></bdi></button>
+                  <button type="button" className="rq-chip" data-q="1" aria-label="Example question about whether an app is safe"><bdi data-t={"is this budgeting app safe?"}></bdi></button>
+                  <button type="button" className="rq-chip" data-q="2" aria-label="Example question about buying a product"><bdi data-t={"running shoes for flat feet"}></bdi></button>
+                </div>
               </div>
-              <ol className="rw-journey" aria-hidden="true"><li><bdi data-t={"Search"}></bdi></li><li><bdi data-t={"Ask AI"}></bdi></li><li><bdi data-t={"Read the thread"}></bdi></li></ol>
-            </div>
-            <div className="rw-grid" id="rwGrid">
-              <article className="rw-card is-on">
-                <div className="rw-scene rw-serp" aria-hidden="true">
-                  <div className="rw-bar"><i></i><bdi data-t={"best crm for small team"}></bdi></div>
-                  <div className="rw-results">
-                    <div className="rw-res r-a"><b></b><i></i></div>
-                    <div className="rw-res r-b"><b></b><i></i></div>
-                    <div className="rw-res rw-reddit"><span className="rw-ico"><bdi data-t={"r/"}></bdi></span><div><em><bdi data-t={"reddit.com › r/startups"}></bdi></em><strong><bdi data-t={"Which CRM do small teams actually use?"}></bdi></strong></div></div>
+              <div className="rq-panes">
+                <article className="rq-pane">
+                  <div className="rq-scene rq-serp" aria-hidden="true">
+                    <span className="rq-tag"><bdi data-t={"Google"}></bdi></span><span className="rq-top"><bdi data-t={"#1"}></bdi></span>
+                    <div className="rq-r a"><b></b><i></i></div><div className="rq-r b"><b></b><i></i></div>
+                    <div className="rq-rd"><span className="rq-ico"><bdi data-t={"r/"}></bdi></span><div><em><bdi data-t={"reddit.com › r/startups"} className="rq-s1"></bdi></em><strong><bdi data-t={"Which CRM do small teams actually use?"} className="rq-t1"></bdi></strong></div></div>
                   </div>
-                </div>
-                <div className="rw-body">
-                  <span className="rw-step"><bdi data-t={"01"}></bdi><span><bdi data-t={"Google"}></bdi></span></span>
-                  <h3 className="rw-t">{"Google search results"}</h3>
-                  <p className="rw-q">{"Reddit threads regularly appear for “best”, “vs” and “review” searches."}</p>
-                  <p className="rw-p">{"A helpful answer in a thread that already ranks can keep sending interested people your way for months."}</p>
-                  <div className="rw-meter"><span className="rw-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Buyer intent: "}<strong>{"high"}</strong></div>
-                </div>
-              </article>
-              <article className="rw-card">
-                <div className="rw-scene rw-ai" aria-hidden="true">
-                  <div className="rw-ask"><bdi data-t={"Which CRM do people recommend?"}></bdi></div>
-                  <div className="rw-answer"><span className="rw-spark"><bdi data-t={"✦"}></bdi></span><div className="rw-lines"><i></i><i></i><i></i></div></div>
-                  <div className="rw-cite"><span className="rw-ico sm"><bdi data-t={"r/"}></bdi></span><bdi data-t={"Sources · reddit.com"}></bdi></div>
-                </div>
-                <div className="rw-body">
-                  <span className="rw-step"><bdi data-t={"02"}></bdi><span><bdi data-t={"AI assistants"}></bdi></span></span>
-                  <h3 className="rw-t">{"AI answers"}</h3>
-                  <p className="rw-q">{"AI assistants and Google’s AI features draw on public Reddit discussions."}</p>
-                  <p className="rw-p">{"Google signed a deal in 2024 to use Reddit content for AI training, reported by Reuters at about $60M a year. What Reddit says about your category can shape what AI says about it."}</p>
-                  <div className="rw-meter"><span className="rw-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Growing fast: "}<strong>{"yes"}</strong></div>
-                </div>
-              </article>
-              <article className="rw-card">
-                <div className="rw-scene rw-thread" aria-hidden="true">
-                  <div className="rw-post">
-                    <div className="rw-vote"><span><bdi data-t={"▲"}></bdi></span><b className="rw-count" data-from="84" data-to="412"><bdi data-t={"84"}></bdi></b><span className="dn"><bdi data-t={"▼"}></bdi></span></div>
-                    <div><em><bdi data-t={"r/smallbusiness"}></bdi></em><strong><bdi data-t={"Honest reviews? Thinking of switching."}></bdi></strong></div>
+                  <div className="rq-body"><span className="rq-step" aria-hidden="true"><bdi data-t={"01 · SEARCH"}></bdi></span><h3 className="rq-t">{"Google search results"}</h3><p className="rq-q">{"Reddit threads regularly appear for “best”, “vs” and “review” searches."}</p><p className="rq-p">{"A helpful answer in a thread that already ranks can keep sending interested people your way for months."}</p><div className="rq-meter"><span className="rq-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Buyer intent: "}<strong>{"high"}</strong></div></div>
+                </article>
+                <article className="rq-pane">
+                  <div className="rq-scene rq-ai" aria-hidden="true">
+                    <span className="rq-tag"><bdi data-t={"AI answer"}></bdi></span>
+                    <div className="rq-ans"><span className="rq-spark"><bdi data-t={"✦"}></bdi></span><span className="rq-ans-t"><bdi data-t={""} className="rq-t2"></bdi></span></div>
+                    <div className="rq-cite"><span className="rq-ico"><bdi data-t={"r/"}></bdi></span><bdi data-t={"Sources · reddit.com"}></bdi></div>
                   </div>
-                  <div className="rw-comment c1"><i></i><span><b></b><b></b></span></div>
-                  <div className="rw-comment c2"><i></i><span><b></b><b></b></span></div>
-                </div>
-                <div className="rw-body">
-                  <span className="rw-step"><bdi data-t={"03"}></bdi><span><bdi data-t={"Communities"}></bdi></span></span>
-                  <h3 className="rw-t">{"Peer trust"}</h3>
-                  <p className="rw-q">{"People add “reddit” to searches because they want honest opinions, not ads."}</p>
-                  <p className="rw-p">{"Real users comparing real experiences carry more weight than any landing page. That’s why authenticity isn’t optional."}</p>
-                  <div className="rw-meter"><span className="rw-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Trust signal: "}<strong>{"strong"}</strong></div>
-                </div>
-              </article>
+                  <div className="rq-body"><span className="rq-step" aria-hidden="true"><bdi data-t={"02 · ASK AI"}></bdi></span><h3 className="rq-t">{"AI answers"}</h3><p className="rq-q">{"AI assistants and Google’s AI features draw on public Reddit discussions."}</p><p className="rq-p">{"Google signed a deal in 2024 to use Reddit content for AI training, reported by Reuters at about $60M a year. What Reddit says about your category can shape what AI says about it."}</p><div className="rq-meter"><span className="rq-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Growing fast: "}<strong>{"yes"}</strong></div></div>
+                </article>
+                <article className="rq-pane">
+                  <div className="rq-scene rq-th" aria-hidden="true">
+                    <span className="rq-tag"><bdi data-t={"Reddit"}></bdi></span>
+                    <div className="rq-post">
+                      <div className="rq-vote"><button type="button" className="rq-up" tabIndex={-1} aria-hidden="true"><bdi data-t={"▲"}></bdi></button><b className="rq-count"><bdi data-t={"128"} className="rq-n"></bdi></b><span><bdi data-t={"▼"}></bdi></span></div>
+                      <div><em><bdi data-t={"r/smallbusiness"} className="rq-s3"></bdi></em><strong><bdi data-t={"Small team here. Which CRM did you stick with?"} className="rq-t3"></bdi></strong></div>
+                    </div>
+                    <div className="rq-cm c1"><i></i><bdi data-t={"We tried three. The simple one won because people actually used it."} className="rq-c1"></bdi></div>
+                    <div className="rq-cm c2"><i></i><bdi data-t={"Check the pricing once you add seats."} className="rq-c2"></bdi></div>
+                  </div>
+                  <div className="rq-body"><span className="rq-step" aria-hidden="true"><bdi data-t={"03 · READ THE THREAD"}></bdi></span><h3 className="rq-t">{"Peer trust"}</h3><p className="rq-q">{"People add “reddit” to searches because they want honest opinions, not ads."}</p><p className="rq-p">{"Real users comparing real experiences carry more weight than any landing page. That’s why authenticity isn’t optional."}</p><div className="rq-meter"><span className="rq-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Trust signal: "}<strong>{"strong"}</strong></div></div>
+                </article>
+              </div>
+              <p className="rq-verdict" aria-hidden="true"><bdi data-t={"Same question. Reddit showed up in all three places."}></bdi><b><bdi data-t={"3 / 3"}></bdi></b></p>
             </div>
-            <p className="rw-foot">{"Reddit’s rules require authentic participation and prohibit spam and vote manipulation, and every community sets its own rules. Our work is built around both. See "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{", Reddit’s guidance on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"spam"}</a>{" and on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"vote manipulation"}</a>{"."}</p>
+            <p className="rq-foot">{"Reddit’s rules require authentic participation and prohibit spam and vote manipulation, and every community sets its own rules. Our work is built around both. See "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{", Reddit’s guidance on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"spam"}</a>{" and on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"vote manipulation"}</a>{"."}</p>
           </div>
         </section>
 
