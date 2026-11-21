@@ -16,7 +16,7 @@ export const ORG = {
   name: "EFFIX Labs",
   alternateName: "Effix Labs",
   url: `${SITE_URL}/`,
-  logo: `${SITE_URL}/icon.svg`,
+  logo: `${SITE_URL}/images/logo.png`, // 512x512 raster rendered from app/icon.svg (Google needs a raster logo)
   email: "effix.labs@gmail.com", // TODO: switch to a domain email (e.g. hello@effix.co.in) when available
   telephone: "", // TODO: add a public business phone number in international format, e.g. "+91-80-XXXX-XXXX"
   address: {
