@@ -7,7 +7,7 @@ import { cleanBrand, findMentions, mentionsConfigured, type Progress } from "@/l
 import { allow } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
-export const maxDuration = 120;
+export const maxDuration = 60; // the workflow normally takes 15–30 s; 60 s fits every Vercel plan
 
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
