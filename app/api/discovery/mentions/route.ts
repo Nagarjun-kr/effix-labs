@@ -20,14 +20,16 @@ export async function POST(request: Request) {
   const domain = typeof body.domain === "string" ? body.domain.slice(0, 253) : "";
   if (brand.length < 2) return NextResponse.json({ error: "Enter a brand name to search." }, { status: 400, headers });
   const failed = "The search service isn't responding right now. Please try again in a minute.";
+  const noKeys = "Live brand search is paused for a short while. Please try again later.";
+  const why = (e: unknown) => ((e as { code?: string })?.code === "no_keys" ? noKeys : failed);
 
   if (!(request.headers.get("accept") ?? "").includes("application/x-ndjson")) {
     try {
       const result = await findMentions(brand, domain);
       if (result.platforms.every((p) => p.error)) throw new Error("all failed");
       return NextResponse.json({ configured: true, brand, ...result }, { headers });
-    } catch {
-      return NextResponse.json({ error: failed }, { status: 502, headers });
+    } catch (e) {
+      return NextResponse.json({ error: why(e) }, { status: 502, headers });
     }
   }
 
@@ -39,8 +41,8 @@ export async function POST(request: Request) {
         const result = await findMentions(brand, domain, (p: Progress) => send(p));
         if (result.platforms.every((p) => p.error)) send({ type: "error", message: failed });
         else send({ type: "result", configured: true, brand, ...result });
-      } catch {
-        send({ type: "error", message: failed });
+      } catch (e) {
+        send({ type: "error", message: why(e) });
       } finally {
         controller.close();
       }

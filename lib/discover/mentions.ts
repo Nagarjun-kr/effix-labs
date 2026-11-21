@@ -8,6 +8,7 @@
 // every audit is fresh. Runs on our server, so visitors never talk to Google directly and never see a CAPTCHA.
 import { tidyBrandName } from "./brand-identity";
 import { realLink, tagResult, type Organic } from "./classify";
+import { currentKey, rejected, serperKeys, used } from "./serper-keys";
 
 export { realLink };
 
@@ -35,6 +36,7 @@ const PER_PLATFORM = 10;
 const PARALLEL = 2; // platforms worked on at the same time (searches are spaced anyway)
 
 export const mentionsConfigured = () => serperKeys().length > 0;
+export { serperKeys };
 export const cleanBrand = (value: string) => tidyBrandName(value.replace(/["\\]/g, "")).slice(0, 100);
 
 const hostOf = (url: string) => {
@@ -73,31 +75,13 @@ async function throttle() {
 
 
 
-/** One Serper search, with up to two retries on network/server errors. */
-// ---- API keys: SERPER_API_KEYS="key1,key2,…" (or a single SERPER_API_KEY). The first working key is used; a key that
-// runs out of credit or is rejected is set aside and the next one takes over, so audits keep working.
-const benched = new Map<string, number>(); // key -> set aside until (ms)
-export function serperKeys() {
-  const raw = `${process.env.SERPER_API_KEYS ?? ""},${process.env.SERPER_API_KEY ?? ""}`;
-  return [...new Set(raw.split(/[\s,;]+/).map((k) => k.trim()).filter(Boolean))];
-}
-function currentKey() {
-  const now = Date.now();
-  return serperKeys().find((k) => (benched.get(k) ?? 0) <= now) ?? null;
-}
-const mask = (k: string) => `ending …${k.slice(-4)}`;
-function benchKey(key: string, hours: number, why: string) {
-  benched.set(key, Date.now() + hours * 3600_000);
-  console.warn(`[serper] key ${mask(key)} set aside for ${hours} h: ${why}. ${currentKey() ? "Switched to the next key." : "No working keys left."}`);
-}
-
 /** One Serper search, retried on network/server errors and moved to the next key when one runs out. */
 async function serper(q: string, gl: string, counter: { n: number }): Promise<Organic[]> {
   let lastError: unknown;
   let tries = 0;
   while (tries < 3) {
-    const key = currentKey();
-    if (!key) throw Object.assign(new Error("no working search keys"), { fatal: true });
+    const key = await currentKey();
+    if (!key) throw Object.assign(new Error("no_keys"), { fatal: true, code: "no_keys" });
     await throttle();
     counter.n += 1;
     const controller = new AbortController();
@@ -112,19 +96,16 @@ async function serper(q: string, gl: string, counter: { n: number }): Promise<Or
       });
       if (!res.ok) {
         const text = (await res.text().catch(() => "")).slice(0, 300);
-        if (res.status === 401 || res.status === 403) {
-          benchKey(key, 24, `rejected (${res.status} ${text})`);
+        if (res.status === 401 || res.status === 403 || res.status === 402 || /credit|balance|quota|limit exceeded|payment/i.test(text)) {
+          rejected(key, res.status, text);
           continue; // same search, next key
-        }
-        if (/credit|balance|quota|limit exceeded|payment/i.test(text) || res.status === 402) {
-          benchKey(key, 6, `out of credit (${res.status} ${text})`);
-          continue;
         }
         if (res.status === 429) throw new Error("search 429"); // too fast: wait and retry the same key
         if (res.status === 400) throw Object.assign(new Error(`search 400 ${text}`), { fatal: true }); // query not allowed
         throw new Error(`search ${res.status}`);
       }
       const data = (await res.json()) as { organic?: Organic[] };
+      used(key);
       return data.organic ?? [];
     } catch (error) {
       lastError = error;
@@ -168,6 +149,7 @@ export function countryFor(domain: string) {
 
 export async function findMentions(brand: string, domain = "", onProgress: (p: Progress) => void = () => {}): Promise<SearchResult> {
   if (!mentionsConfigured()) throw new Error("not_configured");
+  if (!(await currentKey())) throw Object.assign(new Error("no_keys"), { code: "no_keys" });
   const gl = countryFor(domain);
   const otherCountries = gl === "us" ? ["in", "uk"] : ["us", "uk"].filter((c) => c !== gl);
   const counter = { n: 0 };
