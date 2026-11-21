@@ -7,6 +7,7 @@ import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "../reddit-marketing/rm.css";
 import "./cw.css";
+import "./cw-flow.css";
 
 export const metadata: Metadata = {
   "title": "Content Writing Services in India | EFFIX Labs",
@@ -452,55 +453,48 @@ export default function Page() {
         </section>
 
 
-        {/* ================= PROCESS ================= */}
+        {/* ================= PROCESS — the page writes itself (scrubber) ================= */}
         <section className="gx-section gx-tint" id="process">
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label">{"Our process"}</span>
               <h2 className="gx-h2">{"How our content writing "}<em>{"process works"}</em></h2>
+              <p className="gx-lead">{"Drag the slider and watch a blank page become a published, ranking piece."}</p>
             </div>
-            <ol className="rm-steps" id="rmSteps">
-              <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"01"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path></svg></span></div>
-                <h3 className="rm-step-t">{"Discovery"}</h3>
-                <p className="rm-step-d">{"Your business, audience, goals, competitors and brand voice, captured in one short session."}</p>
-                <span className="rm-step-bar" aria-hidden="true"></span>
-              </li>
-              <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"02"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg></span></div>
-                <h3 className="rm-step-t">{"Keyword & intent research"}</h3>
-                <p className="rm-step-d">{"What your buyers search for, what Google ranks for it today, and the gaps we can win."}</p>
-                <span className="rm-step-bar" aria-hidden="true"></span>
-              </li>
-              <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"03"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5h6M9 3h6v4H9z"></path><path d="M7 5H5v16h14V5h-2"></path><path d="M8.5 12h7M8.5 16h5"></path></svg></span></div>
-                <h3 className="rm-step-t">{"Content brief"}</h3>
-                <p className="rm-step-d">{"Keyword, intent, outline, sources and voice notes, agreed with you before writing starts."}</p>
-                <span className="rm-step-bar" aria-hidden="true"></span>
-              </li>
-              <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"04"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20l4-1 10-10-3-3L5 16z"></path><path d="M14 7l3 3"></path></svg></span></div>
-                <h3 className="rm-step-t">{"Writing"}</h3>
-                <p className="rm-step-d">{"Experienced writers draft the piece, adding your team’s expertise and real examples."}</p>
-                <span className="rm-step-bar" aria-hidden="true"></span>
-              </li>
-              <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"05"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l4 4L19 6"></path></svg></span></div>
-                <h3 className="rm-step-t">{"Editing & fact-checking"}</h3>
-                <p className="rm-step-d">{"An editor checks accuracy, clarity, structure, originality and on-page SEO."}</p>
-                <span className="rm-step-bar" aria-hidden="true"></span>
-              </li>
-              <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"06"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12a8 8 0 1 0 2.3-5.6"></path><path d="M4 4v4h4"></path></svg></span></div>
-                <h3 className="rm-step-t">{"Publish, measure & refresh"}</h3>
-                <p className="rm-step-d">{"We track clicks and rankings in "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{", and refresh content as results and searches change."}</p>
-                <span className="rm-step-bar" aria-hidden="true"></span>
-              </li>
-            </ol>
+            <div className="cf at-1" id="cwFlow">
+              <ol className="cf-steps">
+                <li className="cf-step is-on"><div className="cf-num" aria-hidden="true"><b><bdi data-t={"01"}></bdi></b><span><bdi data-t={"/ 06"}></bdi></span></div><h3 className="cf-t">{"Discovery"}</h3><p className="cf-d">{"Your business, audience, goals, competitors and brand voice, captured in one short session."}</p></li>
+                <li className="cf-step"><div className="cf-num" aria-hidden="true"><b><bdi data-t={"02"}></bdi></b><span><bdi data-t={"/ 06"}></bdi></span></div><h3 className="cf-t">{"Keyword & intent research"}</h3><p className="cf-d">{"What your buyers search for, what Google ranks for it today, and the gaps we can win."}</p></li>
+                <li className="cf-step"><div className="cf-num" aria-hidden="true"><b><bdi data-t={"03"}></bdi></b><span><bdi data-t={"/ 06"}></bdi></span></div><h3 className="cf-t">{"Content brief"}</h3><p className="cf-d">{"Keyword, intent, outline, sources and voice notes, agreed with you before writing starts."}</p></li>
+                <li className="cf-step"><div className="cf-num" aria-hidden="true"><b><bdi data-t={"04"}></bdi></b><span><bdi data-t={"/ 06"}></bdi></span></div><h3 className="cf-t">{"Writing"}</h3><p className="cf-d">{"Experienced writers draft the piece, adding your team’s expertise and real examples."}</p></li>
+                <li className="cf-step"><div className="cf-num" aria-hidden="true"><b><bdi data-t={"05"}></bdi></b><span><bdi data-t={"/ 06"}></bdi></span></div><h3 className="cf-t">{"Editing & fact-checking"}</h3><p className="cf-d">{"An editor checks accuracy, clarity, structure, originality and on-page SEO."}</p></li>
+                <li className="cf-step"><div className="cf-num" aria-hidden="true"><b><bdi data-t={"06"}></bdi></b><span><bdi data-t={"/ 06"}></bdi></span></div><h3 className="cf-t">{"Publish, measure & refresh"}</h3><p className="cf-d">{"We track clicks and rankings in "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{", and refresh content as results and searches change."}</p></li>
+              </ol>
+              <div className="cf-doc" aria-hidden="true">
+                <div className="cf-bar"><i></i><i></i><i></i><span className="cf-file"><bdi data-t={"how-to-choose-a-crm.doc"}></bdi></span><span className="cf-status" id="cfStatus"><bdi data-t={"Discovery"}></bdi></span></div>
+                <div className="cf-page">
+                  <div className="cf-layer cf-notes"><span className="cf-note n1"><bdi data-t={"Audience"}></bdi></span><span className="cf-note n2"><bdi data-t={"Goal"}></bdi></span><span className="cf-note n3"><bdi data-t={"Brand voice"}></bdi></span></div>
+                  <div className="cf-layer cf-kw"><span><bdi data-t={"crm for small teams"}></bdi></span><span><bdi data-t={"best crm india"}></bdi></span><span><bdi data-t={"crm pricing"}></bdi></span><span className="intent"><bdi data-t={"Intent · commercial"}></bdi></span></div>
+                  <div className="cf-layer cf-outline">
+                    <i className="cf-h1"></i>
+                    <div className="cf-sec"><span className="cf-h2"><bdi data-t={"What a small team needs"}></bdi></span><div className="cf-lines"><i></i><i></i><i></i></div></div>
+                    <div className="cf-sec"><span className="cf-h2"><bdi data-t={"Comparing the options"}></bdi></span><div className="cf-lines"><i></i><i></i><i></i></div></div>
+                    <div className="cf-sec"><span className="cf-h2"><bdi data-t={"FAQs"}></bdi><span className="cf-caret"></span></span><div className="cf-lines"><i></i><i></i><i></i></div></div>
+                  </div>
+                  <div className="cf-layer cf-edit"><span className="cf-del"><bdi data-t={"very unique"}></bdi></span><span className="cf-ins"><bdi data-t={"distinctive"}></bdi></span><span className="cf-check"><bdi data-t={"Fact-checked"}></bdi></span><span className="cf-check"><bdi data-t={"Sources cited"}></bdi></span><span className="cf-check"><bdi data-t={"On-page SEO"}></bdi></span></div>
+                  <div className="cf-layer cf-chart"><svg viewBox="0 0 300 44" preserveAspectRatio="none"><path d="M0 40 C 50 38, 80 34, 120 30 S 190 18, 230 12 S 280 4, 300 2"></path></svg><em><bdi data-t={"Clicks ↑"}></bdi></em></div>
+                  <span className="cf-stamp"><bdi data-t={"Published"}></bdi></span>
+                </div>
+              </div>
+              <div className="cf-scrub">
+                <div className="cf-track">
+                  <input className="cf-range" id="cfRange" type="range" min="1" max="6" step="1" defaultValue="1" aria-label="Content writing process step" aria-valuetext="Step 1 of 6: Discovery" />
+                  <div className="cf-ticks" aria-hidden="true"><button type="button" className="cf-tick is-on" tabIndex={-1} data-step="1"><b><bdi data-t={"01"}></bdi></b><span><bdi data-t={"Discover"}></bdi></span></button><button type="button" className="cf-tick" tabIndex={-1} data-step="2"><b><bdi data-t={"02"}></bdi></b><span><bdi data-t={"Research"}></bdi></span></button><button type="button" className="cf-tick" tabIndex={-1} data-step="3"><b><bdi data-t={"03"}></bdi></b><span><bdi data-t={"Brief"}></bdi></span></button><button type="button" className="cf-tick" tabIndex={-1} data-step="4"><b><bdi data-t={"04"}></bdi></b><span><bdi data-t={"Write"}></bdi></span></button><button type="button" className="cf-tick" tabIndex={-1} data-step="5"><b><bdi data-t={"05"}></bdi></b><span><bdi data-t={"Edit"}></bdi></span></button><button type="button" className="cf-tick" tabIndex={-1} data-step="6"><b><bdi data-t={"06"}></bdi></b><span><bdi data-t={"Publish"}></bdi></span></button></div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-
-
 
         {/* ================= WHO ================= */}
         <section className="gx-section" id="audience">

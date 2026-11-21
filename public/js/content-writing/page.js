@@ -72,3 +72,44 @@ function handleContentSubmit(e) {
   }, { threshold: 0.12 });
   els.forEach(function (el, i) { el.classList.add('rm-reveal'); el.style.transitionDelay = (i % 3) * 0.08 + 's'; io.observe(el); });
 })();
+
+/* Process: a scrubber drives a document from blank page to published.
+   Drag the slider, click a step label or use arrow keys; it also plays by itself while in view. */
+(function () {
+  var flow = document.getElementById('cwFlow');
+  if (!flow) return;
+  var range = document.getElementById('cfRange');
+  var steps = Array.prototype.slice.call(flow.querySelectorAll('.cf-step'));
+  var ticks = Array.prototype.slice.call(flow.querySelectorAll('.cf-tick'));
+  var status = flow.querySelector('#cfStatus bdi');
+  var names = steps.map(function (li) { return li.querySelector('.cf-t').textContent.trim(); });
+  var short = ['Discovery', 'Research', 'Brief', 'Drafting', 'Editing', 'Published'];
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = 1, timer = 0, visible = false, lastUser = 0;
+
+  function setStep(n) {
+    cur = Math.max(1, Math.min(6, n));
+    for (var k = 1; k <= 6; k++) flow.classList.toggle('at-' + k, k <= cur);
+    steps.forEach(function (li, i) { li.classList.toggle('is-on', i === cur - 1); });
+    ticks.forEach(function (t, i) { t.classList.toggle('is-on', i === cur - 1); t.classList.toggle('is-past', i < cur - 1); });
+    if (range) {
+      range.value = String(cur);
+      range.style.setProperty('--p', ((cur - 1) / 5 * 100) + '%');
+      range.setAttribute('aria-valuetext', 'Step ' + cur + ' of 6: ' + names[cur - 1]);
+    }
+    if (status) status.setAttribute('data-t', short[cur - 1]);
+  }
+  function user(n) { lastUser = performance.now(); setStep(n); schedule(); }
+  function schedule() {
+    clearTimeout(timer);
+    if (reduce || !visible) return;
+    var wait = Math.max(cur === 6 ? 3600 : 2600, 9000 - (performance.now() - lastUser));
+    timer = setTimeout(function () { if (performance.now() - lastUser >= 9000) setStep(cur === 6 ? 1 : cur + 1); schedule(); }, wait);
+  }
+  if (range) range.addEventListener('input', function () { user(+range.value); });
+  ticks.forEach(function (t) { t.addEventListener('click', function () { user(+t.getAttribute('data-step')); if (range) range.focus(); }); });
+  setStep(1);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; schedule(); }, { threshold: 0.35 }).observe(flow);
+  }
+})();
