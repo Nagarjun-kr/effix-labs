@@ -11,13 +11,13 @@ import "./gb-banner.css";
 import "./gb-process.css";
 
 export const metadata: Metadata = {
-  "title": "Google Business Profile Optimisation Services | EFFIX Labs",
+  "title": "Google Business Profile Optimisation Services | Effix Labs",
   "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
   "alternates": {
     "canonical": "https://effix.co.in/services/google-business-profile"
   },
   "openGraph": {
-    "title": "Google Business Profile Optimisation Services | EFFIX Labs",
+    "title": "Google Business Profile Optimisation Services | Effix Labs",
     "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "url": "https://effix.co.in/services/google-business-profile",
     "type": "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Google Business Profile Optimisation Services | EFFIX Labs",
+    "title": "Google Business Profile Optimisation Services | Effix Labs",
     "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "images": [
       "https://effix.co.in/images/services/service-01-gbp.jpg"
@@ -47,7 +47,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer Google Business Profile optimisation services in Bengaluru?",
     "a": [
-      "Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed."
+      "Yes. Effix Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed."
     ]
   },
   {
@@ -113,7 +113,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer Google My Business optimization services in India?",
     "a": [
-      "Yes. EFFIX Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access."
+      "Yes. Effix Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access."
     ]
   },
   {
@@ -225,7 +225,7 @@ export default function Page() {
             </h1>
             <p className="gx-hero-sub">{"Get found where local customers are searching."}</p>
             <p className="gx-hero-lede">
-              {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. EFFIX Labs helps businesses in Bengaluru and across India make their Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
+              {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. Effix Labs helps businesses in Bengaluru and across India make their Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
@@ -400,7 +400,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
-            <p className="gx-source">{"Impact levels are EFFIX Labs’ general guidance from audit experience, not Google data. Every profile is different."}</p>
+            <p className="gx-source">{"Impact levels are Effix Labs’ general guidance from audit experience, not Google data. Every profile is different."}</p>
           </div>
         </section>
 
@@ -507,7 +507,7 @@ export default function Page() {
         <section className="gx-section gx-dark" id="why-effix">
           <div className="gx-wrap">
             <div className="gx-head gx-head-left">
-              <span className="gx-label gx-label-dark">{"Why EFFIX Labs"}</span>
+              <span className="gx-label gx-label-dark">{"Why Effix Labs"}</span>
               <h2 className="gx-h2">{"Why choose us as your Google Business Profile "}<em>{"agency"}</em></h2>
             </div>
             <div className="gx-why">
@@ -517,7 +517,7 @@ export default function Page() {
               <div><span className="gx-why-n" aria-hidden="true">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a strong site, "}<a href="/services/content-writing">{"helpful content"}</a>{", "}<a href="/services/seo-aeo-services">{"AI search"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
               <div><span className="gx-why-n" aria-hidden="true">{"05"}</span><h3 className="gx-h3">{"Plain-language reporting"}</h3><p className="gx-p-sm">{"You always know what was done, and why."}</p></div>
             </div>
-            <p className="gx-disclaimer">{"EFFIX Labs is an independent agency, not affiliated with or endorsed by Google."}</p>
+            <p className="gx-disclaimer">{"Effix Labs is an independent agency, not affiliated with or endorsed by Google."}</p>
           </div>
         </section>
 

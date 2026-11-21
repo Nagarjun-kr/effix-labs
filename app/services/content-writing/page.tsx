@@ -10,13 +10,13 @@ import "./cw.css";
 import "./cw-flow.css";
 
 export const metadata: Metadata = {
-  "title": "Content Writing Services in India | EFFIX Labs",
+  "title": "Content Writing Services in India | Effix Labs",
   "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
   "alternates": {
     "canonical": "https://effix.co.in/services/content-writing"
   },
   "openGraph": {
-    "title": "Content Writing Services in India | EFFIX Labs",
+    "title": "Content Writing Services in India | Effix Labs",
     "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
     "url": "https://effix.co.in/services/content-writing",
     "type": "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Content Writing Services in India | EFFIX Labs",
+    "title": "Content Writing Services in India | Effix Labs",
     "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
     "images": [
       "https://effix.co.in/images/services/service-04-content-writing.jpg"
@@ -53,13 +53,13 @@ const FAQS: FaqItem[] = [
   {
     "q": "How much do content writing services cost in India?",
     "a": [
-      "Cost depends on the type of content, research depth, length, volume and turnaround. A short product description costs far less than a researched long-form guide or a full website. EFFIX Labs quotes per project after understanding your scope, so you know the price before any work starts."
+      "Cost depends on the type of content, research depth, length, volume and turnaround. A short product description costs far less than a researched long-form guide or a full website. Effix Labs quotes per project after understanding your scope, so you know the price before any work starts."
     ]
   },
   {
     "q": "Do you offer content writing services in Bengaluru?",
     "a": [
-      "Yes. EFFIX Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. We also write location and service pages that support local search visibility."
+      "Yes. Effix Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. We also write location and service pages that support local search visibility."
     ]
   },
   {
@@ -237,7 +237,7 @@ export default function Page() {
             </h1>
             <p className="gx-hero-sub">{"Content that ranks, reads well and turns readers into customers."}</p>
             <p className="gx-hero-lede">
-              {"EFFIX Labs provides content writing services for brands across India and in Bengaluru: SEO blog posts, website copy, service pages, product descriptions, case studies and more. Every piece is researched, written and edited by people, built for search engines and AI answers, and written to sound like your brand."}
+              {"Effix Labs provides content writing services for brands across India and in Bengaluru: SEO blog posts, website copy, service pages, product descriptions, case studies and more. Every piece is researched, written and edited by people, built for search engines and AI answers, and written to sound like your brand."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what we write"}</a>
@@ -546,7 +546,7 @@ export default function Page() {
         <section className="gx-section gx-dark" id="why-effix">
           <div className="gx-wrap">
             <div className="gx-head gx-head-left">
-              <span className="gx-label gx-label-dark">{"Why EFFIX Labs"}</span>
+              <span className="gx-label gx-label-dark">{"Why Effix Labs"}</span>
               <h2 className="gx-h2">{"Why choose us as your content writing "}<em>{"agency"}</em></h2>
             </div>
             <div className="gx-why">

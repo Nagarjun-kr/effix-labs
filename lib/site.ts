@@ -13,8 +13,8 @@ export const SERVICE_SLUGS = [
 // Business details for the Organization / ProfessionalService schema.
 // Fields left empty are omitted from the JSON-LD rather than published as placeholders.
 export const ORG = {
-  name: "EFFIX Labs",
-  alternateName: "Effix Labs",
+  name: "Effix Labs",
+  alternateName: "EFFIX Labs",
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/images/logo.png`, // 512x512 raster rendered from app/icon.svg (Google needs a raster logo)
   email: "hello@effix.co.in",

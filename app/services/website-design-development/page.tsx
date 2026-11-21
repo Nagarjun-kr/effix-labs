@@ -9,13 +9,13 @@ import "../reddit-marketing/rm.css";
 import "./wd.css";
 
 export const metadata: Metadata = {
-  "title": "Website Design & Development Services in India | EFFIX Labs",
+  "title": "Website Design & Development Services in India | Effix Labs",
   "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
   "alternates": {
     "canonical": "https://effix.co.in/services/website-design-development"
   },
   "openGraph": {
-    "title": "Website Design & Development Services in India | EFFIX Labs",
+    "title": "Website Design & Development Services in India | Effix Labs",
     "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
     "url": "https://effix.co.in/services/website-design-development",
     "type": "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Website Design & Development Services in India | EFFIX Labs",
+    "title": "Website Design & Development Services in India | Effix Labs",
     "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
     "images": [
       "https://effix.co.in/images/services/service-05-web-dev.jpg"
@@ -46,7 +46,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "What do website design and development services include?",
     "a": [
-      "Website design and development services cover planning, UI/UX design, coding, CMS setup, mobile optimisation, on-page SEO, testing and launch. At EFFIX Labs this also includes forms and integrations, training for your team and optional maintenance after launch."
+      "Website design and development services cover planning, UI/UX design, coding, CMS setup, mobile optimisation, on-page SEO, testing and launch. At Effix Labs this also includes forms and integrations, training for your team and optional maintenance after launch."
     ]
   },
   {
@@ -64,7 +64,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer website design and development in Bangalore?",
     "a": [
-      "Yes. EFFIX Labs works with businesses in Bengaluru (Bangalore) and across India. We can meet in person in Bengaluru when needed and work remotely everywhere else."
+      "Yes. Effix Labs works with businesses in Bengaluru (Bangalore) and across India. We can meet in person in Bengaluru when needed and work remotely everywhere else."
     ]
   },
   {
@@ -199,7 +199,7 @@ export default function Page() {
             </h1>
             <p className="gx-hero-sub">{"Fast, mobile-first websites that look sharp, rank well and turn visitors into enquiries."}</p>
             <p className="gx-hero-lede">
-              {"EFFIX Labs offers website design and development services for businesses across India and in Bengaluru. We plan, design, build and launch custom websites, from business sites and landing pages to online stores, with SEO, speed and conversions built in from day one."}
+              {"Effix Labs offers website design and development services for businesses across India and in Bengaluru. We plan, design, build and launch custom websites, from business sites and landing pages to online stores, with SEO, speed and conversions built in from day one."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#services" className="gx-btn gx-btn-ghost">{"See what we build"}</a>
@@ -298,7 +298,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
-            <p className="wd-table-note">{"Timelines are typical for EFFIX Labs projects and depend on scope, content readiness and feedback rounds."}</p>
+            <p className="wd-table-note">{"Timelines are typical for Effix Labs projects and depend on scope, content readiness and feedback rounds."}</p>
           </div>
         </section>
 

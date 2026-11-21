@@ -9,13 +9,13 @@ import "../reddit-marketing/rm.css";
 import "./sa.css";
 
 export const metadata: Metadata = {
-  "title": "SEO & AEO Services in India | EFFIX Labs",
+  "title": "SEO & AEO Services in India | Effix Labs",
   "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
   "alternates": {
     "canonical": "https://effix.co.in/services/seo-aeo-services"
   },
   "openGraph": {
-    "title": "SEO & AEO Services in India | EFFIX Labs",
+    "title": "SEO & AEO Services in India | Effix Labs",
     "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
     "url": "https://effix.co.in/services/seo-aeo-services",
     "type": "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "SEO & AEO Services in India | EFFIX Labs",
+    "title": "SEO & AEO Services in India | Effix Labs",
     "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
     "images": [
       "https://effix.co.in/images/services/service-03-seo-aeo.jpg"
@@ -64,7 +64,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer SEO & AEO services in Bangalore?",
     "a": [
-      "Yes. EFFIX Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad."
+      "Yes. Effix Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad."
     ]
   },
   {
@@ -198,7 +198,7 @@ export default function Page() {
             </h1>
             <p className="gx-hero-sub">{"Rank on Google. Get cited in AI answers."}</p>
             <p className="gx-hero-lede">
-              {"People now search in two places: classic Google results and AI answers from Google’s AI Overviews, ChatGPT, Perplexity and Gemini. EFFIX Labs provides SEO & AEO services that make your business easy to find, easy to understand and easy to recommend in both, for brands across India and in Bangalore."}
+              {"People now search in two places: classic Google results and AI answers from Google’s AI Overviews, ChatGPT, Perplexity and Gemini. Effix Labs provides SEO & AEO services that make your business easy to find, easy to understand and easy to recommend in both, for brands across India and in Bangalore."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#lanes" className="gx-btn gx-btn-ghost">{"See how it works"}</a>

@@ -9,13 +9,13 @@ import "./rm.css";
 import "./rq.css";
 
 export const metadata: Metadata = {
-  "title": "Reddit Marketing Services in India | EFFIX Labs",
+  "title": "Reddit Marketing Services in India | Effix Labs",
   "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
   "alternates": {
     "canonical": "https://effix.co.in/services/reddit-marketing"
   },
   "openGraph": {
-    "title": "Reddit Marketing Services in India | EFFIX Labs",
+    "title": "Reddit Marketing Services in India | Effix Labs",
     "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "url": "https://effix.co.in/services/reddit-marketing",
     "type": "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Reddit Marketing Services in India | EFFIX Labs",
+    "title": "Reddit Marketing Services in India | Effix Labs",
     "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "images": [
       "https://effix.co.in/images/services/reddit-marketing-hero.jpg"
@@ -98,7 +98,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer Reddit marketing services in Bengaluru?",
     "a": [
-      "Yes. EFFIX Labs works with startups and businesses in Bengaluru (Bangalore), including SaaS, fintech, D2C and local service brands, and we can meet in person where needed."
+      "Yes. Effix Labs works with startups and businesses in Bengaluru (Bangalore), including SaaS, fintech, D2C and local service brands, and we can meet in person where needed."
     ]
   },
   {
@@ -258,7 +258,7 @@ export default function Page() {
             </h1>
             <p className="gx-hero-sub">{"Be part of the conversations that shape buying decisions."}</p>
             <p className="gx-hero-lede">
-              {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best dentist in Indiranagar?” “Is this brand legit?” EFFIX Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
+              {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best dentist in Indiranagar?” “Is this brand legit?” Effix Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
@@ -494,7 +494,7 @@ export default function Page() {
                 </tbody>
               </table>
             </div>
-            <p className="gx-source">{"Risk levels are EFFIX Labs’ general guidance, not Reddit data. Official rules: "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{" · "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"Spam"}</a>{" · "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"Vote manipulation"}</a>{"."}</p>
+            <p className="gx-source">{"Risk levels are Effix Labs’ general guidance, not Reddit data. Official rules: "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{" · "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"Spam"}</a>{" · "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"Vote manipulation"}</a>{"."}</p>
           </div>
         </section>
 
@@ -573,18 +573,18 @@ export default function Page() {
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label">{"How we’re different"}</span>
-              <h2 className="gx-h2">{"Shortcut tactics vs "}<em>{"the EFFIX approach"}</em></h2>
+              <h2 className="gx-h2">{"Shortcut tactics vs "}<em>{"the Effix approach"}</em></h2>
             </div>
-            <div className="gx-table-wrap" role="region" aria-label="Shortcut Reddit tactics compared with the EFFIX approach" tabIndex={0}>
+            <div className="gx-table-wrap" role="region" aria-label="Shortcut Reddit tactics compared with the Effix approach" tabIndex={0}>
               <table className="gx-table gx-compare">
-                <thead><tr><th scope="col"><span className="gx-sr">{"Area"}</span></th><th scope="col">{"Shortcut tactics"}</th><th scope="col" className="gx-col-us">{"With EFFIX Labs"}</th></tr></thead>
+                <thead><tr><th scope="col"><span className="gx-sr">{"Area"}</span></th><th scope="col">{"Shortcut tactics"}</th><th scope="col" className="gx-col-us">{"With Effix Labs"}</th></tr></thead>
                 <tbody>
-                  <tr><th scope="row">{"Accounts"}</th><td data-label="Shortcut tactics">{"Bought or aged accounts"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Clearly identified accounts you own"}</td></tr>
-                  <tr><th scope="row">{"Votes"}</th><td data-label="Shortcut tactics">{"Bought upvotes, vote rings"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Earned through useful contributions only"}</td></tr>
-                  <tr><th scope="row">{"Content"}</th><td data-label="Shortcut tactics">{"Ads disguised as advice"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Genuinely helpful answers and posts"}</td></tr>
-                  <tr><th scope="row">{"Rules"}</th><td data-label="Shortcut tactics">{"Ignored until there’s a ban"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Checked for every community, every time"}</td></tr>
-                  <tr><th scope="row">{"Approval"}</th><td data-label="Shortcut tactics">{"You rarely see what’s posted"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"You approve the strategy and key messages"}</td></tr>
-                  <tr><th scope="row">{"Reporting"}</th><td data-label="Shortcut tactics">{"Upvotes and impressions"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Mentions, sentiment, traffic and AI citations"}</td></tr>
+                  <tr><th scope="row">{"Accounts"}</th><td data-label="Shortcut tactics">{"Bought or aged accounts"}</td><td className="gx-col-us" data-label="With Effix Labs">{"Clearly identified accounts you own"}</td></tr>
+                  <tr><th scope="row">{"Votes"}</th><td data-label="Shortcut tactics">{"Bought upvotes, vote rings"}</td><td className="gx-col-us" data-label="With Effix Labs">{"Earned through useful contributions only"}</td></tr>
+                  <tr><th scope="row">{"Content"}</th><td data-label="Shortcut tactics">{"Ads disguised as advice"}</td><td className="gx-col-us" data-label="With Effix Labs">{"Genuinely helpful answers and posts"}</td></tr>
+                  <tr><th scope="row">{"Rules"}</th><td data-label="Shortcut tactics">{"Ignored until there’s a ban"}</td><td className="gx-col-us" data-label="With Effix Labs">{"Checked for every community, every time"}</td></tr>
+                  <tr><th scope="row">{"Approval"}</th><td data-label="Shortcut tactics">{"You rarely see what’s posted"}</td><td className="gx-col-us" data-label="With Effix Labs">{"You approve the strategy and key messages"}</td></tr>
+                  <tr><th scope="row">{"Reporting"}</th><td data-label="Shortcut tactics">{"Upvotes and impressions"}</td><td className="gx-col-us" data-label="With Effix Labs">{"Mentions, sentiment, traffic and AI citations"}</td></tr>
                 </tbody>
               </table>
             </div>
@@ -641,7 +641,7 @@ export default function Page() {
         <section className="gx-section gx-dark" id="why-effix">
           <div className="gx-wrap">
             <div className="gx-head gx-head-left">
-              <span className="gx-label gx-label-dark">{"Why EFFIX Labs"}</span>
+              <span className="gx-label gx-label-dark">{"Why Effix Labs"}</span>
               <h2 className="gx-h2">{"Why choose us as your Reddit marketing "}<em>{"agency"}</em></h2>
             </div>
             <div className="gx-why">
@@ -651,7 +651,7 @@ export default function Page() {
               <div><span className="gx-why-n" aria-hidden="true">{"04"}</span><h3 className="gx-h3">{"Connected to search"}</h3><p className="gx-p-sm">{"Reddit work linked with "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{", "}<a href="/services/content-writing">{"content"}</a>{" and "}<a href="/services/google-business-profile">{"local visibility"}</a>{"."}</p></div>
               <div><span className="gx-why-n" aria-hidden="true">{"05"}</span><h3 className="gx-h3">{"Honest reporting"}</h3><p className="gx-p-sm">{"We report what we can measure, and say so when we can’t."}</p></div>
             </div>
-            <p className="gx-disclaimer">{"EFFIX Labs is an independent agency, not affiliated with or endorsed by Reddit, Inc."}</p>
+            <p className="gx-disclaimer">{"Effix Labs is an independent agency, not affiliated with or endorsed by Reddit, Inc."}</p>
           </div>
         </section>
 

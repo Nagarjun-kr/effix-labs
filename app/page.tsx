@@ -43,7 +43,7 @@ const HOME_FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Does the audit cover AI answers, Google Maps, Reddit or Quora?",
+    "q": "Does the audit cover AI answers, Google Maps or Reddit?",
     "a": [
       "Not yet. Today it covers Google organic search only."
     ]
@@ -63,7 +63,12 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "Do I need special SEO to appear in AI search?",
     "a": [
-      "For Google’s AI features, Google says no special optimization is needed. Good content and standard SEO basics still apply. We don’t promise a trick that guarantees inclusion."
+      "There’s no trick that guarantees it. Google says its AI features rely on the same SEO fundamentals as regular search, so what helps is strong technical SEO, clear direct answers, structured data and trusted mentions across the web. That’s the work our ",
+      {
+        "text": "SEO & AEO services",
+        "href": "/services/seo-aeo-services"
+      },
+      " cover. We don’t promise inclusion, because no one controls Google or AI tools."
     ]
   },
   {
@@ -73,15 +78,25 @@ const HOME_FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "How do you work on Reddit and Quora?",
+    "q": "How do you work on Reddit?",
     "a": [
-      "We disclose our client relationships and follow each community’s rules. We try to give useful, relevant answers. We avoid undisclosed promotion."
+      "Through clearly identified accounts, with client relationships disclosed and each community’s rules followed. We focus on useful, relevant answers and never use undisclosed promotion. See our ",
+      {
+        "text": "Reddit marketing",
+        "href": "/services/reddit-marketing"
+      },
+      " approach."
     ]
   },
   {
-    "q": "Who writes your blog content?",
+    "q": "Who writes your content?",
     "a": [
-      "AI helps with drafting. A person reviews every article. We cite reliable sources for factual claims."
+      "People do. Experienced writers research, write and edit every piece, and an editor fact-checks it before delivery. We may use tools to help with research, and we cite reliable sources for factual claims. See our ",
+      {
+        "text": "content writing services",
+        "href": "/services/content-writing"
+      },
+      "."
     ]
   },
   {
@@ -98,7 +113,7 @@ const HOME_FAQS: FaqItem[] = [
         "text": "hello@effix.co.in",
         "href": "mailto:hello@effix.co.in"
       },
-      " or use the contact page."
+      ". We reply within one business day."
     ]
   }
 ];
@@ -637,7 +652,7 @@ export default function Page() {
                       </h3>
                       {" "}
                       <p>
-                        {"Make your information clearer and easier to find when people use AI search."}
+                        {"Rank higher on Google and get cited when people ask AI tools for answers."}
                       </p>
                       {" "}
                     </div>
@@ -744,7 +759,7 @@ export default function Page() {
                 </h2>
                 {" "}
                 <p className="discover-desc">
-                  {"EFFIX Labs unifies search, content, and AI within a single intelligence layer, ensuring your business is discoverable across every customer touchpoint."}
+                  {"Effix Labs brings your Google presence, community conversations and AI search visibility into one clear plan, so customers can find you wherever they look."}
                 </p>
                 {" "}
                 {" "}
@@ -781,7 +796,7 @@ export default function Page() {
                 {" "}
                 {" "}
                 <p className="discover-subtext">
-                  {"Fast, intelligent tools built for real visibility and measurable growth."}
+                  {"Clear audits, practical plans and honest reports you can act on."}
                 </p>
                 {" "}
                 {" "}
@@ -818,17 +833,17 @@ export default function Page() {
               </div>
               {" "}
               {" "}
-              <div className="discover-visual-stage" aria-label="EFFIX Discover platform in action with real-time search visibility and AI insights">
+              <div className="discover-visual-stage" aria-label="Effix Discover platform in action with real-time search visibility and AI insights">
                 {" "}
                 <div className="discover-showcase-frame" id="discoverShowcaseFrame">
                   {" "}
                   <div className="discover-slides-container">
                     {" "}
                     {" "}
-                    <img src="/images/discover-slide-girl.jpg" alt="EFFIX Discover Platform Intelligence" className="discover-slide is-active" width={1024} height={1024} loading="lazy" decoding="async" data-slide="girl" />
+                    <img src="/images/discover-slide-girl.jpg" alt="Effix Discover Platform Intelligence" className="discover-slide is-active" width={1024} height={1024} loading="lazy" decoding="async" data-slide="girl" />
                     {" "}
                     {" "}
-                    <img src="/images/discover-slide-boy.jpg" alt="EFFIX Discover Search, Content and AI Intelligence" className="discover-slide" width={1024} height={1024} loading="lazy" decoding="async" data-slide="boy" />
+                    <img src="/images/discover-slide-boy.jpg" alt="Effix Discover Search, Content and AI Intelligence" className="discover-slide" width={1024} height={1024} loading="lazy" decoding="async" data-slide="boy" />
                     {" "}
                   </div>
                   {" "}
