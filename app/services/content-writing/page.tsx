@@ -1,6 +1,8 @@
 // Content Writing Services — service page (shares the GBP/Reddit design system).
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
+import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import { ORG_ID, ldString } from "@/lib/site";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "../reddit-marketing/rm.css";
@@ -40,7 +42,155 @@ const SCRIPTS = [
   "/js/content-writing/page.js"
 ];
 
-const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/content-writing#service\", \"name\": \"Content Writing Services\", \"serviceType\": \"SEO content writing, website copywriting and editorial services\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"City\", \"name\": \"Bengaluru\", \"alternateName\": \"Bangalore\", \"containedInPlace\": {\"@type\": \"State\", \"name\": \"Karnataka\"}}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"Content writing services for brands across India and Bengaluru: SEO blog writing, website copywriting, service and landing pages, product descriptions, pillar pages, case studies, newsletters, LinkedIn content, content refreshes, editing and on-page SEO.\", \"url\": \"https://effix.co.in/services/content-writing\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What are content writing services?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Content writing services cover the research, planning, writing and editing of content for your website and marketing: blog posts, web pages, service and landing pages, product descriptions, case studies, newsletters and more. Good content writing services also handle keyword research and on-page SEO, so your content gets found by the right people.\"}}, {\"@type\": \"Question\", \"name\": \"How much do content writing services cost in India?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Rates in India vary widely: market estimates for 2026 range from about ₹0.50–2 per word for entry-level freelancers to ₹3–8 per word for agencies and more for specialist topics. Cost depends on expertise, research depth, volume and turnaround. EFFIX Labs quotes per project after understanding your scope.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer content writing services in Bengaluru?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. We also write location and service pages that support local search visibility.\"}}, {\"@type\": \"Question\", \"name\": \"Do you use AI to write content?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Our writers may use tools to help with research, but every piece is written, edited and fact-checked by people. Google’s guidance focuses on whether content is helpful and reliable, not on how it is produced, and human expertise is what makes content genuinely useful.\"}}, {\"@type\": \"Question\", \"name\": \"Is the content original and plagiarism-free?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Every piece is written from scratch for you and checked for plagiarism before delivery. We cite sources where we use facts, data or quotes.\"}}, {\"@type\": \"Question\", \"name\": \"Who owns the content you write?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You do. Once the work is paid for, the content belongs to your business to publish, edit and reuse as you like.\"}}, {\"@type\": \"Question\", \"name\": \"How long does it take to write and deliver content?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A typical blog post takes a few working days after the brief is approved. Larger projects, like full website copy or a content calendar, are delivered on an agreed schedule. Rush delivery is possible depending on scope.\"}}, {\"@type\": \"Question\", \"name\": \"Do you include revisions?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Every piece includes revisions within the agreed brief, so the final version reads exactly the way you want.\"}}, {\"@type\": \"Question\", \"name\": \"Can you write for my industry?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most likely. We write for SaaS, ecommerce, fintech, healthcare, education, real estate, B2B services and local businesses. For specialist topics, we work with your team to make sure every detail is accurate.\"}}, {\"@type\": \"Question\", \"name\": \"Will your content help my website rank on Google?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimised content is the foundation of organic growth.\"}}, {\"@type\": \"Question\", \"name\": \"Can you improve or rewrite our existing content?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Refreshing underperforming pages is often the fastest way to win more traffic. We review what you have, update and improve it, and fix titles, structure and internal links.\"}}, {\"@type\": \"Question\", \"name\": \"Do you work with businesses across India and abroad?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. We work with businesses all over India and internationally. Content writing is done remotely, with clear briefs, shared drafts and regular check-ins.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Content Writing Services\", \"item\": \"https://effix.co.in/services/content-writing\"}]}]}";
+const FAQS: FaqItem[] = [
+  {
+    "q": "What are content writing services?",
+    "a": [
+      "Content writing services cover the research, planning, writing and editing of content for your website and marketing: blog posts, web pages, service and landing pages, product descriptions, case studies, newsletters and more. Good content writing services also handle keyword research and on-page SEO, so your content gets found by the right people."
+    ]
+  },
+  {
+    "q": "How much do content writing services cost in India?",
+    "a": [
+      "Rates in India vary widely: market estimates for 2026 range from about ₹0.50–2 per word for entry-level freelancers to ₹3–8 per word for agencies and more for specialist topics. Cost depends on expertise, research depth, volume and turnaround. EFFIX Labs quotes per project after understanding your scope."
+    ]
+  },
+  {
+    "q": "Do you offer content writing services in Bengaluru?",
+    "a": [
+      "Yes. EFFIX Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. We also write location and service pages that support local search visibility."
+    ]
+  },
+  {
+    "q": "Do you use AI to write content?",
+    "a": [
+      "Our writers may use tools to help with research, but every piece is written, edited and fact-checked by people. Google’s guidance focuses on whether content is helpful and reliable, not on how it is produced, and human expertise is what makes content genuinely useful.",
+      " See ",
+      {
+        "text": "Google Search and AI-generated content",
+        "href": "https://developers.google.com/search/blog/2023/02/google-search-and-ai-content"
+      },
+      "."
+    ]
+  },
+  {
+    "q": "Is the content original and plagiarism-free?",
+    "a": [
+      "Yes. Every piece is written from scratch for you and checked for plagiarism before delivery. We cite sources where we use facts, data or quotes.",
+      " Original content also keeps you clear of Google’s ",
+      {
+        "text": "spam policies",
+        "href": "https://developers.google.com/search/docs/essentials/spam-policies"
+      },
+      "."
+    ]
+  },
+  {
+    "q": "Who owns the content you write?",
+    "a": [
+      "You do. Once the work is paid for, the content belongs to your business to publish, edit and reuse as you like."
+    ]
+  },
+  {
+    "q": "How long does it take to write and deliver content?",
+    "a": [
+      "A typical blog post takes a few working days after the brief is approved. Larger projects, like full website copy or a content calendar, are delivered on an agreed schedule. Rush delivery is possible depending on scope."
+    ]
+  },
+  {
+    "q": "Do you include revisions?",
+    "a": [
+      "Yes. Every piece includes revisions within the agreed brief, so the final version reads exactly the way you want."
+    ]
+  },
+  {
+    "q": "Can you write for my industry?",
+    "a": [
+      "Most likely. We write for SaaS, ecommerce, fintech, healthcare, education, real estate, B2B services and local businesses. For specialist topics, we work with your team to make sure every detail is accurate."
+    ]
+  },
+  {
+    "q": "Will your content help my website rank on Google?",
+    "a": [
+      "Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimised content is the foundation of organic growth.",
+      " We measure progress in ",
+      {
+        "text": "Google Search Console",
+        "href": "https://search.google.com/search-console/about"
+      },
+      "."
+    ]
+  },
+  {
+    "q": "Can you improve or rewrite our existing content?",
+    "a": [
+      "Yes. Refreshing underperforming pages is often the fastest way to win more traffic. We review what you have, update and improve it, and fix titles, structure and internal links."
+    ]
+  },
+  {
+    "q": "Do you work with businesses across India and abroad?",
+    "a": [
+      "Yes. We work with businesses all over India and internationally. Content writing is done remotely, with clear briefs, shared drafts and regular check-ins."
+    ]
+  }
+];
+
+const SERVICE_LD = {
+  "@type": "Service",
+  "@id": "https://effix.co.in/services/content-writing#service",
+  "name": "Content Writing Services",
+  "serviceType": "SEO content writing, website copywriting and editorial services",
+  "provider": {
+    "@id": ORG_ID
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "City",
+      "name": "Bengaluru",
+      "alternateName": "Bangalore",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Karnataka"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  ],
+  "description": "Content writing services for brands across India and Bengaluru: SEO blog writing, website copywriting, service and landing pages, product descriptions, pillar pages, case studies, newsletters, LinkedIn content, content refreshes, editing and on-page SEO.",
+  "url": "https://effix.co.in/services/content-writing"
+};
+
+const BREADCRUMB_LD = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://effix.co.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://effix.co.in/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Content Writing Services",
+      "item": "https://effix.co.in/services/content-writing"
+    }
+  ]
+};
+
+const JSON_LD = ldString([SERVICE_LD, faqPageLd(FAQS), BREADCRUMB_LD]);
 
 export default function Page() {
   return (
@@ -106,18 +256,18 @@ export default function Page() {
               </div>
               <div className="cw-b-scene" aria-hidden="true">
                 <div className="cw-doc">
-                  <div className="cw-doc-bar"><i></i><i></i><i></i><span>{"blog-post-draft.doc"}</span></div>
+                  <div className="cw-doc-bar"><i></i><i></i><i></i><span><bdi data-t={"blog-post-draft.doc"}></bdi></span></div>
                   <div className="cw-doc-body">
                     <span className="cw-doc-h"></span>
                     <span className="cw-doc-l"></span><span className="cw-doc-l"></span><span className="cw-doc-l s"></span>
-                    <p className="cw-typing"><span id="cwTyped">{"How to choose the right CRM for a small team"}</span><span className="cw-caret"></span></p>
+                    <p className="cw-typing"><span id="cwTyped"><bdi data-t={"How to choose the right CRM for a small team"}></bdi></span><span className="cw-caret"></span></p>
                     <span className="cw-doc-l"></span><span className="cw-doc-l m"></span>
                   </div>
                 </div>
                 <div className="cw-pen-badge"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20l4-1 10-10-3-3L5 16z"></path><path d="M14 7l3 3"></path><path d="M4 20l3.5-3.5"></path></svg></div>
-                <span className="cw-chip cw-chip-a"><b>{"✓"}</b>{" Fact-checked"}</span>
-                <span className="cw-chip cw-chip-b">{"SEO score · Ready"}</span>
-                <span className="cw-chip cw-chip-c">{"✍ Human-written"}</span>
+                <span className="cw-chip cw-chip-a"><b><bdi data-t={"✓"}></bdi></b><bdi data-t={" Fact-checked"}></bdi></span>
+                <span className="cw-chip cw-chip-b"><bdi data-t={"SEO score · Ready"}></bdi></span>
+                <span className="cw-chip cw-chip-c"><bdi data-t={"✍ Human-written"}></bdi></span>
                 <span className="cw-orb cw-orb-1"></span><span className="cw-orb cw-orb-2"></span>
                 <span className="cw-cone"></span>
               </div>
@@ -126,10 +276,9 @@ export default function Page() {
         </section>
 
         {/* ================= MARQUEE ================= */}
-        <div className="gx-marquee" aria-hidden="true">
+        <div className="gx-marquee" id="gxMarquee">
           <div className="gx-marquee-track">
-            <span>{"Blog posts"}</span><i>{"—"}</i><span>{"Website copy"}</span><i>{"—"}</i><span>{"Service pages"}</span><i>{"—"}</i><span>{"Landing pages"}</span><i>{"—"}</i><span>{"Product descriptions"}</span><i>{"—"}</i><span>{"Case studies"}</span><i>{"—"}</i><span>{"Newsletters"}</span><i>{"—"}</i><span>{"LinkedIn posts"}</span><i>{"—"}</i>
-            <span>{"Blog posts"}</span><i>{"—"}</i><span>{"Website copy"}</span><i>{"—"}</i><span>{"Service pages"}</span><i>{"—"}</i><span>{"Landing pages"}</span><i>{"—"}</i><span>{"Product descriptions"}</span><i>{"—"}</i><span>{"Case studies"}</span><i>{"—"}</i><span>{"Newsletters"}</span><i>{"—"}</i><span>{"LinkedIn posts"}</span><i>{"—"}</i>
+            <div className="gx-marquee-set"><span>{"Blog posts"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Website copy"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Service pages"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Landing pages"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Product descriptions"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Case studies"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Newsletters"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"LinkedIn posts"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i></div>
           </div>
         </div>
 
@@ -169,12 +318,12 @@ export default function Page() {
             </div>
             <div className="rm-card cw-card-pain" aria-hidden="true">
               <div className="cw-gsc">
-                <div className="cw-gsc-head"><span>{"Search performance · last 3 months"}</span><em>{"Illustrative"}</em></div>
-                <div className="cw-gsc-stats"><div><small>{"Clicks"}</small><b>{"38"}</b></div><div><small>{"Impressions"}</small><b>{"2.1k"}</b></div><div><small>{"Avg. position"}</small><b>{"46.8"}</b></div></div>
+                <div className="cw-gsc-head"><span><bdi data-t={"Search performance · last 3 months"}></bdi></span><em><bdi data-t={"Illustrative"}></bdi></em></div>
+                <div className="cw-gsc-stats"><div><small><bdi data-t={"Clicks"}></bdi></small><b><bdi data-t={"38"}></bdi></b></div><div><small><bdi data-t={"Impressions"}></bdi></small><b><bdi data-t={"2.1k"}></bdi></b></div><div><small><bdi data-t={"Avg. position"}></bdi></small><b><bdi data-t={"46.8"}></bdi></b></div></div>
                 <svg className="cw-gsc-line" viewBox="0 0 300 70" preserveAspectRatio="none"><path d="M0 52 C40 50 60 56 90 51 S150 55 180 50 S240 54 300 52" fill="none" stroke="#a5a8b5" strokeWidth="2.4"></path></svg>
               </div>
-              <div className="cw-post"><span className="cw-post-tag">{"Blog"}</span><b>{"10 Tips for Business Growth"}</b><span className="cw-post-meta">{"Published 8 months ago · 0 conversions"}</span></div>
-              <div className="rm-pain-row"><span className="rm-pain-chip rm-chip-red">{"Generic, no expertise"}</span><span className="rm-pain-chip rm-chip-amber">{"No search intent"}</span></div>
+              <div className="cw-post"><span className="cw-post-tag"><bdi data-t={"Blog"}></bdi></span><b><bdi data-t={"10 Tips for Business Growth"}></bdi></b><span className="cw-post-meta"><bdi data-t={"Published 8 months ago · 0 conversions"}></bdi></span></div>
+              <div className="rm-pain-row"><span className="rm-pain-chip rm-chip-red"><bdi data-t={"Generic, no expertise"}></bdi></span><span className="rm-pain-chip rm-chip-amber"><bdi data-t={"No search intent"}></bdi></span></div>
             </div>
           </div>
         </section>
@@ -194,17 +343,17 @@ export default function Page() {
               </ul>
             </div>
             <div className="rm-card cw-card-brief" aria-hidden="true">
-              <p className="rm-sys-title">{"Content brief"}</p>
-              <div className="cw-brief-row"><small>{"Primary keyword"}</small><b>{"crm for small business"}</b></div>
-              <div className="cw-brief-row"><small>{"Search intent"}</small><b className="cw-pill">{"Commercial · comparing options"}</b></div>
+              <p className="rm-sys-title"><bdi data-t={"Content brief"}></bdi></p>
+              <div className="cw-brief-row"><small><bdi data-t={"Primary keyword"}></bdi></small><b><bdi data-t={"crm for small business"}></bdi></b></div>
+              <div className="cw-brief-row"><small><bdi data-t={"Search intent"}></bdi></small><b className="cw-pill"><bdi data-t={"Commercial · comparing options"}></bdi></b></div>
               <div className="cw-brief-outline">
-                <small>{"Outline"}</small>
-                <span><i>{"H1"}</i>{"Best CRM for Small Businesses in India"}</span>
-                <span><i>{"H2"}</i>{"What a small team actually needs"}</span>
-                <span><i>{"H2"}</i>{"Comparison table: price, features, support"}</span>
-                <span><i>{"H2"}</i>{"FAQs from real buyers"}</span>
+                <small><bdi data-t={"Outline"}></bdi></small>
+                <span><i><bdi data-t={"H1"}></bdi></i><bdi data-t={"Best CRM for Small Businesses in India"}></bdi></span>
+                <span><i><bdi data-t={"H2"}></bdi></i><bdi data-t={"What a small team actually needs"}></bdi></span>
+                <span><i><bdi data-t={"H2"}></bdi></i><bdi data-t={"Comparison table: price, features, support"}></bdi></span>
+                <span><i><bdi data-t={"H2"}></bdi></i><bdi data-t={"FAQs from real buyers"}></bdi></span>
               </div>
-              <div className="cw-brief-checks"><span>{"✓ Expert quote"}</span><span>{"✓ Sources cited"}</span><span>{"✓ Brand voice"}</span><span>{"✓ Internal links"}</span></div>
+              <div className="cw-brief-checks"><span><bdi data-t={"✓ Expert quote"}></bdi></span><span><bdi data-t={"✓ Sources cited"}></bdi></span><span><bdi data-t={"✓ Brand voice"}></bdi></span><span><bdi data-t={"✓ Internal links"}></bdi></span></div>
             </div>
           </div>
         </section>
@@ -225,14 +374,14 @@ export default function Page() {
                   <a className="rm-ext" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer">{"Read Google’s guidance"}</a>
                 </div>
                 <div className="cw-serp" aria-hidden="true">
-                  <div className="cw-serp-bar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>{"best crm for small business india"}</span></div>
+                  <div className="cw-serp-bar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span><bdi data-t={"best crm for small business india"}></bdi></span></div>
                   <div className="cw-serp-res cw-serp-top">
-                    <span className="cw-serp-url">{"yourbrand.com › guides"}</span>
-                    <b>{"Best CRM for Small Businesses in India (2026 Guide)"}</b>
-                    <span className="cw-serp-desc">{"We compared 8 CRMs on price, setup time and support for small teams…"}</span>
-                    <div className="cw-serp-badges"><i>{"Helpful"}</i><i>{"Expert"}</i><i>{"Original"}</i></div>
+                    <span className="cw-serp-url"><bdi data-t={"yourbrand.com › guides"}></bdi></span>
+                    <b><bdi data-t={"Best CRM for Small Businesses in India (2026 Guide)"}></bdi></b>
+                    <span className="cw-serp-desc"><bdi data-t={"We compared 8 CRMs on price, setup time and support for small teams…"}></bdi></span>
+                    <div className="cw-serp-badges"><i><bdi data-t={"Helpful"}></bdi></i><i><bdi data-t={"Expert"}></bdi></i><i><bdi data-t={"Original"}></bdi></i></div>
                   </div>
-                  <div className="cw-serp-res cw-serp-dim"><span className="cw-serp-url">{"genericblog.com"}</span><b>{"10 Best CRMs You Need to Know"}</b></div>
+                  <div className="cw-serp-res cw-serp-dim"><span className="cw-serp-url"><bdi data-t={"genericblog.com"}></bdi></span><b><bdi data-t={"10 Best CRMs You Need to Know"}></bdi></b></div>
                 </div>
               </article>
               <article className="cw-bento-card cw-bento-ai">
@@ -240,9 +389,9 @@ export default function Page() {
                 <h3 className="cw-bento-t">{"AI tools quote clear sources"}</h3>
                 <p className="cw-bento-p">{"AI Overviews and assistants summarise pages that answer questions directly, with clean structure and real expertise. See "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">{"AI features and your website"}</a>{"."}</p>
                 <div className="cw-ai" aria-hidden="true">
-                  <span className="cw-ai-tag">{"✦ AI overview"}</span>
+                  <span className="cw-ai-tag"><bdi data-t={"✦ AI overview"}></bdi></span>
                   <span className="cw-ai-l"></span><span className="cw-ai-l s"></span>
-                  <span className="cw-ai-src"><i></i>{"yourbrand.com"}<em>{"cited"}</em></span>
+                  <span className="cw-ai-src"><i></i><bdi data-t={"yourbrand.com"}></bdi><em><bdi data-t={"cited"}></bdi></em></span>
                 </div>
               </article>
               <article className="cw-bento-card cw-bento-journey">
@@ -292,16 +441,16 @@ export default function Page() {
               <h2 className="gx-h2">{"Our content writing "}<em>{"services"}</em></h2>
             </div>
             <ol className="gx-services">
-              <li><span className="gx-svc-n">{"01"}</span><h3 className="gx-svc-t">{"SEO blog & article writing"}</h3><p>{"Articles planned around real search demand, written to answer the question better than anything else on page one."}</p></li>
-              <li><span className="gx-svc-n">{"02"}</span><h3 className="gx-svc-t">{"Website copywriting"}</h3><p>{"Clear, confident copy for your home, about and core pages that explains what you do and why it matters."}</p></li>
-              <li><span className="gx-svc-n">{"03"}</span><h3 className="gx-svc-t">{"Service & landing page content"}</h3><p>{"Pages built to rank for commercial keywords and turn visitors into enquiries, like the page you’re reading."}</p></li>
-              <li><span className="gx-svc-n">{"04"}</span><h3 className="gx-svc-t">{"Product & category descriptions"}</h3><p>{"Unique, benefit-led descriptions for ecommerce stores, written at scale without sounding repetitive."}</p></li>
-              <li><span className="gx-svc-n">{"05"}</span><h3 className="gx-svc-t">{"Pillar pages & long-form guides"}</h3><p>{"In-depth resources that build topical authority and give other sites and AI tools a reason to cite you."}</p></li>
-              <li><span className="gx-svc-n">{"06"}</span><h3 className="gx-svc-t">{"Case studies & whitepapers"}</h3><p>{"Proof-driven B2B content built from interviews with your team and customers."}</p></li>
-              <li><span className="gx-svc-n">{"07"}</span><h3 className="gx-svc-t">{"Email newsletters"}</h3><p>{"Regular emails people actually open, with one clear message and one clear next step."}</p></li>
-              <li><span className="gx-svc-n">{"08"}</span><h3 className="gx-svc-t">{"LinkedIn & social content"}</h3><p>{"Posts for founders and brands that share genuine insight, not engagement bait."}</p></li>
-              <li><span className="gx-svc-n">{"09"}</span><h3 className="gx-svc-t">{"Content refresh & rewrites"}</h3><p>{"Updating and improving existing pages that have slipped in rankings, often the fastest win available."}</p></li>
-              <li><span className="gx-svc-n">{"10"}</span><h3 className="gx-svc-t">{"Editing, proofreading & on-page SEO"}</h3><p>{"Polishing drafts you already have: structure, clarity, headings and internal links, plus "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/title-link" target="_blank" rel="noopener noreferrer">{"titles"}</a>{" and "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer">{"meta descriptions"}</a>{" written the way Google displays them."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"01"}</span><h3 className="gx-svc-t">{"SEO blog & article writing"}</h3><p>{"Articles planned around real search demand, written to answer the question better than anything else on page one."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"02"}</span><h3 className="gx-svc-t">{"Website copywriting"}</h3><p>{"Clear, confident copy for your home, about and core pages that explains what you do and why it matters."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"03"}</span><h3 className="gx-svc-t">{"Service & landing page content"}</h3><p>{"Pages built to rank for commercial keywords and turn visitors into enquiries, like the page you’re reading."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"04"}</span><h3 className="gx-svc-t">{"Product & category descriptions"}</h3><p>{"Unique, benefit-led descriptions for ecommerce stores, written at scale without sounding repetitive."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"05"}</span><h3 className="gx-svc-t">{"Pillar pages & long-form guides"}</h3><p>{"In-depth resources that build topical authority and give other sites and AI tools a reason to cite you."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"06"}</span><h3 className="gx-svc-t">{"Case studies & whitepapers"}</h3><p>{"Proof-driven B2B content built from interviews with your team and customers."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"07"}</span><h3 className="gx-svc-t">{"Email newsletters"}</h3><p>{"Regular emails people actually open, with one clear message and one clear next step."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"08"}</span><h3 className="gx-svc-t">{"LinkedIn & social content"}</h3><p>{"Posts for founders and brands that share genuine insight, not engagement bait."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"09"}</span><h3 className="gx-svc-t">{"Content refresh & rewrites"}</h3><p>{"Updating and improving existing pages that have slipped in rankings, often the fastest win available."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"10"}</span><h3 className="gx-svc-t">{"Editing, proofreading & on-page SEO"}</h3><p>{"Polishing drafts you already have: structure, clarity, headings and internal links, plus "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/title-link" target="_blank" rel="noopener noreferrer">{"titles"}</a>{" and "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer">{"meta descriptions"}</a>{" written the way Google displays them."}</p></li>
             </ol>
           </div>
         </section>
@@ -316,37 +465,37 @@ export default function Page() {
             </div>
             <ol className="rm-steps" id="rmSteps">
               <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n">{"01"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path></svg></span></div>
+                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"01"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Discovery"}</h3>
                 <p className="rm-step-d">{"Your business, audience, goals, competitors and brand voice, captured in one short session."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
               </li>
               <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n">{"02"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg></span></div>
+                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"02"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Keyword & intent research"}</h3>
                 <p className="rm-step-d">{"What your buyers search for, what Google ranks for it today, and the gaps we can win."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
               </li>
               <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n">{"03"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5h6M9 3h6v4H9z"></path><path d="M7 5H5v16h14V5h-2"></path><path d="M8.5 12h7M8.5 16h5"></path></svg></span></div>
+                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"03"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5h6M9 3h6v4H9z"></path><path d="M7 5H5v16h14V5h-2"></path><path d="M8.5 12h7M8.5 16h5"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Content brief"}</h3>
                 <p className="rm-step-d">{"Keyword, intent, outline, sources and voice notes, agreed with you before writing starts."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
               </li>
               <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n">{"04"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20l4-1 10-10-3-3L5 16z"></path><path d="M14 7l3 3"></path></svg></span></div>
+                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"04"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20l4-1 10-10-3-3L5 16z"></path><path d="M14 7l3 3"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Writing"}</h3>
                 <p className="rm-step-d">{"Experienced writers draft the piece, adding your team’s expertise and real examples."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
               </li>
               <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n">{"05"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l4 4L19 6"></path></svg></span></div>
+                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"05"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l4 4L19 6"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Editing & fact-checking"}</h3>
                 <p className="rm-step-d">{"An editor checks accuracy, clarity, structure, originality and on-page SEO."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
               </li>
               <li className="rm-step">
-                <div className="rm-step-top"><span className="rm-step-n">{"06"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12a8 8 0 1 0 2.3-5.6"></path><path d="M4 4v4h4"></path></svg></span></div>
+                <div className="rm-step-top"><span className="rm-step-n" aria-hidden="true">{"06"}</span><span className="rm-step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12a8 8 0 1 0 2.3-5.6"></path><path d="M4 4v4h4"></path></svg></span></div>
                 <h3 className="rm-step-t">{"Publish, measure & refresh"}</h3>
                 <p className="rm-step-d">{"We track clicks and rankings in "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{", and refresh content as results and searches change."}</p>
                 <span className="rm-step-bar" aria-hidden="true"></span>
@@ -411,11 +560,11 @@ export default function Page() {
               <h2 className="gx-h2">{"Why choose us as your content writing "}<em>{"agency"}</em></h2>
             </div>
             <div className="gx-why">
-              <div><span className="gx-why-n">{"01"}</span><h3 className="gx-h3">{"Written by people"}</h3><p className="gx-p-sm">{"Tools may help with research, but every piece is written, edited and fact-checked by humans. Read "}<a className="rm-ext" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">{"Google on AI content"}</a>{"."}</p></div>
-              <div><span className="gx-why-n">{"02"}</span><h3 className="gx-h3">{"SEO built in"}</h3><p className="gx-p-sm">{"Keyword research, intent and on-page SEO are part of the writing, not an afterthought."}</p></div>
-              <div><span className="gx-why-n">{"03"}</span><h3 className="gx-h3">{"Real expertise"}</h3><p className="gx-p-sm">{"We capture what your team knows, so content shows genuine experience."}</p></div>
-              <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Original & yours"}</h3><p className="gx-p-sm">{"Plagiarism-checked, original content. Once paid for, it belongs to you."}</p></div>
-              <div><span className="gx-why-n">{"05"}</span><h3 className="gx-h3">{"Connected to growth"}</h3><p className="gx-p-sm">{"Content linked with "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{", "}<a href="/services/reddit-marketing">{"Reddit"}</a>{" and "}<a href="/services/website-design-development">{"your website"}</a>{"."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"01"}</span><h3 className="gx-h3">{"Written by people"}</h3><p className="gx-p-sm">{"Tools may help with research, but every piece is written, edited and fact-checked by humans. Read "}<a className="rm-ext" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">{"Google on AI content"}</a>{"."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"02"}</span><h3 className="gx-h3">{"SEO built in"}</h3><p className="gx-p-sm">{"Keyword research, intent and on-page SEO are part of the writing, not an afterthought."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"03"}</span><h3 className="gx-h3">{"Real expertise"}</h3><p className="gx-p-sm">{"We capture what your team knows, so content shows genuine experience."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"04"}</span><h3 className="gx-h3">{"Original & yours"}</h3><p className="gx-p-sm">{"Plagiarism-checked, original content. Once paid for, it belongs to you."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"05"}</span><h3 className="gx-h3">{"Connected to growth"}</h3><p className="gx-p-sm">{"Content linked with "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{", "}<a href="/services/reddit-marketing">{"Reddit"}</a>{" and "}<a href="/services/website-design-development">{"your website"}</a>{"."}</p></div>
             </div>
           </div>
         </section>
@@ -429,114 +578,7 @@ export default function Page() {
               <p className="gx-p">{"Can’t find your answer? Use the form below and we’ll reply within one business day."}</p>
             </div>
             <div className="faq-accordion-wrap gx-faq">
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"What are content writing services?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Content writing services cover the research, planning, writing and editing of content for your website and marketing: blog posts, web pages, service and landing pages, product descriptions, case studies, newsletters and more. Good content writing services also handle keyword research and on-page SEO, so your content gets found by the right people."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How much do content writing services cost in India?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Rates in India vary widely: market estimates for 2026 range from about ₹0.50–2 per word for entry-level freelancers to ₹3–8 per word for agencies and more for specialist topics. Cost depends on expertise, research depth, volume and turnaround. EFFIX Labs quotes per project after understanding your scope."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you offer content writing services in Bengaluru?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. EFFIX Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. We also write location and service pages that support local search visibility."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you use AI to write content?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Our writers may use tools to help with research, but every piece is written, edited and fact-checked by people. Google’s guidance focuses on whether content is helpful and reliable, not on how it is produced, and human expertise is what makes content genuinely useful."}{" See "}<a className="rm-ext" href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content" target="_blank" rel="noopener noreferrer">{"Google Search and AI-generated content"}</a>{"."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Is the content original and plagiarism-free?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. Every piece is written from scratch for you and checked for plagiarism before delivery. We cite sources where we use facts, data or quotes."}{" Original content also keeps you clear of Google’s "}<a className="rm-ext" href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">{"spam policies"}</a>{"."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Who owns the content you write?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"You do. Once the work is paid for, the content belongs to your business to publish, edit and reuse as you like."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How long does it take to write and deliver content?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"A typical blog post takes a few working days after the brief is approved. Larger projects, like full website copy or a content calendar, are delivered on an agreed schedule. Rush delivery is possible depending on scope."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you include revisions?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. Every piece includes revisions within the agreed brief, so the final version reads exactly the way you want."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Can you write for my industry?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Most likely. We write for SaaS, ecommerce, fintech, healthcare, education, real estate, B2B services and local businesses. For specialist topics, we work with your team to make sure every detail is accurate."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Will your content help my website rank on Google?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimised content is the foundation of organic growth."}{" We measure progress in "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{"."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Can you improve or rewrite our existing content?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. Refreshing underperforming pages is often the fastest way to win more traffic. We review what you have, update and improve it, and fix titles, structure and internal links."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you work with businesses across India and abroad?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. We work with businesses all over India and internationally. Content writing is done remotely, with clear briefs, shared drafts and regular check-ins."}</p>
-                </div>
-              </div>
+              <ServiceFaq items={FAQS} />
             </div>
           </div>
         </section>
@@ -547,10 +589,10 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/google-business-profile"><span>{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/reddit-marketing"><span>{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/seo-aeo-services"><span>{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/website-design-development"><span>{"05"}</span>{"Website Design & Development"}<i aria-hidden="true">{"→"}</i></a>
+              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>
           </div>
         </section>

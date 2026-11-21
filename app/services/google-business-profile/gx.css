@@ -237,9 +237,9 @@
 .gx-score-figure { font-family: var(--font-body); font-weight: 600; font-size: 76px; line-height: 1; letter-spacing: -0.05em; margin: 14px 0 18px; font-variant-numeric: tabular-nums; }
 .gx-score-figure small { font-size: 26px; color: var(--gx-subtle); font-weight: 500; letter-spacing: -0.02em; margin-left: 4px; }
 .gx-meter { height: 10px; border-radius: 999px; background: #ece8f4; overflow: hidden; }
-.gx-meter span { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #c4a8ff, var(--gx-accent)); transition: width 0.6s var(--gx-ease); }
+.gx-meter span { display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, #c4a8ff, var(--gx-accent)); transform: scaleX(0); transform-origin: left center; transition: transform 0.6s var(--gx-ease); will-change: transform; }
 .gx-meter-scale { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gx-subtle); margin-top: 10px; }
-.gx-score-msg { font-size: 15px; line-height: 1.55; color: var(--gx-ink); margin: 22px 0 20px; min-height: 48px; }
+.gx-score-msg { font-size: 15px; line-height: 1.55; color: var(--gx-ink); margin: 22px 0 20px; min-height: 4.65em; contain: layout; }
 .gx-score-foot { font-size: 12.5px; color: var(--gx-subtle); text-align: center; margin: 12px 0 0; }
 
 /* ---------- process steps ---------- */
@@ -470,3 +470,12 @@
 .gx-steps li:last-child.is-lit .gx-step-n { background: #8b25e2; border-color: #8b25e2; color: #fff; }
 .gx-steps li:not(.is-lit):hover .gx-step-n { background: #fff; color: var(--gx-accent); }
 .gx-steps li.is-lit:hover .gx-step-n { background: #8b25e2; color: #fff; }
+
+/* ---------- technical SEO helpers ---------- */
+/* Decorative mockup text lives in data-t attributes (out of the crawlable text DOM) and is drawn by CSS. */
+bdi[data-t]::before { content: attr(data-t); }
+/* FAQ questions are <h3> wrappers around the toggle button: keep the original look. */
+.faq-q-heading { margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
+/* Marquee: one crawlable set in the HTML; the loop copy is cloned by script (aria-hidden). */
+.gx-marquee-set { display: contents; }
+.gx-marquee:not(.is-ready) .gx-marquee-track { animation: none; }

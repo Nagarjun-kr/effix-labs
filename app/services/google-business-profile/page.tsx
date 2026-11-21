@@ -3,6 +3,8 @@
 // FAQ accordion, contact form) are plain scripts loaded in order by <LegacyScripts>.
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
+import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import { ORG_ID, ldString } from "@/lib/site";
 import "./page.css";
 import "./gx.css";
 
@@ -39,7 +41,143 @@ const SCRIPTS = [
   "/js/google-business-profile/03.js"
 ];
 
-const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/google-business-profile#service\", \"name\": \"Google Business Profile Optimisation Services\", \"serviceType\": \"Google Business Profile optimisation and management\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Bengaluru\", \"alternateName\": \"Bangalore\", \"containedInPlace\": {\"@type\": \"State\", \"name\": \"Karnataka\"}}, {\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"Google Business Profile optimisation services for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.\", \"url\": \"https://effix.co.in/services/google-business-profile\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Do you offer Google Business Profile optimisation services in Bengaluru?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed.\"}}, {\"@type\": \"Question\", \"name\": \"Can you help my business show up in a specific Bengaluru area, like Koramangala or Whitefield?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"We can make your profile clearly relevant to the areas you serve, with the correct address or service area, local services and area-specific updates. Google also weighs distance from the person searching, which no one can control, so we focus on everything that is in your control and report results honestly.\"}}, {\"@type\": \"Question\", \"name\": \"What is Google Business Profile optimisation?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It’s the process of improving your free Google Business Profile (formerly Google My Business) so it’s complete, accurate and relevant to what customers search for. That covers categories, services, description, photos, reviews and regular updates, which help your business appear in more local searches on Google Search and Maps.\"}}, {\"@type\": \"Question\", \"name\": \"How long does Google Business Profile optimisation take?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The initial audit and optimisation usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process.\"}}, {\"@type\": \"Question\", \"name\": \"Can you guarantee a top position on Google Maps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No, and be cautious of anyone who does. Google states there’s no way to pay for a better local ranking. We improve the factors you can influence, such as relevance, completeness, reviews and activity, and track the results honestly.\"}}, {\"@type\": \"Question\", \"name\": \"Why is my business not showing on Google Maps?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Common reasons are an unverified or suspended profile, a category that doesn’t match the search, incomplete information, inconsistent details across the web, or strong nearby competitors. Our audit shows which of these apply to you.\"}}, {\"@type\": \"Question\", \"name\": \"How do I get more Google reviews?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask every satisfied customer at the right moment with a direct review link, and reply to every review you receive. We set up a simple, policy-compliant routine. We never buy, fake or offer incentives for reviews.\"}}, {\"@type\": \"Question\", \"name\": \"What are the best categories for my Google Business Profile?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Choose the most specific primary category for your core business and add only a few additional categories for key services. The right choice depends on your business and on which categories top competitors use, which we research during the audit.\"}}, {\"@type\": \"Question\", \"name\": \"Do I need a website to benefit from a Google Business Profile?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. A profile can bring calls and visits on its own. A website that matches your profile details does strengthen local SEO and gives customers more confidence.\"}}, {\"@type\": \"Question\", \"name\": \"Can you optimise a profile for a service-area business?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. If you visit customers at their location, such as plumbers or cleaners, Google asks you to hide your address and set a service area. We set this up correctly so you stay compliant.\"}}, {\"@type\": \"Question\", \"name\": \"Do you manage multiple locations?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Each eligible location needs its own profile. We manage them consistently, with shared standards and individual reporting.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer Google My Business optimization services in India?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access.\"}}, {\"@type\": \"Question\", \"name\": \"Is Google Business Profile optimisation a one-time job?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The first optimisation is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Google Business Profile Optimisation\", \"item\": \"https://effix.co.in/services/google-business-profile\"}]}]}";
+const FAQS: FaqItem[] = [
+  {
+    "q": "Do you offer Google Business Profile optimisation services in Bengaluru?",
+    "a": [
+      "Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed."
+    ]
+  },
+  {
+    "q": "Can you help my business show up in a specific Bengaluru area, like Koramangala or Whitefield?",
+    "a": [
+      "We can make your profile clearly relevant to the areas you serve, with the correct address or service area, local services and area-specific updates. Google also weighs distance from the person searching, which no one can control, so we focus on everything that is in your control and report results honestly."
+    ]
+  },
+  {
+    "q": "What is Google Business Profile optimisation?",
+    "a": [
+      "It’s the process of improving your free Google Business Profile (formerly Google My Business) so it’s complete, accurate and relevant to what customers search for. That covers categories, services, description, photos, reviews and regular updates, which help your business appear in more local searches on Google Search and Maps."
+    ]
+  },
+  {
+    "q": "How long does Google Business Profile optimisation take?",
+    "a": [
+      "The initial audit and optimisation usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process."
+    ]
+  },
+  {
+    "q": "Can you guarantee a top position on Google Maps?",
+    "a": [
+      "No, and be cautious of anyone who does. Google states there’s no way to pay for a better local ranking. We improve the factors you can influence, such as relevance, completeness, reviews and activity, and track the results honestly."
+    ]
+  },
+  {
+    "q": "Why is my business not showing on Google Maps?",
+    "a": [
+      "Common reasons are an unverified or suspended profile, a category that doesn’t match the search, incomplete information, inconsistent details across the web, or strong nearby competitors. Our audit shows which of these apply to you."
+    ]
+  },
+  {
+    "q": "How do I get more Google reviews?",
+    "a": [
+      "Ask every satisfied customer at the right moment with a direct review link, and reply to every review you receive. We set up a simple, policy-compliant routine. We never buy, fake or offer incentives for reviews."
+    ]
+  },
+  {
+    "q": "What are the best categories for my Google Business Profile?",
+    "a": [
+      "Choose the most specific primary category for your core business and add only a few additional categories for key services. The right choice depends on your business and on which categories top competitors use, which we research during the audit."
+    ]
+  },
+  {
+    "q": "Do I need a website to benefit from a Google Business Profile?",
+    "a": [
+      "No. A profile can bring calls and visits on its own. A website that matches your profile details does strengthen local SEO and gives customers more confidence."
+    ]
+  },
+  {
+    "q": "Can you optimise a profile for a service-area business?",
+    "a": [
+      "Yes. If you visit customers at their location, such as plumbers or cleaners, Google asks you to hide your address and set a service area. We set this up correctly so you stay compliant."
+    ]
+  },
+  {
+    "q": "Do you manage multiple locations?",
+    "a": [
+      "Yes. Each eligible location needs its own profile. We manage them consistently, with shared standards and individual reporting."
+    ]
+  },
+  {
+    "q": "Do you offer Google My Business optimization services in India?",
+    "a": [
+      "Yes. EFFIX Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access."
+    ]
+  },
+  {
+    "q": "Is Google Business Profile optimisation a one-time job?",
+    "a": [
+      "The first optimisation is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management."
+    ]
+  }
+];
+
+const SERVICE_LD = {
+  "@type": "Service",
+  "@id": "https://effix.co.in/services/google-business-profile#service",
+  "name": "Google Business Profile Optimisation Services",
+  "serviceType": "Google Business Profile optimisation and management",
+  "provider": {
+    "@id": ORG_ID
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Bengaluru",
+      "alternateName": "Bangalore",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Karnataka"
+      }
+    },
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  ],
+  "description": "Google Business Profile optimisation services for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.",
+  "url": "https://effix.co.in/services/google-business-profile"
+};
+
+const BREADCRUMB_LD = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://effix.co.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://effix.co.in/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Google Business Profile Optimisation",
+      "item": "https://effix.co.in/services/google-business-profile"
+    }
+  ]
+};
+
+const JSON_LD = ldString([SERVICE_LD, faqPageLd(FAQS), BREADCRUMB_LD]);
 
 export default function Page() {
   return (
@@ -97,12 +235,8 @@ export default function Page() {
           {/* Cinematic media banner */}
           <div className="gx-wrap-wide">
             <div className="gx-media" id="gxMedia">
-              <video className="gx-media-bg" autoPlay muted loop playsInline preload="metadata" poster="/images/services/gbp-video-poster.jpg" aria-hidden="true" tabIndex={-1}>
-                <source src="/videos/gbp-hero-bg.mp4" type="video/mp4" />
-              </video>
-              <video className="gx-media-fg" autoPlay muted loop playsInline preload="metadata" poster="/images/services/gbp-video-poster.jpg" aria-hidden="true" tabIndex={-1}>
-                <source src="/videos/gbp-hero-bg.mp4" type="video/mp4" />
-              </video>
+              <img className="gx-media-bg" src="/images/services/gbp-video-poster.jpg" width={1920} height={1080} alt="" fetchPriority="high" decoding="async" aria-hidden="true" />
+              <video className="gx-media-fg" muted loop playsInline preload="none" poster="/images/services/gbp-video-poster.jpg" data-src="/videos/gbp-hero-bg.mp4" width={1920} height={1080} aria-hidden="true" tabIndex={-1}></video>
               <div className="gx-media-shade" aria-hidden="true"></div>
               <div className="gx-media-copy">
                 <span className="gx-media-label">{"Watch"}</span>
@@ -128,10 +262,9 @@ export default function Page() {
         </div>
 
         {/* ================= MARQUEE ================= */}
-        <div className="gx-marquee" aria-hidden="true">
+        <div className="gx-marquee" id="gxMarquee">
           <div className="gx-marquee-track">
-            <span>{"Verified profiles"}</span><i>{"—"}</i><span>{"Sharper categories"}</span><i>{"—"}</i><span>{"Accurate NAP"}</span><i>{"—"}</i><span>{"Genuine reviews"}</span><i>{"—"}</i><span>{"Fresh photos"}</span><i>{"—"}</i><span>{"Regular updates"}</span><i>{"—"}</i><span>{"Plain-language reports"}</span><i>{"—"}</i>
-            <span>{"Verified profiles"}</span><i>{"—"}</i><span>{"Sharper categories"}</span><i>{"—"}</i><span>{"Accurate NAP"}</span><i>{"—"}</i><span>{"Genuine reviews"}</span><i>{"—"}</i><span>{"Fresh photos"}</span><i>{"—"}</i><span>{"Regular updates"}</span><i>{"—"}</i><span>{"Plain-language reports"}</span><i>{"—"}</i>
+            <div className="gx-marquee-set"><span>{"Verified profiles"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Sharper categories"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Accurate NAP"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Genuine reviews"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Fresh photos"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Regular updates"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Plain-language reports"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i></div>
           </div>
         </div>
 
@@ -163,21 +296,21 @@ export default function Page() {
             </div>
             <div className="gx-factors">
               <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true">{"1"}</span>
+                <span className="gx-factor-num" aria-hidden="true"><bdi data-t={"1"}></bdi></span>
                 <h3 className="gx-h3">{"Relevance"}</h3>
                 <blockquote className="gx-quote">{"“How well a Business Profile matches what someone is searching for.”"}</blockquote>
                 <p className="gx-p-sm">{"We tune categories, services, description, attributes and your website so your profile clearly matches the searches you want."}</p>
                 <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"You can influence this: "}<strong>{"a lot"}</strong></div>
               </article>
               <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true">{"2"}</span>
+                <span className="gx-factor-num" aria-hidden="true"><bdi data-t={"2"}></bdi></span>
                 <h3 className="gx-h3">{"Distance"}</h3>
                 <blockquote className="gx-quote">{"“How far each business is from the customer who’s searching.”"}</blockquote>
                 <p className="gx-p-sm">{"No one controls where a customer searches from. We make sure your address or service area is set up correctly."}</p>
                 <div className="gx-influence" data-level="none"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"You can influence this: "}<strong>{"not really"}</strong></div>
               </article>
               <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true">{"3"}</span>
+                <span className="gx-factor-num" aria-hidden="true"><bdi data-t={"3"}></bdi></span>
                 <h3 className="gx-h3">{"Prominence"}</h3>
                 <blockquote className="gx-quote">{"“How well-known a business is.”"}</blockquote>
                 <p className="gx-p-sm">{"Reviews and replies, photos, regular updates and consistent citations all build prominence over time."}</p>
@@ -202,8 +335,8 @@ export default function Page() {
             <div className="gx-tiles">
               <article className="gx-tile">
                 <div className="gx-tile-art" aria-hidden="true">
-                  <div className="gx-mock-search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span>{"dentist near me"}</span></div>
-                  <div className="gx-mock-results"><span className="is-you">{"Your business"}</span><span></span><span></span></div>
+                  <div className="gx-mock-search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><span><bdi data-t={"dentist near me"}></bdi></span></div>
+                  <div className="gx-mock-results"><span className="is-you"><bdi data-t={"Your business"}></bdi></span><span></span><span></span></div>
                 </div>
                 <h3 className="gx-h3">{"Appear for more local searches"}</h3>
                 <p className="gx-p-sm">{"Show up for “near me” and service-specific searches, and rank higher on Google Maps by strengthening relevance and prominence."}</p>
@@ -212,7 +345,7 @@ export default function Page() {
                 <div className="gx-tile-art" aria-hidden="true">
                   <div className="gx-mock-profile">
                     <div className="gx-mock-photo"></div>
-                    <div><b>{"Your business"}</b><span className="gx-mock-stars">{"★★★★★"}</span><span className="gx-mock-meta">{"Open · Closes 8 pm"}</span></div>
+                    <div><b><bdi data-t={"Your business"}></bdi></b><span className="gx-mock-stars"><bdi data-t={"★★★★★"}></bdi></span><span className="gx-mock-meta"><bdi data-t={"Open · Closes 8 pm"}></bdi></span></div>
                   </div>
                 </div>
                 <h3 className="gx-h3">{"Win the click"}</h3>
@@ -220,7 +353,7 @@ export default function Page() {
               </article>
               <article className="gx-tile">
                 <div className="gx-tile-art" aria-hidden="true">
-                  <div className="gx-mock-actions"><span>{"Call"}</span><span>{"Directions"}</span><span>{"Website"}</span></div>
+                  <div className="gx-mock-actions"><span><bdi data-t={"Call"}></bdi></span><span><bdi data-t={"Directions"}></bdi></span><span><bdi data-t={"Website"}></bdi></span></div>
                 </div>
                 <h3 className="gx-h3">{"Turn views into calls and visits"}</h3>
                 <p className="gx-p-sm">{"Accurate hours, numbers and directions mean the people ready to buy can reach you, and never arrive at a closed door."}</p>
@@ -244,16 +377,16 @@ export default function Page() {
               <table className="gx-table">
                 <thead><tr><th scope="col">{"Problem"}</th><th scope="col">{"What it costs you"}</th><th scope="col">{"Typical impact"}</th></tr></thead>
                 <tbody>
-                  <tr><td>{"Wrong or too-general primary category"}</td><td data-label="What it costs you">{"You don’t appear for your main service"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-high"><i aria-hidden="true">{"▲"}</i>{"High"}</span></td></tr>
-                  <tr><td>{"Unverified or suspended profile"}</td><td data-label="What it costs you">{"No visibility at all"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-high"><i aria-hidden="true">{"▲"}</i>{"High"}</span></td></tr>
-                  <tr><td>{"Duplicate or conflicting listings"}</td><td data-label="What it costs you">{"Split reviews and confused rankings"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-high"><i aria-hidden="true">{"▲"}</i>{"High"}</span></td></tr>
-                  <tr><td>{"Incomplete services and products"}</td><td data-label="What it costs you">{"Google can’t match you to specific searches"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true">{"●"}</i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Inconsistent name, address or phone across the web"}</td><td data-label="What it costs you">{"Weakens Google’s confidence in your details"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true">{"●"}</i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Few reviews, or reviews left unanswered"}</td><td data-label="What it costs you">{"Lower prominence and lower trust"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true">{"●"}</i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Outdated hours or holiday hours"}</td><td data-label="What it costs you">{"Lost visits and frustrated customers"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true">{"●"}</i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Old, low-quality or missing photos"}</td><td data-label="What it costs you">{"Fewer clicks than competitors"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true">{"▼"}</i>{"Lower"}</span></td></tr>
-                  <tr><td>{"No updates for months"}</td><td data-label="What it costs you">{"The profile looks inactive"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true">{"▼"}</i>{"Lower"}</span></td></tr>
-                  <tr><td>{"No tracking"}</td><td data-label="What it costs you">{"You can’t tell what’s working"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true">{"▼"}</i>{"Lower"}</span></td></tr>
+                  <tr><td>{"Wrong or too-general primary category"}</td><td data-label="What it costs you">{"You don’t appear for your main service"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-high"><i aria-hidden="true"><bdi data-t={"▲"}></bdi></i>{"High"}</span></td></tr>
+                  <tr><td>{"Unverified or suspended profile"}</td><td data-label="What it costs you">{"No visibility at all"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-high"><i aria-hidden="true"><bdi data-t={"▲"}></bdi></i>{"High"}</span></td></tr>
+                  <tr><td>{"Duplicate or conflicting listings"}</td><td data-label="What it costs you">{"Split reviews and confused rankings"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-high"><i aria-hidden="true"><bdi data-t={"▲"}></bdi></i>{"High"}</span></td></tr>
+                  <tr><td>{"Incomplete services and products"}</td><td data-label="What it costs you">{"Google can’t match you to specific searches"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
+                  <tr><td>{"Inconsistent name, address or phone across the web"}</td><td data-label="What it costs you">{"Weakens Google’s confidence in your details"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
+                  <tr><td>{"Few reviews, or reviews left unanswered"}</td><td data-label="What it costs you">{"Lower prominence and lower trust"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
+                  <tr><td>{"Outdated hours or holiday hours"}</td><td data-label="What it costs you">{"Lost visits and frustrated customers"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
+                  <tr><td>{"Old, low-quality or missing photos"}</td><td data-label="What it costs you">{"Fewer clicks than competitors"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
+                  <tr><td>{"No updates for months"}</td><td data-label="What it costs you">{"The profile looks inactive"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
+                  <tr><td>{"No tracking"}</td><td data-label="What it costs you">{"You can’t tell what’s working"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -269,16 +402,16 @@ export default function Page() {
               <h2 className="gx-h2">{"Our Google Business Profile optimisation "}<em>{"services"}</em></h2>
             </div>
             <ol className="gx-services">
-              <li><span className="gx-svc-n">{"01"}</span><h3 className="gx-svc-t">{"Full profile audit"}</h3><p>{"Every field reviewed against Google’s guidelines and against the competitors showing up for your most important searches."}</p></li>
-              <li><span className="gx-svc-n">{"02"}</span><h3 className="gx-svc-t">{"Local keyword & competitor research"}</h3><p>{"The exact words your customers use, including service + city terms and “near me” searches, and what top-ranking competitors do differently."}</p></li>
-              <li><span className="gx-svc-n">{"03"}</span><h3 className="gx-svc-t">{"Category optimisation"}</h3><p>{"The most specific primary category and a small set of relevant additional categories, following Google’s guidance to use as few as possible."}</p></li>
-              <li><span className="gx-svc-n">{"04"}</span><h3 className="gx-svc-t">{"Business information & NAP accuracy"}</h3><p>{"Name, address, phone, website, hours, special hours and service areas, kept consistent with your website and key directories."}</p></li>
-              <li><span className="gx-svc-n">{"05"}</span><h3 className="gx-svc-t">{"Services, products & description"}</h3><p>{"A complete services list and a clear description written for customers, with no keyword stuffing, prices, promotions or links."}</p></li>
-              <li><span className="gx-svc-n">{"06"}</span><h3 className="gx-svc-t">{"Photos, videos & visual content"}</h3><p>{"Genuine, high-quality photos of your premises, team, work and products, organised so customers know what to expect."}</p></li>
-              <li><span className="gx-svc-n">{"07"}</span><h3 className="gx-svc-t">{"Google Posts & profile updates"}</h3><p>{"Regular updates, offers and events that keep your profile active and give customers a reason to choose you now."}</p></li>
-              <li><span className="gx-svc-n">{"08"}</span><h3 className="gx-svc-t">{"Review management support"}</h3><p>{"A simple, policy-compliant way to ask for reviews, plus professional replies to every review. We never buy, fake or incentivise reviews."}</p></li>
-              <li><span className="gx-svc-n">{"09"}</span><h3 className="gx-svc-t">{"Website & landing-page alignment"}</h3><p>{"Matching details, local pages where useful and clear contact paths, so your "}<a href="/services/website-design-development">{"website"}</a>{" supports your profile."}</p></li>
-              <li><span className="gx-svc-n">{"10"}</span><h3 className="gx-svc-t">{"Monitoring & monthly reporting"}</h3><p>{"Profile views, searches, calls, direction requests and website clicks, explained in plain language with clear next steps."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"01"}</span><h3 className="gx-svc-t">{"Full profile audit"}</h3><p>{"Every field reviewed against Google’s guidelines and against the competitors showing up for your most important searches."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"02"}</span><h3 className="gx-svc-t">{"Local keyword & competitor research"}</h3><p>{"The exact words your customers use, including service + city terms and “near me” searches, and what top-ranking competitors do differently."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"03"}</span><h3 className="gx-svc-t">{"Category optimisation"}</h3><p>{"The most specific primary category and a small set of relevant additional categories, following Google’s guidance to use as few as possible."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"04"}</span><h3 className="gx-svc-t">{"Business information & NAP accuracy"}</h3><p>{"Name, address, phone, website, hours, special hours and service areas, kept consistent with your website and key directories."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"05"}</span><h3 className="gx-svc-t">{"Services, products & description"}</h3><p>{"A complete services list and a clear description written for customers, with no keyword stuffing, prices, promotions or links."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"06"}</span><h3 className="gx-svc-t">{"Photos, videos & visual content"}</h3><p>{"Genuine, high-quality photos of your premises, team, work and products, organised so customers know what to expect."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"07"}</span><h3 className="gx-svc-t">{"Google Posts & profile updates"}</h3><p>{"Regular updates, offers and events that keep your profile active and give customers a reason to choose you now."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"08"}</span><h3 className="gx-svc-t">{"Review management support"}</h3><p>{"A simple, policy-compliant way to ask for reviews, plus professional replies to every review. We never buy, fake or incentivise reviews."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"09"}</span><h3 className="gx-svc-t">{"Website & landing-page alignment"}</h3><p>{"Matching details, local pages where useful and clear contact paths, so your "}<a href="/services/website-design-development">{"website"}</a>{" supports your profile."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"10"}</span><h3 className="gx-svc-t">{"Monitoring & monthly reporting"}</h3><p>{"Profile views, searches, calls, direction requests and website clicks, explained in plain language with clear next steps."}</p></li>
             </ol>
           </div>
         </section>
@@ -309,12 +442,12 @@ export default function Page() {
                 <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Consistent details everywhere"}</b>{"Same name, address and phone on your site and directories"}</span></label></li>
                 <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Performance tracked"}</b>{"Views, calls and directions reviewed monthly"}</span></label></li>
               </ul>
-              <aside className="gx-score" aria-live="polite">
+              <aside className="gx-score">
                 <span className="gx-label">{"Your profile"}</span>
                 <div className="gx-score-figure"><span id="gxScoreNum">{"0"}</span><small>{"/15"}</small></div>
                 <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={15} aria-valuenow={0} aria-label="Profile completeness" id="gxMeter"><span id="gxMeterFill"></span></div>
-                <div className="gx-meter-scale" aria-hidden="true"><span>{"Needs work"}</span><span>{"Getting there"}</span><span>{"Strong"}</span></div>
-                <p className="gx-score-msg" id="gxScoreMsg">{"Start ticking to see where your profile stands."}</p>
+                <div className="gx-meter-scale" aria-hidden="true"><span><bdi data-t={"Needs work"}></bdi></span><span><bdi data-t={"Getting there"}></bdi></span><span><bdi data-t={"Strong"}></bdi></span></div>
+                <p className="gx-score-msg" id="gxScoreMsg" aria-live="polite" aria-atomic="true">{"Start ticking to see where your profile stands."}</p>
                 <p className="gx-score-foot">{"This is a quick self-check, not a ranking score."}</p>
               </aside>
             </div>
@@ -331,12 +464,12 @@ export default function Page() {
             <div className="gx-steps-wrap" id="gxStepsWrap">
             <div className="gx-steps-track" aria-hidden="true"><span className="gx-steps-fill" id="gxStepsFill"></span><span className="gx-steps-head" id="gxStepsHead"></span></div>
             <ol className="gx-steps">
-              <li><span className="gx-step-n">{"1"}</span><h3 className="gx-h3">{"Discovery"}</h3><p className="gx-p-sm">{"We learn your business, locations, services and goals, and confirm profile access."}</p></li>
-              <li><span className="gx-step-n">{"2"}</span><h3 className="gx-h3">{"Profile audit"}</h3><p className="gx-p-sm">{"A full review of your profile, competitors and visibility, with issues ranked by impact."}</p></li>
-              <li><span className="gx-step-n">{"3"}</span><h3 className="gx-h3">{"Research"}</h3><p className="gx-p-sm">{"We map the searches that matter and study who’s already in the Map Pack."}</p></li>
-              <li><span className="gx-step-n">{"4"}</span><h3 className="gx-h3">{"Optimise"}</h3><p className="gx-p-sm">{"Categories, details, services, description and media fixed, all within Google’s guidelines."}</p></li>
-              <li><span className="gx-step-n">{"5"}</span><h3 className="gx-h3">{"Publish & reviews"}</h3><p className="gx-p-sm">{"Updates go live and your review request and reply routine begins."}</p></li>
-              <li><span className="gx-step-n">{"6"}</span><h3 className="gx-h3">{"Measure"}</h3><p className="gx-p-sm">{"Monthly tracking and a plain report. Then we adjust and repeat from step 3."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"1"}</span><h3 className="gx-h3">{"Discovery"}</h3><p className="gx-p-sm">{"We learn your business, locations, services and goals, and confirm profile access."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"2"}</span><h3 className="gx-h3">{"Profile audit"}</h3><p className="gx-p-sm">{"A full review of your profile, competitors and visibility, with issues ranked by impact."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"3"}</span><h3 className="gx-h3">{"Research"}</h3><p className="gx-p-sm">{"We map the searches that matter and study who’s already in the Map Pack."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"4"}</span><h3 className="gx-h3">{"Optimise"}</h3><p className="gx-p-sm">{"Categories, details, services, description and media fixed, all within Google’s guidelines."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"5"}</span><h3 className="gx-h3">{"Publish & reviews"}</h3><p className="gx-p-sm">{"Updates go live and your review request and reply routine begins."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"6"}</span><h3 className="gx-h3">{"Measure"}</h3><p className="gx-p-sm">{"Monthly tracking and a plain report. Then we adjust and repeat from step 3."}</p></li>
             </ol>
             </div>
           </div>
@@ -420,11 +553,11 @@ export default function Page() {
               <h2 className="gx-h2">{"Why choose us as your Google Business Profile "}<em>{"agency"}</em></h2>
             </div>
             <div className="gx-why">
-              <div><span className="gx-why-n">{"01"}</span><h3 className="gx-h3">{"Evidence first"}</h3><p className="gx-p-sm">{"We start with an audit and show you what we found before recommending anything."}</p></div>
-              <div><span className="gx-why-n">{"02"}</span><h3 className="gx-h3">{"Guideline-safe"}</h3><p className="gx-p-sm">{"No fake reviews, no keyword-stuffed names, no duplicate listings, nothing that risks suspension."}</p></div>
-              <div><span className="gx-why-n">{"03"}</span><h3 className="gx-h3">{"Honest about results"}</h3><p className="gx-p-sm">{"Google controls rankings. We improve what you can control and report what we can measure."}</p></div>
-              <div><span className="gx-why-n">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a strong site, "}<a href="/services/content-writing">{"helpful content"}</a>{", "}<a href="/services/seo-aeo-services">{"AI search"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
-              <div><span className="gx-why-n">{"05"}</span><h3 className="gx-h3">{"Plain-language reporting"}</h3><p className="gx-p-sm">{"You always know what was done, and why."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"01"}</span><h3 className="gx-h3">{"Evidence first"}</h3><p className="gx-p-sm">{"We start with an audit and show you what we found before recommending anything."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"02"}</span><h3 className="gx-h3">{"Guideline-safe"}</h3><p className="gx-p-sm">{"No fake reviews, no keyword-stuffed names, no duplicate listings, nothing that risks suspension."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"03"}</span><h3 className="gx-h3">{"Honest about results"}</h3><p className="gx-p-sm">{"Google controls rankings. We improve what you can control and report what we can measure."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a strong site, "}<a href="/services/content-writing">{"helpful content"}</a>{", "}<a href="/services/seo-aeo-services">{"AI search"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"05"}</span><h3 className="gx-h3">{"Plain-language reporting"}</h3><p className="gx-p-sm">{"You always know what was done, and why."}</p></div>
             </div>
             <p className="gx-disclaimer">{"EFFIX Labs is an independent agency, not affiliated with or endorsed by Google."}</p>
           </div>
@@ -439,123 +572,7 @@ export default function Page() {
               <p className="gx-p">{"Can’t find your answer? "}<a href="#contact">{"Ask us directly"}</a>{"."}</p>
             </div>
             <div className="faq-accordion-wrap gx-faq">
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you offer Google Business Profile optimisation services in Bengaluru?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Can you help my business show up in a specific Bengaluru area, like Koramangala or Whitefield?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"We can make your profile clearly relevant to the areas you serve, with the correct address or service area, local services and area-specific updates. Google also weighs distance from the person searching, which no one can control, so we focus on everything that is in your control and report results honestly."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"What is Google Business Profile optimisation?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"It’s the process of improving your free Google Business Profile (formerly Google My Business) so it’s complete, accurate and relevant to what customers search for. That covers categories, services, description, photos, reviews and regular updates, which help your business appear in more local searches on Google Search and Maps."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How long does Google Business Profile optimisation take?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"The initial audit and optimisation usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Can you guarantee a top position on Google Maps?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"No, and be cautious of anyone who does. Google states there’s no way to pay for a better local ranking. We improve the factors you can influence, such as relevance, completeness, reviews and activity, and track the results honestly."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Why is my business not showing on Google Maps?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Common reasons are an unverified or suspended profile, a category that doesn’t match the search, incomplete information, inconsistent details across the web, or strong nearby competitors. Our audit shows which of these apply to you."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How do I get more Google reviews?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Ask every satisfied customer at the right moment with a direct review link, and reply to every review you receive. We set up a simple, policy-compliant routine. We never buy, fake or offer incentives for reviews."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"What are the best categories for my Google Business Profile?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Choose the most specific primary category for your core business and add only a few additional categories for key services. The right choice depends on your business and on which categories top competitors use, which we research during the audit."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do I need a website to benefit from a Google Business Profile?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"No. A profile can bring calls and visits on its own. A website that matches your profile details does strengthen local SEO and gives customers more confidence."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Can you optimise a profile for a service-area business?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. If you visit customers at their location, such as plumbers or cleaners, Google asks you to hide your address and set a service area. We set this up correctly so you stay compliant."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you manage multiple locations?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. Each eligible location needs its own profile. We manage them consistently, with shared standards and individual reporting."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you offer Google My Business optimization services in India?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. EFFIX Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Is Google Business Profile optimisation a one-time job?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"The first optimisation is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management."}</p>
-                </div>
-              </div>
+              <ServiceFaq items={FAQS} />
             </div>
           </div>
         </section>
@@ -565,10 +582,10 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/reddit-marketing"><span>{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/seo-aeo-services"><span>{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/content-writing"><span>{"04"}</span>{"Content Writing"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/website-design-development"><span>{"05"}</span>{"Website Design & Development"}<i aria-hidden="true">{"→"}</i></a>
+              <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/content-writing"><span aria-hidden="true">{"04"}</span>{"Content Writing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>
           </div>
         </section>

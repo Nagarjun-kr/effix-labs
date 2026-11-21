@@ -27,15 +27,17 @@ function handleContentSubmit(e) {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* banner: typing headline inside the document */
-  var typed = document.getElementById('cwTyped');
+  var typedHost = document.getElementById('cwTyped');
+  var typed = typedHost && typedHost.querySelector('bdi[data-t]');
+  var setT = function (t) { typed.setAttribute('data-t', t); };
   if (typed && !reduce) {
     var lines = ['How to choose the right CRM for a small team', 'Best coworking spaces in Bengaluru for startups', 'What is GST and how does it affect pricing?', 'A beginner’s guide to term insurance in India'];
     var li = 0, ci = lines[0].length, del = true;
     (function tick() {
       var t = lines[li];
       if (del) { ci--; if (ci <= 0) { del = false; li = (li + 1) % lines.length; } }
-      else { ci++; if (ci >= lines[li].length) { del = true; typed.textContent = lines[li]; return setTimeout(tick, 2400); } }
-      typed.textContent = lines[li].slice(0, Math.max(0, ci));
+      else { ci++; if (ci >= lines[li].length) { del = true; setT(lines[li]); return setTimeout(tick, 2400); } }
+      setT(lines[li].slice(0, Math.max(0, ci)));
       setTimeout(tick, del ? 28 : 55);
     })();
   }

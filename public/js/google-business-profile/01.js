@@ -7,6 +7,8 @@ function toggleFaq(button) {
       document.querySelectorAll('.faq-item').forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('open');
+          const otherBtn = otherItem.querySelector('.faq-question-btn');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
           const otherPanel = otherItem.querySelector('.faq-answer-panel');
           if (otherPanel) {
             otherPanel.style.maxHeight = null;
@@ -14,6 +16,7 @@ function toggleFaq(button) {
         }
       });
 
+      button.setAttribute('aria-expanded', String(!isOpen));
       if (!isOpen) {
         item.classList.add('open');
         panel.style.maxHeight = panel.scrollHeight + "px";

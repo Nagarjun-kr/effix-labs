@@ -1,6 +1,8 @@
 // SEO & AEO Services — service page (shares the GBP/Reddit design system).
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
+import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import { ORG_ID, ldString } from "@/lib/site";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "../reddit-marketing/rm.css";
@@ -40,7 +42,117 @@ const SCRIPTS = [
   "/js/seo-aeo-services/page.js"
 ];
 
-const JSON_LD = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://effix.co.in/services/seo-aeo-services#service\", \"name\": \"SEO & AEO Services\", \"alternateName\": [\"SEO and AEO services\", \"Answer engine optimisation services\"], \"serviceType\": \"Search engine optimisation and answer engine optimisation\", \"provider\": {\"@type\": \"Organization\", \"name\": \"EFFIX Labs\", \"url\": \"https://effix.co.in/\", \"email\": \"effix.labs@gmail.com\"}, \"areaServed\": [{\"@type\": \"Country\", \"name\": \"India\"}, {\"@type\": \"City\", \"name\": \"Bengaluru\", \"alternateName\": \"Bangalore\", \"containedInPlace\": {\"@type\": \"State\", \"name\": \"Karnataka\"}}, {\"@type\": \"Place\", \"name\": \"Worldwide\"}], \"description\": \"SEO & AEO services for businesses across India and Bangalore (Bengaluru): technical SEO and AI crawlability, keyword and question research, answer-first content optimisation, schema markup, entity and authority building, and rank and AI visibility tracking across Google, AI Overviews, ChatGPT, Perplexity, Gemini and Bing.\", \"url\": \"https://effix.co.in/services/seo-aeo-services\"}, {\"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What are SEO & AEO services?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"SEO & AEO services combine search engine optimisation, which helps your pages rank in Google and Bing, with answer engine optimisation, which helps your business get quoted and recommended in AI answers from Google AI Overviews, ChatGPT, Perplexity and Gemini. The work covers technical fixes, keyword and question research, answer-first content, schema markup, authority building and tracking.\"}}, {\"@type\": \"Question\", \"name\": \"What is the difference between SEO and AEO?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"SEO aims to rank your pages so people click through to your website. AEO aims to make your business the answer that AI tools and featured snippets show, often before anyone clicks. They share the same foundations: a fast, crawlable site, helpful content and trusted mentions.\"}}, {\"@type\": \"Question\", \"name\": \"Does AEO replace SEO?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. AI answers draw heavily on pages that already rank and on sources search engines trust. Google says its AI features rely on the same core SEO practices as regular search, so strong SEO is the base that AEO builds on.\"}}, {\"@type\": \"Question\", \"name\": \"Do you offer SEO & AEO services in Bangalore?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. EFFIX Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad.\"}}, {\"@type\": \"Question\", \"name\": \"How long do SEO & AEO take to show results?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Technical fixes and content updates can show early movement within weeks, but meaningful ranking and citation gains usually take three to six months, depending on your site, competition and how much content needs work.\"}}, {\"@type\": \"Question\", \"name\": \"Can you guarantee a #1 ranking or a ChatGPT mention?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No honest agency can. Google and AI companies control their results. What we can do is fix what holds your site back, publish genuinely useful answers and build trust signals, then report progress transparently every month.\"}}, {\"@type\": \"Question\", \"name\": \"How do you measure AI visibility?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"We track a set of prompts your buyers are likely to ask across ChatGPT, Perplexity, Gemini and Google AI Overviews, and record whether your brand is mentioned or cited. We combine this with Search Console data, rankings and AI referral traffic in analytics.\"}}, {\"@type\": \"Question\", \"name\": \"How much do SEO & AEO services cost?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Cost depends on the size of your website, how competitive your market is and how much content and technical work is needed. We share a clear monthly scope and quote after reviewing your site and goals.\"}}]}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://effix.co.in/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Services\", \"item\": \"https://effix.co.in/#services\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"SEO & AEO Services\", \"item\": \"https://effix.co.in/services/seo-aeo-services\"}]}]}";
+const FAQS: FaqItem[] = [
+  {
+    "q": "What are SEO & AEO services?",
+    "a": [
+      "SEO & AEO services combine search engine optimisation, which helps your pages rank in Google and Bing, with answer engine optimisation, which helps your business get quoted and recommended in AI answers from Google AI Overviews, ChatGPT, Perplexity and Gemini. The work covers technical fixes, keyword and question research, answer-first content, schema markup, authority building and tracking."
+    ]
+  },
+  {
+    "q": "What is the difference between SEO and AEO?",
+    "a": [
+      "SEO aims to rank your pages so people click through to your website. AEO aims to make your business the answer that AI tools and featured snippets show, often before anyone clicks. They share the same foundations: a fast, crawlable site, helpful content and trusted mentions."
+    ]
+  },
+  {
+    "q": "Does AEO replace SEO?",
+    "a": [
+      "No. AI answers draw heavily on pages that already rank and on sources search engines trust. Google says its AI features rely on the same core SEO practices as regular search, so strong SEO is the base that AEO builds on."
+    ]
+  },
+  {
+    "q": "Do you offer SEO & AEO services in Bangalore?",
+    "a": [
+      "Yes. EFFIX Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad."
+    ]
+  },
+  {
+    "q": "How long do SEO & AEO take to show results?",
+    "a": [
+      "Technical fixes and content updates can show early movement within weeks, but meaningful ranking and citation gains usually take three to six months, depending on your site, competition and how much content needs work."
+    ]
+  },
+  {
+    "q": "Can you guarantee a #1 ranking or a ChatGPT mention?",
+    "a": [
+      "No honest agency can. Google and AI companies control their results. What we can do is fix what holds your site back, publish genuinely useful answers and build trust signals, then report progress transparently every month."
+    ]
+  },
+  {
+    "q": "How do you measure AI visibility?",
+    "a": [
+      "We track a set of prompts your buyers are likely to ask across ChatGPT, Perplexity, Gemini and Google AI Overviews, and record whether your brand is mentioned or cited. We combine this with Search Console data, rankings and AI referral traffic in analytics."
+    ]
+  },
+  {
+    "q": "How much do SEO & AEO services cost?",
+    "a": [
+      "Cost depends on the size of your website, how competitive your market is and how much content and technical work is needed. We share a clear monthly scope and quote after reviewing your site and goals."
+    ]
+  }
+];
+
+const SERVICE_LD = {
+  "@type": "Service",
+  "@id": "https://effix.co.in/services/seo-aeo-services#service",
+  "name": "SEO & AEO Services",
+  "alternateName": [
+    "SEO and AEO services",
+    "Answer engine optimisation services"
+  ],
+  "serviceType": "Search engine optimisation and answer engine optimisation",
+  "provider": {
+    "@id": ORG_ID
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "City",
+      "name": "Bengaluru",
+      "alternateName": "Bangalore",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Karnataka"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Worldwide"
+    }
+  ],
+  "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru): technical SEO and AI crawlability, keyword and question research, answer-first content optimisation, schema markup, entity and authority building, and rank and AI visibility tracking across Google, AI Overviews, ChatGPT, Perplexity, Gemini and Bing.",
+  "url": "https://effix.co.in/services/seo-aeo-services"
+};
+
+const BREADCRUMB_LD = {
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://effix.co.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://effix.co.in/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "SEO & AEO Services",
+      "item": "https://effix.co.in/services/seo-aeo-services"
+    }
+  ]
+};
+
+const JSON_LD = ldString([SERVICE_LD, faqPageLd(FAQS), BREADCRUMB_LD]);
 
 export default function Page() {
   return (
@@ -103,16 +215,16 @@ export default function Page() {
                   <span className="sa-ring r1"></span><span className="sa-ring r2"></span><span className="sa-ring r3"></span>
                   <span className="sa-sweep"></span>
                   <span className="sa-blip b1"></span><span className="sa-blip b2"></span><span className="sa-blip b3"></span>
-                  <span className="sa-core"><b>{"yourbrand"}</b><small>{".com"}</small></span>
+                  <span className="sa-core"><b><bdi data-t={"yourbrand"}></bdi></b><small><bdi data-t={".com"}></bdi></small></span>
                 </div>
-                <span className="sa-orbit-chip c1">{"Google"}</span>
-                <span className="sa-orbit-chip c2">{"AI Overviews"}</span>
-                <span className="sa-orbit-chip c3">{"ChatGPT"}</span>
-                <span className="sa-orbit-chip c4">{"Perplexity"}</span>
-                <span className="sa-orbit-chip c5">{"Gemini"}</span>
+                <span className="sa-orbit-chip c1"><bdi data-t={"Google"}></bdi></span>
+                <span className="sa-orbit-chip c2"><bdi data-t={"AI Overviews"}></bdi></span>
+                <span className="sa-orbit-chip c3"><bdi data-t={"ChatGPT"}></bdi></span>
+                <span className="sa-orbit-chip c4"><bdi data-t={"Perplexity"}></bdi></span>
+                <span className="sa-orbit-chip c5"><bdi data-t={"Gemini"}></bdi></span>
                 <div className="sa-result">
-                  <span className="sa-result-rank">{"#1"}</span>
-                  <div><b>{"Best SEO agency in Bangalore?"}</b><small><i></i>{"yourbrand.com · cited in AI answer"}</small></div>
+                  <span className="sa-result-rank"><bdi data-t={"#1"}></bdi></span>
+                  <div><b><bdi data-t={"Best SEO agency in Bangalore?"}></bdi></b><small><i></i><bdi data-t={"yourbrand.com · cited in AI answer"}></bdi></small></div>
                 </div>
               </div>
               <div className="sa-b-copy">
@@ -144,7 +256,7 @@ export default function Page() {
                   <li><b>{"Measured by:"}</b>{" rankings, clicks, organic leads"}</li>
                 </ul>
               </article>
-              <div className="sa-lane-plus" aria-hidden="true">{"+"}</div>
+              <div className="sa-lane-plus" aria-hidden="true"><bdi data-t={"+"}></bdi></div>
               <article className="sa-lane sa-lane-aeo">
                 <span className="sa-lane-tag">{"AEO"}</span>
                 <h3 className="sa-lane-t">{"Get cited"}</h3>
@@ -208,11 +320,11 @@ export default function Page() {
               <p className="gx-p">{"A clear, repeatable programme. You always know what we’re working on and why."}</p>
             </div>
             <ol className="sa-timeline" id="saTimeline">
-              <li><span className="sa-tl-n">{"01"}</span><div><h3>{"Audit"}</h3><p>{"Technical health, rankings, content gaps, and how AI tools currently describe your brand and competitors."}</p></div></li>
-              <li><span className="sa-tl-n">{"02"}</span><div><h3>{"Map keywords & questions"}</h3><p>{"Every important search and question assigned to one page, existing or new."}</p></div></li>
-              <li><span className="sa-tl-n">{"03"}</span><div><h3>{"Fix & build"}</h3><p>{"Technical fixes, answer-first content updates and schema, in prioritised monthly sprints."}</p></div></li>
-              <li><span className="sa-tl-n">{"04"}</span><div><h3>{"Grow authority"}</h3><p>{"Consistent entity details and genuine mentions on the sites search engines and AI tools trust."}</p></div></li>
-              <li><span className="sa-tl-n">{"05"}</span><div><h3>{"Track & refine"}</h3><p>{"Rankings, clicks and AI citations reviewed monthly, then the plan is adjusted."}</p></div></li>
+              <li><span className="sa-tl-n" aria-hidden="true">{"01"}</span><div><h3>{"Audit"}</h3><p>{"Technical health, rankings, content gaps, and how AI tools currently describe your brand and competitors."}</p></div></li>
+              <li><span className="sa-tl-n" aria-hidden="true">{"02"}</span><div><h3>{"Map keywords & questions"}</h3><p>{"Every important search and question assigned to one page, existing or new."}</p></div></li>
+              <li><span className="sa-tl-n" aria-hidden="true">{"03"}</span><div><h3>{"Fix & build"}</h3><p>{"Technical fixes, answer-first content updates and schema, in prioritised monthly sprints."}</p></div></li>
+              <li><span className="sa-tl-n" aria-hidden="true">{"04"}</span><div><h3>{"Grow authority"}</h3><p>{"Consistent entity details and genuine mentions on the sites search engines and AI tools trust."}</p></div></li>
+              <li><span className="sa-tl-n" aria-hidden="true">{"05"}</span><div><h3>{"Track & refine"}</h3><p>{"Rankings, clicks and AI citations reviewed monthly, then the plan is adjusted."}</p></div></li>
             </ol>
           </div>
         </section>
@@ -250,78 +362,7 @@ export default function Page() {
               <p className="gx-p">{"Can’t find your answer? Use the form below and we’ll reply within one business day."}</p>
             </div>
             <div className="faq-accordion-wrap gx-faq">
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"What are SEO & AEO services?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"SEO & AEO services combine search engine optimisation, which helps your pages rank in Google and Bing, with answer engine optimisation, which helps your business get quoted and recommended in AI answers from Google AI Overviews, ChatGPT, Perplexity and Gemini. The work covers technical fixes, keyword and question research, answer-first content, schema markup, authority building and tracking."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"What is the difference between SEO and AEO?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"SEO aims to rank your pages so people click through to your website. AEO aims to make your business the answer that AI tools and featured snippets show, often before anyone clicks. They share the same foundations: a fast, crawlable site, helpful content and trusted mentions."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Does AEO replace SEO?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"No. AI answers draw heavily on pages that already rank and on sources search engines trust. Google says its AI features rely on the same core SEO practices as regular search, so strong SEO is the base that AEO builds on."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Do you offer SEO & AEO services in Bangalore?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Yes. EFFIX Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How long do SEO & AEO take to show results?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Technical fixes and content updates can show early movement within weeks, but meaningful ranking and citation gains usually take three to six months, depending on your site, competition and how much content needs work."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"Can you guarantee a #1 ranking or a ChatGPT mention?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"No honest agency can. Google and AI companies control their results. What we can do is fix what holds your site back, publish genuinely useful answers and build trust signals, then report progress transparently every month."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How do you measure AI visibility?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"We track a set of prompts your buyers are likely to ask across ChatGPT, Perplexity, Gemini and Google AI Overviews, and record whether your brand is mentioned or cited. We combine this with Search Console data, rankings and AI referral traffic in analytics."}</p>
-                </div>
-              </div>
-              <div className="faq-item">
-                <button className="faq-question-btn" data-onclick="toggleFaq(this)">
-                  <span>{"How much do SEO & AEO services cost?"}</span>
-                  <span className="faq-icon-cross">{"+"}</span>
-                </button>
-                <div className="faq-answer-panel">
-                  <p>{"Cost depends on the size of your website, how competitive your market is and how much content and technical work is needed. We share a clear monthly scope and quote after reviewing your site and goals."}</p>
-                </div>
-              </div>
+              <ServiceFaq items={FAQS} />
             </div>
           </div>
         </section>
@@ -331,10 +372,10 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label sa-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/google-business-profile"><span>{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/reddit-marketing"><span>{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/content-writing"><span>{"04"}</span>{"Content Writing"}<i aria-hidden="true">{"→"}</i></a>
-              <a href="/services/website-design-development"><span>{"05"}</span>{"Website Design & Development"}<i aria-hidden="true">{"→"}</i></a>
+              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/content-writing"><span aria-hidden="true">{"04"}</span>{"Content Writing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>
           </div>
         </section>

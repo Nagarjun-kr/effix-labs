@@ -1,0 +1,15 @@
+import type { MetadataRoute } from "next";
+import { SITE_URL, SERVICE_SLUGS } from "@/lib/site";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+  return [
+    { url: `${SITE_URL}/`, lastModified, changeFrequency: "weekly", priority: 1 },
+    ...SERVICE_SLUGS.map((slug) => ({
+      url: `${SITE_URL}/services/${slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
+}

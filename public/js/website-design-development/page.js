@@ -51,7 +51,8 @@ function handleWebSubmit(e) {
       cur = (i + items.length) % items.length;
       items.forEach(function (li, k) { li.classList.toggle('is-on', k === cur); li.setAttribute('aria-current', k === cur ? 'step' : 'false'); });
       scenes.forEach(function (sc, k) { sc.classList.toggle('is-on', k === cur); });
-      if (stepLbl) stepLbl.textContent = ('0' + (cur + 1)).slice(-2) + ' / 0' + items.length;
+      var lblT = stepLbl && stepLbl.querySelector('bdi[data-t]');
+      if (lblT) lblT.setAttribute('data-t', ('0' + (cur + 1)).slice(-2) + ' / 0' + items.length);
       /* restart the progress bar animation */
       var bar = items[cur].querySelector('.wd-fl-bar');
       if (bar) { bar.style.display = 'none'; void bar.offsetWidth; bar.style.display = ''; }

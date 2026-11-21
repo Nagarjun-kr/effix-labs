@@ -31,6 +31,38 @@
   if (modal) modal.addEventListener('click', function (e) { if (e.target.getAttribute('data-close')) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
 
+  /* ---- Hero video: poster paints first; the looping video loads after page load, when visible ---- */
+  var heroVid = document.querySelector('.gx-media-fg[data-src]');
+  if (heroVid) {
+    var conn = navigator.connection || {};
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches || conn.saveData;
+    var startVid = function () {
+      if (heroVid.dataset.loaded) return;
+      heroVid.dataset.loaded = '1';
+      heroVid.src = heroVid.dataset.src;
+      var pr = heroVid.play(); if (pr && pr.catch) pr.catch(function () {});
+    };
+    var armVid = function () {
+      if (calm) return;
+      if ('IntersectionObserver' in window) {
+        var vio = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { startVid(); vio.disconnect(); } }, { rootMargin: '200px' });
+        vio.observe(heroVid);
+      } else startVid();
+    };
+    if (document.readyState === 'complete') setTimeout(armVid, 300);
+    else window.addEventListener('load', function () { setTimeout(armVid, 300); });
+  }
+
+  /* ---- Marquee: clone the single crawlable set for a seamless loop (clone is aria-hidden) ---- */
+  document.querySelectorAll('.gx-marquee').forEach(function (mq) {
+    var set = mq.querySelector('.gx-marquee-set');
+    if (!set || mq.classList.contains('is-ready')) return;
+    var clone = set.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    set.parentNode.appendChild(clone);
+    mq.classList.add('is-ready');
+  });
+
   /* ---- Checklist meter ---- */
   var list = document.getElementById('gxChecklist');
   if (list) {
@@ -44,7 +76,7 @@
       var n = 0; boxes.forEach(function (b) { if (b.checked) n++; });
       var total = boxes.length;
       if (num) num.textContent = String(n);
-      if (fill) fill.style.width = (n / total * 100).toFixed(1) + '%';
+      if (fill) fill.style.transform = 'scaleX(' + (n / total).toFixed(3) + ')';
       if (meter) meter.setAttribute('aria-valuenow', String(n));
       if (!msg) return;
       if (n === 0) msg.textContent = msg0;
