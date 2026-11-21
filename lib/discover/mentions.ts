@@ -34,7 +34,7 @@ export type Progress =
 const PER_PLATFORM = 10;
 const PARALLEL = 2; // platforms worked on at the same time (searches are spaced anyway)
 
-export const mentionsConfigured = () => Boolean(process.env.SERPER_API_KEY);
+export const mentionsConfigured = () => serperKeys().length > 0;
 export const cleanBrand = (value: string) => tidyBrandName(value.replace(/["\\]/g, "")).slice(0, 100);
 
 const hostOf = (url: string) => {
@@ -74,9 +74,30 @@ async function throttle() {
 
 
 /** One Serper search, with up to two retries on network/server errors. */
-async function serper(q: string, gl: string, key: string, counter: { n: number }): Promise<Organic[]> {
+// ---- API keys: SERPER_API_KEYS="key1,key2,…" (or a single SERPER_API_KEY). The first working key is used; a key that
+// runs out of credit or is rejected is set aside and the next one takes over, so audits keep working.
+const benched = new Map<string, number>(); // key -> set aside until (ms)
+export function serperKeys() {
+  const raw = `${process.env.SERPER_API_KEYS ?? ""},${process.env.SERPER_API_KEY ?? ""}`;
+  return [...new Set(raw.split(/[\s,;]+/).map((k) => k.trim()).filter(Boolean))];
+}
+function currentKey() {
+  const now = Date.now();
+  return serperKeys().find((k) => (benched.get(k) ?? 0) <= now) ?? null;
+}
+const mask = (k: string) => `ending …${k.slice(-4)}`;
+function benchKey(key: string, hours: number, why: string) {
+  benched.set(key, Date.now() + hours * 3600_000);
+  console.warn(`[serper] key ${mask(key)} set aside for ${hours} h: ${why}. ${currentKey() ? "Switched to the next key." : "No working keys left."}`);
+}
+
+/** One Serper search, retried on network/server errors and moved to the next key when one runs out. */
+async function serper(q: string, gl: string, counter: { n: number }): Promise<Organic[]> {
   let lastError: unknown;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let tries = 0;
+  while (tries < 3) {
+    const key = currentKey();
+    if (!key) throw Object.assign(new Error("no working search keys"), { fatal: true });
     await throttle();
     counter.n += 1;
     const controller = new AbortController();
@@ -89,14 +110,27 @@ async function serper(q: string, gl: string, key: string, counter: { n: number }
         body: JSON.stringify({ q, num: 10, gl }),
         cache: "no-store",
       });
-      if (res.status === 400 || res.status === 401 || res.status === 403) throw Object.assign(new Error(`search ${res.status}`), { fatal: true });
-      if (!res.ok) throw new Error(`search ${res.status}`);
+      if (!res.ok) {
+        const text = (await res.text().catch(() => "")).slice(0, 300);
+        if (res.status === 401 || res.status === 403) {
+          benchKey(key, 24, `rejected (${res.status} ${text})`);
+          continue; // same search, next key
+        }
+        if (/credit|balance|quota|limit exceeded|payment/i.test(text) || res.status === 402) {
+          benchKey(key, 6, `out of credit (${res.status} ${text})`);
+          continue;
+        }
+        if (res.status === 429) throw new Error("search 429"); // too fast: wait and retry the same key
+        if (res.status === 400) throw Object.assign(new Error(`search 400 ${text}`), { fatal: true }); // query not allowed
+        throw new Error(`search ${res.status}`);
+      }
       const data = (await res.json()) as { organic?: Organic[] };
       return data.organic ?? [];
     } catch (error) {
       lastError = error;
       if ((error as { fatal?: boolean }).fatal) break;
-      await new Promise((r) => setTimeout(r, attempt === 0 ? 1000 : 2500));
+      tries += 1;
+      await new Promise((r) => setTimeout(r, tries === 1 ? 1000 : 2500));
     } finally {
       clearTimeout(timer);
     }
@@ -133,8 +167,7 @@ export function countryFor(domain: string) {
 }
 
 export async function findMentions(brand: string, domain = "", onProgress: (p: Progress) => void = () => {}): Promise<SearchResult> {
-  const key = process.env.SERPER_API_KEY;
-  if (!key) throw new Error("not_configured");
+  if (!mentionsConfigured()) throw new Error("not_configured");
   const gl = countryFor(domain);
   const otherCountries = gl === "us" ? ["in", "uk"] : ["us", "uk"].filter((c) => c !== gl);
   const counter = { n: 0 };
@@ -149,7 +182,7 @@ export async function findMentions(brand: string, domain = "", onProgress: (p: P
   let overview: Overview = { siteFound: false, siteRank: null, profiles: [] };
   const fromOverview = new Map<string, Mention[]>();
   try {
-    const organic = await serper(brand, gl, key, counter);
+    const organic = await serper(brand, gl, counter);
     const rank = site ? organic.findIndex((r) => { const u = realLink(r); return Boolean(u) && (hostOf(u as string) === site || hostOf(u as string).endsWith(`.${site}`)); }) : -1;
     overview = { siteFound: rank >= 0, siteRank: rank >= 0 ? rank + 1 : null, profiles: [] };
     for (const p of PLATFORMS) {
@@ -170,7 +203,7 @@ export async function findMentions(brand: string, domain = "", onProgress: (p: P
     let failures = 0;
     for (const country of [gl, ...otherCountries]) {
       try {
-        const organic = await serper(query, country, key, counter);
+        const organic = await serper(query, country, counter);
         merge(results, onPlatform(organic, p.hosts).map((r) => toMention(r, "site")));
       } catch {
         failures += 1;
@@ -183,7 +216,7 @@ export async function findMentions(brand: string, domain = "", onProgress: (p: P
     if (!results.some((m) => isProfileOfBrand(p.name, m.url))) {
       onProgress({ type: "step", step: "second", platform: p.name, state: "start" });
       try {
-        const organic = await serper(`${brand} ${p.word}`, gl, key, counter);
+        const organic = await serper(`${brand} ${p.word}`, gl, counter);
         merge(results, onPlatform(organic, p.hosts).map((r) => toMention(r, "name")));
       } catch {
         failures += 1;
