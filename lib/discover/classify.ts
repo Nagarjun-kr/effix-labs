@@ -96,6 +96,29 @@ export function normUrl(raw: string) {
 }
 
 /** text = result title + snippet; domain = the audited website; officialHandles = handles of profiles the site links to. */
+/** Facebook page number: profile.php?id=615…, /p/Name-615…/, /615…/posts/… all point to the same page. */
+export function facebookId(raw: string): string | null {
+  try {
+    const u = new URL(raw);
+    const id = u.searchParams.get("id");
+    if (id && /^\d{8,}$/.test(id)) return id;
+    const m = u.pathname.match(/(?:^|[/-])(\d{10,})(?=\/|$)/);
+    return m ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Last path part of a profile address, squashed (youtube.com/OpenAI -> "openai"), to spot the same account. */
+export function lastSegment(raw: string): string {
+  try {
+    const parts = new URL(raw).pathname.split("/").filter(Boolean);
+    return squash(decodeURIComponent((parts[parts.length - 1] ?? "").replace(/^@/, "")));
+  } catch {
+    return "";
+  }
+}
+
 /** Handles of the profiles a website links to (squashed), for spotting the same handle on other platforms. */
 export function handlesOf(links: { platform: string; url: string }[]) {
   const out = new Set<string>();
@@ -118,7 +141,10 @@ export function tagResult(platform: string, url: string, brand: string, linkedUr
   const h = handle ? squash(decodeURIComponent(handle)) : "";
   const matchesBrand = handleMatches(h, b);
   const n = normUrl(url);
-  const official = Boolean(linkedUrl) && (n === normUrl(linkedUrl as string) || n.startsWith(normUrl(linkedUrl as string) + "/"));
+  const fb = platform === "Facebook" && linkedUrl ? facebookId(linkedUrl) : null;
+  const official =
+    Boolean(linkedUrl) &&
+    (n === normUrl(linkedUrl as string) || n.startsWith(normUrl(linkedUrl as string) + "/") || (fb !== null && facebookId(url) === fb));
   const mentionsSite = Boolean(domain) && text.toLowerCase().includes(domain.toLowerCase().replace(/^www\./, ""));
   const sameHandle = Boolean(h) && h.length >= 3 && officialHandles.has(h) && (kind === "profile");
   return { kind, label: LABEL[kind], handle, official, matchesBrand, mentionsSite, sameHandle };
