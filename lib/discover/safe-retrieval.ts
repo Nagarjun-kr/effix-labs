@@ -19,6 +19,9 @@ export type RetrievedResource = {
   contentType: string;
   body: string;
   bytes: number;
+  headers: Record<string, string | string[] | undefined>;
+  redirects: number;
+  ms: number;
 };
 export type DnsLookup = (hostname: string) => Promise<string[]>;
 
@@ -56,6 +59,7 @@ export async function retrieveSafely(
   const maxBytes =
     options.maxBytes ?? (kind === "html" ? retrievalLimits.htmlBytes : retrievalLimits.textBytes);
   const redirects = options.redirects ?? 0;
+  const started = Date.now();
   return new Promise((resolve, reject) => {
     const requestFn = url.protocol === "https:" ? https.request : http.request;
     const request = requestFn(
@@ -68,6 +72,7 @@ export async function retrieveSafely(
               ? "text/html,application/xhtml+xml"
               : "text/plain,application/xml,text/xml",
           "Accept-Encoding": "identity",
+          "User-Agent": "Mozilla/5.0 (compatible; EffixAuditBot/1.0; +https://effix.co.in/discover)",
         },
         timeout: retrievalLimits.timeoutMs,
         lookup: (hostname, lookupOptions, callback) => {
@@ -157,6 +162,9 @@ export async function retrieveSafely(
             contentType,
             body: Buffer.concat(chunks).toString("utf8"),
             bytes,
+            headers: response.headers,
+            redirects,
+            ms: Date.now() - started,
           }),
         );
         response.on("error", (error) => reject(error));

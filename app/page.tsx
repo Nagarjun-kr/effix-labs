@@ -34,7 +34,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "What does the free audit check?",
     "a": [
-      "It reads your website, finds your brand name and the social profiles you link to, then shows live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, TikTok, Reddit, Pinterest and Threads. ",
+      "Technical SEO (HTTPS, indexing, robots.txt, sitemap, canonical tags, redirects, broken pages), content (titles, descriptions, headings, text, alt text), AI-search readiness (schema, FAQs, AI crawler access) and a Google speed test. It also shows live Google results for your brand on nine platforms, and gives you an action plan. ",
       {
         "text": "Run the free audit",
         "href": "/discover"
@@ -49,13 +49,13 @@ const HOME_FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Does the audit cover AI answers, Google Maps or Reddit?",
+    "q": "Does the audit cover AI search, Google Maps or Reddit?",
     "a": [
-      "Reddit, yes: it’s one of the nine platforms we search through Google. AI answers and Google Maps aren’t covered yet."
+      "AI search, partly: we check whether ChatGPT, Claude, Perplexity and Google AI can read and understand your site, but we don’t track what those tools say about you. Reddit is one of the nine platforms we search through Google. Google Maps isn’t covered yet."
     ]
   },
   {
-    "q": "Is every result an official account?",
+    "q": "Is every brand result an official account?",
     "a": [
       "No. Google shows pages that mention your brand. Some will be your own profiles and some will be posts by other people, so open each result to check it."
     ]
@@ -63,7 +63,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "What happens to the website I enter?",
     "a": [
-      "We read that one public page to find your brand name and the profiles it links to. Nothing is saved, and you don’t need an account."
+      "We read your homepage, robots.txt, sitemap and up to eight other public pages, and Google tests the page’s speed. Nothing is saved, and you don’t need an account."
     ]
   },
   {
@@ -397,7 +397,7 @@ export default function Page() {
               <div className="search-guarantee-row">
                 {" "}
                 <span>
-                  {"Free. No login. Checks your brand on nine platforms through Google."}
+                  {"Free. No login. SEO, AI visibility, speed and your brand on nine platforms."}
                 </span>
                 {" "}
               </div>
@@ -818,7 +818,7 @@ export default function Page() {
                       <line x1="12" y1="8" x2="12.01" y2="8"></line>
                       {" "}
                     </svg>
-                    {" Free · Live Google results on nine platforms "}
+                    {" Free · SEO, speed and brand visibility in one report "}
                   </span>
                   {" "}
                 </div>

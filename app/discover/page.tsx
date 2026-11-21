@@ -1,12 +1,13 @@
-// Effix Discover — free visibility audit at /discover (linked from the homepage audit form and buttons).
+// Effix Discover — free SEO & visibility audit at /discover (linked from the homepage audit form and buttons).
 import type { Metadata } from "next";
 
 import { DISCOVER_PSE_ID } from "@/lib/site";
 import DiscoverClient from "./discover-client";
 import "./discover.css";
+import "./dashboard.css";
 
-const TITLE = "Effix Discover: Free Visibility Audit | Effix Labs";
-const DESC = "Free visibility audit: enter your website and see live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, TikTok, Reddit, Pinterest and Threads.";
+const TITLE = "Free SEO & Visibility Audit | Effix Discover by Effix Labs";
+const DESC = "Free website audit: technical SEO, content, AI-search visibility and Google speed scores with an action plan, plus live Google results for your brand on nine platforms.";
 
 export const metadata: Metadata = {
   title: TITLE,
