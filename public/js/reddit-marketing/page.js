@@ -57,3 +57,52 @@ function handleRedditSubmit(e) {
     });
   });
 })();
+
+/* "Why Reddit matters now": the three scenes play in turn (search -> AI answer -> thread).
+   Hovering or focusing a card plays that scene; autoplay resumes after a pause. */
+(function () {
+  var grid = document.getElementById('rwGrid');
+  if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.rw-card'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counter = grid.querySelector('.rw-count');
+  var counterT = counter && counter.querySelector('bdi');
+  var active = 0, timer = 0, visible = false, lastUser = 0, countRaf = 0;
+  var fmt = function (n) { return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : String(Math.round(n)); };
+
+  if (reduce) { cards.forEach(function (c) { c.classList.add('is-on'); }); if (counterT) counterT.setAttribute('data-t', fmt(+counter.dataset.to)); return; }
+
+  function countUp() {
+    if (!counterT) return;
+    cancelAnimationFrame(countRaf);
+    var from = +counter.dataset.from, to = +counter.dataset.to, t0 = performance.now(), d = 1400;
+    (function step(now) {
+      var t = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - t, 3);
+      counterT.setAttribute('data-t', fmt(from + (to - from) * e));
+      if (t < 1) countRaf = requestAnimationFrame(step);
+    })(t0);
+  }
+  function setActive(i) {
+    active = (i + cards.length) % cards.length;
+    cards.forEach(function (c, k) { c.classList.toggle('is-on', k === active); });
+    if (active === 2) countUp(); else if (counterT) { cancelAnimationFrame(countRaf); counterT.setAttribute('data-t', counter.dataset.from); }
+  }
+  function schedule() {
+    clearTimeout(timer);
+    if (!visible) return;
+    var idle = performance.now() - lastUser;
+    timer = setTimeout(function () { if (performance.now() - lastUser >= 6000) setActive(active + 1); schedule(); }, Math.max(3400, 6000 - idle));
+  }
+  cards.forEach(function (c, i) {
+    c.addEventListener('pointerenter', function () { lastUser = performance.now(); if (i !== active) setActive(i); });
+    c.addEventListener('focusin', function () { lastUser = performance.now(); setActive(i); });
+    c.addEventListener('click', function () { lastUser = performance.now(); setActive(i); });
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      var was = visible; visible = en[0].isIntersecting;
+      if (visible && !was) setActive(active);
+      schedule();
+    }, { threshold: 0.35 }).observe(grid);
+  }
+})();

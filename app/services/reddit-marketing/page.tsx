@@ -6,6 +6,7 @@ import { ORG_ID, ldString } from "@/lib/site";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "./rm.css";
+import "./rw.css";
 
 export const metadata: Metadata = {
   "title": "Reddit Marketing Services in India | EFFIX Labs",
@@ -385,37 +386,67 @@ export default function Page() {
         </section>
 
 
-        {/* ================= WHY NOW ================= */}
-        <section className="gx-section gx-tint" id="why">
+        {/* ================= WHY NOW — three live scenes ================= */}
+        <section className="gx-section rw-sec" id="why">
           <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"Why Reddit matters now"}</span>
-              <h2 className="gx-h2">{"Reddit now shapes "}<em>{"three places buyers look."}</em></h2>
+            <div className="rw-head">
+              <div>
+                <span className="gx-label rw-label">{"Why Reddit matters now"}</span>
+                <h2 className="gx-h2">{"Reddit now shapes "}<em>{"three places buyers look."}</em></h2>
+              </div>
+              <ol className="rw-journey" aria-hidden="true"><li><bdi data-t={"Search"}></bdi></li><li><bdi data-t={"Ask AI"}></bdi></li><li><bdi data-t={"Read the thread"}></bdi></li></ol>
             </div>
-            <div className="gx-factors">
-              <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true"><bdi data-t={"1"}></bdi></span>
-                <h3 className="gx-h3">{"Google search results"}</h3>
-                <p className="gx-quote">{"Reddit threads regularly appear for “best”, “vs” and “review” searches."}</p>
-                <p className="gx-p-sm">{"A helpful answer in a thread that already ranks can keep sending interested people your way for months."}</p>
-                <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Buyer intent: "}<strong>{"high"}</strong></div>
+            <div className="rw-grid" id="rwGrid">
+              <article className="rw-card is-on">
+                <div className="rw-scene rw-serp" aria-hidden="true">
+                  <div className="rw-bar"><i></i><bdi data-t={"best crm for small team"}></bdi></div>
+                  <div className="rw-results">
+                    <div className="rw-res r-a"><b></b><i></i></div>
+                    <div className="rw-res r-b"><b></b><i></i></div>
+                    <div className="rw-res rw-reddit"><span className="rw-ico"><bdi data-t={"r/"}></bdi></span><div><em><bdi data-t={"reddit.com › r/startups"}></bdi></em><strong><bdi data-t={"Which CRM do small teams actually use?"}></bdi></strong></div></div>
+                  </div>
+                </div>
+                <div className="rw-body">
+                  <span className="rw-step"><bdi data-t={"01"}></bdi><span><bdi data-t={"Google"}></bdi></span></span>
+                  <h3 className="rw-t">{"Google search results"}</h3>
+                  <p className="rw-q">{"Reddit threads regularly appear for “best”, “vs” and “review” searches."}</p>
+                  <p className="rw-p">{"A helpful answer in a thread that already ranks can keep sending interested people your way for months."}</p>
+                  <div className="rw-meter"><span className="rw-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Buyer intent: "}<strong>{"high"}</strong></div>
+                </div>
               </article>
-              <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true"><bdi data-t={"2"}></bdi></span>
-                <h3 className="gx-h3">{"AI answers"}</h3>
-                <p className="gx-quote">{"AI assistants and Google’s AI features draw on public Reddit discussions."}</p>
-                <p className="gx-p-sm">{"Google signed a deal in 2024 to use Reddit content for AI training, reported by Reuters at about $60M a year. What Reddit says about your category can shape what AI says about it."}</p>
-                <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Growing fast: "}<strong>{"yes"}</strong></div>
+              <article className="rw-card">
+                <div className="rw-scene rw-ai" aria-hidden="true">
+                  <div className="rw-ask"><bdi data-t={"Which CRM do people recommend?"}></bdi></div>
+                  <div className="rw-answer"><span className="rw-spark"><bdi data-t={"✦"}></bdi></span><div className="rw-lines"><i></i><i></i><i></i></div></div>
+                  <div className="rw-cite"><span className="rw-ico sm"><bdi data-t={"r/"}></bdi></span><bdi data-t={"Sources · reddit.com"}></bdi></div>
+                </div>
+                <div className="rw-body">
+                  <span className="rw-step"><bdi data-t={"02"}></bdi><span><bdi data-t={"AI assistants"}></bdi></span></span>
+                  <h3 className="rw-t">{"AI answers"}</h3>
+                  <p className="rw-q">{"AI assistants and Google’s AI features draw on public Reddit discussions."}</p>
+                  <p className="rw-p">{"Google signed a deal in 2024 to use Reddit content for AI training, reported by Reuters at about $60M a year. What Reddit says about your category can shape what AI says about it."}</p>
+                  <div className="rw-meter"><span className="rw-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Growing fast: "}<strong>{"yes"}</strong></div>
+                </div>
               </article>
-              <article className="gx-factor">
-                <span className="gx-factor-num" aria-hidden="true"><bdi data-t={"3"}></bdi></span>
-                <h3 className="gx-h3">{"Peer trust"}</h3>
-                <p className="gx-quote">{"People add “reddit” to searches because they want honest opinions, not ads."}</p>
-                <p className="gx-p-sm">{"Real users comparing real experiences carry more weight than any landing page. That’s why authenticity isn’t optional."}</p>
-                <div className="gx-influence" data-level="high"><span className="gx-influence-bars" aria-hidden="true"><b></b><b></b><b></b></span>{"Trust signal: "}<strong>{"strong"}</strong></div>
+              <article className="rw-card">
+                <div className="rw-scene rw-thread" aria-hidden="true">
+                  <div className="rw-post">
+                    <div className="rw-vote"><span><bdi data-t={"▲"}></bdi></span><b className="rw-count" data-from="84" data-to="412"><bdi data-t={"84"}></bdi></b><span className="dn"><bdi data-t={"▼"}></bdi></span></div>
+                    <div><em><bdi data-t={"r/smallbusiness"}></bdi></em><strong><bdi data-t={"Honest reviews? Thinking of switching."}></bdi></strong></div>
+                  </div>
+                  <div className="rw-comment c1"><i></i><span><b></b><b></b></span></div>
+                  <div className="rw-comment c2"><i></i><span><b></b><b></b></span></div>
+                </div>
+                <div className="rw-body">
+                  <span className="rw-step"><bdi data-t={"03"}></bdi><span><bdi data-t={"Communities"}></bdi></span></span>
+                  <h3 className="rw-t">{"Peer trust"}</h3>
+                  <p className="rw-q">{"People add “reddit” to searches because they want honest opinions, not ads."}</p>
+                  <p className="rw-p">{"Real users comparing real experiences carry more weight than any landing page. That’s why authenticity isn’t optional."}</p>
+                  <div className="rw-meter"><span className="rw-dots" aria-hidden="true"><i></i><i></i><i></i></span>{"Trust signal: "}<strong>{"strong"}</strong></div>
+                </div>
               </article>
             </div>
-            <p className="gx-source">{"Reddit’s rules require authentic participation and prohibit spam and vote manipulation, and every community sets its own rules. Our work is built around both. See "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{", Reddit’s guidance on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"spam"}</a>{" and on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"vote manipulation"}</a>{"."}</p>
+            <p className="rw-foot">{"Reddit’s rules require authentic participation and prohibit spam and vote manipulation, and every community sets its own rules. Our work is built around both. See "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit Rules"}</a>{", Reddit’s guidance on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer">{"spam"}</a>{" and on "}<a className="rm-ext" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer">{"vote manipulation"}</a>{"."}</p>
           </div>
         </section>
 
@@ -493,41 +524,6 @@ export default function Page() {
               <li><span className="gx-svc-n" aria-hidden="true">{"09"}</span><h3 className="gx-svc-t">{"Reddit SEO & AI search visibility"}</h3><p>{"Focus on threads that rank in Google and appear in AI answers, linked to your wider "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{" work."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"10"}</span><h3 className="gx-svc-t">{"Monthly reporting"}</h3><p>{"Mentions, sentiment, referral traffic and AI citations, explained in plain language. Not just upvotes."}</p></li>
             </ol>
-          </div>
-        </section>
-
-        {/* ================= CHECKLIST ================= */}
-        <section className="gx-section gx-tint" id="checklist">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"Reddit marketing checklist"}</span>
-              <h2 className="gx-h2">{"Is your brand "}<em>{"Reddit-ready?"}</em></h2>
-              <p className="gx-lead">{"Tick what’s already true for your brand. It takes a minute, and nothing is sent anywhere."}</p>
-            </div>
-            <div className="gx-check-grid">
-              <ul className="gx-checklist" id="gxChecklist">
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We know our subreddits"}</b>{"The communities where our customers talk"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We monitor brand mentions"}</b>{"We see new threads about us within a day"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We’ve read the rules"}</b>{"Each target community’s rules on promotion"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Identified brand account"}</b>{"A clearly labelled account we own"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Account has history"}</b>{"Real, helpful participation, not just promotion"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Answers ready for common questions"}</b>{"Pricing, comparisons, “is it legit?”"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We reply to criticism"}</b>{"Calmly and quickly, with facts"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Useful content to share"}</b>{"Guides, data or tools people actually want"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We know which threads rank"}</b>{"Reddit threads showing in Google for our keywords"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We track AI answers"}</b>{"How AI tools describe our category and brand"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"Ads tested on Reddit"}</b>{"Or a clear reason not to yet"}</span></label></li>
-                <li><label><input type="checkbox" /><span className="gx-cb" aria-hidden="true"></span><span><b>{"We measure outcomes"}</b>{"Traffic, leads, mentions, not just upvotes"}</span></label></li>
-              </ul>
-              <aside className="gx-score">
-                <span className="gx-label">{"Your brand"}</span>
-                <div className="gx-score-figure"><span id="gxScoreNum">{"0"}</span><small>{"/12"}</small></div>
-                <div className="gx-meter" role="meter" aria-valuemin={0} aria-valuemax={12} aria-valuenow={0} aria-label="Reddit readiness" id="gxMeter"><span id="gxMeterFill"></span></div>
-                <div className="gx-meter-scale" aria-hidden="true"><span><bdi data-t={"Starting out"}></bdi></span><span><bdi data-t={"Getting there"}></bdi></span><span><bdi data-t={"Ready"}></bdi></span></div>
-                <p className="gx-score-msg" id="gxScoreMsg" aria-live="polite" aria-atomic="true">{"Start ticking to see how ready your brand is."}</p>
-                <p className="gx-score-foot">{"A quick self-check, not a performance score."}</p>
-              </aside>
-            </div>
           </div>
         </section>
 
@@ -677,28 +673,6 @@ export default function Page() {
             <div className="faq-accordion-wrap gx-faq">
               <ServiceFaq items={FAQS} />
             </div>
-          </div>
-        </section>
-
-        {/* ================= OFFICIAL REDDIT RESOURCES ================= */}
-        <section className="gx-section gx-tint" id="reddit-resources">
-          <div className="gx-wrap">
-            <div className="gx-head">
-              <span className="gx-label">{"From Reddit"}</span>
-              <h2 className="gx-h2">{"Official Reddit "}<em>{"resources"}</em></h2>
-              <p className="gx-lead">{"Everything we do follows Reddit’s own rules and guidance. Here are the official pages, straight from Reddit."}</p>
-            </div>
-            <div className="rm-res-grid">
-              <a className="rm-res" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer"><b>{"Reddit Rules"}</b><span>{"The sitewide rules every account and community follows."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://support.reddithelp.com/hc/en-us/articles/360043504051-Spam" target="_blank" rel="noopener noreferrer"><b>{"Spam (Reddit Help)"}</b><span>{"What Reddit counts as spam, and how to avoid it."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://support.reddithelp.com/hc/en-us/articles/360043066412" target="_blank" rel="noopener noreferrer"><b>{"Vote manipulation (Reddit Help)"}</b><span>{"Why multiple accounts, vote services and automation aren’t allowed."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://redditinc.com/policies/moderator-code-of-conduct" target="_blank" rel="noopener noreferrer"><b>{"Moderator Code of Conduct"}</b><span>{"Standards for anyone running a community, including branded ones."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://www.business.reddit.com/" target="_blank" rel="noopener noreferrer"><b>{"Reddit for Business"}</b><span>{"Reddit’s official hub for brands and marketers."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://www.business.reddit.com/pro" target="_blank" rel="noopener noreferrer"><b>{"Reddit Pro"}</b><span>{"Reddit’s free tools for business profiles and insights."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://business.reddithelp.com/" target="_blank" rel="noopener noreferrer"><b>{"Reddit Ads Help Center"}</b><span>{"Official help for creating and managing Reddit Ads."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-              <a className="rm-res" href="https://www.reddit.com/r/IAmA/wiki/index/" target="_blank" rel="noopener noreferrer"><b>{"r/IAmA guidelines"}</b><span>{"How AMAs work in Reddit’s largest AMA community."}</span><i aria-hidden="true"><bdi data-t={"↗"}></bdi></i></a>
-            </div>
-            <p className="gx-source">{"Links open Reddit’s official websites. EFFIX Labs is not affiliated with Reddit, Inc."}</p>
           </div>
         </section>
 
