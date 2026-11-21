@@ -121,7 +121,6 @@ export default function AboutPage() {
           <span className="hx-fl f3"><AppIcon name="YouTube" size={46} float /></span>
           <span className="hx-fl f4"><AppIcon name="LinkedIn" size={42} float /></span>
           <span className="hx-fl f5"><AppIcon name="Instagram" size={40} float /></span>
-          <span className="hx-fl f6"><AppIcon name="Quora" size={38} float /></span>
           <div className="ab-wrap hx-in">
             <span className="ab-eyebrow">About Effix Labs</span>
             <h1>I’m Nagarjun. I started Effix Labs to make good businesses <em>easy to find.</em></h1>
@@ -169,7 +168,7 @@ export default function AboutPage() {
             <p className="yx-lead">Think about how you choose a dentist, a café, a software tool or an agency.</p>
             <ol className="yx-moments">
               <li><span className="yx-ic"><AppIcon name="Google" size={40} /></span><b>You search on Google</b><p>You glance at the map and the reviews.</p></li>
-              <li><span className="yx-ic"><AppIcon name="Reddit" size={40} /></span><b>You read what people say</b><p>On Reddit or Quora, before you decide.</p></li>
+              <li><span className="yx-ic"><AppIcon name="Reddit" size={40} /></span><b>You read what people say</b><p>On Reddit and in online communities, before you decide.</p></li>
               <li><span className="yx-ic yx-ai" aria-hidden="true">✦</span><b>You ask an AI tool</b><p>More and more, ChatGPT or Gemini recommends for you.</p></li>
             </ol>
             <div className="yx-grid">
