@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages -- links to the homepage must be full page loads: its scripts
+   (animations, the #audit search box) only start on a real page load, which <Link> would skip. */
 
 // Effix Discover results page. The only search box is on the homepage (#audit); it opens /discover?url=…
 // Flow: full-screen scan (website read -> Google workflow, live progress) -> "report ready" -> dashboard.

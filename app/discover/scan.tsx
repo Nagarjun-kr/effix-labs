@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages -- links to the homepage must be full page loads: its scripts
+   (animations, the #audit search box) only start on a real page load, which <Link> would skip. */
 
 // Full-screen scan shown while the audit runs: radar sweep around the brand, the eight platforms on a ring that
 // light up as each search finishes, a live activity line, a progress bar tied to the real steps, then "Report ready".
