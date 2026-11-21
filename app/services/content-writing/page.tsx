@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "url": "https://effix.co.in/services/content-writing",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/service-04-blog-seo.jpg"
+      "https://effix.co.in/images/services/service-04-content-writing.jpg"
     ]
   },
   "twitter": {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "title": "Content Writing Services in India | EFFIX Labs",
     "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
     "images": [
-      "https://effix.co.in/images/services/service-04-blog-seo.jpg"
+      "https://effix.co.in/images/services/service-04-content-writing.jpg"
     ]
   }
 };

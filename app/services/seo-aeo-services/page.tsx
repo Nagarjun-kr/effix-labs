@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "url": "https://effix.co.in/services/seo-aeo-services",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/service-03-ai-search.jpg"
+      "https://effix.co.in/images/services/service-03-seo-aeo.jpg"
     ]
   },
   "twitter": {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "title": "SEO & AEO Services in India | EFFIX Labs",
     "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
     "images": [
-      "https://effix.co.in/images/services/service-03-ai-search.jpg"
+      "https://effix.co.in/images/services/service-03-seo-aeo.jpg"
     ]
   }
 };

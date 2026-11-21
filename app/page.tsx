@@ -26,7 +26,8 @@ const SCRIPTS = [
   "/js/home/02.js",
   "/js/home/03.js",
   "/scripts/lenis.min.js",
-  "/js/home/04.js"
+  "/js/home/04.js",
+  "/js/home/05.js"
 ];
 
 export default function Page() {
@@ -495,7 +496,7 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-02-reddit-quora.jpg" alt="Reddit Marketing service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/service-02-reddit-marketing.jpg" alt="Reddit Marketing service poster" className="service-poster-img" loading="eager" />
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -526,7 +527,12 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-03-ai-search.jpg" alt="SEO & AEO Services service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/float/service-03-seo-aeo-base.jpg" alt="SEO & AEO Services service poster" className="service-poster-img" loading="eager" />
+                      <div className="poster-float" aria-hidden="true">
+                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-search.png" alt="" data-depth="16" loading="lazy" decoding="async" style={{ left: "51.071%", top: "48.224%", width: "22.912%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-bars.png" alt="" data-depth="26" loading="lazy" decoding="async" style={{ left: "78.48%", top: "40.212%", width: "12.741%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-spark.png" alt="" data-depth="30" loading="lazy" decoding="async" style={{ left: "77.73%", top: "62.132%", width: "10.493%" }} />
+                      </div>
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}
@@ -557,7 +563,18 @@ export default function Page() {
                     {" "}
                     <div className="service-poster-wrapper">
                       {" "}
-                      <img src="/images/services/service-04-blog-seo.jpg" alt="Content Writing service poster" className="service-poster-img" loading="eager" />
+                      <img src="/images/services/float/service-04-content-writing-base.jpg" alt="Content Writing service poster" className="service-poster-img" loading="eager" />
+                      <div className="poster-float" aria-hidden="true">
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-doc.png" alt="" data-depth="12" loading="lazy" decoding="async" style={{ left: "53.383%", top: "44.124%", width: "31.794%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-ranked.png" alt="" data-depth="20" loading="lazy" decoding="async" style={{ left: "70.677%", top: "35.633%", width: "26.423%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-engaging.png" alt="" data-depth="18" loading="lazy" decoding="async" style={{ left: "43.824%", top: "65.353%", width: "30.075%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-a.png" alt="" data-depth="28" loading="lazy" decoding="async" style={{ left: "52.846%", top: "39.879%", width: "15.145%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-b.png" alt="" data-depth="30" loading="lazy" decoding="async" style={{ left: "80.236%", top: "42.608%", width: "13.641%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-c.png" alt="" data-depth="26" loading="lazy" decoding="async" style={{ left: "44.898%", top: "56.027%", width: "10.311%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-ball-a.png" alt="" data-depth="34" loading="lazy" decoding="async" style={{ left: "47.905%", top: "46.929%", width: "5.048%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-ball-b.png" alt="" data-depth="32" loading="lazy" decoding="async" style={{ left: "77.229%", top: "63.23%", width: "9.345%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cone.png" alt="" data-depth="24" loading="lazy" decoding="async" style={{ left: "83.673%", top: "57.165%", width: "9.882%" }} />
+                      </div>
                       {" "}
                       <div className="service-poster-overlay">
                         {" "}

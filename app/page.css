@@ -4411,3 +4411,17 @@
       .timeline_content-slot { gap: 48px; }
       .timeline-item[data-step] { opacity: 1; }
     }
+
+    /* Floating icon layers on the SEO & AEO and Content Writing poster cards */
+    .poster-float { position: absolute; inset: 0; z-index: 2; pointer-events: none; --px: 0; --py: 0; }
+    .poster-float-layer {
+      position: absolute; height: auto; max-width: none; display: block;
+      transform: translate3d(calc(var(--px) * var(--d, 16) * -0.55px), calc(var(--py) * var(--d, 16) * -0.55px), 0);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: posterBob 6s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes posterBob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -4px; } }
+    @media (prefers-reduced-motion: reduce) {
+      .poster-float-layer { animation: none; transition: none; transform: none; }
+    }
