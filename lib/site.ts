@@ -2,6 +2,10 @@
 export const SITE_URL = "https://effix.co.in";
 export const ORG_ID = `${SITE_URL}/#organization`;
 
+// Effix Discover: Google Programmable Search Engine ID (the public "cx" value, not a secret).
+// Override with NEXT_PUBLIC_GOOGLE_PSE_ID if you create a new engine.
+export const DISCOVER_PSE_ID = process.env.NEXT_PUBLIC_GOOGLE_PSE_ID || "3560f3b831c034647";
+
 export const SERVICE_SLUGS = [
   "google-business-profile",
   "reddit-marketing",

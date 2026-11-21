@@ -34,7 +34,12 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "What does the free audit check?",
     "a": [
-      "It checks Google organic search results for queries related to your business. It records where your brand appears and points out possible gaps."
+      "It reads your website, finds your brand name and the social profiles you link to, then shows live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, TikTok, Reddit, Pinterest and Threads. ",
+      {
+        "text": "Run the free audit",
+        "href": "/discover"
+      },
+      "."
     ]
   },
   {
@@ -46,13 +51,19 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "Does the audit cover AI answers, Google Maps or Reddit?",
     "a": [
-      "Not yet. Today it covers Google organic search only."
+      "Reddit, yes: it’s one of the nine platforms we search through Google. AI answers and Google Maps aren’t covered yet."
+    ]
+  },
+  {
+    "q": "Is every result an official account?",
+    "a": [
+      "No. Google shows pages that mention your brand. Some will be your own profiles and some will be posts by other people, so open each result to check it."
     ]
   },
   {
     "q": "What happens to the website I enter?",
     "a": [
-      "We read your public website to understand your business and create search queries. Our Privacy Policy explains what we store."
+      "We read that one public page to find your brand name and the profiles it links to. Nothing is saved, and you don’t need an account."
     ]
   },
   {
@@ -386,7 +397,7 @@ export default function Page() {
               <div className="search-guarantee-row">
                 {" "}
                 <span>
-                  {"Free. No login. Checks Google organic search today."}
+                  {"Free. No login. Checks your brand on nine platforms through Google."}
                 </span>
                 {" "}
               </div>
@@ -807,7 +818,7 @@ export default function Page() {
                       <line x1="12" y1="8" x2="12.01" y2="8"></line>
                       {" "}
                     </svg>
-                    {" Illustrative preview · Audits Google organic search "}
+                    {" Free · Live Google results on nine platforms "}
                   </span>
                   {" "}
                 </div>
