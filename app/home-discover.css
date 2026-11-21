@@ -1,0 +1,29 @@
+/* "Get discovered. Grow everywhere." — scroll-driven pillars (like decagon.ai's channel section,
+   but driven by scroll): the section pins while you scroll through it; the first third shows
+   Search, the middle Content, the last AI. Hover / click also work. */
+#discover-product.discover-scroll { padding-top: 0; padding-bottom: 0; }
+.dp-track { position: relative; height: 290vh; }
+.dp-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; }
+.dp-sticky > .container { width: 100%; }
+
+/* one description line per pillar (all in the DOM, crossfaded) */
+.dp-lines { display: grid; margin: 0 0 32px; max-width: 480px; }
+.dp-lines .discover-subtext { grid-area: 1 / 1; margin: 0; opacity: 0; transform: translateY(8px); transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.dp-lines .discover-subtext.is-on { opacity: 1; transform: none; }
+
+/* a slim progress rail beside the pillars shows where you are in the section */
+.discover-pillars-list { position: relative; }
+.dp-rail { position: absolute; left: -22px; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: rgba(255, 255, 255, 0.12); overflow: hidden; transition: background 0.6s; }
+.dp-rail i { position: absolute; left: 0; right: 0; top: 0; height: calc(var(--dp, 0) * 100%); border-radius: inherit; background: linear-gradient(180deg, #8b7bff, #4f46e5); }
+#discover-product.light-mode .dp-rail { background: rgba(17, 24, 39, 0.1); }
+
+.discover-pillar-item { cursor: pointer; }
+
+@media (max-width: 820px) {
+  .dp-track { height: auto; }
+  .dp-sticky { position: static; height: auto; display: block; padding: 72px 0; }
+  .dp-rail { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dp-lines .discover-subtext { transition: none; }
+}

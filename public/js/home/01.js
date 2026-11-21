@@ -115,97 +115,65 @@
     });
 
     // ==========================================================================
-    // SECTION 5 — EFFIX DISCOVER AUTO-ROTATION (4 SECONDS) & PILLAR SWITCHING
+    // SECTION 5 — EFFIX DISCOVER: SCROLL-DRIVEN PILLARS (Search -> Content -> AI)
+    // The section pins while you scroll through it; each third of the scroll shows one pillar.
+    // Hovering a pillar previews it; clicking scrolls to that pillar's part of the section.
     // ==========================================================================
-    (function initDiscoverAutoRotation() {
+    (function initDiscoverScrollPillars() {
       const section = document.getElementById('discover-product');
-      if (!section) return;
+      const track = document.getElementById('dpTrack');
+      if (!section || !track) return;
+      const pillars = Array.from(section.querySelectorAll('.discover-pillar-item'));
+      const slides = Array.from(section.querySelectorAll('.discover-slide'));
+      const lines = Array.from(section.querySelectorAll('.dp-lines .discover-subtext'));
+      const rail = section.querySelector('.dp-rail');
+      const desktop = window.matchMedia('(min-width: 821px)');
+      let current = -1, ticking = false;
 
-      const pillars = section.querySelectorAll('.discover-pillar-item');
-      const slideGirl = section.querySelector('.discover-slide[data-slide="girl"]');
-      const slideBoy = section.querySelector('.discover-slide[data-slide="boy"]');
-      if (!pillars.length || !slideGirl || !slideBoy) return;
-
-      const ROTATION_INTERVAL = 4000; // 4000ms = 4 seconds
-      // State: 0 = Girl (First!), 1 = Boy (After that!)
-      let currentSlide = 0;
-      let currentPillarIndex = 0; // 0 = Search, 1 = Content, 2 = AI
-      let timer = null;
-      let isPaused = false;
-
-      function updateState(slideIdx, pillarIdx) {
-        currentSlide = slideIdx;
-        currentPillarIndex = pillarIdx;
-
-        // 1. Cross-fade slides: Girl (0) vs Boy (1)
-        slideGirl.classList.toggle('is-active', currentSlide === 0);
-        slideBoy.classList.toggle('is-active', currentSlide === 1);
-
-        // 2. Sync active pillar button style
-        pillars.forEach((btn, idx) => {
-          const isActive = idx === currentPillarIndex;
-          btn.classList.toggle('is-active', isActive);
-          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
+      function setIdx(i) {
+        if (i === current) return;
+        current = i;
+        pillars.forEach((b, k) => { b.classList.toggle('is-active', k === i); b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+        slides.forEach((im, k) => im.classList.toggle('is-active', k === i));
+        lines.forEach((p, k) => p.classList.toggle('is-on', k === i));
       }
-
-      function nextStep() {
-        if (isPaused) return;
-
-        // Image ALWAYS alternates between Girl (0) and Boy (1) every 4 seconds:
-        // Girl -> Boy -> Girl -> Boy -> Girl -> Boy...
-        const nextSlide = currentSlide === 0 ? 1 : 0;
-
-        // Pillar advances sequentially through Search (0) -> Content (1) -> AI (2) -> Search (0)...
-        const nextPillar = (currentPillarIndex + 1) % pillars.length;
-
-        updateState(nextSlide, nextPillar);
-      }
-
-      function startTimer() {
-        stopTimer();
-        timer = setInterval(nextStep, ROTATION_INTERVAL);
-      }
-
-      function stopTimer() {
-        if (timer) {
-          clearInterval(timer);
-          timer = null;
+      function progress() {
+        const vh = window.innerHeight;
+        if (desktop.matches) {
+          const r = track.getBoundingClientRect();
+          const total = Math.max(1, track.offsetHeight - vh);
+          return Math.min(1, Math.max(0, -r.top / total));
         }
+        // phones: no pinning; the pillars change as the word list scrolls from 80% to 25% of the screen
+        const list = section.querySelector('.discover-pillars-list');
+        const r = (list || section).getBoundingClientRect();
+        const c = r.top + r.height / 2;
+        return Math.min(1, Math.max(0, (vh * 0.8 - c) / (vh * 0.55)));
       }
+      function update() {
+        ticking = false;
+        const p = progress();
+        if (rail) rail.style.setProperty('--dp', p.toFixed(3));
+        setIdx(p < 1 / 3 ? 0 : p < 2 / 3 ? 1 : 2);
+      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
 
-      // Manual interaction: click any pillar
-      // Search -> Girl image (Slide 0)
-      // Content -> Boy image (Slide 1)
-      // AI -> Boy image (Slide 1)
-      pillars.forEach((btn, idx) => {
+      pillars.forEach((btn, i) => {
+        btn.addEventListener('mouseenter', () => { if (desktop.matches) setIdx(i); });
         btn.addEventListener('click', () => {
-          const targetSlide = idx === 0 ? 0 : 1;
-          updateState(targetSlide, idx);
-          startTimer();
+          setIdx(i);
+          if (!desktop.matches) return;
+          const top = track.getBoundingClientRect().top + window.scrollY;
+          const total = track.offsetHeight - window.innerHeight;
+          const y = top + total * ((i + 0.5) / 3);
+          if (window.lenis) window.lenis.scrollTo(y, { duration: 1.2 }); else window.scrollTo({ top: y, behavior: 'smooth' });
         });
       });
+      section.querySelector('.discover-pillars-list')?.addEventListener('mouseleave', () => { current = -1; update(); });
 
-      // User comfort: pause auto-rotation when hovering over showcase visual or pillars
-      const hoverTargets = [
-        section.querySelector('.discover-showcase-frame'),
-        section.querySelector('.discover-pillars-list')
-      ];
-
-      hoverTargets.forEach(target => {
-        if (!target) return;
-        target.addEventListener('mouseenter', () => { isPaused = true; });
-        target.addEventListener('mouseleave', () => { isPaused = false; });
-      });
-
-      // Pause rotation when browser tab is inactive to preserve resources
-      document.addEventListener('visibilitychange', () => {
-        isPaused = document.hidden;
-      });
-
-      // Initialize: FIRST Girl image appears, with Search pillar active!
-      updateState(0, 0);
-      startTimer();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
     })();
 
     // ==========================================================================

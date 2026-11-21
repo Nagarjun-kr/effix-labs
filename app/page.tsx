@@ -6,6 +6,7 @@ import { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ldString } from "@/lib/site";
 import "./page.css";
 import "./home-dq.css";
+import "./home-discover.css";
 
 export const metadata: Metadata = {
   "title": "Effix Labs | Get Found Where Your Customers Search",
@@ -725,7 +726,9 @@ export default function Page() {
         </section>
         {" "}
         {" "}
-        <section className="section-padding" id="discover-product">
+        <section className="section-padding discover-scroll" id="discover-product">
+          <div className="dp-track" id="dpTrack">
+          <div className="dp-sticky">
           {" "}
           <div className="container">
             {" "}
@@ -746,8 +749,9 @@ export default function Page() {
                 {" "}
                 {" "}
                 <div className="discover-pillars-list" role="tablist" aria-label="Effix Discover Platform Pillars">
+                  <span className="dp-rail" aria-hidden="true"><i></i></span>
                   {" "}
-                  <button type="button" className="discover-pillar-item is-active" role="tab" aria-selected="true" data-pillar="search">
+                  <button type="button" className="discover-pillar-item is-active" role="tab" aria-selected="true" data-pillar="search" data-i="0">
                     {" "}
                     <span className="pillar-name">
                       {"Search"}
@@ -755,7 +759,7 @@ export default function Page() {
                     {" "}
                   </button>
                   {" "}
-                  <button type="button" className="discover-pillar-item" role="tab" aria-selected="false" data-pillar="content">
+                  <button type="button" className="discover-pillar-item" role="tab" aria-selected="false" data-pillar="content" data-i="1">
                     {" "}
                     <span className="pillar-name">
                       {"Content"}
@@ -763,7 +767,7 @@ export default function Page() {
                     {" "}
                   </button>
                   {" "}
-                  <button type="button" className="discover-pillar-item" role="tab" aria-selected="false" data-pillar="ai">
+                  <button type="button" className="discover-pillar-item" role="tab" aria-selected="false" data-pillar="ai" data-i="2">
                     {" "}
                     <span className="pillar-name">
                       {"AI"}
@@ -777,9 +781,11 @@ export default function Page() {
                 <div className="discover-pillar-divider" aria-hidden="true"></div>
                 {" "}
                 {" "}
-                <p className="discover-subtext">
-                  {"Clear audits, practical plans and honest reports you can act on."}
-                </p>
+                <div className="dp-lines">
+                  <p className="discover-subtext is-on" data-i="0">{"Show up on Google Search and Maps, where most buying journeys still begin."}</p>
+                  <p className="discover-subtext" data-i="1">{"Helpful pages and posts that answer real customer questions and earn trust."}</p>
+                  <p className="discover-subtext" data-i="2">{"Clear, citable information so AI tools describe and recommend you accurately."}</p>
+                </div>
                 {" "}
                 {" "}
                 <div className="discover-action-wrap">
@@ -820,13 +826,9 @@ export default function Page() {
                 <div className="discover-showcase-frame" id="discoverShowcaseFrame">
                   {" "}
                   <div className="discover-slides-container">
-                    {" "}
-                    {" "}
-                    <img src="/images/discover-slide-girl.jpg" alt="Effix Discover Platform Intelligence" className="discover-slide is-active" width={1024} height={1024} loading="lazy" decoding="async" data-slide="girl" />
-                    {" "}
-                    {" "}
-                    <img src="/images/discover-slide-boy.jpg" alt="Effix Discover Search, Content and AI Intelligence" className="discover-slide" width={1024} height={1024} loading="lazy" decoding="async" data-slide="boy" />
-                    {" "}
+                    <img src="/images/discover-search.webp" alt="Search: a business owner checking their Google search visibility" className="discover-slide is-active" width={960} height={960} loading="lazy" decoding="async" data-i="0" />
+                    <img src="/images/discover-content.webp" alt="Content: planning helpful content that answers customer questions" className="discover-slide" width={960} height={960} loading="lazy" decoding="async" data-i="1" />
+                    <img src="/images/discover-ai.webp" alt="AI: checking how AI search tools describe the business" className="discover-slide" width={960} height={960} loading="lazy" decoding="async" data-i="2" />
                   </div>
                   {" "}
                   <div className="discover-visual-backlight" aria-hidden="true"></div>
@@ -839,6 +841,8 @@ export default function Page() {
             {" "}
           </div>
           {" "}
+                  </div>
+          </div>
         </section>
         {" "}
         {" "}
