@@ -193,7 +193,7 @@ export default function Page() {
               {" "}
               <li className="nav-item">
                 {" "}
-                <a href="/blog" className="nav-link">
+                <a href="https://effix.co.in/blog/" className="nav-link">
                   {"Blog"}
                 </a>
                 {" "}
@@ -266,7 +266,7 @@ export default function Page() {
               </li>
               {" "}
               <li>
-                <a href="/blog" className="mobile-nav-link" data-onclick="toggleMobileDrawer()">
+                <a href="https://effix.co.in/blog/" className="mobile-nav-link" data-onclick="toggleMobileDrawer()">
                   {"Blog"}
                 </a>
               </li>
@@ -1963,7 +1963,7 @@ export default function Page() {
                 </li>
                 {" "}
                 <li>
-                  <a href="/blog">
+                  <a href="https://effix.co.in/blog/">
                     {"Blog"}
                   </a>
                 </li>
