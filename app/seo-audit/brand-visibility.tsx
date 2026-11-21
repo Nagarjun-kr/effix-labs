@@ -1,21 +1,15 @@
 "use client";
 
 // Brand visibility: profiles the site links to + live Google results for "<brand>" site:<platform>
-// on nine platforms, via Google's Programmable Search Element (window.__gcse is set in page.tsx).
-import { useEffect, useRef, useState } from "react";
-import Script from "next/script";
+// on nine platforms, searched from our server (/api/discovery/mentions), so there is no Google widget or CAPTCHA.
+import { useCallback, useEffect, useState } from "react";
 
 export type Profile = { platform: string; url: string };
 export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
 
-type CseElement = { execute: (query: string) => void };
-type CseApi = { render: (o: { div: string; tag: string; gname: string }) => void; getElement: (name: string) => CseElement | null };
-declare global {
-  interface Window {
-    __gcse?: { parsetags: string };
-    google?: { search?: { cse?: { element?: CseApi } } };
-  }
-}
+type Mention = { title: string; url: string; snippet: string; source: string };
+type PlatformResult = { platform: string; results: Mention[]; error?: boolean };
+type State = { status: "loading" } | { status: "off" } | { status: "error"; message: string } | { status: "done"; by: Record<string, PlatformResult> };
 
 export const PLATFORMS = [
   { name: "YouTube", domain: "youtube.com", sym: "▶" },
@@ -31,8 +25,6 @@ export const PLATFORMS = [
 
 const siteFilter = (p: (typeof PLATFORMS)[number]) => (p.name === "X" ? "(site:x.com OR site:twitter.com)" : `site:${p.domain}`);
 
-let runCounter = 0;
-
 export function linkedPlatforms(identity: Identity) {
   const linked = new Map<string, Profile>();
   identity.profiles.forEach((p) => {
@@ -41,63 +33,37 @@ export function linkedPlatforms(identity: Identity) {
   return linked;
 }
 
-export default function BrandVisibility({ identity, engineId }: { identity: Identity; engineId: string }) {
-  const [runId] = useState(() => ++runCounter); // unique Google element names per audit
+export default function BrandVisibility({ identity }: { identity: Identity; engineId?: string }) {
   const [brand, setBrand] = useState(identity.name);
-  const [tick, setTick] = useState(0);
-  const [ready, setReady] = useState(() => typeof window !== "undefined" && Boolean(window.google?.search?.cse?.element));
-  const [scriptError, setScriptError] = useState(false);
+  const [state, setState] = useState<State>({ status: "loading" });
   const [view, setView] = useState("all");
-  const [stalled, setStalled] = useState<Record<string, boolean>>({});
-  const rendered = useRef(false);
   const linked = linkedPlatforms(identity);
 
+  const search = useCallback(async (term: string) => {
+    if (!term.trim()) return;
+    setState({ status: "loading" });
+    try {
+      const res = await fetch("/api/discovery/mentions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term.trim() }) });
+      const body = await res.json().catch(() => ({}));
+      if (body.configured === false) return setState({ status: "off" });
+      if (!res.ok || !Array.isArray(body.platforms)) throw new Error(body.error || "The search didn't finish. Please try again.");
+      const by: Record<string, PlatformResult> = {};
+      (body.platforms as PlatformResult[]).forEach((p) => (by[p.platform] = p));
+      setState({ status: "done", by });
+    } catch (e) {
+      setState({ status: "error", message: e instanceof Error ? e.message : "The search didn't finish." });
+    }
+  }, []);
+
   useEffect(() => {
-    if (!ready || !engineId || !brand.trim()) return;
-    const api = window.google?.search?.cse?.element;
-    if (!api) return;
-    const term = brand.trim().replaceAll('"', "").slice(0, 100);
-    const timer = window.setTimeout(() => {
-      PLATFORMS.forEach((p, i) => {
-        const gname = `bv_${runId}_${i}`;
-        if (!rendered.current) api.render({ div: `bv-results-${runId}-${i}`, tag: "searchresults-only", gname });
-        api.getElement(gname)?.execute(`"${term}" ${siteFilter(p)}`);
-      });
-      rendered.current = true;
-    }, 0);
-    // If Google hasn't filled a card after 12s (busy, blocked or offline), say so instead of leaving it blank.
-    setStalled({});
-    const check = window.setTimeout(() => {
-      const next: Record<string, boolean> = {};
-      PLATFORMS.forEach((p, i) => {
-        const el = document.getElementById(`bv-results-${runId}-${i}`);
-        const filled = !!el && (el.querySelector(".gsc-webResult.gsc-result, .gs-no-results-result") !== null || /did not match|no results/i.test(el.innerText));
-        if (!filled) next[p.name] = true;
-      });
-      setStalled(next);
-    }, 12000);
-    return () => {
-      window.clearTimeout(timer);
-      window.clearTimeout(check);
-    };
-    // brand is read at search time; searches re-run when Google is ready or on "Search again"
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready, engineId, runId, tick]);
+    search(identity.name);
+  }, [identity.name, search]);
 
   const googleUrl = (p: (typeof PLATFORMS)[number]) =>
     `https://www.google.com/search?q=${encodeURIComponent(`"${brand.trim().replaceAll('"', "").slice(0, 100)}" ${siteFilter(p)}`)}`;
 
   return (
     <div className="bv">
-      {engineId && (
-        <Script
-          src={`https://cse.google.com/cse.js?cx=${encodeURIComponent(engineId)}`}
-          strategy="afterInteractive"
-          onReady={() => setReady(true)}
-          onError={() => setScriptError(true)}
-        />
-      )}
-
       <div className="sd-card bv-name">
         <div>
           <span className="sd-label">Brand name we searched</span>
@@ -106,12 +72,12 @@ export default function BrandVisibility({ identity, engineId }: { identity: Iden
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setTick((n) => n + 1);
+            search(brand);
           }}
         >
-          <label htmlFor={`bv-brand-${runId}`} className="sr-only">Brand name</label>
-          <input id={`bv-brand-${runId}`} value={brand} onChange={(e) => setBrand(e.target.value)} maxLength={100} />
-          <button className="sd-btn" type="submit" disabled={!brand.trim()}>Search again</button>
+          <label htmlFor={`bv-brand`} className="sr-only">Brand name</label>
+          <input id={`bv-brand`} value={brand} onChange={(e) => setBrand(e.target.value)} maxLength={100} />
+          <button className="sd-btn" type="submit" disabled={!brand.trim() || state.status === "loading"}>{state.status === "loading" ? "Searching…" : "Search again"}</button>
         </form>
       </div>
 
@@ -132,8 +98,8 @@ export default function BrandVisibility({ identity, engineId }: { identity: Iden
         </div>
       </div>
 
-      {scriptError && <p className="sd-alert" role="alert">Google&apos;s search couldn&apos;t load. Please try again in a moment.</p>}
-      {!engineId && <p className="sd-alert" role="status">Google search isn&apos;t configured for this site yet.</p>}
+      {state.status === "error" && <p className="sd-alert" role="alert">{state.message}</p>}
+      {state.status === "off" && <p className="sd-alert" role="status">Live search isn&apos;t switched on for this site yet. Use the links on each card to see the results on Google.</p>}
 
       <div className="sd-tabs" role="tablist" aria-label="Choose a platform">
         <button type="button" role="tab" aria-selected={view === "all"} className={view === "all" ? "is-on" : ""} onClick={() => setView("all")}>All platforms</button>
@@ -142,21 +108,37 @@ export default function BrandVisibility({ identity, engineId }: { identity: Iden
         ))}
       </div>
       <div className={`bv-grid ${view === "all" ? "" : "is-single"}`}>
-        {PLATFORMS.map((p, i) => (
+        {PLATFORMS.map((p) => (
           <section key={p.name} className="sd-card bv-card" hidden={view !== "all" && view !== p.name}>
             <button type="button" className="bv-card-head" onClick={() => setView(p.name)} aria-label={`Show only ${p.name} results`}>
               <span className="sym" aria-hidden="true">{p.sym}</span>{p.name}
               <span className={`tag ${linked.has(p.name) ? "yes" : ""}`}>{linked.has(p.name) ? "Linked on your site" : "Google results"}</span>
             </button>
-            <div id={`bv-results-${runId}-${i}`} className="dx-results" />
-            {stalled[p.name] && (
-              <p className="bv-stalled">Google hasn&apos;t returned results for this platform right now. Try <b>Search again</b> in a minute, or open this search on Google.</p>
-            )}
+            <Hits state={state} platform={p.name} />
             <a className="bv-open" href={googleUrl(p)} target="_blank" rel="noopener noreferrer">Open this search on Google <span aria-hidden="true">↗</span></a>
           </section>
         ))}
       </div>
       <p className="sd-foot-note">Results come from public pages Google has indexed. A result can mention your brand without being your official account. Open each one to check it.</p>
     </div>
+  );
+}
+
+function Hits({ state, platform }: { state: State; platform: string }) {
+  if (state.status === "loading") return <div className="dx-results">{[0, 1, 2].map((k) => <div key={k} className="dx-skel"><i /><i /><i /></div>)}</div>;
+  if (state.status !== "done") return null;
+  const r = state.by[platform];
+  if (!r || r.error) return <p className="bv-stalled">This platform didn&apos;t respond. Try <b>Search again</b> in a minute, or open this search on Google.</p>;
+  if (!r.results.length) return <p className="dx-empty">No results found for this brand name here.</p>;
+  return (
+    <ol className="dx-results">
+      {r.results.map((m) => (
+        <li key={m.url} className="dx-hit">
+          <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
+          <span>{m.source}</span>
+          {m.snippet && <p>{m.snippet}</p>}
+        </li>
+      ))}
+    </ol>
   );
 }

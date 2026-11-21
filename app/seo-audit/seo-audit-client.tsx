@@ -31,7 +31,7 @@ function Logo() {
 
 const cleanUrl = (v: string) => v.trim().replace(/^https?:\/\//i, "").replace(/\/$/, "");
 
-export default function SeoAuditClient({ engineId }: { engineId: string }) {
+export default function SeoAuditClient() {
   const [phase, setPhase] = useState<Phase>("idle");
   const [website, setWebsite] = useState("");
   const [report, setReport] = useState<AuditReport | null>(null);
@@ -89,7 +89,7 @@ export default function SeoAuditClient({ engineId }: { engineId: string }) {
     return (
       <div className="dx">
         {error && <p className="sd-toast" role="alert">{error} <button type="button" onClick={() => setError(null)} aria-label="Dismiss">×</button></p>}
-        <Dashboard key={runKey} report={report} engineId={engineId} onNewAudit={run} busy={false} />
+        <Dashboard key={runKey} report={report} onNewAudit={run} busy={false} />
       </div>
     );
   }

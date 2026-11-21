@@ -75,15 +75,20 @@
 .dx-progress li.is-done i::after { content: ""; position: absolute; left: 5px; top: 2px; width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 @keyframes dxSpin { to { transform: rotate(360deg); } }
 
-/* Google search results (brand visibility cards) */
-.dx-results { min-height: 80px; padding: 6px 12px 2px; overflow-wrap: anywhere; }
-.dx-results table { width: 100%; }
-.dx-results .gsc-control-cse { padding: 0 !important; border: 0 !important; background: transparent !important; font-family: var(--body) !important; }
-.dx-results .gsc-webResult.gsc-result { border-color: #f0f0f0 !important; background: transparent !important; }
-.dx-results .gs-title, .dx-results .gs-title * { color: var(--blue) !important; font-family: var(--body) !important; }
-.dx-results .gs-snippet { color: #555 !important; font-family: var(--body) !important; }
-.dx-results .gsc-url-top, .dx-results .gs-visibleUrl { color: #4f8a24 !important; }
-.dx-results .gcsc-branding, .dx-results .gsc-above-wrapper-area { opacity: 0.75; }
+/* brand visibility results */
+.dx-results { list-style: none; margin: 0; padding: 4px 16px 4px; min-height: 80px; }
+.dx-hit { padding: 12px 0; border-top: 1px solid #f2f2f2; overflow-wrap: anywhere; }
+.dx-hit:first-child { border-top: 0; }
+.dx-hit a { font-weight: 600; font-size: 15px; line-height: 1.4; color: var(--blue); text-decoration: none; }
+.dx-hit a:hover { text-decoration: underline; }
+.dx-hit span { display: block; margin-top: 3px; font-family: var(--mono); font-size: 11.5px; color: #4f8a24; }
+.dx-hit p { margin: 5px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+.dx-skel { padding: 14px 0; border-top: 1px solid #f2f2f2; }
+.dx-skel:first-child { border-top: 0; }
+.dx-skel i { display: block; height: 10px; border-radius: 6px; background: linear-gradient(90deg, #f0f0f0, #e6e6e6, #f0f0f0); background-size: 200% 100%; animation: dxShimmer 1.2s linear infinite; }
+.dx-skel i:nth-child(1) { width: 70%; height: 13px; } .dx-skel i:nth-child(2) { width: 30%; margin-top: 8px; } .dx-skel i:nth-child(3) { width: 90%; margin-top: 8px; }
+@keyframes dxShimmer { to { background-position: -200% 0; } }
+.dx-empty { margin: 14px 16px; font-size: 14px; line-height: 1.6; color: var(--soft); }
 
 .dx-footer { padding: 26px 0 40px; text-align: center; font-size: 13px; color: var(--soft); }
 

@@ -2,23 +2,22 @@
 
 // Effix Discover — free visibility audit.
 // Website URL -> our server reads that one public page -> brand name + social links found on it
-// -> Google's Programmable Search Element searches the brand on 9 platforms -> live results shown
-// as potential mentions. Nothing is stored and no login is needed.
-import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
-import Script from "next/script";
+// -> our server searches "<brand>" site:<platform> on 9 platforms (Google results via Serper.dev)
+// -> results shown as potential mentions. No Google widget in the browser, so no CAPTCHA.
+// Nothing is stored and no login is needed.
+import { FormEvent, useCallback, useEffect, useState } from "react";
 
 type Profile = { platform: string; url: string };
 type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
 type Phase = "idle" | "loading" | "done";
 
-type CseElement = { execute: (query: string) => void };
-type CseApi = { render: (o: { div: string; tag: string; gname: string }) => void; getElement: (name: string) => CseElement | null };
-declare global {
-  interface Window {
-    __gcse?: { parsetags: string };
-    google?: { search?: { cse?: { element?: CseApi } } };
-  }
-}
+type Mention = { title: string; url: string; snippet: string; source: string };
+type PlatformResult = { platform: string; query: string; results: Mention[]; error?: boolean };
+type Mentions =
+  | { status: "loading" }
+  | { status: "off" }
+  | { status: "error"; message: string }
+  | { status: "done"; byPlatform: Record<string, PlatformResult> };
 
 const PLATFORMS = [
   { name: "YouTube", domain: "youtube.com", sym: "▶" },
@@ -43,20 +42,34 @@ function Logo() {
   );
 }
 
-export default function DiscoverClient({ engineId }: { engineId: string }) {
+export default function DiscoverClient() {
   const [phase, setPhase] = useState<Phase>("idle");
   const [website, setWebsite] = useState("");
   const [identity, setIdentity] = useState<Identity | null>(null);
   const [brandQuery, setBrandQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [step, setStep] = useState(0);
-  const [scriptReady, setScriptReady] = useState(false);
-  const [scriptError, setScriptError] = useState(false);
   const [view, setView] = useState<string>("all");
-  const [runId, setRunId] = useState(0); // a new set of Google elements per audit
-  const [searchTick, setSearchTick] = useState(0); // re-run searches for the same audit
-  const renderedRun = useRef(-1);
-  const [stalled, setStalled] = useState<Record<string, boolean>>({});
+  const [mentions, setMentions] = useState<Mentions>({ status: "loading" });
+  const [searched, setSearched] = useState(""); // brand name the shown results are for
+
+  const searchMentions = useCallback(async (brand: string) => {
+    const term = brand.trim();
+    if (!term) return;
+    setMentions({ status: "loading" });
+    setSearched(term);
+    try {
+      const res = await fetch("/api/discovery/mentions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term }) });
+      const body = await res.json().catch(() => ({}));
+      if (body.configured === false) return setMentions({ status: "off" });
+      if (!res.ok || !Array.isArray(body.platforms)) throw new Error(body.error || "The search didn't finish. Please try again.");
+      const byPlatform: Record<string, PlatformResult> = {};
+      (body.platforms as PlatformResult[]).forEach((p) => (byPlatform[p.platform] = p));
+      setMentions({ status: "done", byPlatform });
+    } catch (e) {
+      setMentions({ status: "error", message: e instanceof Error ? e.message : "The search didn't finish. Please try again." });
+    }
+  }, []);
 
   const run = useCallback(async (raw: string) => {
     const value = raw.trim();
@@ -75,8 +88,8 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
       setIdentity(id);
       setBrandQuery(id.name);
       setView("all");
-      setRunId((n) => n + 1);
       setPhase("done");
+      searchMentions(id.name);
       try { window.history.replaceState(null, "", `/discover?url=${encodeURIComponent(id.domain)}`); } catch { /* ignore */ }
       window.scrollTo({ top: 0 });
     } catch (e) {
@@ -85,7 +98,7 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
     } finally {
       window.clearTimeout(t);
     }
-  }, [identity]);
+  }, [identity, searchMentions]);
 
   // Arrived from the homepage audit form (?url=… or the saved session value): start straight away.
   useEffect(() => {
@@ -104,44 +117,13 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Render one Google results element per platform, then search "<brand>" site:<platform>.
-  useEffect(() => {
-    if (phase !== "done" || !scriptReady || !engineId || !brandQuery.trim()) return;
-    const api = window.google?.search?.cse?.element;
-    if (!api) return;
-    const timer = window.setTimeout(() => {
-      const term = brandQuery.trim().replaceAll('"', "").slice(0, 100);
-      PLATFORMS.forEach((p, i) => {
-        const gname = `dx_${runId}_${i}`;
-        if (renderedRun.current !== runId) api.render({ div: `dx-results-${runId}-${i}`, tag: "searchresults-only", gname });
-        const site = p.name === "X" ? "(site:x.com OR site:twitter.com)" : `site:${p.domain}`;
-        api.getElement(gname)?.execute(`"${term}" ${site}`);
-      });
-      renderedRun.current = runId;
-    }, 0);
-    // If Google hasn't filled a card after 12s (busy, blocked or offline), say so instead of leaving it blank.
-    setStalled({});
-    const check = window.setTimeout(() => {
-      const next: Record<string, boolean> = {};
-      PLATFORMS.forEach((p, i) => {
-        const el = document.getElementById(`dx-results-${runId}-${i}`);
-        const filled = !!el && (el.querySelector(".gsc-webResult.gsc-result, .gs-no-results-result") !== null || /did not match|no results/i.test(el.innerText));
-        if (!filled) next[p.name] = true;
-      });
-      setStalled(next);
-    }, 12000);
-    return () => { window.clearTimeout(timer); window.clearTimeout(check); };
-    // brandQuery is read at search time; searches re-run on a new audit or "Search again"
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, scriptReady, engineId, runId, searchTick]);
-
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     run(website);
   }
 
   const googleUrl = (p: (typeof PLATFORMS)[number]) => {
-    const term = brandQuery.trim().replaceAll('"', "").slice(0, 100);
+    const term = (searched || brandQuery).trim().replaceAll('"', "").slice(0, 100);
     const site = p.name === "X" ? "(site:x.com OR site:twitter.com)" : `site:${p.domain}`;
     return `https://www.google.com/search?q=${encodeURIComponent(`"${term}" ${site}`)}`;
   };
@@ -151,10 +133,6 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
 
   return (
     <div className="dx">
-      {engineId && (
-        <Script src={`https://cse.google.com/cse.js?cx=${encodeURIComponent(engineId)}`} strategy="afterInteractive" onReady={() => setScriptReady(true)} onError={() => setScriptError(true)} />
-      )}
-
       <header className="dx-header">
         <div className="dx-wrap">
           <a className="dx-logo" href="/" aria-label="Effix Labs home"><Logo /><span>Effix Labs</span><em>Discover</em></a>
@@ -175,7 +153,6 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
                 <button className="dx-btn" type="submit">Run a Visibility Audit <span aria-hidden="true">→</span></button>
               </form>
               {error && <p className="dx-error" role="alert">{error}</p>}
-              {!engineId && <p className="dx-error" role="status">Google search isn&apos;t configured for this site yet.</p>}
               <p className="dx-note"><span>Free</span><span>No login</span><span>Nothing saved</span></p>
             </div>
           </section>
@@ -217,7 +194,7 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
                 <a className="dx-domain" href={identity.sourceUrl} target="_blank" rel="noopener noreferrer">{identity.domain} <span aria-hidden="true">↗</span></a>
               </div>
               <div className="dx-head-actions">
-                <span className="dx-live"><i aria-hidden="true" /> Live Google results</span>
+                <span className="dx-live"><i aria-hidden="true" /> Live search results</span>
                 <form className="dx-again" onSubmit={submit}>
                   <label htmlFor="dx-url2" className="sr-only">Check another website</label>
                   <input id="dx-url2" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Check another website" inputMode="url" required />
@@ -232,15 +209,15 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
                 <span className="dx-label">Brand name we searched</span>
                 <p>We found this name on your website. If people know you by a different name, change it and search again.</p>
               </div>
-              <form onSubmit={(e) => { e.preventDefault(); setSearchTick((n) => n + 1); }}>
+              <form onSubmit={(e) => { e.preventDefault(); searchMentions(brandQuery); }}>
                 <label htmlFor="dx-brand" className="sr-only">Brand name</label>
                 <input id="dx-brand" value={brandQuery} onChange={(e) => setBrandQuery(e.target.value)} maxLength={100} />
-                <button className="dx-btn" type="submit" disabled={!brandQuery.trim()}>Search again</button>
+                <button className="dx-btn" type="submit" disabled={!brandQuery.trim() || mentions.status === "loading"}>{mentions.status === "loading" ? "Searching…" : "Search again"}</button>
               </form>
             </section>
 
             <section className="dx-stats" aria-label="Summary">
-              <div className="dx-stat"><span className="dx-label">Platforms searched</span><strong>{PLATFORMS.length}</strong><small>Live Google results for each</small></div>
+              <div className="dx-stat"><span className="dx-label">Platforms searched</span><strong>{PLATFORMS.length}</strong><small>Searched for “{searched || identity.name}”</small></div>
               <div className="dx-stat"><span className="dx-label">Linked from your website</span><strong>{linkedCount}<span style={{ fontSize: 22, color: "#a3a3a3" }}> / {PLATFORMS.length}</span></strong><small>Platforms your site links to</small></div>
               <div className="dx-stat"><span className="dx-label">Social links found</span><strong>{identity.profiles.length}</strong><small>On the page you entered</small></div>
             </section>
@@ -263,7 +240,8 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
               <div><span className="dx-label">Platform discovery</span><h2>Potential mentions across the web</h2></div>
               <p>Google results can include posts that mention your brand without being your official profile. Open each result to check it.</p>
             </div>
-            {scriptError && <p className="dx-error" role="alert">Google&apos;s search couldn&apos;t load. Please try again in a moment.</p>}
+            {mentions.status === "error" && <p className="dx-error" role="alert">{mentions.message}</p>}
+            {mentions.status === "off" && <p className="dx-error dx-warn" role="status">Live search isn&apos;t switched on for this site yet. Use the links on each card to see the results on Google.</p>}
             <div className="dx-tabs" role="tablist" aria-label="Choose a platform">
               <button type="button" role="tab" aria-selected={view === "all"} className={`dx-tab ${view === "all" ? "is-on" : ""}`} onClick={() => setView("all")}>All platforms</button>
               {PLATFORMS.map((p) => (
@@ -271,22 +249,19 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
               ))}
             </div>
             <div className={`dx-grid ${view === "all" ? "" : "is-single"}`}>
-              {PLATFORMS.map((p, i) => (
+              {PLATFORMS.map((p) => (
                 <section key={p.name} className="dx-card" hidden={view !== "all" && view !== p.name}>
                   <button type="button" className="dx-card-head" onClick={() => setView(p.name)} aria-label={`Show only ${p.name} results`}>
                     <span className="sym" aria-hidden="true">{p.sym}</span>{p.name}
                     <span className={`tag ${linked.has(p.name) ? "yes" : ""}`}>{linked.has(p.name) ? "Linked on your site" : "Google results"}</span>
                   </button>
-                  <div id={`dx-results-${runId}-${i}`} className="dx-results" />
-                  {stalled[p.name] && (
-                    <p className="dx-stalled">Google hasn&apos;t returned results for this platform right now. Try <b>Search again</b> in a minute, or open this search on Google.</p>
-                  )}
+                  <MentionList state={mentions} platform={p.name} />
                   <a className="dx-open" href={googleUrl(p)} target="_blank" rel="noopener noreferrer">Open this search on Google <span aria-hidden="true">↗</span></a>
                 </section>
               ))}
             </div>
 
-            <p className="dx-coverage"><strong>Coverage note.</strong> Searches cover public pages Google has indexed on these platforms. Private, blocked or differently named pages may not appear, and Google may show approximate counts or ads. The brand name comes from your website and may need correcting. This is a discovery tool, not a complete count of every post or profile.</p>
+            <p className="dx-coverage"><strong>Coverage note.</strong> Searches cover public pages Google has indexed on these platforms, up to six results each. Private, blocked or differently named pages may not appear. The brand name comes from your website and may need correcting. This is a discovery tool, not a complete count of every post or profile.</p>
 
             <section className="dx-cta" aria-label="Get help from Effix Labs">
               <div>
@@ -306,7 +281,32 @@ export default function DiscoverClient({ engineId }: { engineId: string }) {
         </main>
       )}
 
-      <footer className="dx-footer">© 2026 Effix Labs · Search results are provided by Google and are not verified by Effix Labs.</footer>
+      <footer className="dx-footer">© 2026 Effix Labs · Search results come from Google and are not verified by Effix Labs.</footer>
     </div>
+  );
+}
+
+function MentionList({ state, platform }: { state: Mentions; platform: string }) {
+  if (state.status === "loading") {
+    return (
+      <div className="dx-results" aria-busy="true">
+        {[0, 1, 2].map((k) => <div key={k} className="dx-skel"><i /><i /><i /></div>)}
+      </div>
+    );
+  }
+  if (state.status !== "done") return null;
+  const r = state.byPlatform[platform];
+  if (!r || r.error) return <p className="dx-stalled">This platform didn&apos;t respond. Try <b>Search again</b> in a minute, or open this search on Google.</p>;
+  if (!r.results.length) return <p className="dx-empty">No results found for this brand name here. If people know you by another name, change it above and search again.</p>;
+  return (
+    <ol className="dx-results">
+      {r.results.map((m) => (
+        <li key={m.url} className="dx-hit">
+          <a href={m.url} target="_blank" rel="noopener noreferrer nofollow">{m.title || m.url}</a>
+          <span>{m.source}</span>
+          {m.snippet && <p>{m.snippet}</p>}
+        </li>
+      ))}
+    </ol>
   );
 }

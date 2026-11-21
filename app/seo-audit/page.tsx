@@ -1,7 +1,6 @@
 // Effix SEO audit at /seo-audit: technical, content, AI visibility, speed and brand visibility dashboard.
 import type { Metadata } from "next";
 
-import { DISCOVER_PSE_ID } from "@/lib/site";
 import SeoAuditClient from "./seo-audit-client";
 import "./audit.css";
 import "./dashboard.css";
@@ -20,9 +19,7 @@ export const metadata: Metadata = {
 export default function SeoAuditPage() {
   return (
     <>
-      {/* Google's search element must render on demand (one element per platform), not by scanning the page. */}
-      <script dangerouslySetInnerHTML={{ __html: 'window.__gcse = { parsetags: "explicit" };' }} />
-      <SeoAuditClient engineId={DISCOVER_PSE_ID} />
+      <SeoAuditClient />
     </>
   );
 }

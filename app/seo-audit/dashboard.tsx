@@ -213,7 +213,7 @@ const NAV = [
   { id: "plan", label: "Action plan", icon: "plan", group: "Report" },
 ] as const;
 
-export default function Dashboard({ report, engineId, onNewAudit, busy }: { report: AuditReport; engineId: string; onNewAudit: (url: string) => void; busy: boolean }) {
+export default function Dashboard({ report, onNewAudit, busy }: { report: AuditReport; onNewAudit: (url: string) => void; busy: boolean }) {
   const [active, setActive] = useState("overview");
   const [strategy, setStrategy] = useState<"mobile" | "desktop">("mobile");
   const [speed, setSpeed] = useState<Partial<Record<"mobile" | "desktop", SpeedState>>>({});
@@ -481,8 +481,8 @@ export default function Dashboard({ report, engineId, onNewAudit, busy }: { repo
           </div>
         </Section>
 
-        <Section id="brand" icon="brand" title="Brand visibility" sub="Where your brand shows up on nine platforms, through live Google results.">
-          <BrandVisibility identity={report.identity} engineId={engineId} />
+        <Section id="brand" icon="brand" title="Brand visibility" sub="Where your brand shows up on nine platforms, from live search results.">
+          <BrandVisibility identity={report.identity} />
         </Section>
 
         <Section id="plan" icon="plan" title="Action plan" sub="Every issue we found, most important first.">

@@ -1,7 +1,6 @@
 // Effix Discover — free visibility audit at /discover (linked from the homepage audit form and buttons).
 import type { Metadata } from "next";
 
-import { DISCOVER_PSE_ID } from "@/lib/site";
 import DiscoverClient from "./discover-client";
 import "./discover.css";
 
@@ -19,9 +18,7 @@ export const metadata: Metadata = {
 export default function DiscoverPage() {
   return (
     <>
-      {/* Google's search element must render on demand (one element per platform), not by scanning the page. */}
-      <script dangerouslySetInnerHTML={{ __html: 'window.__gcse = { parsetags: "explicit" };' }} />
-      <DiscoverClient engineId={DISCOVER_PSE_ID} />
+      <DiscoverClient />
     </>
   );
 }
