@@ -9,14 +9,14 @@ import "../reddit-marketing/rm.css";
 import "./cw.css";
 
 export const metadata: Metadata = {
-  "title": "SEO Content Writing Services Bengaluru & India | EFFIX Labs",
-  "description": "Human-written, SEO-ready blog posts, website copy, service pages & case studies for startups and brands in Bengaluru & India. Request a content quote.",
+  "title": "Content Writing Services in India | EFFIX Labs",
+  "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
   "alternates": {
     "canonical": "https://effix.co.in/services/content-writing"
   },
   "openGraph": {
-    "title": "SEO Content Writing Services Bengaluru & India | EFFIX Labs",
-    "description": "Human-written, SEO-ready blog posts, website copy, service pages & case studies for startups and brands in Bengaluru & India. Request a content quote.",
+    "title": "Content Writing Services in India | EFFIX Labs",
+    "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
     "url": "https://effix.co.in/services/content-writing",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "SEO Content Writing Services Bengaluru & India | EFFIX Labs",
-    "description": "Human-written, SEO-ready blog posts, website copy, service pages & case studies for startups and brands in Bengaluru & India. Request a content quote.",
+    "title": "Content Writing Services in India | EFFIX Labs",
+    "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
     "images": [
       "https://effix.co.in/images/services/service-04-blog-seo.jpg"
     ]

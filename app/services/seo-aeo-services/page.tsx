@@ -9,14 +9,14 @@ import "../reddit-marketing/rm.css";
 import "./sa.css";
 
 export const metadata: Metadata = {
-  "title": "SEO, AEO & GEO Agency in Bangalore & India | EFFIX Labs",
-  "description": "Rank on Google and get cited in ChatGPT, Perplexity & AI Overviews. EFFIX Labs provides technical SEO, on-page, link building & AEO/GEO in Bangalore.",
+  "title": "SEO & AEO Services in India | EFFIX Labs",
+  "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
   "alternates": {
     "canonical": "https://effix.co.in/services/seo-aeo-services"
   },
   "openGraph": {
-    "title": "SEO, AEO & GEO Agency in Bangalore & India | EFFIX Labs",
-    "description": "Rank on Google and get cited in ChatGPT, Perplexity & AI Overviews. EFFIX Labs provides technical SEO, on-page, link building & AEO/GEO in Bangalore.",
+    "title": "SEO & AEO Services in India | EFFIX Labs",
+    "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
     "url": "https://effix.co.in/services/seo-aeo-services",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "SEO, AEO & GEO Agency in Bangalore & India | EFFIX Labs",
-    "description": "Rank on Google and get cited in ChatGPT, Perplexity & AI Overviews. EFFIX Labs provides technical SEO, on-page, link building & AEO/GEO in Bangalore.",
+    "title": "SEO & AEO Services in India | EFFIX Labs",
+    "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
     "images": [
       "https://effix.co.in/images/services/service-03-ai-search.jpg"
     ]

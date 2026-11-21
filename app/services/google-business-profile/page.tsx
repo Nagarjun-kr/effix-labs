@@ -9,14 +9,14 @@ import "./page.css";
 import "./gx.css";
 
 export const metadata: Metadata = {
-  "title": "Google Business Profile Optimization Bengaluru | EFFIX Labs",
-  "description": "Get found in Google Maps & Map Pack. EFFIX Labs offers guideline-safe Google Business Profile (GMB) optimization in Bengaluru & India. Request an audit.",
+  "title": "Google Business Profile Optimization Services | EFFIX Labs",
+  "description": "Google Business Profile optimization services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
   "alternates": {
     "canonical": "https://effix.co.in/services/google-business-profile"
   },
   "openGraph": {
-    "title": "Google Business Profile Optimization Bengaluru | EFFIX Labs",
-    "description": "Get found in Google Maps & Map Pack. EFFIX Labs offers guideline-safe Google Business Profile (GMB) optimization in Bengaluru & India. Request an audit.",
+    "title": "Google Business Profile Optimization Services | EFFIX Labs",
+    "description": "Google Business Profile optimization services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "url": "https://effix.co.in/services/google-business-profile",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Google Business Profile Optimization Bengaluru | EFFIX Labs",
-    "description": "Get found in Google Maps & Map Pack. EFFIX Labs offers guideline-safe Google Business Profile (GMB) optimization in Bengaluru & India. Request an audit.",
+    "title": "Google Business Profile Optimization Services | EFFIX Labs",
+    "description": "Google Business Profile optimization services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "images": [
       "https://effix.co.in/images/services/service-01-gbp.jpg"
     ]

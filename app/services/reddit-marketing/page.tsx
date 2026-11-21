@@ -8,14 +8,14 @@ import "../google-business-profile/gx.css";
 import "./rm.css";
 
 export const metadata: Metadata = {
-  "title": "Reddit Marketing Agency in India & Bengaluru | EFFIX Labs",
-  "description": "Reach high-intent buyers on Reddit without getting banned. EFFIX Labs delivers transparent organic Reddit marketing, reputation management & Reddit Ads.",
+  "title": "Reddit Marketing Services in India | EFFIX Labs",
+  "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
   "alternates": {
     "canonical": "https://effix.co.in/services/reddit-marketing"
   },
   "openGraph": {
-    "title": "Reddit Marketing Agency in India & Bengaluru | EFFIX Labs",
-    "description": "Reach high-intent buyers on Reddit without getting banned. EFFIX Labs delivers transparent organic Reddit marketing, reputation management & Reddit Ads.",
+    "title": "Reddit Marketing Services in India | EFFIX Labs",
+    "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "url": "https://effix.co.in/services/reddit-marketing",
     "type": "website",
     "images": [
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Reddit Marketing Agency in India & Bengaluru | EFFIX Labs",
-    "description": "Reach high-intent buyers on Reddit without getting banned. EFFIX Labs delivers transparent organic Reddit marketing, reputation management & Reddit Ads.",
+    "title": "Reddit Marketing Services in India | EFFIX Labs",
+    "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "images": [
       "https://effix.co.in/images/services/reddit-marketing-hero.jpg"
     ]

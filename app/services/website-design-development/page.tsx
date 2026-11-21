@@ -9,14 +9,14 @@ import "../reddit-marketing/rm.css";
 import "./wd.css";
 
 export const metadata: Metadata = {
-  "title": "Website Design & Development Company Bengaluru | EFFIX Labs",
-  "description": "Custom, mobile-first websites built on Next.js, WordPress, Webflow & Shopify for businesses in Bengaluru & India. Fast Core Web Vitals & SEO-ready.",
+  "title": "Website Design & Development Services in India | EFFIX Labs",
+  "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
   "alternates": {
     "canonical": "https://effix.co.in/services/website-design-development"
   },
   "openGraph": {
-    "title": "Website Design & Development Company Bengaluru | EFFIX Labs",
-    "description": "Custom, mobile-first websites built on Next.js, WordPress, Webflow & Shopify for businesses in Bengaluru & India. Fast Core Web Vitals & SEO-ready.",
+    "title": "Website Design & Development Services in India | EFFIX Labs",
+    "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
     "url": "https://effix.co.in/services/website-design-development",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Website Design & Development Company Bengaluru | EFFIX Labs",
-    "description": "Custom, mobile-first websites built on Next.js, WordPress, Webflow & Shopify for businesses in Bengaluru & India. Fast Core Web Vitals & SEO-ready.",
+    "title": "Website Design & Development Services in India | EFFIX Labs",
+    "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
     "images": [
       "https://effix.co.in/images/services/service-05-web-dev.jpg"
     ]
