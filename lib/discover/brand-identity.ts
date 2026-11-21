@@ -105,5 +105,8 @@ export function nameFromHost(hostname: string) {
 export function tidyBrandName(raw: string) {
   const v = raw.replace(/\s+/g, " ").trim();
   if (/^(https?:\/\/)?([\w-]+\.)+[a-z]{2,}(\/.*)?$/i.test(v)) return nameFromHost(v.replace(/^https?:\/\//i, "").split("/")[0]);
-  return v.replace(/[,\s]+(inc\.?|incorporated|llc|l\.l\.c\.|ltd\.?|limited|pvt\.? ltd\.?|private limited|corp\.?|corporation|gmbh|plc|co\.)$/i, "").trim();
+  const legal = v.replace(/[,\s]+(inc\.?|incorporated|llc|l\.l\.c\.|ltd\.?|limited|pvt\.? ltd\.?|private limited|corp\.?|corporation|gmbh|plc|co\.)$/i, "").trim();
+  // Country/region endings narrow the search too much ("Netflix India" -> "Netflix"); the visitor can type them back.
+  const core = legal.replace(/\s+(india|uk|usa|us|global|worldwide|international|australia|canada|singapore|uae|europe|asia)$/i, "").trim();
+  return core.length >= 2 ? core : legal;
 }

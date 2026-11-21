@@ -1,0 +1,461 @@
+{
+ "capturedAt": "2026-11-21T13:48:32.849Z",
+ "identity": {
+  "name": "Netflix",
+  "domain": "netflix.com",
+  "sourceUrl": "https://www.netflix.com/in/",
+  "profiles": []
+ },
+ "brand": "Netflix",
+ "byPlatform": {
+  "YouTube": {
+   "platform": "YouTube",
+   "query": "\"Netflix\" site:youtube.com",
+   "results": [
+    {
+     "title": "Netflix",
+     "url": "https://www.youtube.com/@Netflix",
+     "snippet": "Netflix · The Body | Official Trailer | Netflix · New in November 2026 | Netflix · The Body | Netflix · Videos · East of Eden | Netflix · Animals | Netflix · Haunted ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Netflix video",
+     "url": "https://www.youtube.com/c/Netflix/videos",
+     "snippet": "THE FURTHER MIS-ADVENTURES OF CLIFF BOOTH | Get Tickets Now | Netflix. 1M ... Guarding Stars | Sneak Peek | Mistletoe Rodeo Kiss Cam | Netflix. 99K views.",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Still Watching Netflix",
+     "url": "https://www.youtube.com/@stillwatchingnetflix",
+     "snippet": "Trixie and Katya fans rejoice! Keep up with the ultimate reaction show 'I Like to Watch' where they watch Netflix shows and give us their take. Netflix ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Netflix Family",
+     "url": "https://www.youtube.com/@netflixfamily",
+     "snippet": "Netflix Family · \"How It's Done\" KPop Demon Hunters: Dance Practice | Netflix Family · Featured Videos ✨ Netflix Family · KPop Demon Hunters | Netflix Family.",
+     "source": "youtube.com"
+    },
+    {
+     "title": "The Cast of The Body Watch Anya & Elise's Duet | Netflix",
+     "url": "https://www.youtube.com/watch?v=ievZIS1OCKU",
+     "snippet": "The cast of The Body react to the emotional dance duet between Anya (Kristina Bogic) and Elise (Sara Boustany). Watch on Netflix: ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Educational Documentaries | Netflix",
+     "url": "https://www.youtube.com/playlist?list=PLvahqwMqN4M0GRkZY8WkLZMb6Z-W7qbLA",
+     "snippet": "Educational Documentaries | Netflix ; WE THE PEOPLE Conversation with President Barack Obama and Michelle Obama | Netflix · 81K views ; We The People | Full ...",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Netflix - YouTube",
+     "url": "https://www.youtube.com/c/Netflix/search",
+     "snippet": "@Netflix. 33.9M subscribers•9.6K videos. undoing centuries of stepsister slander ... signup.netflix.comand 4 more links. Subscribe. Home. Videos. Shorts. Live.",
+     "source": "youtube.com"
+    },
+    {
+     "title": "Netflix Jr.",
+     "url": "https://www.youtube.com/@NetflixJr",
+     "snippet": "Welcome to the official Netflix Jr. channel! Where kids can learn, sing and play with their favorite Netflix characters - from StoryBots to Super Monsters ...",
+     "source": "youtube.com"
+    }
+   ]
+  },
+  "Instagram": {
+   "platform": "Instagram",
+   "query": "\"Netflix\" site:instagram.com",
+   "results": [
+    {
+     "title": "Netflix US (@netflix) • Instagram photos and videos",
+     "url": "https://www.instagram.com/netflix/",
+     "snippet": "43M followers · 1.5K+ following · 15349 posts · @netflix: “lions only ... netflix's profile picture. netflix. Netflix US. 42.6M followers. 1,445 following ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Netflix US (@netflix) Reels • Instagram photos and videos",
+     "url": "https://www.instagram.com/netflix/reels/",
+     "snippet": "Enough talking. Let's eat. Packers vs. Rams — the first-ever NFL Thanksgiving Eve game is LIVE on Netflix. November 25 — Coverage starts at 6 PM ET.",
+     "source": "instagram.com"
+    },
+    {
+     "title": "We Are Netflix (@wearenetflix)",
+     "url": "https://www.instagram.com/wearenetflix/",
+     "snippet": "The Netflix Animation Foundation program is back, this time partnering with @blacknanimated! The program builds equity and increases access for Black students ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Netflix Film (@netflixfilm) · Los Angeles, CA",
+     "url": "https://www.instagram.com/netflixfilm/",
+     "snippet": "Léa Seydoux stars in GENTLE MONSTER as Lucy, a concert pianist whose world unravels following unthinkable accusations against her husband. Now on Netflix in the ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "THE ALTRUISTS is NOW STREAMING on @netflix  The ...",
+     "url": "https://www.instagram.com/p/Df8i3UigMHD/",
+     "snippet": "",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Netflix Family (@netflixfamily) · Los Angeles, CA",
+     "url": "https://www.instagram.com/netflixfamily/",
+     "snippet": "✨welcome to the family✨ get our FREE magazine straight to your mailbox. sign up ... Feeling festive about what's coming to Netflix for families this December ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Netflix UK & Ireland (@netflixuk)",
+     "url": "https://www.instagram.com/netflixuk/",
+     "snippet": "One lovingly dysfunctional Irish family. Adapted from Marian Keyes' bestselling novel, GROWN UPS arrives on Netflix 14 January. Starring Adrian Dunbar, Barry ...",
+     "source": "instagram.com"
+    },
+    {
+     "title": "Netflix India (@netflix_in) • Instagram photos and videos",
+     "url": "https://www.instagram.com/netflix_in/",
+     "snippet": "Singanamala Bobbili Ranabaali raa ne yakkaa❤️‍ ❤️‍ ❤️‍ Watch Ranabaali, out now, on Netflix, in Telugu, Hindi, Tamil, Kannada and Malayalam and ...",
+     "source": "instagram.com"
+    }
+   ]
+  },
+  "Facebook": {
+   "platform": "Facebook",
+   "query": "\"Netflix\" site:facebook.com",
+   "results": [
+    {
+     "title": "Netflix | Los Gatos CA",
+     "url": "https://www.facebook.com/netflixus/",
+     "snippet": "Netflix. See What's Next in entertainment and Netflix original series, movies, TV, docs, and comedies. You can stream Netflix anytime, anywhere, on any device.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Netflix (@netflixph)",
+     "url": "https://www.facebook.com/netflixph/",
+     "snippet": "Netflix. See What's Next in entertainment and Netflix original series, movies, TV, docs, and comedies. You can stream Netflix anytime, anywhere, on any device.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Netflix",
+     "url": "https://www.facebook.com/netflix/",
+     "snippet": "Netflix. 211572845 followers · 8098 talking about this. Welcome to the Netflix global page! Watch Netflix original series, films, docs and TV...",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Netflix | London",
+     "url": "https://www.facebook.com/NetflixUK/",
+     "snippet": "Like Netflix to be first to hear of new TV shows and movies in your country. Visit our support tab or help. netflix.com for customer services.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Netflix Bangers",
+     "url": "https://www.facebook.com/groups/NetflixBangers/",
+     "snippet": "Welcome to Netflix Bangers - where you can discuss anything Netflix related, from the latest series and films to the craziest fan theory you may have.",
+     "source": "facebook.com"
+    },
+    {
+     "title": "What's on Netflix (@whatsonnetflix)",
+     "url": "https://www.facebook.com/whatsonnetflix/",
+     "snippet": "Independent Netflix fansite covering all the latest Netflix news, new releases and what's coming up next. Not owned or affiliated with Netflix. Entertainment ...",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Netflix Recommendations",
+     "url": "https://www.facebook.com/groups/613870175328566/",
+     "snippet": "This group is all about thoughtful, passionate recommendations. If you've just watched something amazing on Netflix, tell us why you loved it. Your post might ...",
+     "source": "facebook.com"
+    },
+    {
+     "title": "Netflix (@netflixcanada)",
+     "url": "https://www.facebook.com/netflixcanada/",
+     "snippet": "Welcome to the Netflix Canada Facebook page! Media/news company.",
+     "source": "facebook.com"
+    }
+   ]
+  },
+  "LinkedIn": {
+   "platform": "LinkedIn",
+   "query": "\"Netflix\" site:linkedin.com",
+   "results": [
+    {
+     "title": "Netflix",
+     "url": "https://www.linkedin.com/company/netflix",
+     "snippet": "Netflix is one of the world's leading entertainment services offering TV series, films, games and live programming across a wide variety of genres and ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Jun Oh - Vice President, Head of Business Affairs, Film at Netflix",
+     "url": "https://www.linkedin.com/in/jun-oh-2157b14",
+     "snippet": "Experience ; Vice President, Head of Business Affairs, Film. Netflix. May 2024 - Present 2 years 7 months ; President, Global Business Affairs and International.",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Ian Miller - Manager, Original Film at Netflix",
+     "url": "https://www.linkedin.com/in/ian-miller-b6b30887",
+     "snippet": "Manager, Original Film at Netflix · Experience: Netflix · Education: Boston University · Location: Los Angeles · 500+ connections on LinkedIn.",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Peter Fried - Director, Original Film at Netflix",
+     "url": "https://www.linkedin.com/in/peter-fried-3516821a3",
+     "snippet": "Director, Original Film at Netflix · Experience: Netflix · Education: Florida State University · Location: United States · 500+ connections on LinkedIn.",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Christopher Mack - Director, Grow Creative at Netflix",
+     "url": "https://nl.linkedin.com/in/christopher-mack-792558124",
+     "snippet": "I now work with Netflix International Originals helping identify, support and develop local writers and directors in the EMEA regions.",
+     "source": "nl.linkedin.com"
+    },
+    {
+     "title": "Netflix and Fox poised to duke it out over World Cup rights",
+     "url": "https://www.linkedin.com/news/story/netflix-and-fox-poised-to-duke-it-out-over-world-cup-rights-8974009/",
+     "snippet": "The battle of streamer vs. legacy network could cost more than $2 billion. Entertainment lawyer Simon Pulman says a Netflix win \"would be ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Martin Rose - Netflix",
+     "url": "https://www.linkedin.com/in/martinjrose",
+     "snippet": "Experience: Netflix · Location: Los Angeles Metropolitan Area · 500+ connections on LinkedIn. View Martin Rose's profile on LinkedIn, a professional ...",
+     "source": "linkedin.com"
+    },
+    {
+     "title": "Jasmyn Lawson - Content Executive at Netflix",
+     "url": "https://www.linkedin.com/in/jasmyn-lawson",
+     "snippet": "Content Executive at Netflix · Experience: Netflix · Education: Spelman College · Location: Los Angeles · 500+ connections on LinkedIn. View Jasmyn Lawson's ...",
+     "source": "linkedin.com"
+    }
+   ]
+  },
+  "X": {
+   "platform": "X",
+   "query": "\"Netflix\" (site:x.com OR site:twitter.com)",
+   "results": [
+    {
+     "title": "Netflix",
+     "url": "https://x.com/netflix",
+     "snippet": "Ali Wong Amanda Seyfried Stephanie Hsu and Bette Midler STEPS, a new twist on the classic Cinderella story, is now on Netflix.",
+     "source": "x.com"
+    },
+    {
+     "title": "Netflix Geeked (@NetflixGeeked) ...",
+     "url": "https://x.com/NetflixGeeked",
+     "snippet": "Every great story begins with a spark. Here's your first look at PLANESWALKER, a new animated series based on Magic: The Gathering. Coming to Netflix in 2027.",
+     "source": "x.com"
+    },
+    {
+     "title": "What's on Netflix (@whatonnetflix) ...",
+     "url": "https://x.com/whatonnetflix",
+     "snippet": "Independent Netflix fansite covering all the latest Netflix news, new releases, and what's coming up next. Not owned by or affiliated with Netflix.",
+     "source": "x.com"
+    },
+    {
+     "title": "Netflix Family (@netflixfamily) / X",
+     "url": "https://x.com/netflixfamily",
+     "snippet": "The adventure continues with the second season of Samurai Rabbit: The Usagi Chronicles, available on Netflix 9/1!",
+     "source": "x.com"
+    },
+    {
+     "title": "Netflix Queue (@netflixqueue) / X",
+     "url": "https://x.com/netflixqueue",
+     "snippet": "A print and digital publication that celebrates the people, the ideas, and the process of creating great entertainment on @Netflix and beyond.",
+     "source": "x.com"
+    },
+    {
+     "title": "Replies by Netflix (@netflix) / X",
+     "url": "https://x.com/netflix/with_replies",
+     "snippet": "\"I'd burn it all down\" changed lives. Percy Jackson and the Olympians is now on Netflix.",
+     "source": "x.com"
+    },
+    {
+     "title": "Netflix UK & Ireland (@NetflixUK) ...",
+     "url": "https://x.com/NetflixUK",
+     "snippet": "A year of mourning and mayhem. One lovingly dysfunctional Irish family. Adapted from Marian Keyes' bestselling novel, GROWN UPS arrives on Netflix 14 January.",
+     "source": "x.com"
+    },
+    {
+     "title": "Netflix Tudum (@NetflixTudum) / X",
+     "url": "https://x.com/NetflixTudum",
+     "snippet": "Go behind the streams of your favorite Netflix films and shows.",
+     "source": "x.com"
+    }
+   ]
+  },
+  "Reddit": {
+   "platform": "Reddit",
+   "query": "\"Netflix\" site:reddit.com",
+   "results": [
+    {
+     "title": "r/netflix",
+     "url": "https://www.reddit.com/r/netflix/",
+     "snippet": "r/netflix: Unofficial Netflix discussion, and all things Netflix related! (Mods are not Netflix employees, but employees occasionally post here).",
+     "source": "reddit.com"
+    },
+    {
+     "title": "No One Left to Fire: Netflix CEO Ted Sarandos Is Feeling the Heat as ...",
+     "url": "https://www.reddit.com/r/television/comments/1xy3i27/no_one_left_to_fire_netflix_ceo_ted_sarandos_is/",
+     "snippet": "One of Netflix Co-CEO Ted Sarandos' guiding principles that he has frequently discussed is Netflix's ability to adapt, change, and evolve. He ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "netflix (u/netflix)",
+     "url": "https://www.reddit.com/user/netflix/",
+     "snippet": "u/netflix: Netflix official account for official business. It's official.",
+     "source": "reddit.com"
+    },
+    {
+     "title": "What happened to Netflix? Is anything new worth my time?",
+     "url": "https://www.reddit.com/r/netflix/comments/1v3xdmh/what_happened_to_netflix_is_anything_new_worth_my/",
+     "snippet": "If it weren't free (w/ads) with our T-Mobile service, I'd cancel without a thought. There is really nothing worth watching any more, no big shows with ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Netflix has gone to crap and I'm tired of pretending like it hasn't",
+     "url": "https://www.reddit.com/r/netflix/comments/1qxut7s/netflix_has_gone_to_crap_and_im_tired_of/",
+     "snippet": "Netflix streaming was based on the idea that old content was worthless. Turns out that's not true and now everyone wants their IP back. Actors ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "What is up with Netflix region based viewing? : r/OutOfTheLoop",
+     "url": "https://www.reddit.com/r/OutOfTheLoop/comments/9sm7zz/what_is_up_with_netflix_region_based_viewing/",
+     "snippet": "I live in New Zealand and the Netflix catalogue here is significantly smaller and contains lower quality shows than US Netflix. We pay very similar prices ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "r/NetflixBestOf",
+     "url": "https://www.reddit.com/r/NetflixBestOf/",
+     "snippet": "If you could tell me where I could find the show (preferably on Netflix or Prime Video (free)) and what's it's about, that would be amazing. 15 upvotes · 27 ...",
+     "source": "reddit.com"
+    },
+    {
+     "title": "Netflix is such a waste of money",
+     "url": "https://www.reddit.com/r/netflix/comments/1uo5d6e/netflix_is_such_a_waste_of_money/",
+     "snippet": "Is it just me, or is Netflix becoming a waste of money? They keep releasing new series that look really promising, get everyone hooked, ...",
+     "source": "reddit.com"
+    }
+   ]
+  },
+  "Quora": {
+   "platform": "Quora",
+   "query": "\"Netflix\" site:quora.com",
+   "results": [
+    {
+     "title": "What is the meaning of 'Netflix' when watching TV shows or movies?",
+     "url": "https://www.quora.com/What-is-the-meaning-of-Netflix-when-watching-TV-shows-or-movies",
+     "snippet": "What is the meaning of \"Netflix\" when watching TV shows or movies?",
+     "source": "quora.com"
+    },
+    {
+     "title": "What happened to Netflix? Why does it have so many bad reviews now?",
+     "url": "https://www.quora.com/What-happened-to-Netflix-Why-does-it-have-so-many-bad-reviews-now",
+     "snippet": "What happened to Netflix? Why does it have so many bad reviews now?",
+     "source": "quora.com"
+    },
+    {
+     "title": "Do you think Netflix will eventually compete with traditional cable ...",
+     "url": "https://www.quora.com/Do-you-think-Netflix-will-eventually-compete-with-traditional-cable-television-or-is-it-carving-out-its-own-market",
+     "snippet": "Do you think Netflix will eventually compete with traditional cable television, or is it carving out its own market? All related (31).",
+     "source": "quora.com"
+    },
+    {
+     "title": "What happens when you finish watching Netflix?",
+     "url": "https://www.quora.com/What-happens-when-you-finish-watching-Netflix",
+     "snippet": "What happens when you finish watching Netflix?",
+     "source": "quora.com"
+    },
+    {
+     "title": "NETFLIX videos - Dailymotion - Binge Watching TV - Quora",
+     "url": "https://binge.quora.com/https-www-dailymotion-com-alexmapeli-Follow-my-page-I-hope-you-liked-me",
+     "snippet": "Netflix is a subscription-based service that offers a wide range of movies, TV shows, documentaries, and original content. Users pay a monthly fee and have ...",
+     "source": "binge.quora.com"
+    },
+    {
+     "title": "Netflix Reviews - Quora",
+     "url": "https://netflix-reviews.quora.com/",
+     "snippet": "Netflix Reviews. Any show, episode, movie, currently on Netflix somewhere.",
+     "source": "netflix-reviews.quora.com"
+    },
+    {
+     "title": "Where is a list of every movie that has ever been on Netflix? I don't ... - YAMS",
+     "url": "https://yams.quora.com/Where-is-a-list-of-every-movie-that-has-ever-been-on-Netflix-I-don-t-know-the-name-of-a-movie-but-I-know-Netflix-had-it",
+     "snippet": "Where is a list of every movie that has ever been on Netflix? I don't know the name of a movie but I know Netflix had it at some point.",
+     "source": "yams.quora.com"
+    },
+    {
+     "title": "How did Netflix go from being the best streaming service to a failing one?",
+     "url": "https://www.quora.com/How-did-Netflix-go-from-being-the-best-streaming-service-to-a-failing-one",
+     "snippet": "How did Netflix go from being the best streaming service to a failing one?",
+     "source": "quora.com"
+    }
+   ]
+  },
+  "Threads": {
+   "platform": "Threads",
+   "query": "\"Netflix\" site:threads.net",
+   "results": [
+    {
+     "title": "Netflix US (@netflix)",
+     "url": "https://www.threads.net/@netflix",
+     "snippet": "Now on Netflix in the US, Canada, UK, Australia, and New Zealand. A concert pianist's world unravels following unthinkable accusations against her husband in ...",
+     "source": "threads.net"
+    },
+    {
+     "title": "Netflix India (@netflix_in)",
+     "url": "https://www.threads.net/@netflix_in",
+     "snippet": "Log in. Get app. Netflix India. netflix_in. netflix_in's profile picture. aaye miyan?. 6.7M followers. Follow. Mention.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Netflix UK & Ireland (@netflixuk)",
+     "url": "https://www.threads.net/@netflixuk",
+     "snippet": "A year of mourning and mayhem. One lovingly dysfunctional Irish family. Adapted from Marian Keyes' bestselling novel, Grown Ups arrives on Netflix 14 January.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Netflix Philippines (@netflixph)",
+     "url": "https://www.threads.net/@netflixph",
+     "snippet": "Log in. Get app. Netflix Philippines. netflixph. netflixph's profile picture. i'm in my c-drama era lately and i'm not complaining. 445K followers.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Netflix Taiwan (@netflixtw)",
+     "url": "https://www.threads.net/@netflixtw",
+     "snippet": "Netflix Taiwan ; 急診室的奇蹟 · November 21, 2026 at 12:00 AM. 有挫折就會有成長，林耿明加油！ #有多少病例就藏著多少故事 ; 罪藍之路 · November 20, 2026 at 10:00 PM.",
+     "source": "threads.net"
+    },
+    {
+     "title": "Netflix Latinoamérica (@netflixlat)",
+     "url": "https://www.threads.net/@netflixlat",
+     "snippet": "¿ya tienes a tu sospechoso? 🕵️‍♀️ 'Secreto millonario' disponible el 18 de diciembre, solo en Netflix.",
+     "source": "threads.net"
+    },
+    {
+     "title": "SEE HER AGAIN #太陽星辰Now airing on Netflix",
+     "url": "https://www.threads.net/@stephenfungible/post/DCvaBhkS9Kl",
+     "snippet": "SEE HER AGAIN #太陽星辰Now airing on Netflix ; September 7, 2026 at 4:37 AM. ☀️ lamerhkofficial. 598 ; September 5, 2026 at 4:57 AM.",
+     "source": "threads.net"
+    }
+   ]
+  }
+ },
+ "checks": [
+  {
+   "url": "https://www.youtube.com/@Netflix",
+   "ok": true,
+   "channelId": "UCWOA1ZGywLbqmigxE4Qlvuw",
+   "name": "Netflix",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/c/Netflix/videos",
+   "ok": true,
+   "channelId": "UCWOA1ZGywLbqmigxE4Qlvuw",
+   "name": "Netflix",
+   "mentionsSite": true
+  },
+  {
+   "url": "https://www.youtube.com/c/Netflix/search",
+   "ok": true,
+   "channelId": "UCWOA1ZGywLbqmigxE4Qlvuw",
+   "name": "Netflix",
+   "mentionsSite": true
+  }
+ ]
+}

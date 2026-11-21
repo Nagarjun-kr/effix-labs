@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import { test } from "node:test";
 
-import { buildActions, buildRows, type Row } from "../lib/discover/classify.ts";
+import { buildActions, buildRows, presenceOf, type Row } from "../lib/discover/classify.ts";
 
 type Fixture = { identity: never; brand: string; byPlatform: never; checks: { url: string }[] };
 const DIR = new URL("./brand-fixtures/", import.meta.url);
@@ -45,6 +45,7 @@ test("digifortex.com: Facebook page number + YouTube channel ID resolved; second
 
 test("effix.co.in: same-name businesses are never credited as yours", () => {
   const { status, rows } = load("effix.co.in");
+  assert.equal(presenceOf(rows).confirmed, 2, "only the two linked profiles are confirmed");
   assert.equal(status.LinkedIn, "official");
   assert.equal(status.Reddit, "official");
   assert.ok(rows.every((r) => r.status !== "likely"), "nothing confirms any other Effix profile");
@@ -88,6 +89,18 @@ test("canva.com (site blocks us): handle confirmed on one platform confirms it o
 test("swiggy.com (no linked profiles, nothing confirmed): only possible matches, never likely", () => {
   const { rows } = load("swiggy.com");
   assert.ok(rows.every((r) => r.status === "possible" || r.status === "mentions" || r.status === "none"));
+});
+
+test("netflix.com: no linked profiles, but the exact handle on many platforms confirms them", () => {
+  const { status, rows } = load("netflix.com");
+  for (const p of ["Instagram", "Facebook", "LinkedIn", "X", "Threads"]) assert.equal(status[p], "likely", p);
+  assert.ok(presenceOf(rows).confirmed >= 6);
+});
+
+test("youtube.com: the site's links to its own pages are not counted as profiles", () => {
+  const { rows } = load("youtube.com");
+  assert.ok(rows.every((r) => !r.linked), "youtube.com/about etc. are not linked profiles");
+  for (const p of ["Instagram", "Facebook", "X"]) assert.equal(rows.find((r) => r.name === p)!.status, "likely", p);
 });
 
 /* ---------- rules that must hold for every company ---------- */

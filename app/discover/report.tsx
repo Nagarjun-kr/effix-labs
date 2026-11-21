@@ -11,6 +11,7 @@ import {
   buildRows,
   isProfile,
   PLATFORMS,
+  presenceOf,
   shortUrl,
   type Identity,
   type Mentions,
@@ -67,6 +68,7 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
   const rows = useMemo(() => buildRows(identity, mentions, brand, checks), [identity, mentions, brand, checks]);
   const actions = useMemo(() => (mentions.status === "done" ? buildActions(rows, brand) : []), [rows, mentions.status, brand]);
   const found = rows.filter((r) => r.status === "official" || r.status === "likely").length;
+  const presence = presenceOf(rows);
   const linkedCount = rows.filter((r) => r.linked).length;
   const totalResults = rows.reduce((n, r) => n + (r.result?.results.length ?? 0), 0);
   const loading = mentions.status === "loading";
@@ -119,8 +121,8 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
           <span className="vz-kpi-ic c-blue"><Ico n="search" /></span>
           <span className="vz-kpi-t">Brand presence</span>
           <span className="vz-chev"><Ico n="chev" size={16} /></span>
-          <strong>{loading ? "…" : found}<small> / {rows.length}</small></strong>
-          <span className="vz-kpi-sub">Platforms where your profile is official or likely yours</span>
+          <strong>{loading ? "…" : searched ? presence.total : linkedCount}<small> / {rows.length}</small></strong>
+          <span className="vz-kpi-sub">{loading ? "Searching all platforms…" : searched ? <>Platforms with an account using your name: <b>{presence.confirmed} confirmed</b> · <b>{presence.toVerify} to verify</b></> : "Platforms your website links to"}</span>
           <span className="vz-cells" aria-hidden="true">{rows.map((r) => <i key={r.name} className={`s-${loading && !r.linked ? "loading" : STATUS[r.status].tone}`} />)}</span>
         </button>
         <button type="button" className="vz-card vz-kpi" onClick={() => go("dx-details")}>
@@ -178,7 +180,7 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
                 <circle key={x.st} className={`s-${STATUS[x.st].tone}`} cx="70" cy="70" r="52" fill="none" strokeWidth="16" strokeDasharray={`${x.dash} ${C}`} strokeDashoffset={-x.offset} transform="rotate(-90 70 70)" />
               ))}
             </svg>
-            <div className="vz-donut-c"><strong>{loading ? "…" : found}</strong><span>of {rows.length} found</span></div>
+            <div className="vz-donut-c"><strong>{loading ? "…" : found}</strong><span>of {rows.length} confirmed</span></div>
           </div>
           <ul className="vz-legend">
             {segs.map((x) => (

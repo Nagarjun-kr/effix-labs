@@ -89,6 +89,16 @@ export function handleMatches(handle: string, brand: string) {
   return false;
 }
 
+// Words that make a name regional or formal; the core brand is matched too ("Netflix India" -> "netflix").
+const REGION_WORDS = /\b(india|in|uk|us|usa|global|official|worldwide|international|australia|canada|singapore|uae|europe|asia|pvt|private|limited|ltd|inc|llc)\b/gi;
+/** Name forms to match handles against: full name, name without regional words, and the website's name. */
+export function brandForms(brand: string, domain = "") {
+  const forms = new Set<string>([squash(brand), squash(brand.replace(REGION_WORDS, " "))]);
+  const label = domain.toLowerCase().replace(/^www\./, "").split(".")[0] ?? "";
+  if (label.length >= 3) forms.add(squash(label));
+  return [...forms].filter((f) => f.length >= 3);
+}
+
 /** host + path without protocol, www, query, trailing slash; for comparing a result with a linked profile. */
 export function normUrl(raw: string) {
   try {
@@ -155,9 +165,8 @@ export function tagResult(platform: string, url: string, brand: string, linked: 
   try {
     ({ kind, handle } = kindFor(platform, new URL(url)));
   } catch {}
-  const b = squash(brand);
   const h = handle ? squash(decodeURIComponent(handle)) : "";
-  const matchesBrand = handleMatches(h, b);
+  const matchesBrand = brandForms(brand, domain).some((b) => handleMatches(h, b));
   const n = normUrl(url);
   const official = linkedUrls.some((l) => {
     const ln = normUrl(l);
@@ -236,7 +245,16 @@ export const shortUrl = (u: string) => {
 export const score = (t: ResultTag) => (t.official ? 8 : 0) + (isProfile(t) && t.matchesBrand ? (t.mentionsSite || t.sameHandle ? 4 : 2) : 0) + (isProfile(t) ? 1 : 0);
 
 export function buildRows(identity: Identity, mentions: Mentions, brand: string, checks: Record<string, ProfileCheck> = {}): Row[] {
-  const profiles = identity.profiles.filter((p) => isProfileUrl(p.platform, p.url)); // ignore links to single videos/posts
+  const own = identity.domain.toLowerCase().replace(/^www\./, "");
+  const profiles = identity.profiles.filter((p) => {
+    try {
+      const host = new URL(p.url).hostname.toLowerCase().replace(/^www\./, "");
+      if (host === own || host.endsWith(`.${own}`)) return false; // the site's own pages (e.g. youtube.com auditing itself)
+    } catch {
+      return false;
+    }
+    return isProfileUrl(p.platform, p.url); // ignore links to single videos/posts
+  });
   const linkedAll = (name: string) => profiles.filter((x) => x.platform === name).map((x) => x.url);
   const officialHandles = handlesOf(profiles);
   // Handles confirmed on other platforms (profile mentions your website / opened and links to it) count like linked ones.
@@ -247,6 +265,18 @@ export function buildRows(identity: Identity, mentions: Mentions, brand: string,
         if (t.kind === "profile" && t.matchesBrand && (t.mentionsSite || t.checked === "yours") && t.handle) officialHandles.add(squash(decodeURIComponent(t.handle)));
       }
     }
+  }
+  // The exact brand name as the handle on 3+ platforms is strong evidence those accounts belong together
+  // (only for names of 5+ characters, so short generic names don't qualify; communities never count).
+  const exact = squash(brand);
+  if (exact.length >= 5 && mentions.status === "done") {
+    const withExact = PLATFORMS.filter((p) =>
+      (mentions.byPlatform[p.name]?.results ?? []).some((m) => {
+        const t = tagResult(p.name, m.url, brand, null);
+        return t.kind === "profile" && t.handle !== null && squash(decodeURIComponent(t.handle)) === exact && checks[m.url]?.website === undefined;
+      }),
+    );
+    if (withExact.length >= 3) officialHandles.add(exact);
   }
   return PLATFORMS.map((p) => {
     const urls = linkedAll(p.name);
@@ -281,7 +311,7 @@ export function buildActions(rows: Row[], brand: string): Action[] {
   const none: string[] = [];
   for (const r of rows) {
     if (r.status === "likely" && r.bestProfile) {
-      const why = r.bestProfile.t.checked === "yours" ? "links to your website (we checked the profile)" : r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as the profiles your website links to";
+      const why = r.bestProfile.t.checked === "yours" ? "links to your website (we checked the profile)" : r.bestProfile.t.mentionsSite ? "mentions your website" : "uses the same handle as your other profiles";
       out.push({ level: "high", title: `Link your ${r.name} profile on your website`, detail: `${shortUrl(r.bestProfile.m.url)} ${why}, but your website doesn't link to it. Add it to your footer or contact page so Google and visitors can connect the two.` });
     }
     if (r.status === "possible" && r.bestProfile) {
@@ -346,7 +376,7 @@ export function checkTargets(identity: Identity, mentions: Mentions, brand: stri
     const links = identity.profiles.filter((p) => p.platform === name && isProfileUrl(name, p.url)).map((p) => p.url);
     const results = mentions.byPlatform[name]?.results ?? [];
     const candidates = results.filter((m) => {
-      const t = tagResult(name, m.url, brand, links);
+      const t = tagResult(name, m.url, brand, links, "", identity.domain);
       // YouTube with a linked channel: open every channel found, because one channel has several addresses
       // (/@handle, /channel/UC…, /c/name, /user/name); otherwise only profiles using the brand name.
       return t.kind === "profile" && !t.official && (t.matchesBrand || (name === "YouTube" && links.length > 0));
@@ -355,4 +385,12 @@ export function checkTargets(identity: Identity, mentions: Mentions, brand: stri
     candidates.slice(0, 3).forEach((m) => add(name, m.url));
   }
   return out;
+}
+
+/** Brand presence: platforms where an account using your name exists. Confirmed = official or likely yours;
+ *  to verify = a profile using your name with no proof yet (communities and accounts linking elsewhere don't count). */
+export function presenceOf(rows: Row[]) {
+  const confirmed = rows.filter((r) => r.status === "official" || r.status === "likely").length;
+  const toVerify = rows.filter((r) => r.status === "possible" && r.bestProfile?.t.kind === "profile").length;
+  return { confirmed, toVerify, total: confirmed + toVerify };
 }

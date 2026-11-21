@@ -256,6 +256,7 @@
 .vz-chev { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #f3f4f8; color: var(--vz-ink); flex: none; }
 .vz-kpi strong { grid-column: 1 / -1; margin-top: 16px; font: 700 40px/1 var(--body); letter-spacing: -0.03em; }
 .vz-kpi strong small { font-size: 20px; color: #9ca3af; font-weight: 600; }
+.vz-kpi-sub b { color: var(--vz-ink); font-weight: 700; }
 .vz-kpi-sub { grid-column: 1 / -1; margin-top: 6px; font-size: 13px; line-height: 1.45; color: var(--vz-muted); }
 .vz-cells, .vz-spark, .vz-logos, .vz-pills { grid-column: 1 / -1; align-self: end; margin-top: 16px; }
 .vz-cells { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }

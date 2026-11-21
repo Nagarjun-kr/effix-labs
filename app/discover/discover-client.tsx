@@ -5,7 +5,7 @@
 // -> our server searches "<brand>" site:<platform> on 8 platforms (Google results via Serper.dev)
 // -> results shown as potential mentions. No Google widget in the browser, so no CAPTCHA.
 // Nothing is stored and no login is needed.
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 
 import { checkTargets, type ProfileCheck } from "@/lib/discover/classify";
 import Report, { PLATFORMS, type Identity, type Mentions, type PlatformResult } from "./report";
@@ -106,7 +106,10 @@ export default function DiscoverClient() {
   }, [identity, searchMentions]);
 
   // Arrived from the homepage audit form (?url=… or the saved session value): start straight away.
+  const autoStarted = useRef(false);
   useEffect(() => {
+    if (autoStarted.current) return; // React runs mount effects twice in development; audit only once
+    autoStarted.current = true;
     let incoming: string | null = null;
     try { incoming = new URLSearchParams(window.location.search).get("url"); } catch { /* ignore */ }
     if (!incoming) {
