@@ -5,6 +5,7 @@ import LegacyScripts from "@/components/LegacyScripts";
 import { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ldString } from "@/lib/site";
 import "./page.css";
+import "./home-dq.css";
 
 export const metadata: Metadata = {
   "title": "Effix Labs | Get Found Where Your Customers Search",
@@ -432,82 +433,63 @@ export default function Page() {
         {" "}
         {" "}
         <section className="section-padding" id="our-approach">
-          {" "}
           <div className="container">
-            {" "}
+            <span className="dq-eyebrow">{"Digital Discovery"}</span>
             <h2 className="section-heading-editorial">
               {"Digital Discovery starts with three questions."}
             </h2>
-            {" "}
             <p className="section-intro-text">
               {"Digital Discovery is the work of making a business easy to find and easy to trust at the moment someone searches. We begin by asking:"}
             </p>
-            {" "}
-            <div className="approach-grid">
-              {" "}
-              {" "}
-              <div className="approach-col">
-                {" "}
-                <div className="approach-num">
-                  {"01"}
+            <div className="dq" id="dqWrap">
+              <ol className="dq-list">
+              <li className="dq-item is-on" tabIndex={0}>
+                <span className="dq-num" aria-hidden="true">{"01"}</span>
+                <div>
+                  <h3 className="dq-q">{"Where do you show up today?"}</h3>
+                  <div className="dq-a-wrap"><p className="dq-a"><span>{"We look at what people actually see when they search for businesses like yours."}</span></p></div>
                 </div>
-                {" "}
-                <h3 className="approach-question-title">
-                  {"Where do you show up today?"}
-                </h3>
-                {" "}
-                <p className="approach-desc">
-                  {"We look at what people actually see when they search for businesses like yours."}
-                </p>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="approach-col">
-                {" "}
-                <div className="approach-num">
-                  {"02"}
+                <span className="dq-bar" aria-hidden="true"></span>
+              </li>
+              <li className="dq-item" tabIndex={0}>
+                <span className="dq-num" aria-hidden="true">{"02"}</span>
+                <div>
+                  <h3 className="dq-q">{"What are people asking?"}</h3>
+                  <div className="dq-a-wrap"><p className="dq-a"><span>{"We look at the questions your customers use to find, compare and choose."}</span></p></div>
                 </div>
-                {" "}
-                <h3 className="approach-question-title">
-                  {"What are people asking?"}
-                </h3>
-                {" "}
-                <p className="approach-desc">
-                  {"We look at the questions your customers use to find, compare and choose."}
-                </p>
-                {" "}
-              </div>
-              {" "}
-              {" "}
-              <div className="approach-col">
-                {" "}
-                <div className="approach-num">
-                  {"03"}
+                <span className="dq-bar" aria-hidden="true"></span>
+              </li>
+              <li className="dq-item" tabIndex={0}>
+                <span className="dq-num" aria-hidden="true">{"03"}</span>
+                <div>
+                  <h3 className="dq-q">{"What should change first?"}</h3>
+                  <div className="dq-a-wrap"><p className="dq-a"><span>{"We pick the few actions that matter most, instead of doing everything at once."}</span></p></div>
                 </div>
-                {" "}
-                <h3 className="approach-question-title">
-                  {"What should change first?"}
-                </h3>
-                {" "}
-                <p className="approach-desc">
-                  {"We pick the few actions that matter most, instead of doing everything at once."}
-                </p>
-                {" "}
+                <span className="dq-bar" aria-hidden="true"></span>
+              </li>
+              </ol>
+              <div className="dq-lens" aria-hidden="true">
+                <div className="dq-lens-top"><span><b id="dqStep"><bdi data-t={"01"}></bdi></b><bdi data-t={" / 03"}></bdi></span><span><bdi data-t={"Illustrative"}></bdi></span></div>
+                <div className="dq-scene s1 is-on">
+                  <div className="dq-card dq-row"><span className="dq-ch g"><bdi data-t={"G"}></bdi></span><span className="dq-row-t"><bdi data-t={"Google search"}></bdi><small><bdi data-t={"Your website and profile"}></bdi></small></span><span className="dq-status ok"><bdi data-t={"Visible"}></bdi></span></div>
+                  <div className="dq-card dq-row"><span className="dq-ch r"><bdi data-t={"r/"}></bdi></span><span className="dq-row-t"><bdi data-t={"Online communities"}></bdi><small><bdi data-t={"Reddit threads about your category"}></bdi></small></span><span className="dq-status mid"><bdi data-t={"Rarely"}></bdi></span></div>
+                  <div className="dq-card dq-row"><span className="dq-ch a"><bdi data-t={"✦"}></bdi></span><span className="dq-row-t"><bdi data-t={"AI answers"}></bdi><small><bdi data-t={"ChatGPT, Gemini, AI Overviews"}></bdi></small></span><span className="dq-status no"><bdi data-t={"Missing"}></bdi></span></div>
+                </div>
+                <div className="dq-scene s2">
+                  <div className="dq-bubble"><b><bdi data-t={"Who’s the best option near me?"}></bdi></b><em><bdi data-t={"Google"}></bdi></em></div>
+                  <div className="dq-bubble"><b><bdi data-t={"Is it worth the price?"}></bdi></b><em><bdi data-t={"Reddit"}></bdi></em></div>
+                  <div className="dq-bubble"><b><bdi data-t={"This one or that one, which is better?"}></bdi></b><em><bdi data-t={"ChatGPT"}></bdi></em></div>
+                  <div className="dq-bubble"><b><bdi data-t={"Can I trust them?"}></bdi></b><em><bdi data-t={"Reviews"}></bdi></em></div>
+                </div>
+                <div className="dq-scene s3">
+                  <div className="dq-card dq-task done"><span className="dq-tick"></span><span className="dq-task-t"><bdi data-t={"Fix the basics on your profile"}></bdi></span><span className="dq-pill hi"><bdi data-t={"High impact"}></bdi></span></div>
+                  <div className="dq-card dq-task done"><span className="dq-tick"></span><span className="dq-task-t"><bdi data-t={"Answer your top customer questions"}></bdi></span><span className="dq-pill hi"><bdi data-t={"High impact"}></bdi></span></div>
+                  <div className="dq-card dq-task"><span className="dq-tick"></span><span className="dq-task-t"><bdi data-t={"Earn mentions on trusted sites"}></bdi></span><span className="dq-pill next"><bdi data-t={"Next"}></bdi></span></div>
+                  <p className="dq-note"><bdi data-t={"Few actions, in the right order"}></bdi></p>
+                </div>
               </div>
-              {" "}
             </div>
-            {" "}
-            <div>
-              {" "}
-              <a href="/about" className="editorial-inline-link">
-                {"Explore Our Approach →"}
-              </a>
-              {" "}
-            </div>
-            {" "}
           </div>
-          {" "}
         </section>
         {" "}
         {" "}

@@ -25,3 +25,7 @@
 @media (prefers-reduced-motion: reduce) {
   .fx-reveal.fx-reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Decorative mockup text is stored in data-t attributes (kept out of the crawlable text)
+   and drawn by CSS. Global so it works on every page, including the homepage. */
+bdi[data-t]::before { content: attr(data-t); }

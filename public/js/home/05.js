@@ -34,7 +34,7 @@
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
   var sel = [
-    '#our-approach .section-heading-editorial', '#our-approach .section-intro-text', '#our-approach .approach-col',
+    '#our-approach .dq-eyebrow', '#our-approach .section-heading-editorial', '#our-approach .section-intro-text', '#our-approach .dq-item', '#our-approach .dq-lens',
     '.principles-panel-header', '.principles-col',
     '#faqs .section-heading-editorial', '#faqs .faq-item',
     '#final-cta .cta-heading', '#final-cta .cta-desc', '#final-cta .cta-actions-row'
@@ -51,4 +51,49 @@
     el.style.setProperty('--fx-d', (Math.min(sib, 5) * 0.1).toFixed(2) + 's');
     io.observe(el);
   });
+})();
+
+
+/* Digital Discovery: three questions cycle in turn; the lens card shows each one.
+   Hover, click, focus or arrow keys pick a question; autoplay resumes after a pause. */
+(function () {
+  var wrap = document.getElementById('dqWrap');
+  if (!wrap) return;
+  var items = Array.prototype.slice.call(wrap.querySelectorAll('.dq-item'));
+  var scenes = Array.prototype.slice.call(wrap.querySelectorAll('.dq-scene'));
+  var stepT = wrap.querySelector('#dqStep bdi');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(pointer: fine)').matches;
+  var DUR = 4500, cur = 0, timer = 0, visible = false, lastUser = 0;
+  wrap.style.setProperty('--dq-dur', DUR + 'ms');
+  function show(i) {
+    cur = (i + items.length) % items.length;
+    items.forEach(function (li, k) { li.classList.toggle('is-on', k === cur); li.setAttribute('aria-current', k === cur ? 'true' : 'false'); });
+    scenes.forEach(function (sc, k) { sc.classList.toggle('is-on', k === cur); });
+    if (stepT) stepT.setAttribute('data-t', '0' + (cur + 1));
+    var bar = items[cur].querySelector('.dq-bar');
+    if (bar) { bar.style.display = 'none'; void bar.offsetWidth; bar.style.display = ''; }
+  }
+  function schedule() {
+    clearTimeout(timer);
+    if (reduce || !visible) { wrap.classList.remove('is-auto'); return; }
+    var idle = performance.now() - lastUser;
+    if (idle < 8000) { wrap.classList.remove('is-auto'); timer = setTimeout(schedule, 8000 - idle); return; }
+    wrap.classList.add('is-auto');
+    timer = setTimeout(function () { show(cur + 1); schedule(); }, DUR);
+  }
+  function user(i) { lastUser = performance.now(); show(i); schedule(); }
+  items.forEach(function (li, i) {
+    li.addEventListener('click', function () { user(i); });
+    li.addEventListener('focus', function () { if (i !== cur) user(i); });
+    if (fine) li.addEventListener('pointerenter', function () { if (i !== cur) user(i); });
+    li.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+    });
+  });
+  show(0);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; schedule(); }, { threshold: 0.35 }).observe(wrap);
+  }
 })();
