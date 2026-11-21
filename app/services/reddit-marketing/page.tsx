@@ -467,8 +467,6 @@ export default function Page() {
                   <tr><td>{"Ignoring subreddit rules"}</td><td data-label="What happens">{"Posts removed and accounts banned from that community"}</td><td data-label="Risk"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
                   <tr><td>{"Same message pasted across many subreddits"}</td><td data-label="What happens">{"Flagged as spam by moderators and filters"}</td><td data-label="Risk"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
                   <tr><td>{"Not replying to criticism"}</td><td data-label="What happens">{"Negative threads rank in Google with no brand response"}</td><td data-label="Risk"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Joining only to promote"}</td><td data-label="What happens">{"Low-karma accounts get filtered and ignored"}</td><td data-label="Risk"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
-                  <tr><td>{"Measuring only upvotes"}</td><td data-label="What happens">{"No idea whether Reddit drives traffic, leads or mentions"}</td><td data-label="Risk"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -596,7 +594,6 @@ export default function Page() {
                   <tr><th scope="row">{"Votes"}</th><td data-label="Shortcut tactics">{"Bought upvotes, vote rings"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Earned through useful contributions only"}</td></tr>
                   <tr><th scope="row">{"Content"}</th><td data-label="Shortcut tactics">{"Ads disguised as advice"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Genuinely helpful answers and posts"}</td></tr>
                   <tr><th scope="row">{"Rules"}</th><td data-label="Shortcut tactics">{"Ignored until there’s a ban"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Checked for every community, every time"}</td></tr>
-                  <tr><th scope="row">{"Risk"}</th><td data-label="Shortcut tactics">{"Bans and public backlash"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Compliant with "}<a className="rm-ext" href="https://redditinc.com/policies/reddit-rules" target="_blank" rel="noopener noreferrer">{"Reddit’s rules"}</a>{" by design"}</td></tr>
                   <tr><th scope="row">{"Approval"}</th><td data-label="Shortcut tactics">{"You rarely see what’s posted"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"You approve the strategy and key messages"}</td></tr>
                   <tr><th scope="row">{"Reporting"}</th><td data-label="Shortcut tactics">{"Upvotes and impressions"}</td><td className="gx-col-us" data-label="With EFFIX Labs">{"Mentions, sentiment, traffic and AI citations"}</td></tr>
                 </tbody>

@@ -397,10 +397,6 @@ export default function Page() {
                   <tr><td>{"Incomplete services and products"}</td><td data-label="What it costs you">{"Google can’t match you to specific searches"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
                   <tr><td>{"Inconsistent name, address or phone across the web"}</td><td data-label="What it costs you">{"Weakens Google’s confidence in your details"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
                   <tr><td>{"Few reviews, or reviews left unanswered"}</td><td data-label="What it costs you">{"Lower prominence and lower trust"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Outdated hours or holiday hours"}</td><td data-label="What it costs you">{"Lost visits and frustrated customers"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-med"><i aria-hidden="true"><bdi data-t={"●"}></bdi></i>{"Medium"}</span></td></tr>
-                  <tr><td>{"Old, low-quality or missing photos"}</td><td data-label="What it costs you">{"Fewer clicks than competitors"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
-                  <tr><td>{"No updates for months"}</td><td data-label="What it costs you">{"The profile looks inactive"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
-                  <tr><td>{"No tracking"}</td><td data-label="What it costs you">{"You can’t tell what’s working"}</td><td data-label="Typical impact"><span className="gx-pill gx-pill-low"><i aria-hidden="true"><bdi data-t={"▼"}></bdi></i>{"Lower"}</span></td></tr>
                 </tbody>
               </table>
             </div>

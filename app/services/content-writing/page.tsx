@@ -423,9 +423,6 @@ export default function Page() {
                   <tr><td>{"Product & category descriptions"}</td><td data-label="Best for">{"Ecommerce visibility and conversion"}</td><td data-label="Typical length">{"100–400 words each"}</td></tr>
                   <tr><td>{"Pillar pages & long-form guides"}</td><td data-label="Best for">{"Owning a topic, earning links, AI citations"}</td><td data-label="Typical length">{"2,500–5,000 words"}</td></tr>
                   <tr><td>{"Case studies"}</td><td data-label="Best for">{"Proof for buyers in the decision stage"}</td><td data-label="Typical length">{"800–1,500 words"}</td></tr>
-                  <tr><td>{"Whitepapers & ebooks"}</td><td data-label="Best for">{"B2B lead generation and thought leadership"}</td><td data-label="Typical length">{"3,000–8,000 words"}</td></tr>
-                  <tr><td>{"Newsletters & email copy"}</td><td data-label="Best for">{"Nurturing leads and repeat customers"}</td><td data-label="Typical length">{"300–800 words"}</td></tr>
-                  <tr><td>{"LinkedIn & social content"}</td><td data-label="Best for">{"Founder and brand visibility"}</td><td data-label="Typical length">{"150–600 words per post"}</td></tr>
                 </tbody>
               </table>
             </div>
