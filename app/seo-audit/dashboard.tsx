@@ -296,7 +296,7 @@ export default function Dashboard({ report, engineId, onNewAudit, busy }: { repo
     if (next.trim()) onNewAudit(next.trim());
   }
   function share() {
-    const url = `${window.location.origin}/discover?url=${encodeURIComponent(report.host)}`;
+    const url = `${window.location.origin}/seo-audit?url=${encodeURIComponent(report.host)}`;
     if (navigator.share) navigator.share({ title: `SEO audit for ${report.host}`, url }).catch(() => {});
     else navigator.clipboard?.writeText(url).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); });
   }
