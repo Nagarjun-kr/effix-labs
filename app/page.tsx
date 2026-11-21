@@ -1815,39 +1815,6 @@ export default function Page() {
         {" "}
         {" "}
         {" "}
-        <section className="section-padding section-surface" id="faqs">
-          {" "}
-          <div className="container">
-            {" "}
-            <div className="section-eyebrow" style={{ textAlign: "center" }}>
-              {"FAQs"}
-            </div>
-            {" "}
-            <h2 className="section-heading-editorial" style={{ textAlign: "center", marginBottom: "48px" }}>
-              {"Questions people ask first "}
-            </h2>
-            {" "}
-            <div className="faq-container">
-              {HOME_FAQS.map((it, i) => (
-                <div className="faq-item" key={i}>
-                  <button className="faq-button" type="button" aria-expanded="false" aria-controls={`faq-a${i + 1}`} id={`faq-q${i + 1}`} data-onclick="toggleFaq(this)">
-                    <span>{it.q}</span>
-                    <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </button>
-                  <div className="faq-answer-panel" id={`faq-a${i + 1}`} role="region" aria-labelledby={`faq-q${i + 1}`}>
-                    <div className="faq-answer-content">
-                      {it.a.map((p, k) => (typeof p === "string" ? <span key={k}>{p}</span> : <a key={k} href={p.href}>{p.text}</a>))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {" "}
-          </div>
-          {" "}
-        </section>
-        {" "}
-        {" "}
         <section className="section-padding" id="final-cta">
           {" "}
           <div className="container">
@@ -1883,6 +1850,40 @@ export default function Page() {
           </div>
           {" "}
         </section>
+        <section className="section-padding section-surface" id="faqs">
+          {" "}
+          <div className="container">
+            {" "}
+            <div className="section-eyebrow" style={{ textAlign: "center" }}>
+              {"FAQs"}
+            </div>
+            {" "}
+            <h2 className="section-heading-editorial" style={{ textAlign: "center", marginBottom: "48px" }}>
+              {"Questions people ask first "}
+            </h2>
+            {" "}
+            <div className="faq-container">
+              {HOME_FAQS.map((it, i) => (
+                <div className="faq-item" key={i}>
+                  <button className="faq-button" type="button" aria-expanded="false" aria-controls={`faq-a${i + 1}`} id={`faq-q${i + 1}`} data-onclick="toggleFaq(this)">
+                    <span>{it.q}</span>
+                    <svg className="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                  <div className="faq-answer-panel" id={`faq-a${i + 1}`} role="region" aria-labelledby={`faq-q${i + 1}`}>
+                    <div className="faq-answer-content">
+                      {it.a.map((p, k) => (typeof p === "string" ? <span key={k}>{p}</span> : <a key={k} href={p.href}>{p.text}</a>))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {" "}
+          </div>
+          {" "}
+        </section>
+        {" "}
+        {" "}
+
         {" "}
       </main>
       {" "}

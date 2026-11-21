@@ -4224,3 +4224,44 @@
     .service-artwork-card:is([data-index="0"], [data-index="2"], [data-index="3"]) .service-explore-pill {
       box-shadow: 0 4px 18px rgba(var(--card-edge-rgb), 0.6), 0 8px 24px rgba(0, 0, 0, 0.45);
     }
+
+/* ==========================================================================
+   Principles: a pale purple panel fills the column you hover (or focus)
+   ========================================================================== */
+.principles-col { position: relative; isolation: isolate; }
+.principles-col::before {
+  content: ""; position: absolute; z-index: -1; inset: -26px 18px -26px 18px; border-radius: 24px;
+  background: linear-gradient(180deg, rgba(167, 139, 250, 0.16), rgba(167, 139, 250, 0.07));
+  box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.22);
+  opacity: 0; transform: scale(0.98); transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.principles-col:first-child::before { left: -26px; }
+.principles-col:last-child::before { right: -26px; }
+.principles-col:hover::before, .principles-col:focus-within::before { opacity: 1; transform: none; }
+.principles-col-num, .principles-col-title { transition: color 0.3s ease; }
+.principles-col:hover .principles-col-num { color: #7c5cf0; }
+.principles-col:hover .principles-col-title { color: #3b2a8a; -webkit-text-stroke-color: #3b2a8a; }
+@media (max-width: 900px) {
+  .principles-col::before { inset: -12px -14px; }
+  .principles-col:first-child::before, .principles-col:last-child::before { left: -14px; right: -14px; }
+}
+
+/* ==========================================================================
+   FAQ: wider list (less empty space at the sides)
+   ========================================================================== */
+#faqs .faq-container { max-width: 1160px; }
+
+/* ==========================================================================
+   Footer: dark
+   ========================================================================== */
+.site-footer { background: #0f0f10; border-top: 0; color: #f4f4f5; }
+.site-footer .brand-logo { color: #ffffff; }
+.site-footer .brand-logo * { color: #ffffff; }
+.site-footer .footer-tagline { color: #ffffff; -webkit-text-stroke-color: #ffffff; }
+.site-footer .footer-desc { color: rgba(244, 244, 245, 0.62); }
+.site-footer .footer-col-title { color: rgba(244, 244, 245, 0.45); }
+.site-footer .footer-nav-list a { color: rgba(244, 244, 245, 0.72); }
+.site-footer .footer-nav-list a:hover { color: #ffffff; }
+.site-footer .footer-bottom-row { border-top-color: rgba(255, 255, 255, 0.12); color: rgba(244, 244, 245, 0.5); }
+.site-footer .footer-bottom-row a { color: rgba(244, 244, 245, 0.62); }
+.site-footer .footer-bottom-row a:hover { color: #ffffff; }
