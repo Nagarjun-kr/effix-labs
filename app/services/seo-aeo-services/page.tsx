@@ -9,14 +9,14 @@ import "../reddit-marketing/rm.css";
 import "./sa.css";
 
 export const metadata: Metadata = {
-  "title": "SEO & AEO Services in India | EFFIX Labs",
-  "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
+  "title": "SEO, AEO & GEO Agency in Bangalore & India | EFFIX Labs",
+  "description": "Rank on Google and get cited in ChatGPT, Perplexity & AI Overviews. EFFIX Labs provides technical SEO, on-page, link building & AEO/GEO in Bangalore.",
   "alternates": {
     "canonical": "https://effix.co.in/services/seo-aeo-services"
   },
   "openGraph": {
-    "title": "SEO & AEO Services in India | EFFIX Labs",
-    "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
+    "title": "SEO, AEO & GEO Agency in Bangalore & India | EFFIX Labs",
+    "description": "Rank on Google and get cited in ChatGPT, Perplexity & AI Overviews. EFFIX Labs provides technical SEO, on-page, link building & AEO/GEO in Bangalore.",
     "url": "https://effix.co.in/services/seo-aeo-services",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "SEO & AEO Services in India | EFFIX Labs",
-    "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
+    "title": "SEO, AEO & GEO Agency in Bangalore & India | EFFIX Labs",
+    "description": "Rank on Google and get cited in ChatGPT, Perplexity & AI Overviews. EFFIX Labs provides technical SEO, on-page, link building & AEO/GEO in Bangalore.",
     "images": [
       "https://effix.co.in/images/services/service-03-ai-search.jpg"
     ]
@@ -46,7 +46,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "What are SEO & AEO services?",
     "a": [
-      "SEO & AEO services combine search engine optimisation, which helps your pages rank in Google and Bing, with answer engine optimisation, which helps your business get quoted and recommended in AI answers from Google AI Overviews, ChatGPT, Perplexity and Gemini. The work covers technical fixes, keyword and question research, answer-first content, schema markup, authority building and tracking."
+      "SEO & AEO services combine search engine optimization, which helps your pages rank in Google and Bing, with answer engine optimization, which helps your business get quoted and recommended in AI answers from Google AI Overviews, ChatGPT, Perplexity and Gemini. The work covers technical fixes, keyword and question research, answer-first content, schema markup, authority building and tracking."
     ]
   },
   {
@@ -64,7 +64,12 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer SEO & AEO services in Bangalore?",
     "a": [
-      "Yes. EFFIX Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad."
+      "Yes. EFFIX Labs works with SaaS, fintech, D2C, AI and B2B companies in Bengaluru (Bangalore), and we can meet in person where needed. We also work with businesses across India and abroad. If you need Google Maps visibility for a physical location, see our ",
+      {
+        "text": "Google Business Profile optimization services",
+        "href": "/services/google-business-profile"
+      },
+      "."
     ]
   },
   {
@@ -90,18 +95,46 @@ const FAQS: FaqItem[] = [
     "a": [
       "Cost depends on the size of your website, how competitive your market is and how much content and technical work is needed. We share a clear monthly scope and quote after reviewing your site and goals."
     ]
+  },
+  {
+    "q": "What is the difference between AEO and GEO (Generative Engine Optimization)?",
+    "a": [
+      "AEO (answer engine optimization) focuses on becoming the direct answer in featured snippets, voice assistants and Google AI Overviews. GEO (generative engine optimization) focuses on how generative AI tools like ChatGPT, Perplexity and Gemini describe, compare and recommend your brand in longer answers. Both rely on the same work: clear entity information, structured data, citable facts and trusted mentions, so we run them as one program."
+    ]
+  },
+  {
+    "q": "Do you offer Shopify, WordPress, Webflow, and Next.js SEO?",
+    "a": [
+      "Yes. We work on Shopify and WooCommerce stores, WordPress and Webflow sites, and JavaScript frameworks like Next.js, where we check that important content is rendered in the HTML that search engines and AI crawlers read. If you need a new build or a redesign, our ",
+      {
+        "text": "website design & development",
+        "href": "/services/website-design-development"
+      },
+      " team can help."
+    ]
+  },
+  {
+    "q": "Do you handle link building and off-page SEO safely?",
+    "a": [
+      "Yes. We earn links through useful content, digital PR, relevant directories and genuine community mentions. We never buy links, use private blog networks or join link schemes, which Google’s ",
+      {
+        "text": "spam policies",
+        "href": "https://developers.google.com/search/docs/essentials/spam-policies"
+      },
+      " prohibit. Every link we pursue has to make sense for real readers."
+    ]
   }
 ];
 
 const SERVICE_LD = {
   "@type": "Service",
   "@id": "https://effix.co.in/services/seo-aeo-services#service",
-  "name": "SEO & AEO Services",
+  "name": "SEO, AEO & GEO Services",
   "alternateName": [
     "SEO and AEO services",
-    "Answer engine optimisation services"
+    "Answer engine optimization services"
   ],
-  "serviceType": "Search engine optimisation and answer engine optimisation",
+  "serviceType": "Search engine optimization and answer engine optimization",
   "provider": {
     "@id": ORG_ID
   },
@@ -124,7 +157,7 @@ const SERVICE_LD = {
       "name": "Worldwide"
     }
   ],
-  "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru): technical SEO and AI crawlability, keyword and question research, answer-first content optimisation, schema markup, entity and authority building, and rank and AI visibility tracking across Google, AI Overviews, ChatGPT, Perplexity, Gemini and Bing.",
+  "description": "SEO, AEO and GEO services for businesses in Bangalore (Bengaluru) and across India: technical SEO and AI crawlability, keyword and search-intent mapping, on-page SEO, off-page SEO and link building, AEO and generative engine optimization, schema markup, ecommerce, SaaS and B2B SEO, and SEO audits with rank and AI citation tracking.",
   "url": "https://effix.co.in/services/seo-aeo-services"
 };
 
@@ -146,7 +179,7 @@ const BREADCRUMB_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "SEO & AEO Services",
+      "name": "SEO, AEO & GEO Services",
       "item": "https://effix.co.in/services/seo-aeo-services"
     }
   ]
@@ -195,11 +228,11 @@ export default function Page() {
           <div className="gx-wrap gx-hero-inner">
             <span className="gx-kicker sa-kicker"><span className="gx-kicker-dot sa-dot" aria-hidden="true"></span>{"Service 03 · India & Bangalore"}</span>
             <h1 className="gx-hero-title">
-              {"SEO & "}<em>{"AEO"}</em>{" Services"}
+              {"SEO, AEO & GEO Services in Bangalore "}<em>{"for Google & AI Search"}</em>
             </h1>
             <p className="gx-hero-sub">{"Rank on Google. Get cited in AI answers."}</p>
             <p className="gx-hero-lede">
-              {"People now search in two places: classic Google results and AI answers from Google’s AI Overviews, ChatGPT, Perplexity and Gemini. EFFIX Labs provides SEO & AEO services that make your business easy to find, easy to understand and easy to recommend in both, for brands across India and in Bangalore."}
+              {"People now search in two places: classic Google results and AI answers from Google’s AI Overviews, ChatGPT, Perplexity and Gemini. EFFIX Labs provides SEO, AEO and GEO services that make your business easy to find, easy to understand and easy to recommend in both, for brands across India and in Bangalore."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#lanes" className="gx-btn gx-btn-ghost">{"See how it works"}</a>
@@ -230,7 +263,7 @@ export default function Page() {
               <div className="sa-b-copy">
                 <span className="sa-b-kicker">{"SEO + AEO"}</span>
                 <p className="sa-b-title"><span className="sa-b-light">{"Rank on Google."}</span><br /><strong>{"GET CITED BY AI."}</strong></p>
-                <p className="sa-b-sub"><b>{"One strategy, two kinds of search."}</b>{" We optimise your site so search engines rank it and AI tools trust it enough to recommend it."}</p>
+                <p className="sa-b-sub"><b>{"One strategy, two kinds of search."}</b>{" We optimize your site so search engines rank it and AI tools trust it enough to recommend it."}</p>
                 <a href="#lanes" className="sa-b-btn">{"See how it works"}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg></a>
               </div>
             </div>
@@ -242,8 +275,8 @@ export default function Page() {
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label sa-label">{"SEO vs AEO"}</span>
-              <h2 className="gx-h2">{"What are SEO & AEO services, "}<em>{"and why you need both"}</em></h2>
-              <p className="gx-lead">{"SEO (search engine optimisation) helps your pages rank in search results. AEO (answer engine optimisation) helps your business become the answer that AI tools and featured snippets quote. Same foundations, different finish line."}</p>
+              <h2 className="gx-h2">{"What are SEO, AEO "}<em>{"& GEO services?"}</em></h2>
+              <p className="gx-lead">{"SEO (search engine optimization) helps your pages rank in search results. AEO (answer engine optimization) helps your business become the answer that AI tools and featured snippets quote. GEO (generative engine optimization) shapes how generative AI tools describe and recommend you. Same foundations, different finish lines."}</p>
             </div>
             <div className="sa-lanes">
               <article className="sa-lane">
@@ -298,15 +331,39 @@ export default function Page() {
           <div className="gx-wrap">
             <div className="gx-head gx-head-left">
               <span className="gx-label sa-label">{"What’s included"}</span>
-              <h2 className="gx-h2">{"Our SEO & AEO "}<em>{"services"}</em></h2>
+              <h2 className="gx-h2">{"Our SEO, AEO & GEO "}<em>{"services"}</em></h2>
             </div>
-            <div className="sa-services">
-              <article className="sa-svc"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span><h3>{"Technical SEO & AI crawlability"}</h3><p>{"Site speed, indexing, crawl errors, mobile experience and clean HTML, plus checking that search and AI crawlers can reach your key pages. See "}<a className="rm-ext" href="https://developers.google.com/search/docs/crawling-indexing/robots/intro" target="_blank" rel="noopener noreferrer">{"robots.txt"}</a>{" and "}<a className="rm-ext" href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener noreferrer">{"OpenAI’s crawlers"}</a>{"."}</p></article>
-              <article className="sa-svc"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path><path d="M9.5 9.2a1.8 1.8 0 1 1 2.3 1.7c-.5.2-.8.6-.8 1.1"></path></svg></span><h3>{"Keyword & question research"}</h3><p>{"The keywords people type and the questions they ask AI tools and “People also ask”, mapped to the right page."}</p></article>
-              <article className="sa-svc"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 6h16M4 12h10M4 18h7"></path></svg></span><h3>{"Answer-first content optimisation"}</h3><p>{"Pages that lead with a direct answer, then the detail: headings, lists, tables and FAQs that both readers and AI can use. Written with our "}<a href="/services/content-writing">{"content writing"}</a>{" team."}</p></article>
-              <article className="sa-svc"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4L3 12l5 8M16 4l5 8-5 8"></path></svg></span><h3>{"Schema & structured data"}</h3><p>{"Organization, LocalBusiness, Service, FAQ, Product and Article markup so search engines understand your pages. See Google’s "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer">{"structured data guide"}</a>{"."}</p></article>
-              <article className="sa-svc"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="3"></circle><circle cx="5" cy="18" r="2.5"></circle><circle cx="19" cy="18" r="2.5"></circle><path d="M10.5 9.5L6.5 16M13.5 9.5l4 6.5M7.5 18h9"></path></svg></span><h3>{"Entity & authority building"}</h3><p>{"Consistent brand details across your site, profiles and directories, plus genuine mentions on trusted sites, "}<a href="/services/google-business-profile">{"Google Business Profile"}</a>{" and "}<a href="/services/reddit-marketing">{"Reddit"}</a>{"."}</p></article>
-              <article className="sa-svc"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16"></path><path d="M7 16v-4M12 16V8M17 16V5"></path></svg></span><h3>{"Rank & AI visibility tracking"}</h3><p>{"Monthly reporting on rankings, clicks, AI citations and brand mentions, using "}<a className="rm-ext" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">{"Google Search Console"}</a>{" and prompt tracking across AI tools."}</p></article>
+            <ol className="sa-services">
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"01"}</span></div><h3>{"Technical SEO & AI crawlability"}</h3><p>{"Crawlability, indexing, site architecture, Core Web Vitals, robots.txt and sitemap health, and JavaScript rendering, plus checking that search and AI crawlers can reach your key pages. See "}<a className="rm-ext" target="_blank" rel="noopener noreferrer" href="https://developers.google.com/search/docs/crawling-indexing/robots/intro">{"robots.txt"}</a>{" and "}<a className="rm-ext" target="_blank" rel="noopener noreferrer" href="https://platform.openai.com/docs/bots">{"OpenAI’s crawlers"}</a>{"."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4-4"></path><path d="M9.5 9.2a1.8 1.8 0 1 1 2.3 1.7c-.5.2-.8.6-.8 1.1"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"02"}</span></div><h3>{"Keyword, search intent & question mapping"}</h3><p>{"Commercial, transactional and informational keywords, plus the real questions buyers ask in “People also ask” and AI assistants, each mapped to one page so your pages never compete with each other."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"03"}</span></div><h3>{"On-page SEO & answer-first content optimization"}</h3><p>{"Title and H1 alignment, internal linking, clear comparison tables and direct-answer sections that readers and AI tools can use. New pages are written with our "}<a href="/services/content-writing">{"SEO content writing"}</a>{" team."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"04"}</span></div><h3>{"Off-page SEO, link building & digital PR"}</h3><p>{"Relevant editorial links, unlinked brand mentions turned into links, authoritative directory citations and genuine community trust signals, including "}<a href="/services/reddit-marketing">{"Reddit marketing"}</a>{"."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"05"}</span></div><h3>{"AEO & GEO (generative engine optimization)"}</h3><p>{"Clear entity information, structured data and citable facts, so Google AI Overviews, ChatGPT, Perplexity, Gemini and Copilot summarise and recommend your brand accurately."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M8 4L3 12l5 8M16 4l5 8-5 8"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"06"}</span></div><h3>{"Schema markup & entity optimization"}</h3><p>{"Organization, Service, Product, Article, BreadcrumbList and FAQPage JSON-LD, validated against Google’s "}<a className="rm-ext" target="_blank" rel="noopener noreferrer" href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data">{"structured data guidelines"}</a>{"."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"07"}</span></div><h3>{"Ecommerce, SaaS & B2B SEO"}</h3><p>{"Shopify and WooCommerce collection and product SEO, SaaS comparison and alternatives pages, high-ticket B2B service funnels, and SEO-safe site migrations."}</p></li>
+              <li className="sa-svc"><div className="sa-svc-top"><span className="sa-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 20h16"></path><path d="M7 16v-4M12 16V8M17 16V5"></path></svg></span><span className="sa-svc-n" aria-hidden="true">{"08"}</span></div><h3>{"SEO audits, rank & AI citation tracking"}</h3><p>{"Transparent monthly reporting from "}<a className="rm-ext" target="_blank" rel="noopener noreferrer" href="https://search.google.com/search-console/about">{"Google Search Console"}</a>{", GA4 and crawl audits, plus prompt-level AI visibility tracking for your target queries."}</p></li>
+            </ol>
+          </div>
+        </section>
+
+        {/* ================= BY BUSINESS MODEL ================= */}
+        <section className="gx-section gx-tint" id="business-models">
+          <div className="gx-wrap">
+            <div className="gx-head">
+              <span className="gx-label sa-label">{"By business model"}</span>
+              <h2 className="gx-h2">{"SEO & AEO focus "}<em>{"by business model"}</em></h2>
+              <p className="gx-lead">{"The same building blocks, weighted differently for how you sell."}</p>
+            </div>
+            <div className="gx-table-wrap sa-table-wrap" role="region" aria-label="SEO and AEO focus by business model" tabIndex={0}>
+              <table className="gx-table sa-table">
+                <thead><tr><th scope="col">{"Business type"}</th><th scope="col">{"Primary SEO focus"}</th><th scope="col">{"AEO / GEO focus"}</th><th scope="col">{"Key KPIs"}</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">{"SaaS & tech startups"}</th><td>{"Comparison, alternatives and integration pages; technical SEO for JavaScript sites"}</td><td>{"Being named in “best tool for…” answers; clear product, pricing and feature facts"}</td><td>{"Organic sign-ups and demos, AI referral traffic, citations"}</td></tr>
+                  <tr><th scope="row">{"Ecommerce & D2C (Shopify / WooCommerce)"}</th><td>{"Collection and product page SEO, site structure, Product schema"}</td><td>{"Accurate product specs, prices and reviews that AI tools can quote"}</td><td>{"Organic revenue, product-page clicks, rich result coverage"}</td></tr>
+                  <tr><th scope="row">{"B2B & professional services"}</th><td>{"High-intent service pages, case-study content, authority links"}</td><td>{"Appearing when buyers ask AI tools for vendor shortlists"}</td><td>{"Qualified leads, branded search growth, citations"}</td></tr>
+                  <tr><th scope="row">{"Multi-location & scaling brands"}</th><td>{"Scalable location and service page structure, internal linking, SEO-safe migrations"}</td><td>{"Consistent entity details across every location, profile and directory"}</td><td>{"Visibility by market, organic leads, crawl health"}</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -334,20 +391,21 @@ export default function Page() {
           <div className="gx-wrap gx-split">
             <div>
               <span className="gx-label sa-label">{"Local focus · Bangalore"}</span>
-              <h2 className="gx-h2">{"SEO & AEO services in "}<em>{"Bangalore"}</em></h2>
-              <p className="gx-p">{"Bangalore (Bengaluru) is one of India’s most competitive search markets. Startups, SaaS companies, clinics, real estate firms and D2C brands all compete for the same searches, and increasingly for the same AI recommendations."}</p>
-              <p className="gx-p">{"We help Bangalore businesses rank for local and national searches, appear in “near me” and map results, and get named when buyers ask AI tools for recommendations in the city."}</p>
+              <h2 className="gx-h2">{"SEO, AEO & GEO services in "}<em>{"Bangalore"}</em></h2>
+              <p className="gx-p">{"Bengaluru (Bangalore) is home to many of India’s SaaS, fintech, D2C, AI and B2B companies, and most of them sell across India or globally from day one. Their real competition isn’t the business down the road. It’s well-funded rivals ranking for the same national keywords and appearing in the same AI answers."}</p>
+              <p className="gx-p">{"We help Bangalore brands win those national and global searches, from category and comparison keywords to the questions buyers ask ChatGPT, Perplexity and Gemini, with technical SEO, content and authority work that compounds over time."}</p>
+              <p className="sa-callout">{"Need Google Maps & Map Pack visibility for physical locations? See our "}<a href="/services/google-business-profile">{"Google Business Profile Optimization Services"}</a>{"."}</p>
             </div>
             <div className="gx-blr">
               <div className="gx-blr-card">
                 <span className="gx-label sa-label">{"Bangalore businesses we help"}</span>
                 <ul className="gx-blr-areas sa-areas" aria-label="Bangalore industries">
-                  <li>{"SaaS"}</li><li>{"Fintech"}</li><li>{"D2C brands"}</li><li>{"AI startups"}</li><li>{"Clinics"}</li><li>{"Real estate"}</li><li>{"Edtech"}</li><li>{"Restaurants"}</li><li>{"Professional services"}</li><li>{"…and more"}</li>
+                  <li>{"SaaS"}</li><li>{"Fintech"}</li><li>{"D2C brands"}</li><li>{"AI startups"}</li><li>{"Edtech"}</li><li>{"Developer tools"}</li><li>{"B2B services"}</li><li>{"…and more"}</li>
                 </ul>
               </div>
               <ul className="gx-blr-points">
-                <li><b>{"Local + national"}</b><span>{"Rank in Koramangala, Whitefield and HSR, and across India."}</span></li>
-                <li><b>{"Local AI recommendations"}</b><span>{"Clear entity details so AI tools recommend you for city searches."}</span></li>
+                <li><b>{"National + global reach"}</b><span>{"Rank across India and in the markets you sell to, not just one city."}</span></li>
+                <li><b>{"Accurate AI recommendations"}</b><span>{"Clear entity details so AI tools describe and recommend you correctly."}</span></li>
               </ul>
             </div>
           </div>
@@ -358,7 +416,7 @@ export default function Page() {
           <div className="gx-wrap gx-faq-grid">
             <div className="gx-faq-intro">
               <span className="gx-label sa-label">{"FAQ"}</span>
-              <h2 className="gx-h2">{"Questions about SEO & AEO "}<em>{"services"}</em></h2>
+              <h2 className="gx-h2">{"Questions about SEO, AEO & GEO "}<em>{"services"}</em></h2>
               <p className="gx-p">{"Can’t find your answer? Use the form below and we’ll reply within one business day."}</p>
             </div>
             <div className="faq-accordion-wrap gx-faq">
@@ -372,7 +430,7 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label sa-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimization"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/content-writing"><span aria-hidden="true">{"04"}</span>{"Content Writing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
@@ -497,10 +555,9 @@ export default function Page() {
                   </label>
                   {" "}
                   <select className="form-select" id="locationCount" name="need" required>
-                    <option value="SEO and AEO">{"SEO & AEO together"}</option>
+                    <option value="SEO, AEO and GEO">{"SEO, AEO & GEO together"}</option>
                     <option value="SEO only">{"SEO (Google rankings)"}</option>
                     <option value="AEO only">{"AEO (AI answers & citations)"}</option>
-                    <option value="Local SEO Bangalore">{"Local SEO in Bangalore"}</option>
                     <option value="Not sure yet">{"Not sure yet"}</option>
                   </select>
                   {" "}

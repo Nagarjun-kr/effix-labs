@@ -9,14 +9,14 @@ import "../reddit-marketing/rm.css";
 import "./cw.css";
 
 export const metadata: Metadata = {
-  "title": "Content Writing Services in India | EFFIX Labs",
-  "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
+  "title": "SEO Content Writing Services Bengaluru & India | EFFIX Labs",
+  "description": "Human-written, SEO-ready blog posts, website copy, service pages & case studies for startups and brands in Bengaluru & India. Request a content quote.",
   "alternates": {
     "canonical": "https://effix.co.in/services/content-writing"
   },
   "openGraph": {
-    "title": "Content Writing Services in India | EFFIX Labs",
-    "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
+    "title": "SEO Content Writing Services Bengaluru & India | EFFIX Labs",
+    "description": "Human-written, SEO-ready blog posts, website copy, service pages & case studies for startups and brands in Bengaluru & India. Request a content quote.",
     "url": "https://effix.co.in/services/content-writing",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Content Writing Services in India | EFFIX Labs",
-    "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
+    "title": "SEO Content Writing Services Bengaluru & India | EFFIX Labs",
+    "description": "Human-written, SEO-ready blog posts, website copy, service pages & case studies for startups and brands in Bengaluru & India. Request a content quote.",
     "images": [
       "https://effix.co.in/images/services/service-04-blog-seo.jpg"
     ]
@@ -58,7 +58,12 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer content writing services in Bengaluru?",
     "a": [
-      "Yes. EFFIX Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. We also write location and service pages that support local search visibility."
+      "Yes. EFFIX Labs works with startups, SaaS companies, fintechs, D2C brands and local businesses in Bengaluru (Bangalore), and we can meet in person where needed. For businesses with physical locations, we also write location pages that support your ",
+      {
+        "text": "Google Business Profile",
+        "href": "/services/google-business-profile"
+      },
+      "."
     ]
   },
   {
@@ -112,7 +117,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Will your content help my website rank on Google?",
     "a": [
-      "Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimised content is the foundation of organic growth.",
+      "Our content is built to rank, with keyword research, search intent and on-page SEO in every piece. No one can guarantee rankings, because Google controls them, but helpful, well-optimized content is the foundation of organic growth.",
       " We measure progress in ",
       {
         "text": "Google Search Console",
@@ -138,7 +143,7 @@ const FAQS: FaqItem[] = [
 const SERVICE_LD = {
   "@type": "Service",
   "@id": "https://effix.co.in/services/content-writing#service",
-  "name": "Content Writing Services",
+  "name": "SEO Content Writing & Copywriting Services",
   "serviceType": "SEO content writing, website copywriting and editorial services",
   "provider": {
     "@id": ORG_ID
@@ -162,7 +167,7 @@ const SERVICE_LD = {
       "name": "Worldwide"
     }
   ],
-  "description": "Content writing services for brands across India and Bengaluru: SEO blog writing, website copywriting, service and landing pages, product descriptions, pillar pages, case studies, newsletters, LinkedIn content, content refreshes, editing and on-page SEO.",
+  "description": "Human-written SEO content writing and copywriting for startups and brands in Bengaluru and across India: SEO blog posts, website copy, service and landing pages, product descriptions, pillar pages, case studies, newsletters, LinkedIn content, content refreshes, editing and on-page SEO.",
   "url": "https://effix.co.in/services/content-writing"
 };
 
@@ -184,7 +189,7 @@ const BREADCRUMB_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Content Writing Services",
+      "name": "SEO Content Writing & Copywriting Services",
       "item": "https://effix.co.in/services/content-writing"
     }
   ]
@@ -233,7 +238,7 @@ export default function Page() {
           <div className="gx-wrap gx-hero-inner">
             <span className="gx-kicker"><span className="gx-kicker-dot" aria-hidden="true"></span>{"Service 04 · India & Bengaluru"}</span>
             <h1 className="gx-hero-title">
-              {"Content "}<em>{"Writing"}</em>{" Services"}
+              {"SEO Content Writing & Copywriting "}<em>{"Services in Bengaluru & India"}</em>
             </h1>
             <p className="gx-hero-sub">{"Content that ranks, reads well and turns readers into customers."}</p>
             <p className="gx-hero-lede">
@@ -339,7 +344,7 @@ export default function Page() {
                 <li>{"We research "}<b>{"what people actually search for"}</b>{", and why, before a single word is written."}</li>
                 <li>{"Writers work from a "}<b>{"detailed content brief"}</b>{": keyword, search intent, outline, sources, and your brand voice."}</li>
                 <li>{"Your team’s "}<b>{"real expertise"}</b>{" goes into every piece through a short interview or notes, so content shows first-hand knowledge, not filler: the experience and expertise Google’s "}<a className="rm-ext" href="https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf" target="_blank" rel="noopener noreferrer">{"quality rater guidelines"}</a>{" describe."}</li>
-                <li>{"Every draft is "}<b>{"edited, fact-checked and optimised"}</b>{" for search and AI answers, then refreshed as results come in."}</li>
+                <li>{"Every draft is "}<b>{"edited, fact-checked and optimized"}</b>{" for search and AI answers, then refreshed as results come in."}</li>
               </ul>
             </div>
             <div className="rm-card cw-card-brief" aria-hidden="true">
@@ -387,7 +392,7 @@ export default function Page() {
               <article className="cw-bento-card cw-bento-ai">
                 <span className="cw-bento-tag">{"AI answers"}</span>
                 <h3 className="cw-bento-t">{"AI tools quote clear sources"}</h3>
-                <p className="cw-bento-p">{"AI Overviews and assistants summarise pages that answer questions directly, with clean structure and real expertise. See "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">{"AI features and your website"}</a>{"."}</p>
+                <p className="cw-bento-p">{"AI Overviews and assistants summarise pages that answer questions directly, with clean structure and real expertise. See "}<a className="rm-ext" href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer">{"AI features and your website"}</a>{". We structure every piece this way; for a full search strategy, see our "}<a href="/services/seo-aeo-services">{"SEO, AEO & GEO services"}</a>{"."}</p>
                 <div className="cw-ai" aria-hidden="true">
                   <span className="cw-ai-tag"><bdi data-t={"✦ AI overview"}></bdi></span>
                   <span className="cw-ai-l"></span><span className="cw-ai-l s"></span>
@@ -443,7 +448,7 @@ export default function Page() {
             <ol className="gx-services">
               <li><span className="gx-svc-n" aria-hidden="true">{"01"}</span><h3 className="gx-svc-t">{"SEO blog & article writing"}</h3><p>{"Articles planned around real search demand, written to answer the question better than anything else on page one."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"02"}</span><h3 className="gx-svc-t">{"Website copywriting"}</h3><p>{"Clear, confident copy for your home, about and core pages that explains what you do and why it matters."}</p></li>
-              <li><span className="gx-svc-n" aria-hidden="true">{"03"}</span><h3 className="gx-svc-t">{"Service & landing page content"}</h3><p>{"Pages built to rank for commercial keywords and turn visitors into enquiries, like the page you’re reading."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"03"}</span><h3 className="gx-svc-t">{"Service & landing page content"}</h3><p>{"Pages built to rank for commercial keywords and turn visitors into enquiries."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"04"}</span><h3 className="gx-svc-t">{"Product & category descriptions"}</h3><p>{"Unique, benefit-led descriptions for ecommerce stores, written at scale without sounding repetitive."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"05"}</span><h3 className="gx-svc-t">{"Pillar pages & long-form guides"}</h3><p>{"In-depth resources that build topical authority and give other sites and AI tools a reason to cite you."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"06"}</span><h3 className="gx-svc-t">{"Case studies & whitepapers"}</h3><p>{"Proof-driven B2B content built from interviews with your team and customers."}</p></li>
@@ -534,7 +539,7 @@ export default function Page() {
               <span className="gx-label">{"Local focus · Bengaluru"}</span>
               <h2 className="gx-h2">{"Content writing services in "}<em>{"Bengaluru"}</em></h2>
               <p className="gx-p">{"Bengaluru (Bangalore) is home to thousands of startups, SaaS companies, fintechs and fast-growing D2C brands, and almost all of them compete for attention online. That makes content one of the most competitive marketing channels in the city."}</p>
-              <p className="gx-p">{"We help Bengaluru businesses stand out with content that explains complex products simply, ranks for the searches their buyers use, and supports their sales teams. For local businesses, we also write location and service pages that support "}<a href="/services/google-business-profile">{"local search visibility"}</a>{" across the city’s neighbourhoods."}</p>
+              <p className="gx-p">{"We help Bengaluru businesses stand out with content that explains complex products simply, ranks for the searches their buyers use, and supports their sales teams. For businesses with physical locations, we write the location pages that support a "}<a href="/services/google-business-profile">{"Google Business Profile"}</a>{"."}</p>
             </div>
             <div className="gx-blr">
               <div className="gx-blr-card">
@@ -545,7 +550,7 @@ export default function Page() {
               </div>
               <ul className="gx-blr-points">
                 <li><b>{"Fluent in tech and startup language"}</b><span>{"We can explain technical products to non-technical buyers."}</span></li>
-                <li><b>{"Local search support"}</b><span>{"Area and service pages for Koramangala, Whitefield, HSR Layout and beyond."}</span></li>
+                <li><b>{"Aligned with your search plan"}</b><span>{"Briefs built around your "}<a href="/services/seo-aeo-services">{"SEO, AEO & GEO strategy"}</a>{", not guesswork."}</span></li>
                 <li><b>{"Same time zone, fast reviews"}</b><span>{"Quick feedback loops and deadlines that fit your launch calendar."}</span></li>
               </ul>
             </div>
@@ -589,9 +594,9 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimization"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
-              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO, AEO & GEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>
           </div>

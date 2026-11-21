@@ -9,14 +9,14 @@ import "../reddit-marketing/rm.css";
 import "./wd.css";
 
 export const metadata: Metadata = {
-  "title": "Website Design & Development Services in India | EFFIX Labs",
-  "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
+  "title": "Website Design & Development Company Bengaluru | EFFIX Labs",
+  "description": "Custom, mobile-first websites built on Next.js, WordPress, Webflow & Shopify for businesses in Bengaluru & India. Fast Core Web Vitals & SEO-ready.",
   "alternates": {
     "canonical": "https://effix.co.in/services/website-design-development"
   },
   "openGraph": {
-    "title": "Website Design & Development Services in India | EFFIX Labs",
-    "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
+    "title": "Website Design & Development Company Bengaluru | EFFIX Labs",
+    "description": "Custom, mobile-first websites built on Next.js, WordPress, Webflow & Shopify for businesses in Bengaluru & India. Fast Core Web Vitals & SEO-ready.",
     "url": "https://effix.co.in/services/website-design-development",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Website Design & Development Services in India | EFFIX Labs",
-    "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
+    "title": "Website Design & Development Company Bengaluru | EFFIX Labs",
+    "description": "Custom, mobile-first websites built on Next.js, WordPress, Webflow & Shopify for businesses in Bengaluru & India. Fast Core Web Vitals & SEO-ready.",
     "images": [
       "https://effix.co.in/images/services/service-05-web-dev.jpg"
     ]
@@ -46,7 +46,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "What do website design and development services include?",
     "a": [
-      "Website design and development services cover planning, UI/UX design, coding, CMS setup, mobile optimisation, on-page SEO, testing and launch. At EFFIX Labs this also includes forms and integrations, training for your team and optional maintenance after launch."
+      "Website design and development services cover planning, UI/UX design, coding, CMS setup, mobile optimization, on-page SEO, testing and launch. At EFFIX Labs this also includes forms and integrations, training for your team and optional maintenance after launch."
     ]
   },
   {
@@ -125,7 +125,7 @@ const SERVICE_LD = {
       "name": "Worldwide"
     }
   ],
-  "description": "Website design and development services for businesses across India and Bengaluru (Bangalore): custom website design, responsive website development, e-commerce development, landing pages, website redesign, and maintenance and support on WordPress, Shopify, WooCommerce, Webflow and Next.js.",
+  "description": "Custom, mobile-first website design and development for businesses in Bengaluru (Bangalore) and across India on Next.js, WordPress, Webflow and Shopify: custom design, responsive development, e-commerce builds, landing pages, redesigns, Core Web Vitals performance, and maintenance and support.",
   "url": "https://effix.co.in/services/website-design-development"
 };
 
@@ -147,7 +147,7 @@ const BREADCRUMB_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Website Design & Development",
+      "name": "Website Design & Development Services",
       "item": "https://effix.co.in/services/website-design-development"
     }
   ]
@@ -196,7 +196,7 @@ export default function Page() {
           <div className="gx-wrap gx-hero-inner">
             <span className="gx-kicker"><span className="gx-kicker-dot wd-dot" aria-hidden="true"></span>{"Service 05 · India & Bengaluru"}</span>
             <h1 className="gx-hero-title">
-              {"Website Design "}<em>{"& Development"}</em>
+              {"Website Design & Development "}<em>{"Company in Bengaluru"}</em>
             </h1>
             <p className="gx-hero-sub">{"Fast, mobile-first websites that look sharp, rank well and turn visitors into enquiries."}</p>
             <p className="gx-hero-lede">
@@ -439,7 +439,7 @@ export default function Page() {
               <span className="gx-label wd-label">{"Local focus · Bengaluru"}</span>
               <h2 className="gx-h2">{"Website design company "}<em>{"in Bengaluru"}</em></h2>
               <p className="gx-p">{"Bengaluru (Bangalore) businesses compete with some of India’s best-funded startups for attention online. Your website has to load fast on mobile data, explain your offer in seconds and make it easy to get in touch."}</p>
-              <p className="gx-p">{"We work with Bengaluru startups, clinics, real estate firms, restaurants and B2B companies, and can meet in person when it helps. For local visibility we pair your site with "}<a href="/services/google-business-profile">{"Google Business Profile optimisation"}</a>{" and "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{"."}</p>
+              <p className="gx-p">{"We work with Bengaluru startups, clinics, real estate firms, restaurants and B2B companies, and can meet in person when it helps. For local visibility we pair your site with "}<a href="/services/google-business-profile">{"Google Business Profile optimization"}</a>{" and "}<a href="/services/seo-aeo-services">{"SEO, AEO & GEO services"}</a>{"."}</p>
             </div>
             <div className="gx-blr">
               <div className="gx-blr-card">
@@ -475,9 +475,9 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label wd-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimization"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
-              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO, AEO & GEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/content-writing"><span aria-hidden="true">{"04"}</span>{"Content Writing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>
           </div>
