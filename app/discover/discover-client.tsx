@@ -270,8 +270,8 @@ export default function DiscoverClient() {
                 <span className="cta3-float f4"><PlatformOrb name="YouTube" size={50} /></span>
                 <div className="cta3-badge">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="#fff" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round" />
-                    <path d="M12 7.5L7.5 12L12 16.5L16.5 12L12 7.5Z" stroke="#fff" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="#111111" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+                    <path d="M12 7.5L7.5 12L12 16.5L16.5 12L12 7.5Z" stroke="#111111" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round" />
                   </svg>
                 </div>
                 <span className="cta3-badge-shadow" />

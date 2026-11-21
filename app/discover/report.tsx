@@ -4,7 +4,7 @@
 // The decisions (status, to-do list) live in lib/discover/classify.ts so they can be tested.
 import { useMemo, useState, type ReactNode } from "react";
 
-import { BRAND_ICONS } from "@/lib/discover/brand-icons";
+import AppIcon from "@/lib/discover/app-icon";
 
 import {
   buildActions,
@@ -31,40 +31,14 @@ const STATUS: Record<Status, { label: string; tone: string }> = {
   unknown: { label: "Not searched", tone: "unknown" },
 };
 
-/** Real platform logo (Font Awesome brands, CC BY 4.0) in its brand colour. */
+/** Realistic platform logo (app-icon style). */
 export function Logo({ name, size = 18 }: { name: string; size?: number }) {
-  const i = BRAND_ICONS[name];
-  if (!i) return null;
-  return (
-    <svg className="vz-logo" width={size} height={size} viewBox={`0 0 ${i.w} ${i.h}`} aria-hidden="true">
-      <path d={i.d} fill={i.color} />
-    </svg>
-  );
+  return <AppIcon name={name} size={Math.round(size * 1.25)} className="is-small" />;
 }
 
-/** Glossy 3D bubble in the platform's colours with a white logo, like the Reddit service page badge. */
-const ORB: Record<string, [string, string, string]> = {
-  YouTube: ["#ff8a80", "#ff2d2d", "#b80000"],
-  Instagram: ["#ffd27a", "#f04e7c", "#7b3fd3"],
-  Facebook: ["#8fb8ff", "#1a6dff", "#0a43b8"],
-  LinkedIn: ["#7fbcf0", "#1677d2", "#0a4f94"],
-  X: ["#6b6b6b", "#262626", "#000000"],
-  Reddit: ["#ff9a6e", "#ff5a1f", "#c23a08"],
-  Quora: ["#f07f73", "#c9302c", "#8a1712"],
-  Threads: ["#6b6b6b", "#2b2b2b", "#000000"],
-};
+/** Realistic platform logo used large (cards, radar, banner); kept as "Orb" for the existing call sites. */
 export function Orb({ name, size = 56, float = true }: { name: string; size?: number; float?: boolean }) {
-  const i = BRAND_ICONS[name];
-  const c = ORB[name] ?? ["#ddd", "#999", "#555"];
-  return (
-    <span className={`orb ${float ? "is-float" : ""}`} style={{ width: size, height: size, ["--o1" as string]: c[0], ["--o2" as string]: c[1], ["--o3" as string]: c[2] }} aria-hidden="true">
-      {i && (
-        <svg width={Math.round(size * 0.48)} height={Math.round(size * 0.48)} viewBox={`0 0 ${i.w} ${i.h}`}>
-          <path d={i.d} fill="#fff" />
-        </svg>
-      )}
-    </span>
-  );
+  return <AppIcon name={name} size={size} float={float} />;
 }
 
 const ICON: Record<string, ReactNode> = {

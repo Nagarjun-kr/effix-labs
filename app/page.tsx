@@ -6,7 +6,7 @@ import { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ldString } from "@/lib/site";
 import "./page.css";
 import "./home-q3.css";
-import { BRAND_ICONS } from "@/lib/discover/brand-icons";
+import AppIcon from "@/lib/discover/app-icon";
 
 export const metadata: Metadata = {
   "title": "Effix Labs | Get Found Where Your Customers Search",
@@ -31,15 +31,9 @@ export const metadata: Metadata = {
 };
 
 
-/** Small official platform logo for the illustrative mock-ups (Font Awesome brands, CC BY 4.0). */
+/** Small realistic platform logo for the illustrative mock-ups. */
 function Brand({ name, size = 14 }: { name: string; size?: number }) {
-  const i = BRAND_ICONS[name];
-  if (!i) return null;
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${i.w} ${i.h}`} aria-hidden="true">
-      <path d={i.d} fill={i.color} />
-    </svg>
-  );
+  return <AppIcon name={name} size={Math.round(size * 1.3)} />;
 }
 
 const HOME_FAQS: FaqItem[] = [
