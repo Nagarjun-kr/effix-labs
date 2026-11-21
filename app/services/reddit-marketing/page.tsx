@@ -97,7 +97,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "Do you offer Reddit marketing services in Bengaluru?",
     "a": [
-      "Yes. EFFIX Labs works with startups and brands in Bengaluru (Bangalore), including SaaS, fintech, D2C, edtech and B2B companies, and we can meet in person where needed."
+      "Yes. EFFIX Labs works with startups and businesses in Bengaluru (Bangalore), including SaaS, fintech, D2C and local service brands, and we can meet in person where needed."
     ]
   },
   {
@@ -182,7 +182,7 @@ const SERVICE_LD = {
       "name": "Worldwide"
     }
   ],
-  "description": "Transparent organic Reddit marketing for brands across India and Bengaluru: Reddit audit and social listening, subreddit research, helpful disclosed engagement, AMAs, branded subreddits, reputation management, Reddit Ads, and visibility of Reddit threads in AI answers.",
+  "description": "Reddit marketing services for brands across India and Bengaluru: Reddit audit and social listening, subreddit research, helpful disclosed engagement, AMAs, branded subreddits, Reddit Ads, reputation monitoring and AI search visibility.",
   "image": "https://effix.co.in/images/services/reddit-marketing-hero.jpg",
   "url": "https://effix.co.in/services/reddit-marketing"
 };
@@ -254,11 +254,11 @@ export default function Page() {
           <div className="gx-wrap gx-hero-inner">
             <span className="gx-kicker"><span className="gx-kicker-dot" aria-hidden="true"></span>{"Service 02 · India & Bengaluru"}</span>
             <h1 className="gx-hero-title">
-              {"Reddit Marketing Agency in India "}<em>{"for Brand Growth & Reputation"}</em>
+              {"Reddit "}<em>{"Marketing"}</em>{" Services"}
             </h1>
             <p className="gx-hero-sub">{"Be part of the conversations that shape buying decisions."}</p>
             <p className="gx-hero-lede">
-              {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best payroll software for startups?” “Is this brand legit?” EFFIX Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
+              {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best dentist in Indiranagar?” “Is this brand legit?” EFFIX Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
@@ -296,7 +296,7 @@ export default function Page() {
         {/* ================= MARQUEE ================= */}
         <div className="gx-marquee" id="gxMarquee">
           <div className="gx-marquee-track">
-            <div className="gx-marquee-set"><span>{"Subreddit research"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Helpful comments"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Native posts"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"AMAs"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Reddit Ads"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Sentiment tracking"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Reddit citations in AI answers"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i></div>
+            <div className="gx-marquee-set"><span>{"Subreddit research"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Helpful comments"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Native posts"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"AMAs"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Reddit Ads"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"Sentiment tracking"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i><span>{"AI search visibility"}</span><i aria-hidden="true"><bdi data-t={"—"}></bdi></i></div>
           </div>
         </div>
 
@@ -313,7 +313,7 @@ export default function Page() {
               </p>
               <p className="gx-p">{"Done well, it builds word-of-mouth at scale. Done badly, with fake accounts or bought upvotes, it gets brands banned and called out. We only do the first kind."}</p>
               <ul className="gx-chips" aria-label="What Reddit marketing covers">
-                <li>{"Community & subreddit research"}</li><li>{"Social listening"}</li><li>{"Helpful, disclosed comments"}</li><li>{"Community-native posts"}</li><li>{"AMAs"}</li><li>{"Reddit Ads"}</li><li>{"Reputation monitoring"}</li><li>{"Reddit citations in AI answers"}</li>
+                <li>{"Community & subreddit research"}</li><li>{"Social listening"}</li><li>{"Helpful, disclosed comments"}</li><li>{"Community-native posts"}</li><li>{"AMAs"}</li><li>{"Reddit Ads"}</li><li>{"Reputation monitoring"}</li><li>{"AI search visibility"}</li>
               </ul>
             </div>
           </div>
@@ -493,7 +493,7 @@ export default function Page() {
               <li><span className="gx-svc-n" aria-hidden="true">{"06"}</span><h3 className="gx-svc-t">{"Branded subreddit setup & moderation"}</h3><p>{"Your own community, set up and moderated so customers have a place to ask, share and help each other, following Reddit’s "}<a className="rm-ext" href="https://redditinc.com/policies/moderator-code-of-conduct" target="_blank" rel="noopener noreferrer">{"Moderator Code of Conduct"}</a>{"."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"07"}</span><h3 className="gx-svc-t">{"Reddit Ads management"}</h3><p>{"Targeted campaigns by community and interest, with creative written for Reddit, not recycled from other platforms. Built in "}<a className="rm-ext" href="https://ads.reddit.com/" target="_blank" rel="noopener noreferrer">{"Reddit Ads Manager"}</a>{" following the "}<a className="rm-ext" href="https://business.reddithelp.com/" target="_blank" rel="noopener noreferrer">{"Reddit Ads Help Center"}</a>{"."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"08"}</span><h3 className="gx-svc-t">{"Reputation & sentiment monitoring"}</h3><p>{"Alerts on brand mentions and fast, calm responses when a thread turns critical, using tools such as "}<a className="rm-ext" href="https://www.business.reddit.com/pro" target="_blank" rel="noopener noreferrer">{"Reddit Pro"}</a>{"."}</p></li>
-              <li><span className="gx-svc-n" aria-hidden="true">{"09"}</span><h3 className="gx-svc-t">{"Reddit SEO & AI answer visibility"}</h3><p>{"Focus on Reddit threads that rank in Google and get cited by AI assistants like ChatGPT and Perplexity. For a complete AEO and GEO program, see our "}<a href="/services/seo-aeo-services">{"SEO, AEO & GEO services"}</a>{"."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"09"}</span><h3 className="gx-svc-t">{"Reddit SEO & AI search visibility"}</h3><p>{"Focus on threads that rank in Google and appear in AI answers, linked to your wider "}<a href="/services/seo-aeo-services">{"SEO & AEO"}</a>{" work."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"10"}</span><h3 className="gx-svc-t">{"Monthly reporting"}</h3><p>{"Mentions, sentiment, referral traffic and AI citations, explained in plain language. Not just upvotes."}</p></li>
             </ol>
           </div>
@@ -622,7 +622,7 @@ export default function Page() {
               <li><b>{"Health & wellness"}</b><span>{"Careful, compliant participation in sensitive topics"}</span></li>
               <li><b>{"Gaming & consumer tech"}</b><span>{"Communities with strong opinions and loyal fans"}</span></li>
               <li><b>{"B2B services"}</b><span>{"Founders and teams asking for vendor advice"}</span></li>
-              <li><b>{"AI startups & developer tools"}</b><span>{"Builders comparing models, APIs and tooling"}</span></li>
+              <li><b>{"Local businesses"}</b><span>{"City communities asking for recommendations"}</span></li>
             </ul>
           </div>
         </section>
@@ -640,7 +640,7 @@ export default function Page() {
               <div className="gx-blr-card">
                 <span className="gx-label">{"Bengaluru industries we support"}</span>
                 <ul className="gx-blr-areas" aria-label="Bengaluru industries">
-                  <li>{"SaaS"}</li><li>{"Fintech"}</li><li>{"D2C brands"}</li><li>{"Edtech"}</li><li>{"AI startups"}</li><li>{"Developer tools"}</li><li>{"Consumer tech"}</li><li>{"B2B services"}</li><li>{"…and more"}</li>
+                  <li>{"SaaS"}</li><li>{"Fintech"}</li><li>{"D2C brands"}</li><li>{"Edtech"}</li><li>{"Healthtech"}</li><li>{"AI startups"}</li><li>{"Developer tools"}</li><li>{"Coworking"}</li><li>{"Restaurants & cafés"}</li><li>{"Clinics"}</li><li>{"Real estate"}</li><li>{"…and more"}</li>
                 </ul>
               </div>
               <ul className="gx-blr-points">
@@ -711,8 +711,8 @@ export default function Page() {
           <div className="gx-wrap">
             <span className="gx-label">{"Related services"}</span>
             <div className="gx-related">
-              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimization"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
-              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO, AEO & GEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/google-business-profile"><span aria-hidden="true">{"01"}</span>{"Google Business Profile Optimisation"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/content-writing"><span aria-hidden="true">{"04"}</span>{"Content Writing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>

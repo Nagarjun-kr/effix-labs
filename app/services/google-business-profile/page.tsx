@@ -1,4 +1,4 @@
-// Google Business Profile Optimization — service page.
+// Google Business Profile Optimisation — service page.
 // Markup renders on the server; small interactions (video lightbox, checklist meter,
 // FAQ accordion, contact form) are plain scripts loaded in order by <LegacyScripts>.
 import type { Metadata } from "next";
@@ -9,14 +9,14 @@ import "./page.css";
 import "./gx.css";
 
 export const metadata: Metadata = {
-  "title": "Google Business Profile Optimization Services | EFFIX Labs",
-  "description": "Google Business Profile optimization services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
+  "title": "Google Business Profile Optimisation Services | EFFIX Labs",
+  "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
   "alternates": {
     "canonical": "https://effix.co.in/services/google-business-profile"
   },
   "openGraph": {
-    "title": "Google Business Profile Optimization Services | EFFIX Labs",
-    "description": "Google Business Profile optimization services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
+    "title": "Google Business Profile Optimisation Services | EFFIX Labs",
+    "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "url": "https://effix.co.in/services/google-business-profile",
     "type": "website",
     "images": [
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Google Business Profile Optimization Services | EFFIX Labs",
-    "description": "Google Business Profile optimization services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
+    "title": "Google Business Profile Optimisation Services | EFFIX Labs",
+    "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "images": [
       "https://effix.co.in/images/services/service-01-gbp.jpg"
     ]
@@ -43,9 +43,9 @@ const SCRIPTS = [
 
 const FAQS: FaqItem[] = [
   {
-    "q": "Do you offer Google Business Profile optimization services in Bengaluru?",
+    "q": "Do you offer Google Business Profile optimisation services in Bengaluru?",
     "a": [
-      "Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimization are done remotely through your Business Profile access, and we can meet in person where needed."
+      "Yes. EFFIX Labs works with businesses across Bengaluru (Bangalore), from single shops and clinics to multi-location brands, as well as clients elsewhere in India and abroad. Audits and optimisation are done remotely through your Business Profile access, and we can meet in person where needed."
     ]
   },
   {
@@ -55,15 +55,15 @@ const FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "What is Google Business Profile optimization?",
+    "q": "What is Google Business Profile optimisation?",
     "a": [
       "It’s the process of improving your free Google Business Profile (formerly Google My Business) so it’s complete, accurate and relevant to what customers search for. That covers categories, services, description, photos, reviews and regular updates, which help your business appear in more local searches on Google Search and Maps."
     ]
   },
   {
-    "q": "How long does Google Business Profile optimization take?",
+    "q": "How long does Google Business Profile optimisation take?",
     "a": [
-      "The initial audit and optimization usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process."
+      "The initial audit and optimisation usually take one to three weeks, depending on how many fixes are needed and how quickly we receive access and information. Visibility changes follow over the next weeks and months, and they vary by industry, competition and location. It works best as an ongoing process."
     ]
   },
   {
@@ -97,7 +97,7 @@ const FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Can you optimize a profile for a service-area business?",
+    "q": "Can you optimise a profile for a service-area business?",
     "a": [
       "Yes. If you visit customers at their location, such as plumbers or cleaners, Google asks you to hide your address and set a service area. We set this up correctly so you stay compliant."
     ]
@@ -115,9 +115,9 @@ const FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Is Google Business Profile optimization a one-time job?",
+    "q": "Is Google Business Profile optimisation a one-time job?",
     "a": [
-      "The first optimization is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management."
+      "The first optimisation is a one-time project, but profiles need ongoing care: new reviews, updates, photo refreshes, public edits and changes to Google’s features. That’s why we also offer ongoing Google Business Profile management."
     ]
   }
 ];
@@ -125,8 +125,8 @@ const FAQS: FaqItem[] = [
 const SERVICE_LD = {
   "@type": "Service",
   "@id": "https://effix.co.in/services/google-business-profile#service",
-  "name": "Google Business Profile (GMB) Optimization Services",
-  "serviceType": "Google Business Profile optimization and management",
+  "name": "Google Business Profile Optimisation Services",
+  "serviceType": "Google Business Profile optimisation and management",
   "provider": {
     "@id": ORG_ID
   },
@@ -149,7 +149,7 @@ const SERVICE_LD = {
       "name": "Worldwide"
     }
   ],
-  "description": "Guideline-safe Google Business Profile (GMB) optimization for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimization, review management support, regular updates, local citations and monthly reporting to win Google Maps and Map Pack visibility.",
+  "description": "Google Business Profile optimisation services for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.",
   "url": "https://effix.co.in/services/google-business-profile"
 };
 
@@ -171,7 +171,7 @@ const BREADCRUMB_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Google Business Profile Optimization Services",
+      "name": "Google Business Profile Optimisation",
       "item": "https://effix.co.in/services/google-business-profile"
     }
   ]
@@ -220,11 +220,11 @@ export default function Page() {
           <div className="gx-wrap gx-hero-inner">
             <span className="gx-kicker"><span className="gx-kicker-dot" aria-hidden="true"></span>{"Service 01 · Bengaluru & across India"}</span>
             <h1 className="gx-hero-title">
-              {"Google Business Profile (GMB) "}<em>{"Optimization Services in Bengaluru"}</em>
+              {"Google Business Profile "}<em>{"Optimisation"}</em>{" Services"}
             </h1>
             <p className="gx-hero-sub">{"Get found where local customers are searching."}</p>
             <p className="gx-hero-lede">
-              {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. EFFIX Labs helps businesses in Bengaluru and across India make their Google Business Profile (formerly Google My Business, or GMB) easier to find, easier to understand and easier to choose on Google Search and Maps."}
+              {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. EFFIX Labs helps businesses in Bengaluru and across India make their Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
             </p>
             <div className="gx-hero-ctas">
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
@@ -251,7 +251,7 @@ export default function Page() {
         </section>
 
         {/* Video lightbox */}
-        <div className="gx-modal" id="gxVideoModal" role="dialog" aria-modal="true" aria-label="Google Business Profile optimization video" hidden>
+        <div className="gx-modal" id="gxVideoModal" role="dialog" aria-modal="true" aria-label="Google Business Profile optimisation video" hidden>
           <div className="gx-modal-backdrop" data-close="true"></div>
           <div className="gx-modal-body">
             <button type="button" className="gx-modal-close" data-close="true" aria-label="Close video">{"✕"}</button>
@@ -273,14 +273,14 @@ export default function Page() {
           <div className="gx-wrap gx-split">
             <div>
               <span className="gx-label">{"What it is"}</span>
-              <h2 className="gx-h2">{"What is Google Business Profile (GMB) "}<em>{"optimization?"}</em></h2>
+              <h2 className="gx-h2">{"What is Google Business Profile "}<em>{"optimisation?"}</em></h2>
             </div>
             <div className="gx-split-body">
               <p className="gx-statement">
-                {"Google Business Profile optimization, also called Google My Business (GMB) optimization, is improving every part of your free Google listing so it matches what customers search for, answers their questions, and shows Google your business is real, active and relevant."}
+                {"Google Business Profile optimisation, also called Google My Business (GMB) optimization, is improving every part of your free Google listing so it matches what customers search for, answers their questions, and shows Google your business is real, active and relevant."}
               </p>
               <p className="gx-p">{"It’s the foundation of local SEO: the work that helps you appear in the Google Map Pack, the three businesses shown beside the map, and in “near me” searches."}</p>
-              <ul className="gx-chips" aria-label="What an optimized profile has">
+              <ul className="gx-chips" aria-label="What an optimised profile has">
                 <li>{"Right primary category"}</li><li>{"Accurate name, address & phone"}</li><li>{"Complete services"}</li><li>{"Clear description"}</li><li>{"Fresh photos & updates"}</li><li>{"Genuine reviews, all answered"}</li><li>{"Consistent details across the web"}</li>
               </ul>
             </div>
@@ -329,7 +329,7 @@ export default function Page() {
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label">{"Why it matters"}</span>
-              <h2 className="gx-h2">{"Why your business needs Google Business Profile "}<em>{"optimization"}</em></h2>
+              <h2 className="gx-h2">{"Why your business needs Google Business Profile "}<em>{"optimisation"}</em></h2>
               <p className="gx-lead">{"A profile that’s simply “set up” isn’t the same as a profile that works. Incomplete listings quietly lose customers to competitors who look more complete and more active."}</p>
             </div>
             <div className="gx-tiles">
@@ -399,12 +399,12 @@ export default function Page() {
           <div className="gx-wrap">
             <div className="gx-head gx-head-left">
               <span className="gx-label">{"What’s included"}</span>
-              <h2 className="gx-h2">{"Our Google Business Profile (GMB) optimization "}<em>{"services"}</em></h2>
+              <h2 className="gx-h2">{"Our Google Business Profile optimisation "}<em>{"services"}</em></h2>
             </div>
             <ol className="gx-services">
               <li><span className="gx-svc-n" aria-hidden="true">{"01"}</span><h3 className="gx-svc-t">{"Full profile audit"}</h3><p>{"Every field reviewed against Google’s guidelines and against the competitors showing up for your most important searches."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"02"}</span><h3 className="gx-svc-t">{"Local keyword & competitor research"}</h3><p>{"The exact words your customers use, including service + city terms and “near me” searches, and what top-ranking competitors do differently."}</p></li>
-              <li><span className="gx-svc-n" aria-hidden="true">{"03"}</span><h3 className="gx-svc-t">{"Category optimization"}</h3><p>{"The most specific primary category and a small set of relevant additional categories, following Google’s guidance to use as few as possible."}</p></li>
+              <li><span className="gx-svc-n" aria-hidden="true">{"03"}</span><h3 className="gx-svc-t">{"Category optimisation"}</h3><p>{"The most specific primary category and a small set of relevant additional categories, following Google’s guidance to use as few as possible."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"04"}</span><h3 className="gx-svc-t">{"Business information & NAP accuracy"}</h3><p>{"Name, address, phone, website, hours, special hours and service areas, kept consistent with your website and key directories."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"05"}</span><h3 className="gx-svc-t">{"Services, products & description"}</h3><p>{"A complete services list and a clear description written for customers, with no keyword stuffing, prices, promotions or links."}</p></li>
               <li><span className="gx-svc-n" aria-hidden="true">{"06"}</span><h3 className="gx-svc-t">{"Photos, videos & visual content"}</h3><p>{"Genuine, high-quality photos of your premises, team, work and products, organised so customers know what to expect."}</p></li>
@@ -420,7 +420,7 @@ export default function Page() {
         <section className="gx-section gx-tint" id="checklist">
           <div className="gx-wrap">
             <div className="gx-head">
-              <span className="gx-label">{"Google Business Profile optimization checklist"}</span>
+              <span className="gx-label">{"Google Business Profile optimisation checklist"}</span>
               <h2 className="gx-h2">{"How complete is "}<em>{"your"}</em>{" profile?"}</h2>
               <p className="gx-lead">{"Tick what your profile already has. It takes a minute, and nothing is sent anywhere."}</p>
             </div>
@@ -459,7 +459,7 @@ export default function Page() {
           <div className="gx-wrap">
             <div className="gx-head">
               <span className="gx-label">{"Our process"}</span>
-              <h2 className="gx-h2">{"Our Google Business Profile "}<em>{"optimization process"}</em></h2>
+              <h2 className="gx-h2">{"Our Google Business Profile "}<em>{"optimisation process"}</em></h2>
             </div>
             <div className="gx-steps-wrap" id="gxStepsWrap">
             <div className="gx-steps-track" aria-hidden="true"><span className="gx-steps-fill" id="gxStepsFill"></span><span className="gx-steps-head" id="gxStepsHead"></span></div>
@@ -467,7 +467,7 @@ export default function Page() {
               <li><span className="gx-step-n" aria-hidden="true">{"1"}</span><h3 className="gx-h3">{"Discovery"}</h3><p className="gx-p-sm">{"We learn your business, locations, services and goals, and confirm profile access."}</p></li>
               <li><span className="gx-step-n" aria-hidden="true">{"2"}</span><h3 className="gx-h3">{"Profile audit"}</h3><p className="gx-p-sm">{"A full review of your profile, competitors and visibility, with issues ranked by impact."}</p></li>
               <li><span className="gx-step-n" aria-hidden="true">{"3"}</span><h3 className="gx-h3">{"Research"}</h3><p className="gx-p-sm">{"We map the searches that matter and study who’s already in the Map Pack."}</p></li>
-              <li><span className="gx-step-n" aria-hidden="true">{"4"}</span><h3 className="gx-h3">{"Optimize"}</h3><p className="gx-p-sm">{"Categories, details, services, description and media fixed, all within Google’s guidelines."}</p></li>
+              <li><span className="gx-step-n" aria-hidden="true">{"4"}</span><h3 className="gx-h3">{"Optimise"}</h3><p className="gx-p-sm">{"Categories, details, services, description and media fixed, all within Google’s guidelines."}</p></li>
               <li><span className="gx-step-n" aria-hidden="true">{"5"}</span><h3 className="gx-h3">{"Publish & reviews"}</h3><p className="gx-p-sm">{"Updates go live and your review request and reply routine begins."}</p></li>
               <li><span className="gx-step-n" aria-hidden="true">{"6"}</span><h3 className="gx-h3">{"Measure"}</h3><p className="gx-p-sm">{"Monthly tracking and a plain report. Then we adjust and repeat from step 3."}</p></li>
             </ol>
@@ -526,14 +526,16 @@ export default function Page() {
           <div className="gx-wrap gx-split">
             <div>
               <span className="gx-label">{"Local focus · Bengaluru"}</span>
-              <h2 className="gx-h2">{"Google Business Profile optimization in "}<em>{"Bengaluru"}</em></h2>
+              <h2 className="gx-h2">{"Google Business Profile optimisation in "}<em>{"Bengaluru"}</em></h2>
               <p className="gx-p">{"Bengaluru (Bangalore) is one of the most competitive local search markets in India. Search “dentist near me” or “salon in Indiranagar” and you’ll see dozens of businesses competing within a few kilometres. Being listed isn’t enough. Your profile has to be the clearest, most complete and most active one nearby."}</p>
               <p className="gx-p">{"We help Bengaluru businesses set up their address or service area correctly, choose categories that match how local customers actually search, and keep their profiles accurate as the city changes, from new branches to festival-season hours."}</p>
             </div>
             <div className="gx-blr">
               <div className="gx-blr-card">
-                <span className="gx-label">{"Local competition across Bengaluru"}</span>
-                <p className="gx-p-sm gx-blr-text">{"From Koramangala, Indiranagar and HSR Layout to Whitefield, Electronic City and Hebbal, every commercial area has its own cluster of businesses competing for the same map results. A customer searching in Jayanagar often sees a different Map Pack from one on Sarjapur Road. We set up your profile for the areas you actually serve, wherever they are in the city."}</p>
+                <span className="gx-label">{"Areas we work with"}</span>
+                <ul className="gx-blr-areas" aria-label="Bengaluru areas">
+                  <li>{"Koramangala"}</li><li>{"Indiranagar"}</li><li>{"HSR Layout"}</li><li>{"Whitefield"}</li><li>{"Jayanagar"}</li><li>{"JP Nagar"}</li><li>{"Electronic City"}</li><li>{"Marathahalli"}</li><li>{"Hebbal"}</li><li>{"Yelahanka"}</li><li>{"Malleshwaram"}</li><li>{"Bellandur"}</li><li>{"Sarjapur Road"}</li><li>{"Rajajinagar"}</li><li>{"…and the rest of Bengaluru"}</li>
+                </ul>
               </div>
               <ul className="gx-blr-points">
                 <li><b>{"Neighbourhood-level relevance"}</b><span>{"Services, description and posts that reflect the areas you actually serve."}</span></li>
@@ -554,7 +556,7 @@ export default function Page() {
               <div><span className="gx-why-n" aria-hidden="true">{"01"}</span><h3 className="gx-h3">{"Evidence first"}</h3><p className="gx-p-sm">{"We start with an audit and show you what we found before recommending anything."}</p></div>
               <div><span className="gx-why-n" aria-hidden="true">{"02"}</span><h3 className="gx-h3">{"Guideline-safe"}</h3><p className="gx-p-sm">{"No fake reviews, no keyword-stuffed names, no duplicate listings, nothing that risks suspension."}</p></div>
               <div><span className="gx-why-n" aria-hidden="true">{"03"}</span><h3 className="gx-h3">{"Honest about results"}</h3><p className="gx-p-sm">{"Google controls rankings. We improve what you can control and report what we can measure."}</p></div>
-              <div><span className="gx-why-n" aria-hidden="true">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a "}<a href="/services/website-design-development">{"fast, clear website"}</a>{", "}<a href="/services/content-writing">{"helpful content"}</a>{", "}<a href="/services/seo-aeo-services">{"wider SEO, AEO & GEO"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
+              <div><span className="gx-why-n" aria-hidden="true">{"04"}</span><h3 className="gx-h3">{"Part of a wider plan"}</h3><p className="gx-p-sm">{"Your profile works best alongside a strong site, "}<a href="/services/content-writing">{"helpful content"}</a>{", "}<a href="/services/seo-aeo-services">{"AI search"}</a>{" and "}<a href="/services/reddit-marketing">{"online communities"}</a>{"."}</p></div>
               <div><span className="gx-why-n" aria-hidden="true">{"05"}</span><h3 className="gx-h3">{"Plain-language reporting"}</h3><p className="gx-p-sm">{"You always know what was done, and why."}</p></div>
             </div>
             <p className="gx-disclaimer">{"EFFIX Labs is an independent agency, not affiliated with or endorsed by Google."}</p>
@@ -566,7 +568,7 @@ export default function Page() {
           <div className="gx-wrap gx-faq-grid">
             <div className="gx-faq-intro">
               <span className="gx-label">{"FAQ"}</span>
-              <h2 className="gx-h2">{"Questions about Google Business Profile "}<em>{"optimization"}</em></h2>
+              <h2 className="gx-h2">{"Questions about Google Business Profile "}<em>{"optimisation"}</em></h2>
               <p className="gx-p">{"Can’t find your answer? "}<a href="#contact">{"Ask us directly"}</a>{"."}</p>
             </div>
             <div className="faq-accordion-wrap gx-faq">
@@ -581,7 +583,7 @@ export default function Page() {
             <span className="gx-label">{"Related services"}</span>
             <div className="gx-related">
               <a href="/services/reddit-marketing"><span aria-hidden="true">{"02"}</span>{"Reddit Marketing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
-              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO, AEO & GEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
+              <a href="/services/seo-aeo-services"><span aria-hidden="true">{"03"}</span>{"SEO & AEO Services"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/content-writing"><span aria-hidden="true">{"04"}</span>{"Content Writing"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
               <a href="/services/website-design-development"><span aria-hidden="true">{"05"}</span>{"Website Design & Development"}<i aria-hidden="true"><bdi data-t={"→"}></bdi></i></a>
             </div>

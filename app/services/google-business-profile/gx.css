@@ -479,4 +479,3 @@ bdi[data-t]::before { content: attr(data-t); }
 /* Marquee: one crawlable set in the HTML; the loop copy is cloned by script (aria-hidden). */
 .gx-marquee-set { display: contents; }
 .gx-marquee:not(.is-ready) .gx-marquee-track { animation: none; }
-.gx-blr-text { margin-top: 12px; }

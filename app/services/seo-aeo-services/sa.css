@@ -193,22 +193,3 @@
 .sa-page .sa-label-dark { color: var(--sa-mint); }
 .sa-page .sa-dark-sec .gx-h2 em { color: rgba(255, 255, 255, 0.55); }
 .sa-dark-sec .gx-wrap { position: relative; z-index: 1; }
-
-/* ---------- Phase 2: 8 deliverables as an ordered list ---------- */
-ol.sa-services { list-style: none; padding: 0; grid-template-columns: repeat(4, 1fr); }
-ol.sa-services .sa-svc { padding: 24px; }
-.sa-svc-top { display: flex; justify-content: space-between; align-items: flex-start; }
-.sa-svc-n { font-family: var(--font-mono); font-size: 13px; color: var(--gx-subtle); }
-.sa-svc h3 { font-size: 17.5px; }
-@media (max-width: 1100px) { ol.sa-services { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { ol.sa-services { grid-template-columns: 1fr; } }
-
-/* business-model table */
-.sa-table-wrap { margin-top: 44px; }
-.sa-table thead th { background: #f0faf8; color: var(--sa); }
-.sa-table tbody th { font-weight: 600; color: var(--gx-lead); text-align: left; padding: 18px 24px; border-bottom: 1px solid var(--gx-line); vertical-align: top; min-width: 180px; }
-.sa-table td { color: var(--gx-muted); vertical-align: top; }
-.sa-table tbody tr:hover td, .sa-table tbody tr:hover th { background: #f6fcfb; }
-
-/* Map Pack cross-link callout */
-.sa-callout { margin: 8px 0 0; padding: 16px 18px; border-radius: 16px; background: var(--sa-soft); border: 1px solid rgba(15, 118, 110, 0.18); font-size: 15.5px; line-height: 1.6; color: var(--gx-lead); }
