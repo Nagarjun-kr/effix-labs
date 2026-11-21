@@ -97,22 +97,32 @@
       });
     }
 
-    document.querySelectorAll('a[href="/discover"]').forEach(link => {
+    // Every "Run a Visibility Audit" link points to the one search box (#audit): with a website typed in, start the
+    // audit; otherwise scroll to the box and put the cursor in it.
+    document.querySelectorAll('a[href="#audit"], a[href="/#audit"]').forEach(link => {
       link.addEventListener('click', (e) => {
         const input = document.getElementById('urlInput');
-        if (input && input.value.trim()) {
-          let val = input.value.trim();
-          if (!val.startsWith('http://') && !val.startsWith('https://')) {
-            val = 'https://' + val;
-          }
-          try {
-            sessionStorage.setItem('effix_audit_target', val);
-          } catch (err) { }
-          e.preventDefault();
-          window.location.href = '/discover?url=' + encodeURIComponent(val);
+        const box = document.getElementById('audit');
+        if (!input || !box) return;
+        e.preventDefault();
+        if (input.value.trim()) {
+          const form = input.form;
+          if (form && form.requestSubmit) { form.requestSubmit(); return; }
         }
+        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => { try { input.focus({ preventScroll: true }); } catch (err) { input.focus(); } }, 700);
       });
     });
+
+    // Arriving at /#audit (e.g. from "New Audit" on the report): focus the search box.
+    if (location.hash === '#audit') {
+      setTimeout(() => {
+        const input = document.getElementById('urlInput');
+        const box = document.getElementById('audit');
+        if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (input) setTimeout(() => { try { input.focus({ preventScroll: true }); } catch (err) { input.focus(); } }, 700);
+      }, 300);
+    }
 
     // ==========================================================================
     // SECTION 5 — EFFIX DISCOVER AUTO-ROTATION (4 SECONDS) & PILLAR SWITCHING

@@ -56,6 +56,28 @@ const Ico = ({ n, size = 20 }: { n: string; size?: number }) => (
 const KIND_ORDER: [string, string][] = [["profile", "Profiles"], ["community", "Communities"], ["post", "Posts"], ["video", "Videos"], ["thread", "Discussions"], ["article", "Articles"], ["page", "Other pages"]];
 const DONUT: Status[] = ["official", "likely", "possible", "mentions", "none"];
 
+/** One plain sentence: why this platform got its status. */
+function reasonFor(r: { status: Status; linked: { url: string } | null; bestProfile: { t: { besideSite?: boolean; mentionsSite?: boolean; sameHandle?: boolean; checked?: string; sameChannel?: boolean } } | null; extras: unknown[]; result: unknown }) {
+  const t = r.bestProfile?.t;
+  switch (r.status) {
+    case "official":
+      return r.extras.length ? "Linked from your website. Another account also uses your name here." : t?.sameChannel ? "Linked from your website and confirmed on YouTube." : "Linked from your website.";
+    case "likely":
+      if (t?.checked === "yours") return "The profile links back to your website.";
+      if (t?.besideSite) return "Google shows it next to your website when people search your name.";
+      if (t?.mentionsSite) return "The profile mentions your website.";
+      return "Uses the same handle as your other confirmed accounts.";
+    case "possible":
+      return "Uses your name, but nothing proves it's yours. Check it.";
+    case "mentions":
+      return "People mention you here, but no account with your name was found.";
+    case "none":
+      return "Google shows nothing for your name on this platform.";
+    default:
+      return "Not searched.";
+  }
+}
+
 function googleUrl(brand: string, p: (typeof PLATFORMS)[number]) {
   const site = p.name === "X" ? "(site:x.com OR site:twitter.com)" : `site:${p.domain}`;
   return `https://www.google.com/search?q=${encodeURIComponent(`"${brand.replaceAll('"', "").slice(0, 100)}" ${site}`)}`;
@@ -149,6 +171,50 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
           <span className="vz-kpi-sub">{searched ? `${high} high · ${medium} medium · ${actions.length - high - medium} low priority` : "Worked out after the search"}</span>
           <span className="vz-pills" aria-hidden="true"><i className="lv-high" style={{ flex: high || 0.0001 }} /><i className="lv-medium" style={{ flex: medium || 0.0001 }} /><i className="lv-low" style={{ flex: actions.length - high - medium || 0.0001 }} /></span>
         </button>
+      </section>
+
+      {/* PLATFORM BY PLATFORM */}
+      <section id="rp-status" className="pp" aria-labelledby="pp-t">
+        <div className="pp-head">
+          <div>
+            <span className="pp-eyebrow">Platform by platform</span>
+            <h2 id="pp-t">Where <em>{brand}</em> shows up</h2>
+          </div>
+          <ul className="pp-legend" aria-label="Summary">
+            {(["official", "likely", "possible", "mentions", "none"] as Status[]).map((st) => (
+              <li key={st} className={`ps-${st}`}><i aria-hidden="true" />{STATUS[st].label}<b>{rows.filter((r) => r.status === st).length}</b></li>
+            ))}
+          </ul>
+        </div>
+        <div className="pp-grid">
+          {rows.map((r) => {
+            const st = STATUS[r.status];
+            const account = r.linked ?? (r.bestProfile ? { url: r.bestProfile.m.url } : null);
+            const n = r.result?.results.length ?? 0;
+            return (
+              <article key={r.name} className={`pp-card ps-${r.status}`}>
+                <div className="pp-top">
+                  <span className="pp-logo"><Logo name={r.name} size={22} /></span>
+                  <strong>{r.name}</strong>
+                  <em className={`pp-pill ps-${r.status}`}><i aria-hidden="true" />{st.label}</em>
+                </div>
+                <div className="pp-account">
+                  <span className="pp-label">Account</span>
+                  {account ? (
+                    <a href={account.url} target="_blank" rel="noopener noreferrer nofollow">{shortUrl(account.url)} <span aria-hidden="true">↗</span></a>
+                  ) : (
+                    <span className="pp-none">No account found</span>
+                  )}
+                </div>
+                <p className="pp-why">{reasonFor(r)}</p>
+                <div className="pp-foot">
+                  <span>{r.result ? `${n} Google result${n === 1 ? "" : "s"}` : "Not searched"}</span>
+                  <button type="button" onClick={() => openPlatform(r.name)}>View results <span aria-hidden="true">→</span></button>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </section>
 
       {/* CHARTS */}
@@ -253,32 +319,6 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
 
       {nameEditor}
 
-      {/* PLATFORM STATUS */}
-      <section id="rp-status" className="rp-block" aria-labelledby="rp-status-t">
-        <div className="rp-head"><h2 id="rp-status-t">Platform by platform</h2><p>Click a platform to see its results.</p></div>
-        <div className="rp-platforms">
-          {rows.map((r) => {
-            const st = loading && !r.linked ? null : STATUS[r.status];
-            const detail = r.linked
-              ? shortUrl(r.linked.url)
-              : loading
-                ? "Searching…"
-                : r.bestProfile
-                  ? shortUrl(r.bestProfile.m.url)
-                  : r.tagged
-                    ? r.tagged.length ? `${r.tagged.length} result${r.tagged.length === 1 ? "" : "s"}` : "No results"
-                    : "Open on Google";
-            return (
-              <button key={r.name} type="button" className="rp-plat" onClick={() => openPlatform(r.name)}>
-                <span className="vz-plat-logo"><Logo name={r.name} size={18} /></span>
-                <span className="rp-plat-name">{r.name}<small>{detail}</small></span>
-                {st ? <em className={`rp-badge s-${st.tone}`}>{st.label}</em> : <em className="rp-badge s-loading">…</em>}
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
       {/* DETAILS */}
       <section id="dx-details" className="rp-block" aria-labelledby="rp-details-t">
         <div className="rp-head"><h2 id="rp-details-t">Search results</h2><p>Live results for “{brand}” on each platform. Profiles are listed first; some results are posts by other people.</p></div>
@@ -297,7 +337,7 @@ export default function Report({ identity, mentions, brand, checks = {}, nameEdi
               <section key={r.name} className="dx-card" hidden={view !== "all" && view !== r.name}>
                 <button type="button" className="dx-card-head" onClick={() => setView(r.name)} aria-label={`Show only ${r.name} results`}>
                   <span className="vz-plat-logo"><Logo name={r.name} size={18} /></span>{r.name}
-                  {!(loading && !r.linked) && <em className={`rp-badge s-${st.tone}`}>{st.label}</em>}
+                  {!(loading && !r.linked) && <em className={`pp-pill ps-${r.status}`}><i aria-hidden="true" />{st.label}</em>}
                 </button>
                 {r.linked && (
                   <a className="rp-linked" href={r.linked.url} target="_blank" rel="noopener noreferrer">

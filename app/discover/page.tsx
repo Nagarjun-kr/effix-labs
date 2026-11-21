@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "https://effix.co.in/discover" },
+  // Results pages only; the audit starts from the homepage search box.
+  robots: { index: false, follow: true },
   openGraph: { title: TITLE, description: DESC, url: "https://effix.co.in/discover", type: "website", images: [{ url: "https://effix.co.in/images/og-home.jpg", width: 1200, height: 630 }] },
   twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: ["https://effix.co.in/images/og-home.jpg"] },
 };

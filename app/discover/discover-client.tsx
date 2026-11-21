@@ -1,21 +1,16 @@
 "use client";
 
-// Effix Discover — free visibility audit.
-// Website URL -> our server reads that one public page -> brand name + social links found on it
-// -> our server searches "<brand>" site:<platform> on 8 platforms (Google results via Serper.dev)
-// -> results shown as potential mentions. No Google widget in the browser, so no CAPTCHA.
-// Nothing is stored and no login is needed.
-import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
+// Effix Discover results page. The only search box is on the homepage (#audit); it opens /discover?url=…
+// Flow: full-screen scan (website read -> Google workflow, live progress) -> "report ready" -> dashboard.
+// No Google widget in the browser, so no CAPTCHA. Nothing is stored and no login is needed.
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { checkTargets, type Overview, type ProfileCheck } from "@/lib/discover/classify";
 import { displayHost, parseWebsite } from "@/lib/discover/input";
-import Report, { Logo as PlatformLogo, PLATFORMS, type Identity, type Mentions, type PlatformResult } from "./report";
+import Report, { Logo as PlatformLogo, type Identity, type Mentions, type PlatformResult } from "./report";
+import Scan, { type ScanStage, type SearchProgress } from "./scan";
 
-type Phase = "idle" | "loading" | "done";
-type StepState = "wait" | "run" | "second" | "done";
-type SearchProgress = { overview: StepState; siteFound?: boolean; platforms: Record<string, { state: StepState; found?: number }> };
-
-const STEPS = ["Reading your website", "Finding your brand and linked profiles", "Searching 8 platforms on Google"];
+type Phase = "start" | "scan" | "done";
 
 function Logo() {
   return (
@@ -27,12 +22,12 @@ function Logo() {
 }
 
 export default function DiscoverClient() {
-  const [phase, setPhase] = useState<Phase>("idle");
+  const [phase, setPhase] = useState<Phase>("start");
+  const [stage, setStage] = useState<ScanStage>("site");
   const [website, setWebsite] = useState("");
   const [identity, setIdentity] = useState<Identity | null>(null);
   const [brandQuery, setBrandQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [step, setStep] = useState(0);
   const [mentions, setMentions] = useState<Mentions>({ status: "loading" });
   const [searched, setSearched] = useState(""); // brand name the shown results are for
   const [checks, setChecks] = useState<Record<string, ProfileCheck>>({}); // profile pages we opened to confirm
@@ -60,7 +55,7 @@ export default function DiscoverClient() {
     };
   }, [mentions, identity]);
 
-  const searchMentions = useCallback(async (brand: string, domain: string) => {
+  const searchMentions = useCallback(async (brand: string, domain: string): Promise<void> => {
     const term = brand.trim();
     if (!term) return;
     setMentions({ status: "loading" });
@@ -114,39 +109,54 @@ export default function DiscoverClient() {
     }
   }, []);
 
+  /** Shows "report ready" briefly, then reveals the dashboard. */
+  const reveal = useCallback(async () => {
+    setStage("ready");
+    await new Promise((r) => window.setTimeout(r, 1300));
+    setPhase("done");
+    window.scrollTo({ top: 0 });
+  }, []);
+
   const run = useCallback(async (raw: string) => {
+    setPhase("scan");
+    setStage("site");
+    setProgress({ overview: "wait", platforms: {} });
     const parsed = parseWebsite(raw);
     if (!parsed.ok) {
+      setWebsite(String(raw ?? "").trim());
       setError(parsed.error);
+      setStage("error");
       return;
     }
-    const value = parsed.entered;
     setWebsite(displayHost(parsed.host));
     setError(null);
-    setPhase("loading");
-    setStep(0);
-    const t = window.setTimeout(() => setStep(1), 700);
     try {
-      const res = await fetch("/api/discovery", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: value }) });
+      const res = await fetch("/api/discovery", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: parsed.entered }) });
       const body = await res.json().catch(() => ({}));
       if (!res.ok || !body.identity) throw new Error(body.error || "We couldn't open that website. Check the address and try again.");
       const id = body.identity as Identity;
       setBlocked(Boolean(body.blocked));
-      setStep(2);
-      await new Promise((r) => window.setTimeout(r, 450));
       setIdentity(id);
       setBrandQuery(id.name);
-      setPhase("done");
-      searchMentions(id.name, id.domain);
       try { window.history.replaceState(null, "", `/discover?url=${encodeURIComponent(id.domain)}`); } catch { /* ignore */ }
-      window.scrollTo({ top: 0 });
+      setStage("search");
+      await searchMentions(id.name, id.domain);
+      await reveal();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong. Please try again.");
-      setPhase(identity ? "done" : "idle");
-    } finally {
-      window.clearTimeout(t);
+      setStage("error");
     }
-  }, [identity, searchMentions]);
+  }, [searchMentions, reveal]);
+
+  /** "Search again" with a different brand name, from the dashboard. */
+  const researchName = useCallback(async (name: string) => {
+    if (!identity || !name.trim()) return;
+    setPhase("scan");
+    setStage("search");
+    window.scrollTo({ top: 0 });
+    await searchMentions(name, identity.domain);
+    await reveal();
+  }, [identity, searchMentions, reveal]);
 
   // Arrived from the homepage audit form (?url=… or the saved session value): start straight away.
   const autoStarted = useRef(false);
@@ -159,18 +169,14 @@ export default function DiscoverClient() {
       try { incoming = sessionStorage.getItem("effix_audit_target"); } catch { /* ignore */ }
     }
     try { sessionStorage.removeItem("effix_audit_target"); } catch { /* ignore */ }
-    if (incoming) {
-      setWebsite(incoming.trim());
-      run(incoming);
-    }
+    if (incoming) run(incoming);
+    else window.location.replace("/#audit"); // the only search box is on the homepage
     // run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    run(website);
-  }
+  if (phase === "start") return <div className="sc" aria-busy="true"><div className="sc-bg" aria-hidden="true" /></div>;
+  if (phase === "scan") return <Scan stage={stage} domain={website} brand={searched || identity?.name || ""} progress={progress} error={error} />;
 
   return (
     <div className="dx">
@@ -181,107 +187,25 @@ export default function DiscoverClient() {
         </div>
       </header>
 
-      {phase === "idle" && (
-        <main>
-          <section className="dx-hero">
-            <div className="dx-wrap">
-              <span className="dx-kicker">Effix Discover · Free visibility audit</span>
-              <h1 className="dx-h1">Find your brand <em>across the web.</em></h1>
-              <p className="dx-sub">Enter your website. We find your brand name and the profiles you link to, then show live Google results for your brand on eight platforms.</p>
-              <form className="dx-form" onSubmit={submit}>
-                <label htmlFor="dx-url" className="sr-only">Your website URL</label>
-                <input id="dx-url" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="yourbusiness.com" autoComplete="url" inputMode="url" required />
-                <button className="dx-btn" type="submit">Run a Visibility Audit <span aria-hidden="true">→</span></button>
-              </form>
-              {error && <p className="dx-error" role="alert">{error}</p>}
-              <p className="dx-note"><span>Free</span><span>No login</span><span>Nothing saved</span></p>
-            </div>
-          </section>
-
-          <section className="dx-how" aria-labelledby="dx-how-title">
-            <div className="dx-wrap">
-              <h2 id="dx-how-title" className="sr-only">How Effix Discover works</h2>
-              <ol className="dx-steps">
-                <li className="dx-step"><b>01</b><h2>We read your website</h2><p>Our server opens the one public page you enter. It never logs in or saves the page.</p></li>
-                <li className="dx-step"><b>02</b><h2>We find your brand</h2><p>We pick up your brand name and the social profiles your site already links to. You can correct the name.</p></li>
-                <li className="dx-step"><b>03</b><h2>We search 8 platforms</h2><p>Google searches your brand name on each platform and we show the live results under each one.</p></li>
-              </ol>
-              <div className="dx-platforms" aria-label="Platforms searched">{PLATFORMS.map((p) => <span key={p.name}>{p.name}</span>)}</div>
-              <p className="dx-limits">Results only include pages Google has indexed. A result can mention your brand without being an official account. This is a discovery tool, not a complete count of every post or profile.</p>
-            </div>
-          </section>
-        </main>
-      )}
-
-      {phase === "loading" && (
-        <main className="dx-loading" aria-live="polite">
+      {identity && (
+        <main className="dx-report vz vz-reveal">
           <div className="dx-wrap">
-            <span className="dx-kicker">Running your visibility audit</span>
-            <h1>{website.replace(/^https?:\/\//i, "").replace(/\/$/, "") || "Your website"}</h1>
-            <ol className="dx-progress">
-              {STEPS.map((s, i) => <li key={s} className={i < step ? "is-done" : i === step ? "is-active" : ""}><i aria-hidden="true" />{s}</li>)}
-            </ol>
-          </div>
-        </main>
-      )}
-
-      {phase === "done" && identity && (
-        <main className="dx-report vz">
-          <div className="dx-wrap">
-            <div className="vz-top">
-              <form className="vz-search" onSubmit={submit}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-                <label htmlFor="dx-url2" className="sr-only">Website to audit</label>
-                <input id="dx-url2" type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="yourbusiness.com" inputMode="url" required />
-                <button className="vz-dark" type="submit">Change</button>
-              </form>
-              <span className="vz-live"><i aria-hidden="true" /> Live search results</span>
-            </div>
-
             <header className="vz-head">
               <div>
+                <span className="vz-eyebrow"><i aria-hidden="true" /> Live visibility report</span>
                 <h1>Brand Visibility Overview</h1>
                 <p>
-                  <a href={identity.sourceUrl} target="_blank" rel="noopener noreferrer">{identity.domain}</a> · {identity.name}
-                  {updatedAt && <> · Last updated {updatedAt.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}</>}
+                  <a href={identity.sourceUrl} target="_blank" rel="noopener noreferrer">{identity.domain} ↗</a> · {identity.name}
+                  {updatedAt && <> · Updated {updatedAt.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}</>}
                 </p>
               </div>
-              <button type="button" className="vz-dark vz-new" onClick={() => { setPhase("idle"); setWebsite(""); setIdentity(null); try { window.history.replaceState(null, "", "/discover"); } catch { /* ignore */ } window.scrollTo({ top: 0 }); }}>
-                <span aria-hidden="true">+</span> New Audit
-              </button>
+              <a className="vz-dark vz-new" href="/#audit"><span aria-hidden="true">+</span> New Audit</a>
             </header>
             {error && <p className="dx-error" role="alert">{error}</p>}
             {blocked && (
               <p className="dx-error dx-warn" role="status">
                 {identity.domain} doesn&apos;t allow automated visits, so we couldn&apos;t see which profiles it links to. We took the name “{identity.name}” from the address. Check it below, and treat “Official” as unknown for this site.
               </p>
-            )}
-
-            {mentions.status === "loading" && (
-              <section className="vz-card vz-progress" aria-live="polite" aria-label="Search progress">
-                <div className="vz-card-head">
-                  <h3>Checking Google thoroughly</h3>
-                  <span className="vz-chip">{Object.values(progress.platforms).filter((x) => x.state === "done").length} / {PLATFORMS.length} platforms</span>
-                </div>
-                <p className="vz-note" style={{ marginTop: 0 }}>We search each platform carefully, re-check thin answers and look twice where nothing turns up. This takes 20–60 seconds.</p>
-                <ol>
-                  <li className={`st-${progress.overview}`}>
-                    <i aria-hidden="true" />
-                    <span>Searching “{searched || identity.name}” on Google</span>
-                    <small>{progress.overview === "done" ? (progress.siteFound ? "Your website appears" : "Done") : progress.overview === "run" ? "Searching…" : "Waiting"}</small>
-                  </li>
-                  {PLATFORMS.map((p) => {
-                    const st = progress.platforms[p.name] ?? { state: "wait" as const };
-                    return (
-                      <li key={p.name} className={`st-${st.state}`}>
-                        <i aria-hidden="true" />
-                        <span><PlatformLogo name={p.name} size={16} /> {p.name}</span>
-                        <small>{st.state === "done" ? `${st.found ?? 0} result${st.found === 1 ? "" : "s"}` : st.state === "second" ? "Looking again…" : st.state === "run" ? "Searching…" : "Waiting"}</small>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </section>
             )}
 
             <Report
@@ -295,7 +219,7 @@ export default function DiscoverClient() {
                     <span className="dx-label">Brand name we searched</span>
                     <p>We found “{identity.name}” on your website. If people know you by a different name, change it and search again.</p>
                   </div>
-                  <form onSubmit={(e) => { e.preventDefault(); searchMentions(brandQuery, identity.domain); }}>
+                  <form onSubmit={(e) => { e.preventDefault(); researchName(brandQuery); }}>
                     <label htmlFor="dx-brand" className="sr-only">Brand name</label>
                     <input id="dx-brand" value={brandQuery} onChange={(e) => setBrandQuery(e.target.value)} maxLength={100} />
                     <button className="dx-btn" type="submit" disabled={!brandQuery.trim() || mentions.status === "loading"}>{mentions.status === "loading" ? "Searching…" : "Search again"}</button>
@@ -306,18 +230,41 @@ export default function DiscoverClient() {
 
             <p className="dx-coverage"><strong>Coverage note.</strong> Each audit runs a fresh, step-by-step Google search: your brand name, then each of the eight platforms (re-checked when results are thin), with a second look where no account turns up. Up to ten results are kept per platform. Private, blocked or differently named pages may not appear. YouTube channels are confirmed by opening their public page; other platforms block automated visits, so their status comes from search evidence. Platform logos are trademarks of their owners.</p>
 
-            <section className="dx-cta" aria-label="Get help from Effix Labs">
-              <div>
-                <span className="dx-label">Next step</span>
-                <h2>Want to show up <em>in more places?</em></h2>
+            <section className="cta2" aria-labelledby="cta2-t">
+              <div className="cta2-glow" aria-hidden="true" />
+              <div className="cta2-copy">
+                <span className="cta2-kicker"><i aria-hidden="true" /> Next step</span>
+                <h2 id="cta2-t">Want to show up <em>in more places?</em></h2>
                 <p>Effix Labs helps businesses get found on Google, in online communities and in AI search, with honest reporting and no fake reviews or accounts.</p>
+                <div className="cta2-actions">
+                  <a className="cta2-primary" href="mailto:hello@effix.co.in?subject=Visibility%20audit%20for%20my%20brand">
+                    Email hello@effix.co.in <span aria-hidden="true">→</span>
+                  </a>
+                  <span className="cta2-reply"><i aria-hidden="true" /> We reply within one business day</span>
+                </div>
               </div>
-              <div className="dx-cta-links">
-                <a href="/services/google-business-profile">Google Business Profile Optimisation <span aria-hidden="true">→</span></a>
-                <a href="/services/reddit-marketing">Reddit Marketing <span aria-hidden="true">→</span></a>
-                <a href="/services/seo-aeo-services">SEO &amp; AEO Services <span aria-hidden="true">→</span></a>
-                <a href="/services/content-writing">Content Writing <span aria-hidden="true">→</span></a>
-                <p className="dx-cta-mail">Or email <a href="mailto:hello@effix.co.in">hello@effix.co.in</a>. We reply within one business day.</p>
+              <div className="cta2-grid">
+                {[
+                  { href: "/services/google-business-profile", title: "Google Business Profile", text: "Show up on Maps and local search", icon: "Google" },
+                  { href: "/services/reddit-marketing", title: "Reddit Marketing", text: "Be part of the conversations people trust", icon: "Reddit" },
+                  { href: "/services/seo-aeo-services", title: "SEO & AEO", text: "Rank on Google and in AI answers", icon: "seo" },
+                  { href: "/services/content-writing", title: "Content Writing", text: "Pages and posts that answer real questions", icon: "pen" },
+                ].map((c) => (
+                  <a key={c.href} className="cta2-card" href={c.href}>
+                    <span className="cta2-ic">
+                      {c.icon === "seo" ? (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8" /><path d="M15 7h6v6" /></svg>
+                      ) : c.icon === "pen" ? (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
+                      ) : (
+                        <PlatformLogo name={c.icon} size={20} />
+                      )}
+                    </span>
+                    <strong>{c.title}</strong>
+                    <small>{c.text}</small>
+                    <span className="cta2-arrow" aria-hidden="true">→</span>
+                  </a>
+                ))}
               </div>
             </section>
           </div>

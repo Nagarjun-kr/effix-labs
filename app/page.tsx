@@ -37,7 +37,7 @@ const HOME_FAQS: FaqItem[] = [
       "It reads your website, finds your brand name and the social profiles you link to, then shows live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads. ",
       {
         "text": "Run the free audit",
-        "href": "/discover"
+        "href": "/#audit"
       },
       "."
     ]
@@ -227,7 +227,7 @@ export default function Page() {
           {" "}
           <div className="navbar-cta-wrap">
             {" "}
-            <a href="/discover" className="nav-cta-btn">
+            <a href="#audit" className="nav-cta-btn">
               {"Run a Visibility Audit"}
             </a>
             {" "}
@@ -284,7 +284,7 @@ export default function Page() {
               </li>
               {" "}
               <li>
-                <a href="/discover" className="nav-cta-btn" style={{ display: "inline-block", marginTop: "10px" }} data-onclick="toggleMobileDrawer()">
+                <a href="#audit" className="nav-cta-btn" style={{ display: "inline-block", marginTop: "10px" }} data-onclick="toggleMobileDrawer()">
                   {"Run a Visibility Audit"}
                 </a>
               </li>
@@ -427,7 +427,7 @@ export default function Page() {
             {" "}
             <div className="window-scroll-card" id="windowScrollCard">
               {" "}
-              <a href="/discover" className="window-content-anchor" aria-label="Explore Search Discovery on Effix Labs">
+              <a href="#audit" className="window-content-anchor" aria-label="Explore Search Discovery on Effix Labs">
                 {" "}
                 <img src="/images/search-everywhere.webp" alt="Search is not one place anymore. Multiple places, real opportunities across Google, Online Communities and AI Search" className="window-display-image" width={2000} height={1026} loading="eager" decoding="async" />
                 {" "}
@@ -795,7 +795,7 @@ export default function Page() {
                 {" "}
                 <div className="discover-action-wrap">
                   {" "}
-                  <a href="/discover" className="discover-cta-btn">
+                  <a href="#audit" className="discover-cta-btn">
                     {" "}
                     <span>
                       {"Run a Visibility Audit"}
@@ -1635,7 +1635,7 @@ export default function Page() {
                       <p className="pc-card-text">{"We turn uncertainty into a clear plan. See where you stand, focus on what matters, make the improvements, and track what changed."}</p>
                       <p className="pc-card-note"><span className="pc-note-dot" aria-hidden="true"></span>{"We report what we can measure. We say so when we can’t."}</p>
                       <div className="pc-card-ctas">
-                        <a href="/discover" className="pc-btn-primary">{"Run a Visibility Audit →"}</a>
+                        <a href="#audit" className="pc-btn-primary">{"Run a Visibility Audit →"}</a>
                         <a href="#services" className="pc-btn-ghost">{"Explore services"}</a>
                       </div>
                     </div>
@@ -1849,7 +1849,7 @@ export default function Page() {
               {" "}
               <div className="cta-actions-row">
                 {" "}
-                <a href="/discover" className="submit-pill-btn" style={{ textDecoration: "none" }}>
+                <a href="#audit" className="submit-pill-btn" style={{ textDecoration: "none" }}>
                   {"Run a Visibility Audit →"}
                 </a>
                 {" "}
@@ -1960,7 +1960,7 @@ export default function Page() {
               <ul className="footer-nav-list">
                 {" "}
                 <li>
-                  <a href="/discover">
+                  <a href="#audit">
                     {"Effix Discover"}
                   </a>
                 </li>
