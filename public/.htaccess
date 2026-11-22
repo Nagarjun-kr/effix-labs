@@ -26,6 +26,10 @@ RewriteRule ^services/ai(-assisted)?-blog-seo(\.html|/index\.html|/)?$ /services
 RewriteRule ^services/ai-search-visibility(\.html|/index\.html|/)?$ /services/seo-aeo-services [R=301,L]
 RewriteRule ^services/([a-z-]+)/index\.html$ /services/$1 [R=301,L]
 
+# .../index.html -> the folder (e.g. /seo-agency/index.html -> /seo-agency/)
+RewriteCond %{THE_REQUEST} \s/+((?:[^?\s]*/)?)index\.html[\s?]
+RewriteRule ^ /%1 [R=301,L]
+
 # Typed .../page.html -> .../page (clean URL); only for requests made with .html, not internal rewrites
 RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?]
 RewriteRule ^ /%1 [R=301,L]

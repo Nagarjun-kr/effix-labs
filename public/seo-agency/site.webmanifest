@@ -1,0 +1,14 @@
+{
+  "name": "Effix SEO Agency",
+  "short_name": "Effix",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
