@@ -1,10 +1,10 @@
 "use client";
 
-// Desktop navigation with full-width mega menus for Services and Work (pattern studied from promptarmor.com):
-// hovering a menu item fills it with colour, the header turns solid, and one full-width panel drops down under the
-// header with the links laid out side by side; the page behind dims. Moving between Services and Work slides the
-// content sideways and resizes the panel height. Opens on hover (short close delay), on focus and on tap; Escape
-// closes. Mobile menus are separate and unchanged.
+// Desktop navigation with mega menus for Services and Work (card style studied from decagon.ai): hovering a menu item
+// fills it with colour and opens one floating rounded card under the nav, with the links laid out side by side.
+// Moving between Services and Work slides the content sideways and resizes the card. Opens on hover (short close
+// delay) and on focus; clicking Services or Work toggles the card open/closed; Escape closes. Mobile menus are
+// separate and unchanged.
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -23,8 +23,7 @@ const Svg = ({ d }: { d: string }) => (
 const Item = ({ href, icon, title, text }: { href: string; icon: React.ReactNode; title: string; text: string }) => (
   <a href={href} className="mm-item" role="menuitem">
     {icon}
-    <b>{title}</b>
-    <small>{text}</small>
+    <span><b>{title}</b><small>{text}</small></span>
   </a>
 );
 
@@ -56,11 +55,10 @@ function WorkMenu() {
   );
 }
 
-export default function MegaNav({ current, hideBelow = 1000 }: { current?: "about" | "blog" | "work" | "services"; hideBelow?: 950 | 1000 }) {
+export default function MegaNav({ current, hideBelow = 1000 }: { current?: "about" | "blog" | "work" | "services" | "contact"; hideBelow?: 950 | 1000 }) {
   const [open, setOpen] = useState<Key | null>(null);
   const [shown, setShown] = useState(false); // panel visible (stays true while moving between menus)
-  const [top, setTop] = useState(0); // header bottom, in viewport px
-  const [height, setHeight] = useState(0);
+  const [box, setBox] = useState({ top: 0, x: 0, w: 0, h: 0 }); // card position and size, in viewport px
   const [instant, setInstant] = useState(true); // first frame after opening: no height animation
   const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -72,9 +70,11 @@ export default function MegaNav({ current, hideBelow = 1000 }: { current?: "abou
 
   const measure = useCallback((key: Key | null) => {
     const header = navRef.current?.closest("header") ?? navRef.current;
-    if (header) setTop(Math.round(header.getBoundingClientRect().bottom));
     const m = key ? menus.current[key] : null;
-    if (m) setHeight(m.scrollHeight);
+    if (!header || !m) return;
+    const w = Math.min(m.scrollWidth, window.innerWidth - 32);
+    // floats 12px under the header, centred on the page
+    setBox({ top: Math.round(header.getBoundingClientRect().bottom) + 12, x: Math.round((window.innerWidth - w) / 2), w, h: m.scrollHeight });
   }, []);
 
   const show = (key: Key) => {
@@ -96,10 +96,6 @@ export default function MegaNav({ current, hideBelow = 1000 }: { current?: "abou
     const id = requestAnimationFrame(() => requestAnimationFrame(() => setInstant(false)));
     return () => cancelAnimationFrame(id);
   }, [instant, shown]);
-  // solid header while a menu is open
-  useEffect(() => {
-    navRef.current?.closest("header")?.toggleAttribute("data-mm-open", shown);
-  }, [shown]);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setShown(false); setOpen(null); } };
     const onChange = () => { if (open) measure(open); };
@@ -109,19 +105,26 @@ export default function MegaNav({ current, hideBelow = 1000 }: { current?: "abou
     return () => { window.removeEventListener("keydown", onKey); window.removeEventListener("resize", onChange); window.removeEventListener("scroll", onChange); };
   }, [open, measure]);
 
-  const Trigger = ({ k, href, label }: { k: Key; href: string; label: string }) => (
-    <li>
+  // after a click closes the card, hovering the same item does not reopen it until the pointer leaves it
+  const suppress = useRef<Key | null>(null);
+  // a plain render function (not a nested component) so the links keep their identity between renders
+  const trigger = (k: Key, href: string, label: string) => (
+    <li key={k}>
       <a
         href={href}
         className={`mm-link mm-trigger ${open === k && shown ? "is-open" : ""}`}
         aria-haspopup="true"
         aria-expanded={open === k && shown}
         aria-current={current === k ? "page" : undefined}
-        onPointerEnter={(e) => { if (e.pointerType === "mouse") show(k); }}
-        onFocus={() => show(k)}
+        onPointerEnter={(e) => { if (e.pointerType === "mouse" && suppress.current !== k) show(k); }}
+        onPointerLeave={() => { if (suppress.current === k) suppress.current = null; }}
+        onFocus={() => { if (suppress.current !== k) show(k); }}
         onClick={(e) => {
-          // touch/pen: first tap opens the menu, second tap follows the link
-          if (!(open === k && shown) && e.nativeEvent instanceof PointerEvent && e.nativeEvent.pointerType !== "mouse") { e.preventDefault(); show(k); }
+          // click toggles the card: closes it when open, opens it when closed (the link itself is the overview page,
+          // reachable from the card)
+          e.preventDefault();
+          if (open === k && shown) { clearTimeout(closeTimer.current); suppress.current = k; setShown(false); setOpen(null); }
+          else { suppress.current = null; show(k); }
         }}
       >
         {label}
@@ -133,11 +136,10 @@ export default function MegaNav({ current, hideBelow = 1000 }: { current?: "abou
   const idx = open ? ORDER.indexOf(open) : -1;
   const panel = (
     <>
-      <div className={`mm-dim ${shown ? "is-shown" : ""}`} style={{ top }} aria-hidden="true" onPointerEnter={() => hide(60)} onClick={() => hide(0)} />
       <div
         ref={panelRef}
         className={`mm-panel ${shown ? "is-shown" : ""} ${instant ? "is-instant" : ""}`}
-        style={{ top, height: height || undefined }}
+        style={{ top: box.top, transform: `translateX(${box.x}px)`, width: box.w || undefined, height: box.h || undefined }}
         onPointerEnter={cancelHide}
         onPointerLeave={(e) => { if (e.pointerType === "mouse" && outside(e.relatedTarget)) hide(); }}
         onFocus={cancelHide}
@@ -171,9 +173,9 @@ export default function MegaNav({ current, hideBelow = 1000 }: { current?: "abou
       <ul className="mm-list">
         <li><a href="/about" className="mm-link" aria-current={current === "about" ? "page" : undefined} onPointerEnter={() => hide(90)}>About</a></li>
         <li><a href="/blog" className="mm-link" aria-current={current === "blog" ? "page" : undefined} onPointerEnter={() => hide(90)}>Blog</a></li>
-        <Trigger k="services" href="/#services" label="Services" />
-        <Trigger k="work" href="/casestudy/" label="Work" />
-        <li><a href="/contact" className="mm-link" onPointerEnter={() => hide(90)}>Contact</a></li>
+        {trigger("services", "/#services", "Services")}
+        {trigger("work", "/casestudy/", "Work")}
+        <li><a href="/contact" className="mm-link" aria-current={current === "contact" ? "page" : undefined} onPointerEnter={() => hide(90)}>Contact</a></li>
       </ul>
       {mounted ? createPortal(panel, document.body) : null}
     </nav>
