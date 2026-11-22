@@ -1,5 +1,6 @@
 // Cloudflare Worker that runs Effix Discover's search and the SEO audit for the static HTML site.
-// Deploy: npx wrangler deploy   ·   Secrets: npx wrangler secret put SERPER_API_KEYS
+// Deploy: npx wrangler deploy   ·   Secrets: npx wrangler secret put SERPER_API_KEYS (also RESEND_API_KEY,
+// GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, and TURNSTILE_SECRET to switch on the bot check)
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "effix-search",
@@ -12,5 +13,17 @@
   "alias": {
     "@/lib/discover/safe-retrieval": "./worker/safe-retrieval.ts"
   },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // "1" lets local previews (localhost:3000 / 4100) call this Worker; set to "0" once effixlabs.in is live.
+  "vars": { "ALLOW_LOCALHOST": "1" },
+  // Cloudflare Workers Rate Limiting, shared across Worker instances (period: 10 or 60 seconds), per visitor IP.
+  // Used by lib/edge-guard.ts on top of the in-memory limits.
+  "ratelimits": [
+    { "name": "RL_CONTACT", "namespace_id": "1001", "simple": { "limit": 3, "period": 60 } },
+    { "name": "RL_AUDIT", "namespace_id": "1002", "simple": { "limit": 4, "period": 60 } },
+    { "name": "RL_SPEED", "namespace_id": "1003", "simple": { "limit": 6, "period": 60 } },
+    { "name": "RL_DISCOVERY", "namespace_id": "1004", "simple": { "limit": 6, "period": 60 } },
+    { "name": "RL_MENTIONS", "namespace_id": "1005", "simple": { "limit": 2, "period": 60 } },
+    { "name": "RL_VERIFY", "namespace_id": "1006", "simple": { "limit": 10, "period": 60 } }
+  ]
 }

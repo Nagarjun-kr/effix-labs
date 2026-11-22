@@ -51,6 +51,18 @@ RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+)$ $1.html [L]
 </IfModule>
 
+# Hidden files and folders (.env, .git, editor files) are never served; .well-known/ stays reachable
+RedirectMatch 404 /\.(?!well-known/)
+
+# Security headers
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
+
 # Caching: hashed build files forever, pages always fresh
 <IfModule mod_headers.c>
   <FilesMatch "\.(woff2|ttf|png|jpg|jpeg|webp|svg|ico|mp4|webm)$">

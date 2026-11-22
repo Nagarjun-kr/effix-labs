@@ -5,6 +5,7 @@ import { extractBrandIdentity, nameFromHost } from "@/lib/discover/brand-identit
 import { retrieveSafely } from "@/lib/discover/safe-retrieval";
 import { parseWebsite } from "@/lib/discover/input";
 import { RetrievalPolicyError, validateWebsiteUrl } from "@/lib/discover/url-policy";
+import { edgeAllow, readJson, tooLargeResponse, TooLarge } from "@/lib/edge-guard";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -68,11 +69,17 @@ async function readSite(host: string, entered: string): Promise<{ page?: Fetched
 
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
-  if (!consume(request)) {
+  if (!consume(request) || !(await edgeAllow(request, "discovery"))) {
     return Response.json({ error: "Too many checks in a short time. Please try again in a minute." }, { status: 429, headers });
   }
+  let body: { url?: unknown };
   try {
-    const body = (await request.json().catch(() => ({}))) as { url?: unknown };
+    body = (await readJson<{ url?: unknown }>(request, 4_096)) ?? {};
+  } catch (e) {
+    if (e instanceof TooLarge) return tooLargeResponse();
+    throw e;
+  }
+  try {
     const parsed = parseWebsite(body.url);
     if (!parsed.ok) return Response.json({ error: parsed.error }, { status: 400, headers });
     const { page, blockedBy, error } = await readSite(parsed.host, parsed.entered);

@@ -4,6 +4,7 @@
 
 import { cleanBrand, findMentions, mentionsConfigured, type Progress } from "@/lib/discover/mentions";
 import { allow } from "@/lib/rate-limit";
+import { edgeAllow, notHumanResponse, readJson, tooLargeResponse, TooLarge, verifyHuman } from "@/lib/edge-guard";
 
 export const runtime = "nodejs";
 export const maxDuration = 60; // the workflow normally takes 15–30 s; 60 s fits every Vercel plan
@@ -11,10 +12,18 @@ export const maxDuration = 60; // the workflow normally takes 15–30 s; 60 s fi
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
   if (!mentionsConfigured()) return Response.json({ configured: false }, { headers });
-  if (!allow(request, "mentions", 6)) {
+  if (!allow(request, "mentions", 6) || !(await edgeAllow(request, "mentions"))) {
     return Response.json({ error: "Too many searches in a short time. Please try again in a minute." }, { status: 429, headers });
   }
-  const body = (await request.json().catch(() => ({}))) as { brand?: unknown; domain?: unknown };
+  // each brand search costs Serper credits, so it is the call that needs the bot check
+  let body: { brand?: unknown; domain?: unknown; turnstile?: unknown };
+  try {
+    body = (await readJson<{ brand?: unknown; domain?: unknown; turnstile?: unknown }>(request, 4_096)) ?? {};
+  } catch (e) {
+    if (e instanceof TooLarge) return tooLargeResponse();
+    throw e;
+  }
+  if (!(await verifyHuman(request, body.turnstile))) return notHumanResponse();
   const brand = typeof body.brand === "string" ? cleanBrand(body.brand) : "";
   const domain = typeof body.domain === "string" ? body.domain.slice(0, 253) : "";
   if (brand.length < 2) return Response.json({ error: "Enter a brand name to search." }, { status: 400, headers });

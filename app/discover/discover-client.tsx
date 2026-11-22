@@ -12,6 +12,7 @@ import { displayHost, parseWebsite } from "@/lib/discover/input";
 import Report, { Orb as PlatformOrb, type Identity, type Mentions, type PlatformResult } from "./report";
 import Scan, { type ScanStage, type SearchProgress } from "./scan";
 import { API_BASE } from "@/lib/api";
+import { getHumanToken } from "@/lib/turnstile";
 
 type Phase = "start" | "scan" | "done";
 
@@ -70,7 +71,7 @@ export default function DiscoverClient() {
       const res = await fetch(`${API_BASE}/api/discovery/mentions`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/x-ndjson" },
-        body: JSON.stringify({ brand: term, domain }),
+        body: JSON.stringify({ brand: term, domain, turnstile: await getHumanToken() }),
       });
       const type = res.headers.get("content-type") ?? "";
       if (!type.includes("ndjson") || !res.body) {

@@ -8,7 +8,7 @@
     "build:forms": "node scripts/build-form-guard.mjs",
     "start": "next start",
     "lint": "eslint",
-    "test:brands": "node --test tests/brand-accuracy.test.ts tests/website-input.test.ts tests/serper-links.test.ts tests/form-rules.test.ts",
+    "test:brands": "node --test tests/brand-accuracy.test.ts tests/website-input.test.ts tests/serper-links.test.ts tests/form-rules.test.ts tests/security.test.ts",
     "worker:dev": "wrangler dev --port 8787",
     "worker:deploy": "wrangler deploy",
     "check:post": "node scripts/check-post.mjs"

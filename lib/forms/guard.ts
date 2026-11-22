@@ -6,6 +6,7 @@
 // focus when they are invalid.
 // Field rules come from data-rule="name|email|phone|company|website|message|text" or are inferred from the field name.
 import { checkField, type Rule, type Submission } from "./rules";
+import { getHumanToken } from "../turnstile";
 
 const STYLE = `
 .fx-err{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;margin:6px 2px 0;font:500 13px/1.45 'Plus Jakarta Sans',system-ui,sans-serif;color:#c0392b;text-align:left}
@@ -26,7 +27,8 @@ const STYLE = `
 
 type Field = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 // where the "Send by email instead" fallback goes (same inbox as the Worker uses)
-const FALLBACK_TO = "effix.labs@gmail.com";
+// assembled at runtime so simple scrapers reading the script don't pick the address up
+const FALLBACK_TO = ["effix.labs", "gmail.com"].join("@");
 const FIELD_RULES: Record<string, Rule> = {
   first: "name", last: "name", fullname: "name", name: "name", firstname: "name", lastname: "name",
   email: "email", workemail: "email",
@@ -164,12 +166,14 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
     const label = button?.innerHTML;
     if (button) { button.disabled = true; button.textContent = "Sending…"; }
     say("wait", "Sending your message…");
-    const payload: Submission & { hp: string; t: number } = {
+    const turnstile = await getHumanToken(); // bot check (does nothing until a Turnstile site key is set)
+    const payload: Submission & { hp: string; t: number; turnstile?: string } = {
       form: opts.name,
       page: location.pathname,
       fields: fields.map(entry).map((f) => (f.rule === "phone" && f.value.trim() ? { ...f, code: codeEl?.value ?? "+91" } : f)),
       hp: hp.value,
       t: Date.now() - started,
+      turnstile,
     };
     // safety net: if sending fails, the visitor can send the same details from their email app in one click
     const mailto = () => {

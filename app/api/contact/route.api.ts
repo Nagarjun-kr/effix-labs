@@ -6,6 +6,7 @@
 //   CONTACT_FROM    sender (default "Effix Labs <onboarding@resend.dev>", which Resend only delivers to the email that
 //                   owns the Resend account; after verifying effixlabs.in in Resend use e.g. "Effix Labs <forms@effixlabs.in>")
 import { allow } from "@/lib/rate-limit";
+import { edgeAllow, readJson, TooLarge, verifyHuman } from "@/lib/edge-guard";
 import { checkField, type Rule, type Submission } from "@/lib/forms/rules";
 
 export const runtime = "nodejs";
@@ -13,25 +14,34 @@ export const runtime = "nodejs";
 const RULES: Rule[] = ["name", "email", "phone", "company", "website", "message", "text"];
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.slice(0, max) : "");
+// single-line text (names, labels, subject parts): no line breaks or control characters
+const line = (v: unknown, max: number) => str(v, max).replace(/[\u0000-\u001f\u007f]+/g, " ").trim();
 
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
   const fail = (error: string, status = 400, field?: string) => Response.json({ ok: false, error, field }, { status, headers });
-  if (!allow(request, "contact", 5, 10 * 60_000)) return fail("You have sent several messages in a short time. Please wait a few minutes and try again.", 429);
+  if (!allow(request, "contact", 5, 10 * 60_000) || !(await edgeAllow(request, "contact"))) return fail("You have sent several messages in a short time. Please wait a few minutes and try again.", 429);
 
-  const body = (await request.json().catch(() => null)) as (Partial<Submission> & { hp?: unknown; t?: unknown }) | null;
+  let body: (Partial<Submission> & { hp?: unknown; t?: unknown; turnstile?: unknown }) | null;
+  try {
+    body = await readJson<Partial<Submission> & { hp?: unknown; t?: unknown; turnstile?: unknown }>(request, 32_768);
+  } catch (e) {
+    if (e instanceof TooLarge) return fail("Your message is too long. Please shorten it and try again.", 413);
+    throw e;
+  }
   if (!body || !Array.isArray(body.fields)) return fail("Something went wrong with the form. Please reload the page and try again.");
   // bots: filled the hidden field or submitted in under 2 seconds. Pretend it worked.
   if (str(body.hp, 200) || (typeof body.t === "number" && body.t < 2000)) return Response.json({ ok: true }, { headers });
 
   const fields = body.fields.slice(0, 20).map((f) => ({
-    name: str(f?.name, 60),
-    label: str(f?.label, 80) || str(f?.name, 60),
+    name: line(f?.name, 60),
+    label: line(f?.label, 80) || line(f?.name, 60),
     rule: (RULES.includes(f?.rule as Rule) ? f.rule : "text") as Rule,
     value: str(f?.value, 5000).trim(),
     required: Boolean(f?.required),
-    code: str(f?.code, 6) || undefined,
+    code: line(f?.code, 6) || undefined,
   }));
+  if (!(await verifyHuman(request, body.turnstile))) return fail("We couldn't confirm you're a person. Please reload the page and try again.", 403);
   const email = fields.find((f) => f.rule === "email");
   if (!email) return fail("Please enter your email address.");
   for (const f of fields) {
@@ -42,12 +52,12 @@ export async function POST(request: Request) {
   const { RESEND_API_KEY: key, CONTACT_TO: to = "effix.labs@gmail.com", CONTACT_FROM: from = "Effix Labs <onboarding@resend.dev>" } = process.env;
   if (!key) return fail("Our form can't send messages right now.", 503);
 
-  const form = str(body.form, 60) || "Website form";
-  const page = str(body.page, 200) || "/";
+  const form = line(body.form, 60) || "Website form";
+  const page = line(body.page, 200) || "/";
   const name = fields.filter((f) => f.rule === "name").map((f) => f.value).join(" ") || email.value;
   const company = fields.find((f) => f.rule === "company")?.value;
   const rows = fields.filter((f) => f.value).map((f) => ({ label: f.label, value: f.rule === "phone" && f.code ? `${f.code} ${f.value}` : f.value }));
-  const subject = `New enquiry (${form}): ${name}${company ? `, ${company}` : ""}`;
+  const subject = (`New enquiry (${form}): ${name}${company ? `, ${company}` : ""}`).replace(/[\u0000-\u001f\u007f]+/g, " ").slice(0, 200);
   const html = `<div style="font:15px/1.55 system-ui,sans-serif;color:#151515;max-width:640px">
 <h2 style="margin:0 0 4px;font-size:18px">New enquiry from the ${esc(form)} form</h2>
 <p style="margin:0 0 16px;color:#5f5b6e">Sent from effixlabs.in${esc(page)}. Reply to this email to answer ${esc(name)} directly.</p>

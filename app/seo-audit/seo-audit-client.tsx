@@ -10,6 +10,7 @@ import type { AuditReport } from "@/lib/seo-audit/types";
 import { PLATFORMS } from "./brand-visibility";
 import Dashboard from "./dashboard";
 import { API_BASE } from "@/lib/api";
+import { getHumanToken } from "@/lib/turnstile";
 
 type Phase = "idle" | "loading" | "done";
 
@@ -52,7 +53,7 @@ export default function SeoAuditClient() {
     window.scrollTo({ top: 0 });
     const timer = window.setInterval(() => setStep((s) => Math.min(s + 1, STEPS.length - 1)), 1100);
     try {
-      const res = await fetch(`${API_BASE}/api/seo-audit`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: value }) });
+      const res = await fetch(`${API_BASE}/api/seo-audit`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: value, turnstile: await getHumanToken() }) });
       const body = await res.json().catch(() => ({}));
       if (!res.ok || !body.report) throw new Error(body.error || "We couldn't open that website. Check the address and try again.");
       setStep(STEPS.length);

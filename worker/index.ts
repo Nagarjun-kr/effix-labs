@@ -11,6 +11,7 @@ import * as verify from "../app/api/discovery/verify/route.api";
 import * as seoAudit from "../app/api/seo-audit/route.api";
 import * as speed from "../app/api/seo-audit/speed/route.api";
 import * as contact from "../app/api/contact/route.api";
+import { setEdgeBindings } from "../lib/edge-guard";
 
 type Handler = (request: Request) => Promise<Response>;
 const ROUTES: Record<string, Handler> = {
@@ -22,15 +23,11 @@ const ROUTES: Record<string, Handler> = {
   "/api/contact": contact.POST,
 };
 
-// Browsers may only call this server from the Effix website (and local development).
-const ORIGINS = new Set([
-  "https://effixlabs.in",
-  "https://www.effixlabs.in",
-  "https://effix.co.in",
-  "https://www.effix.co.in",
-  "http://localhost:3000",
-  "http://localhost:4100",
-]);
+// Browsers may only call this server from the Effix website. Local previews (localhost:3000 / 4100) are allowed only
+// while the ALLOW_LOCALHOST variable in wrangler.jsonc is "1"; set it to "0" once the site is live.
+const SITE_ORIGINS = ["https://effixlabs.in", "https://www.effixlabs.in", "https://effix.co.in", "https://www.effix.co.in"];
+const LOCAL_ORIGINS = ["http://localhost:3000", "http://localhost:4100"];
+let ORIGINS = new Set(SITE_ORIGINS);
 
 function cors(origin: string | null): Record<string, string> {
   if (!origin || !ORIGINS.has(origin)) return {};
@@ -75,7 +72,8 @@ async function auth(request: Request): Promise<Response> {
   const state = crypto.randomUUID();
   const go = new URL("https://github.com/login/oauth/authorize");
   go.searchParams.set("client_id", id);
-  go.searchParams.set("scope", url.searchParams.get("scope") || "repo,user");
+  // Fixed on the server (a link can't widen it): the site repo is public, so public_repo is all the editor needs.
+  go.searchParams.set("scope", "public_repo");
   go.searchParams.set("state", state);
   go.searchParams.set("redirect_uri", `${url.origin}/callback`);
   return new Response(null, { status: 302, headers: { Location: go.toString(), "Set-Cookie": `cms_state=${state}; Path=/callback; Max-Age=600; Secure; HttpOnly; SameSite=Lax` } });
@@ -101,7 +99,9 @@ async function callback(request: Request): Promise<Response> {
 }
 
 export default {
-  async fetch(request: Request): Promise<Response> {
+  async fetch(request: Request, env: Record<string, unknown>): Promise<Response> {
+    setEdgeBindings(env); // rate-limit bindings for the shared route code (lib/edge-guard.ts)
+    ORIGINS = new Set(env?.ALLOW_LOCALHOST === "1" ? [...SITE_ORIGINS, ...LOCAL_ORIGINS] : SITE_ORIGINS);
     const { pathname } = new URL(request.url);
     if (pathname === "/auth") return auth(request);
     if (pathname === "/callback") return callback(request);

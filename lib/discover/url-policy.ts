@@ -2,11 +2,10 @@
 import { isIP } from "node:net";
 
 export class RetrievalPolicyError extends Error {
-  constructor(
-    readonly code: string,
-    message: string,
-  ) {
+  readonly code: string;
+  constructor(code: string, message: string) {
     super(message);
+    this.code = code;
     this.name = "RetrievalPolicyError";
   }
 }
@@ -63,7 +62,16 @@ export function isPublicAddress(address: string): boolean {
       value.startsWith("2001:db8:")
     )
       return false;
-    if (value.startsWith("::ffff:")) return isPublicAddress(value.slice(7));
+    if (value.startsWith("::ffff:")) {
+      const rest = value.slice(7);
+      // dotted form (::ffff:127.0.0.1) or hex form (::ffff:7f00:1); check the IPv4 address inside either way
+      const hex = rest.match(/^([0-9a-f]{1,4}):([0-9a-f]{1,4})$/);
+      if (hex) {
+        const hi = parseInt(hex[1], 16), lo = parseInt(hex[2], 16);
+        return isPublicAddress(`${hi >> 8}.${hi & 255}.${lo >> 8}.${lo & 255}`);
+      }
+      return isPublicAddress(rest);
+    }
     return true;
   }
   const octets = address.split(".").map(Number);
