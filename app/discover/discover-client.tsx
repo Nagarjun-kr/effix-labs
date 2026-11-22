@@ -11,6 +11,7 @@ import { checkTargets, type Overview, type ProfileCheck } from "@/lib/discover/c
 import { displayHost, parseWebsite } from "@/lib/discover/input";
 import Report, { Orb as PlatformOrb, type Identity, type Mentions, type PlatformResult } from "./report";
 import Scan, { type ScanStage, type SearchProgress } from "./scan";
+import { API_BASE } from "@/lib/api";
 
 type Phase = "start" | "scan" | "done";
 
@@ -43,7 +44,7 @@ export default function DiscoverClient() {
     const items = checkTargets(identity, mentions, mentions.brand);
     if (!items.length) return;
     let live = true;
-    fetch("/api/discovery/verify", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ domain: identity.domain, items }) })
+    fetch(`${API_BASE}/api/discovery/verify`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ domain: identity.domain, items }) })
       .then((r) => r.json())
       .then((b: { checks?: ProfileCheck[] }) => {
         if (!live || !Array.isArray(b.checks)) return;
@@ -66,7 +67,7 @@ export default function DiscoverClient() {
     setProgress({ overview: "wait", platforms: {} });
     const fail = "The search didn't finish. Please try again.";
     try {
-      const res = await fetch("/api/discovery/mentions", {
+      const res = await fetch(`${API_BASE}/api/discovery/mentions`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/x-ndjson" },
         body: JSON.stringify({ brand: term, domain }),
@@ -133,7 +134,7 @@ export default function DiscoverClient() {
     setWebsite(displayHost(parsed.host));
     setError(null);
     try {
-      const res = await fetch("/api/discovery", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: parsed.entered }) });
+      const res = await fetch(`${API_BASE}/api/discovery`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: parsed.entered }) });
       const body = await res.json().catch(() => ({}));
       if (!res.ok || !body.identity) throw new Error(body.error || "We couldn't open that website. Check the address and try again.");
       const id = body.identity as Identity;

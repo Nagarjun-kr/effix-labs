@@ -1,6 +1,5 @@
 // Effix Discover API: safely reads ONE public web page and returns the brand name it shows
 // and the social profile links it lists. Nothing is stored.
-import { NextResponse } from "next/server";
 
 import { extractBrandIdentity, nameFromHost } from "@/lib/discover/brand-identity";
 import { retrieveSafely } from "@/lib/discover/safe-retrieval";
@@ -14,6 +13,7 @@ export const maxDuration = 30;
 const buckets = new Map<string, { count: number; resetAt: number }>();
 function consume(request: Request) {
   const key =
+    request.headers.get("cf-connecting-ip") ??
     request.headers.get("x-nf-client-connection-ip") ??
     request.headers.get("x-real-ip") ??
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
@@ -69,31 +69,31 @@ async function readSite(host: string, entered: string): Promise<{ page?: Fetched
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
   if (!consume(request)) {
-    return NextResponse.json({ error: "Too many checks in a short time. Please try again in a minute." }, { status: 429, headers });
+    return Response.json({ error: "Too many checks in a short time. Please try again in a minute." }, { status: 429, headers });
   }
   try {
     const body = (await request.json().catch(() => ({}))) as { url?: unknown };
     const parsed = parseWebsite(body.url);
-    if (!parsed.ok) return NextResponse.json({ error: parsed.error }, { status: 400, headers });
+    if (!parsed.ok) return Response.json({ error: parsed.error }, { status: 400, headers });
     const { page, blockedBy, error } = await readSite(parsed.host, parsed.entered);
     if (!page) {
       // Site refuses or ignores automated visits: still search, using the name from the address.
       if (blockedBy) {
         const domain = parsed.host.replace(/^www\./, "");
-        return NextResponse.json({ identity: { name: nameFromHost(domain), domain, sourceUrl: parsed.homepage, profiles: [] }, blocked: true }, { headers });
+        return Response.json({ identity: { name: nameFromHost(domain), domain, sourceUrl: parsed.homepage, profiles: [] }, blocked: true }, { headers });
       }
       throw error ?? new Error("unreachable");
     }
     const identity = extractBrandIdentity(page.body, page.url);
-    return NextResponse.json({ identity }, { headers });
+    return Response.json({ identity }, { headers });
   } catch (error) {
     if (error instanceof RetrievalPolicyError) {
-      return NextResponse.json({ error: friendly[error.code] ?? error.message }, { status: 400, headers });
+      return Response.json({ error: friendly[error.code] ?? error.message }, { status: 400, headers });
     }
     const code = (error as { code?: string })?.code;
     if (code === "ENOTFOUND" || code === "EAI_AGAIN") {
-      return NextResponse.json({ error: "We couldn't find a website at that address. Check the spelling and try again." }, { status: 400, headers });
+      return Response.json({ error: "We couldn't find a website at that address. Check the spelling and try again." }, { status: 400, headers });
     }
-    return NextResponse.json({ error: "We couldn't open that website. Check the address and try again." }, { status: 502, headers });
+    return Response.json({ error: "We couldn't open that website. Check the address and try again." }, { status: 502, headers });
   }
 }

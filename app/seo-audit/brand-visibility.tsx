@@ -3,6 +3,7 @@
 // Brand visibility: profiles the site links to + live Google results for "<brand>" site:<platform>
 // on eight platforms, searched from our server (/api/discovery/mentions), so there is no Google widget or CAPTCHA.
 import { useCallback, useEffect, useState } from "react";
+import { API_BASE } from "@/lib/api";
 
 export type Profile = { platform: string; url: string };
 export type Identity = { name: string; domain: string; sourceUrl: string; profiles: Profile[] };
@@ -42,7 +43,7 @@ export default function BrandVisibility({ identity }: { identity: Identity; engi
     if (!term.trim()) return;
     setState({ status: "loading" });
     try {
-      const res = await fetch("/api/discovery/mentions", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term.trim(), domain: identity.domain }) });
+      const res = await fetch(`${API_BASE}/api/discovery/mentions`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ brand: term.trim(), domain: identity.domain }) });
       const body = await res.json().catch(() => ({}));
       if (body.configured === false) return setState({ status: "off" });
       if (!res.ok || !Array.isArray(body.platforms)) throw new Error(body.error || "The search didn't finish. Please try again.");

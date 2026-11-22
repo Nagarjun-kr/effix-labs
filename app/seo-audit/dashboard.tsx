@@ -5,6 +5,7 @@ import { FormEvent, ReactNode, useCallback, useEffect, useRef, useState } from "
 
 import type { AuditReport, Category, Check, Severity, SpeedReport } from "@/lib/seo-audit/types";
 import BrandVisibility from "./brand-visibility";
+import { API_BASE } from "@/lib/api";
 
 /* ---------- small pieces ---------- */
 
@@ -227,7 +228,7 @@ export default function Dashboard({ report, onNewAudit, busy }: { report: AuditR
       if (requested.current.has(s)) return;
       requested.current.add(s);
       setSpeed((x) => ({ ...x, [s]: { status: "loading" } }));
-      fetch("/api/seo-audit/speed", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: report.url, strategy: s }) })
+      fetch(`${API_BASE}/api/seo-audit/speed`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: report.url, strategy: s }) })
         .then(async (res) => {
           const body = await res.json().catch(() => ({}));
           if (!res.ok || !body.speed) throw new Error(body.error || "Google couldn't run a speed test on this page.");

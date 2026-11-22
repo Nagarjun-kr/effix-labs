@@ -3,6 +3,7 @@ const stores = new Map<string, Map<string, { count: number; resetAt: number }>>(
 
 export function clientKey(request: Request) {
   return (
+    request.headers.get("cf-connecting-ip") ??
     request.headers.get("x-nf-client-connection-ip") ??
     request.headers.get("x-real-ip") ??
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??

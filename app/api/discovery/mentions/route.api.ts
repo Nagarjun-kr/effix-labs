@@ -1,7 +1,6 @@
 // Brand search API: runs the search workflow on our server (no browser widget, no CAPTCHA).
 // With "Accept: application/x-ndjson" it streams progress lines while it works, then the result;
 // otherwise it answers once with JSON (used by scripts). Nothing is stored or cached.
-import { NextResponse } from "next/server";
 
 import { cleanBrand, findMentions, mentionsConfigured, type Progress } from "@/lib/discover/mentions";
 import { allow } from "@/lib/rate-limit";
@@ -11,14 +10,14 @@ export const maxDuration = 60; // the workflow normally takes 15–30 s; 60 s fi
 
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
-  if (!mentionsConfigured()) return NextResponse.json({ configured: false }, { headers });
+  if (!mentionsConfigured()) return Response.json({ configured: false }, { headers });
   if (!allow(request, "mentions", 6)) {
-    return NextResponse.json({ error: "Too many searches in a short time. Please try again in a minute." }, { status: 429, headers });
+    return Response.json({ error: "Too many searches in a short time. Please try again in a minute." }, { status: 429, headers });
   }
   const body = (await request.json().catch(() => ({}))) as { brand?: unknown; domain?: unknown };
   const brand = typeof body.brand === "string" ? cleanBrand(body.brand) : "";
   const domain = typeof body.domain === "string" ? body.domain.slice(0, 253) : "";
-  if (brand.length < 2) return NextResponse.json({ error: "Enter a brand name to search." }, { status: 400, headers });
+  if (brand.length < 2) return Response.json({ error: "Enter a brand name to search." }, { status: 400, headers });
   const failed = "The search service isn't responding right now. Please try again in a minute.";
   const noKeys = "Live brand search is paused for a short while. Please try again later.";
   const why = (e: unknown) => ((e as { code?: string })?.code === "no_keys" ? noKeys : failed);
@@ -27,9 +26,9 @@ export async function POST(request: Request) {
     try {
       const result = await findMentions(brand, domain);
       if (result.platforms.every((p) => p.error)) throw new Error("all failed");
-      return NextResponse.json({ configured: true, brand, ...result }, { headers });
+      return Response.json({ configured: true, brand, ...result }, { headers });
     } catch (e) {
-      return NextResponse.json({ error: why(e) }, { status: 502, headers });
+      return Response.json({ error: why(e) }, { status: 502, headers });
     }
   }
 

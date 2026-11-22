@@ -17,10 +17,22 @@ const services = [
   "website-design-development",
 ];
 
+// `next build` produces a plain HTML site in out/ (uploaded to the web host; public/.htaccess gives it clean URLs and
+// the redirects below). The search API (app/api/**/route.api.ts) only runs in `next dev`; in production it runs on
+// the Cloudflare Worker in worker/.
+const STATIC = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
   // Changes on every build / dev start; appended to the legacy page scripts so browsers never run stale copies.
   env: { NEXT_PUBLIC_ASSET_V: String(Date.now()) },
-  async redirects() {
+  output: STATIC ? "export" : undefined,
+  images: { unoptimized: true },
+  pageExtensions: STATIC ? ["tsx", "ts"] : ["tsx", "ts", "api.ts"],
+  // Static export can't run redirects; public/.htaccess does the same on the web host.
+  ...(STATIC ? {} : { redirects }),
+};
+
+async function redirects() {
     const r = [
       { source: "/index.html", destination: "/", permanent: true },
       ...Object.entries(dupes).flatMap(([from, to]) => [
@@ -34,7 +46,6 @@ const nextConfig: NextConfig = {
       ]),
     ];
     return r;
-  },
-};
+}
 
 export default nextConfig;
