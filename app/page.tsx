@@ -210,11 +210,22 @@ export default function Page() {
               {" "}
               {" "}
               <li className="nav-item">
-                {" "}
-                <a href="/work" className="nav-link">
+                <a href="/casestudy/" className="nav-link" aria-haspopup="true">
                   {"Work"}
+                  <svg className="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
                 </a>
-                {" "}
+                <div className="nav-dropdown" role="menu">
+                  <div className="dropdown-list">
+                    <a href="/casestudy/" className="dropdown-item" role="menuitem">
+                      <span className="dropdown-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 3v18h18" /><path d="M7 15l4-4 3 3 5-6" /></svg></span>
+                      <span className="dropdown-item-text"><span className="dropdown-item-title" style={{ display: "block" }}>Case Study</span><span className="dropdown-item-desc">How we took a site from zero search visibility to steady impressions</span></span>
+                    </a>
+                    <a href="/seo-audit" className="dropdown-item" role="menuitem">
+                      <span className="dropdown-icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><path d="M14 3v6h6" /><path d="M8 13h8M8 17h5" /></svg></span>
+                      <span className="dropdown-item-text"><span className="dropdown-item-title" style={{ display: "block" }}>SEO Audit Platform</span><span className="dropdown-item-desc">Free technical SEO, content and AI-readiness check for any website</span></span>
+                    </a>
+                  </div>
+                </div>
               </li>
               {" "}
               {" "}
@@ -278,8 +289,13 @@ export default function Page() {
               </li>
               {" "}
               <li>
-                <a href="/work" className="mobile-nav-link" data-onclick="toggleMobileDrawer()">
-                  {"Work"}
+                <a href="/casestudy/" className="mobile-nav-link" data-onclick="toggleMobileDrawer()">
+                  {"Case Study"}
+                </a>
+              </li>
+              <li>
+                <a href="/seo-audit" className="mobile-nav-link" data-onclick="toggleMobileDrawer()">
+                  {"SEO Audit Platform"}
                 </a>
               </li>
               {" "}
@@ -1969,8 +1985,8 @@ export default function Page() {
                 </li>
                 {" "}
                 <li>
-                  <a href="/work">
-                    {"Work"}
+                  <a href="/casestudy/">
+                    {"Case Study"}
                   </a>
                 </li>
                 {" "}

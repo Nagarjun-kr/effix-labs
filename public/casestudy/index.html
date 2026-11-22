@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+<html lang="en" data-wf-page="649d3eeab715708cabae9957" data-wf-site="649d3eeab715708cabae995a">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SEO Case Study | Effix</title>
+    <meta name="description" content="Real SEO case study showing how I improved visibility, indexing, and performance using practical strategies.">
+    <link rel="icon" href="data:,">
+    
+
+
+    <!-- SEO & Social -->
+    <meta property="og:title" content="SEO Case Study | Effix">
+    <meta property="og:description" content="Real SEO case study with measurable improvements in search visibility and performance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://effix.co.in/casestudy/">
+    <meta property="og:image" content="https://effix.co.in/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO Case Study | Effix">
+    <meta name="twitter:description" content="Real SEO case study with measurable improvements in search visibility and performance.">
+    <link rel="canonical" href="https://effix.co.in/casestudy/">
+    <meta name="robots" content="index, follow">
+
+    <!-- Essential Layout CSS for Animation -->
+    <link href="https://cdn.prod.website-files.com/649d3eeab715708cabae995a/css/zoom-in-typo-animation.webflow.shared.f1e88ddc9.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Core overrides -->
+    <style>
+      /* ── Hide Webflow branding ── */
+      .w-webflow-badge { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+      .info-banner      { display: none !important; }
+
+      /*
+        ── EFFECT: white bg → zoom into black letters → black section ──
+
+        The page starts white. The "CASE STUDY" SVG is black (original
+        color, no invert). As the user scrolls, Webflow scales the SVG
+        up until the black letters fill the entire viewport — creating
+        the illusion of "diving into" the text. The background naturally
+        appears black once the letters cover everything.
+        The cs-page section below is black, so the transition is seamless.
+      */
+
+      /* Page background: WHITE — this is the visible bg at page-start */
+      html, body {
+        background-color: #fff !important;
+        background: #fff !important;
+      }
+
+      /* Zoom section: white background so the black SVG pops */
+      .section-typo-zoom-in,
+      .typo-zoom-sticky,
+      .typo-zoom-sticky-inner,
+      .typo-zoom-text-wrapper {
+        background-color: #fff !important;
+        background: #fff !important;
+      }
+
+      /* Child containers inside zoom section: also white */
+      .section-typo-zoom-in > *,
+      .typo-zoom-sticky > *,
+      .typo-zoom-sticky-inner > * {
+        background-color: #fff !important;
+      }
+
+      /*
+        SVG: keep it black (original) — NO invert filter.
+        will-change promotes it to a GPU layer so it scales
+        smoothly without any repaint flicker.
+      */
+      .typo-zoom-text-image {
+        filter: none !important;
+        will-change: transform;
+      }
+
+      /* Hide the plain-text fallback; we use the SVG */
+      .typo-zoom-text {
+        display: none !important;
+      }
+
+      /*
+        Gradient bridge: white → black, connecting the zoom section
+        (white) to the case study section (black).
+        Show it so the transition out of the zoom is seamless.
+      */
+      .cs-transition {
+        display: block !important;
+        height: 80px;
+        background: linear-gradient(to bottom, #fff 0%, #000 100%);
+      }
+
+      /* ── Premium Scroll Indicator ── */
+      .premium-scroll-indicator {
+        position: fixed;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        pointer-events: none;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        animation: premiumFadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+        transition: opacity 0.8s ease;
+      }
+      .premium-scroll-indicator.hidden {
+        opacity: 0 !important;
+        transition: opacity 0.5s ease;
+      }
+      .premium-scroll-indicator .scroll-text {
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #000;
+      }
+      .premium-scroll-indicator .scroll-arrow {
+        color: #000;
+        background: rgba(0,0,0,0.05);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: premiumBounce 2s infinite;
+      }
+      @keyframes premiumFadeIn {
+        from { opacity: 0; transform: translate(-50%, 20px); }
+        to { opacity: 1; transform: translate(-50%, 0); }
+      }
+      @keyframes premiumBounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-12px); }
+        60% { transform: translateY(-6px); }
+      }
+    </style>
+
+    <!-- Case Study Section Styles -->
+    <style>
+      /* ── Google Font ── */
+      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+      /* ── Fade-in animation ── */
+      .cs-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .cs-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .cs-reveal:nth-child(2) { transition-delay: 0.1s; }
+      .cs-reveal:nth-child(3) { transition-delay: 0.2s; }
+      .cs-reveal:nth-child(4) { transition-delay: 0.3s; }
+
+      /* ── Case Study wrapper ── */
+      .cs-page {
+        background: #000;
+        color: #fff;
+        font-family: 'Manrope', sans-serif;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      /* ── Transition gradient (white → black) ── */
+      .cs-transition {
+        height: 120px;
+        background: linear-gradient(to bottom, #fff 0%, #000 100%);
+        display: block;
+      }
+
+      /* ── Transition gradient (black → white) ── */
+      .cs-transition-reverse {
+        height: 120px;
+        background: linear-gradient(to bottom, #000 0%, #fff 100%);
+        display: block;
+      }
+
+      /* ── Hero ── */
+      .cs-hero {
+        padding: 7rem 2rem 5rem;
+        text-align: center;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .cs-hero-label {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #555;
+        margin-bottom: 1.4rem;
+      }
+      .cs-hero-title {
+        font-size: clamp(3rem, 8vw, 7rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: #fff;
+        margin: 0 0 1.2rem;
+      }
+      .cs-hero-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.4rem);
+        font-weight: 300;
+        color: #888;
+        margin: 0;
+        letter-spacing: 0.01em;
+      }
+
+      /* ── Sections ── */
+      .cs-body {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+        display: grid;
+        gap: 5rem;
+      }
+
+      .cs-section-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #444;
+        margin-bottom: 1.2rem;
+      }
+      .cs-section-heading {
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        color: #fff;
+        margin: 0 0 1rem;
+      }
+      .cs-section-text {
+        font-size: 1.05rem;
+        font-weight: 300;
+        color: #aaa;
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      /* ── List ── */
+      .cs-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+      .cs-list li {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #aaa;
+        padding-left: 1.4rem;
+        position: relative;
+        line-height: 1.6;
+      }
+      .cs-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #444;
+      }
+
+      /* ── Three-column grid ── */
+      .cs-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem 4rem;
+      }
+
+      /* ── Divider ── */
+      .cs-divider {
+        border: none;
+        border-top: 1px solid #1a1a1a;
+        margin: 0;
+      }
+
+      /* ── CTA ── */
+      .cs-cta {
+        text-align: center;
+        padding: 7rem 2rem 9rem;
+        border-top: 1px solid #1a1a1a;
+      }
+      .cs-cta-title {
+        font-size: clamp(2.2rem, 6vw, 5rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        color: #fff;
+        margin: 0 0 2.5rem;
+      }
+      .cs-cta-btn {
+        display: inline-block;
+        padding: 1.1em 3em;
+        background: #fff;
+        color: #000;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: background 0.3s, color 0.3s, transform 0.3s;
+      }
+      .cs-cta-btn:hover {
+        background: #e0e0e0;
+        transform: scale(1.04);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 600px) {
+        .cs-body  { padding: 4rem 1.5rem; gap: 4rem; }
+        .cs-hero  { padding: 5rem 1.5rem 4rem; }
+        .cs-cta   { padding: 5rem 1.5rem 7rem; }
+        .cs-grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+      }
+
+      /* ── Hire Me Section ── */
+      .hm-section {
+        background: #000;
+        border-top: 1px solid #111;
+        padding: 9rem 2rem 10rem;
+        font-family: 'Manrope', sans-serif;
+      }
+      .hm-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        display: grid;
+        gap: 5rem;
+      }
+
+      /* Top headline block */
+      .hm-headline-block {
+        text-align: center;
+      }
+      .hm-eyebrow {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #444;
+        margin: 0 0 1.4rem;
+      }
+      .hm-title {
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+        color: #fff;
+        margin: 0 0 1.6rem;
+      }
+      .hm-subtext {
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        font-weight: 300;
+        color: #777;
+        line-height: 1.75;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      /* Feature cards grid */
+      .hm-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .hm-card {
+        background: #0d0d0d;
+        border: 1px solid #1c1c1c;
+        border-radius: 16px;
+        padding: 2.2rem 2rem;
+        transition: border-color 0.3s;
+      }
+      .hm-card:hover { border-color: #333; }
+      .hm-card-label {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #444;
+        margin: 0 0 1.2rem;
+      }
+      .hm-card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+      .hm-card-list li {
+        font-size: 0.97rem;
+        font-weight: 300;
+        color: #aaa;
+        padding-left: 1.3rem;
+        position: relative;
+        line-height: 1.55;
+      }
+      .hm-card-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #333;
+      }
+
+      /* CTA block */
+      .hm-cta-block {
+        text-align: center;
+        padding-top: 2rem;
+      }
+      .hm-cta-btn {
+        display: inline-block;
+        padding: 1.15em 3.5em;
+        background: #fff;
+        color: #000;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: background 0.3s ease, transform 0.3s ease,
+                    box-shadow 0.3s ease;
+        box-shadow: 0 0 0 0 rgba(255,255,255,0);
+      }
+      .hm-cta-btn:hover {
+        background: #f0f0f0;
+        transform: scale(1.05);
+        box-shadow: 0 0 40px 4px rgba(255,255,255,0.08);
+      }
+      .hm-cta-note {
+        margin-top: 1.2rem;
+        font-size: 0.78rem;
+        color: #333;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+      }
+
+      /* Responsive */
+      @media (max-width: 640px) {
+        .hm-section { padding: 6rem 1.5rem 7rem; }
+        .hm-cards   { grid-template-columns: 1fr; }
+      }
+    </style>
+    <script type="text/javascript">
+      !function(o,c){
+        var n=c.documentElement,t=" w-mod-";
+        n.className+=t+"js";
+        ("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")
+      }(window,document);
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- ── Info Banner ── -->
+    <div class="info-banner">
+      <div class="w-embed w-iframe">
+        <iframe
+          id="bannerIframe"
+          src="https://course-banner.webflow.io/"
+          width="100%"
+          height="32px"
+          scrolling="no"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div class="hide w-embed w-script">
+        <script>
+          window.addEventListener('message', function(event) {
+            if (event.origin === 'https://course-banner.webflow.io') {
+              const iframe = document.getElementById('bannerIframe');
+              if (iframe && event.data.bannerHeight !== undefined) {
+                if (event.data.bannerHeight === 0) {
+                  iframe.style.display = 'none';
+                } else {
+                  iframe.style.display = 'block';
+                  iframe.style.height = event.data.bannerHeight + 'px';
+                }
+              }
+            }
+          });
+
+          const iframe = document.getElementById('bannerIframe');
+          if (iframe) {
+            iframe.addEventListener('load', function() {
+              iframe.contentWindow.postMessage(
+                { cloneableUrl: window.location.href },
+                'https://course-banner.webflow.io'
+              );
+            });
+          }
+        </script>
+      </div>
+    </div>
+
+    <!-- ── Navigation (empty) ── -->
+    <div class="nav"></div>
+
+    <!-- ── Premium Scroll Indicator ── -->
+    <div class="premium-scroll-indicator">
+      <span class="scroll-text">Scroll upward</span>
+      <div class="scroll-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── Zoom Typography Animation ── -->
+    <div
+      data-w-id="1d7e535c-90e0-7a1b-b0c6-2e2f0f959a3f"
+      class="section-typo-zoom-in"
+    >
+      <div class="typo-zoom-sticky">
+        <div class="typo-zoom-sticky-inner">
+          <div class="typo-zoom-text-wrapper">
+            <div class="typo-zoom-text">Case Study</div>
+            <img
+              src="case-study.svg"
+              loading="lazy"
+              alt="Case Study"
+              class="typo-zoom-text-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Case Study Section ── -->
+    <div class="cs-page">
+
+      <!-- Gradient transition: white → black -->
+      <span class="cs-transition" aria-hidden="true"></span>
+
+      <!-- Hero -->
+      <div class="cs-hero">
+        <p class="cs-hero-label cs-reveal">Case Study · Effix.co.in</p>
+        <h1 class="cs-hero-title cs-reveal">SEO Optimization</h1>
+        <p class="cs-hero-subtitle cs-reveal">How I built and optimized a personal website from scratch — and what it taught me about real SEO.</p>
+      </div>
+
+      <!-- Body Content -->
+      <div class="cs-body">
+
+        <!-- Intro -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">About This Project</p>
+          <p class="cs-section-text">
+            Effix.co.in is my personal website — built as a live learning ground for digital marketing.
+            I didn't just design it. I treated it as a real SEO project: structured it, optimized it,
+            and tracked what changed. Every decision was intentional.
+          </p>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- The Challenge -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">The Challenge</p>
+          <h2 class="cs-section-heading">Starting with a blank slate — and zero visibility.</h2>
+          <p class="cs-section-text">
+            When the site first went live, it had no search presence. No one was finding it.
+            The content existed, but it wasn't working for search engines or readers.
+          </p>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li>No visibility on Google — impressions were near zero</li>
+            <li>No keyword strategy — pages weren't targeting anything specific</li>
+            <li>Poor content structure — hard to read, hard to scan</li>
+            <li>Basic UX — layout didn't guide visitors anywhere useful</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- What I Did -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">What I Did</p>
+          <h2 class="cs-section-heading">Five focused areas. One clear goal.</h2>
+        </div>
+
+        <div class="cs-grid-3 cs-reveal">
+
+          <div>
+            <p class="cs-section-label">On-Page SEO</p>
+            <p class="cs-section-text">
+              Added proper H1 and H2 hierarchy across all pages. Optimized title tags and meta descriptions with targeted keywords to directly signal intent to search engines.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Content Structuring</p>
+            <p class="cs-section-text">
+              Improved content readability by restructuring long blocks into shorter, scannable paragraphs with clear headings. Built for humans first, optimized for crawlers second.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Keyword Optimization</p>
+            <p class="cs-section-text">
+              Conducted strategic keyword research and integrated terms naturally within high-value content areas. Maintained high readability while satisfying search intent.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Internal Linking</p>
+            <p class="cs-section-text">
+              Implemented strategic internal linking between relevant pages. This distributed page authority efficiently and guided search crawlers smoothly through the site hierarchy.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">UX Improvements</p>
+            <p class="cs-section-text">
+              Refined the visual hierarchy and removed friction points. Enhancing the layout directly contributed to longer engagement times, sending positive quality signals to Google.
+            </p>
+          </div>
+
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Before vs After -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Before vs After</p>
+          <h2 class="cs-section-heading">The Transformation</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-top: 2rem;">
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 1rem; letter-spacing: -0.01em;">Before Optimization</h3>
+              <ul class="cs-list">
+                <li>No visibility</li>
+                <li>No keyword targeting</li>
+                <li>Poor content structure</li>
+                <li>Weak internal linking</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 1rem; letter-spacing: -0.01em;">After Optimization</h3>
+              <ul class="cs-list">
+                <li>Increasing impressions</li>
+                <li>Keyword presence in search results</li>
+                <li>Improved readability</li>
+                <li>Better internal linking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Results -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Results</p>
+          <h2 class="cs-section-heading">Early signals. Real progress.</h2>
+          <p class="cs-section-text">
+            This is an early-stage project focused on learning and consistent improvement. The foundational optimizations have already yielded measurable, realistic SEO outcomes:
+          </p>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li>Impressions increased from 0 to over 300 within 4 weeks</li>
+            <li>12+ keywords started appearing consistently in search results</li>
+            <li>Improved indexing and crawlability across core pages</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Results with Data -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Results with Data</p>
+          <h2 class="cs-section-heading">Validated by Google Search Console</h2>
+          <p class="cs-section-text">
+            The strategic changes implemented are actively verified by data in Google Search Console:
+          </p>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li><strong>Impressions growth:</strong> A clear, steady upward trend in organic visibility as Google registers the newly optimized structure.</li>
+            <li><strong>Keywords appearing:</strong> High-intent queries are surfacing, directly matching the optimized H1s and meta tags.</li>
+            <li><strong>Indexing improvements:</strong> Pages are discovered and indexed significantly faster due to the reinforced internal linking architecture.</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Proof of Work -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Proof of Work</p>
+          <h2 class="cs-section-heading">Visual Evidence</h2>
+          <p class="cs-section-text">
+            Transparency is crucial. Screenshots from Google Search Console demonstrate the upward trajectory in impressions growth, confirmed keyword visibility, and successful indexing improvements. This reflects the reality of an early-stage project focused on practical, consistent optimization rather than overnight miracles.
+          </p>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- What I Learned -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">What I Learned</p>
+          <h2 class="cs-section-heading">SEO isn't a trick. It's a discipline.</h2>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li>SEO is far more than just keywords — structure, UX, and content clarity all play a role</li>
+            <li>A well-organized page ranks better because it's genuinely more useful</li>
+            <li>Working on a live project teaches you things no course can — you see cause and effect in real time</li>
+            <li>Small, consistent improvements compound over time</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Conclusion -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Conclusion</p>
+          <h2 class="cs-section-heading">
+            Built with intent. Ready to apply.
+          </h2>
+          <p class="cs-section-text">
+            This project gave me more than a portfolio piece — it gave me a real understanding of how SEO works in practice. I know what it takes to take a site from invisible to indexed, from cluttered to clear. This project reflects my ability to learn, implement, and improve SEO in real-time. I'm ready to apply these skills in a professional environment and contribute to measurable growth.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Gradient transition: black → white for next zoom -->
+    <span class="cs-transition-reverse" aria-hidden="true"></span>
+
+    <!-- ── Hire Me Zoom Typography Animation ── -->
+    <div
+      data-w-id="1d7e535c-90e0-7a1b-b0c6-2e2f0f959a3f"
+      class="section-typo-zoom-in"
+    >
+      <div class="typo-zoom-sticky">
+        <div class="typo-zoom-sticky-inner">
+          <div class="typo-zoom-text-wrapper">
+            <div class="typo-zoom-text">Hire Me</div>
+            <svg
+              class="typo-zoom-text-image"
+              viewBox="0 0 600 120"
+              preserveAspectRatio="xMidYMid meet"
+              style="width: 100%; height: 100%;"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <text
+                x="50%"
+                y="55%"
+                dominant-baseline="middle"
+                text-anchor="middle"
+                font-family="'Manrope', sans-serif"
+                font-weight="800"
+                font-size="110px"
+                letter-spacing="-0.02em"
+                fill="#000"
+              >HIRE ME</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gradient transition: white → black -->
+    <span class="cs-transition" aria-hidden="true"></span>
+
+    <!-- ── Hire Me Section ── -->
+    <section class="hm-section" style="border-top: none;">
+      <div class="hm-inner">
+
+        <!-- Headline -->
+        <div class="hm-headline-block cs-reveal">
+          <p class="hm-eyebrow">Partner With Me</p>
+          <h2 class="hm-title">Let's Build Something<br/>Exceptional</h2>
+          <p class="hm-subtext">
+            I partner with ambitious brands to engineer high-performance SEO strategies, refine digital architectures, and drive measurable organic growth.
+          </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="hm-cards">
+          <div class="hm-card cs-reveal">
+            <p class="hm-card-label">Core Expertise</p>
+            <ul class="hm-card-list">
+              <li>Technical SEO &amp; Audits</li>
+              <li>Strategic Keyword Planning</li>
+              <li>Content Architecture &amp; UX</li>
+              <li>Performance Optimization</li>
+            </ul>
+          </div>
+          <div class="hm-card cs-reveal">
+            <p class="hm-card-label">The Advantage</p>
+            <ul class="hm-card-list">
+              <li>Data-driven decision making</li>
+              <li>Transparent, honest reporting</li>
+              <li>Focus on sustainable growth</li>
+              <li>Tailored strategies, no templates</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="hm-cta-block cs-reveal">
+          <a href="mailto:hello@effix.in" class="hm-cta-btn">START A CONVERSATION</a>
+          <p class="hm-cta-note">Currently accepting new projects.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- (cs-page closing div removed; placed above) -->
+
+    </div>
+
+    <!-- ── Scripts ── -->
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=649d3eeab715708cabae995a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/649d3eeab715708cabae995a/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
+    <script src="https://cdn.prod.website-files.com/649d3eeab715708cabae995a/js/webflow.58b0981f.c8a3736e305b6cfd.js" type="text/javascript"></script>
+
+    <!-- Scroll fade-in observer -->
+    <script>
+      (function () {
+        var els = document.querySelectorAll('.cs-reveal');
+        if (!els.length) return;
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        els.forEach(function (el) { io.observe(el); });
+      })();
+    </script>
+
+    <!-- Premium Scroll Indicator Logic -->
+    <script>
+      (function() {
+        const indicator = document.querySelector('.premium-scroll-indicator');
+        if (!indicator) return;
+
+        let hasScrolled = false;
+        
+        window.addEventListener('scroll', () => {
+          if (!hasScrolled && window.scrollY > 50) {
+            hasScrolled = true;
+            indicator.classList.add('hidden');
+          } else if (hasScrolled && window.scrollY <= 50) {
+            hasScrolled = false;
+            indicator.classList.remove('hidden');
+          }
+        }, { passive: true });
+      })();
+    </script>
+
+  </body>
+</html>

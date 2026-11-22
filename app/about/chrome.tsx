@@ -17,7 +17,13 @@ export function SiteNav({ current }: { current?: "about" }) {
         <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
         <a href="/blog">Blog</a>
         <a href="/#services">Services</a>
-        <a href="/work">Work</a>
+        <span className="ab-drop">
+          <a href="/casestudy/" aria-haspopup="true">Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></a>
+          <span className="ab-drop-menu" role="menu">
+            <a href="/casestudy/" role="menuitem"><b>Case Study</b><small>How we took a site from zero search visibility to steady impressions</small></a>
+            <a href="/seo-audit" role="menuitem"><b>SEO Audit Platform</b><small>Free technical SEO, content and AI-readiness check for any website</small></a>
+          </span>
+        </span>
         <a href="/contact">Contact</a>
       </nav>
       <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
@@ -27,7 +33,8 @@ export function SiteNav({ current }: { current?: "about" }) {
           <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
           <a href="/blog">Blog</a>
           <a href="/#services">Services</a>
-          <a href="/work">Work</a>
+          <a href="/casestudy/">Case Study</a>
+          <a href="/seo-audit">SEO Audit Platform</a>
           <a href="/contact">Contact</a>
           <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
         </nav>
@@ -49,7 +56,7 @@ export function SiteFooter() {
         </div>
         <div><h4>Services</h4><ul><li><a href="/services/google-business-profile">Google Business Profile Optimisation</a></li><li><a href="/services/reddit-marketing">Reddit Marketing</a></li><li><a href="/services/seo-aeo-services">SEO &amp; AEO Services</a></li><li><a href="/services/content-writing">Content Writing</a></li><li><a href="/services/website-design-development">Website Design &amp; Development</a></li></ul></div>
         <div><h4>Product</h4><ul><li><a href="/#audit">Effix Discover</a></li></ul></div>
-        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/work">Work</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/casestudy/">Case Study</a></li><li><a href="/contact">Contact</a></li></ul></div>
         <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
       </div>
       <div className="ab-foot-bottom"><span>© 2026 Effix Labs</span><a href="mailto:hello@effixlabs.in">hello@effixlabs.in</a></div>
