@@ -24,43 +24,27 @@ const Item = ({ href, icon, title, text }: { href: string; icon: React.ReactNode
     <span><b>{title}</b><small>{text}</small></span>
   </a>
 );
-const Arrow = () => <svg className="mm-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>;
-const Mark = () => (
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" /><path d="M12 7.5L7.5 12L12 16.5L16.5 12L12 7.5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /></svg>
-);
 
 function ServicesMenu() {
   return (
-    <div className="mm-menu-in mm-split">
+    <div className="mm-menu-in">
       <div className="mm-main">
-        <a href="/#services" className="mm-overview" role="menuitem">Services overview <Arrow /></a>
         <p className="mm-label">What we do</p>
         <div className="mm-grid two">
-          <Item href="/services/google-business-profile" icon={<Tile><AppIcon name="Google" size={22} /></Tile>} title="Google Business Profile" text="Get found where local customers are searching." />
-          <Item href="/services/reddit-marketing" icon={<Tile><AppIcon name="Reddit" size={22} /></Tile>} title="Reddit Marketing" text="Be part of the conversations that shape buying decisions." />
+          <Item href="/services/google-business-profile" icon={<Tile><AppIcon name="Google" size={19} /></Tile>} title="Google Business Profile" text="Get found where local customers are searching." />
+          <Item href="/services/reddit-marketing" icon={<Tile><AppIcon name="Reddit" size={19} /></Tile>} title="Reddit Marketing" text="Be part of the conversations that shape buying decisions." />
           <Item href="/services/seo-aeo-services" icon={<Tile><Svg d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-4.3-4.3M8 11h6M11 8v6" /></Tile>} title="SEO & AEO" text="Rank on Google. Get cited in AI answers." />
           <Item href="/services/content-writing" icon={<Tile><Svg d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" /></Tile>} title="Content Writing" text="Content that ranks, reads well and turns readers into customers." />
           <Item href="/services/website-design-development" icon={<Tile><Svg d="M3 5h18v14H3zM3 9h18M7 7h.01M10 7h.01" /></Tile>} title="Website Design & Development" text="Fast, mobile-first websites built to rank and convert." />
         </div>
-        <a href="/#audit" className="mm-feature" role="menuitem">
-          <Tile tone="ink"><Mark /></Tile>
-          <span><b>Effix Discover</b><small>Free visibility audit: your brand on eight platforms through live Google results.</small></span>
-          <Arrow />
-        </a>
       </div>
-      <aside className="mm-side">
-        <span className="mm-visual is-violet" aria-hidden="true"><Mark /><em>Free visibility audit</em></span>
-        <b>See where your brand shows up</b>
-        <p>Live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads. Free, no signup.</p>
-        <a href="/#audit" className="mm-side-link" role="menuitem">Run a free audit <Arrow /></a>
-      </aside>
     </div>
   );
 }
 
 function WorkMenu() {
   return (
-    <div className="mm-menu-in mm-split">
+    <div className="mm-menu-in">
       <div className="mm-main">
         <p className="mm-label">Our work</p>
         <div className="mm-grid one">
@@ -69,12 +53,6 @@ function WorkMenu() {
           <Item href="/blog" icon={<Tile><Svg d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5" /></Tile>} title="Blog" text="Practical guides on getting found on Google, Reddit and AI search." />
         </div>
       </div>
-      <aside className="mm-side">
-        <span className="mm-visual is-lime" aria-hidden="true"><em>Case study</em><strong>0 → 300+</strong><small>Google impressions in four weeks</small></span>
-        <b>From invisible to found</b>
-        <p>How we took a site from zero search visibility to steady impressions, and built Effix Labs on the same method.</p>
-        <a href="/casestudy/" className="mm-side-link" role="menuitem">Read the case study <Arrow /></a>
-      </aside>
     </div>
   );
 }
