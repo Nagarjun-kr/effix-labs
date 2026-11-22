@@ -9,7 +9,7 @@ export function Mark() {
   );
 }
 
-export function SiteNav({ current }: { current?: "about" | "blog" }) {
+export function SiteNav({ current }: { current?: "about" | "blog" | "contact" }) {
   return (
   <header className="ab-nav">
     <div className="ab-wrap ab-nav-in">
@@ -24,7 +24,7 @@ export function SiteNav({ current }: { current?: "about" | "blog" }) {
           <a href="/#services">Services</a>
           <a href="/casestudy/">Case Study</a>
           <a href="/seo-audit-tool/">SEO Audit Platform</a>
-          <a href="/contact">Contact</a>
+          <a href="/contact" aria-current={current === "contact" ? "page" : undefined}>Contact</a>
           <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
         </nav>
       </details>

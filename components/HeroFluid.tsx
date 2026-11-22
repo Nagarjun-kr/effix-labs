@@ -354,5 +354,6 @@ export default function HeroFluid() {
     };
   }, []);
 
-  return <canvas ref={ref} className="hero-fluid" aria-hidden="true" />;
+  // positioned over its parent (which must be position: relative; content above it needs z-index: 1)
+  return <canvas ref={ref} className="hero-fluid" aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, width: "100%", height: "100%", pointerEvents: "none" }} />;
 }

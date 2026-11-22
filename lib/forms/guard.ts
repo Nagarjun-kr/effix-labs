@@ -2,6 +2,8 @@
 // - Checks each field when the visitor leaves it and again on submit, using lib/forms/rules.ts.
 // - Shows the problem under the field; a likely typo comes with a one-click fix ("Did you mean …?").
 // - Sends the form to the Worker (/api/contact), which emails it to the Effix inbox.
+// Hidden inputs with data-label (values picked with chip buttons) are checked too; data-focus names the element to
+// focus when they are invalid.
 // Field rules come from data-rule="name|email|phone|company|website|message|text" or are inferred from the field name.
 import { checkField, type Rule, type Submission } from "./rules";
 
@@ -43,6 +45,7 @@ function ruleOf(el: Field): Rule {
 }
 
 function labelOf(el: Field) {
+  if (el.dataset.label) return el.dataset.label;
   const lab = (el.id && el.form?.querySelector<HTMLLabelElement>(`label[for="${el.id}"]`)) || el.closest("label");
   const text = lab ? (lab.querySelector("span")?.textContent ?? lab.textContent ?? "") : el.getAttribute("aria-label") || el.name;
   return text.replace(/\*/g, "").replace(/\s+/g, " ").trim() || el.name;
@@ -66,7 +69,10 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
   form.appendChild(hp);
 
   const fields = [...form.querySelectorAll<Field>("input, textarea, select")].filter(
-    (el) => el !== hp && el.name !== "code" && !["hidden", "submit", "button", "checkbox", "radio"].includes((el as HTMLInputElement).type),
+    (el) =>
+      el !== hp && el.name !== "code" &&
+      // hidden inputs take part only when they carry a label (e.g. values chosen with chip buttons)
+      ((el as HTMLInputElement).type === "hidden" ? Boolean(el.dataset.label) : !["submit", "button", "checkbox", "radio"].includes((el as HTMLInputElement).type)),
   );
   const codeEl = form.querySelector<HTMLSelectElement>('select[name="code"]');
   const touched = new Set<Field>();
@@ -133,7 +139,12 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
     fields.forEach((f) => touched.add(f));
     const bad = fields.filter((f) => !check(f));
     if (bad.length) {
-      bad[0].focus();
+      const first = bad[0];
+      if ((first as HTMLInputElement).type === "hidden") {
+        const group = first.dataset.focus ? document.getElementById(first.dataset.focus) : null;
+        group?.querySelector<HTMLElement>("button, input")?.focus();
+        (group ?? errBox(first)).scrollIntoView({ block: "center", behavior: "smooth" });
+      } else first.focus();
       say("bad", bad.length === 1 ? "Please fix the highlighted field." : `Please fix the ${bad.length} highlighted fields.`);
       return;
     }
