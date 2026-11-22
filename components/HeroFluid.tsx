@@ -1,6 +1,6 @@
 "use client";
 
-// Cursor smoke for the homepage hero: a small WebGL fluid simulation (stable-fluids method: advection, curl and
+// Cursor smoke (used on the contact page hero): a small WebGL fluid simulation (stable-fluids method: advection, curl and
 // vorticity, pressure solve) drawn on a canvas behind the hero content. Moving the pointer over the hero leaves soft
 // violet / lavender / lime trails that swirl and fade; a faint swirl also drifts on its own.
 // Desktop only (>= 1024px), off for prefers-reduced-motion, skipped without WebGL2 float render targets or on

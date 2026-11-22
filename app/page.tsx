@@ -8,7 +8,6 @@ import "./page.css";
 import "./home-q3.css";
 import AppIcon from "@/lib/discover/app-icon";
 import MegaNav from "@/components/MegaNav";
-import HeroFluid from "@/components/HeroFluid";
 
 export const metadata: Metadata = {
   "title": "Effix Labs | Get Found Where Your Customers Search",
@@ -265,7 +264,7 @@ export default function Page() {
         {" "}
         {" "}
         <section className="hero-section" id="hero">
-          <HeroFluid />
+          {" "}
           <div className="container hero-content">
             {" "}
             {" "}
