@@ -1,0 +1,16 @@
+// Cloudflare Worker that runs Effix Discover's search and the SEO audit for the static HTML site.
+// Deploy: npx wrangler deploy   ·   Secrets: npx wrangler secret put SERPER_API_KEYS
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "effix-search",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-09-01",
+  // node:net (isIP) and process.env for the shared code
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  // The Node page reader uses raw sockets; the Worker uses its fetch() version instead.
+  "alias": {
+    "@/lib/discover/safe-retrieval": "./worker/safe-retrieval.ts"
+  },
+  "observability": { "enabled": true }
+}

@@ -1,6 +1,6 @@
 // Opens a public YouTube channel page to confirm whose it is (one channel has several addresses). Instagram, Facebook,
 // LinkedIn, X, Reddit, Quora and Threads block automated visitors or need a login, so they rely on search evidence.
-import { retrieveSafely } from "./safe-retrieval";
+import { retrieveSafely } from "@/lib/discover/safe-retrieval";
 import type { ProfileCheck } from "./classify";
 
 const CACHE_MS = 60 * 60 * 1000;

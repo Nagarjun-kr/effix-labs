@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:brands": "node --test tests/brand-accuracy.test.ts tests/website-input.test.ts tests/serper-links.test.ts"
+    "test:brands": "node --test tests/brand-accuracy.test.ts tests/website-input.test.ts tests/serper-links.test.ts",
+    "worker:dev": "wrangler dev --port 8787",
+    "worker:deploy": "wrangler deploy"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
@@ -21,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.166.0"
   }
 }
