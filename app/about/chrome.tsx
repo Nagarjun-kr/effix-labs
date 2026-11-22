@@ -52,7 +52,7 @@ export function SiteFooter() {
         <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/work">Work</a></li><li><a href="/contact">Contact</a></li></ul></div>
         <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
       </div>
-      <div className="ab-foot-bottom"><span>© 2026 Effix Labs</span><a href="mailto:hello@effix.co.in">hello@effix.co.in</a></div>
+      <div className="ab-foot-bottom"><span>© 2026 Effix Labs</span><a href="mailto:hello@effixlabs.in">hello@effixlabs.in</a></div>
     </div>
   </footer>
   );

@@ -70,7 +70,7 @@ export async function retrieveSafely(
       signal: AbortSignal.timeout(retrievalLimits.timeoutMs),
       headers: {
         Accept: kind === "html" ? "text/html,application/xhtml+xml" : "text/plain,application/xml,text/xml",
-        "User-Agent": "Mozilla/5.0 (compatible; EffixAuditBot/1.0; +https://effix.co.in/discover)",
+        "User-Agent": "Mozilla/5.0 (compatible; EffixAuditBot/1.0; +https://effixlabs.in/discover)",
       },
     });
   } catch (error) {

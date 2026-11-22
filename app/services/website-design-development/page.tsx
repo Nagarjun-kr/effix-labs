@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   "title": "Website Design & Development Services in India | Effix Labs",
   "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
   "alternates": {
-    "canonical": "https://effix.co.in/services/website-design-development"
+    "canonical": "https://effixlabs.in/services/website-design-development"
   },
   "openGraph": {
     "title": "Website Design & Development Services in India | Effix Labs",
     "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
-    "url": "https://effix.co.in/services/website-design-development",
+    "url": "https://effixlabs.in/services/website-design-development",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/service-05-web-dev.jpg"
+      "https://effixlabs.in/images/services/service-05-web-dev.jpg"
     ]
   },
   "twitter": {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "title": "Website Design & Development Services in India | Effix Labs",
     "description": "Website design & development services across India and Bengaluru: custom, mobile-first websites, e-commerce stores and redesigns built for speed and SEO.",
     "images": [
-      "https://effix.co.in/images/services/service-05-web-dev.jpg"
+      "https://effixlabs.in/images/services/service-05-web-dev.jpg"
     ]
   }
 };
@@ -95,7 +95,7 @@ const FAQS: FaqItem[] = [
 
 const SERVICE_LD = {
   "@type": "Service",
-  "@id": "https://effix.co.in/services/website-design-development#service",
+  "@id": "https://effixlabs.in/services/website-design-development#service",
   "name": "Website Design & Development Services",
   "alternateName": [
     "Website design and development",
@@ -126,7 +126,7 @@ const SERVICE_LD = {
     }
   ],
   "description": "Website design and development services for businesses across India and Bengaluru (Bangalore): custom website design, responsive website development, e-commerce development, landing pages, website redesign, and maintenance and support on WordPress, Shopify, WooCommerce, Webflow and Next.js.",
-  "url": "https://effix.co.in/services/website-design-development"
+  "url": "https://effixlabs.in/services/website-design-development"
 };
 
 const BREADCRUMB_LD = {
@@ -136,19 +136,19 @@ const BREADCRUMB_LD = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://effix.co.in/"
+      "item": "https://effixlabs.in/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://effix.co.in/#services"
+      "item": "https://effixlabs.in/#services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Website Design & Development",
-      "item": "https://effix.co.in/services/website-design-development"
+      "item": "https://effixlabs.in/services/website-design-development"
     }
   ]
 };
@@ -516,8 +516,8 @@ export default function Page() {
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:hello@effix.co.in">
-                      {"hello@effix.co.in"}
+                    <a href="mailto:hello@effixlabs.in">
+                      {"hello@effixlabs.in"}
                     </a>
                   </div>
                   {" "}

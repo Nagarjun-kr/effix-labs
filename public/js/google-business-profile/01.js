@@ -72,7 +72,7 @@ function toggleFaq(button) {
       feedback.style.background = 'rgba(168, 85, 247, 0.15)';
       feedback.style.color = '#d8b4fe';
       feedback.style.border = '1px solid rgba(168, 85, 247, 0.3)';
-      feedback.innerHTML = "Opening email client to send your enquiry to <strong>hello@effix.co.in</strong>...";
+      feedback.innerHTML = "Opening email client to send your enquiry to <strong>hello@effixlabs.in</strong>...";
 
-      window.location.href = "mailto:hello@effix.co.in?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:hello@effixlabs.in?subject=" + subject + "&body=" + body;
     }

@@ -12,21 +12,21 @@ export const metadata: Metadata = {
   "title": "Effix Labs | Get Found Where Your Customers Search",
   "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search. Start with a free Google organic visibility audit.",
   "alternates": {
-    "canonical": "https://effix.co.in/"
+    "canonical": "https://effixlabs.in/"
   },
   "openGraph": {
     "title": "Effix Labs | Get Found Where Your Customers Search",
     "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search. Start with a free Google organic visibility audit.",
-    "url": "https://effix.co.in/",
+    "url": "https://effixlabs.in/",
     "type": "website",
     "siteName": "Effix Labs",
-    "images": [{ "url": "https://effix.co.in/images/og-home.jpg", "width": 1200, "height": 630, "alt": "Effix Labs: Get found where your customers search" }]
+    "images": [{ "url": "https://effixlabs.in/images/og-home.jpg", "width": 1200, "height": 630, "alt": "Effix Labs: Get found where your customers search" }]
   },
   "twitter": {
     "card": "summary_large_image",
     "title": "Effix Labs | Get Found Where Your Customers Search",
     "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search.",
-    "images": ["https://effix.co.in/images/og-home.jpg"]
+    "images": ["https://effixlabs.in/images/og-home.jpg"]
   }
 };
 
@@ -128,8 +128,8 @@ const HOME_FAQS: FaqItem[] = [
     "a": [
       "Email ",
       {
-        "text": "hello@effix.co.in",
-        "href": "mailto:hello@effix.co.in"
+        "text": "hello@effixlabs.in",
+        "href": "mailto:hello@effixlabs.in"
       },
       ". We reply within one business day."
     ]
@@ -387,7 +387,7 @@ export default function Page() {
                   {"Website URL"}
                 </label>
                 {" "}
-                <input id="urlInput" type="text" placeholder="Enter your website URL (for example, effix.co.in)" autoComplete="url" spellCheck="false" required />
+                <input id="urlInput" type="text" placeholder="Enter your website URL (for example, effixlabs.in)" autoComplete="url" spellCheck="false" required />
                 {" "}
                 <button type="submit" className="submit-pill-btn" id="submitBtn">
                   {" "}
@@ -2017,8 +2017,8 @@ export default function Page() {
               {"© 2026 Effix Labs"}
             </span>
             {" "}
-            <a href="mailto:hello@effix.co.in">
-              {"hello@effix.co.in"}
+            <a href="mailto:hello@effixlabs.in">
+              {"hello@effixlabs.in"}
             </a>
             {" "}
           </div>

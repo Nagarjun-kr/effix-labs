@@ -18,9 +18,9 @@ function handleWebSubmit(e) {
     fb.style.background = 'rgba(37, 99, 235, 0.08)';
     fb.style.color = '#4e5362';
     fb.style.border = '1px solid rgba(37, 99, 235, 0.25)';
-    fb.innerHTML = 'Opening your email app to send your enquiry to <strong>hello@effix.co.in</strong>…';
+    fb.innerHTML = 'Opening your email app to send your enquiry to <strong>hello@effixlabs.in</strong>…';
   }
-  window.location.href = 'mailto:hello@effix.co.in?subject=' + subject + '&body=' + body;
+  window.location.href = 'mailto:hello@effixlabs.in?subject=' + subject + '&body=' + body;
 }
 
 (function () {

@@ -1,5 +1,5 @@
 // Site-wide configuration used for canonical URLs, sitemap and structured data.
-export const SITE_URL = "https://effix.co.in";
+export const SITE_URL = "https://effixlabs.in";
 export const ORG_ID = `${SITE_URL}/#organization`;
 
 
@@ -17,7 +17,7 @@ export const ORG = {
   name: "Effix Labs",
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/images/logo.png`, // 512x512 raster rendered from app/icon.svg (Google needs a raster logo)
-  email: "hello@effix.co.in",
+  email: "hello@effixlabs.in",
   telephone: "", // TODO: add a public business phone number in international format, e.g. "+91-80-XXXX-XXXX"
   address: {
     streetAddress: "", // TODO: add street address if you want it public

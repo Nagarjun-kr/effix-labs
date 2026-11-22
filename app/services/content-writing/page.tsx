@@ -13,15 +13,15 @@ export const metadata: Metadata = {
   "title": "Content Writing Services in India | Effix Labs",
   "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
   "alternates": {
-    "canonical": "https://effix.co.in/services/content-writing"
+    "canonical": "https://effixlabs.in/services/content-writing"
   },
   "openGraph": {
     "title": "Content Writing Services in India | Effix Labs",
     "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
-    "url": "https://effix.co.in/services/content-writing",
+    "url": "https://effixlabs.in/services/content-writing",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/service-04-content-writing.jpg"
+      "https://effixlabs.in/images/services/service-04-content-writing.jpg"
     ]
   },
   "twitter": {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "title": "Content Writing Services in India | Effix Labs",
     "description": "Content writing services for brands across India and Bengaluru: SEO blogs, website copy, service pages and more. Human-written, fact-checked, SEO-ready.",
     "images": [
-      "https://effix.co.in/images/services/service-04-content-writing.jpg"
+      "https://effixlabs.in/images/services/service-04-content-writing.jpg"
     ]
   }
 };
@@ -138,7 +138,7 @@ const FAQS: FaqItem[] = [
 
 const SERVICE_LD = {
   "@type": "Service",
-  "@id": "https://effix.co.in/services/content-writing#service",
+  "@id": "https://effixlabs.in/services/content-writing#service",
   "name": "Content Writing Services",
   "serviceType": "SEO content writing, website copywriting and editorial services",
   "provider": {
@@ -164,7 +164,7 @@ const SERVICE_LD = {
     }
   ],
   "description": "Content writing services for brands across India and Bengaluru: SEO blog writing, website copywriting, service and landing pages, product descriptions, pillar pages, case studies, newsletters, LinkedIn content, content refreshes, editing and on-page SEO.",
-  "url": "https://effix.co.in/services/content-writing"
+  "url": "https://effixlabs.in/services/content-writing"
 };
 
 const BREADCRUMB_LD = {
@@ -174,19 +174,19 @@ const BREADCRUMB_LD = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://effix.co.in/"
+      "item": "https://effixlabs.in/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://effix.co.in/#services"
+      "item": "https://effixlabs.in/#services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Content Writing Services",
-      "item": "https://effix.co.in/services/content-writing"
+      "item": "https://effixlabs.in/services/content-writing"
     }
   ]
 };
@@ -621,8 +621,8 @@ export default function Page() {
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:hello@effix.co.in">
-                      {"hello@effix.co.in"}
+                    <a href="mailto:hello@effixlabs.in">
+                      {"hello@effixlabs.in"}
                     </a>
                   </div>
                   {" "}

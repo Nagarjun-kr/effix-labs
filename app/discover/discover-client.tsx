@@ -251,8 +251,8 @@ export default function DiscoverClient() {
                 <h2 id="cta3-t" className="cta3-title"><span>Want to show up</span><br /><strong>IN MORE PLACES?</strong></h2>
                 <p className="cta3-sub"><b>Google, communities and AI search.</b> Effix Labs helps you get found there, with honest reporting and no fake reviews or accounts.</p>
                 <div className="cta3-actions">
-                  <a className="cta3-btn" href="mailto:hello@effix.co.in?subject=Visibility%20audit%20for%20my%20brand">
-                    Email hello@effix.co.in
+                  <a className="cta3-btn" href="mailto:hello@effixlabs.in?subject=Visibility%20audit%20for%20my%20brand">
+                    Email hello@effixlabs.in
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </a>
                   <span className="cta3-reply"><i aria-hidden="true" /> Reply within one business day</span>

@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   "title": "Reddit Marketing Services in India | Effix Labs",
   "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
   "alternates": {
-    "canonical": "https://effix.co.in/services/reddit-marketing"
+    "canonical": "https://effixlabs.in/services/reddit-marketing"
   },
   "openGraph": {
     "title": "Reddit Marketing Services in India | Effix Labs",
     "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
-    "url": "https://effix.co.in/services/reddit-marketing",
+    "url": "https://effixlabs.in/services/reddit-marketing",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/reddit-marketing-hero.jpg"
+      "https://effixlabs.in/images/services/reddit-marketing-hero.jpg"
     ]
   },
   "twitter": {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "title": "Reddit Marketing Services in India | Effix Labs",
     "description": "Reddit marketing services for brands across India and Bengaluru. Authentic community engagement, Reddit Ads and AI search visibility. Talk to our team.",
     "images": [
-      "https://effix.co.in/images/services/reddit-marketing-hero.jpg"
+      "https://effixlabs.in/images/services/reddit-marketing-hero.jpg"
     ]
   }
 };
@@ -158,7 +158,7 @@ const FAQS: FaqItem[] = [
 
 const SERVICE_LD = {
   "@type": "Service",
-  "@id": "https://effix.co.in/services/reddit-marketing#service",
+  "@id": "https://effixlabs.in/services/reddit-marketing#service",
   "name": "Reddit Marketing Services",
   "serviceType": "Reddit marketing, community engagement and Reddit Ads management",
   "provider": {
@@ -184,8 +184,8 @@ const SERVICE_LD = {
     }
   ],
   "description": "Reddit marketing services for brands across India and Bengaluru: Reddit audit and social listening, subreddit research, helpful disclosed engagement, AMAs, branded subreddits, Reddit Ads, reputation monitoring and AI search visibility.",
-  "image": "https://effix.co.in/images/services/reddit-marketing-hero.jpg",
-  "url": "https://effix.co.in/services/reddit-marketing"
+  "image": "https://effixlabs.in/images/services/reddit-marketing-hero.jpg",
+  "url": "https://effixlabs.in/services/reddit-marketing"
 };
 
 const BREADCRUMB_LD = {
@@ -195,19 +195,19 @@ const BREADCRUMB_LD = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://effix.co.in/"
+      "item": "https://effixlabs.in/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://effix.co.in/#services"
+      "item": "https://effixlabs.in/#services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Reddit Marketing Services",
-      "item": "https://effix.co.in/services/reddit-marketing"
+      "item": "https://effixlabs.in/services/reddit-marketing"
     }
   ]
 };
@@ -716,8 +716,8 @@ export default function Page() {
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:hello@effix.co.in">
-                      {"hello@effix.co.in"}
+                    <a href="mailto:hello@effixlabs.in">
+                      {"hello@effixlabs.in"}
                     </a>
                   </div>
                   {" "}

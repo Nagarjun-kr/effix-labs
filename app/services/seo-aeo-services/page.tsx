@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   "title": "SEO & AEO Services in India | Effix Labs",
   "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
   "alternates": {
-    "canonical": "https://effix.co.in/services/seo-aeo-services"
+    "canonical": "https://effixlabs.in/services/seo-aeo-services"
   },
   "openGraph": {
     "title": "SEO & AEO Services in India | Effix Labs",
     "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
-    "url": "https://effix.co.in/services/seo-aeo-services",
+    "url": "https://effixlabs.in/services/seo-aeo-services",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/service-03-seo-aeo.jpg"
+      "https://effixlabs.in/images/services/service-03-seo-aeo.jpg"
     ]
   },
   "twitter": {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "title": "SEO & AEO Services in India | Effix Labs",
     "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru). Rank on Google and get cited in AI Overviews, ChatGPT and Perplexity answers.",
     "images": [
-      "https://effix.co.in/images/services/service-03-seo-aeo.jpg"
+      "https://effixlabs.in/images/services/service-03-seo-aeo.jpg"
     ]
   }
 };
@@ -95,7 +95,7 @@ const FAQS: FaqItem[] = [
 
 const SERVICE_LD = {
   "@type": "Service",
-  "@id": "https://effix.co.in/services/seo-aeo-services#service",
+  "@id": "https://effixlabs.in/services/seo-aeo-services#service",
   "name": "SEO & AEO Services",
   "alternateName": [
     "SEO and AEO services",
@@ -125,7 +125,7 @@ const SERVICE_LD = {
     }
   ],
   "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru): technical SEO and AI crawlability, keyword and question research, answer-first content optimisation, schema markup, entity and authority building, and rank and AI visibility tracking across Google, AI Overviews, ChatGPT, Perplexity, Gemini and Bing.",
-  "url": "https://effix.co.in/services/seo-aeo-services"
+  "url": "https://effixlabs.in/services/seo-aeo-services"
 };
 
 const BREADCRUMB_LD = {
@@ -135,19 +135,19 @@ const BREADCRUMB_LD = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://effix.co.in/"
+      "item": "https://effixlabs.in/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://effix.co.in/#services"
+      "item": "https://effixlabs.in/#services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "SEO & AEO Services",
-      "item": "https://effix.co.in/services/seo-aeo-services"
+      "item": "https://effixlabs.in/services/seo-aeo-services"
     }
   ]
 };
@@ -413,8 +413,8 @@ export default function Page() {
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:hello@effix.co.in">
-                      {"hello@effix.co.in"}
+                    <a href="mailto:hello@effixlabs.in">
+                      {"hello@effixlabs.in"}
                     </a>
                   </div>
                   {" "}

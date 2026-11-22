@@ -72,7 +72,7 @@ export async function retrieveSafely(
               ? "text/html,application/xhtml+xml"
               : "text/plain,application/xml,text/xml",
           "Accept-Encoding": "identity",
-          "User-Agent": "Mozilla/5.0 (compatible; EffixAuditBot/1.0; +https://effix.co.in/discover)",
+          "User-Agent": "Mozilla/5.0 (compatible; EffixAuditBot/1.0; +https://effixlabs.in/discover)",
         },
         timeout: retrievalLimits.timeoutMs,
         lookup: (hostname, lookupOptions, callback) => {

@@ -11,9 +11,9 @@ const DESC = "Free website audit: technical SEO, content, AI-search visibility a
 export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
-  alternates: { canonical: "https://effix.co.in/seo-audit" },
-  openGraph: { title: TITLE, description: DESC, url: "https://effix.co.in/seo-audit", type: "website", images: [{ url: "https://effix.co.in/images/og-home.jpg", width: 1200, height: 630 }] },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: ["https://effix.co.in/images/og-home.jpg"] },
+  alternates: { canonical: "https://effixlabs.in/seo-audit" },
+  openGraph: { title: TITLE, description: DESC, url: "https://effixlabs.in/seo-audit", type: "website", images: [{ url: "https://effixlabs.in/images/og-home.jpg", width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: ["https://effixlabs.in/images/og-home.jpg"] },
 };
 
 export default function SeoAuditPage() {

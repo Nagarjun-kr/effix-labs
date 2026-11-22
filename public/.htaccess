@@ -8,6 +8,11 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
+# One address for the site: https://effixlabs.in (the old domain and www. forward here, keeping the page)
+RewriteCond %{HTTP_HOST} ^(www\.)?effix\.co\.in$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.effixlabs\.in$ [NC]
+RewriteRule ^ https://effixlabs.in%{REQUEST_URI} [R=301,L]
+
 # Always HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https

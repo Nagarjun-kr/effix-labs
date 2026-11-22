@@ -14,15 +14,15 @@ export const metadata: Metadata = {
   "title": "Google Business Profile Optimisation Services | Effix Labs",
   "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
   "alternates": {
-    "canonical": "https://effix.co.in/services/google-business-profile"
+    "canonical": "https://effixlabs.in/services/google-business-profile"
   },
   "openGraph": {
     "title": "Google Business Profile Optimisation Services | Effix Labs",
     "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
-    "url": "https://effix.co.in/services/google-business-profile",
+    "url": "https://effixlabs.in/services/google-business-profile",
     "type": "website",
     "images": [
-      "https://effix.co.in/images/services/service-01-gbp.jpg"
+      "https://effixlabs.in/images/services/service-01-gbp.jpg"
     ]
   },
   "twitter": {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "title": "Google Business Profile Optimisation Services | Effix Labs",
     "description": "Google Business Profile optimisation services in Bengaluru and across India. Get found on Google Search and Maps, win more local customers. Talk to our team.",
     "images": [
-      "https://effix.co.in/images/services/service-01-gbp.jpg"
+      "https://effixlabs.in/images/services/service-01-gbp.jpg"
     ]
   }
 };
@@ -126,7 +126,7 @@ const FAQS: FaqItem[] = [
 
 const SERVICE_LD = {
   "@type": "Service",
-  "@id": "https://effix.co.in/services/google-business-profile#service",
+  "@id": "https://effixlabs.in/services/google-business-profile#service",
   "name": "Google Business Profile Optimisation Services",
   "serviceType": "Google Business Profile optimisation and management",
   "provider": {
@@ -152,7 +152,7 @@ const SERVICE_LD = {
     }
   ],
   "description": "Google Business Profile optimisation services for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.",
-  "url": "https://effix.co.in/services/google-business-profile"
+  "url": "https://effixlabs.in/services/google-business-profile"
 };
 
 const BREADCRUMB_LD = {
@@ -162,19 +162,19 @@ const BREADCRUMB_LD = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://effix.co.in/"
+      "item": "https://effixlabs.in/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://effix.co.in/#services"
+      "item": "https://effixlabs.in/#services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Google Business Profile Optimisation",
-      "item": "https://effix.co.in/services/google-business-profile"
+      "item": "https://effixlabs.in/services/google-business-profile"
     }
   ]
 };
@@ -582,8 +582,8 @@ export default function Page() {
                       {"Direct Email:"}
                     </strong>
                     {" "}
-                    <a href="mailto:hello@effix.co.in">
-                      {"hello@effix.co.in"}
+                    <a href="mailto:hello@effixlabs.in">
+                      {"hello@effixlabs.in"}
                     </a>
                   </div>
                   {" "}

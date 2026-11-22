@@ -514,7 +514,7 @@ export default function Dashboard({ report, onNewAudit, busy }: { report: AuditR
               <a href="/services/content-writing">Content Writing →</a>
               <a href="/services/google-business-profile">Google Business Profile →</a>
               <a href="/services/reddit-marketing">Reddit Marketing →</a>
-              <p>Or email <a href="mailto:hello@effix.co.in">hello@effix.co.in</a>. We reply within one business day.</p>
+              <p>Or email <a href="mailto:hello@effixlabs.in">hello@effixlabs.in</a>. We reply within one business day.</p>
             </div>
           </div>
           <p className="sd-foot-note">

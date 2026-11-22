@@ -101,7 +101,7 @@ export default function AboutPage() {
             </div>
             <div className="ab-actions hx-actions">
               <a href="/#audit" className="ab-btn ab-btn-dark">Run a free visibility audit →</a>
-              <a href="mailto:hello@effix.co.in" className="ab-btn ab-btn-ghost">Email me</a>
+              <a href="mailto:hello@effixlabs.in" className="ab-btn ab-btn-ghost">Email me</a>
             </div>
           </div>
           <a href="#journey" className="hx-cue"><span>Scroll to start the journey</span><i aria-hidden="true" /></a>
@@ -268,7 +268,7 @@ export default function AboutPage() {
               </div>
               <div className="ab-actions">
                 <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit →</a>
-                <a href="mailto:hello@effix.co.in" className="ab-btn ab-btn-ghost">hello@effix.co.in</a>
+                <a href="mailto:hello@effixlabs.in" className="ab-btn ab-btn-ghost">hello@effixlabs.in</a>
                 <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="ab-btn ab-btn-ghost">LinkedIn ↗</a>
               </div>
             </div>
