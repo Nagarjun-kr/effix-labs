@@ -8,14 +8,14 @@ export function Mark() {
   );
 }
 
-export function SiteNav({ current }: { current?: "about" }) {
+export function SiteNav({ current }: { current?: "about" | "blog" }) {
   return (
   <header className="ab-nav">
     <div className="ab-wrap ab-nav-in">
       <a href="/" className="ab-logo" aria-label="Effix Labs home"><Mark /><span>Effix Labs</span></a>
       <nav className="ab-links" aria-label="Main">
         <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
-        <a href="/blog">Blog</a>
+        <a href="/blog" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
         <a href="/#services">Services</a>
         <span className="ab-drop">
           <a href="/casestudy/" aria-haspopup="true">Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></a>
@@ -31,7 +31,7 @@ export function SiteNav({ current }: { current?: "about" }) {
         <summary aria-label="Menu"><span /><span /></summary>
         <nav aria-label="Mobile">
           <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
-          <a href="/blog">Blog</a>
+          <a href="/blog" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
           <a href="/#services">Services</a>
           <a href="/casestudy/">Case Study</a>
           <a href="/seo-audit-tool/">SEO Audit Platform</a>

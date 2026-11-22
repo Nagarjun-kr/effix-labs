@@ -6,6 +6,9 @@ name: Build and publish site
 on:
   push:
     branches: [main]
+  # Daily rebuild at 06:00 IST so blog posts with a future publish date go live on their day.
+  schedule:
+    - cron: "30 0 * * *"
   workflow_dispatch:
 
 permissions:
