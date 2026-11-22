@@ -326,3 +326,8 @@ html:has(.ab), body:has(.ab) { margin: 0; overflow-x: clip; }
 .ab-menu nav a:not(.ab-btn):hover { background: #f5f5f5; }
 .ab-menu nav .ab-btn { display: flex !important; margin-top: 6px; }
 @media (max-width: 1000px) { .ab-menu { display: block; } .ab-nav-in > .ab-btn { margin-left: auto; } }
+
+/* footer links: a thin white underline draws in on hover and slides away on leave */
+.ab-foot ul a, .ab-foot-bottom a { text-decoration: none !important; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s; }
+.ab-foot ul a:hover, .ab-foot ul a:focus-visible, .ab-foot-bottom a:hover, .ab-foot-bottom a:focus-visible { background-size: 100% 1px; color: #fff; }
+@media (prefers-reduced-motion: reduce) { .ab-foot ul a, .ab-foot-bottom a { transition: none; } }

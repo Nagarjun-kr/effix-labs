@@ -4,11 +4,12 @@
 .mm, .mm-panel { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; --mm-ink: #151515; --mm-muted: #5f5b6e; --mm-line: #ecebf2; --mm-violet: #7c5cf0; --mm-fill: #efeafd; --mm-ease: cubic-bezier(0.25, 1, 0.5, 1); }
 .mm { position: relative; }
 .mm-list { display: flex; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.mm-link { display: inline-flex; align-items: center; gap: 5px; padding: 8px 12px; border-radius: 999px; font-size: 14.5px; color: #3f3f3f; text-decoration: none; transition: color 0.2s, background-color 0.25s ease; }
+.mm-link { position: relative; display: inline-flex; align-items: center; gap: 5px; padding: 8px 12px; font-size: 14.5px; color: #3f3f3f; text-decoration: none; transition: color 0.2s; }
 .mm-link:hover, .mm-link.is-open, .mm-link[aria-current] { color: var(--mm-ink); }
 .mm-link[aria-current] { font-weight: 700; }
-/* colour fill on the hovered / open menu item */
-.mm-link:hover, .mm-link.is-open { background: var(--mm-fill); }
+/* violet underline on the hovered / open menu item: draws in from the left, slides away on leave */
+.mm-link::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 1.5px; border-radius: 2px; background: var(--mm-violet); transform: scaleX(0); transform-origin: left center; transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.mm-link:hover::after, .mm-link:focus-visible::after, .mm-link.is-open::after { transform: scaleX(1); }
 .mm-link.is-open { color: #4a32c9; }
 .mm-chev { width: 12px; height: 12px; color: currentColor; opacity: 0.75; transition: transform 0.3s var(--mm-ease); }
 .mm-link.is-open .mm-chev { transform: rotate(180deg); }
@@ -53,6 +54,7 @@
 @media (max-width: 1000px) { .mm-hide-1000 { display: none; } }
 @media (max-width: 950px) { .mm-hide-950 { display: none; } }
 @media (prefers-reduced-motion: reduce) {
+  .mm-link::after { transition: none; }
   .mm-panel, .mm-panel.is-shown, .mm-menu, .mm-menu.is-active { transition: opacity 0.15s ease, visibility 0s; transform: none; }
   .mm-panel { clip-path: none; }
 }

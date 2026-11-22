@@ -4311,3 +4311,8 @@
     .home-close-btn.is-dark { background: var(--token-ink); border-color: var(--token-ink); color: #fff; }
     .home-close-btn.is-dark:hover { background: #000; }
     @media (max-width: 640px) { .home-close { padding: 72px 0 80px; } .home-close-btn { width: 100%; justify-content: center; } }
+
+/* homepage footer links: same underline-on-hover as the other pages */
+.site-footer .footer-nav-list a, .site-footer .footer-bottom-row a { text-decoration: none !important; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px; padding-bottom: 3px; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s; }
+.site-footer .footer-nav-list a:hover, .site-footer .footer-nav-list a:focus-visible, .site-footer .footer-bottom-row a:hover, .site-footer .footer-bottom-row a:focus-visible { background-size: 100% 1px; color: #fff; }
+@media (prefers-reduced-motion: reduce) { .site-footer .footer-nav-list a, .site-footer .footer-bottom-row a { transition: none; } }
