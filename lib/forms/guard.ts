@@ -18,10 +18,15 @@ const STYLE = `
 .fx-status[hidden]{display:none}
 .fx-status.is-ok{background:#f1faea;border:1px solid #cfe9b8;color:#2f5d16}
 .fx-status.is-bad{background:#fdf0ee;border:1px solid #f3c9c2;color:#9b2c1f}
+
+.fx-status .fx-mail{display:inline-flex;margin-top:10px;padding:9px 16px;border-radius:999px;background:#151515;color:#fff !important;font:600 13.5px 'Plus Jakarta Sans',system-ui,sans-serif;text-decoration:none !important}
+.fx-status .fx-mail:hover{background:#000}
 .fx-status.is-wait{background:#f4f1fd;border:1px solid #dcd3fa;color:#4a3fb5}
 `;
 
 type Field = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+// where the "Send by email instead" fallback goes (same inbox as the Worker uses)
+const FALLBACK_TO = "effix.labs@gmail.com";
 const FIELD_RULES: Record<string, Rule> = {
   first: "name", last: "name", fullname: "name", name: "name", firstname: "name", lastname: "name",
   email: "email", workemail: "email",
@@ -121,7 +126,7 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
   codeEl?.addEventListener("change", onCode);
 
   let status = form.querySelector<HTMLElement>("[data-form-status], #formFeedback");
-  const say = (kind: "ok" | "bad" | "wait", text: string) => {
+  const say = (kind: "ok" | "bad" | "wait", text: string, mailto?: string) => {
     if (!status) {
       status = document.createElement("div");
       form.appendChild(status);
@@ -130,6 +135,13 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
     status.className = `fx-status is-${kind}`;
     status.setAttribute("role", kind === "bad" ? "alert" : "status");
     status.textContent = text;
+    if (mailto) {
+      const link = document.createElement("a");
+      link.className = "fx-mail";
+      link.href = mailto;
+      link.textContent = "Send by email instead →";
+      status.append(document.createElement("br"), link);
+    }
     status.hidden = false;
   };
 
@@ -159,6 +171,12 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
       hp: hp.value,
       t: Date.now() - started,
     };
+    // safety net: if sending fails, the visitor can send the same details from their email app in one click
+    const mailto = () => {
+      const lines = payload.fields.filter((f) => f.value.trim()).map((f) => `${f.label}: ${f.rule === "phone" && f.code ? `${f.code} ` : ""}${f.value.trim()}`);
+      const who = payload.fields.filter((f) => f.rule === "name").map((f) => f.value.trim()).join(" ");
+      return `mailto:${FALLBACK_TO}?subject=${encodeURIComponent(`Enquiry (${opts.name})${who ? `: ${who}` : ""}`)}&body=${encodeURIComponent(`${lines.join("\n")}\n\nSent from effixlabs.in${location.pathname}`)}`;
+    };
     try {
       const res = await fetch(`${opts.api}/api/contact`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string; field?: string };
@@ -171,10 +189,11 @@ export function bindForm(form: HTMLFormElement, opts: { name: string; api: strin
       } else {
         const el = data.field ? fields.find((f) => (f.name || f.id) === data.field) : undefined;
         if (el) { check(el); el.focus(); }
-        say("bad", data.error || "Sorry, your message could not be sent. Please try again, or email hello@effixlabs.in.");
+        // a field problem is fixable in the form; anything else (server not set up, provider down) gets the email fallback
+        say("bad", data.error || "Sorry, your message could not be sent right now.", el ? undefined : mailto());
       }
     } catch {
-      say("bad", "Sorry, your message could not be sent. Check your connection and try again, or email hello@effixlabs.in.");
+      say("bad", "Sorry, we couldn't reach our server just now. You can send the same details by email instead.", mailto());
     } finally {
       if (button) { button.disabled = false; button.innerHTML = label ?? "Send"; }
     }

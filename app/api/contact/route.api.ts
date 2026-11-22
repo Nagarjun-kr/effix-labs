@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   }
 
   const { RESEND_API_KEY: key, CONTACT_TO: to = "effix.labs@gmail.com", CONTACT_FROM: from = "Effix Labs <onboarding@resend.dev>" } = process.env;
-  if (!key) return fail("The form is not connected yet. Please email hello@effixlabs.in.", 503);
+  if (!key) return fail("Our form can't send messages right now.", 503);
 
   const form = str(body.form, 60) || "Website form";
   const page = str(body.page, 200) || "/";
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
   }).catch(() => null);
   if (!res || !res.ok) {
     console.error("contact: resend failed", res?.status, await res?.text().catch(() => ""));
-    return fail("Sorry, your message could not be sent right now. Please try again, or email hello@effixlabs.in.", 502);
+    return fail("Sorry, your message could not be sent right now.", 502);
   }
   return Response.json({ ok: true }, { headers });
 }

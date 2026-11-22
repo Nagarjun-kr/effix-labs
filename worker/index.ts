@@ -112,7 +112,8 @@ export default {
       return Response.json({ ok: true, service: "effix-search" }, { headers: { "Cache-Control": "no-store" } });
     }
     const handler = ROUTES[pathname.replace(/\/+$/, "")];
-    if (!handler) return Response.json({ error: "Not found" }, { status: 404 });
+    // allowed sites get CORS headers on errors too, so the browser shows the real problem instead of a network error
+    if (!handler) return Response.json({ error: "Not found" }, { status: 404, headers: allowed });
     // Requests from other websites are refused; requests with no Origin (scripts, curl) are allowed and
     // still rate-limited per IP by the handlers.
     if (origin && !ORIGINS.has(origin)) return Response.json({ error: "Not allowed" }, { status: 403 });
