@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 };
 
 const SCRIPTS = [
+  "/js/form-guard.js",
   "/js/legacy-shim.js",
   "/js/google-business-profile/01.js",
   "/scripts/lenis.min.js",
@@ -742,7 +743,7 @@ export default function Page() {
               </div>
               {" "}
               {" "}
-              <form className="gbp-form" id="redditEnquiryForm" data-onsubmit="handleRedditSubmit(event)">
+              <form className="gbp-form" id="redditEnquiryForm" data-effix-form="Reddit Marketing">
                 {" "}
                 <div className="form-row-2">
                   {" "}

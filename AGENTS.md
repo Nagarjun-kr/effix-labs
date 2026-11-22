@@ -32,3 +32,6 @@ Any task that creates, edits, checks or publishes a blog post follows **`docs/BL
 - Headings use the two-tone style (plain + italic word) on marketing pages.
 - External links open in a new tab with `rel="noopener noreferrer"`.
 - Before handing over: `npm run test:brands`, `npx tsc --noEmit` and `npx next build` must pass.
+- Enquiry forms: every form uses the strict checks in `lib/forms/rules.ts` and sends through the Worker
+  (`/api/contact` → Resend → effix.labs@gmail.com). React forms call `bindForm` from `lib/forms/guard.ts`; plain-script
+  pages add `data-effix-form="Name"` to the `<form>` and load `/js/form-guard.js` (built by `npm run build:forms`).

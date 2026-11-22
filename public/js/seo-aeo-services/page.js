@@ -1,27 +1,4 @@
-/* SEO & AEO page: enquiry form, banner parallax, timeline progress, reveals. */
-function handleSeoAeoSubmit(e) {
-  e.preventDefault();
-  var v = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
-  var brand = v('businessName');
-  var subject = encodeURIComponent('SEO & AEO Enquiry - ' + brand);
-  var body = encodeURIComponent(
-    'Full Name: ' + v('fullName') + '\n' +
-    'Work Email: ' + v('workEmail') + '\n' +
-    'Brand / Company: ' + brand + '\n' +
-    'Website: ' + (v('websiteUrl') || 'Not provided') + '\n' +
-    'Interested in: ' + v('locationCount') + '\n\n' +
-    'Details:\n' + v('message')
-  );
-  var fb = document.getElementById('formFeedback');
-  if (fb) {
-    fb.style.display = 'block';
-    fb.style.background = 'rgba(15, 118, 110, 0.08)';
-    fb.style.color = '#4e5362';
-    fb.style.border = '1px solid rgba(15, 118, 110, 0.25)';
-    fb.innerHTML = 'Opening your email app to send your enquiry to <strong>hello@effixlabs.in</strong>…';
-  }
-  window.location.href = 'mailto:hello@effixlabs.in?subject=' + subject + '&body=' + body;
-}
+/* SEO & AEO page: banner parallax, timeline progress, reveals. */
 
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

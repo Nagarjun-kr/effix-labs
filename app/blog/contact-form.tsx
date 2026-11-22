@@ -1,35 +1,18 @@
 "use client";
 
-// Contact form shown at the end of every post. Like the service-page forms, it opens the visitor's email app with a
-// message to hello@effixlabs.in filled in (no server needed).
-import { useState } from "react";
+// Contact form shown at the end of every post. Fields are checked strictly (lib/forms/guard.ts + rules.ts) and the
+// message is sent through the Worker (/api/contact) to the Effix inbox.
+import { useEffect, useRef } from "react";
 
-const TO = "hello@effixlabs.in";
+import { API_BASE } from "@/lib/api";
+import { bindForm } from "@/lib/forms/guard";
 
 export default function ContactForm({ source }: { source: string }) {
-  const [sent, setSent] = useState(false);
+  const ref = useRef<HTMLFormElement>(null);
+  useEffect(() => (ref.current ? bindForm(ref.current, { name: `Blog: ${source}`.slice(0, 60), api: API_BASE }) : undefined), [source]);
+
   return (
-    <form
-      className="bl-form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        const f = new FormData(e.currentTarget);
-        const v = (k: string) => String(f.get(k) ?? "").trim();
-        const body = [
-          `Name: ${v("first")} ${v("last")}`,
-          `Email: ${v("email")}`,
-          v("phone") ? `Phone: ${v("code")} ${v("phone")}` : "",
-          `Company: ${v("company")}`,
-          v("website") ? `Website: ${v("website")}` : "",
-          `How they heard about us: ${v("heard")}`,
-          `Sent from: ${source}`,
-          "",
-          v("message"),
-        ].filter(Boolean).join("\n");
-        window.location.href = `mailto:${TO}?subject=${encodeURIComponent(`Enquiry from ${v("first")} ${v("last")} (${v("company")})`)}&body=${encodeURIComponent(body)}`;
-        setSent(true);
-      }}
-    >
+    <form className="bl-form" ref={ref}>
       <div className="bl-form-grid">
         <label><span>First name<b aria-hidden="true">*</b></span><input name="first" required autoComplete="given-name" /></label>
         <label><span>Last name<b aria-hidden="true">*</b></span><input name="last" required autoComplete="family-name" /></label>
@@ -55,8 +38,9 @@ export default function ContactForm({ source }: { source: string }) {
       </div>
       <div className="bl-form-foot">
         <button type="submit" className="ab-btn ab-btn-dark">Send message <span aria-hidden="true">→</span></button>
-        <p>{sent ? `Your email app should now be open with the message ready. If it didn't open, email ${TO}.` : `This opens your email app with the message ready to send to ${TO}.`}</p>
+        <p>Your message goes straight to the Effix Labs team.</p>
       </div>
+      <div data-form-status hidden />
     </form>
   );
 }

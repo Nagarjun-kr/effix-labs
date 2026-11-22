@@ -1,27 +1,4 @@
-/* Content Writing page: enquiry form, banner typing + parallax, card spotlight, reveals. */
-function handleContentSubmit(e) {
-  e.preventDefault();
-  var v = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
-  var brand = v('businessName');
-  var subject = encodeURIComponent('Content Writing Enquiry - ' + brand);
-  var body = encodeURIComponent(
-    'Full Name: ' + v('fullName') + '\n' +
-    'Work Email: ' + v('workEmail') + '\n' +
-    'Brand / Company: ' + brand + '\n' +
-    'Website: ' + (v('websiteUrl') || 'Not provided') + '\n' +
-    'Need: ' + v('locationCount') + '\n\n' +
-    'Details:\n' + v('message')
-  );
-  var fb = document.getElementById('formFeedback');
-  if (fb) {
-    fb.style.display = 'block';
-    fb.style.background = 'rgba(109, 77, 252, 0.08)';
-    fb.style.color = '#4e5362';
-    fb.style.border = '1px solid rgba(109, 77, 252, 0.25)';
-    fb.innerHTML = 'Opening your email app to send your enquiry to <strong>hello@effixlabs.in</strong>…';
-  }
-  window.location.href = 'mailto:hello@effixlabs.in?subject=' + subject + '&body=' + body;
-}
+/* Content Writing page: banner typing + parallax, card spotlight, reveals. */
 
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

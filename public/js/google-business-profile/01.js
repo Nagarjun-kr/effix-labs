@@ -45,34 +45,3 @@ function toggleFaq(button) {
       }
     }
 
-    function handleGbpSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('gbpEnquiryForm');
-      const feedback = document.getElementById('formFeedback');
-      const btn = document.getElementById('submitBtn');
-
-      const name = document.getElementById('fullName').value;
-      const email = document.getElementById('workEmail').value;
-      const business = document.getElementById('businessName').value;
-      const website = document.getElementById('websiteUrl').value || 'Not provided';
-      const locations = document.getElementById('locationCount').value;
-      const msg = document.getElementById('message').value;
-
-      const subject = encodeURIComponent("Google Business Profile Optimisation Enquiry - " + business);
-      const body = encodeURIComponent(
-        "Full Name: " + name + "\n" +
-        "Work Email: " + email + "\n" +
-        "Business Name: " + business + "\n" +
-        "Website: " + website + "\n" +
-        "Locations: " + locations + "\n\n" +
-        "Requirements:\n" + msg
-      );
-
-      feedback.style.display = 'block';
-      feedback.style.background = 'rgba(168, 85, 247, 0.15)';
-      feedback.style.color = '#d8b4fe';
-      feedback.style.border = '1px solid rgba(168, 85, 247, 0.3)';
-      feedback.innerHTML = "Opening email client to send your enquiry to <strong>hello@effixlabs.in</strong>...";
-
-      window.location.href = "mailto:hello@effixlabs.in?subject=" + subject + "&body=" + body;
-    }

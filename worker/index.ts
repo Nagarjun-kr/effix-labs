@@ -2,6 +2,7 @@
 // (app/api/**/route.api.ts) for the static HTML site: Effix Discover's brand search and the SEO audit.
 // It also handles the GitHub login for the blog editor at /admin (/auth and /callback; needs GITHUB_CLIENT_ID and
 // GITHUB_CLIENT_SECRET from a GitHub OAuth App whose callback URL is https://<this worker>/callback).
+// Enquiry forms post to /api/contact, which emails them through Resend (RESEND_API_KEY; optional CONTACT_TO, CONTACT_FROM).
 // Secrets (SERPER_API_KEYS, optional GROQ_API_KEY, PAGESPEED_API_KEY, ALERT_WEBHOOK_URL) are set with
 // `npx wrangler secret put NAME` and reach the shared code as process.env.NAME.
 import * as discovery from "../app/api/discovery/route.api";
@@ -9,6 +10,7 @@ import * as mentions from "../app/api/discovery/mentions/route.api";
 import * as verify from "../app/api/discovery/verify/route.api";
 import * as seoAudit from "../app/api/seo-audit/route.api";
 import * as speed from "../app/api/seo-audit/speed/route.api";
+import * as contact from "../app/api/contact/route.api";
 
 type Handler = (request: Request) => Promise<Response>;
 const ROUTES: Record<string, Handler> = {
@@ -17,6 +19,7 @@ const ROUTES: Record<string, Handler> = {
   "/api/discovery/verify": verify.POST,
   "/api/seo-audit": seoAudit.POST,
   "/api/seo-audit/speed": speed.POST,
+  "/api/contact": contact.POST,
 };
 
 // Browsers may only call this server from the Effix website (and local development).
