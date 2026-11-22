@@ -14,12 +14,16 @@ const hash = (s: string) => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >
 
 /** The post's own image, or generated abstract art: soft colour fields in the category palette, grain and a faint
  *  diamond texture. Each post gets a different composition (seeded by its slug). */
-export function Cover({ post, className = "" }: { post: PostMeta; className?: string }) {
+export function Cover({ post, className = "", eager = false }: { post: PostMeta; className?: string; eager?: boolean }) {
   if (post.cover) {
+    // Any image size fits the same 16:9 frame: the picture is shown in full (never cropped) and the space around it
+    // is filled with a soft, blurred copy of the same image, so the frame always takes on that image's colours.
     return (
-      <span className={`bl-cover ${className}`}>
+      <span className={`bl-cover is-photo ${className}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={post.cover} alt={post.coverAlt || post.title} loading="lazy" decoding="async" />
+        <img className="bl-cover-bg" src={post.cover} alt="" aria-hidden="true" loading={eager ? "eager" : "lazy"} decoding="async" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="bl-cover-img" src={post.cover} alt={post.coverAlt || post.title} loading={eager ? "eager" : "lazy"} decoding="async" />
       </span>
     );
   }

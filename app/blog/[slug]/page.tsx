@@ -80,7 +80,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     <div className="ab bl">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
       <SiteNav current="blog" />
-      <ReadingLine />
+      <ReadingLine until="#bl-article-end" />
 
       <main>
         <article>
@@ -104,12 +104,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <span className="bl-fi-cloud" aria-hidden="true"><i /><i /><i /></span>
               <span className="bl-fi-cone" aria-hidden="true" />
               <figure className="bl-fi-card">
-                {post.cover ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={post.cover} alt={post.coverAlt || post.title} decoding="async" fetchPriority="high" />
-                ) : (
-                  <Cover post={post} className="bl-fi-art" />
-                )}
+                <Cover post={post} className="bl-fi-frame" eager />
               </figure>
               <span className="bl-fi-sphere" aria-hidden="true" />
             </div>
@@ -137,6 +132,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 ))}
               </section>
             )}
+
+            <span id="bl-article-end" aria-hidden="true" />
 
             {related.length > 0 && (
               <section className="bl-related-list" aria-labelledby="bl-rel-t">

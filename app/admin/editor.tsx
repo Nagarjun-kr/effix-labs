@@ -297,6 +297,7 @@ export default function PostEditor({ store, existing, allSlugs, onClose, onSaved
                   <>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img className="cm-cover" src={post.cover} alt={post.coverAlt || "Featured image"} />
+                    <small className="cm-hint">Shown in a 16:9 frame (best: 1600 × 900 px). Any shape fits without cropping.</small>
                     <input id="cm-f-coverAlt" className={`cm-input ${lvl(issues.coverAlt)}`} placeholder="Alt text: describe the image" value={post.coverAlt} onChange={(e) => set("coverAlt", e.target.value)} />
                     <small className="cm-hint">Alt text <Count n={post.coverAlt.trim().length} max={LIMITS.alt} over="warn" /></small>
                     <Msg issues={issues.coverAlt} />
@@ -315,7 +316,7 @@ export default function PostEditor({ store, existing, allSlugs, onClose, onSaved
                     onDrop={async (e) => { e.preventDefault(); const f = e.dataTransfer.files?.[0]; if (f) { setBusy("Uploading image…"); try { set("cover", await uploadImage(f, `${post.slug || "post"}-cover`)); } catch (err) { setNote({ kind: "err", text: (err as Error).message }); } finally { setBusy(null); } } }}
                   >
                     <b>Set featured image</b>
-                    <small>Click or drop an image. It is resized and converted to WebP automatically. Without one, a cover is generated in the Effix colours.</small>
+                    <small>Best size: <b>1600 × 900 px (16:9)</b>, JPG, PNG or WebP. Any size works: it is shown in full in the same frame, and the frame takes on the image&apos;s colours. Resized and converted to WebP automatically.</small>
                   </button>
                 )}
                 <input
