@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ORG_ID, ldString } from "@/lib/site";
+import { SiteFooter } from "@/app/about/chrome";
+import "@/app/about/about.css";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "../reddit-marketing/rm.css";
@@ -202,6 +204,7 @@ export default function Page() {
               {"People now search in two places: classic Google results and AI answers from Google’s AI Overviews, ChatGPT, Perplexity and Gemini. Effix Labs provides SEO & AEO services that make your business easy to find, easy to understand and easy to recommend in both, for brands across India and in Bangalore."}
             </p>
             <div className="gx-hero-ctas">
+              <a href="#contact" className="gx-btn gx-btn-dark">{"Talk to us"}<span aria-hidden="true">{" →"}</span></a>
               <a href="#lanes" className="gx-btn gx-btn-ghost">{"See how it works"}</a>
             </div>
             <p className="gx-hero-trust">{"Technical SEO · Answer-first content · Schema · AI visibility tracking"}</p>
@@ -530,6 +533,9 @@ export default function Page() {
           {" "}
         </section>
       </main>
+      <div className="ab">
+        <SiteFooter />
+      </div>
       <LegacyScripts id="seo-aeo-services" srcs={SCRIPTS} />
     </>
   );

@@ -10,13 +10,13 @@ import AppIcon from "@/lib/discover/app-icon";
 import MegaNav from "@/components/MegaNav";
 
 export const metadata: Metadata = {
-  "title": "Effix Labs | Get Found Where Your Customers Search",
+  "title": "Effix Labs: SEO, AEO & Local Search Agency in Bengaluru",
   "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search. Start with a free Google organic visibility audit.",
   "alternates": {
     "canonical": "https://effixlabs.in/"
   },
   "openGraph": {
-    "title": "Effix Labs | Get Found Where Your Customers Search",
+    "title": "Effix Labs: SEO, AEO & Local Search Agency in Bengaluru",
     "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search. Start with a free Google organic visibility audit.",
     "url": "https://effixlabs.in/",
     "type": "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Effix Labs | Get Found Where Your Customers Search",
+    "title": "Effix Labs: SEO, AEO & Local Search Agency in Bengaluru",
     "description": "Effix Labs helps businesses improve visibility across Google search, online communities and AI search.",
     "images": ["https://effixlabs.in/images/og-home.jpg"]
   }
@@ -52,7 +52,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "Do I need to log in or pay?",
     "a": [
-      "No. The audit is free and needs no login."
+      "No. The visibility audit is free and needs no login or signup. Enter your website address and it shows live Google results for your brand on eight platforms: YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads. If you want help acting on what it finds, you can talk to us about our services."
     ]
   },
   {
@@ -121,7 +121,7 @@ const HOME_FAQS: FaqItem[] = [
   {
     "q": "Do you work with businesses in India and abroad?",
     "a": [
-      "Yes. We work with businesses in India and internationally."
+      "Yes. We work with businesses across India, including Bengaluru, and with businesses abroad. Our services cover SEO & AEO, Google Business Profile optimisation, Reddit marketing, content writing, and website design and development, and every project starts with evidence of where your brand shows up today."
     ]
   },
   {
@@ -132,7 +132,12 @@ const HOME_FAQS: FaqItem[] = [
         "text": "hello@effixlabs.in",
         "href": "mailto:hello@effixlabs.in"
       },
-      ". We reply within one business day."
+      " or send a brief through our ",
+      {
+        "text": "contact page",
+        "href": "/contact"
+      },
+      ". We reply within one business day. If you are not ready to talk yet, start with the free visibility audit to see where your brand shows up on Google today."
     ]
   }
 ];
@@ -359,6 +364,10 @@ export default function Page() {
                 {" "}
                 <span>
                   {"Free. No login. Checks your brand on eight platforms through Google."}
+                </span>
+                {" "}
+                <span className="hero-talk">
+                  {"Prefer to talk? "}<a href="/contact">{"Tell us about your business"}</a>{"."}
                 </span>
                 {" "}
               </div>
@@ -1799,9 +1808,16 @@ export default function Page() {
           {" "}
         </section>
         {" "}
-        {" "}
-
-        {" "}
+        <section className="home-close" aria-labelledby="home-close-title">
+          <div className="container home-close-in">
+            <h2 id="home-close-title" className="home-close-title">{"Ready to get "}<em>{"found"}</em>{"?"}</h2>
+            <p className="home-close-text">{"Tell us about your business and we’ll show you where you can be found, and how to get there. Or start with the free visibility audit."}</p>
+            <div className="home-close-ctas">
+              <a href="/contact" className="home-close-btn is-dark">{"Talk to us →"}</a>
+              <a href="#audit" className="home-close-btn">{"Run a free visibility audit"}</a>
+            </div>
+          </div>
+        </section>
       </main>
       {" "}
       {" "}

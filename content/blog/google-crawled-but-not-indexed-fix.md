@@ -77,7 +77,7 @@ Google has billions of pages to store. It skips pages that add nothing new. Watc
 - Many pages that say almost the same thing
 - AI written pages with no real experience or facts
 
-Ask one simple question: "Would someone learn something here that they can't learn on the top 10 results?" If the answer is no, rewrite the page. Add your own examples, data, screenshots and opinions.
+Ask one simple question: "Would someone learn something here that they can't learn on the top 10 results?" If the answer is no, [rewrite the page](/services/content-writing). Add your own examples, data, screenshots and opinions.
 
 ## 4. Add Internal Links From Strong Pages
 
@@ -90,7 +90,7 @@ Here's what to do:
 - Add the page to a relevant category or hub page
 - Link to 3 to 5 related pages from inside it
 
-Strong internal linking for SEO is often the cheapest fix on this list. It costs nothing and works fast.
+[Strong internal linking for SEO](/services/seo-aeo-services) is often the cheapest fix on this list. It costs nothing and works fast.
 
 ## 5. Check Noindex and Canonical Tags
 
@@ -138,7 +138,7 @@ Google can only index what it can render. If your key text loads late or hides b
 | Weak internal links | Page has 0 to 1 links | Link from strong pages |
 | Noindex or wrong canonical | Tag blocks or redirects Google | Remove or correct the tag |
 | Poor sitemap | Broken or redirected URLs listed | Clean and resubmit |
-| Slow or broken page | Poor mobile score | Speed up and simplify code |
+| Slow or broken page | Poor mobile score | [Speed up and simplify code](/services/website-design-development) |
 
 ## After the Fix: Request Indexing and Be Patient
 
@@ -154,4 +154,4 @@ When Google crawled but not indexed your page, it's not a penalty. It's feedback
 
 Start with content quality. Then fix links, tags and speed. Request indexing and give it time.
 
-If you don't want to guess, the team at [Effix Labs](/) can audit your site, find why pages aren't getting indexed, and build a clear plan to fix it. Good content that Google can't index helps no one, so get it seen.
+If you don't want to guess, the team at [Effix Labs](/) can audit your site, find why pages aren't getting indexed, and [build a clear plan to fix it](/contact). Good content that Google can't index helps no one, so get it seen.

@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ORG_ID, ldString } from "@/lib/site";
+import { SiteFooter } from "@/app/about/chrome";
+import "@/app/about/about.css";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "./rm.css";
@@ -262,6 +264,7 @@ export default function Page() {
               {"Before people buy, they ask Reddit. “Which CRM is actually worth it?” “Best dentist in Indiranagar?” “Is this brand legit?” Effix Labs helps brands across India, and especially in Bengaluru, show up in those threads with useful, transparent participation that communities respect."}
             </p>
             <div className="gx-hero-ctas">
+              <a href="#contact" className="gx-btn gx-btn-dark">{"Talk to us"}<span aria-hidden="true">{" →"}</span></a>
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
             </div>
             <p className="gx-hero-trust">{"No bots · No bought upvotes · No undisclosed brand accounts"}</p>
@@ -833,6 +836,9 @@ export default function Page() {
           {" "}
         </section>
       </main>
+      <div className="ab">
+        <SiteFooter />
+      </div>
       <LegacyScripts id="reddit-marketing" srcs={SCRIPTS} />
     </>
   );

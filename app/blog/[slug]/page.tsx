@@ -91,7 +91,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <h1>{post.title}</h1>
               <div className="bl-byline">
                 <span className="bl-avatar" aria-hidden="true">{post.author.charAt(0)}</span>
-                <span className="bl-byline-name">{post.author}</span>
+                <a className="bl-byline-name" href="/about" rel="author">{post.author}</a>
                 <span className="bl-byline-date">
                   Published: <time dateTime={post.date}>{formatDate(post.date)}</time>
                   {post.updated && post.updated !== post.date ? <> · Updated: <time dateTime={post.updated}>{formatDate(post.updated)}</time></> : null}
@@ -129,6 +129,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </section>
             )}
 
+            <aside className="bl-author" aria-label="About the author">
+              <span className="bl-avatar" aria-hidden="true">{post.author.charAt(0)}</span>
+              <p>
+                <b>Written by <a href="/about" rel="author">{post.author}</a></b>
+                {post.author === "Nagarjun"
+                  ? "Founder of Effix Labs, helping businesses get found on Google, in online communities and in AI answers, with evidence instead of empty promises."
+                  : "Effix Labs team."}
+              </p>
+            </aside>
             <span id="bl-article-end" aria-hidden="true" />
 
             {related.length > 0 && (
@@ -157,7 +166,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </span>
               <span className="bl-post-foot-author">
                 <span className="bl-avatar" aria-hidden="true">{post.author.charAt(0)}</span>
-                {post.author}
+                <a href="/about" rel="author">{post.author}</a>
               </span>
             </footer>
           </div>

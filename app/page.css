@@ -4291,3 +4291,23 @@
   .site-footer .footer-tagline { font-size: 28px; }
   .site-footer .footer-desc, .site-footer .footer-nav-list a { font-size: 16px; }
 }
+
+    /* ---------- conversion additions ---------- */
+    /* "Prefer to talk?" link under the audit box */
+    .search-guarantee-row { flex-wrap: wrap; }
+    .hero-talk::before { content: "·"; margin-right: 8px; color: var(--token-border); }
+    .hero-talk a { color: var(--token-ink); font-weight: 600; text-decoration: underline; text-decoration-color: rgba(21, 21, 21, 0.3); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .hero-talk a:hover { text-decoration-color: var(--token-ink); }
+
+    /* closing contact band before the footer */
+    .home-close { padding: 110px 0 120px; background: radial-gradient(50% 70% at 50% 0%, rgba(196, 181, 253, 0.28), transparent 70%), #fff; border-top: 1px solid var(--token-border); text-align: center; }
+    .home-close-in { display: flex; flex-direction: column; align-items: center; }
+    .home-close-title { margin: 0; font-family: var(--font-display); font-weight: 300; font-size: clamp(44px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.03em; color: var(--token-ink); -webkit-text-stroke: 0.6px var(--token-ink); }
+    .home-close-title em { font-family: var(--font-display-italic); font-style: italic; color: var(--token-lime); -webkit-text-stroke: 0; }
+    .home-close-text { max-width: 560px; margin: 22px 0 34px; font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--token-text-secondary); }
+    .home-close-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .home-close-btn { display: inline-flex; align-items: center; padding: 15px 26px; border-radius: 999px; border: 1px solid #d9d9d9; background: #fff; font: 700 15px var(--font-body); color: var(--token-ink); text-decoration: none; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, background 0.2s; }
+    .home-close-btn:hover { transform: translateY(-2px); border-color: var(--token-ink); }
+    .home-close-btn.is-dark { background: var(--token-ink); border-color: var(--token-ink); color: #fff; }
+    .home-close-btn.is-dark:hover { background: #000; }
+    @media (max-width: 640px) { .home-close { padding: 72px 0 80px; } .home-close-btn { width: 100%; justify-content: center; } }

@@ -30,7 +30,6 @@ const REQUIRED: { name: string; rule: Rule; label: string }[] = [
   { name: "last", rule: "name", label: "Last name" },
   { name: "email", rule: "email", label: "Email" },
   { name: "company", rule: "company", label: "Company name" },
-  { name: "heard", rule: "text", label: "How did you hear about us?" },
 ];
 
 function listText(items: string[]) {
@@ -178,7 +177,7 @@ export function ContactBrief() {
             <label><span>Company name<b aria-hidden="true">*</b></span><input name="company" required autoComplete="organization" /></label>
             <label><span>Company website</span><input name="website" type="text" inputMode="url" placeholder="yourbusiness.com" autoComplete="url" /></label>
             <label className="is-wide"><span>Message</span><textarea name="message" rows={4} placeholder="Tell us about your business, your customers and what you'd like help with." /></label>
-            <label className="is-wide"><span>How did you hear about us?<b aria-hidden="true">*</b></span><input name="heard" required placeholder="e.g. Google search, ChatGPT, LinkedIn, Reddit, a referral" /></label>
+            <label className="is-wide"><span>How did you hear about us?</span><input name="heard" placeholder="e.g. Google search, ChatGPT, LinkedIn, Reddit, a referral" /></label>
           </div>
         </fieldset>
 

@@ -34,7 +34,7 @@ export default function ContactForm({ source }: { source: string }) {
         <label><span>Company name<b aria-hidden="true">*</b></span><input name="company" required autoComplete="organization" /></label>
         <label><span>Company website</span><input name="website" type="text" inputMode="url" placeholder="yourbusiness.com" autoComplete="url" /></label>
         <label className="is-wide"><span>Message</span><textarea name="message" rows={5} placeholder="Tell us about your business and what you'd like help with." /></label>
-        <label className="is-wide"><span>How did you hear about us?<b aria-hidden="true">*</b></span><input name="heard" required placeholder="e.g. Google search, ChatGPT, LinkedIn, Reddit, a referral" /></label>
+        <label className="is-wide"><span>How did you hear about us?</span><input name="heard" placeholder="e.g. Google search, ChatGPT, LinkedIn, Reddit, a referral" /></label>
       </div>
       <div className="bl-form-foot">
         <button type="submit" className="ab-btn ab-btn-dark">Send message <span aria-hidden="true">→</span></button>

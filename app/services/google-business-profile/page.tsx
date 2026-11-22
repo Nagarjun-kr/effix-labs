@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ORG_ID, ldString } from "@/lib/site";
+import { SiteFooter } from "@/app/about/chrome";
+import "@/app/about/about.css";
 import "./page.css";
 import "./gx.css";
 import "./gb-banner.css";
@@ -229,6 +231,7 @@ export default function Page() {
               {"Most people choose a local business without ever opening a website. They search, glance at the map, compare a few profiles and call. Effix Labs helps businesses in Bengaluru and across India make their Google Business Profile easier to find, easier to understand and easier to choose on Google Search and Maps."}
             </p>
             <div className="gx-hero-ctas">
+              <a href="#contact" className="gx-btn gx-btn-dark">{"Talk to us"}<span aria-hidden="true">{" →"}</span></a>
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what’s included"}</a>
             </div>
             <p className="gx-hero-trust">{"No lock-in · No fake reviews · No ranking promises we can’t keep"}</p>
@@ -706,6 +709,9 @@ export default function Page() {
           {" "}
         </section>
       </main>
+      <div className="ab">
+        <SiteFooter />
+      </div>
       <LegacyScripts id="google-business-profile" srcs={SCRIPTS} />
     </>
   );

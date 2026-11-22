@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ORG_ID, ldString } from "@/lib/site";
+import { SiteFooter } from "@/app/about/chrome";
+import "@/app/about/about.css";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "../reddit-marketing/rm.css";
@@ -241,6 +243,7 @@ export default function Page() {
               {"Effix Labs provides content writing services for brands across India and in Bengaluru: SEO blog posts, website copy, service pages, product descriptions, case studies and more. Every piece is researched, written and edited by people, built for search engines and AI answers, and written to sound like your brand."}
             </p>
             <div className="gx-hero-ctas">
+              <a href="#contact" className="gx-btn gx-btn-dark">{"Talk to us"}<span aria-hidden="true">{" →"}</span></a>
               <a href="#included" className="gx-btn gx-btn-ghost">{"See what we write"}</a>
             </div>
             <p className="gx-hero-trust">{"Human-written · SEO-ready · Fact-checked · Original"}</p>
@@ -739,6 +742,9 @@ export default function Page() {
           {" "}
         </section>
       </main>
+      <div className="ab">
+        <SiteFooter />
+      </div>
       <LegacyScripts id="content-writing" srcs={SCRIPTS} />
     </>
   );

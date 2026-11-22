@@ -50,7 +50,7 @@ export default function BlogPage() {
       <main>
         <header className="bl-hero">
           <div className="bl-hero-in">
-            <h1>The Effix <em>Blog</em></h1>
+            <h1>Guides to getting <em>found</em></h1>
             <p>
               Practical guides on getting found where your customers search: Google, online communities and AI answers.
               Clear steps, real evidence, no shortcuts.

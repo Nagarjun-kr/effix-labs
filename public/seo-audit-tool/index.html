@@ -375,7 +375,7 @@
                 auditIsRunning = true;
                 if (submitButton) submitButton.disabled = true;
 
-                const auditUrl = "https://seo-audit-tool-ten.vercel.app/?url=" + encodeURIComponent(normalizedUrl);
+                const auditUrl = "/seo-audit?url=" + encodeURIComponent(normalizedUrl);
                 const overlay = getAuditLoadingOverlay();
                 const progressBar = overlay.querySelector("[data-audit-progress]");
                 const percent = overlay.querySelector("[data-audit-percent]");

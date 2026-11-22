@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
 import { ORG_ID, ldString } from "@/lib/site";
+import { SiteFooter } from "@/app/about/chrome";
+import "@/app/about/about.css";
 import "../google-business-profile/page.css";
 import "../google-business-profile/gx.css";
 import "../reddit-marketing/rm.css";
@@ -203,6 +205,7 @@ export default function Page() {
               {"Effix Labs offers website design and development services for businesses across India and in Bengaluru. We plan, design, build and launch custom websites, from business sites and landing pages to online stores, with SEO, speed and conversions built in from day one."}
             </p>
             <div className="gx-hero-ctas">
+              <a href="#contact" className="gx-btn gx-btn-dark">{"Talk to us"}<span aria-hidden="true">{" →"}</span></a>
               <a href="#services" className="gx-btn gx-btn-ghost">{"See what we build"}</a>
             </div>
             <p className="gx-hero-trust">{"Custom design · Mobile-first · SEO-ready · Fast loading"}</p>
@@ -635,6 +638,9 @@ export default function Page() {
           {" "}
         </section>
       </main>
+      <div className="ab">
+        <SiteFooter />
+      </div>
       <LegacyScripts id="website-design-development" srcs={SCRIPTS} />
     </>
   );
