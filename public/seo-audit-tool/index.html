@@ -182,14 +182,55 @@
 
         <section class="tool-steps" aria-labelledby="tool-steps-title">
             <div class="container">
-                <p class="tool-eyebrow">How it works</p>
-                <h2 id="tool-steps-title" class="tool-steps-title">Three steps. <span>About a minute.</span></h2>
-                <ol class="tool-steps-list">
-                    <li><span>01</span><h3>Enter your website</h3><p>Type your website address in the box above. Any format works, such as yourbusiness.com.</p></li>
-                    <li><span>02</span><h3>We analyse it</h3><p>The tool checks technical health, on-page SEO and how visible the site is in AI search.</p></li>
-                    <li><span>03</span><h3>Get your report</h3><p>See your scores and a clear list of fixes, ordered by what will help the most.</p></li>
-                </ol>
-                <a href="#audit" class="tool-again">Start a free audit <span aria-hidden="true">&uarr;</span></a>
+                <div class="ts-panel fade-in">
+                    <div class="ts-head">
+                        <div>
+                            <p class="tool-eyebrow">How it works</p>
+                            <h2 id="tool-steps-title" class="tool-steps-title">Three steps. <span>About a minute.</span></h2>
+                        </div>
+                        <a href="#audit" class="tool-again">Start a free audit <span aria-hidden="true">&uarr;</span></a>
+                    </div>
+
+                    <ol class="ts-flow">
+                        <li class="ts-step">
+                            <div class="ts-preview" aria-hidden="true">
+                                <div class="ts-url">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                    <span class="ts-typed">yourbusiness.com</span><i class="ts-caret"></i>
+                                    <b>Start</b>
+                                </div>
+                            </div>
+                            <span class="ts-num">01</span>
+                            <h3>Enter your website</h3>
+                            <p>Type your address in the box above. Any format works.</p>
+                        </li>
+                        <li class="ts-step">
+                            <div class="ts-preview" aria-hidden="true">
+                                <ul class="ts-scan">
+                                    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></i>Technical health</li>
+                                    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></i>On-page SEO</li>
+                                    <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></i>AI search visibility</li>
+                                </ul>
+                                <span class="ts-scanbar"><em></em></span>
+                            </div>
+                            <span class="ts-num">02</span>
+                            <h3>We analyse it</h3>
+                            <p>The tool checks technical health, on-page SEO and AI visibility.</p>
+                        </li>
+                        <li class="ts-step">
+                            <div class="ts-preview" aria-hidden="true">
+                                <div class="ts-report">
+                                    <span class="ts-ring"></span>
+                                    <div class="ts-bars"><i></i><i></i><i></i></div>
+                                </div>
+                                <div class="ts-fixes"><span></span><span></span></div>
+                            </div>
+                            <span class="ts-num">03</span>
+                            <h3>Get your report</h3>
+                            <p>Scores and a clear list of fixes, ordered by what helps most.</p>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </section>
     </main>
