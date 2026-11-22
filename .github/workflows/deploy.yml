@@ -1,0 +1,45 @@
+# Builds the static HTML site on every push to main and publishes it to the `deploy` branch.
+# MilesWeb's GitHub deploy is connected to the `deploy` branch, so the live site updates automatically.
+# (The search API runs separately on Cloudflare: `npm run worker:deploy`.)
+name: Build and publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Tests
+        run: npm run test:brands
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Publish out/ to the deploy branch
+        run: |
+          cd out
+          git init -q -b deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Site build from ${GITHUB_SHA::7}"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" deploy
