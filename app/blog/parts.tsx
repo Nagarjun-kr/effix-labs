@@ -18,12 +18,13 @@ export function Cover({ post, className = "", eager = false }: { post: PostMeta;
   if (post.cover) {
     // Any image size fits the same 16:9 frame: the picture is shown in full (never cropped) and the space around it
     // is filled with a soft, blurred copy of the same image, so the frame always takes on that image's colours.
+    // width/height give the browser the recommended 16:9 size up front (the CSS frame sets the real size).
     return (
       <span className={`bl-cover is-photo ${className}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="bl-cover-bg" src={post.cover} alt="" aria-hidden="true" loading={eager ? "eager" : "lazy"} decoding="async" />
+        <img className="bl-cover-bg" src={post.cover} alt="" aria-hidden="true" width={1600} height={900} loading={eager ? "eager" : "lazy"} decoding="async" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="bl-cover-img" src={post.cover} alt={post.coverAlt || post.title} loading={eager ? "eager" : "lazy"} decoding="async" />
+        <img className="bl-cover-img" src={post.cover} alt={post.coverAlt || post.title} width={1600} height={900} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : undefined} decoding="async" />
       </span>
     );
   }

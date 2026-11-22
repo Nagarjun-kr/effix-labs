@@ -10,7 +10,7 @@ import "./about.css";
 
 const TITLE = "About Effix Labs | Founded by Nagarjun";
 const DESC =
-  "Meet Nagarjun, who founded Effix Labs to make honest businesses easy to find on Google, in online communities and in AI answers, with evidence, not empty promises.";
+  "Meet Nagarjun, who founded Effix Labs to make honest businesses easy to find on Google, in online communities and in AI answers, with evidence.";
 
 export const metadata: Metadata = {
   title: TITLE,

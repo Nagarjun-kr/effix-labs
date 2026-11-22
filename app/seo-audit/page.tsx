@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "https://effixlabs.in/seo-audit" },
+  // the results dashboard (reached from /seo-audit-tool/ and shared ?url= links) stays out of search; /seo-audit-tool/ is the page that ranks
+  robots: { index: false, follow: true },
   openGraph: { title: TITLE, description: DESC, url: "https://effixlabs.in/seo-audit", type: "website", images: [{ url: "https://effixlabs.in/images/og-home.jpg", width: 1200, height: 630 }] },
   twitter: { card: "summary_large_image", title: TITLE, description: DESC, images: ["https://effixlabs.in/images/og-home.jpg"] },
 };

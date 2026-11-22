@@ -7,15 +7,14 @@ const ORG_LD = ldString([organizationLd(), websiteLd()]);
 export const metadata: Metadata = {
   metadataBase: new URL("https://effixlabs.in"),
   title: "Effix Labs",
-  robots: { index: true, follow: true },
 };
 
+// Preload only the fonts every page's first screen needs (display headline, its italic word, body text); the bold
+// and mono fonts load normally when used.
 const FONTS = [
   "/fonts/AppleGaramond-Light.woff2",
   "/fonts/AppleGaramond-LightItalic.woff2",
   "/fonts/PlusJakartaSans-Light.woff2",
-  "/fonts/PlusJakartaSans-Bold.woff2",
-  "/fonts/GeistMono-Regular.woff2",
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

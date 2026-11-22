@@ -43,10 +43,10 @@ export function SiteFooter() {
           <p className="ab-foot-tag">Get found where your customers search.</p>
           <p>Effix Labs helps businesses get found on Google, in online communities and in AI search.</p>
         </div>
-        <div><h4>Services</h4><ul><li><a href="/services/google-business-profile">Google Business Profile Optimisation</a></li><li><a href="/services/reddit-marketing">Reddit Marketing</a></li><li><a href="/services/seo-aeo-services">SEO &amp; AEO Services</a></li><li><a href="/services/content-writing">Content Writing</a></li><li><a href="/services/website-design-development">Website Design &amp; Development</a></li></ul></div>
-        <div><h4>Product</h4><ul><li><a href="/#audit">Effix Discover</a></li></ul></div>
-        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/casestudy/">Case Study</a></li><li><a href="/contact">Contact</a></li></ul></div>
-        <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
+        <div><p className="ab-foot-h">Services</p><ul><li><a href="/services/google-business-profile">Google Business Profile Optimisation</a></li><li><a href="/services/reddit-marketing">Reddit Marketing</a></li><li><a href="/services/seo-aeo-services">SEO &amp; AEO Services</a></li><li><a href="/services/content-writing">Content Writing</a></li><li><a href="/services/website-design-development">Website Design &amp; Development</a></li></ul></div>
+        <div><p className="ab-foot-h">Product</p><ul><li><a href="/#audit">Effix Discover</a></li></ul></div>
+        <div><p className="ab-foot-h">Company</p><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/casestudy/">Case Study</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><p className="ab-foot-h">Legal</p><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
       </div>
       <div className="ab-foot-bottom"><span>© 2026 Effix Labs</span><a href="mailto:hello@effixlabs.in">hello@effixlabs.in</a></div>
     </div>

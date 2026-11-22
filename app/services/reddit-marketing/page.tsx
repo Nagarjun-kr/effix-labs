@@ -281,7 +281,7 @@ export default function Page() {
                 <span className="rm-cloud rm-cloud-2"><i></i><i></i><i></i></span>
                 <span className="rm-cloud rm-cloud-3"><i></i><i></i><i></i></span>
                 <div className="rm-badge" role="img" aria-label="Reddit logo with an upvote">
-                  <img className="rm-logo" src="/images/services/reddit-logo.png" width={450} height={450} alt="" decoding="async" />
+                  <img className="rm-logo" src="/images/services/reddit-logo.webp" width={450} height={450} alt="Reddit logo" decoding="async" />
                   <span className="rm-upvote"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l7.5 8.5H15V20H9v-7.5H4.5z" fill="#ff4500"></path></svg></span>
                 </div>
                 <span className="rm-badge-shadow"></span>

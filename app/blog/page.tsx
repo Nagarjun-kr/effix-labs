@@ -9,9 +9,9 @@ import { DiamondBand, PostCard } from "./parts";
 import "../about/about.css";
 import "./blog.css";
 
-const TITLE = "Effix Labs Blog: Guides to Getting Found on Google, Reddit and AI Search";
+const TITLE = "Effix Labs Blog: Get Found on Google, Reddit & AI Search";
 const DESC =
-  "Practical guides from Effix Labs on Google Business Profile, SEO, AEO (AI search), Reddit and online communities, content and websites.";
+  "Practical guides from Effix Labs on Google Business Profile, SEO, AEO (AI search), Reddit and online communities, content writing and websites.";
 
 export const metadata: Metadata = {
   title: TITLE,
