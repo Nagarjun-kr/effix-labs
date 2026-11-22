@@ -25,8 +25,10 @@ RewriteRule ^services/reddit-quora-(visibility|marketing)(\.html|/index\.html|/)
 RewriteRule ^services/ai(-assisted)?-blog-seo(\.html|/index\.html|/)?$ /services/content-writing [R=301,L]
 RewriteRule ^services/ai-search-visibility(\.html|/index\.html|/)?$ /services/seo-aeo-services [R=301,L]
 RewriteRule ^services/([a-z-]+)/index\.html$ /services/$1 [R=301,L]
+# Old address of the SEO audit tool page
+RewriteRule ^seo-agency(/(.*))?$ /seo-audit-tool/$2 [R=301,L]
 
-# .../index.html -> the folder (e.g. /seo-agency/index.html -> /seo-agency/)
+# .../index.html -> the folder (e.g. /seo-audit-tool/index.html -> /seo-audit-tool/)
 RewriteCond %{THE_REQUEST} \s/+((?:[^?\s]*/)?)index\.html[\s?]
 RewriteRule ^ /%1 [R=301,L]
 

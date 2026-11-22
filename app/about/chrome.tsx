@@ -21,7 +21,7 @@ export function SiteNav({ current }: { current?: "about" }) {
           <a href="/casestudy/" aria-haspopup="true">Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></a>
           <span className="ab-drop-menu" role="menu">
             <a href="/casestudy/" role="menuitem"><b>Case Study</b><small>How we took a site from zero search visibility to steady impressions</small></a>
-            <a href="/seo-agency/" role="menuitem"><b>SEO Audit Platform</b><small>Free technical SEO, content and AI-readiness check for any website</small></a>
+            <a href="/seo-audit-tool/" role="menuitem"><b>SEO Audit Platform</b><small>Free technical SEO, content and AI-readiness check for any website</small></a>
           </span>
         </span>
         <a href="/contact">Contact</a>
@@ -34,7 +34,7 @@ export function SiteNav({ current }: { current?: "about" }) {
           <a href="/blog">Blog</a>
           <a href="/#services">Services</a>
           <a href="/casestudy/">Case Study</a>
-          <a href="/seo-agency/">SEO Audit Platform</a>
+          <a href="/seo-audit-tool/">SEO Audit Platform</a>
           <a href="/contact">Contact</a>
           <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
         </nav>
