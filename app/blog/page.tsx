@@ -1,12 +1,11 @@
-// Blog home: cinematic banner (Reddit-page style, Effix colours), category pills, 3-column grid of posts.
+// Blog home: tinted header with title and description, diamond band, category pills, 3-column grid of posts.
 import type { Metadata } from "next";
 
 import { CATEGORIES, getPosts, postUrl } from "@/lib/blog";
 import { SITE_URL, ldString } from "@/lib/site";
 import { SiteFooter, SiteNav } from "../about/chrome";
 import TopicFilter from "./filter";
-import BlogBanner from "./banner";
-import { PostCard } from "./parts";
+import { DiamondBand, PostCard } from "./parts";
 import ReadingLine from "./reading-line";
 import "../about/about.css";
 import "./blog.css";
@@ -51,9 +50,16 @@ export default function BlogPage() {
       <ReadingLine />
 
       <main>
-        <section className="bl-top">
-          <div className="bl-wrap"><BlogBanner /></div>
-        </section>
+        <header className="bl-hero">
+          <div className="bl-hero-in">
+            <h1>The Effix <em>Blog</em></h1>
+            <p>
+              Practical guides on getting found where your customers search: Google, online communities and AI answers.
+              Clear steps, real evidence, no shortcuts.
+            </p>
+          </div>
+          <DiamondBand />
+        </header>
 
         <section className="bl-list" id="guides" aria-label="Blog posts">
           <div className="bl-wrap">

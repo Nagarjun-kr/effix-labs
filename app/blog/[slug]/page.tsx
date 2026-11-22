@@ -98,7 +98,21 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 </span>
               </div>
             </div>
-            <div className="bl-post-media"><Cover post={post} /></div>
+            {/* Featured image: shown in full (never cropped) in a floating card, with a small 3D scene behind it */}
+            <div className="bl-post-media">
+              <span className="bl-fi-glow" aria-hidden="true" />
+              <span className="bl-fi-cloud" aria-hidden="true"><i /><i /><i /></span>
+              <span className="bl-fi-cone" aria-hidden="true" />
+              <figure className="bl-fi-card">
+                {post.cover ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={post.cover} alt={post.coverAlt || post.title} decoding="async" fetchPriority="high" />
+                ) : (
+                  <Cover post={post} className="bl-fi-art" />
+                )}
+              </figure>
+              <span className="bl-fi-sphere" aria-hidden="true" />
+            </div>
             <DiamondBand />
           </header>
 
