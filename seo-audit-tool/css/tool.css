@@ -1,0 +1,109 @@
+/* SEO Audit Tool page: slim tool bar, "How it works" steps and footer. Everything else (hero, search box,
+   feature cards, loading screen) uses the page's original style.css / mobile.css. */
+
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 9999; padding: 0.7rem 1.1rem; border-radius: 8px; background: #fff; color: #000; font: 600 0.9rem var(--font-sans); text-decoration: none; }
+.skip-link:focus { top: 1rem; }
+
+/* Tool bar: logo, label, back link */
+.tool-bar {
+  position: absolute; top: 18px; left: 50%; z-index: 50; transform: translateX(-50%);
+  width: min(1180px, calc(100% - 32px)); display: flex; align-items: center; gap: 14px;
+  padding: 10px 12px 10px 18px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(17, 24, 39, 0.07);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+}
+.tool-logo { display: inline-flex; align-items: center; gap: 10px; color: #151515; text-decoration: none; }
+.tool-logo span { font: 600 1.05rem var(--font-sans); letter-spacing: 0.1em; }
+.tool-chip { padding: 5px 11px; border-radius: 999px; border: 1px solid rgba(17, 24, 39, 0.12); font: 400 0.7rem var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280; }
+.tool-home { margin-left: auto; padding: 10px 18px; border-radius: 999px; background: #151515; color: #fff; font: 600 0.88rem var(--font-sans); text-decoration: none; transition: transform 0.25s ease, background 0.25s ease; }
+.tool-home:hover { background: #000; transform: translateY(-1px); }
+
+/* Beta notice under the search box */
+.tool-chip b { margin-left: 6px; padding: 2px 7px; border-radius: 999px; background: #fff4e5; color: #b45309; font-weight: 400; }
+.tool-beta-note { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 10px; max-width: 640px; margin: 14px auto 0; padding: 10px 16px; border-radius: 14px;
+  background: rgba(255, 244, 229, 0.85); border: 1px solid rgba(217, 119, 6, 0.22); color: #7c4a03; font: 400 0.86rem/1.5 var(--font-sans); text-align: center; }
+.tool-beta-tag { padding: 2px 9px; border-radius: 999px; background: #f59e0b; color: #3b2400; font: 600 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* How it works: dark panel, three connected steps, each with a small live preview */
+.tool-steps { padding: clamp(56px, 8vw, 100px) 0; background: #fff; }
+.ts-panel { position: relative; overflow: hidden; isolation: isolate; max-width: 1180px; margin: 0 auto; padding: clamp(28px, 4.5vw, 56px); border-radius: 32px; background: #0d0d14; color: #f5f5f5; text-align: left; }
+.ts-panel::before { content: ""; position: absolute; inset: -30%; z-index: -1; background: radial-gradient(35% 40% at 85% 0%, rgba(109, 77, 255, 0.35), transparent 70%), radial-gradient(30% 35% at 5% 100%, rgba(140, 198, 81, 0.18), transparent 70%); }
+.ts-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 44px); }
+.tool-eyebrow { margin: 0 0 12px; font: 400 0.78rem var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245, 245, 245, 0.55); }
+.tool-steps-title { margin: 0; font-family: "Apple Garamond Light Regular", "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(2.4rem, 4.6vw, 4rem); line-height: 1; letter-spacing: -0.03em; color: #fff; }
+.tool-steps-title span { font-family: "Apple Garamond Light Italic", "Instrument Serif", Georgia, serif; font-style: italic; color: rgb(163, 220, 102); }
+.tool-again { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 999px; background: #fff; color: #0d0d14; font: 700 0.95rem var(--font-sans); text-decoration: none; transition: transform 0.25s ease, box-shadow 0.25s ease; box-shadow: 0 14px 30px -14px rgba(255, 255, 255, 0.5); }
+.tool-again:hover { transform: translateY(-2px); }
+
+.ts-flow { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+/* connector line with a travelling pulse */
+.ts-flow::before { content: ""; position: absolute; left: 6%; right: 6%; top: 74px; height: 2px; background: linear-gradient(90deg, rgba(109, 77, 255, 0.5), rgba(140, 198, 81, 0.5)); z-index: 0; }
+.ts-flow::after { content: ""; position: absolute; top: 71px; left: 6%; width: 80px; height: 8px; border-radius: 8px; background: radial-gradient(closest-side, #fff, rgba(255, 255, 255, 0)); animation: tsPulse 4.5s ease-in-out infinite; z-index: 0; }
+@keyframes tsPulse { 0% { left: 6%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: calc(94% - 80px); opacity: 0; } }
+
+.ts-step { position: relative; z-index: 1; padding: 18px 18px 24px; border-radius: 24px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.09); backdrop-filter: blur(6px); transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease; }
+.ts-step:hover { transform: translateY(-4px); border-color: rgba(163, 220, 102, 0.45); background: rgba(255, 255, 255, 0.06); }
+.ts-num { display: inline-block; margin: 18px 4px 0; font: 500 0.78rem var(--font-mono); letter-spacing: 0.12em; color: rgb(163, 220, 102); }
+.ts-step h3 { margin: 8px 4px 6px; font: 700 1.12rem var(--font-sans); color: #fff; }
+.ts-step p { margin: 0 4px; font: 400 0.93rem/1.6 var(--font-sans); color: rgba(245, 245, 245, 0.66); }
+
+/* previews */
+.ts-preview { height: 112px; border-radius: 16px; background: #fff; color: #151515; padding: 14px; display: flex; flex-direction: column; justify-content: center; gap: 10px; box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.8); }
+.ts-url { display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 12px; border-radius: 999px; border: 1px solid #e5e7eb; font: 500 0.86rem var(--font-sans); color: #374151; white-space: nowrap; overflow: hidden; }
+.ts-url svg { flex: none; width: 16px; height: 16px; color: #9ca3af; }
+.ts-typed { display: inline-block; overflow: hidden; width: 0; animation: tsType 5s steps(16) infinite; }
+@keyframes tsType { 0%, 8% { width: 0; } 45%, 85% { width: 16ch; } 100% { width: 16ch; } }
+.ts-caret { flex: none; width: 2px; height: 16px; background: #1710e6; animation: tsBlink 1s step-end infinite; }
+@keyframes tsBlink { 50% { opacity: 0; } }
+.ts-url b { margin-left: auto; flex: none; padding: 6px 12px; border-radius: 999px; background: linear-gradient(135deg, #1710e6, #6d4dff); color: #fff; font: 700 0.75rem var(--font-sans); }
+
+.ts-scan { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ts-scan li { display: flex; align-items: center; gap: 8px; font: 500 0.82rem var(--font-sans); color: #374151; }
+.ts-scan i { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #e5e7eb; color: #fff; transition: background 0.3s; animation: tsTick 6s infinite; }
+.ts-scan svg { width: 11px; height: 11px; opacity: 0; animation: tsTickMark 6s infinite; }
+.ts-scan li:nth-child(2) i, .ts-scan li:nth-child(2) svg { animation-delay: 0.9s; }
+.ts-scan li:nth-child(3) i, .ts-scan li:nth-child(3) svg { animation-delay: 1.8s; }
+@keyframes tsTick { 0%, 15% { background: #e5e7eb; } 22%, 85% { background: rgb(140, 198, 81); } 100% { background: #e5e7eb; } }
+@keyframes tsTickMark { 0%, 15% { opacity: 0; } 22%, 85% { opacity: 1; } 100% { opacity: 0; } }
+.ts-scanbar { display: block; height: 4px; border-radius: 4px; background: #eef0f4; overflow: hidden; }
+.ts-scanbar em { display: block; height: 100%; width: 40%; border-radius: 4px; background: linear-gradient(90deg, #1710e6, rgb(140, 198, 81)); animation: tsScan 2.2s ease-in-out infinite; }
+@keyframes tsScan { 0% { transform: translateX(-100%); } 100% { transform: translateX(260%); } }
+
+.ts-report { display: flex; align-items: center; gap: 14px; }
+.ts-ring { flex: none; width: 52px; height: 52px; border-radius: 50%; background: conic-gradient(rgb(140, 198, 81) 0 var(--ring, 0%), #eef0f4 0); -webkit-mask: radial-gradient(circle, transparent 15px, #000 16px); mask: radial-gradient(circle, transparent 15px, #000 16px); animation: tsRing 6s ease-in-out infinite; }
+@property --ring { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@keyframes tsRing { 0%, 10% { --ring: 0%; } 45%, 85% { --ring: 72%; } 100% { --ring: 0%; } }
+.ts-bars { flex: 1; display: grid; gap: 7px; }
+.ts-bars i { display: block; height: 7px; border-radius: 7px; background: linear-gradient(90deg, #6d4dff, #1710e6); transform-origin: left; animation: tsBar 6s ease-in-out infinite; }
+.ts-bars i:nth-child(1) { width: 90%; } .ts-bars i:nth-child(2) { width: 70%; animation-delay: 0.3s; background: linear-gradient(90deg, rgb(140, 198, 81), #4f8a24); } .ts-bars i:nth-child(3) { width: 55%; animation-delay: 0.6s; background: linear-gradient(90deg, #f59e0b, #d97706); }
+@keyframes tsBar { 0%, 10% { transform: scaleX(0); } 45%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+.ts-fixes { display: grid; gap: 5px; }
+.ts-fixes span { display: block; height: 6px; border-radius: 6px; background: #eef0f4; }
+.ts-fixes span:nth-child(2) { width: 70%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-flow::after { display: none; }
+  .ts-typed { animation: none; width: 16ch; }
+  .ts-caret, .ts-scanbar em { animation: none; }
+  .ts-scan i { animation: none; background: rgb(140, 198, 81); } .ts-scan svg { animation: none; opacity: 1; }
+  .ts-ring { animation: none; --ring: 72%; } .ts-bars i { animation: none; }
+}
+
+/* Footer */
+.tool-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 18px; margin: 0; padding: 26px 16px 34px; background: #fff; font: 400 0.82rem var(--font-mono); letter-spacing: 0.06em; color: #6b7280; }
+footer.tool-foot span, footer.tool-foot a { display: inline-flex !important; align-items: center; min-height: 0 !important; margin: 0 !important; padding: 0; line-height: 1.4; }
+.tool-foot a { color: #151515; text-decoration: none; }
+.tool-foot a:hover { text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .tool-bar { top: 12px; padding: 8px 8px 8px 14px; gap: 10px; }
+  .tool-chip { display: none; }
+  .tool-logo span { font-size: 0.95rem; }
+  .tool-home { padding: 9px 14px; font-size: 0.8rem; }
+  .ts-flow { grid-template-columns: 1fr; }
+  .ts-flow::before, .ts-flow::after { display: none; }
+  .ts-head { align-items: flex-start; }
+}
+
+/* larger tap area for footer links */
+.tool-page footer a { display: inline-block; padding: 12px 4px; margin: -12px -4px; }

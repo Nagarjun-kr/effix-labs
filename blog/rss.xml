@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Effix Labs Blog</title>
+    <link>https://effixlabs.in/blog</link>
+    <atom:link href="https://effixlabs.in/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Practical guides on getting found on Google, in online communities and in AI search.</description>
+    <language>en-in</language>
+    <item>
+      <title>Google Crawled Your Page but Didn't Index It? Here's What to Do in 2026</title>
+      <link>https://effixlabs.in/blog/google-crawled-but-not-indexed-fix</link>
+      <guid isPermaLink="true">https://effixlabs.in/blog/google-crawled-but-not-indexed-fix</guid>
+      <pubDate>Sun, 22 Nov 2026 11:00:05 GMT</pubDate>
+      <category>SEO &amp; AEO</category>
+      <description>Google crawled your page but didn't index it? Learn 7 simple fixes for "Crawled, currently not indexed" in Search Console and get ranking in 2026.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,54858,64577,e=>{"use strict";let t=((e.i(47167)).default.env.NEXT_PUBLIC_API_BASE??"https://effix-search.effix-labs.workers.dev").replace(/\/+$/,"");async function s(){}e.s(["f",0,t],54858),e.s(["f",0,s],64577)}]);

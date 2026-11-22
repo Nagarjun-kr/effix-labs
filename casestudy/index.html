@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+<html lang="en" data-wf-page="649d3eeab715708cabae9957" data-wf-site="649d3eeab715708cabae995a">
+  <head>
+    <script>document.documentElement.classList.add("cs-js")</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SEO &amp; AEO Case Study: From Invisible to Found | Effix Labs</title>
+    <meta name="description" content="An Effix Labs case study: from zero search visibility to 300+ Google impressions in 4 weeks, and a site built to be found on Google and in AI answers.">
+    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    
+
+
+    <!-- SEO & Social -->
+    <meta property="og:title" content="SEO &amp; AEO Case Study | Effix Labs">
+    <meta property="og:description" content="From zero search visibility to 300+ Google impressions in 4 weeks, and a site built to be found on Google, in communities and in AI answers.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://effixlabs.in/casestudy/">
+    <meta property="og:site_name" content="Effix Labs">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content="https://effixlabs.in/images/og-home.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO &amp; AEO Case Study | Effix Labs">
+    <meta name="twitter:image" content="https://effixlabs.in/images/og-home.jpg">
+    <meta name="twitter:description" content="From zero search visibility to 300+ Google impressions in 4 weeks, and a site built to be found on Google, in communities and in AI answers.">
+    <link rel="canonical" href="https://effixlabs.in/casestudy/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="Nagarjun, Effix Labs">
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"https://effixlabs.in/casestudy/#article","headline":"SEO and AEO case study: how Effix Labs gets found on Google and in AI search","description":"How we took a site from zero search visibility to 300+ Google impressions in 4 weeks, then built effixlabs.in to be found on Google, in online communities and in AI answers.","url":"https://effixlabs.in/casestudy/","mainEntityOfPage":"https://effixlabs.in/casestudy/","image":"https://effixlabs.in/images/og-home.jpg","inLanguage":"en-IN","author":{"@type":"Person","name":"Nagarjun","jobTitle":"Founder","worksFor":{"@id":"https://effixlabs.in/#organization"}},"publisher":{"@type":"Organization","@id":"https://effixlabs.in/#organization","name":"Effix Labs","url":"https://effixlabs.in/","logo":{"@type":"ImageObject","url":"https://effixlabs.in/images/logo.png"}},"about":["Search engine optimisation","Answer engine optimisation","Google Search Console","Structured data"]},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://effixlabs.in/"},{"@type":"ListItem","position":2,"name":"Case Study","item":"https://effixlabs.in/casestudy/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How long does SEO take to show results for a new website?","acceptedAnswer":{"@type":"Answer","text":"On our first site, impressions went from zero to more than 300 within four weeks of fixing structure, titles, content and internal links, and more than 12 keywords started appearing in search results. Rankings and traffic usually take longer, and every site is different."}},
+{"@type":"Question","name":"What is the difference between SEO and AEO?","acceptedAnswer":{"@type":"Answer","text":"SEO helps a page rank in Google's results. AEO (answer engine optimisation) helps AI tools and answer boxes understand and quote it. Both depend on clear structure, direct answers and accurate structured data."}},
+{"@type":"Question","name":"How can I check where my brand shows up online?","acceptedAnswer":{"@type":"Answer","text":"Effix Discover, our free visibility audit, checks live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads. There is no signup."}}
+]}
+]}
+    </script>
+
+    <!-- Essential Layout CSS for Animation -->
+    <link href="vendor/webflow.css" rel="stylesheet" type="text/css" />
+
+    <!-- Core overrides -->
+    <style>
+      /* ── Hide Webflow branding ── */
+      .w-webflow-badge { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+      .info-banner      { display: none !important; }
+
+      /*
+        ── EFFECT: white bg → zoom into black letters → black section ──
+
+        The page starts white. The "CASE STUDY" SVG is black (original
+        color, no invert). As the user scrolls, Webflow scales the SVG
+        up until the black letters fill the entire viewport — creating
+        the illusion of "diving into" the text. The background naturally
+        appears black once the letters cover everything.
+        The cs-page section below is black, so the transition is seamless.
+      */
+
+      /* Page background: WHITE — this is the visible bg at page-start */
+      html, body {
+        background-color: #fff !important;
+        background: #fff !important;
+      }
+
+      /* Zoom section: white background so the black SVG pops */
+      .section-typo-zoom-in,
+      .typo-zoom-sticky,
+      .typo-zoom-sticky-inner,
+      .typo-zoom-text-wrapper {
+        background-color: #fff !important;
+        background: #fff !important;
+      }
+
+      /* Child containers inside zoom section: also white */
+      .section-typo-zoom-in > *,
+      .typo-zoom-sticky > *,
+      .typo-zoom-sticky-inner > * {
+        background-color: #fff !important;
+      }
+
+      /*
+        SVG: keep it black (original) — NO invert filter.
+        will-change promotes it to a GPU layer so it scales
+        smoothly without any repaint flicker.
+      */
+      .typo-zoom-text-image {
+        filter: none !important;
+        will-change: transform;
+        /* the zoom grows the wrapper's width; the image height must follow it (the width/height attributes on the
+           <img> are only there to reserve space before it loads) */
+        height: auto !important;
+      }
+
+      /* Hide the plain-text fallback; we use the SVG */
+      .typo-zoom-text {
+        display: none !important;
+      }
+
+      /*
+        Gradient bridge: white → black, connecting the zoom section
+        (white) to the case study section (black).
+        Show it so the transition out of the zoom is seamless.
+      */
+      .cs-transition {
+        display: block !important;
+        height: 80px;
+        background: linear-gradient(to bottom, #fff 0%, #000 100%);
+      }
+
+      /* ── Premium Scroll Indicator ── */
+      .premium-scroll-indicator {
+        position: fixed;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        pointer-events: none;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        animation: premiumFadeIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+        transition: opacity 0.8s ease;
+      }
+      .premium-scroll-indicator.hidden {
+        opacity: 0 !important;
+        transition: opacity 0.5s ease;
+      }
+      .premium-scroll-indicator .scroll-text {
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #000;
+      }
+      .premium-scroll-indicator .scroll-arrow {
+        color: #000;
+        background: rgba(0,0,0,0.05);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: premiumBounce 2s infinite;
+      }
+      @keyframes premiumFadeIn {
+        from { opacity: 0; transform: translate(-50%, 20px); }
+        to { opacity: 1; transform: translate(-50%, 0); }
+      }
+      @keyframes premiumBounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-12px); }
+        60% { transform: translateY(-6px); }
+      }
+    </style>
+
+    <!-- Case Study Section Styles -->
+    <style>
+      /* ── Google Font ── */
+      /* Manrope is self-hosted in vendor/webflow.css */
+
+      /* ── Fade-in animation ── */
+      /* hidden only when scripts run (html.cs-js), so content is never lost if they fail */
+      .cs-js .cs-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .cs-js .cs-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .cs-reveal:nth-child(2) { transition-delay: 0.1s; }
+      .cs-reveal:nth-child(3) { transition-delay: 0.2s; }
+      .cs-reveal:nth-child(4) { transition-delay: 0.3s; }
+
+      /* ── Case Study wrapper ── */
+      .cs-page {
+        background: #000;
+        color: #fff;
+        font-family: 'Manrope', sans-serif;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      /* ── Transition gradient (white → black) ── */
+      .cs-transition {
+        height: 120px;
+        background: linear-gradient(to bottom, #fff 0%, #000 100%);
+        display: block;
+      }
+
+      /* ── Transition gradient (black → white) ── */
+      .cs-transition-reverse {
+        height: 120px;
+        background: linear-gradient(to bottom, #000 0%, #fff 100%);
+        display: block;
+      }
+
+      /* ── Hero ── */
+      .cs-hero {
+        padding: 7rem 2rem 5rem;
+        text-align: center;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .cs-hero-label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #8a8a8a;
+        margin-bottom: 1.4rem;
+      }
+      .cs-hero-title {
+        font-size: clamp(3rem, 8vw, 7rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: #fff;
+        margin: 0 0 1.2rem;
+      }
+      .cs-hero-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.4rem);
+        font-weight: 300;
+        color: #888;
+        margin: 0;
+        letter-spacing: 0.01em;
+      }
+
+      /* ── Sections ── */
+      .cs-body {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+        display: grid;
+        gap: 5rem;
+      }
+
+      .cs-section-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #8a8a8a;
+        margin-bottom: 1.2rem;
+      }
+      .cs-section-heading {
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        color: #fff;
+        margin: 0 0 1rem;
+      }
+      .cs-page a, .hm-cta-note a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+      .cs-page a:hover, .hm-cta-note a:hover { text-decoration-color: #fff; }
+      .cs-section-text {
+        font-size: 1.05rem;
+        font-weight: 300;
+        color: #aaa;
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      /* ── List ── */
+      .cs-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+      .cs-list li {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #aaa;
+        padding-left: 1.4rem;
+        position: relative;
+        line-height: 1.6;
+      }
+      .cs-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #444;
+      }
+
+      /* ── Three-column grid ── */
+      .cs-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem 4rem;
+      }
+
+      /* ── Divider ── */
+      .cs-divider {
+        border: none;
+        border-top: 1px solid #1a1a1a;
+        margin: 0;
+      }
+
+      /* ── CTA ── */
+      .cs-cta {
+        text-align: center;
+        padding: 7rem 2rem 9rem;
+        border-top: 1px solid #1a1a1a;
+      }
+      .cs-cta-title {
+        font-size: clamp(2.2rem, 6vw, 5rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        color: #fff;
+        margin: 0 0 2.5rem;
+      }
+      .cs-cta-btn {
+        display: inline-block;
+        padding: 1.1em 3em;
+        background: #fff;
+        color: #000;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: background 0.3s, color 0.3s, transform 0.3s;
+      }
+      .cs-cta-btn:hover {
+        background: #e0e0e0;
+        transform: scale(1.04);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 600px) {
+        .cs-body  { padding: 4rem 1.5rem; gap: 4rem; }
+        .cs-hero  { padding: 5rem 1.5rem 4rem; }
+        .cs-cta   { padding: 5rem 1.5rem 7rem; }
+        .cs-grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+      }
+
+      /* ── Hire Me Section ── */
+      .hm-section {
+        background: #000;
+        border-top: 1px solid #111;
+        padding: 9rem 2rem 10rem;
+        font-family: 'Manrope', sans-serif;
+      }
+      .hm-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        display: grid;
+        gap: 5rem;
+      }
+
+      /* Top headline block */
+      .hm-headline-block {
+        text-align: center;
+      }
+      .hm-eyebrow {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #8a8a8a;
+        margin: 0 0 1.4rem;
+      }
+      .hm-title {
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+        color: #fff;
+        margin: 0 0 1.6rem;
+      }
+      .hm-subtext {
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        font-weight: 300;
+        color: #777;
+        line-height: 1.75;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      /* Feature cards grid */
+      .hm-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .hm-card {
+        background: #0d0d0d;
+        border: 1px solid #1c1c1c;
+        border-radius: 16px;
+        padding: 2.2rem 2rem;
+        transition: border-color 0.3s;
+      }
+      .hm-card:hover { border-color: #333; }
+      .hm-card-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #8a8a8a;
+        margin: 0 0 1.2rem;
+      }
+      .hm-card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+      .hm-card-list li {
+        font-size: 0.97rem;
+        font-weight: 300;
+        color: #aaa;
+        padding-left: 1.3rem;
+        position: relative;
+        line-height: 1.55;
+      }
+      .hm-card-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #333;
+      }
+
+      /* CTA block */
+      .hm-cta-block {
+        text-align: center;
+        padding-top: 2rem;
+      }
+      .hm-cta-btn {
+        display: inline-block;
+        padding: 1.15em 3.5em;
+        background: #fff;
+        color: #000;
+        font-family: 'Manrope', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: background 0.3s ease, transform 0.3s ease,
+                    box-shadow 0.3s ease;
+        box-shadow: 0 0 0 0 rgba(255,255,255,0);
+      }
+      .hm-cta-btn:hover {
+        background: #f0f0f0;
+        transform: scale(1.05);
+        box-shadow: 0 0 40px 4px rgba(255,255,255,0.08);
+      }
+      .hm-cta-btn-line { margin-left: 0.8em; background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.55); }
+      .hm-cta-btn-line:hover { background: rgba(255,255,255,0.08); box-shadow: inset 0 0 0 1.5px #fff; }
+      @media (max-width: 640px) { .hm-cta-btn-line { margin: 0.8em 0 0; } }
+      @media (prefers-reduced-motion: reduce) {
+        .cs-js .cs-reveal, .cs-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+        .typo-zoom-text-image, .typo-zoom-text-wrapper, .typo-zoom-sticky-inner { transform: none !important; transition: none !important; }
+        .typo-zoom-text-wrapper { width: min(90vw, 760px) !important; }
+        .premium-scroll-indicator .scroll-arrow { animation: none !important; }
+        html { scroll-behavior: auto !important; }
+      }
+      .hm-cta-note {
+        margin-top: 1.2rem;
+        font-size: 0.78rem;
+        color: #8a8a8a;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+      }
+
+      /* Responsive */
+      @media (max-width: 640px) {
+        .hm-section { padding: 6rem 1.5rem 7rem; }
+        .hm-cards   { grid-template-columns: 1fr; }
+      }
+    </style>
+    <script type="text/javascript">
+      !function(o,c){
+        var n=c.documentElement,t=" w-mod-";
+        n.className+=t+"js";
+        ("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")
+      }(window,document);
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- ── Navigation (empty) ── -->
+    <div class="nav"></div>
+
+    <!-- ── Premium Scroll Indicator ── -->
+    <div class="premium-scroll-indicator">
+      <span class="scroll-text">Scroll upward</span>
+      <div class="scroll-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── Zoom Typography Animation ── -->
+    <div
+      data-w-id="1d7e535c-90e0-7a1b-b0c6-2e2f0f959a3f"
+      class="section-typo-zoom-in"
+    >
+      <div class="typo-zoom-sticky">
+        <div class="typo-zoom-sticky-inner">
+          <div class="typo-zoom-text-wrapper">
+            <div class="typo-zoom-text">Case Study</div>
+            <img
+              src="case-study.svg"
+              width="639"
+              height="120"
+              fetchpriority="high"
+              alt="Case Study"
+              class="typo-zoom-text-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Case Study Section ── -->
+    <div class="cs-page">
+
+      <!-- Gradient transition: white → black -->
+      <span class="cs-transition" aria-hidden="true"></span>
+
+      <!-- Hero -->
+      <div class="cs-hero">
+        <p class="cs-hero-label cs-reveal">Case Study · Effix Labs</p>
+        <h1 class="cs-hero-title cs-reveal">From Invisible to Found</h1>
+        <p class="cs-hero-subtitle cs-reveal">How we took a site from zero search visibility to 300+ Google impressions in four weeks, and then built Effix Labs to be found on Google, in online communities and in AI answers.</p>
+      </div>
+
+      <!-- Body Content -->
+      <div class="cs-body">
+
+        <!-- Intro -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">About This Project</p>
+          <p class="cs-section-text">
+            Before Effix Labs worked on anyone else's visibility, we tested every method on our own. Our first site,
+            effix.co.in, was a live test bed: we structured it, optimised it and tracked every change in Google Search Console.
+            What worked there became the foundation of <a href="/">Effix Labs</a> and of the way we work with clients today.
+          </p>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- The Challenge -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">The Challenge</p>
+          <h2 class="cs-section-heading">A new site with zero visibility, and three places to be found.</h2>
+          <p class="cs-section-text">
+            When the first site went live, nobody could find it. And Google is only one of the places people look now.
+            They read Reddit and Quora threads before they decide, and they ask AI tools for recommendations. A business
+            that is missing from any of the three loses customers it never hears about.
+          </p>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li>No visibility on Google: impressions were near zero</li>
+            <li>No keyword plan: pages weren't targeting any real searches</li>
+            <li>Weak structure: long blocks of text, unclear headings, few internal links</li>
+            <li>Nothing that AI tools or answer boxes could clearly read and quote</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- What We Did -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">What We Did</p>
+          <h2 class="cs-section-heading">Five focused areas. One clear goal: be found.</h2>
+        </div>
+
+        <div class="cs-grid-3 cs-reveal">
+
+          <div>
+            <p class="cs-section-label">On-Page SEO</p>
+            <p class="cs-section-text">
+              One clear H1 per page, a logical H2 structure, and a unique title and meta description written for the search each page should answer. Every page also got a canonical URL.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Content Structure</p>
+            <p class="cs-section-text">
+              Long blocks became short, scannable sections that answer one question each. Written for people first, so search engines and AI tools can understand it too.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Keyword Planning</p>
+            <p class="cs-section-text">
+              Research into what people actually search for, with each term used naturally on the one page that answers it best, instead of repeated across many.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Internal Linking</p>
+            <p class="cs-section-text">
+              Related pages link to each other with descriptive anchor text, so crawlers find every page and visitors always know where to go next.
+            </p>
+          </div>
+
+          <div>
+            <p class="cs-section-label">Structured Data &amp; AEO</p>
+            <p class="cs-section-text">
+              Schema markup that tells search engines who we are and what we offer: Organization, Service, Breadcrumb and FAQ data, plus direct answers that AI tools can quote.
+            </p>
+          </div>
+
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Before vs After -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Before vs After</p>
+          <h2 class="cs-section-heading">The Transformation</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-top: 2rem;">
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 1rem; letter-spacing: -0.01em;">Before</h3>
+              <ul class="cs-list">
+                <li>Near-zero impressions on Google</li>
+                <li>No keyword targeting</li>
+                <li>Hard-to-scan content</li>
+                <li>Weak internal linking</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0 0 1rem; letter-spacing: -0.01em;">After</h3>
+              <ul class="cs-list">
+                <li>300+ impressions within four weeks</li>
+                <li>12+ keywords appearing in search results</li>
+                <li>Clear, readable pages with direct answers</li>
+                <li>Every page connected and crawlable</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Results -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Results</p>
+          <h2 class="cs-section-heading">Early signals. Real progress.</h2>
+          <p class="cs-section-text">
+            These numbers come from Google Search Console for the first site. They are early-stage results from foundational work, not overnight miracles:
+          </p>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li>Impressions increased from 0 to over 300 within 4 weeks</li>
+            <li>12+ keywords started appearing consistently in search results</li>
+            <li>Faster indexing and better crawlability across core pages</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Building Effix Labs -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Building Effix Labs</p>
+          <h2 class="cs-section-heading">The same method, built into a whole agency site.</h2>
+          <p class="cs-section-text">
+            effixlabs.in was built from day one with everything the first site taught us:
+          </p>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li><strong>Fast, plain HTML pages</strong> that load quickly and are easy for any crawler to read</li>
+            <li><strong>One clear page per service:</strong> <a href="/services/google-business-profile">Google Business Profile</a>, <a href="/services/reddit-marketing">Reddit marketing</a>, <a href="/services/seo-aeo-services">SEO &amp; AEO</a>, <a href="/services/content-writing">content writing</a> and <a href="/services/website-design-development">website design</a></li>
+            <li><strong>Structured data on every page,</strong> plus a sitemap, canonical URLs and FAQ sections that answer real questions</li>
+            <li><strong>Free tools that show the evidence:</strong> <a href="/#audit">Effix Discover</a> checks where a brand appears on eight platforms through live Google results, and the <a href="/seo-audit-tool/">SEO audit tool</a> checks a site's technical and on-page health</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- How We Work Now -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">How We Work Now</p>
+          <h2 class="cs-section-heading">Audit. Plan. Improve. Measure.</h2>
+          <p class="cs-section-text">
+            Every client project follows the cycle this case study proved. We start by looking at where your business shows up today,
+            choose the few actions that will matter most, do the work properly, and report on what changed. No fake reviews,
+            no bought engagement, and no promises nobody can keep. <a href="/about">Read more about Effix Labs</a>.
+          </p>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- What We Learned -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">What We Learned</p>
+          <h2 class="cs-section-heading">SEO isn't a trick. It's a discipline.</h2>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li>SEO is more than keywords: structure, speed and clear answers all play a part</li>
+            <li>A well-organised page ranks better because it is genuinely more useful</li>
+            <li>AI tools reward the same things Google does: clarity, accuracy and consistency</li>
+            <li>Small, consistent improvements compound over time</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Common Questions -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Common Questions</p>
+          <h2 class="cs-section-heading">Quick answers.</h2>
+          <ul class="cs-list" style="margin-top:1.4rem;">
+            <li><strong>How long does SEO take for a new website?</strong> On our first site, impressions went from zero to 300+ in four weeks and 12+ keywords started appearing. Rankings and traffic usually take longer, and every site is different.</li>
+            <li><strong>What is the difference between SEO and AEO?</strong> SEO helps a page rank in Google's results. AEO helps AI tools and answer boxes understand and quote it. Both depend on clear structure, direct answers and accurate structured data.</li>
+            <li><strong>How can I check where my brand shows up?</strong> Run <a href="/#audit">Effix Discover</a>, our free visibility audit. It checks live Google results for your brand on YouTube, Instagram, Facebook, LinkedIn, X, Reddit, Quora and Threads, with no signup.</li>
+          </ul>
+        </div>
+
+        <hr class="cs-divider cs-reveal" />
+
+        <!-- Conclusion -->
+        <div class="cs-reveal">
+          <p class="cs-section-label">Conclusion</p>
+          <h2 class="cs-section-heading">
+            Built with intent. Now working for clients.
+          </h2>
+          <p class="cs-section-text">
+            This project showed us what it takes to move a site from invisible to indexed, and from cluttered to clear. The new site is
+            still early, and we will add its Search Console results here as they come in. The method is the same one we now use for every client.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Gradient transition: black → white for next zoom -->
+    <span class="cs-transition-reverse" aria-hidden="true"></span>
+
+    <!-- ── "Let's Talk" Zoom Typography Animation ── -->
+    <div
+      data-w-id="1d7e535c-90e0-7a1b-b0c6-2e2f0f959a3f"
+      class="section-typo-zoom-in"
+    >
+      <div class="typo-zoom-sticky">
+        <div class="typo-zoom-sticky-inner">
+          <div class="typo-zoom-text-wrapper">
+            <div class="typo-zoom-text">Let's Talk</div>
+            <svg
+              class="typo-zoom-text-image"
+              viewBox="0 0 600 120"
+              preserveAspectRatio="xMidYMid meet"
+              style="width: 100%; height: 100%;"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <text
+                x="50%"
+                y="55%"
+                dominant-baseline="middle"
+                text-anchor="middle"
+                font-family="'Manrope', sans-serif"
+                font-weight="800"
+                font-size="110px"
+                letter-spacing="-0.02em"
+                fill="#000"
+                textLength="560"
+                lengthAdjust="spacingAndGlyphs"
+              >LET'S TALK</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gradient transition: white → black -->
+    <span class="cs-transition" aria-hidden="true"></span>
+
+    <!-- ── Work With Us Section ── -->
+    <section class="hm-section" style="border-top: none;">
+      <div class="hm-inner">
+
+        <!-- Headline -->
+        <div class="hm-headline-block cs-reveal">
+          <p class="hm-eyebrow">Work With Effix Labs</p>
+          <h2 class="hm-title">Want the same for<br/>your business?</h2>
+          <p class="hm-subtext">
+            Start with a free visibility audit. See where your brand shows up on Google, in communities and in AI search, then get a plan built around the few actions that will move your results.
+          </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="hm-cards">
+          <div class="hm-card cs-reveal">
+            <p class="hm-card-label">What We Do</p>
+            <ul class="hm-card-list">
+              <li>Google Business Profile optimisation</li>
+              <li>Reddit marketing</li>
+              <li>SEO &amp; AEO (AI search)</li>
+              <li>Content writing &amp; website design</li>
+            </ul>
+          </div>
+          <div class="hm-card cs-reveal">
+            <p class="hm-card-label">How We Work</p>
+            <ul class="hm-card-list">
+              <li>Evidence before recommendations</li>
+              <li>Transparent, honest reporting</li>
+              <li>No fake reviews or bought engagement</li>
+              <li>Plans priced around the work that matters</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="hm-cta-block cs-reveal">
+          <a href="/#audit" class="hm-cta-btn">RUN A FREE VISIBILITY AUDIT</a>
+          <a href="/contact" class="hm-cta-btn hm-cta-btn-line">TALK TO US</a>
+          <p class="hm-cta-note">Or email <a href="mailto:hello@effixlabs.in">hello@effixlabs.in</a>. We read every message.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- (cs-page closing div removed; placed above) -->
+
+    </div>
+
+    <!-- ── Scripts ── -->
+    <script src="vendor/jquery-3.5.1.min.js" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="vendor/webflow.schunk.js" type="text/javascript"></script>
+    <script src="vendor/webflow.js" type="text/javascript"></script>
+
+    <!-- Scroll fade-in observer -->
+    <script>
+      (function () {
+        var els = document.querySelectorAll('.cs-reveal');
+        if (!els.length) return;
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        els.forEach(function (el) { io.observe(el); });
+      })();
+    </script>
+
+    <!-- Premium Scroll Indicator Logic -->
+    <script>
+      (function() {
+        const indicator = document.querySelector('.premium-scroll-indicator');
+        if (!indicator) return;
+
+        let hasScrolled = false;
+        
+        window.addEventListener('scroll', () => {
+          if (!hasScrolled && window.scrollY > 50) {
+            hasScrolled = true;
+            indicator.classList.add('hidden');
+          } else if (hasScrolled && window.scrollY <= 50) {
+            hasScrolled = false;
+            indicator.classList.remove('hidden');
+          }
+        }, { passive: true });
+      })();
+    </script>
+
+  </body>
+</html>
