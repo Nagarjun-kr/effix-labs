@@ -15,7 +15,7 @@ export function SiteNav({ current }: { current?: "about" }) {
       <a href="/" className="ab-logo" aria-label="Effix Labs home"><Mark /><span>Effix Labs</span></a>
       <nav className="ab-links" aria-label="Main">
         <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
-        <a href="https://effix.co.in/blog/">Blog</a>
+        <a href="/blog">Blog</a>
         <a href="/#services">Services</a>
         <a href="/work">Work</a>
         <a href="/contact">Contact</a>
@@ -25,7 +25,7 @@ export function SiteNav({ current }: { current?: "about" }) {
         <summary aria-label="Menu"><span /><span /></summary>
         <nav aria-label="Mobile">
           <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
-          <a href="https://effix.co.in/blog/">Blog</a>
+          <a href="/blog">Blog</a>
           <a href="/#services">Services</a>
           <a href="/work">Work</a>
           <a href="/contact">Contact</a>
@@ -49,7 +49,7 @@ export function SiteFooter() {
         </div>
         <div><h4>Services</h4><ul><li><a href="/services/google-business-profile">Google Business Profile Optimisation</a></li><li><a href="/services/reddit-marketing">Reddit Marketing</a></li><li><a href="/services/seo-aeo-services">SEO &amp; AEO Services</a></li><li><a href="/services/content-writing">Content Writing</a></li><li><a href="/services/website-design-development">Website Design &amp; Development</a></li></ul></div>
         <div><h4>Product</h4><ul><li><a href="/#audit">Effix Discover</a></li></ul></div>
-        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="https://effix.co.in/blog/">Blog</a></li><li><a href="/work">Work</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/work">Work</a></li><li><a href="/contact">Contact</a></li></ul></div>
         <div><h4>Legal</h4><ul><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Service</a></li></ul></div>
       </div>
       <div className="ab-foot-bottom"><span>© 2026 Effix Labs</span><a href="mailto:hello@effix.co.in">hello@effix.co.in</a></div>
