@@ -76,7 +76,7 @@ export default function PostsList({ posts, loading, onNew, onEdit, onDelete }: {
                     <button type="button" className="cm-row-title" onClick={() => onEdit(r)}>
                       {r.post.cover ? (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img src={r.post.cover} alt="" />
+                        <img src={r.post.cover} alt={r.post.coverAlt || r.post.title} />
                       ) : (
                         <i className={`cm-thumb is-${r.post.category}`} />
                       )}

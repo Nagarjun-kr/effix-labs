@@ -597,9 +597,9 @@ export default function Page() {
                       {" "}
                       <img src="/images/services/float/service-03-seo-aeo-base.webp" alt="SEO & AEO Services service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       <div className="poster-float" aria-hidden="true">
-                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-search.webp" width={214} height={246} alt="" data-depth="16" loading="lazy" decoding="async" style={{ left: "51.071%", top: "48.224%", width: "22.912%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-bars.webp" width={119} height={128} alt="" data-depth="26" loading="lazy" decoding="async" style={{ left: "78.48%", top: "40.212%", width: "12.741%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-spark.webp" width={98} height={113} alt="" data-depth="30" loading="lazy" decoding="async" style={{ left: "77.73%", top: "62.132%", width: "10.493%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-search.webp" width={214} height={246} alt="Magnifying glass search icon" data-depth="16" loading="lazy" decoding="async" style={{ left: "51.071%", top: "48.224%", width: "22.912%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-bars.webp" width={119} height={128} alt="Rising bar chart icon" data-depth="26" loading="lazy" decoding="async" style={{ left: "78.48%", top: "40.212%", width: "12.741%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-03-seo-aeo-spark.webp" width={98} height={113} alt="AI sparkle icon" data-depth="30" loading="lazy" decoding="async" style={{ left: "77.73%", top: "62.132%", width: "10.493%" }} />
                       </div>
                       {" "}
                       <div className="service-poster-overlay">
@@ -633,15 +633,15 @@ export default function Page() {
                       {" "}
                       <img src="/images/services/float/service-04-content-writing-base.webp" alt="Content Writing service poster" className="service-poster-img" width={723} height={1024} loading="lazy" decoding="async" />
                       <div className="poster-float" aria-hidden="true">
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-doc.webp" width={296} height={296} alt="" data-depth="12" loading="lazy" decoding="async" style={{ left: "53.383%", top: "44.124%", width: "31.794%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-ranked.webp" width={246} height={78} alt="" data-depth="20" loading="lazy" decoding="async" style={{ left: "70.677%", top: "35.633%", width: "26.423%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-engaging.webp" width={280} height={106} alt="" data-depth="18" loading="lazy" decoding="async" style={{ left: "43.824%", top: "65.353%", width: "30.075%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-a.webp" width={141} height={61} alt="" data-depth="28" loading="lazy" decoding="async" style={{ left: "52.846%", top: "39.879%", width: "15.145%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-b.webp" width={127} height={91} alt="" data-depth="30" loading="lazy" decoding="async" style={{ left: "80.236%", top: "42.608%", width: "13.641%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-c.webp" width={96} height={97} alt="" data-depth="26" loading="lazy" decoding="async" style={{ left: "44.898%", top: "56.027%", width: "10.311%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-ball-a.webp" width={47} height={72} alt="" data-depth="34" loading="lazy" decoding="async" style={{ left: "47.905%", top: "46.929%", width: "5.048%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-ball-b.webp" width={87} height={82} alt="" data-depth="32" loading="lazy" decoding="async" style={{ left: "77.229%", top: "63.23%", width: "9.345%" }} />
-                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cone.webp" width={92} height={112} alt="" data-depth="24" loading="lazy" decoding="async" style={{ left: "83.673%", top: "57.165%", width: "9.882%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-doc.webp" width={296} height={296} alt="Document and pen icon" data-depth="12" loading="lazy" decoding="async" style={{ left: "53.383%", top: "44.124%", width: "31.794%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-ranked.webp" width={246} height={78} alt="Ranked Content label" data-depth="20" loading="lazy" decoding="async" style={{ left: "70.677%", top: "35.633%", width: "26.423%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-chip-engaging.webp" width={280} height={106} alt="Engaging and Relevant label" data-depth="18" loading="lazy" decoding="async" style={{ left: "43.824%", top: "65.353%", width: "30.075%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-a.webp" width={141} height={61} alt="Decorative cloud" data-depth="28" loading="lazy" decoding="async" style={{ left: "52.846%", top: "39.879%", width: "15.145%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-b.webp" width={127} height={91} alt="Decorative cloud" data-depth="30" loading="lazy" decoding="async" style={{ left: "80.236%", top: "42.608%", width: "13.641%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cloud-c.webp" width={96} height={97} alt="Decorative cloud" data-depth="26" loading="lazy" decoding="async" style={{ left: "44.898%", top: "56.027%", width: "10.311%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-ball-a.webp" width={47} height={72} alt="Decorative orange sphere" data-depth="34" loading="lazy" decoding="async" style={{ left: "47.905%", top: "46.929%", width: "5.048%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-ball-b.webp" width={87} height={82} alt="Decorative orange sphere" data-depth="32" loading="lazy" decoding="async" style={{ left: "77.229%", top: "63.23%", width: "9.345%" }} />
+                        <img className="poster-float-layer" src="/images/services/float/service-04-content-writing-cone.webp" width={92} height={112} alt="Decorative cone shape" data-depth="24" loading="lazy" decoding="async" style={{ left: "83.673%", top: "57.165%", width: "9.882%" }} />
                       </div>
                       {" "}
                       <div className="service-poster-overlay">
@@ -920,7 +920,7 @@ export default function Page() {
                                 {" "}
                                 <div className="ref-profile-top">
                                   {" "}
-                                  <img src="/images/services/thumb-storefront.webp" alt="" className="ref-profile-thumb" width={256} height={384} loading="lazy" decoding="async" />
+                                  <img src="/images/services/thumb-storefront.webp" alt="Sample business profile photo" className="ref-profile-thumb" width={256} height={384} loading="lazy" decoding="async" />
                                   {" "}
                                   <div className="ref-profile-meta">
                                     {" "}
@@ -1351,7 +1351,7 @@ export default function Page() {
                             {" "}
                             <div className="ref-pub-thumb-wrap">
                               {" "}
-                              <img src="/images/services/thumb-storefront.webp" alt="" className="ref-pub-thumb" width={256} height={384} loading="lazy" decoding="async" />
+                              <img src="/images/services/thumb-storefront.webp" alt="Sample business post image" className="ref-pub-thumb" width={256} height={384} loading="lazy" decoding="async" />
                               {" "}
                             </div>
                             {" "}
@@ -1402,7 +1402,7 @@ export default function Page() {
                                 {" "}
                               </div>
                               {" "}
-                              <img src="/images/services/thumb-architecture.webp" alt="" className="ref-pub-mini-photo" width={256} height={384} loading="lazy" decoding="async" />
+                              <img src="/images/services/thumb-architecture.webp" alt="Sample article image" className="ref-pub-mini-photo" width={256} height={384} loading="lazy" decoding="async" />
                               {" "}
                             </div>
                             {" "}
