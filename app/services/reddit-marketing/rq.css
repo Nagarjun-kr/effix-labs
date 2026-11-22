@@ -3,7 +3,7 @@
 .rq-sec { position: relative; overflow: hidden; }
 .rq-sec::before { content: ""; position: absolute; width: 720px; height: 720px; right: -240px; top: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 69, 0, 0.12), transparent 65%); pointer-events: none; }
 .rq-sec .gx-wrap { position: relative; }
-.gx-page .rq-label { color: #e8481a; }
+.gx-page .rq-label { color: #c2410c; }
 
 /* search console */
 .rq-console { max-width: 860px; margin: 44px auto 0; padding: 18px; border-radius: 26px; background: #fff; border: 1px solid #f1e6e1; box-shadow: 0 40px 80px -50px rgba(194, 65, 12, 0.45); }
@@ -83,7 +83,7 @@
 
 /* insight copy under each pane */
 .rq-body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
-.rq-step { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; color: #e8481a; }
+.rq-step { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; color: #c2410c; }
 .rq-t { font-family: var(--font-body); font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 10px 0 8px; color: var(--gx-lead); }
 .rq-q { font-size: 15.5px; line-height: 1.5; color: var(--gx-lead); margin: 0 0 8px; }
 .rq-p { font-size: 14.5px; line-height: 1.6; color: var(--gx-muted); margin: 0 0 16px; }

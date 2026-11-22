@@ -10,6 +10,7 @@
 .cw-page .rm-step:hover .rm-step-n { color: var(--cw); }
 .cw-page .rm-step-bar { background: linear-gradient(90deg, #5b3df5, #8b7bff); }
 .cw-page a.rm-ext { color: #5b3df5 !important; text-decoration-color: rgba(91, 61, 245, 0.35) !important; }
+.cw-page .gx-dark a.rm-ext { color: #c4b5fd !important; text-decoration-color: rgba(196, 181, 253, 0.45) !important; }
 .cw-page a.rm-res i { color: var(--cw); }
 .cw-page a.rm-res:hover { border-color: rgba(109, 77, 252, 0.3); box-shadow: 0 20px 40px -26px rgba(91, 61, 245, 0.4); }
 .cw-page a.rm-res:hover b { color: #5b3df5 !important; }
@@ -160,7 +161,7 @@
 .cw-bento-card:hover { transform: translateY(-4px); box-shadow: 0 40px 70px -40px rgba(76, 52, 140, 0.5); }
 .cw-bento-main { grid-row: span 2; display: grid; grid-template-rows: auto 1fr; gap: 26px;
   background: radial-gradient(90% 60% at 100% 100%, #efeaff 0%, #fff 60%); }
-.cw-bento-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cw); background: var(--cw-soft); padding: 5px 10px; border-radius: 999px; }
+.cw-bento-tag { display: inline-block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5536e8; background: var(--cw-soft); padding: 5px 10px; border-radius: 999px; }
 .cw-bento-t { font-family: var(--font-body); font-weight: 600; font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -0.03em; color: var(--gx-lead); margin: 14px 0 10px; line-height: 1.12; }
 .cw-bento-main .cw-bento-t { font-size: clamp(26px, 2.8vw, 38px); }
 .cw-bento-p { font-size: 15.5px; line-height: 1.6; color: var(--gx-muted); margin: 0 0 14px; max-width: 520px; }

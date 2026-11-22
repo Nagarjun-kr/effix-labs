@@ -4,12 +4,24 @@
       if (drawer) {
         drawer.classList.toggle('active');
         const isActive = drawer.classList.contains('active');
+        const btn = document.getElementById('mobileMenuBtn');
+        if (btn) btn.setAttribute('aria-expanded', String(isActive));
         if (window.lenis) {
           if (isActive) window.lenis.stop();
           else window.lenis.start();
         }
       }
     }
+
+    // Escape closes the mobile menu and returns focus to its button
+    document.addEventListener('keydown', function (e) {
+      const drawer = document.getElementById('mobileDrawer');
+      if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) {
+        toggleMobileDrawer();
+        const btn = document.getElementById('mobileMenuBtn');
+        if (btn) btn.focus();
+      }
+    });
 
     // FAQ Accordion Handler
     function toggleFaq(btn) {

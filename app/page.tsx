@@ -161,6 +161,7 @@ export default function Page() {
 
       {" "}
       {" "}
+      <a href="#main" className="skip-link">Skip to content</a>
       <header className="navbar">
         {" "}
         <div className="container navbar-inner">
@@ -195,7 +196,7 @@ export default function Page() {
           </div>
           {" "}
           {" "}
-          <button className="mobile-menu-btn" id="mobileMenuBtn" data-onclick="toggleMobileDrawer()" aria-label="Toggle Navigation">
+          <button className="mobile-menu-btn" id="mobileMenuBtn" data-onclick="toggleMobileDrawer()" aria-label="Menu" aria-expanded="false" aria-controls="mobileDrawer">
             {" "}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               {" "}
@@ -265,7 +266,7 @@ export default function Page() {
       {" "}
       {" "}
       {" "}
-      <main>
+      <main id="main">
         {" "}
         {" "}
         <section className="hero-section" id="hero">
@@ -347,7 +348,7 @@ export default function Page() {
                   {"Website URL"}
                 </label>
                 {" "}
-                <input id="urlInput" type="text" placeholder="Enter your website URL (for example, effixlabs.in)" autoComplete="url" spellCheck="false" required />
+                <input id="urlInput" inputMode="url" type="text" placeholder="Enter your website URL (for example, effixlabs.in)" autoComplete="url" spellCheck="false" required />
                 {" "}
                 <button type="submit" className="submit-pill-btn" id="submitBtn">
                   {" "}

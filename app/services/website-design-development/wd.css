@@ -367,7 +367,7 @@
 .wd-pf:hover { transform: translateY(-5px); box-shadow: 0 34px 60px -36px rgba(10, 16, 34, 0.5); }
 .wd-pf-art { position: relative; height: 210px; display: grid; place-items: center; overflow: hidden; }
 .wd-pf-txt { padding: 22px 26px 26px; }
-.wd-pf-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; background: var(--wd-soft); color: var(--wd); }
+.wd-pf-tag { display: inline-block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; background: var(--wd-soft); color: var(--wd); }
 .wd-pf h3 { font-family: var(--font-body); font-size: 22px; font-weight: 600; letter-spacing: -0.03em; margin: 12px 0 6px; }
 .wd-pf p { font-size: 15.5px; line-height: 1.6; color: var(--gx-muted); margin: 0; }
 .wd-pf-art i, .wd-pf-art b { display: block; }

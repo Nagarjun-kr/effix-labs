@@ -81,7 +81,7 @@ export default function AboutPage() {
 
       <SiteNav current="about" />
 
-      <main>
+      <main id="main">
         {/* HERO */}
         <section className="hx">
           <div className="hx-ghost" aria-hidden="true">NAGARJUN</div>

@@ -59,7 +59,7 @@ export default function ContactPage() {
     <div className="ab ct">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldString(LD) }} />
       <SiteNav current="contact" />
-      <main>
+      <main id="main">
         <section className="ct-hero">
           <HeroFluid />
           <div className="ab-wrap ct-hero-grid">

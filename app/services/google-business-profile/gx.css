@@ -6,7 +6,7 @@
 .gx-page {
   --gx-ink: #0c0d14;
   --gx-muted: #4e5362;
-  --gx-subtle: #7a8292;
+  --gx-subtle: #646b7a;
   --gx-line: rgba(12, 13, 20, 0.08);
   --gx-tint: #f6f4fa;
   --gx-accent: #8b25e2;
@@ -348,9 +348,9 @@
 /* Grey tone is tuned per background so it reads the same everywhere:
    each value is a violet-tinted neutral (hue 255, sat 7%) solved for ~3.1:1
    contrast against the surface it sits on. */
-.gx-page { --gx-lead: #1f2024; --gx-grey: #94919f; }          /* white */
-.gx-hero, .gx-tint { --gx-grey: #8d8a99; }                       /* pale purple / hero glow */
-.gx-page .gx-glass-stage { --gx-grey: #878293; }                 /* lilac glass */
+.gx-page { --gx-lead: #1f2024; --gx-grey: #6e6a7c; }          /* white */
+.gx-hero, .gx-tint { --gx-grey: #67637a; }                       /* pale purple / hero glow */
+.gx-page .gx-glass-stage { --gx-grey: #625d72; }                 /* lilac glass */
 .gx-h2, .gx-hero-title { color: var(--gx-lead); }
 .gx-h2 em, .gx-hero-title em,
 .gx-page .cta-title em {
@@ -391,7 +391,7 @@
 .gx-page .gx-glass-stage .gbp-form { position: relative; z-index: 1; }
 .gx-glass-pill {
   display: inline-flex; padding: 7px 14px; border-radius: 999px;
-  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gx-lead);
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gx-lead);
   background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px) saturate(160%); -webkit-backdrop-filter: blur(12px) saturate(160%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 18px -10px rgba(76, 52, 140, 0.35);

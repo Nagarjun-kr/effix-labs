@@ -12,7 +12,7 @@
 .q3-card:hover { transform: translateY(-6px); box-shadow: 0 1px 2px rgba(21, 21, 21, 0.03), 0 40px 70px -46px rgba(21, 21, 21, 0.45); }
 .q3-card-top { display: flex; align-items: center; justify-content: space-between; }
 .q3-num { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.08em; color: var(--q3-lime); }
-.q3-tag { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #a3a3a3; padding: 5px 10px; border: 1px solid var(--q3-line); border-radius: 999px; }
+.q3-tag { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #737373; padding: 5px 10px; border: 1px solid var(--q3-line); border-radius: 999px; }
 .q3-q { margin: 22px 0 10px; font-family: 'Apple Garamond Light Regular', Georgia, serif; font-weight: 300; font-size: clamp(26px, 2.3vw, 32px); line-height: 1.08; letter-spacing: -0.02em; color: var(--q3-ink); -webkit-text-stroke: 0.3px var(--q3-ink); }
 .q3-a { margin: 0 0 22px; font-size: 15px; line-height: 1.6; color: var(--q3-muted); }
 

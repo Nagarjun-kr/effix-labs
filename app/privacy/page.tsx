@@ -44,7 +44,7 @@ export default function PrivacyPage() {
     <div className="ab">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldString(LD) }} />
       <SiteNav />
-      <main>
+      <main id="main">
         <section className="lg-hero">
           <div className="ab-wrap">
             <span className="ab-eyebrow">Legal</span>

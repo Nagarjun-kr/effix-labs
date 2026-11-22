@@ -47,7 +47,7 @@ export default function BlogPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
       <SiteNav current="blog" />
 
-      <main>
+      <main id="main">
         <header className="bl-hero">
           <div className="bl-hero-in">
             <h1>Guides to getting <em>found</em></h1>

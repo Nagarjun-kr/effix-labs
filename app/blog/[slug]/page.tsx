@@ -82,7 +82,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <SiteNav current="blog" />
       <ReadingLine until="#bl-article-end" />
 
-      <main>
+      <main id="main">
         <article>
           <header className="bl-post-hero">
             <div className="bl-post-copy">

@@ -63,7 +63,7 @@
 .bl-post-hero { position: relative; display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); min-height: min(86vh, 860px); overflow: hidden; isolation: isolate;
   background: radial-gradient(40% 60% at 30% 10%, rgba(196, 181, 253, 0.45), transparent 70%), var(--bl-tint); }
 .bl-post-copy { align-self: center; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(48px, 7vw, 96px) clamp(24px, 3.5vw, 56px) calc(132px + 40px) clamp(28px, 8vw, 160px); }
-.bl-back { display: inline-block; margin-bottom: 26px; font-size: 14px; font-weight: 600; color: #57536a; text-decoration: none; }
+.bl-back { display: inline-block; padding: 12px 0; margin: -12px 0 14px; font-size: 14px; font-weight: 600; color: #57536a; text-decoration: none; }
 .bl-back:hover { color: var(--ink); }
 .bl .bl-post-hero h1 { margin: 22px 0 28px; font-size: clamp(36px, 4vw, 64px); line-height: 1.1; letter-spacing: -0.012em; word-spacing: 0.02em; }
 .bl-byline { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; font-size: 16px; color: #3a3550; }

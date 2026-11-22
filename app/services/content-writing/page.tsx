@@ -200,6 +200,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON_LD }} />
+      <a href="#main" className="skip-link">Skip to content</a>
       <header className="site-header">
         {" "}
         <div className="header-inner">
@@ -231,7 +232,7 @@ export default function Page() {
         </div>
         {" "}
       </header>
-      <main className="gx-page rm-page cw-page">
+      <main id="main" className="gx-page rm-page cw-page">
         {/* ================= HERO ================= */}
         <section className="gx-hero" id="hero">
           <div className="gx-wrap gx-hero-inner">
@@ -661,7 +662,7 @@ export default function Page() {
                       {"Full Name *"}
                     </label>
                     {" "}
-                    <input className="form-input" type="text" id="fullName" name="fullName" required placeholder="Sarah Jenkins" />
+                    <input className="form-input" type="text" id="fullName" name="fullName" autoComplete="name" required placeholder="Sarah Jenkins" />
                     {" "}
                   </div>
                   {" "}
@@ -671,7 +672,7 @@ export default function Page() {
                       {"Work Email *"}
                     </label>
                     {" "}
-                    <input className="form-input" type="email" id="workEmail" name="workEmail" required placeholder="sarah@business.com" />
+                    <input className="form-input" type="email" id="workEmail" name="workEmail" autoComplete="email" required placeholder="sarah@business.com" />
                     {" "}
                   </div>
                   {" "}
@@ -685,7 +686,7 @@ export default function Page() {
                       {"Brand / Company *"}
                     </label>
                     {" "}
-                    <input className="form-input" type="text" id="businessName" name="businessName" required placeholder="Acme Labs" />
+                    <input className="form-input" type="text" id="businessName" name="businessName" autoComplete="organization" required placeholder="Acme Labs" />
                     {" "}
                   </div>
                   {" "}
@@ -695,7 +696,7 @@ export default function Page() {
                       {"Website URL"}
                     </label>
                     {" "}
-                    <input className="form-input" type="url" id="websiteUrl" name="websiteUrl" placeholder="https://business.com" />
+                    <input className="form-input" type="url" id="websiteUrl" name="websiteUrl" autoComplete="url" placeholder="https://business.com" />
                     {" "}
                   </div>
                   {" "}

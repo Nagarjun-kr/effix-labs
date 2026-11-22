@@ -22,7 +22,7 @@ export default function NotFound() {
   return (
     <div className="ab">
       <SiteNav />
-      <main className="nf">
+      <main id="main" className="nf">
         <div className="ab-wrap">
           <span className="ab-eyebrow">Error 404</span>
           <h1>This page wasn&rsquo;t <em>found.</em></h1>

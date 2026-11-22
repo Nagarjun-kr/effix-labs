@@ -29,3 +29,7 @@
 /* Decorative mockup text is stored in data-t attributes (kept out of the crawlable text)
    and drawn by CSS. Global so it works on every page, including the homepage. */
 bdi[data-t]::before { content: attr(data-t); }
+
+/* "Skip to content" link: hidden until focused with the keyboard */
+.skip-link { position: absolute; top: -100px; left: 16px; z-index: 10000; padding: 12px 18px; border-radius: 10px; background: #151515; color: #fff !important; font: 600 15px 'Plus Jakarta Sans', system-ui, sans-serif; text-decoration: none; }
+.skip-link:focus { top: 12px; outline: 3px solid #a3e635; outline-offset: 2px; }

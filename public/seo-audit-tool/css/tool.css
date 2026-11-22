@@ -22,7 +22,7 @@
 .tool-chip b { margin-left: 6px; padding: 2px 7px; border-radius: 999px; background: #fff4e5; color: #b45309; font-weight: 400; }
 .tool-beta-note { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 10px; max-width: 640px; margin: 14px auto 0; padding: 10px 16px; border-radius: 14px;
   background: rgba(255, 244, 229, 0.85); border: 1px solid rgba(217, 119, 6, 0.22); color: #7c4a03; font: 400 0.86rem/1.5 var(--font-sans); text-align: center; }
-.tool-beta-tag { padding: 2px 9px; border-radius: 999px; background: #f59e0b; color: #fff; font: 500 0.68rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.tool-beta-tag { padding: 2px 9px; border-radius: 999px; background: #f59e0b; color: #3b2400; font: 600 0.75rem var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; }
 
 /* How it works: dark panel, three connected steps, each with a small live preview */
 .tool-steps { padding: clamp(56px, 8vw, 100px) 0; background: #fff; }
@@ -104,3 +104,6 @@ footer.tool-foot span, footer.tool-foot a { display: inline-flex !important; ali
   .ts-flow::before, .ts-flow::after { display: none; }
   .ts-head { align-items: flex-start; }
 }
+
+/* larger tap area for footer links */
+.tool-page footer a { display: inline-block; padding: 12px 4px; margin: -12px -4px; }

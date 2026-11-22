@@ -7,7 +7,9 @@
 @font-face { font-family: 'Geist Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/GeistMono-Regular.woff2') format('woff2'); }
 
 html:has(.ab), body:has(.ab) { margin: 0; overflow-x: clip; }
-.ab { --ink: #151515; --muted: #5f5f5f; --soft: #8a8a8a; --line: #ececec; --lime: #8cc651; --lime-d: #4f8a24; --violet: #7c5cf0;
+/* iOS 15 and older don't support overflow: clip */
+@supports not (overflow: clip) { body:has(.ab) { overflow-x: hidden; } }
+.ab { --ink: #151515; --muted: #5f5f5f; --soft: #6b6b6b; --line: #ececec; --lime: #8cc651; --lime-d: #4f8a24; --violet: #7c5cf0;
   --display: 'Apple Garamond Light Regular', Georgia, serif; --display-i: 'Apple Garamond Light Italic', Georgia, serif;
   --body: 'Plus Jakarta Sans', system-ui, sans-serif; --mono: 'Geist Mono', ui-monospace, monospace; --ease: cubic-bezier(0.16, 1, 0.3, 1);
   background: #fff; color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
@@ -75,7 +77,7 @@ html:has(.ab), body:has(.ab) { margin: 0; overflow-x: clip; }
 .hx-fl { position: absolute; z-index: 1; }
 .hx-fl.f1 { left: 9%; top: 20%; } .hx-fl.f2 { right: 11%; top: 16%; } .hx-fl.f3 { right: 7%; top: 58%; } .hx-fl.f4 { left: 6%; top: 62%; } .hx-fl.f5 { left: 22%; bottom: 10%; } .hx-fl.f6 { right: 24%; bottom: 8%; }
 .hx-fl.f2 .app-icon { animation-delay: -1.4s; } .hx-fl.f3 .app-icon { animation-delay: -2.8s; } .hx-fl.f4 .app-icon { animation-delay: -4s; } .hx-fl.f5 .app-icon { animation-delay: -2.1s; } .hx-fl.f6 .app-icon { animation-delay: -3.4s; }
-.hx-cue { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: grid; justify-items: center; gap: 10px; text-decoration: none; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); }
+.hx-cue { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: grid; justify-items: center; gap: 10px; text-decoration: none; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft); }
 .hx-cue i { width: 22px; height: 36px; border-radius: 12px; border: 1.5px solid #c9c9c9; position: relative; }
 .hx-cue i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--violet); animation: hxWheel 1.6s ease-in-out infinite; }
 @keyframes hxWheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(12px); opacity: 0; } 100% { opacity: 0; } }
@@ -164,16 +166,16 @@ html:has(.ab), body:has(.ab) { margin: 0; overflow-x: clip; }
 .cx-them { background: #f4f4f4; border: 1px solid #e8e8e8; }
 .cx-us { position: relative; background: linear-gradient(160deg, #1b1640, #0f0d24); color: #fff; box-shadow: 0 40px 80px -40px rgba(60, 40, 160, 0.6); overflow: hidden; isolation: isolate; }
 .cx-us::after { content: ""; position: absolute; inset: -30%; z-index: -1; background: radial-gradient(40% 40% at 80% 10%, rgba(124, 92, 240, 0.5), transparent 70%), radial-gradient(40% 40% at 10% 100%, rgba(163, 230, 53, 0.22), transparent 70%); }
-.cx-who { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8a8a; }
+.cx-who { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6b6b6b; }
 .cx-us .cx-who { color: #bef264; }
 .cx-who svg { width: 18px; height: 18px; color: #fff; }
 .cx-side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .cx-side li { display: grid; gap: 4px; padding: 14px 0; border-top: 1px solid rgba(0, 0, 0, 0.07); }
 .cx-us li { border-top-color: rgba(255, 255, 255, 0.1); }
 .cx-side li:first-child { border-top: 0; }
-.cx-side small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #a3a3a3; }
+.cx-side small { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5f5f5f; }
 .cx-us small { color: rgba(255, 255, 255, 0.45); }
-.cx-them span { font-size: 16px; color: #8a8a8a; text-decoration: line-through; text-decoration-color: rgba(211, 106, 92, 0.6); text-decoration-thickness: 1.5px; }
+.cx-them span { font-size: 16px; color: #6b6b6b; text-decoration: line-through; text-decoration-color: rgba(211, 106, 92, 0.6); text-decoration-thickness: 1.5px; }
 .cx-us span { display: flex; gap: 10px; font-size: 16px; font-weight: 600; line-height: 1.5; }
 .cx-us span i { flex: none; width: 20px; height: 20px; margin-top: 2px; border-radius: 50%; display: grid; place-items: center; background: #a3e635; color: #10200a; font-style: normal; font-size: 11px; font-weight: 800; }
 .cx-vs { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 1px solid var(--line); box-shadow: 0 16px 30px -14px rgba(0, 0, 0, 0.35); font-family: var(--display-i); font-style: italic; font-size: 22px; }
@@ -257,7 +259,7 @@ html:has(.ab), body:has(.ab) { margin: 0; overflow-x: clip; }
 .ab-logo-light span { font-size: 24px; }
 .ab-foot-tag { margin: 20px 0 14px; font-family: var(--display); font-size: clamp(28px, 2.4vw, 36px); line-height: 1.12; color: #fff; -webkit-text-stroke: 0.4px #fff; }
 .ab-foot-brand p:last-child { margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: rgba(244, 244, 245, 0.62); }
-.ab-foot h4, .ab-foot .ab-foot-h { margin: 0 0 20px; font-family: var(--mono); font-size: 14px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244, 244, 245, 0.45); }
+.ab-foot h4, .ab-foot .ab-foot-h { margin: 0 0 20px; font-family: var(--mono); font-size: 14px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244, 244, 245, 0.62); }
 .ab-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .ab-foot ul a { font-size: 16.5px; line-height: 1.45; text-decoration: none; color: rgba(244, 244, 245, 0.72); transition: color 0.2s; }
 .ab-foot ul a:hover { color: #fff; }

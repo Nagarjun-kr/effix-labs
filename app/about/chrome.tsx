@@ -1,5 +1,6 @@
 // Shared page chrome (nav + footer) for the About and Blog pages. Styles live in app/about/about.css.
 import MegaNav from "@/components/MegaNav";
+import MenuCloser from "@/components/MenuCloser";
 export function Mark() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -12,6 +13,7 @@ export function Mark() {
 export function SiteNav({ current }: { current?: "about" | "blog" | "contact" }) {
   return (
   <header className="ab-nav">
+    <a href="#main" className="skip-link">Skip to content</a>
     <div className="ab-wrap ab-nav-in">
       <a href="/" className="ab-logo" aria-label="Effix Labs home"><Mark /><span>Effix Labs</span></a>
       <MegaNav current={current} hideBelow={1000} />
@@ -28,6 +30,7 @@ export function SiteNav({ current }: { current?: "about" | "blog" | "contact" })
           <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
         </nav>
       </details>
+      <MenuCloser />
     </div>
   </header>
   );
