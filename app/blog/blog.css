@@ -51,7 +51,7 @@
 .bl-cover.is-photo { isolation: isolate; background: #f1ecff; }
 .bl-cover.is-photo .bl-cover-bg { position: absolute; inset: -12%; width: 124%; height: 124%; object-fit: cover; filter: blur(26px) saturate(1.3); opacity: 0.85; z-index: -1; }
 .bl-cover.is-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(80% 80% at 50% 50%, transparent 40%, rgba(255, 255, 255, 0.18)); }
-.bl-cover.is-photo .bl-cover-img { position: relative; width: 100%; height: 100%; object-fit: contain; padding: 4%; filter: drop-shadow(0 14px 22px rgba(20, 10, 60, 0.22)); }
+.bl-cover.is-photo .bl-cover-img { position: relative; width: 100%; height: 100%; object-fit: contain; }
 .bl-cover.is-art { isolation: isolate; }
 .bl-cover-diamonds { position: absolute; inset: 0; opacity: 0.32; mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M30 8L52 30L30 52L8 30Z' fill='none' stroke='%23ffffff' stroke-width='3'/%3E%3Cpath d='M30 20L40 30L30 40L20 30Z' fill='none' stroke='%23ffffff' stroke-width='3'/%3E%3C/svg%3E");
@@ -60,9 +60,9 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
 /* ---------- post: split header ---------- */
-.bl-post-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: min(86vh, 860px); overflow: hidden; isolation: isolate;
+.bl-post-hero { position: relative; display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); min-height: min(86vh, 860px); overflow: hidden; isolation: isolate;
   background: radial-gradient(40% 60% at 30% 10%, rgba(196, 181, 253, 0.45), transparent 70%), var(--bl-tint); }
-.bl-post-copy { align-self: center; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(48px, 7vw, 96px) clamp(24px, 4vw, 56px) calc(132px + 40px) clamp(28px, 12vw, 250px); }
+.bl-post-copy { align-self: center; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(48px, 7vw, 96px) clamp(24px, 3.5vw, 56px) calc(132px + 40px) clamp(28px, 8vw, 160px); }
 .bl-back { display: inline-block; margin-bottom: 26px; font-size: 14px; font-weight: 600; color: #57536a; text-decoration: none; }
 .bl-back:hover { color: var(--ink); }
 .bl .bl-post-hero h1 { margin: 22px 0 28px; font-size: clamp(40px, 4.6vw, 76px); line-height: 1.02; letter-spacing: -0.035em; }
@@ -72,23 +72,11 @@
 .bl-byline-date { color: #57536a; }
 .bl-post-hero .bl-band { z-index: 1; }
 
-/* featured image: full image in a floating framed card, small 3D scene in Effix colours around it */
-.bl-post-media { position: relative; z-index: 3; align-self: center; padding: clamp(56px, 7vw, 110px) clamp(32px, 6vw, 110px) calc(132px + 20px) clamp(12px, 2vw, 28px); }
-.bl-fi-card { position: relative; z-index: 2; margin: 0; padding: 8px; border-radius: 24px; background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 0 1px rgba(60, 40, 140, 0.06), 0 50px 90px -40px rgba(60, 40, 160, 0.55), 0 18px 36px -24px rgba(20, 10, 60, 0.25); animation: blFiFloat 8s ease-in-out infinite; }
-.bl-fi-card .bl-fi-frame { display: block; aspect-ratio: 16 / 9; border-radius: 17px; overflow: hidden; }
-@keyframes blFiFloat { 50% { transform: translateY(-8px); } }
-.bl-fi-glow { position: absolute; z-index: 0; inset: 12% 8% 22% 6%; border-radius: 50%; background: radial-gradient(closest-side, rgba(124, 92, 240, 0.32), transparent); filter: blur(10px); }
-.bl-fi-cloud { position: absolute; z-index: 1; width: 120px; height: 46px; left: 2%; top: clamp(26px, 4vw, 64px); animation: blFiDrift 12s ease-in-out infinite alternate; }
-.bl-fi-cloud i { position: absolute; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff 0%, #efeaff 55%, #d6ccff 100%); box-shadow: 0 10px 18px -10px rgba(40, 20, 120, 0.35); }
-.bl-fi-cloud i:nth-child(1) { width: 52px; height: 40px; left: 0; bottom: 0; }
-.bl-fi-cloud i:nth-child(2) { width: 62px; height: 56px; left: 30px; bottom: 4px; }
-.bl-fi-cloud i:nth-child(3) { width: 48px; height: 38px; left: 72px; bottom: 0; }
-@keyframes blFiDrift { to { translate: 14px -6px; } }
-.bl-fi-cone { position: absolute; z-index: 1; width: 78px; height: 86px; right: clamp(8px, 3vw, 48px); top: clamp(30px, 5vw, 70px); clip-path: polygon(50% 0, 100% 100%, 0 100%); background: linear-gradient(105deg, #f1edff 0%, #c4b5fd 55%, #9a84f5 100%); filter: drop-shadow(0 12px 12px rgba(30, 10, 90, 0.25)); }
-.bl-fi-sphere { position: absolute; z-index: 3; width: clamp(48px, 5vw, 70px); aspect-ratio: 1; border-radius: 50%; left: clamp(0px, 1vw, 14px); bottom: calc(132px + 4px); background: radial-gradient(circle at 35% 30%, #ecfccb 0%, #a3e635 45%, #5c9a2c 100%); box-shadow: 0 18px 26px -12px rgba(30, 60, 10, 0.5); animation: blFiBob 7s ease-in-out -2s infinite; }
-@keyframes blFiBob { 50% { translate: 0 -7px; } }
-@media (prefers-reduced-motion: reduce) { .bl-fi-card, .bl-fi-cloud, .bl-fi-sphere { animation: none; } }
+/* featured image: large card with a thin white frame; the image always fills a 16:9 frame */
+.bl-post-media { position: relative; z-index: 3; align-self: center; padding: clamp(48px, 6vw, 96px) clamp(20px, 4vw, 64px) calc(132px + 16px) 0; }
+.bl-fi-card { position: relative; z-index: 2; margin: 0; padding: 4px; border-radius: 20px; background: #fff;
+  box-shadow: 0 0 0 1px rgba(60, 40, 140, 0.08), 0 50px 90px -40px rgba(60, 40, 160, 0.5), 0 18px 36px -24px rgba(20, 10, 60, 0.22); }
+.bl-fi-card .bl-fi-frame { display: block; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; }
 
 /* ---------- post: reading column (structure modelled on long-form product blogs: plain readable text,
    thin-underlined H2s, bordered tables with a caption, labelled paragraphs, cited sources) ---------- */
@@ -192,10 +180,7 @@
   .bl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bl-post-hero { grid-template-columns: 1fr; min-height: 0; }
   .bl-post-copy { padding: 48px 28px 40px; }
-  .bl-post-media { padding: 8px 28px 112px; }
-  .bl-fi-cone { width: 56px; height: 62px; top: -8px; }
-  .bl-fi-cloud { display: none; }
-  .bl-fi-sphere { bottom: 96px; left: 14px; }
+  .bl-post-media { padding: 8px 20px 112px; }
   .bl-more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {

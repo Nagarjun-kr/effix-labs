@@ -6,7 +6,6 @@ import { SITE_URL, ldString } from "@/lib/site";
 import { SiteFooter, SiteNav } from "../about/chrome";
 import TopicFilter from "./filter";
 import { DiamondBand, PostCard } from "./parts";
-import ReadingLine from "./reading-line";
 import "../about/about.css";
 import "./blog.css";
 
@@ -47,7 +46,6 @@ export default function BlogPage() {
     <div className="ab bl">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
       <SiteNav current="blog" />
-      <ReadingLine />
 
       <main>
         <header className="bl-hero">

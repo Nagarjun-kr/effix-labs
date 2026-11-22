@@ -1,4 +1,5 @@
 // Shared page chrome (nav + footer) for the About and Blog pages. Styles live in app/about/about.css.
+import MegaNav from "@/components/MegaNav";
 export function Mark() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -13,19 +14,7 @@ export function SiteNav({ current }: { current?: "about" | "blog" }) {
   <header className="ab-nav">
     <div className="ab-wrap ab-nav-in">
       <a href="/" className="ab-logo" aria-label="Effix Labs home"><Mark /><span>Effix Labs</span></a>
-      <nav className="ab-links" aria-label="Main">
-        <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
-        <a href="/blog" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
-        <a href="/#services">Services</a>
-        <span className="ab-drop">
-          <a href="/casestudy/" aria-haspopup="true">Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg></a>
-          <span className="ab-drop-menu" role="menu">
-            <a href="/casestudy/" role="menuitem"><b>Case Study</b><small>How we took a site from zero search visibility to steady impressions</small></a>
-            <a href="/seo-audit-tool/" role="menuitem"><b>SEO Audit Platform</b><small>Free technical SEO, content and AI-readiness check for any website</small></a>
-          </span>
-        </span>
-        <a href="/contact">Contact</a>
-      </nav>
+      <MegaNav current={current} hideBelow={1000} />
       <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
       <details className="ab-menu">
         <summary aria-label="Menu"><span /><span /></summary>

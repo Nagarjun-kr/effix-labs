@@ -98,15 +98,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 </span>
               </div>
             </div>
-            {/* Featured image: shown in full (never cropped) in a floating card, with a small 3D scene behind it */}
+            {/* Featured image: shown in full (never cropped) in a large, thin-framed card */}
             <div className="bl-post-media">
-              <span className="bl-fi-glow" aria-hidden="true" />
-              <span className="bl-fi-cloud" aria-hidden="true"><i /><i /><i /></span>
-              <span className="bl-fi-cone" aria-hidden="true" />
               <figure className="bl-fi-card">
                 <Cover post={post} className="bl-fi-frame" eager />
               </figure>
-              <span className="bl-fi-sphere" aria-hidden="true" />
             </div>
             <DiamondBand />
           </header>
