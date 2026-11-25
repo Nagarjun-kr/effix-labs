@@ -9,6 +9,8 @@ export type Heading = { id: string; text: string; level: 2 | 3 };
 export const slugify = (s: string) =>
   s.toLowerCase().replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "").replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-").replace(/-+/g, "-");
 
+const escHtml = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+const safeHref = (href: string) => (/^(https?:|mailto:|tel:|\/|#)/i.test(href.trim()) ? href : "#");
 
 export function render(md: string) {
   const headings: Heading[] = [];
@@ -16,6 +18,9 @@ export function render(md: string) {
   const marked = new Marked({ gfm: true });
   marked.use({
     renderer: {
+      html({ text }) {
+        return escHtml(text);
+      },
       heading({ tokens, depth }) {
         const text = this.parser.parseInline(tokens);
         if (depth === 2 || depth === 3) {
@@ -31,15 +36,17 @@ export function render(md: string) {
       },
       link({ href, title, tokens }) {
         const text = this.parser.parseInline(tokens);
-        const external = /^https?:\/\//i.test(href) && !href.startsWith(SITE_URL);
-        const t = title ? ` title="${title}"` : "";
+        const cleanHref = safeHref(href);
+        const external = /^https?:\/\//i.test(cleanHref) && !cleanHref.startsWith(SITE_URL);
+        const t = title ? ` title="${escHtml(title)}"` : "";
         return external
-          ? `<a href="${href}"${t} target="_blank" rel="noopener noreferrer">${text}</a>`
-          : `<a href="${href.replace(SITE_URL, "") || "/"}"${t}>${text}</a>`;
+          ? `<a href="${escHtml(cleanHref)}"${t} target="_blank" rel="noopener noreferrer">${text}</a>`
+          : `<a href="${escHtml(cleanHref.replace(SITE_URL, "") || "/")}"${t}>${text}</a>`;
       },
       image({ href, title, text }) {
-        const cap = title ? `<figcaption>${title}</figcaption>` : "";
-        return `<figure><img src="${href}" alt="${text}" loading="lazy" decoding="async" />${cap}</figure>`;
+        const cleanSrc = /^(https?:|\/)/i.test(href.trim()) ? href : "";
+        const cap = title ? `<figcaption>${escHtml(title)}</figcaption>` : "";
+        return `<figure><img src="${escHtml(cleanSrc)}" alt="${escHtml(text)}" loading="lazy" decoding="async" />${cap}</figure>`;
       },
       // "> **Tip:** ..." / "> **Note:** ..." / "> **Warning:** ..." become callouts
       blockquote({ tokens }) {

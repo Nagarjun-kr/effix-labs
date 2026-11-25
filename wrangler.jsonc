@@ -15,7 +15,7 @@
   },
   "observability": { "enabled": true },
   // "1" lets local previews (localhost:3000 / 4100) call this Worker; set to "0" once effixlabs.in is live.
-  "vars": { "ALLOW_LOCALHOST": "1" },
+  "vars": { "ALLOW_LOCALHOST": "0" },
   // Cloudflare Workers Rate Limiting, shared across Worker instances (period: 10 or 60 seconds), per visitor IP.
   // Used by lib/edge-guard.ts on top of the in-memory limits.
   "ratelimits": [
