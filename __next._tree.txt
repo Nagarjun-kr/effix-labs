@@ -8,4 +8,4 @@
 :HL["/_next/static/chunks/09ef5x0rqn6pi.css","style"]
 :HL["/images/search-everywhere.webp","image"]
 1:[["children",{"s":"__PAGE__","h":128}]]
-0:{"b":"qHy9xavth1eAix6UGZDTG","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"Jv2aLKhDdFpWc8jFHhs0b","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
