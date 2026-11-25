@@ -31,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <link key={href} rel="preload" href={href} as="font" type="font/woff2" crossOrigin="anonymous" />
         ))}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ORG_LD }} />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
       </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
