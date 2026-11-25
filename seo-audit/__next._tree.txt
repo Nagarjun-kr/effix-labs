@@ -1,11 +1,11 @@
-:HL["/_next/static/chunks/08f7_ntj2t8m3.css","style"]
+:HL["/_next/static/chunks/1v-ldrjrl0log.css","style"]
 :HL["/_next/static/chunks/01j3sd_qe9r4b.css","style"]
 :HL["/fonts/AppleGaramond-Light.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
 :HL["/fonts/AppleGaramond-LightItalic.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
 :HL["/fonts/PlusJakartaSans-Light.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
 :HL["/_next/static/chunks/3d-9zmlaqdkdf.css","style"]
-:HL["/_next/static/chunks/2ise4nq8mcfb8.css","style"]
+:HL["/_next/static/chunks/41fj1g33u0vkp.css","style"]
 :HL["/_next/static/chunks/09ef5x0rqn6pi.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"seo-audit","h":64,"c":"$Q2"}]]
-0:{"b":"BvdkSbwLRKnvXruXNxbrm","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"z6X8wnN2ciqZS3rulhji-","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
