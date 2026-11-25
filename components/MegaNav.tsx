@@ -46,10 +46,9 @@ function WorkMenu() {
   return (
     <div className="mm-wrap">
       <p className="mm-label">Our work</p>
-      <div className="mm-row three">
+      <div className="mm-row two">
         <Item href="/casestudy/" icon={<Tile tone="lime"><Svg d="M3 3v18h18M7 15l4-4 3 3 5-6" /></Tile>} title="Case Study" text="How Effix Labs went from zero visibility to steady growth." />
         <Item href="/seo-audit-tool/" icon={<Tile><Svg d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5" /></Tile>} title="SEO Audit Platform" text="Free technical SEO, content and AI-readiness check (beta)." />
-        <Item href="/blog" icon={<Tile><Svg d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5" /></Tile>} title="Blog" text="Practical guides on getting found on Google, Reddit and AI search." />
       </div>
     </div>
   );

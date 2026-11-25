@@ -38,6 +38,7 @@
 .mm-label { margin: 0 0 10px 12px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8d8a9c; }
 .mm-row { display: grid; gap: 4px 12px; }
 .mm-row.five { grid-template-columns: repeat(3, 300px); }
+.mm-row.two { grid-template-columns: repeat(2, 300px); }
 .mm-row.three { grid-template-columns: repeat(3, 280px); }
 .mm-item { display: flex; align-items: center; gap: 14px; padding: 12px; border-radius: 14px; text-decoration: none; color: var(--mm-ink); transition: background-color 0.2s; }
 .mm-item:hover, .mm-item:focus-visible { background: #f6f3fe; outline: none; }
