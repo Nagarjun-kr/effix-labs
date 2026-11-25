@@ -181,9 +181,9 @@
     }
 
     .navbar-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       position: relative;
     }
 
@@ -194,6 +194,11 @@
       text-decoration: none;
       color: var(--token-ink);
       user-select: none;
+      justify-self: start;
+    }
+
+    .navbar-inner .mm {
+      justify-self: center;
     }
 
     .effix-logo-icon {
@@ -3834,6 +3839,11 @@
     }
 
     @media (max-width: 950px) {
+
+      .navbar-inner {
+        display: flex;
+        justify-content: space-between;
+      }
 
       .nav-menu,
       .navbar-cta-wrap {
