@@ -1,6 +1,7 @@
 // Shared page chrome (nav + footer) for the About and Blog pages. Styles live in app/about/about.css.
 import MegaNav from "@/components/MegaNav";
 import MenuCloser from "@/components/MenuCloser";
+import SocialLinks from "@/components/SocialLinks";
 export function Mark() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -17,7 +18,6 @@ export function SiteNav({ current }: { current?: "about" | "blog" | "contact" })
     <div className="ab-wrap ab-nav-in">
       <a href="/" className="ab-logo" aria-label="Effix Labs home"><Mark /><span>Effix Labs</span></a>
       <MegaNav current={current} hideBelow={1000} />
-      <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
       <details className="ab-menu">
         <summary aria-label="Menu"><span /><span /></summary>
         <nav aria-label="Mobile">
@@ -27,7 +27,6 @@ export function SiteNav({ current }: { current?: "about" | "blog" | "contact" })
           <a href="/casestudy/">Case Study</a>
           <a href="/seo-audit-tool/">SEO Audit Platform</a>
           <a href="/contact" aria-current={current === "contact" ? "page" : undefined}>Contact</a>
-          <a href="/#audit" className="ab-btn ab-btn-dark">Run a Visibility Audit</a>
         </nav>
       </details>
       <MenuCloser />
@@ -45,6 +44,8 @@ export function SiteFooter() {
           <a href="/" className="ab-logo ab-logo-light" aria-label="Effix Labs home"><Mark /><span>Effix Labs</span></a>
           <p className="ab-foot-tag">Get found where your customers search.</p>
           <p>Effix Labs helps businesses get found on Google, in online communities and in AI search.</p>
+          <p className="ab-foot-social-label">Follow us</p>
+          <SocialLinks />
         </div>
         <div><p className="ab-foot-h">Services</p><ul><li><a href="/services/google-business-profile">Google Business Profile Optimisation</a></li><li><a href="/services/reddit-marketing">Reddit Marketing</a></li><li><a href="/services/seo-aeo-services">SEO &amp; AEO Services</a></li><li><a href="/services/content-writing">Content Writing</a></li><li><a href="/services/website-design-development">Website Design &amp; Development</a></li></ul></div>
         <div><p className="ab-foot-h">Product</p><ul><li><a href="/#audit">Effix Discover</a></li></ul></div>

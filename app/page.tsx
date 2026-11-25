@@ -8,6 +8,7 @@ import "./page.css";
 import "./home-q3.css";
 import AppIcon from "@/lib/discover/app-icon";
 import MegaNav from "@/components/MegaNav";
+import SocialLinks from "@/components/SocialLinks";
 
 export const metadata: Metadata = {
   "title": "Effix Labs: SEO, AEO & Local Search Agency in Bengaluru",
@@ -187,13 +188,6 @@ export default function Page() {
           <MegaNav hideBelow={950} />
           {" "}
           {" "}
-          <div className="navbar-cta-wrap">
-            {" "}
-            <a href="#audit" className="nav-cta-btn">
-              {"Run a Visibility Audit"}
-            </a>
-            {" "}
-          </div>
           {" "}
           {" "}
           <button className="mobile-menu-btn" id="mobileMenuBtn" data-onclick="toggleMobileDrawer()" aria-label="Menu" aria-expanded="false" aria-controls="mobileDrawer">
@@ -250,11 +244,6 @@ export default function Page() {
                 </a>
               </li>
               {" "}
-              <li>
-                <a href="#audit" className="nav-cta-btn" style={{ display: "inline-block", marginTop: "10px" }} data-onclick="toggleMobileDrawer()">
-                  {"Run a Visibility Audit"}
-                </a>
-              </li>
               {" "}
             </ul>
             {" "}
@@ -1854,6 +1843,8 @@ export default function Page() {
               <p className="footer-desc">
                 {"Effix Labs helps businesses get found on Google, in online communities and in AI search."}
               </p>
+              <p className="footer-social-label">{"Follow us"}</p>
+              <SocialLinks />
               {" "}
             </div>
             {" "}

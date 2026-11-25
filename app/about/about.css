@@ -258,7 +258,7 @@ html:has(.ab), body:has(.ab) { margin: 0; overflow-x: clip; }
 .ab-logo-light svg { width: 32px; height: 32px; }
 .ab-logo-light span { font-size: 24px; }
 .ab-foot-tag { margin: 20px 0 14px; font-family: var(--display); font-size: clamp(28px, 2.4vw, 36px); line-height: 1.12; color: #fff; -webkit-text-stroke: 0.4px #fff; }
-.ab-foot-brand p:last-child { margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: rgba(244, 244, 245, 0.62); }
+.ab-foot-brand > p:last-of-type { margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: rgba(244, 244, 245, 0.62); }
 .ab-foot h4, .ab-foot .ab-foot-h { margin: 0 0 20px; font-family: var(--mono); font-size: 14px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244, 244, 245, 0.62); }
 .ab-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .ab-foot ul a { font-size: 16.5px; line-height: 1.45; text-decoration: none; color: rgba(244, 244, 245, 0.72); transition: color 0.2s; }
