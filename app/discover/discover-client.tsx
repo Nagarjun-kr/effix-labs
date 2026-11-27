@@ -251,17 +251,36 @@ export default function DiscoverClient() {
         <main className="dx-gate">
           <div className="dx-gate-card">
             <span className="dx-gate-tag">Free audit used</span>
-            <h1>Unlock more brand visibility audits</h1>
-            <p>You&apos;ve run your 1 free guest search. Enter your name and work email to continue checking <strong>{website}</strong> and unlock further searches.</p>
+            <h1>Unlock <em>more audits</em></h1>
+            <p>You&apos;ve run your 1 free guest search. Share your details below to check <strong>{website}</strong> and unlock unlimited brand audits.</p>
             <form className="dx-gate-form" ref={gateFormRef}>
-              <label><span>Your name<b aria-hidden="true">*</b></span><input name="name" required autoComplete="name" placeholder="Nagarjun" /></label>
-              <label><span>Work email<b aria-hidden="true">*</b></span><input name="email" type="email" required autoComplete="email" placeholder="you@company.com" /></label>
-              <label><span>Company name</span><input name="company" autoComplete="organization" placeholder="Optional" /></label>
-              <label><span>Website to audit<b aria-hidden="true">*</b></span><input name="website" required defaultValue={pendingUrl} inputMode="url" /></label>
-              <button type="submit" className="dx-gate-btn">Unlock &amp; Run Audit →</button>
+              <div className="dx-gate-grid">
+                <label><span>First name<b aria-hidden="true">*</b></span><input name="first" required autoComplete="given-name" /></label>
+                <label><span>Last name<b aria-hidden="true">*</b></span><input name="last" required autoComplete="family-name" /></label>
+                <label><span>Email<b aria-hidden="true">*</b></span><input name="email" type="email" required autoComplete="email" /></label>
+                <label>
+                  <span>Phone number</span>
+                  <span className="dx-gate-phone">
+                    <select name="code" aria-label="Country code" defaultValue="+91">
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+65">🇸🇬 +65</option>
+                    </select>
+                    <input name="phone" type="tel" inputMode="tel" placeholder="98765 43210" autoComplete="tel-national" />
+                  </span>
+                </label>
+                <label><span>Company name</span><input name="company" autoComplete="organization" /></label>
+                <label><span>Website to audit<b aria-hidden="true">*</b></span><input name="website" required defaultValue={pendingUrl} inputMode="url" placeholder="yourbusiness.com" /></label>
+              </div>
+              <div className="dx-gate-foot">
+                <button type="submit" className="dx-gate-btn">Unlock &amp; Run Audit <span aria-hidden="true">→</span></button>
+                <p>Your details go straight to the Effix Labs team.</p>
+              </div>
               <div data-form-status hidden />
             </form>
-            <p className="dx-gate-note">Your details go only to the Effix Labs team — no spam, no password needed.</p>
           </div>
         </main>
       </div>

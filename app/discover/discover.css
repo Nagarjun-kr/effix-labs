@@ -650,18 +650,25 @@ a.pp-acc:hover { color: #3451d1; }
 /* small logo holders: let the icon itself carry the look */
 .vz-plat-logo, .vz-bar-logo, .vz-ev-logo, .vz-logos span { background: none !important; border: 0 !important; }
 
-/* ===== 3rd-search unlock gate ===== */
-.dx-gate { min-height: calc(100vh - 76px); display: grid; place-items: center; padding: 36px 20px 64px; background: radial-gradient(60% 55% at 50% 10%, rgba(124, 92, 240, 0.1), transparent 70%), #fafafa; }
-.dx-gate-card { width: 100%; max-width: 500px; padding: 32px; border-radius: 24px; background: #fff; border: 1px solid #e7e5f0; box-shadow: 0 28px 70px -36px rgba(30, 20, 80, 0.28); }
+/* ===== 2nd-search unlock gate (matches site contact forms) ===== */
+.dx-gate { min-height: calc(100vh - 76px); display: grid; place-items: center; padding: clamp(36px, 5vw, 72px) 20px; background: linear-gradient(180deg, #fff, #f7f4ff); }
+.dx-gate-card { width: 100%; max-width: 780px; padding: clamp(24px, 4vw, 44px); border-radius: 24px; background: #fff; border: 1px solid #ece8f6; box-shadow: 0 28px 70px -36px rgba(30, 20, 80, 0.2); }
 .dx-gate-tag { display: inline-block; padding: 5px 12px; border-radius: 999px; background: #f3efff; color: #5b3df5; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; }
-.dx-gate-card h1 { margin: 14px 0 8px; font-family: 'Apple Garamond Light Regular', Georgia, serif; font-size: clamp(30px, 4vw, 38px); line-height: 1.08; font-weight: 400; color: #151515; }
-.dx-gate-card > p { margin: 0 0 22px; font-size: 15px; line-height: 1.55; color: #555364; }
-.dx-gate-form { display: grid; gap: 14px; }
-.dx-gate-form label { display: grid; gap: 6px; font-size: 13.5px; font-weight: 600; color: #222; }
-.dx-gate-form label b { color: #7c5cf0; margin-left: 2px; }
-.dx-gate-form input { height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #dcd9e8; font: inherit; font-weight: 400; color: #151515; background: #fff; }
-.dx-gate-form input:focus { outline: none; border-color: #7c5cf0; box-shadow: 0 0 0 3px rgba(124, 92, 240, 0.14); }
-.dx-gate-btn { margin-top: 6px; height: 48px; border: 0; border-radius: 999px; background: #151515; color: #fff; font: 600 15px 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; transition: background-color 0.2s, transform 0.2s; }
-.dx-gate-btn:hover { background: #000; transform: translateY(-1px); }
+.dx-gate-card h1 { margin: 14px 0 10px; font-family: 'Apple Garamond Light Regular', Georgia, serif; font-size: clamp(36px, 4.4vw, 56px); line-height: 1.02; font-weight: 300; letter-spacing: -0.03em; color: #151515; -webkit-text-stroke: 0.4px #151515; }
+.dx-gate-card h1 em { font-family: 'Apple Garamond Light Italic', Georgia, serif; font-style: italic; color: #8a8a8a; -webkit-text-stroke: 0; }
+.dx-gate-card > p { margin: 0 0 28px; max-width: 580px; font-size: 16.5px; line-height: 1.6; color: #57536a; }
+.dx-gate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+.dx-gate-form label { display: grid; gap: 8px; font-size: 15px; font-weight: 600; color: #151515; min-width: 0; }
+.dx-gate-form label > span:first-child { display: block; }
+.dx-gate-form label b { color: #d4493b; margin-left: 2px; font-weight: 600; }
+.dx-gate-form input, .dx-gate-form select { width: 100%; height: 52px; padding: 14px 16px; border-radius: 12px; border: 1.5px solid #d9d2f2; background: #fff; font: 400 16px 'Plus Jakarta Sans', system-ui, sans-serif; color: #151515; transition: border-color 0.2s, box-shadow 0.2s; box-sizing: border-box; }
+.dx-gate-form input::placeholder { color: #a39fb5; }
+.dx-gate-form input:focus, .dx-gate-form select:focus { outline: none; border-color: #7c5cf0; box-shadow: 0 0 0 4px rgba(124, 92, 240, 0.15); }
+.dx-gate-phone { display: flex; gap: 8px; min-width: 0; }
+.dx-gate-phone select { width: auto; flex: none; padding-right: 10px; }
+.dx-gate-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 22px; margin-top: 28px; }
+.dx-gate-foot p { margin: 0; font-size: 14px; color: #77738a; font-weight: 400; }
+.dx-gate-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border: 0; border-radius: 999px; background: #151515; color: #fff; font: 700 14.5px 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; transition: background-color 0.2s, transform 0.2s; }
+.dx-gate-btn:hover { background: #000; transform: translateY(-2px); }
 .dx-gate-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
-.dx-gate-note { margin: 14px 0 0 !important; font-size: 12.5px !important; color: #757285 !important; text-align: center; }
+@media (max-width: 640px) { .dx-gate-grid { grid-template-columns: 1fr; } }
