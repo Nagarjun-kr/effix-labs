@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import ServicePricing from "@/components/ServicePricing";
 import { ORG_ID, ldString } from "@/lib/site";
 import { SiteFooter } from "@/app/about/chrome";
 import "@/app/about/about.css";
@@ -105,12 +106,6 @@ const FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Do you work with brands across India?",
-    "a": [
-      "Yes. We work with brands all over India and internationally. Reddit work is done remotely, with regular check-ins and monthly reporting."
-    ]
-  },
-  {
     "q": "Can you run Reddit Ads for us?",
     "a": [
       "Yes. We plan, write and manage Reddit Ads campaigns targeted by community and interest, and combine them with organic participation where that works better together.",
@@ -154,7 +149,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "How much do Reddit marketing services cost?",
     "a": [
-      "It depends on how many communities we cover, how often we post, and whether you need Reddit Ads or a branded subreddit. We recommend a scope after an initial review of your brand on Reddit, so you only pay for what will actually help."
+      "Reddit marketing starts at ₹9,999 per month for an initial starter scope. Full monthly packages vary depending on how many communities we cover, posting volume, and whether you need Reddit Ads or a branded subreddit. We recommend a clear scope after an initial review of your brand on Reddit."
     ]
   }
 ];
@@ -188,7 +183,20 @@ const SERVICE_LD = {
   ],
   "description": "Reddit marketing services for brands across India and Bengaluru: Reddit audit and social listening, subreddit research, helpful disclosed engagement, AMAs, branded subreddits, Reddit Ads, reputation monitoring and AI search visibility.",
   "image": "https://effixlabs.in/images/services/reddit-marketing-hero.jpg",
-  "url": "https://effixlabs.in/services/reddit-marketing"
+  "url": "https://effixlabs.in/services/reddit-marketing",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "9999",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "priceCurrency": "INR",
+      "price": "9999",
+      "unitText": "MONTH"
+    },
+    "description": "Starting at ₹9,999 per month; full monthly Reddit marketing packages vary based on communities, volume and client scope.",
+    "url": "https://effixlabs.in/services/reddit-marketing#pricing"
+  }
 };
 
 const BREADCRUMB_LD = {
@@ -659,6 +667,45 @@ export default function Page() {
             <p className="gx-disclaimer">{"Effix Labs is an independent agency, not affiliated with or endorsed by Reddit, Inc."}</p>
           </div>
         </section>
+
+        <ServicePricing
+          tinted
+          titlePlain="Transparent "
+          titleEm="pricing"
+          lead="Start lean and scale only when the communities and conversations justify it."
+          tiers={[
+            {
+              badge: "Starter Scope",
+              name: "Reddit Visibility Starter",
+              price: "₹9,999",
+              unit: "/ month · starting",
+              summary: "Best for brands starting with subreddit research, monitoring and initial disclosed participation.",
+              items: [
+                "Brand mention audit & target subreddit mapping",
+                "Disclosed brand account setup & compliance rules",
+                "Focused monthly thread replies & monitoring",
+                "Monthly visibility & referral summary",
+              ],
+              ctaText: "Start with a Reddit Review →",
+            },
+            {
+              badge: "Full Monthly",
+              name: "Custom Monthly Retainer",
+              price: "Custom",
+              unit: "based on scope",
+              summary: "Full monthly packages vary based on your target communities, engagement volume and goals.",
+              items: [
+                "Multi-subreddit organic participation & AMAs",
+                "Branded subreddit setup & moderation",
+                "Reddit Ads strategy & campaign management",
+                "AI search citation & sentiment tracking",
+              ],
+              ctaText: "Request a Custom Scope →",
+              highlight: true,
+            },
+          ]}
+          footnote="All work uses disclosed accounts owned by your brand. Full monthly pricing is scoped after an initial Reddit review."
+        />
 
         {/* ================= FAQ ================= */}
         <section className="gx-section" id="faq">

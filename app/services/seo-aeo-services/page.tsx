@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import ServicePricing from "@/components/ServicePricing";
 import { ORG_ID, ldString } from "@/lib/site";
 import { SiteFooter } from "@/app/about/chrome";
 import "@/app/about/about.css";
@@ -59,12 +60,6 @@ const FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Does AEO replace SEO?",
-    "a": [
-      "No. AI answers draw heavily on pages that already rank and on sources search engines trust. Google says its AI features rely on the same core SEO practices as regular search, so strong SEO is the base that AEO builds on."
-    ]
-  },
-  {
     "q": "Do you offer SEO & AEO services in Bangalore?",
     "a": [
       "Yes. Effix Labs works with startups, SaaS companies, clinics, real estate firms, D2C brands and local businesses in Bangalore (Bengaluru), and we can meet in person where needed. We also work with businesses across India and abroad."
@@ -91,7 +86,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "How much do SEO & AEO services cost?",
     "a": [
-      "Cost depends on the size of your website, how competitive your market is and how much content and technical work is needed. We share a clear monthly scope and quote after reviewing your site and goals."
+      "Core SEO services start at ₹10,000 per month. If you want Answer Engine Optimisation (AEO) included for AI search visibility across Google AI Overviews, ChatGPT and Perplexity, it is an additional ₹5,000 per month (₹15,000 per month combined). Larger sites or competitive markets are scoped after reviewing your website."
     ]
   }
 ];
@@ -128,7 +123,36 @@ const SERVICE_LD = {
     }
   ],
   "description": "SEO & AEO services for businesses across India and Bangalore (Bengaluru): technical SEO and AI crawlability, keyword and question research, answer-first content optimisation, schema markup, entity and authority building, and rank and AI visibility tracking across Google, AI Overviews, ChatGPT, Perplexity, Gemini and Bing.",
-  "url": "https://effixlabs.in/services/seo-aeo-services"
+  "url": "https://effixlabs.in/services/seo-aeo-services",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Core SEO Services",
+      "priceCurrency": "INR",
+      "price": "10000",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "INR",
+        "price": "10000",
+        "unitText": "MONTH"
+      },
+      "url": "https://effixlabs.in/services/seo-aeo-services#pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "SEO + AEO Combined",
+      "priceCurrency": "INR",
+      "price": "15000",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "INR",
+        "price": "15000",
+        "unitText": "MONTH"
+      },
+      "description": "Core SEO starting at ₹10,000/month plus ₹5,000/month AEO add-on.",
+      "url": "https://effixlabs.in/services/seo-aeo-services#pricing"
+    }
+  ]
 };
 
 const BREADCRUMB_LD = {
@@ -356,6 +380,44 @@ export default function Page() {
             </div>
           </div>
         </section>
+
+        <ServicePricing
+          titlePlain="Clear SEO & AEO "
+          titleEm="pricing"
+          lead="Start with core SEO, or add Answer Engine Optimisation for AI search visibility."
+          tiers={[
+            {
+              badge: "Core SEO",
+              name: "SEO Foundation",
+              price: "₹10,000",
+              unit: "/ month · starting",
+              summary: "Technical SEO, on-page optimisation and search console tracking to rank in Google.",
+              items: [
+                "Technical crawlability, indexing & Core Web Vitals checks",
+                "Keyword research & on-page title/meta optimisation",
+                "Internal linking & structured data basics",
+                "Monthly Google Search Console & ranking report",
+              ],
+              ctaText: "Start with Core SEO →",
+            },
+            {
+              badge: "SEO + ₹5,000 AEO Add-On",
+              name: "SEO + AEO (AI Search)",
+              price: "₹15,000",
+              unit: "/ month · starting",
+              summary: "Everything in Core SEO plus +₹5,000/month for Answer Engine Optimisation across AI tools.",
+              items: [
+                "Everything in Core SEO (₹10,000/month)",
+                "Answer-first content structuring & FAQ schema",
+                "Entity & citation optimisation for AI Overviews & ChatGPT",
+                "Monthly prompt tracking across ChatGPT, Perplexity & Gemini",
+              ],
+              ctaText: "Get SEO + AEO →",
+              highlight: true,
+            },
+          ]}
+          footnote="Want AEO added to an existing SEO plan? The AEO layer is +₹5,000/month. Larger sites are quoted after review."
+        />
 
         {/* ================= FAQ ================= */}
         <section className="gx-section sa-tint" id="faq">

@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import ServicePricing from "@/components/ServicePricing";
 import { ORG_ID, ldString } from "@/lib/site";
 import { SiteFooter } from "@/app/about/chrome";
 import "@/app/about/about.css";
@@ -55,19 +56,13 @@ const FAQS: FaqItem[] = [
   {
     "q": "How much does website design and development cost in India?",
     "a": [
-      "Cost depends on the number of pages, custom features, e-commerce needs, content and integrations. A landing page costs far less than a custom store or web app. We share a fixed quote after understanding your scope, so there are no surprises."
+      "Website design and development starts at ₹10,000 for a starter or single-page landing site. Multi-page business websites, CMS setups, e-commerce stores and custom Next.js builds are scoped and quoted upfront based on pages, features and integrations."
     ]
   },
   {
     "q": "How long does it take to build a website?",
     "a": [
       "A landing page usually takes one to two weeks, a business website three to six weeks, and an e-commerce store six to ten weeks. Ready content and quick feedback keep projects on schedule."
-    ]
-  },
-  {
-    "q": "Do you offer website design and development in Bangalore?",
-    "a": [
-      "Yes. Effix Labs works with businesses in Bengaluru (Bangalore) and across India. We can meet in person in Bengaluru when needed and work remotely everywhere else."
     ]
   },
   {
@@ -129,7 +124,14 @@ const SERVICE_LD = {
     }
   ],
   "description": "Website design and development services for businesses across India and Bengaluru (Bangalore): custom website design, responsive website development, e-commerce development, landing pages, website redesign, and maintenance and support on WordPress, Shopify, WooCommerce, Webflow and Next.js.",
-  "url": "https://effixlabs.in/services/website-design-development"
+  "url": "https://effixlabs.in/services/website-design-development",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "10000",
+    "description": "Starting at ₹10,000 for a starter or single-page website; multi-page and custom builds quoted by scope.",
+    "url": "https://effixlabs.in/services/website-design-development#pricing"
+  }
 };
 
 const BREADCRUMB_LD = {
@@ -459,6 +461,44 @@ export default function Page() {
             </div>
           </div>
         </section>
+
+        <ServicePricing
+          titlePlain="Transparent website "
+          titleEm="pricing"
+          lead="Start with a fast, search-ready landing site or scope a full multi-page business build."
+          tiers={[
+            {
+              badge: "Starter Site",
+              name: "Starter & Landing Page",
+              price: "₹10,000",
+              unit: "one-time · starting",
+              summary: "Fast, mobile-first single-page site built to convert enquiries and pass Core Web Vitals.",
+              items: [
+                "Responsive mobile-first UI & clean typography",
+                "Lead enquiry form & basic on-page SEO setup",
+                "Indexing, sitemap & metadata ready from launch",
+                "100% ownership of domain, code & logins",
+              ],
+              ctaText: "Request a Website Quote →",
+            },
+            {
+              badge: "Business & Custom",
+              name: "Multi-Page / Custom Build",
+              price: "Custom",
+              unit: "scoped by pages & features",
+              summary: "Full multi-page sites, WordPress/Shopify stores or custom Next.js web applications.",
+              items: [
+                "Custom UI/UX across service & product pages",
+                "CMS setup, CRM/payment integrations & schema",
+                "301 redirects for redesigns to protect rankings",
+                "Post-launch testing & team handover",
+              ],
+              ctaText: "Discuss Your Build →",
+              highlight: true,
+            },
+          ]}
+          footnote="Every quote is fixed upfront after scoping your pages, features and content needs."
+        />
 
         {/* ================= FAQ ================= */}
         <section className="gx-section gx-tint" id="faq">

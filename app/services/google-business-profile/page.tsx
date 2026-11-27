@@ -4,6 +4,7 @@
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import ServicePricing from "@/components/ServicePricing";
 import { ORG_ID, ldString } from "@/lib/site";
 import { SiteFooter } from "@/app/about/chrome";
 import "@/app/about/about.css";
@@ -114,9 +115,9 @@ const FAQS: FaqItem[] = [
     ]
   },
   {
-    "q": "Do you offer Google My Business optimization services in India?",
+    "q": "How much do Google Business Profile optimisation services cost?",
     "a": [
-      "Yes. Effix Labs works with businesses across India and internationally. All work is done remotely through your Google Business Profile access."
+      "Google Business Profile optimisation and management starts at ₹7,999 per month for a single location, covering profile audit, category and service updates, review response support, regular posts and monthly reporting. Multi-location profiles or custom scopes are quoted after an initial review."
     ]
   },
   {
@@ -155,7 +156,20 @@ const SERVICE_LD = {
     }
   ],
   "description": "Google Business Profile optimisation services for businesses in Bengaluru (Bangalore) and across India: profile audit, category and service optimisation, review management support, regular updates and monthly reporting.",
-  "url": "https://effixlabs.in/services/google-business-profile"
+  "url": "https://effixlabs.in/services/google-business-profile",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "7999",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "priceCurrency": "INR",
+      "price": "7999",
+      "unitText": "MONTH"
+    },
+    "description": "Starting at ₹7,999 per month for single-location Google Business Profile optimisation and management.",
+    "url": "https://effixlabs.in/services/google-business-profile#pricing"
+  }
 };
 
 const BREADCRUMB_LD = {
@@ -525,6 +539,31 @@ export default function Page() {
             <p className="gx-disclaimer">{"Effix Labs is an independent agency, not affiliated with or endorsed by Google."}</p>
           </div>
         </section>
+
+        <ServicePricing
+          tinted
+          titlePlain="Simple, transparent "
+          titleEm="pricing"
+          lead="Clear monthly pricing for single-location businesses, with custom quotes for multi-location brands."
+          tiers={[
+            {
+              badge: "Single Location",
+              name: "Google Business Profile Growth",
+              price: "₹7,999",
+              unit: "/ month · starting",
+              summary: "Complete setup, ongoing updates, review workflow and local visibility tracking.",
+              items: [
+                "Full profile audit, categories, services & NAP accuracy",
+                "Regular Google Posts, photo refreshes & Q&A updates",
+                "Review request workflow & reply support",
+                "Monthly report on calls, clicks & direction requests",
+              ],
+              ctaText: "Request a Profile Audit →",
+              highlight: true,
+            },
+          ]}
+          footnote="No long-term lock-ins. Multi-location profiles are scoped after reviewing your locations."
+        />
 
         {/* ================= FAQ ================= */}
         <section className="gx-section" id="faq">

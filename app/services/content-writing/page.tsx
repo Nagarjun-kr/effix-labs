@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import LegacyScripts from "@/components/LegacyScripts";
 import ServiceFaq, { faqPageLd, type FaqItem } from "@/components/ServiceFaq";
+import ServicePricing from "@/components/ServicePricing";
 import { ORG_ID, ldString } from "@/lib/site";
 import { SiteFooter } from "@/app/about/chrome";
 import "@/app/about/about.css";
@@ -56,7 +57,7 @@ const FAQS: FaqItem[] = [
   {
     "q": "How much do content writing services cost in India?",
     "a": [
-      "Cost depends on the type of content, research depth, length, volume and turnaround. A short product description costs far less than a researched long-form guide or a full website. Effix Labs quotes per project after understanding your scope, so you know the price before any work starts."
+      "Content writing starts at ₹7,999 per month for a starter scope. Final pricing depends on the type of content, research depth, length and monthly volume. Effix Labs shares a clear quote before any work starts, so there are no surprises."
     ]
   },
   {
@@ -130,12 +131,6 @@ const FAQS: FaqItem[] = [
     "a": [
       "Yes. Refreshing underperforming pages is often the fastest way to win more traffic. We review what you have, update and improve it, and fix titles, structure and internal links."
     ]
-  },
-  {
-    "q": "Do you work with businesses across India and abroad?",
-    "a": [
-      "Yes. We work with businesses all over India and internationally. Content writing is done remotely, with clear briefs, shared drafts and regular check-ins."
-    ]
   }
 ];
 
@@ -167,7 +162,20 @@ const SERVICE_LD = {
     }
   ],
   "description": "Content writing services for brands across India and Bengaluru: SEO blog writing, website copywriting, service and landing pages, product descriptions, pillar pages, case studies, newsletters, LinkedIn content, content refreshes, editing and on-page SEO.",
-  "url": "https://effixlabs.in/services/content-writing"
+  "url": "https://effixlabs.in/services/content-writing",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "7999",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "priceCurrency": "INR",
+      "price": "7999",
+      "unitText": "MONTH"
+    },
+    "description": "Starting at ₹7,999 per month for SEO content writing; final pricing varies by article count, length and research depth.",
+    "url": "https://effixlabs.in/services/content-writing#pricing"
+  }
 };
 
 const BREADCRUMB_LD = {
@@ -563,6 +571,31 @@ export default function Page() {
             </div>
           </div>
         </section>
+
+        <ServicePricing
+          tinted
+          titlePlain="Simple content "
+          titleEm="pricing"
+          lead="Human-researched, edited and fact-checked content with transparent starting rates."
+          tiers={[
+            {
+              badge: "Starter Retainer",
+              name: "Content Writing Starter",
+              price: "₹7,999",
+              unit: "/ month · starting",
+              summary: "Ideal for businesses starting consistent, search-intent-driven blog or page content.",
+              items: [
+                "Keyword & search-intent content brief",
+                "Human-written, edited & fact-checked copy",
+                "On-page SEO titles, meta descriptions & internal links",
+                "Plagiarism check & revision round included",
+              ],
+              ctaText: "Request a Content Quote →",
+              highlight: true,
+            },
+          ]}
+          footnote="Final monthly or per-project pricing varies based on article count, word length and technical depth."
+        />
 
         {/* ================= FAQ ================= */}
         <section className="gx-section" id="faq">
