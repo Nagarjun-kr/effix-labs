@@ -353,7 +353,7 @@ export default function Page() {
               <div className="search-guarantee-row">
                 {" "}
                 <span>
-                  {"Free. No login. Checks your brand on eight platforms through Google."}
+                  {"First audit free · No login required. Checks your brand on eight platforms through Google."}
                 </span>
                 {" "}
                 <span className="hero-talk">

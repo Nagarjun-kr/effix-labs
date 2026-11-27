@@ -649,3 +649,19 @@ a.pp-acc:hover { color: #3451d1; }
 .cta3-badge svg { filter: none !important; width: 44% !important; }
 /* small logo holders: let the icon itself carry the look */
 .vz-plat-logo, .vz-bar-logo, .vz-ev-logo, .vz-logos span { background: none !important; border: 0 !important; }
+
+/* ===== 3rd-search unlock gate ===== */
+.dx-gate { min-height: calc(100vh - 76px); display: grid; place-items: center; padding: 36px 20px 64px; background: radial-gradient(60% 55% at 50% 10%, rgba(124, 92, 240, 0.1), transparent 70%), #fafafa; }
+.dx-gate-card { width: 100%; max-width: 500px; padding: 32px; border-radius: 24px; background: #fff; border: 1px solid #e7e5f0; box-shadow: 0 28px 70px -36px rgba(30, 20, 80, 0.28); }
+.dx-gate-tag { display: inline-block; padding: 5px 12px; border-radius: 999px; background: #f3efff; color: #5b3df5; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.dx-gate-card h1 { margin: 14px 0 8px; font-family: 'Apple Garamond Light Regular', Georgia, serif; font-size: clamp(30px, 4vw, 38px); line-height: 1.08; font-weight: 400; color: #151515; }
+.dx-gate-card > p { margin: 0 0 22px; font-size: 15px; line-height: 1.55; color: #555364; }
+.dx-gate-form { display: grid; gap: 14px; }
+.dx-gate-form label { display: grid; gap: 6px; font-size: 13.5px; font-weight: 600; color: #222; }
+.dx-gate-form label b { color: #7c5cf0; margin-left: 2px; }
+.dx-gate-form input { height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #dcd9e8; font: inherit; font-weight: 400; color: #151515; background: #fff; }
+.dx-gate-form input:focus { outline: none; border-color: #7c5cf0; box-shadow: 0 0 0 3px rgba(124, 92, 240, 0.14); }
+.dx-gate-btn { margin-top: 6px; height: 48px; border: 0; border-radius: 999px; background: #151515; color: #fff; font: 600 15px 'Plus Jakarta Sans', system-ui, sans-serif; cursor: pointer; transition: background-color 0.2s, transform 0.2s; }
+.dx-gate-btn:hover { background: #000; transform: translateY(-1px); }
+.dx-gate-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
+.dx-gate-note { margin: 14px 0 0 !important; font-size: 12.5px !important; color: #757285 !important; text-align: center; }

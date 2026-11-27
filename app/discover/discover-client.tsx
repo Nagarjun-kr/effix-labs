@@ -12,9 +12,35 @@ import { displayHost, parseWebsite } from "@/lib/discover/input";
 import Report, { Orb as PlatformOrb, type Identity, type Mentions, type PlatformResult } from "./report";
 import Scan, { type ScanStage, type SearchProgress } from "./scan";
 import { API_BASE } from "@/lib/api";
+import { bindForm } from "@/lib/forms/guard";
 import { getHumanToken } from "@/lib/turnstile";
 
-type Phase = "start" | "scan" | "done";
+type Phase = "start" | "gate" | "scan" | "done";
+
+const FREE_LIMIT = 1;
+const USES_KEY = "effix_discover_uses";
+const UNLOCKED_KEY = "effix_discover_unlocked";
+
+function getUses(): number {
+  try { return Number(localStorage.getItem(USES_KEY) || "0") || 0; } catch { return 0; }
+}
+function addUse() {
+  try { localStorage.setItem(USES_KEY, String(getUses() + 1)); } catch { /* ignore */ }
+}
+function isUnlocked(): boolean {
+  try {
+    if (localStorage.getItem(UNLOCKED_KEY) === "1") return true;
+    if (sessionStorage.getItem("effix-cms:github-token")) return true;
+    const h = window.location.hostname;
+    if (h === "localhost" || h === "127.0.0.1") return true;
+    return false;
+  } catch {
+    return false;
+  }
+}
+function markUnlocked() {
+  try { localStorage.setItem(UNLOCKED_KEY, "1"); } catch { /* ignore */ }
+}
 
 function Logo() {
   return (
@@ -38,6 +64,8 @@ export default function DiscoverClient() {
   const [blocked, setBlocked] = useState(false);
   const [updatedAt, setUpdatedAt] = useState<Date | null>(null);
   const [progress, setProgress] = useState<SearchProgress>({ overview: "wait", platforms: {} }); // the website refused our visit; name taken from its address
+  const [pendingUrl, setPendingUrl] = useState("");
+  const gateFormRef = useRef<HTMLFormElement>(null);
 
   // After the search: open YouTube channels found, to confirm whether they are the linked channel.
   useEffect(() => {
@@ -134,11 +162,17 @@ export default function DiscoverClient() {
     }
     setWebsite(displayHost(parsed.host));
     setError(null);
+    if (!isUnlocked() && getUses() >= FREE_LIMIT) {
+      setPendingUrl(parsed.entered);
+      setPhase("gate");
+      return;
+    }
     try {
       const res = await fetch(`${API_BASE}/api/discovery`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: parsed.entered }) });
       const body = await res.json().catch(() => ({}));
       if (!res.ok || !body.identity) throw new Error(body.error || "We couldn't open that website. Check the address and try again.");
       const id = body.identity as Identity;
+      addUse();
       setBlocked(Boolean(body.blocked));
       setIdentity(id);
       setBrandQuery(id.name);
@@ -191,7 +225,48 @@ export default function DiscoverClient() {
     e.currentTarget.style.setProperty("--my", "0");
   };
 
+  // Bind the 3rd-search unlock form with strict validation and /api/contact delivery.
+  useEffect(() => {
+    if (phase !== "gate" || !gateFormRef.current) return;
+    return bindForm(gateFormRef.current, {
+      name: "Effix Discover Unlock",
+      api: API_BASE,
+      onSent: () => {
+        markUnlocked();
+        if (pendingUrl) run(pendingUrl);
+      },
+    });
+  }, [phase, pendingUrl, run]);
+
   if (phase === "start") return <div className="sc" aria-busy="true"><div className="sc-bg" aria-hidden="true" /></div>;
+  if (phase === "gate") {
+    return (
+      <div className="dx">
+        <header className="dx-header">
+          <div className="dx-wrap">
+            <a className="dx-logo" href="/" aria-label="Effix Labs home"><Logo /><span>Effix Labs</span><em>Discover</em></a>
+            <a className="dx-back" href="/"><span aria-hidden="true">←</span> Back to home</a>
+          </div>
+        </header>
+        <main className="dx-gate">
+          <div className="dx-gate-card">
+            <span className="dx-gate-tag">Free audit used</span>
+            <h1>Unlock more brand visibility audits</h1>
+            <p>You&apos;ve run your 1 free guest search. Enter your name and work email to continue checking <strong>{website}</strong> and unlock further searches.</p>
+            <form className="dx-gate-form" ref={gateFormRef}>
+              <label><span>Your name<b aria-hidden="true">*</b></span><input name="name" required autoComplete="name" placeholder="Nagarjun" /></label>
+              <label><span>Work email<b aria-hidden="true">*</b></span><input name="email" type="email" required autoComplete="email" placeholder="you@company.com" /></label>
+              <label><span>Company name</span><input name="company" autoComplete="organization" placeholder="Optional" /></label>
+              <label><span>Website to audit<b aria-hidden="true">*</b></span><input name="website" required defaultValue={pendingUrl} inputMode="url" /></label>
+              <button type="submit" className="dx-gate-btn">Unlock &amp; Run Audit →</button>
+              <div data-form-status hidden />
+            </form>
+            <p className="dx-gate-note">Your details go only to the Effix Labs team — no spam, no password needed.</p>
+          </div>
+        </main>
+      </div>
+    );
+  }
   if (phase === "scan") return <Scan stage={stage} domain={website} brand={searched || identity?.name || ""} progress={progress} error={error} />;
 
   return (
