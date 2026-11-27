@@ -11,13 +11,13 @@ import MegaNav from "@/components/MegaNav";
 import SocialLinks from "@/components/SocialLinks";
 
 export const metadata: Metadata = {
-  "title": "Is Your Brand Not Appearing in AI Search? | Run Free Audit.",
+  "title": "Is Your Brand Not Appearing in AI Search? | Run Free Audit",
   "description": "Your competitors may be showing up and you are not. See where your brand appears on Google across 8 platforms. Free audit by Effix Labs. No login.",
   "alternates": {
     "canonical": "https://effixlabs.in/"
   },
   "openGraph": {
-    "title": "Is Your Brand Not Appearing in AI Search? | Run Free Audit.",
+    "title": "Is Your Brand Not Appearing in AI Search? | Run Free Audit",
     "description": "Your competitors may be showing up and you are not. See where your brand appears on Google across 8 platforms. Free audit by Effix Labs. No login.",
     "url": "https://effixlabs.in/",
     "type": "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   "twitter": {
     "card": "summary_large_image",
-    "title": "Is Your Brand Not Appearing in AI Search? | Run Free Audit.",
+    "title": "Is Your Brand Not Appearing in AI Search? | Run Free Audit",
     "description": "Your competitors may be showing up and you are not. See where your brand appears on Google across 8 platforms. Free audit by Effix Labs. No login.",
     "images": ["https://effixlabs.in/images/og-home.jpg"]
   }
