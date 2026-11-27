@@ -82,10 +82,12 @@ export function getPosts(): Post[] {
 
 export const getPost = (slug: string) => getPosts().find((p) => p.slug === slug) ?? null;
 
-/** Same-category posts first, then the newest others. */
+/** Posts that share the same category or at least one tag (same-category first). */
 export function relatedPosts(post: Post, n = 3) {
+  const tags = new Set(post.tags.map((t) => t.toLowerCase()));
   const others = getPosts().filter((p) => p.slug !== post.slug);
-  return [...others.filter((p) => p.category === post.category), ...others.filter((p) => p.category !== post.category)].slice(0, n);
+  const matches = others.filter((p) => p.category === post.category || p.tags.some((t) => tags.has(t.toLowerCase())));
+  return [...matches.filter((p) => p.category === post.category), ...matches.filter((p) => p.category !== post.category)].slice(0, n);
 }
 
 export const postUrl = (slug: string) => `${SITE_URL}/blog/${slug}`;

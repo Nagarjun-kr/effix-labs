@@ -50,11 +50,11 @@ Nobody can promise a mention. Effix Labs does not, and you should be wary of any
 
 Three facts explain most of it.
 
-**Google pays for access.** Google signed a deal in 2024 to use Reddit content for AI training. Reuters reported it at about $60 million a year.
+**Google pays for access.** Google signed a deal in 2024 to use Reddit content for AI training. [Reuters](https://www.aol.com/news/exclusive-reddit-ai-content-licensing-041012291.html) reported it at about $60 million a year.
 
-**The footprint is huge.** Semrush's data showed Reddit in about 2,300 Google AI Overviews in November 2024. By December 2025, that was more than 8.3 million.
+**The footprint is huge.** [Semrush's data](https://www.semrush.com/blog/reddit-seo/) showed Reddit in about 2,300 Google AI Overviews in November 2024. By December 2025, that was more than 8.3 million.
 
-**The studies disagree.** A Semrush study from November 2025, as reported by Ingenious Netsoft, put Reddit at 4% of Perplexity citations. Midland Marketing's 2026 analysis reports about 25% in February and 7% in April. Methods differ and the numbers move. Plan around the direction, not one figure.
+**The studies disagree.** A Semrush study from November 2025, as reported by [Ingenious Netsoft](https://ingeniousnetsoft.com/reddit-marketing-strategy-how-brands-get-mentioned-on-reddit-google-and-ai-answers/), put Reddit at 4% of Perplexity citations. [Midland Marketing's 2026 analysis](https://midlandmarketing.co.uk/blog/seo/reddit-seo-ai-search-visibility/) reports about 25% in February and 7% in April. Methods differ and the numbers move. Plan around the direction, not one figure.
 
 ## Reddit Marketing for AI Search vs SEO vs Ads
 

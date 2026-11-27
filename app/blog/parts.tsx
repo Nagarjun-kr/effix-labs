@@ -22,9 +22,7 @@ export function Cover({ post, className = "", eager = false }: { post: PostMeta;
     return (
       <span className={`bl-cover is-photo ${className}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="bl-cover-bg" src={post.cover} alt={post.coverAlt || post.title} aria-hidden="true" width={1600} height={900} loading={eager ? "eager" : "lazy"} decoding="async" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="bl-cover-img" src={post.cover} alt={post.coverAlt || post.title} width={1600} height={900} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : undefined} decoding="async" />
+        <img className="bl-cover-img" src={post.cover} alt={post.coverAlt || post.title} width={1200} height={630} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : undefined} decoding="async" />
       </span>
     );
   }

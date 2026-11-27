@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     authors: [{ name: post.author }],
     keywords: post.tags,
     openGraph: { title: post.metaTitle || post.title, description: post.description, url, type: "article", publishedTime: post.date, modifiedTime: post.updated ?? post.date, authors: [post.author], section: categoryOf(post.category).name, tags: post.tags, images: [{ url: imageOf(post.cover) }] },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description, images: [imageOf(post.cover)] },
+    twitter: { card: "summary_large_image", title: post.metaTitle || post.title, description: post.description, images: [imageOf(post.cover)] },
   };
 }
 
