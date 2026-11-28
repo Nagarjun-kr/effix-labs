@@ -7,4 +7,4 @@
 :HL["/fonts/PlusJakartaSans-Light.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":64,"c":"$Q2"}]]
-0:{"b":"Zc_91v74cKPGzBV7QE4tp","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"9EIThHWWX9_MbvlFfm0j-","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
